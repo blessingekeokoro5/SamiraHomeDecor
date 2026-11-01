@@ -940,6 +940,8 @@ em { font-style: italic; color: var(--rose-deep); }
 
 /* ---- Split feature ---- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.split > * { min-width: 0; } /* let columns shrink on phones instead of overhanging */
+@media (max-width: 600px) { .btn { white-space: normal; } } /* long button labels wrap instead of running off-screen */
 .split .media { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 4/3.4; }
 .split.reverse .media { order: 2; }
 .feature-list { list-style: none; padding: 0; margin: 24px 0 0; }
@@ -1462,8 +1464,9 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
   .m-account h4 { font-family: var(--font-head); font-size: 1.4rem; margin-bottom: 14px; letter-spacing: 0.04em; }
 }
 .wish-link { display: none; }
-/* Mobile header: hamburger left · logo · icons right · full-width search below */
-@media (max-width: 760px) {
+/* Phone + tablet header: hamburger left · logo · icons right · full-width search below
+   (up to 1100px so iPads in either orientation don't push the icons off-screen) */
+@media (max-width: 1100px) {
   .nav-utility { flex-wrap: wrap; height: auto; padding-top: 12px; padding-bottom: 12px; gap: 12px 8px; }
   .nav-toggle { order: 0; margin-right: 2px; }
   .brand { order: 1; margin-right: auto; }

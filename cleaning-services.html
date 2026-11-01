@@ -368,8 +368,10 @@ legend{font-weight:600;font-size:.92rem;color:var(--navy);margin-bottom:6px}
 .calc-field input:focus,.calc-field textarea:focus{outline:none;border-color:var(--gold)}
 .calc-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:520px){.calc-two{grid-template-columns:1fr}}
-.calc-nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+.calc-nav{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:22px}
 .calc-nav .btn{min-width:130px}
+.calc-nav [hidden]{display:none !important} /* .btn's display would otherwise override the hidden attribute */
+@media(max-width:520px){.calc-nav .btn{min-width:0;flex:1 1 140px;white-space:normal}}
 #calcBack[disabled]{opacity:.4;pointer-events:none}
 .calc .quote-out{position:static;margin-top:22px}
 /* Request a call back modal */
