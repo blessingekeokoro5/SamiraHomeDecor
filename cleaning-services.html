@@ -81,6 +81,7 @@ p{margin:0}
 .btn-quiet:hover{border-color:var(--navy)}
 .btn-sm{padding:10px 16px;font-size:.9rem}
 section{scroll-margin-top:76px}
+@media (max-width:1039px){section{scroll-margin-top:112px}} /* header + mobile link row */
 .sec{padding:84px 0}
 .sec-head{margin-bottom:36px}
 
@@ -95,6 +96,12 @@ section{scroll-margin-top:76px}
 .nav a{color:#E7ECF4;text-decoration:none;font-weight:500;font-size:.93rem;white-space:nowrap}
 .nav a:hover{color:var(--gold)}
 @media (min-width:1040px){.nav{display:flex}}
+.mnav{display:flex;gap:20px;max-width:var(--wrap);margin:0 auto;padding:0 16px 10px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.mnav::-webkit-scrollbar{display:none}
+.mnav a{flex:none;color:#E7ECF4;text-decoration:none;font-size:.85rem;font-weight:500;white-space:nowrap;padding:4px 0}
+.mnav a:hover{color:var(--gold)}
+.mnav .mnav-shop{color:var(--gold);font-weight:700}
+@media (min-width:1040px){.mnav{display:none}}
 .top .btn{padding:11px 18px;font-size:.9rem}
 
 /* hero */
@@ -449,6 +456,15 @@ legend{font-weight:600;font-size:.92rem;color:var(--navy);margin-bottom:6px}
     </nav>
     <a class="btn btn-gold js-callback" href="#">Request a call back</a>
   </div>
+  <!-- Phones & tablets: the section links above are hidden below 1040px, so show them here -->
+  <nav class="mnav" aria-label="Cleaning page sections">
+    <a class="mnav-shop" href="index.html">&larr; Back to shop</a>
+    <a href="#residential">Residential</a>
+    <a href="#commercial">Commercial</a>
+    <a href="#documents">Forms</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+  </nav>
 </header>
 
 <!-- Request a call back -->
