@@ -15886,13 +15886,21 @@ function halloweenOn() {
   return now >= start && now <= end;
 }
 function isHalloweenItem(p) { return !!p && typeof p.price === "number" && p.cat !== "Packaging"; }
+// "Monday 2 Nov" — computed from HALLOWEEN for the current year, so the weekday is always right.
+function halloweenEndLabel() {
+  var y;
+  try { y = +new Date().toLocaleDateString("en-AU", { timeZone: "Australia/Adelaide", year: "numeric" }); } catch (e) { y = new Date().getFullYear(); }
+  var d = new Date(y, HALLOWEEN.endMonth, HALLOWEEN.endDay);
+  return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][d.getDay()] + " " + d.getDate() + " " +
+    ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][d.getMonth()];
+}
 
 (function applyHalloween() {
   if (typeof document === "undefined") return;            // browser only
   if (!halloweenOn()) return;
   try {
     if (typeof ANNOUNCEMENTS !== "undefined" && Array.isArray(ANNOUNCEMENTS)) {
-      ANNOUNCEMENTS.unshift("🎃 HALLOWEEN SALE — 15% off storewide, now until Sunday 2 Nov ✦");
+      ANNOUNCEMENTS.unshift("🎃 HALLOWEEN SALE — 15% off storewide, now until " + halloweenEndLabel() + " ✦");
     }
   } catch (e) {}
   var f = 1 - HALLOWEEN.pct / 100;

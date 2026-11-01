@@ -37,9 +37,10 @@ async function loadShop() {
     vm.runInContext(code + `
 ;globalThis.__P = (typeof PRODUCTS !== "undefined") ? PRODUCTS : [];
 globalThis.__SALE = (typeof halloweenOn === "function" && halloweenOn()) ? "halloween"
-  : (typeof blackFridayOn === "function" && blackFridayOn()) ? "blackfriday" : "";`, sb, { timeout: 4000 });
-    return { products: sb.__P || [], sale: sb.__SALE || "" };
-  } catch (e) { return { products: [], sale: "" }; }
+  : (typeof blackFridayOn === "function" && blackFridayOn()) ? "blackfriday" : "";
+globalThis.__HWEND = (typeof halloweenEndLabel === "function") ? halloweenEndLabel() : "";`, sb, { timeout: 4000 });
+    return { products: sb.__P || [], sale: sb.__SALE || "", halloweenEnd: sb.__HWEND || "" };
+  } catch (e) { return { products: [], sale: "", halloweenEnd: "" }; }
 }
 
 function productCard(p) {
@@ -61,11 +62,11 @@ function productCard(p) {
     </td>`;
 }
 
-function buildEmail(items, sale, fromViews, unsub) {
+function buildEmail(items, sale, fromViews, unsub, saleEnd) {
   const rows = [];
   for (let i = 0; i < items.length; i += 2) rows.push(`<tr>${productCard(items[i])}${items[i + 1] ? productCard(items[i + 1]) : '<td width="50%"></td>'}</tr>`);
   const saleBanner = sale === "halloween"
-    ? `<tr><td style="background:#1a0f2e;color:#fff;text-align:center;padding:14px 20px;font-size:15px">🎃 <b style="color:#F39A4A">Halloween sale</b> — 15% off storewide, ends Sunday 2 Nov</td></tr>`
+    ? `<tr><td style="background:#1a0f2e;color:#fff;text-align:center;padding:14px 20px;font-size:15px">🎃 <b style="color:#F39A4A">Halloween sale</b> — 15% off storewide${saleEnd ? ", ends " + saleEnd : ""}</td></tr>`
     : sale === "blackfriday"
       ? `<tr><td style="background:${NAVY};color:#fff;text-align:center;padding:14px 20px;font-size:15px">🛍️ <b style="color:${GOLD}">Black Friday</b> — 15% off selected furniture, now through Cyber Monday</td></tr>`
       : "";
@@ -130,7 +131,7 @@ exports.handler = async () => {
 
   if (!due.length) { console.log("visit-reminder: nobody due today."); return { statusCode: 200, body: "none due" }; }
 
-  const { products, sale } = await loadShop();
+  const { products, sale, halloweenEnd } = await loadShop();
   const byId = {};
   products.forEach((p) => { if (p && p.id) byId[p.id] = p; });
   const sellable = (p) => p && p.img && typeof p.price === "number" && p.cat !== "Packaging";
@@ -145,7 +146,7 @@ exports.handler = async () => {
     const viewed = String((c.attributes || {}).LAST_VIEWED || "").split(",").map((id) => byId[id.trim()]).filter(sellable);
     const items = viewed.length ? viewed : fallback;
     if (!items.length) continue;
-    const subject = sale === "halloween" ? "🎃 Your picks are 15% off this weekend — Samira Home Decor"
+    const subject = sale === "halloween" ? `🎃 Your picks are 15% off${halloweenEnd ? " until " + halloweenEnd : ""} — Samira Home Decor`
       : sale === "blackfriday" ? "🛍️ Black Friday savings on your picks — Samira Home Decor"
       : "Still thinking it over? Your picks are waiting ✦";
     const unsub = unsubLink(c.email);
@@ -153,7 +154,7 @@ exports.handler = async () => {
       sender: { name: SENDER_NAME, email: SENDER_EMAIL },
       to: [{ email: c.email }],
       subject,
-      htmlContent: buildEmail(items, sale, viewed.length > 0, unsub),
+      htmlContent: buildEmail(items, sale, viewed.length > 0, unsub, halloweenEnd),
       headers: { "List-Unsubscribe": `<${unsub}>`, "List-Unsubscribe-Post": "List-Unsubscribe=One-Click" },
     });
     if (r.ok) {
