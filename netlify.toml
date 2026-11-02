@@ -92,3 +92,36 @@
 # "Come back" reminder to subscribers who browsed 1–3 days ago — daily 23:30 UTC ≈ 10am Adelaide
 [functions."visit-reminder"]
   schedule = "30 23 * * *"
+
+# Cleaning PDFs were renamed from Samira-Cleaning-Services-* to Samira-Home-Decor-Cleaning-*;
+# keep old links (e.g. in sent emails) working.
+[[redirects]]
+  from = "/cleaning-documents/Samira-Cleaning-Services-Checklist.pdf"
+  to = "/cleaning-documents/Samira-Home-Decor-Cleaning-Checklist.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/cleaning-documents/Samira-Cleaning-Services-Commercial-Quote.pdf"
+  to = "/cleaning-documents/Samira-Home-Decor-Cleaning-Commercial-Quote.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/cleaning-documents/Samira-Cleaning-Services-Invoice.pdf"
+  to = "/cleaning-documents/Samira-Home-Decor-Cleaning-Invoice.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/cleaning-documents/Samira-Cleaning-Services-Key-Register.pdf"
+  to = "/cleaning-documents/Samira-Home-Decor-Cleaning-Key-Register.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/cleaning-documents/Samira-Cleaning-Services-Onboarding-Form.pdf"
+  to = "/cleaning-documents/Samira-Home-Decor-Cleaning-Onboarding-Form.pdf"
+  status = 301
+
+[[redirects]]
+  from = "/cleaning-documents/Samira-Cleaning-Services-Quote.pdf"
+  to = "/cleaning-documents/Samira-Home-Decor-Cleaning-Quote.pdf"
+  status = 301
+
