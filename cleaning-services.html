@@ -142,6 +142,18 @@ section{scroll-margin-top:76px}
   .brand small{letter-spacing:.14em;font-size:.6rem}
   .top .btn{padding:10px 14px;font-size:.82rem}
 }
+/* Very small phones: the longer "Samira Home Decor" name needs a tighter header */
+@media (max-width:380px){
+  .top .wrap{gap:6px}
+  .brand svg{width:28px;height:28px}
+  .brand b{font-size:.76rem;letter-spacing:0}
+  .brand small{font-size:.52rem;letter-spacing:.1em}
+  .top .btn{padding:8px 10px;font-size:.72rem}
+}
+@media (max-width:340px){
+  .top .wrap{padding-left:12px;padding-right:12px}
+  .top .btn{padding:7px 8px;font-size:.68rem}
+}
 
 /* steps */
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:28px;counter-reset:s}
