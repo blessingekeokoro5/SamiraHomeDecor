@@ -11679,18 +11679,6 @@ const PRODUCTS = [
   { id: "pk06", name: "Celebration Favour Kit", cat: "Packaging", room: "Packaging", price: null, hot: false, sku: "SH-11323", tag: "Coming Out Soon", ph: "", img: "assets/packaging-kit.svg",
     desc: "For weddings, birthdays and showers. Mini boxes, pouches and stickers for your guest favours. Custom quantities and colours are available on request.",
     features: ["24 mini favour boxes","24 organza pouches","48 assorted stickers","1 ribbon roll","24 blank tags"] },
-  { id: "pk07", name: "Deedees Moi Moi Cooking Pouch, 50 Pieces, Reusable Food-Grade Steaming Bags, BPA Free", cat: "Packaging", room: "Packaging", price: null, hot: false, brand: "Deedees", sku: "SH-11324", tag: "New", ph: "", img: "assets/products/pk07.webp",
-    imgs: ["assets/products/pk07.webp", "assets/products/pk07-2.webp"],
-    desc: "Food-grade, BPA-free cooking pouches made for steaming moi moi. Pour in your prepared mixture, seal the pouch, stand it upright in boiling water and cook. A pack of 50 reusable pouches that are light, heat resistant and easy to clean.",
-    features: [
-      "Pack of 50 cooking pouches",
-      "Food grade and BPA free",
-      "Reusable, heat resistant and lightweight",
-      "Stands upright in the pot",
-      "Easy to clean, hand wash only"
-    ],
-    specs: { "Brand": "Deedees", "Type": "Cooking pouch / steaming bag", "Model": "Deedees Cooking Pouch 50pcs", "Material": "Food grade, BPA free", "Colour": "Purple and orange", "Pack size": "50 pieces", "Country of origin": "Australia", "Condition": "Brand new" },
-    care: "How to use: add water to a pot without fully submerging the pouch. Open the bottom gusset to expand the pouch, pour in your prepared moi moi mixture and seal tightly. Place upright in boiling water and cook for 45 minutes, adding a little water occasionally to avoid burning. Do not fill above the dotted line. Do not microwave. Hand wash only." },
   { id: "bd01", name: "Amara Upholstered Bed Frame with 3 Drawers, Oat White", cat: "Bedroom", room: "Bedroom", price: 1350, memberPrice: 1300, sku: "SH-10114", tag: "New", ph: "", img: "assets/products/bd01.webp",
     imgs: ["assets/products/bd01.webp", "assets/products/bd01-2.webp", "assets/products/bd01-3.webp", "assets/products/bd01-4.webp", "assets/products/bd01-5.webp", "assets/products/bd01-6.webp"],
     lead: "8 to 10 weeks",
