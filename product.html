@@ -118,6 +118,8 @@
     .pdp-buy { display: flex; gap: 12px; align-items: center; margin: 24px 0 12px; flex-wrap: wrap; }
     .member-save { margin-top: 16px; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; background: #fff; }
     .member-save .ms-head { font-weight: 600; font-size: 1.02rem; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; color: var(--ink); }
+    .ms-xmas { display: inline-block; margin: 2px 0 12px; background: #C9A227; color: #1F3A6B; font-weight: 700; font-size: 0.86rem; line-height: 1.35; padding: 8px 16px; border-radius: 999px; text-decoration: none; }
+    .ms-xmas:hover { filter: brightness(1.06); color: #1F3A6B; }
     .ms-badge { background: var(--ink); color: #fff; font-size: 0.68rem; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 999px; }
     .ms-list { list-style: none; margin: 0 0 14px; padding: 0; }
     .ms-list li { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; font-size: 0.9rem; color: var(--body); line-height: 1.45; }
@@ -606,6 +608,7 @@
             ${(p.memberPrice && p.cat !== "Packaging") ? `<div class="member-price" style="margin-top:6px">✦ Members price ${money(p.memberPrice)} <a href="#" onclick="if(typeof openMemberModal==='function')openMemberModal();return false;" style="font-size:0.82rem">Join free →</a></div>` : ""}
             ${(p.memberPrice && p.cat !== "Packaging") ? `<div class="member-save">
               <div class="ms-head">Save with <span class="ms-badge">MEMBER ✔</span></div>
+              <a class="ms-xmas" href="christmas-vouchers.html">🎄 Shop 3 times a year · Get up to $300 in Christmas vouchers</a>
               <ul class="ms-list">
                 <li><span class="ms-ic">🏷️</span><span><strong>Save ${money(p.price - p.memberPrice)}</strong> on the non-member price</span></li>
                 <li><span class="ms-ic">💡</span><span>Get <strong>free styling tips</strong> for your home</span></li>
