@@ -208,6 +208,23 @@ section{scroll-margin-top:76px}
 .com-item svg{width:40px;height:40px;color:var(--gold)}
 .com-item h3{font-size:1.35rem;margin-bottom:4px}
 .com-item p{color:var(--muted);font-size:.95rem}
+/* "What we clean" dropdowns (residential rows + commercial items) */
+.areas{grid-column:1/-1;border:1px solid var(--line);border-radius:10px;background:var(--tint);margin-top:4px}
+.com-item .areas{margin-top:12px}
+.areas summary{list-style:none;cursor:pointer;padding:12px 16px;font-weight:600;color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.areas summary::-webkit-details-marker{display:none}
+.areas summary::after{content:"\25BE";color:var(--gold-ink);font-size:1rem;transition:transform .2s}
+.areas[open] summary::after{transform:rotate(180deg)}
+.areas-body{padding:0 16px 16px}
+.areas .areas-intro{color:var(--navy);font-weight:600;font-size:.92rem;margin-bottom:10px}
+.areas-grid{display:grid;gap:14px 24px}
+@media (min-width:640px){.areas-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.areas-grid{grid-template-columns:repeat(4,1fr)}}
+.areas h4{font:600 .95rem/1.3 var(--serif);color:var(--navy);margin-bottom:6px}
+.areas ul{list-style:none;margin:0;padding:0}
+.areas li{position:relative;padding-left:20px;font-size:.9rem;color:var(--ink);margin:4px 0;line-height:1.45}
+.areas li::before{content:"\2713";position:absolute;left:0;color:var(--gold-ink);font-weight:700}
+@media (min-width:640px){.areas-list{columns:2;column-gap:24px}.areas-list li{break-inside:avoid}}
 .com-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:32px;background:var(--gold-soft);border-radius:14px;padding:24px 28px}
 .com-cta p{color:var(--navy);font-weight:500;max-width:60ch}
 
@@ -845,11 +862,11 @@ legend{font-weight:600;font-size:.92rem;color:var(--navy);margin-bottom:6px}
       <p class="lede">Small and medium sites, cleaned before or after your trading hours. Every commercial job is quoted after a free site visit.</p>
     </div>
     <div class="com-grid">
-      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6" y="8" width="28" height="26" rx="2"/><path d="M12 14h4M24 14h4M12 20h4M24 20h4M17 34v-7h6v7"/></svg><div><h3>Office and workspace</h3><p>Desks, kitchens, bathrooms, meeting rooms and floors, on a schedule that suits your team.</p></div></div>
-      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 15l3-8h22l3 8M6 15h28v19H6zM6 15c0 3 2.5 4 4.5 4S15 18 15 15c0 3 2.5 4 5 4s5-1 5-4c0 3 2 4 4.5 4S34 18 34 15"/><path d="M16 34v-8h8v8"/></svg><div><h3>Retail and showrooms</h3><p>Shopfronts, display areas, change rooms and glass, so customers walk into a spotless space.</p></div></div>
-      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 32V18l14-10 14 10v14z"/><path d="M14 32v-8h12v8M27 12V7h4v8"/></svg><div><h3>Short-stay and Airbnb turnovers</h3><p>Between-guest cleans with linen change and restocking checks, ready for the next check-in.</p></div></div>
-      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="5" width="24" height="30" rx="2"/><path d="M14 11h12M14 17h12M14 23h12M18 35v-6h4v6"/></svg><div><h3>Strata and common areas</h3><p>Foyers, stairwells, lifts, bin rooms and shared spaces for apartment buildings.</p></div></div>
-      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 34V16l12-9 12 9v18H8z"/><circle cx="20" cy="22" r="4"/><path d="M20 26v8"/></svg><div><h3>Real estate and property managers</h3><p>Vacate, pre-sale and pre-lease presentation cleans, matched to your agency's checklist.</p></div></div>
+      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6" y="8" width="28" height="26" rx="2"/><path d="M12 14h4M24 14h4M12 20h4M24 20h4M17 34v-7h6v7"/></svg><div><h3>Office and workspace</h3><p>Desks, kitchens, bathrooms, meeting rooms and floors, on a schedule that suits your team.</p><details class="areas"><summary>What we clean</summary><div class="areas-body"><ul class="areas-list"><li>Reception, foyer and entry: surfaces, glass doors, floors</li><li>Workstations and desks wiped and sanitised (clear surfaces)</li><li>Meeting rooms: tables, chairs, glass</li><li>Kitchen and break room: benches, sink, appliance fronts</li><li>Bathrooms sanitised and consumables restocked</li><li>Floors vacuumed and mopped</li><li>Internal glass, partitions and mirrors</li><li>Bins and recycling emptied and relined</li><li>Dusting of ledges, sills, skirting and vents</li></ul></div></details></div></div>
+      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 15l3-8h22l3 8M6 15h28v19H6zM6 15c0 3 2.5 4 4.5 4S15 18 15 15c0 3 2.5 4 5 4s5-1 5-4c0 3 2 4 4.5 4S34 18 34 15"/><path d="M16 34v-8h8v8"/></svg><div><h3>Retail and showrooms</h3><p>Shopfronts, display areas, change rooms and glass, so customers walk into a spotless space.</p><details class="areas"><summary>What we clean</summary><div class="areas-body"><ul class="areas-list"><li>Shop floor vacuumed and mopped</li><li>Display areas and shelving dusted</li><li>Change rooms and mirrors</li><li>Counters and checkout area sanitised</li><li>Shopfront glass and doors (inside)</li><li>Entry mats</li><li>Staff room and bathrooms</li><li>Bins emptied and relined</li></ul></div></details></div></div>
+      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 32V18l14-10 14 10v14z"/><path d="M14 32v-8h12v8M27 12V7h4v8"/></svg><div><h3>Short-stay and Airbnb turnovers</h3><p>Between-guest cleans with linen change and restocking checks, ready for the next check-in.</p><details class="areas"><summary>What we clean</summary><div class="areas-body"><ul class="areas-list"><li>Beds stripped and remade with fresh linen</li><li>Towels replaced and laundry bagged</li><li>Kitchen reset: dishes, benches, appliances, fridge check</li><li>Bathrooms scrubbed and sanitised</li><li>Floors vacuumed and mopped</li><li>Bins emptied</li><li>Restocking check of guest supplies</li><li>Damage or lost items photographed and reported</li></ul></div></details></div></div>
+      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="5" width="24" height="30" rx="2"/><path d="M14 11h12M14 17h12M14 23h12M18 35v-6h4v6"/></svg><div><h3>Strata and common areas</h3><p>Foyers, stairwells, lifts, bin rooms and shared spaces for apartment buildings.</p><details class="areas"><summary>What we clean</summary><div class="areas-body"><ul class="areas-list"><li>Foyers and entry glass</li><li>Lifts: walls, doors, buttons and tracks</li><li>Stairwells and handrails</li><li>Corridors vacuumed and mopped</li><li>Letterbox areas</li><li>Bin rooms: floors washed, bins tidied</li><li>Common doors, handles and switches</li><li>Cobwebs removed</li></ul></div></details></div></div>
+      <div class="com-item"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 34V16l12-9 12 9v18H8z"/><circle cx="20" cy="22" r="4"/><path d="M20 26v8"/></svg><div><h3>Real estate and property managers</h3><p>Vacate, pre-sale and pre-lease presentation cleans, matched to your agency's checklist.</p><details class="areas"><summary>What we clean</summary><div class="areas-body"><ul class="areas-list"><li>Vacate and bond cleans to the end-of-lease checklist</li><li>Pre-sale presentation cleans before photos and opens</li><li>Pre-lease cleans for new tenants</li><li>Matched to your agency's condition report</li><li>Before and after photos on request</li></ul></div></details></div></div>
     </div>
 
     <div class="sec-head" style="margin-top:36px">
@@ -1111,6 +1128,48 @@ const CLEANS = [
 ];
 let size = 2;
 
+/* What each clean covers: shown in the "What we clean" dropdown on each row */
+const STD_AREAS = [
+  ["Kitchen",["Benchtops, splashback and sink cleaned","Stovetop and range hood exterior wiped","Cupboard and appliance fronts wiped","Microwave inside and out","Bins emptied and relined","Floors vacuumed and mopped"]],
+  ["Bathrooms and laundry",["Toilet, basin, shower and bath scrubbed and sanitised","Mirrors and glass polished","Tiles wiped","Taps and fittings shined","Laundry tub and benches wiped","Floors washed"]],
+  ["Bedrooms and living areas",["Dusting of surfaces and furniture","Mirrors and glass cleaned","Sills, skirting and light switches wiped","Cobwebs removed","Beds made","Floors vacuumed and/or mopped"]],
+  ["Throughout",["Doors, handles and frames wiped","General tidy and surfaces reset","Rubbish taken to your bins","Final walk-through check"]]
+];
+const AREAS = {
+  "Standard clean": { intro: "Every room, every visit:", rooms: STD_AREAS },
+  "Deep clean": { intro: "Everything in a standard clean, plus:", rooms: [
+    ["Kitchen",["Inside oven","Inside fridge","Range hood and filters degreased","Cupboard fronts and handles detailed"]],
+    ["Bathrooms and laundry",["Grout scrubbed","Soap scum and limescale removed","Exhaust fans dusted","Shower tracks and seals cleaned"]],
+    ["Bedrooms and living areas",["Light fittings and ceiling fans dusted","Behind and under movable furniture","Blinds dusted","Skirting boards detailed"]],
+    ["Throughout",["Door frames and architraves wiped","Power points and switches detailed","Window sills and tracks (inside)"]]
+  ]},
+  "Spring clean": { intro: "Everything in a standard clean, plus the high and low areas:", rooms: [
+    ["Kitchen",["Cupboard fronts and handles detailed","Range hood exterior degreased","Splashback detailed"]],
+    ["Bathrooms and laundry",["Grout scrubbed","Exhaust fans dusted","Shower tracks and seals cleaned"]],
+    ["Bedrooms and living areas",["Light fittings and ceiling fans dusted","Blinds dusted","Behind and under movable furniture","High ledges and cornices de-cobwebbed"]],
+    ["Throughout",["Skirting boards and door frames wiped","Window sills and tracks (inside)"]]
+  ]},
+  "Move-in clean": { intro: "A top-to-bottom clean of an empty home:", rooms: [
+    ["Kitchen",["Inside all cupboards and drawers","Inside oven and fridge","Range hood, benchtops and sink sanitised","Appliance fronts and splashback","Floors vacuumed and mopped"]],
+    ["Bathrooms and laundry",["Full scrub and sanitise","Inside vanity cupboards and drawers","Mirrors, glass and fittings polished","Exhaust fans dusted","Laundry tub and cabinets"]],
+    ["Bedrooms and living areas",["Inside wardrobes and built-ins","Skirting boards, sills and light switches","Light fittings and ceiling fans","Floors vacuumed and mopped"]],
+    ["Throughout",["Doors, handles and frames","Window sills and tracks (inside)","Final walk-through check"]]
+  ]},
+  "End-of-lease clean": { intro: "Everything in a move-in clean, plus what agents check at the final inspection:", rooms: [
+    ["Kitchen",["Oven, racks and trays detailed","Range hood and filters degreased","Dishwasher wiped inside and out"]],
+    ["Bathrooms and laundry",["Grout, tiles and shower screens detailed","Exhaust fans","Behind the washing machine space"]],
+    ["Bedrooms and living areas",["Wall marks spot-cleaned","Interior windows and tracks","Blinds dusted","Wardrobe tracks and shelves"]],
+    ["Throughout",["Light switches and power points","Matched to your agent's checklist","Final walk-through check"]]
+  ]}
+};
+function areasHtml(a, label){
+  if (!a) return "";
+  return `<details class="areas"><summary>What we clean${label ? " in a " + label.toLowerCase() : ""}</summary><div class="areas-body">
+    <p class="areas-intro">${a.intro}</p>
+    <div class="areas-grid">${a.rooms.map(([room, items]) => `<div><h4>${room}</h4><ul>${items.map(i => `<li>${i}</li>`).join("")}</ul></div>`).join("")}</div>
+  </div></details>`;
+}
+
 function renderLedger(){
   const el = document.getElementById("ledger");
   el.innerHTML = CLEANS.filter(c => !c.office).map(c => {
@@ -1123,6 +1182,7 @@ function renderLedger(){
       <p>${c.desc}</p>
       ${price}
       <a class="btn btn-quiet btn-sm" href="#book" data-type="${c.name}">Book this clean</a>
+      ${areasHtml(AREAS[c.short], c.short)}
     </div>`;
   }).join("");
 }
