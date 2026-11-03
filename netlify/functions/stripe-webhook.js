@@ -20,7 +20,7 @@
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const { issueGiftCard } = require("./_giftcards");
-const { referralNote } = require("./_referrals");
+const { recordReferral } = require("./_referrals");
 const { emailShop } = require("./_notify");
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 
@@ -105,10 +105,14 @@ exports.handler = async (event) => {
         // A friend's referral link was used: tell the shop who to reward
         if (session.metadata && session.metadata.ref) {
           const buyer = (session.customer_details && session.customer_details.email) || "";
-          const note = await referralNote(session.metadata.ref, buyer);
+          const note = await recordReferral(session.metadata.ref, {
+            id: session.id, type: "order", friendEmail: buyer,
+            friendName: session.customer_details ? session.customer_details.name : "",
+            amount: (session.amount_total || 0) / 100,
+          });
           await emailShop(
             "Samira Home Decor — referred order, 30% reward to send",
-            `Stripe session: ${session.id}\nCustomer: ${buyer}\nOrder total: ${money(session.amount_total, session.currency)}\n\nReferred by: ${note}\n\nPlease check this is the customer's first purchase, then send the referrer their 30% reward.`
+            `Stripe session: ${session.id}\nCustomer: ${buyer}\nOrder total: ${money(session.amount_total, session.currency)}\n\nReferred by: ${note}\n\nSend the referrer their 30% reward, then mark it done in Admin > Referrals.`
           );
         }
 

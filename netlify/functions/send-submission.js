@@ -22,7 +22,7 @@
      { subject, fields:[[label,value],...], replyto, name }
    ============================================================ */
 
-const { referralNote } = require("./_referrals");
+const { recordReferral } = require("./_referrals");
 
 const BREVO_API_KEY  = process.env.BREVO_API_KEY || "";
 const SENDER_EMAIL   = process.env.SENDER_EMAIL || "hello@samirahomedecor.com.au";
@@ -235,8 +235,10 @@ exports.handler = async (event) => {
     // Booked or enquired through a friend's referral link: show who sent them
     const refField = fields.find((p) => p[0] === "Referral code");
     if (refField) {
-      const note = await referralNote(String(refField[1]), replyto);
-      if (note) fields.push(["Referred by (30% reward)", note]);
+      const note = await recordReferral(String(refField[1]), {
+        id: "form-" + String(replyto).toLowerCase() + "-" + subject, type: "booking", friendEmail: replyto, friendName: name,
+      });
+      if (note) fields.push(["Referred by (30% reward if this goes ahead)", note]);
     }
 
     // ---- 1) Business notification (branded) ----

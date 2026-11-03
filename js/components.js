@@ -539,7 +539,11 @@ const REF_KEY = "dm_ref", REF_DAYS = 60;
 function captureReferral() {
   try {
     const code = (new URLSearchParams(location.search).get("ref") || "").toUpperCase();
-    if (/^[A-Z0-9]{8}$/.test(code)) localStorage.setItem(REF_KEY, JSON.stringify({ code, ts: Date.now() }));
+    if (!/^[A-Z0-9]{8}$/.test(code)) return;
+    const prev = JSON.parse(localStorage.getItem(REF_KEY) || "null");
+    localStorage.setItem(REF_KEY, JSON.stringify({ code, ts: Date.now() }));
+    // Count each browser once, so the referrer can see their link was opened
+    if (!prev || prev.code !== code) fetch("/.netlify/functions/referral-status", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ code, click: true }) }).catch(() => {});
   } catch (e) {}
 }
 function getReferralCode() {
@@ -549,6 +553,31 @@ function getReferralCode() {
   } catch (e) { return ""; }
 }
 captureReferral();
+/* A referrer's own progress: who opened their link and who shopped. */
+async function renderReferralProgress(el, email, name) {
+  if (!el || !email) return;
+  try {
+    const post = (fn, body) => fetch("/.netlify/functions/" + fn, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).then(r => r.json());
+    const { code } = await post("referral-link", { email, name: name || "" });
+    if (!code) return;
+    const p = await post("referral-status", { code });
+    const LABEL = {
+      to_reward: "Shopped with us. Your 30% reward is on its way",
+      check: "Enquired or booked. We'll confirm once it goes ahead",
+      rewarded: "Reward sent ✓",
+      own_link: "Your own link, so no reward",
+      repeat: "Already counted once"
+    };
+    const safe = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const friends = p.friends || [];
+    const opened = p.clicks || 0;
+    el.innerHTML = `<div class="ref-prog">
+      <h4>Your referrals</h4>
+      <p>${opened ? `Your link has been opened by <strong>${opened}</strong> ${opened === 1 ? "person" : "people"}.` : "Nobody has opened your link yet. Share it with a friend to get started."}</p>
+      ${friends.length ? `<ul>${friends.map(f => `<li><strong>${safe(f.name)}</strong><span>${LABEL[f.status] || ""}</span></li>`).join("")}</ul>` : ""}
+    </div>`;
+  } catch (e) { /* progress is a nice-to-have: leave the space empty */ }
+}
 function setCustomerRef() {
   const el = document.getElementById("custRef");
   if (el) el.textContent = getCustomerRef();

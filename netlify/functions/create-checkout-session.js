@@ -29,7 +29,7 @@
 const CATALOGUE = require("./_catalogue.json");
 const { loadGiftCard, redeemGiftCard, normaliseCode } = require("./_giftcards");
 const { emailShop } = require("./_notify");
-const { referralNote } = require("./_referrals");
+const { recordReferral } = require("./_referrals");
 
 // Constructed lazily: the Stripe client throws if the key is missing, and we'd
 // rather return a clear error than have the whole function fail to load.
@@ -327,7 +327,7 @@ exports.handler = async (event) => {
       const remaining = await redeemGiftCard(card, orderTotal);
       const orderNo = "DM-" + Math.floor(100000 + Math.random() * 899999);
 
-      const refNote = body.ref ? await referralNote(body.ref, customer.email) : "";
+      const refNote = body.ref ? await recordReferral(body.ref, { id: orderNo, type: "order", friendEmail: customer.email, friendName: customer.name, amount: orderTotal }) : "";
       await emailShop(
         `Samira Home Decor — new order ${orderNo} paid by gift card ($${orderTotal.toFixed(2)})`,
         `Order: ${orderNo}\n` +

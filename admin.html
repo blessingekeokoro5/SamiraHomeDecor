@@ -76,6 +76,7 @@
       <div class="admin-tabs" id="adminTabs">
         <button class="active" data-tab="base">Customer base</button>
         <button data-tab="bookings">Cleaning bookings</button>
+        <button data-tab="referrals">Referrals</button>
         <button data-tab="forms">Client forms</button>
         <button data-tab="empforms">Employee forms</button>
         <button data-tab="send">Send forms</button>
@@ -116,6 +117,16 @@
       </div>
 
       <!-- Client forms -->
+      <!-- Referrals -->
+      <div id="tabReferrals" hidden>
+        <div class="admin-note">Everyone who has a referral link and what their friends have done. When a friend's first order comes in you also get an email. Send the 30% reward, then press <b>Mark rewarded</b>. Uses the same access key as Cleaning bookings.</div>
+        <div class="admin-toolbar">
+          <span class="admin-count" id="refCount"></span>
+          <button class="btn btn--outline btn--sm" onclick="loadReferrals()">Refresh</button>
+        </div>
+        <div id="refTableWrap"></div>
+      </div>
+
       <div id="tabForms" hidden>
         <div class="admin-note">Share these links with clients, or download / print them. Every completed form is signed on-screen, emails you, and lands in your Customer base above.</div>
         <div id="clientFormsList"></div>
@@ -165,7 +176,7 @@
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=40"></script>
-  <script src="js/components.js?v=74"></script>
+  <script src="js/components.js?v=75"></script>
   <script src="js/cart.js?v=24"></script>
   <script src="js/main.js?v=10"></script>
   <script src="js/forms.js"></script>
@@ -260,11 +271,13 @@
       const tab = btn.dataset.tab;
       document.getElementById("tabBase").hidden = tab !== "base";
       document.getElementById("tabBookings").hidden = tab !== "bookings";
+      document.getElementById("tabReferrals").hidden = tab !== "referrals";
       document.getElementById("tabForms").hidden = tab !== "forms";
       document.getElementById("tabEmpforms").hidden = tab !== "empforms";
       document.getElementById("tabSend").hidden = tab !== "send";
       document.getElementById("tabSettings").hidden = tab !== "settings";
       if (tab === "bookings") initBookings();
+      if (tab === "referrals") loadReferrals();
     });
 
     /* ===== Cleaning bookings ===== */
@@ -289,6 +302,62 @@
       initBookings();
     }
     function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+    /* ===== Referrals ===== */
+    const REF_FN = "/.netlify/functions/referral-admin";
+    const REF_STATUS = {
+      to_reward: "<span style='color:#b06a00;font-weight:600'>Reward owed</span>",
+      check: "<span style='color:#b06a00;font-weight:600'>Enquiry or booking: check it went ahead</span>",
+      rewarded: "<span style='color:#1f7a3d;font-weight:600'>Rewarded</span>",
+      own_link: "Own link, no reward",
+      repeat: "Already counted, no reward"
+    };
+    let _refRows = [];
+    async function loadReferrals() {
+      const wrap = document.getElementById("refTableWrap"), count = document.getElementById("refCount");
+      if (!bookToken()) { wrap.innerHTML = "<p class='admin-note'>Unlock the <b>Cleaning bookings</b> tab with your access key first, then come back here.</p>"; count.textContent = ""; return; }
+      wrap.innerHTML = "<p class='admin-note'>Loading…</p>";
+      let res, j;
+      try {
+        res = await fetch(REF_FN, { headers: { "x-admin-token": bookToken() } });
+        j = await res.json().catch(() => ({}));
+      } catch (e) { wrap.innerHTML = "<p class='admin-note'>Couldn't reach the server. Try again.</p>"; return; }
+      if (res.status === 401) { wrap.innerHTML = "<p class='admin-note'>That access key was rejected. Enter it again on the Cleaning bookings tab.</p>"; return; }
+      if (!res.ok || !j.ok) { wrap.innerHTML = "<p class='admin-note'>Couldn't load referrals.</p>"; return; }
+      const refs = j.referrers || [];
+      _refRows = [];
+      refs.forEach(r => (r.events || []).forEach(e => _refRows.push({ code: r.code, id: e.id })));
+      const owed = _refRows.length ? refs.reduce((n, r) => n + (r.events || []).filter(e => e.status === "to_reward").length, 0) : 0;
+      count.textContent = refs.length + (refs.length === 1 ? " referrer" : " referrers") + " · " + owed + " reward" + (owed === 1 ? "" : "s") + " owed";
+      if (!refs.length) { wrap.innerHTML = "<p class='admin-note'>No referral links yet.</p>"; return; }
+      const rank = (r) => (r.events || []).some(e => e.status === "to_reward") ? 0 : (r.events || []).length ? 1 : 2;
+      refs.sort((a, b) => rank(a) - rank(b) || (b.clicks || 0) - (a.clicks || 0));
+      let i = -1;
+      _refRows = [];
+      const rows = refs.map(r => {
+        const who = `<strong>${esc(r.name || "No name")}</strong><br><small>${esc(r.email)}</small><br><small>${esc(r.code)} · opened ${r.clicks || 0}×</small>`;
+        if (!(r.events || []).length) return `<tr><td>${who}</td><td colspan="4"><small>No orders or bookings yet</small></td></tr>`;
+        return r.events.map(e => {
+          i++; _refRows[i] = { code: r.code, id: e.id };
+          const act = e.status === "rewarded"
+            ? `<button class="btn btn--outline btn--sm" onclick="refAction('undo',${i})">Undo</button>`
+            : (e.status === "to_reward" || e.status === "check") ? `<button class="btn btn--dark btn--sm" onclick="refAction('reward',${i})">Mark rewarded</button>` : "";
+          return `<tr><td>${who}</td>
+            <td>${esc(e.friendName || "Friend")}<br><small>${esc(e.friendEmail)}</small></td>
+            <td>${e.type === "order" ? "Order" : "Enquiry / booking"}${e.amount != null ? "<br><small>$" + Number(e.amount).toFixed(2) + "</small>" : ""}<br><small>${esc(String(e.when || "").slice(0, 10))}</small></td>
+            <td>${REF_STATUS[e.status] || esc(e.status)}</td><td>${act}</td></tr>`;
+        }).join("");
+      }).join("");
+      wrap.innerHTML = `<div style="overflow-x:auto"><table class="db-table"><thead><tr><th>Referrer</th><th>Friend</th><th>What they did</th><th>Status</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    }
+    async function refAction(action, i) {
+      const row = _refRows[i]; if (!row) return;
+      try {
+        const res = await fetch(REF_FN, { method: "POST", headers: { "Content-Type": "application/json", "x-admin-token": bookToken() }, body: JSON.stringify({ action, code: row.code, id: row.id }) });
+        if (!res.ok) throw new Error("failed");
+      } catch (e) { alert("Couldn't save that. Please try again."); return; }
+      loadReferrals();
+    }
+
     async function loadBookings() {
       const wrap = document.getElementById("bookTableWrap");
       const count = document.getElementById("bookCount");

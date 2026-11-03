@@ -20,6 +20,11 @@
     .ref-url input { flex: 1; min-width: 0; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 10px; font-family: var(--font-body); font-size: 0.92rem; background: var(--cream-2, #F3EDE3); color: var(--ink); }
     .ref-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
     .ref-btns [hidden] { display: none; }
+    .ref-prog { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 14px; font-size: 0.92rem; }
+    .ref-prog h4 { font-family: var(--font-head); color: var(--ink); font-size: 1.05rem; margin: 0 0 4px; }
+    .ref-prog p { margin: 0; }
+    .ref-prog ul { list-style: none; margin: 10px 0 0; padding: 0; }
+    .ref-prog li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; padding: 8px 0; border-top: 1px dashed var(--line); }
   </style>
 </head>
 <body data-page="refer-a-friend.html">
@@ -73,6 +78,7 @@
             <a class="btn btn--outline btn--sm" id="refSms">Text message</a>
             <a class="btn btn--outline btn--sm" id="refMail">Email</a>
           </div>
+          <div id="refProgress"></div>
           <p class="form-note" style="margin-top:12px">Your friend has 60 days from opening your link. They need to use the same phone or computer they opened it on, or quote your name when they contact us. You can't use your own link. <a href="#" id="refChange">Use a different email</a></p>
         </div>
       </div>
@@ -112,7 +118,7 @@
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=40"></script>
-  <script src="js/components.js?v=74"></script>
+  <script src="js/components.js?v=75"></script>
   <script src="js/cart.js?v=24"></script>
   <script src="js/main.js?v=10"></script>
   <script>
@@ -120,6 +126,9 @@
       const SITE = "https://samirahomedecor.com.au/";
       const $ = (id) => document.getElementById(id);
       const form = $("refGet"), share = $("refShare"), msg = $("refMsg");
+      const acc = (typeof getAccount === "function") ? getAccount() : null;
+      let saved = null;
+      try { saved = JSON.parse(localStorage.getItem("dm_my_ref") || "null"); } catch (e) {}
 
       function show(code) {
         const url = SITE + "?ref=" + code;
@@ -136,6 +145,8 @@
         }
         form.hidden = true;
         share.hidden = false;
+        const em = (acc && acc.email) || $("refEmail").value.trim() || (saved && saved.email);
+        if (em && typeof renderReferralProgress === "function") renderReferralProgress($("refProgress"), em, $("refName").value.trim());
       }
 
       async function getLink(email, name) {
@@ -176,9 +187,6 @@
       });
 
       // Logged-in members and returning shoppers see their link straight away
-      const acc = (typeof getAccount === "function") ? getAccount() : null;
-      let saved = null;
-      try { saved = JSON.parse(localStorage.getItem("dm_my_ref") || "null"); } catch (e) {}
       if (acc && acc.email) {
         $("refEmail").value = acc.email; $("refName").value = acc.name || "";
         if (saved && saved.email === acc.email && saved.code) show(saved.code);
