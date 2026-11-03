@@ -217,6 +217,8 @@ section{scroll-margin-top:76px}
 .areas[open] summary::after{transform:rotate(180deg)}
 .areas-body{padding:0 16px 16px}
 .areas .areas-intro{color:var(--navy);font-weight:600;font-size:.92rem;margin-bottom:10px}
+.areas-extra{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line)}
+.areas-extra .areas-intro{color:var(--gold-ink)}
 .areas-grid{display:grid;gap:14px 24px}
 @media (min-width:640px){.areas-grid{grid-template-columns:1fr 1fr}}
 @media (min-width:1000px){.areas-grid{grid-template-columns:repeat(4,1fr)}}
@@ -1136,14 +1138,14 @@ const STD_AREAS = [
   ["Throughout",["Doors, handles and frames wiped","General tidy and surfaces reset","Rubbish taken to your bins","Final walk-through check"]]
 ];
 const AREAS = {
-  "Standard clean": { intro: "Every room, every visit:", rooms: STD_AREAS },
-  "Deep clean": { intro: "Everything in a standard clean, plus:", rooms: [
+  "Standard clean": { intro: "Done in every room, on every visit:", rooms: STD_AREAS },
+  "Deep clean": { base: "Standard clean", intro: "Plus these extras:", rooms: [
     ["Kitchen",["Inside oven","Inside fridge","Range hood and filters degreased","Cupboard fronts and handles detailed"]],
     ["Bathrooms and laundry",["Grout scrubbed","Soap scum and limescale removed","Exhaust fans dusted","Shower tracks and seals cleaned"]],
     ["Bedrooms and living areas",["Light fittings and ceiling fans dusted","Behind and under movable furniture","Blinds dusted","Skirting boards detailed"]],
     ["Throughout",["Door frames and architraves wiped","Power points and switches detailed","Window sills and tracks (inside)"]]
   ]},
-  "Spring clean": { intro: "Everything in a standard clean, plus the high and low areas:", rooms: [
+  "Spring clean": { base: "Standard clean", intro: "Plus the high and low areas:", rooms: [
     ["Kitchen",["Cupboard fronts and handles detailed","Range hood exterior degreased","Splashback detailed"]],
     ["Bathrooms and laundry",["Grout scrubbed","Exhaust fans dusted","Shower tracks and seals cleaned"]],
     ["Bedrooms and living areas",["Light fittings and ceiling fans dusted","Blinds dusted","Behind and under movable furniture","High ledges and cornices de-cobwebbed"]],
@@ -1155,18 +1157,24 @@ const AREAS = {
     ["Bedrooms and living areas",["Inside wardrobes and built-ins","Skirting boards, sills and light switches","Light fittings and ceiling fans","Floors vacuumed and mopped"]],
     ["Throughout",["Doors, handles and frames","Window sills and tracks (inside)","Final walk-through check"]]
   ]},
-  "End-of-lease clean": { intro: "Everything in a move-in clean, plus what agents check at the final inspection:", rooms: [
+  "End-of-lease clean": { base: "Move-in clean", intro: "Plus what agents check at the final inspection:", rooms: [
     ["Kitchen",["Oven, racks and trays detailed","Range hood and filters degreased","Dishwasher wiped inside and out"]],
     ["Bathrooms and laundry",["Grout, tiles and shower screens detailed","Exhaust fans","Behind the washing machine space"]],
     ["Bedrooms and living areas",["Wall marks spot-cleaned","Interior windows and tracks","Blinds dusted","Wardrobe tracks and shelves"]],
     ["Throughout",["Light switches and power points","Matched to your agent's checklist","Final walk-through check"]]
   ]}
 };
+function areasGrid(rooms){
+  return `<div class="areas-grid">${rooms.map(([room, items]) => `<div><h4>${room}</h4><ul>${items.map(i => `<li>${i}</li>`).join("")}</ul></div>`).join("")}</div>`;
+}
 function areasHtml(a, label){
   if (!a) return "";
+  // cleans built on another clean list that clean in full first, then the extras
+  const base = a.base && AREAS[a.base];
+  const baseHtml = base ? `<p class="areas-intro">Everything in a ${a.base.toLowerCase()}:</p>${base.base ? areasGrid(AREAS[base.base].rooms) : ""}${areasGrid(base.rooms)}` : "";
   return `<details class="areas"><summary>What we clean${label ? " in a " + label.toLowerCase() : ""}</summary><div class="areas-body">
-    <p class="areas-intro">${a.intro}</p>
-    <div class="areas-grid">${a.rooms.map(([room, items]) => `<div><h4>${room}</h4><ul>${items.map(i => `<li>${i}</li>`).join("")}</ul></div>`).join("")}</div>
+    ${baseHtml}<div class="${base ? "areas-extra" : ""}"><p class="areas-intro">${a.intro}</p>
+    ${areasGrid(a.rooms)}</div>
   </div></details>`;
 }
 
