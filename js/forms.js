@@ -219,7 +219,7 @@
     },
     "membership-registration": {
       title: "Membership Registration Form", cat: "client",
-      intro: "Join Samira Home Decor Rewards.",
+      intro: "Become a Samira Home Decor member.",
       fields: [
         NAME, EMAIL, PHONE, { name: "Birthday", label: "Birthday", type: "date", half: true },
         { sec: "Preferences" },

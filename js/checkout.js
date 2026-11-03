@@ -480,7 +480,7 @@ async function startPayment(e) {
     localStorage.removeItem(CART_KEY);
     localStorage.removeItem("dm_coupon");
     location.href = "order-confirmed.html";
-    // dm_voucher is consumed on order-confirmed (marks it used + awards points)
+    // dm_voucher is consumed on order-confirmed (marks it used)
   }, 800);
 }
 

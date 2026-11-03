@@ -1286,9 +1286,9 @@ function buildMemberModal() {
         </div>
         <div class="rw-benefit">
           <div class="rw-ic">${icPoints}</div>
-          <h4>Earn Points on Every Purchase</h4>
-          <p>100 points = $10 voucher</p>
-          <span class="rw-rate">$1 = 1 point earned</span>
+          <h4>Christmas Vouchers</h4>
+          <p>Shop 3 times a year and get up to $300.</p>
+          <span class="rw-rate">T&amp;Cs apply</span>
         </div>
         <div class="rw-benefit">
           <div class="rw-ic">${icBag}</div>
@@ -1296,7 +1296,6 @@ function buildMemberModal() {
           <p>First to shop new collections.</p>
         </div>
       </div>
-      <div class="rw-bonus"><strong>2× points</strong> on gift purchases &amp; when you book us as your personal shopper for home décor projects.</div>
       <div class="rw-actions">
         <a class="btn rw-btn" href="account.html">Register now</a>
         <a class="btn rw-btn rw-btn--ghost" href="account.html#login">Login</a>
