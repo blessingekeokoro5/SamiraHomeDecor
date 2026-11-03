@@ -60,6 +60,14 @@
     .acc-link { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px; text-align: center; color: var(--ink); }
     .acc-link:hover { background: var(--cream-2); }
     .acc-link .ic { font-size: 1.5rem; }
+    .acc-stylera { display: flex; align-items: center; gap: 16px; margin-top: 24px; padding: 20px 22px; border-radius: var(--radius-sm); background: var(--navy, #0B1F3A); color: #fff; border: 1px solid var(--gold, #C6A15B); }
+    .acc-stylera:hover { filter: brightness(1.08); }
+    .acc-stylera .as-ic { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--gold, #C6A15B); color: var(--navy, #0B1F3A); display: grid; place-items: center; font-size: 1.3rem; }
+    .acc-stylera .as-txt { flex: 1; min-width: 0; }
+    .acc-stylera strong { display: block; font-family: var(--font-head); font-size: 1.2rem; color: #fff; }
+    .acc-stylera .as-txt span { display: block; font-size: 0.88rem; color: #D9DFEA; margin-top: 2px; }
+    .acc-stylera .as-go { flex: none; background: var(--gold, #C6A15B); color: var(--navy, #0B1F3A); font-weight: 600; font-size: 0.85rem; padding: 10px 16px; border-radius: 999px; white-space: nowrap; }
+    @media (max-width: 560px) { .acc-stylera { flex-wrap: wrap; } .acc-stylera .as-go { width: 100%; text-align: center; } }
     .mc-top { display: flex; justify-content: space-between; align-items: center; }
     .mc-brand { font-family: var(--font-head); font-size: 1.6rem; font-weight: 700; letter-spacing: 0.01em; }
     .mc-emblem { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 1.1rem;
@@ -384,6 +392,12 @@
 
         <h3 class="acc-h3">Your orders &amp; receipts</h3>
         <div class="orders-list" id="ordersList">${renderOrders(orders)}</div>
+
+        <a class="acc-stylera" href="stylist.html">
+          <span class="as-ic" aria-hidden="true">✦</span>
+          <span class="as-txt"><strong>Samira Stylera</strong><span>Upload a photo of your room, get pieces picked for it and see them placed in your space.</span></span>
+          <span class="as-go">Style my room →</span>
+        </a>
 
         <div class="acc-links">
           <a class="acc-link" href="wishlist.html"><div class="ic">♡</div><strong>Wishlist</strong><div style="color:var(--muted);font-size:0.85rem">${wishN} saved</div></a>
