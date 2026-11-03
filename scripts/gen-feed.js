@@ -56,7 +56,8 @@ function googleCat(cat) {
   return map[cat] || "Home & Garden > Decor";
 }
 
-const items = PRODUCTS.filter((p) => p && p.id && p.sku).map((p) => {
+// Enquiry-only products (price: null) can't be listed with a price, so they stay out of the feed
+const items = PRODUCTS.filter((p) => p && p.id && p.sku && p.price != null).map((p) => {
   const price = basePrice(p).toFixed(2);
   const desc = (p.desc || p.name).replace(/\s+/g, " ").trim();
   const extras = [];
