@@ -1120,6 +1120,25 @@ const REVIEWS = [
 ];
 /* =============================================================== */
 
+/* This page doesn't load js/components.js, so it reads the shopper's codes itself */
+function getCustomerRef() {
+  let ref = "";
+  try { ref = localStorage.getItem("shd_cust_ref") || ""; } catch (e) {}
+  if (!/^\d{2}(-\d{2}){4}-\d$/.test(ref)) {
+    const d = [];
+    for (let i = 0; i < 11; i++) d.push(Math.floor(Math.random() * 10));
+    ref = `${d[0]}${d[1]}-${d[2]}${d[3]}-${d[4]}${d[5]}-${d[6]}${d[7]}-${d[8]}${d[9]}-${d[10]}`;
+    try { localStorage.setItem("shd_cust_ref", ref); } catch (e) {}
+  }
+  return ref;
+}
+function getReferralCode() {
+  try {
+    const r = JSON.parse(localStorage.getItem("dm_ref") || "null");
+    return (r && Date.now() - r.ts < 60 * 864e5) ? r.code : "";
+  } catch (e) { return ""; }
+}
+
 const SIZES = ["Studio / 1 bed","2 bedrooms","3 bedrooms","4 bedrooms","5 bedrooms","6+ bedrooms"];
 const CLEANS = [
   {name:"Standard / regular clean", short:"Standard clean", tag:"Most booked", desc:"Kitchen, bathrooms, bedrooms and living areas, with dusting, vacuuming and mopping.", prices:[230,280,350,380,420,null], time:"about 2 hours"},
@@ -1424,7 +1443,8 @@ renderLedger();
       ["Name", name], ["Mobile", state.mobile], ["Email", email], ["Suburb", state.suburb],
       ...summary, ["Frequency", FREQ_LABEL[state.freqPct] || "One-off"],
       ["Pets secured", state.petsSecured ? "Yes" : ""], ["Notes", state.notes],
-      ["Customer reference", (typeof getCustomerRef === "function" ? getCustomerRef() : "")],
+      ["Customer reference", getCustomerRef()],
+      ["Referral code", getReferralCode()],
     ].filter(([, v]) => v != null && String(v).trim() !== "");
     const payload = {
       subject: "Samira Home Decor | Cleaning Services — " + cleanName + " quote estimate request",
@@ -1543,7 +1563,8 @@ async function send(form, subject, statusEl, okMsg){
   const fields = [...data.entries()]
     .filter(([k, v]) => v && k !== "form-name" && k !== "bot-field")
     .map(([k, v]) => [k.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase()), v]);
-  try { if (typeof getCustomerRef === "function") fields.push(["Customer reference", getCustomerRef()]); } catch (e) {}
+  fields.push(["Customer reference", getCustomerRef()]);
+  if (getReferralCode()) fields.push(["Referral code", getReferralCode()]);
   const replyto = (data.get("email") || "").toString().trim();
   const name = (data.get("name") || "").toString().trim();
   // 1) Branded Brevo notification to the business (+ customer confirmation when an email is given)

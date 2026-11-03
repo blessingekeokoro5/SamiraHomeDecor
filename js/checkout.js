@@ -438,6 +438,7 @@ async function startPayment(e) {
           discountPct: od.pct || 0,
           voucher: t.voucher || 0, voucherCode: t.voucherCode || "",
           fulfil: window._fulfil || "ship",
+          ref: (typeof getReferralCode === "function" ? getReferralCode() : "") || undefined,
           giftCode: payingByGiftCard ? t.giftCode : undefined,
           customer
         })

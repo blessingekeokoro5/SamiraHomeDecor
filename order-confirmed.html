@@ -36,9 +36,9 @@
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=36"></script>
-  <script src="js/components.js?v=73"></script>
+  <script src="js/components.js?v=74"></script>
   <script src="js/cart.js?v=24"></script>
-  <script src="js/main.js?v=9"></script>
+  <script src="js/main.js?v=10"></script>
   <script>
     (function () {
       try {
@@ -87,6 +87,8 @@
         }
         // Guests can hold a voucher too, so clear it whether or not they're logged in
         if (typeof setVoucher === "function") setVoucher(null);
+        // The referral has been credited: only the first order counts
+        localStorage.removeItem("dm_ref");
       } catch (e) {}
     })();
 

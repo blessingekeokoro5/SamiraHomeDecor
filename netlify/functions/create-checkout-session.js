@@ -29,6 +29,7 @@
 const CATALOGUE = require("./_catalogue.json");
 const { loadGiftCard, redeemGiftCard, normaliseCode } = require("./_giftcards");
 const { emailShop } = require("./_notify");
+const { referralNote } = require("./_referrals");
 
 // Constructed lazily: the Stripe client throws if the key is missing, and we'd
 // rather return a clear error than have the whole function fail to load.
@@ -326,6 +327,7 @@ exports.handler = async (event) => {
       const remaining = await redeemGiftCard(card, orderTotal);
       const orderNo = "DM-" + Math.floor(100000 + Math.random() * 899999);
 
+      const refNote = body.ref ? await referralNote(body.ref, customer.email) : "";
       await emailShop(
         `Samira Home Decor — new order ${orderNo} paid by gift card ($${orderTotal.toFixed(2)})`,
         `Order: ${orderNo}\n` +
@@ -336,6 +338,7 @@ exports.handler = async (event) => {
         `\n\nSubtotal: $${subtotal.toFixed(2)}\nDiscount: -$${discount.toFixed(2)}\n` +
         `Voucher: -$${voucher.toFixed(2)}\nShipping: $${ship.amount.toFixed(2)} (${ship.label})\n\n` +
         `Customer: ${customer.name || ""}\nEmail: ${customer.email || ""}\nPhone: ${customer.phone || ""}\n` +
+        (refNote ? `REFERRED BY: ${refNote}\n` : "") +
         `Deliver to: ${[customer.address, customer.suburb, customer.postcode, customer.country].filter(Boolean).join(", ")}\n`
       );
 
@@ -409,6 +412,7 @@ exports.handler = async (event) => {
         discount: String(discount),
         voucher: String(voucher),
         voucher_code: String(body.voucherCode || ""),
+        ...(/^[A-Z0-9]{8}$/.test(body.ref || "") ? { ref: body.ref } : {}),
         shipping: String(ship.amount),
         // Read back by the webhook to issue the cards once payment succeeds.
         ...(purchasedCards.length ? { gift_cards: JSON.stringify(purchasedCards).slice(0, 500) } : {}),

@@ -15,6 +15,12 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
   <link rel="stylesheet" href="css/styles.css?v=49">
+  <style>
+    .ref-url { display: flex; gap: 8px; }
+    .ref-url input { flex: 1; min-width: 0; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 10px; font-family: var(--font-body); font-size: 0.92rem; background: var(--cream-2, #F3EDE3); color: var(--ink); }
+    .ref-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .ref-btns [hidden] { display: none; }
+  </style>
 </head>
 <body data-page="refer-a-friend.html">
   <div id="site-header"></div>
@@ -40,10 +46,43 @@
     </div>
   </section>
 
+  <!-- Shareable link -->
+  <section class="section" id="my-link">
+    <div class="container" style="max-width:720px">
+      <div class="section-head reveal"><span class="eyebrow">Your link</span><h2>Share your personal link</h2>
+        <p>Send it to friends however you like. When a friend opens it and then books a service or makes their first purchase, you get 30% off your next service or order.</p></div>
+      <div class="form-card reveal">
+        <form id="refGet" novalidate>
+          <div class="field-row">
+            <div class="field"><label for="refName">Your name</label><input id="refName" autocomplete="name"></div>
+            <div class="field"><label for="refEmail">Your email *</label><input id="refEmail" type="email" autocomplete="email" required></div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Get my link</button>
+          <p class="form-note" id="refMsg" role="status" style="text-align:center;margin-top:10px">We use your email to know where to send your reward.</p>
+        </form>
+        <div id="refShare" hidden>
+          <label for="refUrl" style="font-weight:600;display:block;margin-bottom:8px">Your personal link</label>
+          <div class="ref-url">
+            <input id="refUrl" readonly>
+            <button type="button" class="btn btn--primary btn--sm" id="refCopy">Copy link</button>
+          </div>
+          <div class="ref-btns">
+            <button type="button" class="btn btn--dark btn--sm" id="refNative" hidden>Share</button>
+            <a class="btn btn--outline btn--sm" id="refWa" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn--outline btn--sm" id="refFb" target="_blank" rel="noopener">Facebook</a>
+            <a class="btn btn--outline btn--sm" id="refSms">Text message</a>
+            <a class="btn btn--outline btn--sm" id="refMail">Email</a>
+          </div>
+          <p class="form-note" style="margin-top:12px">Your friend has 60 days from opening your link. They need to use the same phone or computer they opened it on, or quote your name when they contact us. You can't use your own link. <a href="#" id="refChange">Use a different email</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Referral form -->
   <section class="section bg-cream2">
     <div class="container" style="max-width:720px">
-      <div class="section-head reveal"><span class="eyebrow">Refer now</span><h2>Send your referral</h2>
+      <div class="section-head reveal"><span class="eyebrow">Or let us do it</span><h2>Ask us to contact your friend</h2>
         <p>Refer one person at a time. Fields marked * are required.</p></div>
       <div class="form-card reveal">
         <form data-demo-form data-form-name="Refer a friend" data-success-msg="Thank you for the referral! We've noted it, once your friend books or shops with us, we'll send your 30% reward. 💛">
@@ -73,8 +112,79 @@
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=36"></script>
-  <script src="js/components.js?v=73"></script>
+  <script src="js/components.js?v=74"></script>
   <script src="js/cart.js?v=24"></script>
-  <script src="js/main.js?v=9"></script>
+  <script src="js/main.js?v=10"></script>
+  <script>
+    (function () {
+      const SITE = "https://samirahomedecor.com.au/";
+      const $ = (id) => document.getElementById(id);
+      const form = $("refGet"), share = $("refShare"), msg = $("refMsg");
+
+      function show(code) {
+        const url = SITE + "?ref=" + code;
+        const text = "I love Samira Home Decor and thought you would too. Have a look: ";
+        const enc = encodeURIComponent(text + url);
+        $("refUrl").value = url;
+        $("refWa").href = "https://wa.me/?text=" + enc;
+        $("refFb").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
+        $("refSms").href = "sms:?&body=" + enc;
+        $("refMail").href = "mailto:?subject=" + encodeURIComponent("You'll love Samira Home Decor") + "&body=" + enc;
+        if (navigator.share) {
+          $("refNative").hidden = false;
+          $("refNative").onclick = () => navigator.share({ title: "Samira Home Decor", text, url }).catch(() => {});
+        }
+        form.hidden = true;
+        share.hidden = false;
+      }
+
+      async function getLink(email, name) {
+        msg.textContent = "Getting your link…";
+        try {
+          const res = await fetch("/.netlify/functions/referral-link", {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, name })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.code) throw new Error(data.error || "failed");
+          try { localStorage.setItem("dm_my_ref", JSON.stringify({ email, code: data.code })); } catch (e) {}
+          show(data.code);
+        } catch (e) {
+          msg.textContent = "Sorry, we couldn't get your link just now. Please try again in a moment.";
+        }
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = $("refEmail").value.trim();
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { msg.textContent = "Please enter a valid email address."; return; }
+        getLink(email, $("refName").value.trim());
+      });
+
+      $("refCopy").addEventListener("click", async () => {
+        const url = $("refUrl").value;
+        try { await navigator.clipboard.writeText(url); }
+        catch (e) { $("refUrl").select(); try { document.execCommand("copy"); } catch (e2) {} }
+        showToast("Link copied ✦");
+      });
+
+      $("refChange").addEventListener("click", (e) => {
+        e.preventDefault();
+        try { localStorage.removeItem("dm_my_ref"); } catch (err) {}
+        share.hidden = true; form.hidden = false;
+        msg.textContent = "We use your email to know where to send your reward.";
+      });
+
+      // Logged-in members and returning shoppers see their link straight away
+      const acc = (typeof getAccount === "function") ? getAccount() : null;
+      let saved = null;
+      try { saved = JSON.parse(localStorage.getItem("dm_my_ref") || "null"); } catch (e) {}
+      if (acc && acc.email) {
+        $("refEmail").value = acc.email; $("refName").value = acc.name || "";
+        if (saved && saved.email === acc.email && saved.code) show(saved.code);
+        else getLink(acc.email, acc.name || "");
+      } else if (saved && saved.code) show(saved.code);
+    })();
+  </script>
 </body>
 </html>

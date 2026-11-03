@@ -533,6 +533,22 @@ function getCustomerRef() {
   }
   return ref;
 }
+/* Referral links: remember who sent this shopper (?ref=CODE) for 60 days, so
+   their first order or booking can be credited to the friend who shared it. */
+const REF_KEY = "dm_ref", REF_DAYS = 60;
+function captureReferral() {
+  try {
+    const code = (new URLSearchParams(location.search).get("ref") || "").toUpperCase();
+    if (/^[A-Z0-9]{8}$/.test(code)) localStorage.setItem(REF_KEY, JSON.stringify({ code, ts: Date.now() }));
+  } catch (e) {}
+}
+function getReferralCode() {
+  try {
+    const r = JSON.parse(localStorage.getItem(REF_KEY) || "null");
+    return (r && Date.now() - r.ts < REF_DAYS * 864e5) ? r.code : "";
+  } catch (e) { return ""; }
+}
+captureReferral();
 function setCustomerRef() {
   const el = document.getElementById("custRef");
   if (el) el.textContent = getCustomerRef();

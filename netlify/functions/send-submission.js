@@ -22,6 +22,8 @@
      { subject, fields:[[label,value],...], replyto, name }
    ============================================================ */
 
+const { referralNote } = require("./_referrals");
+
 const BREVO_API_KEY  = process.env.BREVO_API_KEY || "";
 const SENDER_EMAIL   = process.env.SENDER_EMAIL || "hello@samirahomedecor.com.au";
 const SENDER_NAME    = process.env.SENDER_NAME || "Samira Home Decor";
@@ -229,6 +231,13 @@ exports.handler = async (event) => {
     // Derive customer email / name from the submitted fields if not given explicitly
     const replyto = data.replyto || (fields.find((p) => /e-?mail/i.test(p[0])) || [])[1] || "";
     const name = data.name || (fields.find((p) => /name/i.test(p[0])) || [])[1] || "";
+
+    // Booked or enquired through a friend's referral link: show who sent them
+    const refField = fields.find((p) => p[0] === "Referral code");
+    if (refField) {
+      const note = await referralNote(String(refField[1]), replyto);
+      if (note) fields.push(["Referred by (30% reward)", note]);
+    }
 
     // ---- 1) Business notification (branded) ----
     const rows = fields.map(([k, v]) => `

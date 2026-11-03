@@ -145,6 +145,7 @@ function initForms() {
 
       const data = collectForm(form);
       try { if (typeof getCustomerRef === "function") data.push(["Customer reference", getCustomerRef()]); } catch (e) {}
+      try { if (typeof getReferralCode === "function" && getReferralCode()) data.push(["Referral code", getReferralCode()]); } catch (e) {}
       const subject = formSubject(form);
       let ok = true;
       try { ok = await deliverForm(data, subject); } catch (err) { ok = false; }

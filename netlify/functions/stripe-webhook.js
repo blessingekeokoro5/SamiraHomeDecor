@@ -20,6 +20,8 @@
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const { issueGiftCard } = require("./_giftcards");
+const { referralNote } = require("./_referrals");
+const { emailShop } = require("./_notify");
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 
 function money(cents, cur) {
@@ -99,6 +101,16 @@ exports.handler = async (event) => {
         });
         await emailOrder(session, lineItems.data);
         console.log("Paid order captured:", session.id, money(session.amount_total, session.currency));
+
+        // A friend's referral link was used: tell the shop who to reward
+        if (session.metadata && session.metadata.ref) {
+          const buyer = (session.customer_details && session.customer_details.email) || "";
+          const note = await referralNote(session.metadata.ref, buyer);
+          await emailShop(
+            "Samira Home Decor — referred order, 30% reward to send",
+            `Stripe session: ${session.id}\nCustomer: ${buyer}\nOrder total: ${money(session.amount_total, session.currency)}\n\nReferred by: ${note}\n\nPlease check this is the customer's first purchase, then send the referrer their 30% reward.`
+          );
+        }
 
         // Gift cards become spendable only now, having actually been paid for.
         // issueGiftCard is idempotent, so a replayed webhook can't double them.
