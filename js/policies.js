@@ -191,6 +191,7 @@ const POLICIES = {
 
       <h3>5. Services &amp; bookings</h3>
       <p>Samira Stylera recommendations are provided as a guide only. Custom hampers, personalised gifts and gift cards are made to order.</p>
+      <p>Member Christmas Vouchers are offered under their own terms. See <a href="christmas-vouchers.html">how Christmas Vouchers work</a>.</p>
 
       <h3>6. External links</h3>
       <p>Our site may link to third-party sites and services (for example payment providers, delivery partners and social media). We are not responsible for the content or practices of third-party websites.</p>
