@@ -142,7 +142,30 @@ function showResults(room) {
   stage.innerHTML = `
     <div class="reveal">
       <div class="split" style="gap:36px;align-items:flex-start">
-        <div class="upload-preview"><img src="${uploadedImage}" alt="Your room"></div>
+        <div class="room-composer">
+          <div class="rc-canvas" id="rcCanvas">
+            <img src="${uploadedImage}" alt="Your room" id="rcRoom" draggable="false">
+          </div>
+          <div class="rc-bar" id="rcBar" hidden>
+            <button type="button" onclick="rcScale(0.85)" aria-label="Make smaller">－ Smaller</button>
+            <button type="button" onclick="rcScale(1.18)" aria-label="Make bigger">＋ Bigger</button>
+            <button type="button" onclick="rcFlip()">⇋ Flip</button>
+            <button type="button" onclick="rcFront()">⬆ To front</button>
+            <button type="button" onclick="rcRemove()" class="rc-del">✕ Remove</button>
+          </div>
+          <p class="rc-help"><strong>See it in your room:</strong> tap a piece to place it on your photo, then drag to move it and drag the corner to resize.</p>
+          <div class="rc-tray" id="rcTray">${recs.map(p => `
+            <button type="button" class="rc-thumb" onclick="rcPlace('${p.id}')" title="Place ${p.name.replace(/"/g, "&quot;")} in your room">
+              <img src="${p.img || ("assets/products/" + p.id + ".jpg")}" alt="" data-pid="${p.id}" data-i="${p.img ? 99 : 0}" onerror="nextProdImg(this)">
+              <span>${p.name}</span>
+            </button>`).join("")}
+          </div>
+          <div class="rc-actions">
+            <label class="rc-blend"><input type="checkbox" id="rcBlend" checked onchange="rcBlendToggle()"> Blend white backgrounds</label>
+            <button type="button" class="btn btn--outline btn--sm" onclick="rcClear()">Clear pieces</button>
+            <button type="button" class="btn btn--dark btn--sm" onclick="rcSave()">⤓ Save my styled room</button>
+          </div>
+        </div>
         <div>
           <span class="eyebrow">Analysis complete</span>
           <h2 style="margin-bottom:12px">We styled your ${room.label.toLowerCase()}</h2>
@@ -169,8 +192,111 @@ function showResults(room) {
 
   window._recIds = recs.map(p => p.id);
   renderProducts("recGrid", recs);
+  rcInit();
   initReveal();
   showToast(`Styled your ${room.label.toLowerCase()} ✦`);
+}
+
+/* ---- Room composer: place suggested pieces on the member's own photo ----
+   Free, on-device mood board (no AI cost). Positions/sizes are kept in % of
+   the photo so they stay put when the screen is resized. White product-photo
+   backgrounds are hidden with mix-blend-mode: multiply. */
+let rcSel = null, rcZ = 1;
+
+function rcInit() {
+  const canvas = document.getElementById("rcCanvas");
+  if (!canvas) return;
+  canvas.addEventListener("pointerdown", (e) => { if (e.target === canvas || e.target.id === "rcRoom") rcSelect(null); });
+}
+
+function rcPlace(id) {
+  const p = findProduct(id), canvas = document.getElementById("rcCanvas");
+  if (!p || !canvas) return;
+  const n = canvas.querySelectorAll(".rc-item").length;
+  const el = document.createElement("div");
+  el.className = "rc-item";
+  el.dataset.pid = id;
+  // cascade new pieces so they don't land exactly on top of each other
+  el.style.left = (34 + (n % 4) * 6) + "%";
+  el.style.top = (40 + (n % 3) * 6) + "%";
+  el.style.width = "30%";
+  el.style.zIndex = ++rcZ;
+  el.innerHTML = `<img src="${p.img || ("assets/products/" + p.id + ".jpg")}" alt="${p.name.replace(/"/g, "&quot;")}" draggable="false" data-pid="${p.id}" data-i="${p.img ? 99 : 0}" onerror="nextProdImg(this)">
+    <button type="button" class="rc-x" aria-label="Remove">✕</button><span class="rc-handle" aria-hidden="true"></span>`;
+  canvas.appendChild(el);
+  rcBind(el);
+  rcSelect(el);
+  rcBlendToggle();
+}
+
+function rcBind(el) {
+  const canvas = document.getElementById("rcCanvas");
+  el.querySelector(".rc-x").addEventListener("click", (e) => { e.stopPropagation(); rcSelect(el); rcRemove(); });
+  el.addEventListener("pointerdown", (e) => {
+    if (e.target.classList.contains("rc-x")) return;
+    e.preventDefault();
+    rcSelect(el);
+    const resizing = e.target.classList.contains("rc-handle");
+    const cr = canvas.getBoundingClientRect();
+    const start = { x: e.clientX, y: e.clientY, left: parseFloat(el.style.left), top: parseFloat(el.style.top), width: parseFloat(el.style.width) };
+    el.setPointerCapture(e.pointerId);
+    const move = (ev) => {
+      const dx = (ev.clientX - start.x) / cr.width * 100, dy = (ev.clientY - start.y) / cr.height * 100;
+      if (resizing) el.style.width = Math.max(8, Math.min(95, start.width + dx)) + "%";
+      else { el.style.left = Math.max(-20, Math.min(100, start.left + dx)) + "%"; el.style.top = Math.max(-20, Math.min(100, start.top + dy)) + "%"; }
+    };
+    const up = () => { el.removeEventListener("pointermove", move); el.removeEventListener("pointerup", up); el.removeEventListener("pointercancel", up); };
+    el.addEventListener("pointermove", move);
+    el.addEventListener("pointerup", up);
+    el.addEventListener("pointercancel", up);
+  });
+}
+
+function rcSelect(el) {
+  document.querySelectorAll(".rc-item.sel").forEach(x => x.classList.remove("sel"));
+  rcSel = el;
+  if (el) el.classList.add("sel");
+  const bar = document.getElementById("rcBar");
+  if (bar) bar.hidden = !el;
+}
+function rcScale(f) { if (rcSel) rcSel.style.width = Math.max(8, Math.min(95, parseFloat(rcSel.style.width) * f)) + "%"; }
+function rcFlip() { if (rcSel) rcSel.classList.toggle("flip"); }
+function rcFront() { if (rcSel) rcSel.style.zIndex = ++rcZ; }
+function rcRemove() { if (rcSel) { rcSel.remove(); rcSelect(null); } }
+function rcClear() { document.querySelectorAll(".rc-item").forEach(x => x.remove()); rcSelect(null); }
+function rcBlendToggle() {
+  const on = !document.getElementById("rcBlend") || document.getElementById("rcBlend").checked;
+  const c = document.getElementById("rcCanvas");
+  if (c) c.classList.toggle("blend", on);
+}
+
+/* Flatten the photo + placed pieces into a PNG the member can keep */
+function rcSave() {
+  const room = document.getElementById("rcRoom"), canvas = document.getElementById("rcCanvas");
+  if (!room || !canvas) return;
+  const W = room.naturalWidth, H = room.naturalHeight, k = W / canvas.clientWidth;
+  const cv = document.createElement("canvas");
+  cv.width = W; cv.height = H;
+  const ctx = cv.getContext("2d");
+  ctx.drawImage(room, 0, 0, W, H);
+  const blend = canvas.classList.contains("blend");
+  [...canvas.querySelectorAll(".rc-item")].sort((a, b) => a.style.zIndex - b.style.zIndex).forEach(el => {
+    const img = el.querySelector("img");
+    if (!img || !img.naturalWidth) return;
+    const x = el.offsetLeft * k, y = el.offsetTop * k, w = img.offsetWidth * k, h = img.offsetHeight * k;
+    ctx.save();
+    ctx.globalCompositeOperation = blend ? "multiply" : "source-over";
+    if (el.classList.contains("flip")) { ctx.translate(x + w, y); ctx.scale(-1, 1); ctx.drawImage(img, 0, 0, w, h); }
+    else ctx.drawImage(img, x, y, w, h);
+    ctx.restore();
+  });
+  try {
+    const a = document.createElement("a");
+    a.href = cv.toDataURL("image/jpeg", 0.9);
+    a.download = "my-styled-room-samira-home-decor.jpg";
+    document.body.appendChild(a); a.click(); a.remove();
+    showToast("Saved your styled room ✦");
+  } catch (e) { showToast("Sorry, that image couldn't be saved"); }
 }
 
 function addAllRecs() {
