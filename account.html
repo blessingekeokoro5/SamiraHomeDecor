@@ -454,16 +454,28 @@
       { name: "Gold", min: 3500, amt: 200 },
       { name: "Platinum", min: 5000, amt: 300 }
     ];
+    // Only home decor items count: gift cards, vouchers, hampers, gift items and packaging don't.
+    function xmasIsDecor(it) {
+      return !it.giftCard && it.cat !== "Packaging" && !/gift|hamper|voucher/i.test((it.name || "") + " " + (it.cat || ""));
+    }
+    // An order's value after discounts and shipping, in proportion to its home decor items
+    function xmasValue(o) {
+      const net = (o.total || 0) - (o.shipping || 0);
+      const items = o.items || [];
+      const line = (it) => (it.price || 0) * (it.qty || 1);
+      const all = items.reduce((t, it) => t + line(it), 0);
+      if (!all) return net;
+      return net * items.filter(xmasIsDecor).reduce((t, it) => t + line(it), 0) / all;
+    }
     function xmasHtml(orders) {
       const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Australia/Adelaide" }));
       const yr = now.getFullYear();
       const from = yr + "-01-01", to = yr + "-12-24";
       const q = (orders || []).filter(o => {
         const d = (o.date || "").slice(0, 10);
-        const net = (o.total || 0) - (o.shipping || 0);
-        return d >= from && d <= to && net >= 100 && !o.refunded && !o.cancelled;
+        return d >= from && d <= to && xmasValue(o) >= 100 && !o.refunded && !o.cancelled;
       });
-      const n = q.length, total = q.reduce((t, o) => t + (o.total || 0) - (o.shipping || 0), 0);
+      const n = q.length, total = q.reduce((t, o) => t + xmasValue(o), 0);
       const tier = n >= 3 ? XMAS_TIERS.filter(t => total >= t.min).pop() : null;
       const next = XMAS_TIERS.find(t => t.min > total && t.min > 0);
       const closed = (now.getMonth() === 11 && now.getDate() > 24);
@@ -484,7 +496,7 @@
           <div class="xm-spend"><span class="xm-label">Combined total</span> <strong>${money(total)}</strong></div>
           <div class="xm-track"><div class="xm-bar"><span style="width:${pct}%"></span></div>${marks}</div>
           <p class="xm-msg">${msg}</p>
-          <p class="xm-fine">Orders of $100+ (after discounts, excluding shipping) placed 1 Jan – 24 Dec count. Cancelled or refunded orders don't. Shows orders made on this device; your final tier is confirmed by us. <a href="christmas-vouchers.html">How Christmas vouchers work</a></p>
+          <p class="xm-fine">Orders with $100+ of home decor items (after discounts, excluding shipping) placed 1 Jan – 24 Dec count. Gift cards, vouchers, gift items and packaging don't, and neither do cancelled or refunded orders. Shows orders made on this device; your final tier is confirmed by us. <a href="christmas-vouchers.html">How Christmas vouchers work</a></p>
         </div>`;
     }
     function memberRewardsHtml(acc) {
@@ -509,7 +521,7 @@
           <div class="ar-card">
             <div class="ar-ic">🎄</div>
             <h4>Christmas vouchers</h4>
-            <p>Shop 3 or more times in the year and earn a Christmas voucher of up to $300. T&amp;Cs apply.</p>
+            <p>Shop our home decor 3 or more times in the year and earn a Christmas voucher of up to $300. T&amp;Cs apply.</p>
             <a class="btn btn--dark btn--sm" href="christmas-vouchers.html">How it works</a>
           </div>
         </div>
