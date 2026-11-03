@@ -231,7 +231,7 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=40"></script>
+  <script src="js/data.js?v=41"></script>
   <script src="js/components.js?v=75"></script>
   <script src="js/cart.js?v=24"></script>
   <script src="js/main.js?v=10"></script>
@@ -623,7 +623,7 @@
               <li><span>Category</span><span>${p.cat}</span></li>
               <li><span>SKU</span><span>${p.sku || "DM-" + p.id.toUpperCase()}</span></li>
               ${p.custom ? `<li><span>Made to order</span><span style="color:var(--rose-deep)">Customisable · allow extra time</span></li>` : ""}
-              <li><span>Availability</span><span style="color:var(--forest)">${p.price == null ? "Coming out soon" : "In stock"}</span></li>
+              <li><span>Availability</span><span style="color:var(--forest)">${p.tag === "Coming Out Soon" ? "Coming out soon" : p.price == null ? "On enquiry" : "In stock"}</span></li>
             </ul>
             ${p.sizes && p.sizes.length ? (p.cat === "Packaging" ? `<div class="pdp-sizes">
               <div class="pdp-size-label">Sizes available</div>
@@ -638,14 +638,14 @@
             </div>` : ""}
             ${p.cat === "Packaging" ? `<div class="pdp-buy">
               <a class="btn btn--primary" href="https://wa.me/61451609398?text=${encodeURIComponent('Hi Samira Home Decor, I\'d like details and pricing for: ' + p.name)}" target="_blank" rel="noopener">💬 Enquire on WhatsApp</a>
-              <a class="btn btn--ghost" href="packaging.html#bulk">Request a bulk quote</a>
+              <a class="btn btn--outline" href="packaging.html#bulk">Request a bulk quote</a>
             </div>` : `<div class="pdp-buy">
               <div class="qty">
                 <button onclick="setPdpQty(-1)">−</button><span id="pdpQty">1</span><button onclick="setPdpQty(1)">+</button>
               </div>
               <button class="btn btn--primary" onclick="addToCart('${p.id}', pdpQty, pdpColour, pdpSize, pdpSizePrice)">Add to cart</button>
             </div>`}
-            ${p.price == null ? `<p style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)"><strong style="color:var(--ink)">Coming out soon.</strong> This kit is on its way and product photos are being uploaded. Enquire now to hear first when it's ready.</p>` : `<div style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)">
+            ${p.price == null ? (p.tag !== "Coming Out Soon" ? "" : `<p style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)"><strong style="color:var(--ink)">Coming out soon.</strong> This kit is on its way and product photos are being uploaded. Enquire now to hear first when it's ready.</p>`) : `<div style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)">
               ${p.lead
                 ? `<span style="display:inline-block;font-size:.78rem;font-weight:600;color:#8a7f77;background:#F4EFE6;padding:5px 12px;border-radius:20px">⏳ Made to order</span> <span style="color:var(--body)">Ships in <strong style="color:var(--ink)">${p.lead}</strong></span>`
                 : `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">✓ Ready to ship</span> <span style="color:var(--body)">Leaves our warehouse in <strong style="color:var(--ink)">1 to 2 business days</strong></span>`}
@@ -676,7 +676,7 @@
               <button type="button" onclick="copyProductLink(this)"><span aria-hidden="true">🔗</span> <span class="cl-lbl">Copy link</span></button>
               <button type="button" onclick="toggleWishlist('${p.id}', this)">${saved ? "♥ Saved" : "♡ Save"}</button>
             </div>
-            <div class="pdp-social">🛒 <span><strong>Other people want this.</strong> Over <b>${cartWant(p)}</b> people have this in their carts right now.</span></div>
+            ${p.cat === "Packaging" ? "" : `<div class="pdp-social">🛒 <span><strong>Other people want this.</strong> Over <b>${cartWant(p)}</b> people have this in their carts right now.</span></div>`}
             ${productAccordion(p)}
             <a class="pdp-trade" href="trade.html">🧳 <span><strong>Shopping for a business?</strong> Join our Trade &amp; Commercial Program for exclusive trade pricing →</span></a>
           </div>
