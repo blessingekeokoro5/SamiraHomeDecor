@@ -118,7 +118,7 @@ function welcomeHtml(name, code, discountLabel) {
       <div style="display:inline-block;background:${IVORY};border:2px dashed ${GOLD};border-radius:12px;padding:16px 34px;font:bold 26px/1 Georgia,serif;letter-spacing:4px;color:${NAVY}">${esc(code)}</div>
     </div>
     <div style="text-align:center;margin:18px 0">${gBtn(S + "/shop.html", "Claim your discount now")}</div>
-    <p style="color:${TAUPE};font-size:12px;text-align:center;line-height:1.6">Enter <strong>${esc(code)}</strong> at checkout to apply it to your first order. Applies to your items (excludes shipping). One use per customer · T&amp;Cs apply.</p>
+    <p style="color:${TAUPE};font-size:12px;text-align:center;line-height:1.6">Enter <strong>${esc(code)}</strong> in your cart to apply it to your order. Applies to your items (excludes shipping). One use per customer · T&amp;Cs apply.</p>
     <!-- subscriber perks -->
     <div style="background:${IVORY};border-radius:14px;padding:18px 22px;margin:22px 0">
       <div style="font:bold 17px Georgia,serif;color:${NAVY};text-align:center;margin-bottom:10px">As a subscriber, you'll also enjoy</div>
@@ -146,9 +146,9 @@ function welcomeHtml(name, code, discountLabel) {
       <tr>
         <td width="160" style="padding:0"><img src="${A}products/bt01-5.webp" width="160" alt="Samira Home Decor product" style="display:block;width:160px;height:172px;object-fit:cover"></td>
         <td style="padding:16px 18px;vertical-align:middle">
-          <div style="font:bold 19px Georgia,serif;color:${NAVY}">Refer a friend, get 40% off</div>
-          <div style="font-weight:bold;color:${GOLD};font-size:14px;margin:3px 0">40% off your next order</div>
-          <div style="color:${TAUPE};font-size:12.5px;margin:4px 0 12px;line-height:1.5">When your friend books a service or makes their first purchase, you get 40% off your next service or order.</div>
+          <div style="font:bold 19px Georgia,serif;color:${NAVY}">Refer a friend, get 30% off</div>
+          <div style="font-weight:bold;color:${GOLD};font-size:14px;margin:3px 0">30% off your next order</div>
+          <div style="color:${TAUPE};font-size:12.5px;margin:4px 0 12px;line-height:1.5">When your friend books a service or makes their first purchase, you get 30% off your next service or order.</div>
           ${gBtn(S + "/refer-a-friend.html", "Refer a friend")}
         </td>
       </tr>
@@ -272,7 +272,7 @@ exports.handler = async (event) => {
           to: [{ email: replyto, name: name || undefined }],
           replyTo: { email: BUSINESS_EMAIL, name: SENDER_NAME },
           subject: data.customerSubject || ((data.discountLabel || "Your welcome") + " — Samira Home Decor"),
-          htmlContent: welcomeHtml(name, data.welcomeCode, data.discountLabel || "10% off your first order"),
+          htmlContent: welcomeHtml(name, data.welcomeCode, data.discountLabel || "$10 welcome voucher"),
         });
       } catch (e) { /* best effort */ }
     } else if (isEmail(replyto)) {

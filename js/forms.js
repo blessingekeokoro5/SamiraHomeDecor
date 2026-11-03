@@ -221,7 +221,7 @@
       title: "Membership Registration Form", cat: "client",
       intro: "Become a Samira Home Decor member.",
       fields: [
-        NAME, EMAIL, PHONE, { name: "Birthday", label: "Birthday", type: "date", half: true },
+        NAME, EMAIL, PHONE,
         { sec: "Preferences" },
         { name: "Interests", label: "What are you most interested in?", type: "textarea" },
         { name: "How did you hear", label: "How did you hear about us?", type: "select", options: ["Google", "Instagram", "Facebook", "Referral", "In store", "Other"], half: true },

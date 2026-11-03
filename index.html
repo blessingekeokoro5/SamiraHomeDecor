@@ -314,9 +314,9 @@
   <div id="site-footer"></div>
 
   <script src="js/data.js?v=36"></script>
-  <script src="js/components.js?v=71"></script>
-  <script src="js/cart.js?v=23"></script>
-  <script src="js/main.js?v=8"></script>
+  <script src="js/components.js?v=73"></script>
+  <script src="js/cart.js?v=24"></script>
+  <script src="js/main.js?v=9"></script>
   <script>
     // Black Friday → Cyber Monday hero banner (auto, Adelaide time, from js/data.js)
     try { if (typeof blackFridayOn === "function" && blackFridayOn()) { var _bf = document.getElementById("bfBanner"); if (_bf) _bf.style.display = "flex"; } } catch (e) {}
@@ -399,7 +399,7 @@
       const track = document.getElementById("memberTrack");
       if (!track) return;
       const items = [
-        { cls: "gold", ic: "10%", t: "Off your first order", s: "Members save" },
+        { cls: "gold", ic: "$10", t: "Welcome voucher", s: "When you join free" },
         { ic: "🚚", t: "Free shipping over $3,500", s: "Across Australia &amp; select regions" },
         { ic: "🔒", t: "Secure checkout", s: "Stripe · Card · Apple &amp; Google Pay" },
         { ic: "↩️", t: "30-day returns", s: "Shop with confidence" },

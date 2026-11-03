@@ -161,7 +161,7 @@ function initForms() {
   });
 
   // Newsletter (footer): same flow as the welcome popup — adds the shopper to
-  // the Brevo list, emails their WELCOME10 code, applies it, and remembers the
+  // the Brevo list, emails their $10 voucher code, applies it, and remembers the
   // email so the "come back" reminder can include what they browsed.
   document.querySelectorAll("form[data-newsletter]").forEach(form => {
     form.addEventListener("submit", async (e) => {
@@ -171,20 +171,19 @@ function initForms() {
       try {
         localStorage.setItem("shd_sub_email", email);
         localStorage.setItem("shd_news", "subscribed");
-        localStorage.setItem("dm_coupon", "WELCOME10");
       } catch (e2) {}
-      window._coupon = "WELCOME10";
+      if (typeof setVoucher === "function" && typeof WELCOME_VOUCHER !== "undefined") setVoucher(WELCOME_VOUCHER);
       form.reset();
-      showToast("You're on the list ✦ Your 10% code WELCOME10 is on its way");
+      showToast("You're on the list ✦ Your $10 voucher code is on its way");
       try {
         await fetch("/.netlify/functions/send-submission", {
           method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
-            subject: "New newsletter subscriber — 10% welcome",
-            fields: [["Email", email], ["Source", "Footer sign-up"], ["Code issued", "WELCOME10 (10% off first order)"]],
+            subject: "New newsletter subscriber — $10 welcome voucher",
+            fields: [["Email", email], ["Source", "Footer sign-up"], ["Code issued", "WELCOME10 ($10 voucher)"]],
             replyto: email, name: "",
-            welcomeCode: "WELCOME10", discountLabel: "10% off your first order",
-            customerSubject: "Your 10% welcome code — Samira Home Decor",
+            welcomeCode: "WELCOME10", discountLabel: "$10 welcome voucher",
+            customerSubject: "Your $10 welcome voucher — Samira Home Decor",
           }),
         });
       } catch (e3) { /* code still works on-site even if the email send hiccups */ }

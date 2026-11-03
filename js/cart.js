@@ -60,23 +60,17 @@ function getCampaign() {
   return { active: Date.now() < ends, percent: c.percent, label: c.label || "Sale", headline: c.headline, endsAt: ends };
 }
 
-/* Best discount = largest of member coupon (10%), live flash-sale %, or sale campaign % */
+/* Best discount = larger of live flash-sale % or sale campaign % */
 function orderDiscount(sub) {
-  let coupon = null;
-  try { coupon = window._coupon || localStorage.getItem("dm_coupon"); } catch (e) {}
-  const acc = getAccount();
-  const isWelcome = (c) => /^WELCOME(10|20)$/.test(c || ""); // accept legacy WELCOME20 too
-  const couponPct = (isWelcome(coupon) || (acc && acc.member && isWelcome(acc.coupon))) ? 10 : 0;
   let flashPct = 0;
   try { const f = getFlashSale(); if (f.active) flashPct = f.percent; } catch (e) {}
   let campaignPct = 0, campaignLabel = "";
   try { const c = getCampaign(); if (c.active) { campaignPct = c.percent; campaignLabel = c.label; } } catch (e) {}
-  const pct = Math.max(couponPct, flashPct, campaignPct);
+  const pct = Math.max(flashPct, campaignPct);
   let label = "";
   if (pct > 0) {
     if (campaignPct === pct) label = `${campaignLabel} (${pct}% off)`;
-    else if (flashPct === pct) label = `Flash sale (${pct}% off)`;
-    else label = "Member discount (10%)";
+    else label = `Flash sale (${pct}% off)`;
   }
   return { pct, amount: Math.round(sub * pct / 100), label };
 }
@@ -84,6 +78,14 @@ function orderDiscount(sub) {
 /* Rewards / gift dollar-voucher applied to the next order (separate from % coupons) */
 function getVoucher() { try { return JSON.parse(localStorage.getItem("dm_voucher") || "null"); } catch (e) { return null; } }
 function setVoucher(v) { try { v ? localStorage.setItem("dm_voucher", JSON.stringify(v)) : localStorage.removeItem("dm_voucher"); } catch (e) {} }
+const WELCOME_VOUCHER = { code: "WELCOME10", amount: 10, label: "Welcome voucher" };
+/* The old 10% welcome code became the $10 welcome voucher: honour it for anyone who already had it applied */
+(function () {
+  try {
+    if (localStorage.getItem("dm_coupon") && !getVoucher()) setVoucher(WELCOME_VOUCHER);
+    localStorage.removeItem("dm_coupon");
+  } catch (e) {}
+})();
 
 function updateCartCount() {
   const el = document.getElementById("cartCount");

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://samirahomedecor.com.au/account.html">
   <title>My Account, Samira Home Decor</title>
-  <meta name="description" content="Log in or sign up to your Samira Home Decor account, manage your membership, view your 10% welcome coupon and saved favourites.">
+  <meta name="description" content="Log in or sign up to your Samira Home Decor account, manage your membership, view your vouchers and saved favourites.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -89,6 +89,11 @@
     .order-row .o-meta strong { display: block; }
     .order-row .o-meta small { color: var(--muted); font-size: 0.82rem; }
     .acc-h3 { font-size: 1.2rem; margin: 30px 0 4px; }
+    .ar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 14px; }
+    .ar-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+    .ar-card .ar-ic { font-size: 1.5rem; }
+    .ar-card h4 { font-family: var(--font-head); font-size: 1.1rem; color: var(--ink); margin: 0; }
+    .ar-card p { font-size: 0.9rem; margin: 0 0 8px; flex: 1; }
     .xmas-card { background: #fff; border: 1.5px solid var(--gold); border-radius: var(--radius-lg); padding: 22px 24px; margin-top: 14px; }
     .xm-top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .xm-label { display: block; font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
@@ -114,7 +119,7 @@
     .voucher { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 1px dashed var(--rose-soft); background: var(--blush); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
     .voucher .v-amt { font-family: var(--font-head); font-size: 1.3rem; color: var(--rose-deep); }
     .voucher .v-code { font-size: .78rem; color: var(--muted); letter-spacing: .04em; }
-    .bday-box { border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-top: 12px; font-size: 0.92rem; }
+
   </style>
 </head>
 <body data-page="account.html">
@@ -138,9 +143,9 @@
   <div id="site-footer"></div>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="js/data.js?v=36"></script>
-  <script src="js/components.js?v=71"></script>
-  <script src="js/cart.js?v=23"></script>
-  <script src="js/main.js?v=8"></script>
+  <script src="js/components.js?v=73"></script>
+  <script src="js/cart.js?v=24"></script>
+  <script src="js/main.js?v=9"></script>
   <script src="js/order-status.js"></script>
   <script>
     let accMode = "signup";
@@ -187,7 +192,7 @@
       if (accMode === "signup") {
         el.innerHTML = `
           <div style="background:var(--blush);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:20px;font-size:0.9rem;color:var(--rose-deep)">
-            🎉 Join free and get <strong>10% off your first order</strong> plus member perks.
+            🎉 Join free and get a <strong>$10 welcome voucher</strong> plus member perks.
           </div>
           <form onsubmit="return requestCode(event)">
             <div class="field"><label>Full name</label><input id="suName" autocomplete="name" required></div>
@@ -201,7 +206,7 @@
           <form onsubmit="return requestCode(event)">
             <div class="field"><label>Email</label><input id="authEmailInput" type="email" autocomplete="email" required></div>
             <button type="submit" class="btn btn--primary btn--block" id="authSendBtn">Email me a login code</button>
-            <p class="form-note" style="text-align:center;margin-top:12px">No password needed — we'll email you a one-time code. New here? <a href="#" onclick="setMode('signup');return false;">Create an account</a> for 10% off.</p>
+            <p class="form-note" style="text-align:center;margin-top:12px">No password needed — we'll email you a one-time code. New here? <a href="#" onclick="setMode('signup');return false;">Create an account</a> for a $10 welcome voucher.</p>
           </form>
           ${legal}`;
       }
@@ -312,7 +317,6 @@
         verified: true,
         member: true,
         memberSince: base.memberSince || todayAU(),
-        coupon: base.coupon || "WELCOME10",
         memberNo: base.memberNo || genMemberNo(),
         orders: base.orders || [],
         vouchers: base.vouchers || [{ code: genVoucherCode(), amount: 10, label: "Welcome voucher" }],
@@ -340,7 +344,7 @@
       if (!email || !/.+@.+\..+/.test(email)) { if (email) showToast("Please enter a valid email"); return; }
       const existing = getAccount();
       if (existing && existing.email) { existing.email = email; existing.provider = label; saveAccount(existing); showToast("Welcome back! 👋"); render(); return; }
-      saveAccount({ name: "", email, provider: label, member: true, memberSince: todayAU(), coupon: "WELCOME10",
+      saveAccount({ name: "", email, provider: label, member: true, memberSince: todayAU(),
         memberNo: genMemberNo(), orders: [], vouchers: [{ code: genVoucherCode(), amount: 10, label: "Welcome voucher" }] });
       try { localStorage.setItem("dm_member", "1"); } catch (err) {}
       showToast(`Signed in with ${label}, welcome to Samira Home Decor! 🎉`);
@@ -351,7 +355,7 @@
         const p = JSON.parse(atob(resp.credential.split(".")[1]));
         const existing = getAccount() || {};
         saveAccount(Object.assign(existing, { name: p.name || existing.name || "", email: p.email, provider: "Google",
-          member: true, memberSince: existing.memberSince || todayAU(), coupon: existing.coupon || "WELCOME10",
+          member: true, memberSince: existing.memberSince || todayAU(),
           memberNo: existing.memberNo || genMemberNo(), orders: existing.orders || [],
           vouchers: existing.vouchers || [{ code: genVoucherCode(), amount: 10, label: "Welcome voucher" }] }));
         try { localStorage.setItem("dm_member", "1"); } catch (err) {}
@@ -365,17 +369,16 @@
       if (!acc.memberNo) { acc.memberNo = genMemberNo(); changed = true; }
       if (!Array.isArray(acc.orders)) { acc.orders = getStoredOrders(acc.email); changed = true; }
       if (!Array.isArray(acc.vouchers)) { acc.vouchers = []; changed = true; }
+      // The 10% welcome code has ended: members who still held it get the $10 welcome voucher
+      if ("coupon" in acc) {
+        if (!acc.orders.length && !acc.vouchers.some(v => /welcome/i.test(v.label || ""))) acc.vouchers.push({ code: genVoucherCode(), amount: 10, label: "Welcome voucher" });
+        delete acc.coupon;
+        changed = true;
+      }
       // The points program has ended: convert any balance into $10 vouchers once
       if ("points" in acc) {
         for (let i = 0; i < Math.floor((acc.points || 0) / 100); i++) acc.vouchers.push({ code: genVoucherCode(), amount: 10, label: "Points reward" });
         delete acc.points;
-        changed = true;
-      }
-      // $20 birthday voucher: issued the first time they visit in their birthday month each year
-      const bdayNow = new Date();
-      if (acc.birthday && acc.birthday.includes(MONTHS[bdayNow.getMonth()]) && acc.bdayGrantedYear !== bdayNow.getFullYear()) {
-        acc.vouchers.push({ code: genVoucherCode(), amount: 20, label: "Birthday voucher" });
-        acc.bdayGrantedYear = bdayNow.getFullYear();
         changed = true;
       }
       if (changed) saveAccount(acc);
@@ -402,20 +405,9 @@
           <p class="form-note" style="margin-top:8px">Keep this card for identification and security when you shop with us in store or by phone.</p>
         </div>
 
-        <div class="reward">
-          <div>
-            <small>Your welcome reward, 10% off</small>
-            <span class="code" id="couponCode">${acc.coupon || "WELCOME10"}</span>
-          </div>
-          <button class="btn btn--dark btn--sm" onclick="copyCoupon()">Copy code</button>
-        </div>
-
-        <h3 class="acc-h3">Christmas voucher progress</h3>
+        <h3 class="acc-h3">Your member rewards</h3>
+        ${memberRewardsHtml(acc)}
         ${xmasHtml(orders)}
-
-        <h3 class="acc-h3">Your vouchers</h3>
-        <div style="margin-top:14px">${vouchersHtml(acc)}</div>
-        ${birthdayHtml(acc)}
 
         <h3 class="acc-h3">Your orders &amp; receipts</h3>
         <div class="orders-list" id="ordersList">${renderOrders(orders)}</div>
@@ -446,7 +438,6 @@
     }
 
     // ---- Member vouchers ----
-    const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     function genVoucherCode() { return "DM-V" + Math.floor(1000 + Math.random() * 9000) + "-" + Math.floor(1000 + Math.random() * 9000); }
     // ---- Christmas Vouchers progress (rules: christmas-vouchers.html) ----
     // 3+ qualifying orders ($100+ after discounts, excluding shipping) placed 1 Jan – 24 Dec.
@@ -474,9 +465,9 @@
       const pct = Math.min(100, total / 5000 * 100);
       const marks = XMAS_TIERS.filter(t => t.min > 0).map(t => `<span class="xm-mark${n >= 3 && total >= t.min ? " hit" : ""}" style="left:${t.min / 5000 * 100}%"><i></i><b>${t.name}</b><em>${money(t.min)}</em></span>`).join("");
       let msg;
-      if (closed) msg = tier ? `You reached <strong>${tier.name}</strong>! Your <strong>${tier.amt} voucher</strong> will be emailed by 26 December.` : `This year's tracking closed on 24 December. Your progress starts again on 1 January.`;
+      if (closed) msg = tier ? `You reached <strong>${tier.name}</strong>! Your <strong>$${tier.amt} voucher</strong> will be emailed by 26 December.` : `This year's tracking closed on 24 December. Your progress starts again on 1 January.`;
       else if (n < 3) msg = `<strong>${3 - n} more qualifying order${3 - n === 1 ? "" : "s"}</strong> by 24 December to earn at least a <strong>$50 Silver</strong> voucher.`;
-      else msg = `You've unlocked <strong>${tier.name} · ${tier.amt}</strong>!` + (next ? ` Spend <strong>${money(next.min - total)}</strong> more by 24 December to reach <strong>${next.name} · ${next.amt}</strong>.` : " That's our top tier.");
+      else msg = `You've unlocked <strong>${tier.name} · $${tier.amt}</strong>!` + (next ? ` Spend <strong>${money(next.min - total)}</strong> more by 24 December to reach <strong>${next.name} · $${next.amt}</strong>.` : " That's our top tier.");
       return `
         <div class="xmas-card">
           <div class="xm-top">
@@ -490,23 +481,40 @@
           <p class="xm-fine">Orders of $100+ (after discounts, excluding shipping) placed 1 Jan – 24 Dec count. Cancelled or refunded orders don't. Shows orders made on this device; your final tier is confirmed by us. <a href="christmas-vouchers.html">How Christmas vouchers work</a></p>
         </div>`;
     }
-    function vouchersHtml(acc) {
-      const vs = (acc.vouchers || []).filter(v => !v.used);
-      if (!vs.length) return `<p style="color:var(--muted);font-size:0.9rem">No vouchers yet. Add your birthday below for a $20 treat.</p>`;
+    function memberRewardsHtml(acc) {
+      const open = (acc.vouchers || []).filter(v => !v.used);
+      const welcome = open.find(v => /welcome/i.test(v.label || ""));
+      const others = open.filter(v => v !== welcome);
+      return `
+        <div class="ar-grid">
+          <div class="ar-card">
+            <div class="ar-ic">🎉</div>
+            <h4>$10 welcome voucher</h4>
+            ${welcome
+              ? `<p>Ready to use on your next order. Code <strong>${welcome.code}</strong></p><button class="btn btn--dark btn--sm" onclick="applyVoucher('${welcome.code}')">Apply to next order</button>`
+              : `<p>You've used your welcome voucher. Thank you for shopping with us.</p>`}
+          </div>
+          <div class="ar-card">
+            <div class="ar-ic">💌</div>
+            <h4>30% referral reward</h4>
+            <p>When a friend you refer books a service or makes their first purchase, you get 30% off your next service or order.</p>
+            <a class="btn btn--dark btn--sm" href="refer-a-friend.html">Refer a friend</a>
+          </div>
+          <div class="ar-card">
+            <div class="ar-ic">🎄</div>
+            <h4>Christmas vouchers</h4>
+            <p>Shop 3 or more times in the year and earn a Christmas voucher of up to $300. T&amp;Cs apply.</p>
+            <a class="btn btn--dark btn--sm" href="christmas-vouchers.html">How it works</a>
+          </div>
+        </div>
+        ${others.length ? `<div style="margin-top:14px">${vouchersHtml(others)}</div>` : ""}`;
+    }
+    function vouchersHtml(vs) {
       return vs.map((v) => `
         <div class="voucher">
           <div><div class="v-amt">$${v.amount} voucher</div><div class="v-code">${v.label || "Reward"} · Code ${v.code}</div></div>
           <button class="btn btn--dark btn--sm" onclick="applyVoucher('${v.code}')">Apply to next order</button>
         </div>`).join("");
-    }
-    function birthdayHtml(acc) {
-      if (acc.birthday && /d/.test(acc.birthday)) return `<div class="bday-box">🎂 Birthday saved (<strong>${acc.birthday}</strong>). Your <strong>$20 birthday voucher</strong> lands in your birthday month each year.</div>`;
-      return `<div class="bday-box">🎂 <strong>Add your birthday</strong> (day and month) to unlock a $20 birthday voucher each year.
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
-          <select id="bdayDay" aria-label="Birthday day" style="flex:0 0 84px;padding:10px;border:1.5px solid var(--line);border-radius:8px;font-family:var(--font-body)"><option value="">Day</option>${Array.from({ length: 31 }, (_, i) => `<option value="${i + 1}">${i + 1}</option>`).join("")}</select>
-          <select id="bdayMonth" aria-label="Birthday month" style="flex:1 1 130px;padding:10px;border:1.5px solid var(--line);border-radius:8px;font-family:var(--font-body)">${MONTHS.map((m, i) => `<option value="${i + 1}">${m}</option>`).join("")}</select>
-          <button class="btn btn--outline btn--sm" onclick="saveBirthday()">Save</button>
-        </div></div>`;
     }
     function applyVoucher(code) {
       const acc = getAccount();
@@ -516,27 +524,6 @@
       showToast("Voucher applied, it'll show at checkout ✦");
       location.href = "cart.html";
     }
-    function saveBirthday() {
-      const acc = getAccount(); if (!acc) return;
-      const m = parseInt(document.getElementById("bdayMonth").value, 10);
-      const d = parseInt(document.getElementById("bdayDay").value, 10);
-      if (!d) { showToast("Please choose the day of your birthday"); return; }
-      if (d > new Date(2024, m, 0).getDate()) { showToast(MONTHS[m - 1] + " doesn't have " + d + " days"); return; }
-      acc.birthday = d + " " + MONTHS[m - 1];
-      acc.vouchers = acc.vouchers || [];
-      const now = new Date();
-      if (m === now.getMonth() + 1 && acc.bdayGrantedYear !== now.getFullYear()) {
-        acc.vouchers.push({ code: genVoucherCode(), amount: 20, label: "Birthday voucher" });
-        acc.bdayGrantedYear = now.getFullYear();
-        saveAccount(acc);
-        showToast("Happy birthday month! Your $20 voucher is ready 🎂");
-      } else {
-        saveAccount(acc);
-        showToast("Birthday saved 🎂");
-      }
-      renderDashboard(getAccount());
-    }
-
     // ---- Orders & receipts ----
     function getStoredOrders(email) {
       try {
@@ -645,11 +632,6 @@
       showToast("Member card downloaded ⬇");
     }
 
-    function copyCoupon() {
-      const code = document.getElementById("couponCode").textContent;
-      if (navigator.clipboard) navigator.clipboard.writeText(code).then(() => showToast("Coupon " + code + " copied! ✦"));
-      else showToast("Your code is " + code);
-    }
     function doLogout() { logoutAccount(); showToast("You've been logged out"); render(); }
 
     render();
