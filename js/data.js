@@ -4304,14 +4304,16 @@ const PRODUCTS = [
     optionLabel: "Colour",
     sizes: [{ label: "Amber", price: 994 }, { label: "Smokey Grey", price: 994 }],
     sizeImg: { "Amber": "assets/products/lr017q.webp", "Smokey Grey": "assets/products/lr017q-grey.webp" },
-    desc: "Marble table lamp, for a console, a sideboard or a bedside. The glass shade comes in amber or smokey grey. Stone and glass diffuse the light softly rather than throwing a hard beam.",
+    desc: "A modern contemporary table lamp crafted from genuine marble, with a glass shade in smokey grey or amber. Sturdy construction and a modern design with classic allure make it a striking focal point in any room.",
     features: [
-      "Marble construction",
-      "Glass shade in amber or smokey grey",
-      "2 colours to choose from",
-      "Licensed electrician for hard-wired fittings"
+      "Crafted from genuine marble",
+      "Modern design with classic allure",
+      "Sturdy construction ensures durability and longevity",
+      "Creates a striking focal point in any room",
+      "Adds opulence to your home decor",
+      "Illuminate your space with exquisite luxury"
     ],
-    specs: { "Type": "Table Lamp", "Material": "Marble", "Options": "Amber, Smokey Grey", "Room": "Home Décor" },
+    specs: { "Style": "Modern Contemporary", "Colour": "Smokey Grey, Amber", "Material": "Glass, marble lamp body", "Size (AU)": "24cm L x 23cm W", "Size (US)": "9.4\" L x 9.1\" W", "Light source": "LED bulbs", "Wattage": "31-40W", "Voltage": "90-260V" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
   { id: "lr018q", name: "Marble Wall Light", cat: "Home Décor", room: "Home Décor", price: 1000, memberPrice: 900, sku: "SH-10800", tag: "New", ph: "", img: "assets/products/lr018q.webp",
