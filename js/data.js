@@ -4313,7 +4313,7 @@ const PRODUCTS = [
       "Adds opulence to your home decor",
       "Illuminate your space with exquisite luxury"
     ],
-    specs: { "Style": "Modern Contemporary", "Colour": "Smokey Grey, Amber", "Material": "Glass, marble lamp body", "Size (AU)": "24cm L x 23cm W", "Size (US)": "9.4\" L x 9.1\" W", "Light source": "LED bulbs", "Wattage": "31-40W", "Voltage": "90-260V" },
+    specs: { "Type": "Table Lamp", "Style": "Modern Contemporary", "Colour": "Smokey Grey, Amber", "Material": "Glass, marble lamp body", "Size (AU)": "24cm L x 23cm W", "Size (US)": "9.4\" L x 9.1\" W", "Light source": "LED bulbs", "Wattage": "31-40W", "Voltage": "90-260V", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
   { id: "lr018q", name: "Marble Wall Light", cat: "Home Décor", room: "Home Décor", price: 1000, memberPrice: 900, sku: "SH-10800", tag: "New", ph: "", img: "assets/products/lr018q.webp",
