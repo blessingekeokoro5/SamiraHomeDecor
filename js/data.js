@@ -4301,15 +4301,17 @@ const PRODUCTS = [
 
   { id: "lr017q", name: "Marble Table Lamp", cat: "Home Décor", room: "Home Décor", price: 994, memberPrice: 895, sku: "SH-10799", tag: "New", ph: "", img: "assets/products/lr017q.webp",
     imgs: ["assets/products/lr017q.webp", "assets/products/lr017q-2.webp", "assets/products/lr017q-3.webp", "assets/products/lr017q-4.webp"],
-    sizes: [{ label: "Smokey Grey", price: 994 }, { label: "Amber", price: 994 }],
-    desc: "Marble table lamp, for a console, a sideboard or a bedside. In Grey. Stone and glass diffuse the light softly rather than throwing a hard beam.",
+    optionLabel: "Colour",
+    sizes: [{ label: "Amber", price: 994 }, { label: "Smokey Grey", price: 994 }],
+    sizeImg: { "Amber": "assets/products/lr017q.webp", "Smokey Grey": "assets/products/lr017q-grey.webp" },
+    desc: "Marble table lamp, for a console, a sideboard or a bedside. The glass shade comes in amber or smokey grey. Stone and glass diffuse the light softly rather than throwing a hard beam.",
     features: [
       "Marble construction",
-      "Grey colourway",
-      "2 options to choose from",
+      "Glass shade in amber or smokey grey",
+      "2 colours to choose from",
       "Licensed electrician for hard-wired fittings"
     ],
-    specs: { "Type": "Table Lamp", "Material": "Marble", "Options": "2", "Room": "Home Décor" },
+    specs: { "Type": "Table Lamp", "Material": "Marble", "Options": "Amber, Smokey Grey", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
   { id: "lr018q", name: "Marble Wall Light", cat: "Home Décor", room: "Home Décor", price: 1000, memberPrice: 900, sku: "SH-10800", tag: "New", ph: "", img: "assets/products/lr018q.webp",
