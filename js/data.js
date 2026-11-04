@@ -287,7 +287,7 @@ const PRODUCTS = [
     specs: { "Type": "Bathroom accessory", "Material": "Glass", "Options": "5" },
     care: "Wipe with a soft, damp cloth and buff dry to keep the clarity. Avoid abrasive cleaners, and lift rather than slide the pieces across stone benchtops." },
 
-  { id: "bt13", name: "Countertop Hand Towel Rack", cat: "Bathroom", room: "Bathroom", price: 276, memberPrice: 248, sku: "SH-10171", tag: "New", ph: "", img: "assets/products/bt13.jpg",
+  { id: "bt13", optionLabel: "Colour", sizeImg: {"Black":"assets/products/bt13.jpg","Gold":"assets/products/bt13-3.webp","Silver":"assets/products/bt13-5.webp"}, name: "Countertop Hand Towel Rack", cat: "Bathroom", room: "Bathroom", price: 276, memberPrice: 248, sku: "SH-10171", tag: "New", ph: "", img: "assets/products/bt13.jpg",
     imgs: ["assets/products/bt13.jpg", "assets/products/bt13-2.webp", "assets/products/bt13-3.webp", "assets/products/bt13-4.webp", "assets/products/bt13-5.webp", "assets/products/bt13-6.webp"],
     sizes: [{ label: "Black", price: 276 }, { label: "Gold", price: 276 }, { label: "Silver", price: 276 }],
     desc: "A 32cm standing rack for the bench or vanity, so a hand towel has somewhere to live that isn't the edge of the basin. Black, gold or silver.",
@@ -352,7 +352,7 @@ const PRODUCTS = [
     specs: { "Type": "Bathroom accessory", "Material": "Ceramic", "Options": "5" },
     care: "Wipe clean with a soft, damp cloth. Avoid abrasive pads and scouring powders, which scratch the glaze and dull any metallic detail." },
 
-  { id: "bt18", name: "Expandable Bamboo Bath Caddy", cat: "Bathroom", room: "Bathroom", price: 250, memberPrice: 225, sku: "SH-10176", tag: "New", ph: "", img: "assets/products/bt18.jpg",
+  { id: "bt18", optionLabel: "Colour", sizeImg: {"White":"assets/products/bt18-6.webp","Black":"assets/products/bt18-5.webp"}, name: "Expandable Bamboo Bath Caddy", cat: "Bathroom", room: "Bathroom", price: 250, memberPrice: 225, sku: "SH-10176", tag: "New", ph: "", img: "assets/products/bt18.jpg",
     imgs: ["assets/products/bt18.jpg", "assets/products/bt18-2.jpg", "assets/products/bt18-3.jpg", "assets/products/bt18-4.webp", "assets/products/bt18-5.webp", "assets/products/bt18-6.webp"],
     sizes: [{ label: "White", price: 250 }, { label: "Black", price: 250 }],
     desc: "Extends to fit across the bath, then holds a book, a glass and a candle where you can reach them. Bamboo, so it copes with the steam, in white or black.",
@@ -404,7 +404,7 @@ const PRODUCTS = [
     specs: { "Type": "Bathroom accessory", "Material": "Ceramic", "Options": "3" },
     care: "Wipe clean with a soft, damp cloth. Avoid abrasive pads and scouring powders, which scratch the glaze and dull any metallic detail." },
 
-  { id: "bt22", name: "Marble & Copper Floor Towel Holder", cat: "Bathroom", room: "Bathroom", price: 2033, memberPrice: 1830, sku: "SH-10180", tag: "New", ph: "", img: "assets/products/bt22.jpg",
+  { id: "bt22", optionLabel: "Colour", sizeImg: {"White + Gold":"assets/products/bt22-2.webp","White + Black":"assets/products/bt22-5.jpg","Black + Black":"assets/products/bt22-6.jpg","Black + Gold":"assets/products/bt22-3.jpg"}, name: "Marble & Copper Floor Towel Holder", cat: "Bathroom", room: "Bathroom", price: 2033, memberPrice: 1830, sku: "SH-10180", tag: "New", ph: "", img: "assets/products/bt22.jpg",
     imgs: ["assets/products/bt22.jpg", "assets/products/bt22-2.webp", "assets/products/bt22-3.jpg", "assets/products/bt22-4.jpg", "assets/products/bt22-5.jpg", "assets/products/bt22-6.jpg"],
     sizes: [{ label: "White + Gold", price: 2033 }, { label: "White + Black", price: 2033 }, { label: "Black + Black", price: 2033 }, { label: "Black + Gold", price: 2033 }],
     desc: "A freestanding towel holder on a solid marble base with copper rods, heavy enough to stay exactly where you put it. The piece that makes a bathroom look finished rather than furnished.",
@@ -443,7 +443,7 @@ const PRODUCTS = [
     specs: { "Type": "Bathroom accessory", "Material": "Ceramic", "Options": "12" },
     care: "Wipe clean with a soft, damp cloth. Avoid abrasive pads and scouring powders, which scratch the glaze and dull any metallic detail." },
 
-  { id: "bt25", name: "Marble-Base Rotating Vanity Mirror", cat: "Bathroom", room: "Bathroom", price: 637, memberPrice: 573, sku: "SH-10183", tag: "New", ph: "", img: "assets/products/bt25.jpg",
+  { id: "bt25", optionLabel: "Colour", sizeImg: {"White":"assets/products/bt25-5.webp","Black":"assets/products/bt25-6.webp"}, name: "Marble-Base Rotating Vanity Mirror", cat: "Bathroom", room: "Bathroom", price: 637, memberPrice: 573, sku: "SH-10183", tag: "New", ph: "", img: "assets/products/bt25.jpg",
     imgs: ["assets/products/bt25.jpg", "assets/products/bt25-2.webp", "assets/products/bt25-3.webp", "assets/products/bt25-4.webp", "assets/products/bt25-5.webp", "assets/products/bt25-6.webp"],
     sizes: [{ label: "White", price: 637 }, { label: "Black", price: 637 }],
     desc: "A vanity mirror on a marble base that turns to the angle you need and stays there. Heavy enough not to creep across the bench while you use it.",
@@ -520,7 +520,7 @@ const PRODUCTS = [
     specs: { "Type": "Bathroom accessory", "Material": "Stainless steel / metal", "Options": "4" },
     care: "Wipe with a soft, damp cloth and dry to prevent water spotting, which is the usual reason a finish looks tired. Avoid abrasive cleaners on brushed and coloured finishes." },
 
-  { id: "bt31", name: "Stainless Steel & Marble Towel Holder", cat: "Bathroom", room: "Bathroom", price: 461, memberPrice: 415, sku: "SH-10189", tag: "New", ph: "", img: "assets/products/bt31.webp",
+  { id: "bt31", optionLabel: "Colour", sizeImg: {"Black":"assets/products/bt31-4.webp","Brushed Gold":"assets/products/bt31-3.webp"}, name: "Stainless Steel & Marble Towel Holder", cat: "Bathroom", room: "Bathroom", price: 461, memberPrice: 415, sku: "SH-10189", tag: "New", ph: "", img: "assets/products/bt31.webp",
     imgs: ["assets/products/bt31.webp", "assets/products/bt31-2.webp", "assets/products/bt31-3.webp", "assets/products/bt31-4.webp", "assets/products/bt31-5.jpg", "assets/products/bt31-6.jpg"],
     sizes: [{ label: "Black", price: 461 }, { label: "Brushed Gold", price: 461 }],
     desc: "Stainless steel rods on a marble foot: the steel handles the damp, the marble handles the standing still. Black or brushed gold.",
@@ -559,7 +559,7 @@ const PRODUCTS = [
     specs: { "Type": "Bathroom accessory", "Material": "Stainless steel / metal", "Options": "1" },
     care: "Wipe with a soft, damp cloth and dry to prevent water spotting, which is the usual reason a finish looks tired. Avoid abrasive cleaners on brushed and coloured finishes." },
 
-  { id: "bt34", name: "Dual-Rod Rotating Towel Rack", cat: "Bathroom", room: "Bathroom", price: 907, memberPrice: 816, sku: "SH-10192", tag: "New", ph: "", img: "assets/products/bt34.webp",
+  { id: "bt34", optionLabel: "Colour", sizeImg: {"Silver":"assets/products/bt34.webp","Gold":"assets/products/bt34-2.jpg"}, name: "Dual-Rod Rotating Towel Rack", cat: "Bathroom", room: "Bathroom", price: 907, memberPrice: 816, sku: "SH-10192", tag: "New", ph: "", img: "assets/products/bt34.webp",
     imgs: ["assets/products/bt34.webp", "assets/products/bt34-2.jpg", "assets/products/bt34-3.webp", "assets/products/bt34-4.webp", "assets/products/bt34-5.jpg"],
     sizes: [{ label: "Silver", price: 907 }, { label: "Gold", price: 907 }],
     desc: "Two rods that rotate independently, so towels can be spread out to dry rather than bunched together. Silver or gold.",
@@ -572,7 +572,7 @@ const PRODUCTS = [
     specs: { "Type": "Bathroom accessory", "Material": "Stainless steel / metal", "Options": "2" },
     care: "Wipe with a soft, damp cloth and dry to prevent water spotting, which is the usual reason a finish looks tired. Avoid abrasive cleaners on brushed and coloured finishes." },
 
-  { id: "bt35", name: "Standing Stainless Steel Towel Rack", cat: "Bathroom", room: "Bathroom", price: 343, memberPrice: 309, sku: "SH-10193", tag: "New", ph: "", img: "assets/products/bt35.jpg",
+  { id: "bt35", optionLabel: "Colour", sizeImg: {"Black":"assets/products/bt35-6.webp","Brushed Gold":"assets/products/bt35-5.webp","Brushed Silver":"assets/products/bt35-4.jpg"}, name: "Standing Stainless Steel Towel Rack", cat: "Bathroom", room: "Bathroom", price: 343, memberPrice: 309, sku: "SH-10193", tag: "New", ph: "", img: "assets/products/bt35.jpg",
     imgs: ["assets/products/bt35.jpg", "assets/products/bt35-2.jpg", "assets/products/bt35-3.jpg", "assets/products/bt35-4.jpg", "assets/products/bt35-5.webp", "assets/products/bt35-6.webp"],
     sizes: [{ label: "Black", price: 343 }, { label: "Brushed Gold", price: 343 }, { label: "Brushed Silver", price: 343 }],
     desc: "A simple standing rack in stainless steel, which is the material that survives a wet bathroom without rusting at the joints. Black, brushed gold or brushed silver.",
@@ -585,7 +585,7 @@ const PRODUCTS = [
     specs: { "Type": "Bathroom accessory", "Material": "Stainless steel / metal", "Options": "3" },
     care: "Wipe with a soft, damp cloth and dry to prevent water spotting, which is the usual reason a finish looks tired. Avoid abrasive cleaners on brushed and coloured finishes." },
 
-  { id: "bt36", name: "Two-Bar Floor Towel Rack with Storage", cat: "Bathroom", room: "Bathroom", price: 1563, memberPrice: 1407, sku: "SH-10194", tag: "New", ph: "", img: "assets/products/bt36.webp",
+  { id: "bt36", optionLabel: "Colour", sizeImg: {"Black":"assets/products/bt36-3.webp","Gold":"assets/products/bt36-4.jpg"}, name: "Two-Bar Floor Towel Rack with Storage", cat: "Bathroom", room: "Bathroom", price: 1563, memberPrice: 1407, sku: "SH-10194", tag: "New", ph: "", img: "assets/products/bt36.webp",
     imgs: ["assets/products/bt36.webp", "assets/products/bt36-2.jpg", "assets/products/bt36-3.webp", "assets/products/bt36-4.jpg", "assets/products/bt36-5.webp", "assets/products/bt36-6.webp"],
     sizes: [{ label: "Black", price: 1563 }, { label: "Gold", price: 1563 }],
     desc: "Two sturdy bars for towels with storage built into the frame below, so the bathroom gains a shelf as well as a rail.",
@@ -1707,7 +1707,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "12", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct07", name: "Tinted Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 3120, memberPrice: 2808, sku: "SH-10271", tag: "New", ph: "", img: "assets/products/ct07.webp",
+  { id: "ct07", optionLabel: "Colour", sizeImg: {"Black":"assets/products/ct07-4.webp","Chocolate":"assets/products/ct07.webp"}, name: "Tinted Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 3120, memberPrice: 2808, sku: "SH-10271", tag: "New", ph: "", img: "assets/products/ct07.webp",
     imgs: ["assets/products/ct07.webp", "assets/products/ct07-2.webp", "assets/products/ct07-3.webp", "assets/products/ct07-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 3120 }, { label: "Chocolate", price: 3120 }],
@@ -1785,7 +1785,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Glass", "Options": "6", "Room": "Living / Indoor" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "ct13", name: "Stone & Steel Coffee Table", cat: "Living Room", room: "Living Room", price: 4565, memberPrice: 4108, sku: "SH-10277", tag: "New", ph: "", img: "assets/products/ct13.webp",
+  { id: "ct13", optionLabel: "Colour", sizeImg: {"Black":"assets/products/ct13.webp","Gold":"assets/products/ct13-3.webp"}, name: "Stone & Steel Coffee Table", cat: "Living Room", room: "Living Room", price: 4565, memberPrice: 4108, sku: "SH-10277", tag: "New", ph: "", img: "assets/products/ct13.webp",
     imgs: ["assets/products/ct13.webp", "assets/products/ct13-2.webp", "assets/products/ct13-3.webp", "assets/products/ct13-4.webp", "assets/products/ct13-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 4565 }, { label: "Gold", price: 4565 }],
@@ -2363,7 +2363,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct58", name: "Two-Tone Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 10920, memberPrice: 9828, sku: "SH-10322", tag: "New", ph: "", img: "assets/products/ct58.webp",
+  { id: "ct58", optionLabel: "Colour", sizeImg: {"Tan + White":"assets/products/ct58-2.webp"}, name: "Two-Tone Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 10920, memberPrice: 9828, sku: "SH-10322", tag: "New", ph: "", img: "assets/products/ct58.webp",
     imgs: ["assets/products/ct58.webp", "assets/products/ct58-2.webp", "assets/products/ct58-3.webp", "assets/products/ct58-4.webp", "assets/products/ct58-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Tan + White", price: 10920 }, { label: "Grey + White", price: 10920 }],
@@ -2415,7 +2415,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct62", name: "Marble & Gold Rectangular Coffee Table", cat: "Living Room", room: "Living Room", price: 11457, memberPrice: 10311, sku: "SH-10326", tag: "New", ph: "", img: "assets/products/ct62.webp",
+  { id: "ct62", optionLabel: "Colour", sizeImg: {"White + Gold":"assets/products/ct62-2.webp","Chocolate + Gold":"assets/products/ct62-4.webp"}, name: "Marble & Gold Rectangular Coffee Table", cat: "Living Room", room: "Living Room", price: 11457, memberPrice: 10311, sku: "SH-10326", tag: "New", ph: "", img: "assets/products/ct62.webp",
     imgs: ["assets/products/ct62.webp", "assets/products/ct62-2.webp", "assets/products/ct62-3.webp", "assets/products/ct62-4.webp", "assets/products/ct62-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White + Gold", price: 11457 }, { label: "Chocolate + Gold", price: 11457 }],
@@ -2492,7 +2492,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct68", name: "Marble Coffee Table in White or Green", cat: "Living Room", room: "Living Room", price: 13333, memberPrice: 12000, sku: "SH-10332", tag: "New", ph: "", img: "assets/products/ct68.webp",
+  { id: "ct68", optionLabel: "Colour", sizeImg: {"White":"assets/products/ct68.webp","Green":"assets/products/ct68-3.webp"}, name: "Marble Coffee Table in White or Green", cat: "Living Room", room: "Living Room", price: 13333, memberPrice: 12000, sku: "SH-10332", tag: "New", ph: "", img: "assets/products/ct68.webp",
     imgs: ["assets/products/ct68.webp", "assets/products/ct68-2.webp", "assets/products/ct68-3.webp", "assets/products/ct68-4.webp", "assets/products/ct68-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White", price: 13333 }, { label: "Green", price: 13333 }],
@@ -2568,7 +2568,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Solid timber", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "st03", name: "Ivory or Black Side Table", cat: "Living Room", room: "Living Room", price: 1624, memberPrice: 1462, sku: "SH-10338", tag: "New", ph: "", img: "assets/products/st03.webp",
+  { id: "st03", optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/st03-4.webp","Black":"assets/products/st03-3.webp"}, name: "Ivory or Black Side Table", cat: "Living Room", room: "Living Room", price: 1624, memberPrice: 1462, sku: "SH-10338", tag: "New", ph: "", img: "assets/products/st03.webp",
     imgs: ["assets/products/st03.webp", "assets/products/st03-2.webp", "assets/products/st03-3.webp", "assets/products/st03-4.webp", "assets/products/st03-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Ivory", price: 1624 }, { label: "Black", price: 1624 }],
@@ -2581,7 +2581,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural stone", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "st04", name: "Steel Side Table, Black or White", cat: "Living Room", room: "Living Room", price: 1646, memberPrice: 1481, sku: "SH-10339", tag: "New", ph: "", img: "assets/products/st04.webp",
+  { id: "st04", optionLabel: "Colour", sizeImg: {"Black":"assets/products/st04-3.webp","White":"assets/products/st04-5.webp"}, name: "Steel Side Table, Black or White", cat: "Living Room", room: "Living Room", price: 1646, memberPrice: 1481, sku: "SH-10339", tag: "New", ph: "", img: "assets/products/st04.webp",
     imgs: ["assets/products/st04.webp", "assets/products/st04-2.webp", "assets/products/st04-3.webp", "assets/products/st04-4.webp", "assets/products/st04-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 1646 }, { label: "White", price: 1646 }],
@@ -2594,7 +2594,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Steel / metal", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "st05", name: "Metal Side Table", cat: "Living Room", room: "Living Room", price: 1656, memberPrice: 1490, sku: "SH-10340", tag: "New", ph: "", img: "assets/products/st05.webp",
+  { id: "st05", optionLabel: "Colour", sizeImg: {"Black":"assets/products/st05-3.webp"}, name: "Metal Side Table", cat: "Living Room", room: "Living Room", price: 1656, memberPrice: 1490, sku: "SH-10340", tag: "New", ph: "", img: "assets/products/st05.webp",
     imgs: ["assets/products/st05.webp", "assets/products/st05-2.webp", "assets/products/st05-3.webp", "assets/products/st05-4.webp", "assets/products/st05-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 1656 }, { label: "White", price: 1656 }],
@@ -2633,7 +2633,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Steel / metal", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "st08", name: "Gold-Trimmed Side Table", cat: "Living Room", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10343", tag: "New", ph: "", img: "assets/products/st08.webp",
+  { id: "st08", optionLabel: "Colour", sizeImg: {"White + Gold":"assets/products/st08-2.webp","Orange + Gold":"assets/products/st08-3.webp"}, name: "Gold-Trimmed Side Table", cat: "Living Room", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10343", tag: "New", ph: "", img: "assets/products/st08.webp",
     imgs: ["assets/products/st08.webp", "assets/products/st08-2.webp", "assets/products/st08-3.webp", "assets/products/st08-4.webp", "assets/products/st08-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White + Gold", price: 2204 }, { label: "Orange + Gold", price: 2204 }],
@@ -2646,7 +2646,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Steel / metal", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "st09", name: "Ash Timber Side Table", cat: "Living Room", room: "Living Room", price: 2220, memberPrice: 1998, sku: "SH-10344", tag: "New", ph: "", img: "assets/products/st09.webp",
+  { id: "st09", optionLabel: "Colour", sizeImg: {"Natural":"assets/products/st09.webp","Black":"assets/products/st09-3.webp","Walnut":"assets/products/st09-5.webp"}, name: "Ash Timber Side Table", cat: "Living Room", room: "Living Room", price: 2220, memberPrice: 1998, sku: "SH-10344", tag: "New", ph: "", img: "assets/products/st09.webp",
     imgs: ["assets/products/st09.webp", "assets/products/st09-2.webp", "assets/products/st09-3.webp", "assets/products/st09-4.webp", "assets/products/st09-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Natural", price: 2220 }, { label: "Black", price: 2220 }, { label: "Walnut", price: 2220 }],
@@ -2685,7 +2685,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural stone", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "st12", name: "Round Side Table, Gold or Silver", cat: "Living Room", room: "Living Room", price: 2759, memberPrice: 2483, sku: "SH-10347", tag: "New", ph: "", img: "assets/products/st12.webp",
+  { id: "st12", optionLabel: "Colour", sizeImg: {"Gold":"assets/products/st12-5.webp","Silver":"assets/products/st12-4.webp"}, name: "Round Side Table, Gold or Silver", cat: "Living Room", room: "Living Room", price: 2759, memberPrice: 2483, sku: "SH-10347", tag: "New", ph: "", img: "assets/products/st12.webp",
     imgs: ["assets/products/st12.webp", "assets/products/st12-2.webp", "assets/products/st12-3.webp", "assets/products/st12-4.webp", "assets/products/st12-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Gold", price: 2759 }, { label: "Silver", price: 2759 }],
@@ -2749,7 +2749,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural travertine", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "st17", name: "Marble Side Table, Black or Off White", cat: "Living Room", room: "Living Room", price: 4074, memberPrice: 3667, sku: "SH-10352", tag: "New", ph: "", img: "assets/products/st17.webp",
+  { id: "st17", optionLabel: "Colour", sizeImg: {"Off White":"assets/products/st17-3.webp"}, name: "Marble Side Table, Black or Off White", cat: "Living Room", room: "Living Room", price: 4074, memberPrice: 3667, sku: "SH-10352", tag: "New", ph: "", img: "assets/products/st17.webp",
     imgs: ["assets/products/st17.webp", "assets/products/st17-2.webp", "assets/products/st17-3.webp", "assets/products/st17-4.webp", "assets/products/st17-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 4074 }, { label: "Off White", price: 4074 }],
@@ -2800,7 +2800,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "5", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc02", name: "Armless Leather Dining Chair", cat: "Dining", room: "Living Room", price: 1087, memberPrice: 978, sku: "SH-10356", tag: "New", ph: "", img: "assets/products/dc02.webp",
+  { id: "dc02", optionLabel: "Colour", sizeImg: {"Copper":"assets/products/dc02-4.webp"}, name: "Armless Leather Dining Chair", cat: "Dining", room: "Living Room", price: 1087, memberPrice: 978, sku: "SH-10356", tag: "New", ph: "", img: "assets/products/dc02.webp",
     imgs: ["assets/products/dc02.webp", "assets/products/dc02-2.webp", "assets/products/dc02-3.webp", "assets/products/dc02-4.webp", "assets/products/dc02-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Grey", price: 1087 }, { label: "Blue", price: 1087 }, { label: "Copper", price: 1087 }],
@@ -2813,7 +2813,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc03", name: "Leather Dining Chair in Five Colours", cat: "Dining", room: "Living Room", price: 1119, memberPrice: 1007, sku: "SH-10357", tag: "New", ph: "", img: "assets/products/dc03.webp",
+  { id: "dc03", optionLabel: "Colour", sizeImg: {"Orange":"assets/products/dc03-5.webp","Grey":"assets/products/dc03.webp"}, name: "Leather Dining Chair in Five Colours", cat: "Dining", room: "Living Room", price: 1119, memberPrice: 1007, sku: "SH-10357", tag: "New", ph: "", img: "assets/products/dc03.webp",
     imgs: ["assets/products/dc03.webp", "assets/products/dc03-2.webp", "assets/products/dc03-3.webp", "assets/products/dc03-4.webp", "assets/products/dc03-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Tan", price: 1119 }, { label: "Orange", price: 1119 }, { label: "Grey", price: 1119 }, { label: "Cream", price: 1119 }, { label: "Mocha", price: 1119 }],
@@ -2826,7 +2826,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "5", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc04", name: "Dining Chair in Six Colours", cat: "Dining", room: "Living Room", price: 1465, memberPrice: 1318, sku: "SH-10358", tag: "New", ph: "", img: "assets/products/dc04.webp",
+  { id: "dc04", optionLabel: "Colour", sizeImg: {"Light Grey":"assets/products/dc04-5.webp","Coffee":"assets/products/dc04-4.webp"}, name: "Dining Chair in Six Colours", cat: "Dining", room: "Living Room", price: 1465, memberPrice: 1318, sku: "SH-10358", tag: "New", ph: "", img: "assets/products/dc04.webp",
     imgs: ["assets/products/dc04.webp", "assets/products/dc04-2.webp", "assets/products/dc04-3.webp", "assets/products/dc04-4.webp", "assets/products/dc04-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Light Grey", price: 1465 }, { label: "Green", price: 1465 }, { label: "Coffee", price: 1465 }, { label: "Dark Grey", price: 1465 }, { label: "Ivory", price: 1465 }, { label: "Ivory  + Brown", price: 1465 }, { label: "Ivory + Grey", price: 1465 }, { label: "Grey + Brown", price: 1465 }, { label: "Ivory + Orange", price: 1465 }],
@@ -2852,7 +2852,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "7", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc06", name: "Grey Dining Chair, With or Without Timber", cat: "Dining", room: "Living Room", price: 1604, memberPrice: 1444, sku: "SH-10360", tag: "New", ph: "", img: "assets/products/dc06.webp",
+  { id: "dc06", optionLabel: "Colour", sizeImg: {"Grey":"assets/products/dc06-4.webp"}, name: "Grey Dining Chair, With or Without Timber", cat: "Dining", room: "Living Room", price: 1604, memberPrice: 1444, sku: "SH-10360", tag: "New", ph: "", img: "assets/products/dc06.webp",
     imgs: ["assets/products/dc06.webp", "assets/products/dc06-2.webp", "assets/products/dc06-3.webp", "assets/products/dc06-4.webp", "assets/products/dc06-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Grey", price: 1604 }, { label: "Grey + Timber", price: 1604 }],
@@ -2865,7 +2865,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Solid timber", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "dc07", name: "Bouclé Dining Chair on Ash", cat: "Dining", room: "Living Room", price: 1630, memberPrice: 1467, sku: "SH-10361", tag: "New", ph: "", img: "assets/products/dc07.webp",
+  { id: "dc07", optionLabel: "Colour", sizeImg: {"Brown":"assets/products/dc07-5.webp"}, name: "Bouclé Dining Chair on Ash", cat: "Dining", room: "Living Room", price: 1630, memberPrice: 1467, sku: "SH-10361", tag: "New", ph: "", img: "assets/products/dc07.webp",
     imgs: ["assets/products/dc07.webp", "assets/products/dc07-2.webp", "assets/products/dc07-3.webp", "assets/products/dc07-4.webp", "assets/products/dc07-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 1630 }, { label: "Brown", price: 1630 }],
@@ -2878,7 +2878,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Bouclé", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "dc08", name: "Bouclé Dining Chair with Metal Legs", cat: "Dining", room: "Living Room", price: 1639, memberPrice: 1475, sku: "SH-10362", tag: "New", ph: "", img: "assets/products/dc08.webp",
+  { id: "dc08", optionLabel: "Colour", sizeImg: {"Off White":"assets/products/dc08-3.webp"}, name: "Bouclé Dining Chair with Metal Legs", cat: "Dining", room: "Living Room", price: 1639, memberPrice: 1475, sku: "SH-10362", tag: "New", ph: "", img: "assets/products/dc08.webp",
     imgs: ["assets/products/dc08.webp", "assets/products/dc08-2.webp", "assets/products/dc08-3.webp", "assets/products/dc08-4.webp", "assets/products/dc08-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Off White", price: 1639 }, { label: "Orange", price: 1639 }, { label: "Grey", price: 1639 }, { label: "Green", price: 1639 }],
@@ -2891,7 +2891,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Bouclé", "Options": "4", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "dc09", name: "Leather & Timber Dining Chair", cat: "Dining", room: "Living Room", price: 1648, memberPrice: 1483, sku: "SH-10363", tag: "New", ph: "", img: "assets/products/dc09.webp",
+  { id: "dc09", optionLabel: "Colour", sizeImg: {"Beige":"assets/products/dc09-3.webp"}, name: "Leather & Timber Dining Chair", cat: "Dining", room: "Living Room", price: 1648, memberPrice: 1483, sku: "SH-10363", tag: "New", ph: "", img: "assets/products/dc09.webp",
     imgs: ["assets/products/dc09.webp", "assets/products/dc09-2.webp", "assets/products/dc09-3.webp", "assets/products/dc09-4.webp", "assets/products/dc09-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Beige", price: 1648 }, { label: "Grey", price: 1648 }, { label: "Emerald Green", price: 1648 }],
@@ -2930,7 +2930,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "20", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc12", name: "Leather Dining Chair on Steel", cat: "Dining", room: "Living Room", price: 1828, memberPrice: 1645, sku: "SH-10366", tag: "New", ph: "", img: "assets/products/dc12.webp",
+  { id: "dc12", optionLabel: "Colour", sizeImg: {"Black":"assets/products/dc12-5.webp"}, name: "Leather Dining Chair on Steel", cat: "Dining", room: "Living Room", price: 1828, memberPrice: 1645, sku: "SH-10366", tag: "New", ph: "", img: "assets/products/dc12.webp",
     imgs: ["assets/products/dc12.webp", "assets/products/dc12-2.webp", "assets/products/dc12-3.webp", "assets/products/dc12-4.webp", "assets/products/dc12-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Ivory", price: 1828 }, { label: "Black", price: 1828 }],
@@ -2943,7 +2943,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc13", name: "Swivel Chair in Tan or Grey", cat: "Dining", room: "Living Room", price: 1830, memberPrice: 1647, sku: "SH-10367", tag: "New", ph: "", img: "assets/products/dc13.webp",
+  { id: "dc13", optionLabel: "Colour", name: "Swivel Chair in Tan or Grey", cat: "Dining", room: "Living Room", price: 1830, memberPrice: 1647, sku: "SH-10367", tag: "New", ph: "", img: "assets/products/dc13.webp",
     imgs: ["assets/products/dc13.webp", "assets/products/dc13-2.webp", "assets/products/dc13-3.webp", "assets/products/dc13-4.webp", "assets/products/dc13-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Tan", price: 1830 }, { label: "Charcoal Grey", price: 1830 }, { label: "Light Grey", price: 1830 }],
@@ -2956,7 +2956,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc14", name: "Leather Swivel Bar Stool", cat: "Dining", room: "Living Room", price: 2111, memberPrice: 1900, sku: "SH-10368", tag: "New", ph: "", img: "assets/products/dc14.webp",
+  { id: "dc14", optionLabel: "Colour", sizeImg: {"Tan":"assets/products/dc14.webp","Beige":"assets/products/dc14-5.webp"}, name: "Leather Swivel Bar Stool", cat: "Dining", room: "Living Room", price: 2111, memberPrice: 1900, sku: "SH-10368", tag: "New", ph: "", img: "assets/products/dc14.webp",
     imgs: ["assets/products/dc14.webp", "assets/products/dc14-2.webp", "assets/products/dc14-3.webp", "assets/products/dc14-4.webp", "assets/products/dc14-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Tan", price: 2111 }, { label: "Beige", price: 2111 }, { label: "Emerald Green", price: 2111 }],
@@ -2969,7 +2969,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc15", name: "Walnut & Leather Dining Chair", cat: "Dining", room: "Living Room", price: 2180, memberPrice: 1962, sku: "SH-10369", tag: "New", ph: "", img: "assets/products/dc15.webp",
+  { id: "dc15", optionLabel: "Colour", name: "Walnut & Leather Dining Chair", cat: "Dining", room: "Living Room", price: 2180, memberPrice: 1962, sku: "SH-10369", tag: "New", ph: "", img: "assets/products/dc15.webp",
     imgs: ["assets/products/dc15.webp", "assets/products/dc15-2.webp", "assets/products/dc15-3.webp", "assets/products/dc15-4.webp", "assets/products/dc15-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 2180 }, { label: "Off White", price: 2180 }],
@@ -2982,7 +2982,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Solid timber", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "dc16", name: "Leather Bar Stool on Steel", cat: "Dining", room: "Living Room", price: 2198, memberPrice: 1978, sku: "SH-10370", tag: "New", ph: "", img: "assets/products/dc16.webp",
+  { id: "dc16", optionLabel: "Colour", sizeImg: {"Beige":"assets/products/dc16-5.webp"}, name: "Leather Bar Stool on Steel", cat: "Dining", room: "Living Room", price: 2198, memberPrice: 1978, sku: "SH-10370", tag: "New", ph: "", img: "assets/products/dc16.webp",
     imgs: ["assets/products/dc16.webp", "assets/products/dc16-2.webp", "assets/products/dc16-3.webp", "assets/products/dc16-4.webp", "assets/products/dc16-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Tan", price: 2198 }, { label: "Beige", price: 2198 }, { label: "Khaki", price: 2198 }, { label: "Grey", price: 2198 }],
@@ -2995,7 +2995,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "4", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc17", name: "Leather Bar Stool", cat: "Dining", room: "Living Room", price: 2202, memberPrice: 1982, sku: "SH-10371", tag: "New", ph: "", img: "assets/products/dc17.webp",
+  { id: "dc17", optionLabel: "Colour", sizeImg: {"Black":"assets/products/dc17-5.webp","Beige":"assets/products/dc17-2.webp"}, name: "Leather Bar Stool", cat: "Dining", room: "Living Room", price: 2202, memberPrice: 1982, sku: "SH-10371", tag: "New", ph: "", img: "assets/products/dc17.webp",
     imgs: ["assets/products/dc17.webp", "assets/products/dc17-2.webp", "assets/products/dc17-3.webp", "assets/products/dc17-4.webp", "assets/products/dc17-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 2202 }, { label: "Beige", price: 2202 }],
@@ -3073,7 +3073,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc23", name: "Velvet Bar Stool with Gold Base", cat: "Dining", room: "Living Room", price: 2304, memberPrice: 2074, sku: "SH-10377", tag: "New", ph: "", img: "assets/products/dc23.webp",
+  { id: "dc23", optionLabel: "Colour", sizeImg: {"Black":"assets/products/dc23-3.webp","Grey":"assets/products/dc23-4.webp","Emerald Green":"assets/products/dc23-5.webp"}, name: "Velvet Bar Stool with Gold Base", cat: "Dining", room: "Living Room", price: 2304, memberPrice: 2074, sku: "SH-10377", tag: "New", ph: "", img: "assets/products/dc23.webp",
     imgs: ["assets/products/dc23.webp", "assets/products/dc23-2.webp", "assets/products/dc23-3.webp", "assets/products/dc23-4.webp", "assets/products/dc23-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 2304 }, { label: "Grey", price: 2304 }, { label: "Emerald Green", price: 2304 }],
@@ -3086,7 +3086,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc24", name: "Bar Stool in Four Colours", cat: "Dining", room: "Living Room", price: 2352, memberPrice: 2117, sku: "SH-10378", tag: "New", ph: "", img: "assets/products/dc24.webp",
+  { id: "dc24", optionLabel: "Colour", sizeImg: {"Grey":"assets/products/dc24-5.webp","Black":"assets/products/dc24-4.webp"}, name: "Bar Stool in Four Colours", cat: "Dining", room: "Living Room", price: 2352, memberPrice: 2117, sku: "SH-10378", tag: "New", ph: "", img: "assets/products/dc24.webp",
     imgs: ["assets/products/dc24.webp", "assets/products/dc24-2.webp", "assets/products/dc24-3.webp", "assets/products/dc24-4.webp", "assets/products/dc24-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Grey", price: 2352 }, { label: "Black", price: 2352 }, { label: "Green", price: 2352 }, { label: "Off White", price: 2352 }],
@@ -3099,7 +3099,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "4", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc25", name: "Dining Chair in Green, Brown or Ivory", cat: "Dining", room: "Living Room", price: 2352, memberPrice: 2117, sku: "SH-10379", tag: "New", ph: "", img: "assets/products/dc25.webp",
+  { id: "dc25", optionLabel: "Colour", sizeImg: {"Green":"assets/products/dc25-5.webp"}, name: "Dining Chair in Green, Brown or Ivory", cat: "Dining", room: "Living Room", price: 2352, memberPrice: 2117, sku: "SH-10379", tag: "New", ph: "", img: "assets/products/dc25.webp",
     imgs: ["assets/products/dc25.webp", "assets/products/dc25-2.webp", "assets/products/dc25-3.webp", "assets/products/dc25-4.webp", "assets/products/dc25-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Green", price: 2352 }, { label: "Brown", price: 2352 }, { label: "Ivory", price: 2352 }],
@@ -3162,7 +3162,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "15", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc30", name: "Leather Bar Stool in Five Colours", cat: "Dining", room: "Living Room", price: 2739, memberPrice: 2465, sku: "SH-10384", tag: "New", ph: "", img: "assets/products/dc30.webp",
+  { id: "dc30", optionLabel: "Colour", sizeImg: {"Orange":"assets/products/dc30-3.webp"}, name: "Leather Bar Stool in Five Colours", cat: "Dining", room: "Living Room", price: 2739, memberPrice: 2465, sku: "SH-10384", tag: "New", ph: "", img: "assets/products/dc30.webp",
     imgs: ["assets/products/dc30.webp", "assets/products/dc30-2.webp", "assets/products/dc30-3.webp", "assets/products/dc30-4.webp", "assets/products/dc30-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Orange", price: 2739 }, { label: "Black", price: 2739 }, { label: "Grey", price: 2739 }, { label: "Brown", price: 2739 }, { label: "White", price: 2739 }],
@@ -3251,7 +3251,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc03", name: "Cushioned Chair in Three Colours", cat: "Living Room", room: "Living Room", price: 2293, memberPrice: 2064, sku: "SH-10391", tag: "New", ph: "", img: "assets/products/oc03.webp",
+  { id: "oc03", optionLabel: "Colour", name: "Cushioned Chair in Three Colours", cat: "Living Room", room: "Living Room", price: 2293, memberPrice: 2064, sku: "SH-10391", tag: "New", ph: "", img: "assets/products/oc03.webp",
     imgs: ["assets/products/oc03.webp", "assets/products/oc03-2.webp", "assets/products/oc03-3.webp", "assets/products/oc03-4.webp", "assets/products/oc03-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White", price: 2293 }, { label: "Green", price: 2293 }, { label: "Tan", price: 2293 }],
@@ -3277,7 +3277,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "5", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc05", name: "Cotton Chair with Steel Frame", cat: "Living Room", room: "Living Room", price: 2831, memberPrice: 2548, sku: "SH-10393", tag: "New", ph: "", img: "assets/products/oc05.webp",
+  { id: "oc05", optionLabel: "Colour", sizeImg: {"Tan":"assets/products/oc05-3.webp","Beige":"assets/products/oc05-5.webp","Emerald Green":"assets/products/oc05-4.webp"}, name: "Cotton Chair with Steel Frame", cat: "Living Room", room: "Living Room", price: 2831, memberPrice: 2548, sku: "SH-10393", tag: "New", ph: "", img: "assets/products/oc05.webp",
     imgs: ["assets/products/oc05.webp", "assets/products/oc05-2.webp", "assets/products/oc05-3.webp", "assets/products/oc05-4.webp", "assets/products/oc05-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Tan", price: 2831 }, { label: "Navy", price: 2831 }, { label: "Grey", price: 2831 }, { label: "Beige", price: 2831 }, { label: "Emerald Green", price: 2831 }],
@@ -3290,7 +3290,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "5", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc06", name: "Bouclé Chair in White or Pink", cat: "Living Room", room: "Living Room", price: 3130, memberPrice: 2817, sku: "SH-10394", tag: "New", ph: "", img: "assets/products/oc06.webp",
+  { id: "oc06", optionLabel: "Colour", sizeImg: {"White":"assets/products/oc06-2.webp"}, name: "Bouclé Chair in White or Pink", cat: "Living Room", room: "Living Room", price: 3130, memberPrice: 2817, sku: "SH-10394", tag: "New", ph: "", img: "assets/products/oc06.webp",
     imgs: ["assets/products/oc06.webp", "assets/products/oc06-2.webp", "assets/products/oc06-3.webp", "assets/products/oc06-4.webp", "assets/products/oc06-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White", price: 3130 }, { label: "Pink", price: 3130 }],
@@ -3303,7 +3303,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc07", name: "Two-Tone Leather Chair", cat: "Living Room", room: "Living Room", price: 3304, memberPrice: 2974, sku: "SH-10395", tag: "New", ph: "", img: "assets/products/oc07.webp",
+  { id: "oc07", optionLabel: "Colour", sizeImg: {"Black +  White":"assets/products/oc07-2.webp","Orange":"assets/products/oc07-5.webp","Navy":"assets/products/oc07-4.webp","Orange + Grey":"assets/products/oc07-3.webp"}, name: "Two-Tone Leather Chair", cat: "Living Room", room: "Living Room", price: 3304, memberPrice: 2974, sku: "SH-10395", tag: "New", ph: "", img: "assets/products/oc07.webp",
     imgs: ["assets/products/oc07.webp", "assets/products/oc07-2.webp", "assets/products/oc07-3.webp", "assets/products/oc07-4.webp", "assets/products/oc07-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black +  White", price: 3304 }, { label: "Orange", price: 3304 }, { label: "Navy", price: 3304 }, { label: "Orange + Grey", price: 3304 }],
@@ -3341,7 +3341,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "oc10", name: "Metal-Frame Chair in Three Tones", cat: "Living Room", room: "Living Room", price: 3519, memberPrice: 3167, sku: "SH-10398", tag: "New", ph: "", img: "assets/products/oc10.webp",
+  { id: "oc10", optionLabel: "Colour", sizeImg: {"Snow White":"assets/products/oc10-3.webp"}, name: "Metal-Frame Chair in Three Tones", cat: "Living Room", room: "Living Room", price: 3519, memberPrice: 3167, sku: "SH-10398", tag: "New", ph: "", img: "assets/products/oc10.webp",
     imgs: ["assets/products/oc10.webp", "assets/products/oc10-2.webp", "assets/products/oc10-3.webp", "assets/products/oc10-4.webp", "assets/products/oc10-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Snow White", price: 3519 }, { label: "Charcoal Grey", price: 3519 }, { label: "Black", price: 3519 }],
@@ -3367,7 +3367,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc12", name: "Transparent Shell Chair", cat: "Living Room", room: "Living Room", price: 3656, memberPrice: 3290, sku: "SH-10400", tag: "New", ph: "", img: "assets/products/oc12.webp",
+  { id: "oc12", optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc12-5.webp"}, name: "Transparent Shell Chair", cat: "Living Room", room: "Living Room", price: 3656, memberPrice: 3290, sku: "SH-10400", tag: "New", ph: "", img: "assets/products/oc12.webp",
     imgs: ["assets/products/oc12.webp", "assets/products/oc12-2.webp", "assets/products/oc12-3.webp", "assets/products/oc12-4.webp", "assets/products/oc12-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Green", price: 3656 }, { label: "Clear", price: 3656 }, { label: "Tan + White", price: 3656 }],
@@ -3380,7 +3380,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Steel / metal", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Avoid abrasive pads on plated or brushed finishes, and check the feet for floor protectors." },
 
-  { id: "oc13", name: "Cushion Chair in Beige or Orange", cat: "Living Room", room: "Living Room", price: 3674, memberPrice: 3307, sku: "SH-10401", tag: "New", ph: "", img: "assets/products/oc13.webp",
+  { id: "oc13", optionLabel: "Colour", sizeImg: {"Beige":"assets/products/oc13-2.webp","Orange":"assets/products/oc13-5.webp"}, name: "Cushion Chair in Beige or Orange", cat: "Living Room", room: "Living Room", price: 3674, memberPrice: 3307, sku: "SH-10401", tag: "New", ph: "", img: "assets/products/oc13.webp",
     imgs: ["assets/products/oc13.webp", "assets/products/oc13-2.webp", "assets/products/oc13-3.webp", "assets/products/oc13-4.webp", "assets/products/oc13-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Beige", price: 3674 }, { label: "Orange", price: 3674 }],
@@ -3419,7 +3419,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Wool / lambswool", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum gently and air it rather than washing. Blot spills straight away, and keep it out of prolonged damp." },
 
-  { id: "oc16", name: "Monochrome Occasional Chair", cat: "Living Room", room: "Living Room", price: 3693, memberPrice: 3324, sku: "SH-10404", tag: "New", ph: "", img: "assets/products/oc16.webp",
+  { id: "oc16", optionLabel: "Colour", sizeImg: {"White":"assets/products/oc16.webp","Black":"assets/products/oc16-3.webp"}, name: "Monochrome Occasional Chair", cat: "Living Room", room: "Living Room", price: 3693, memberPrice: 3324, sku: "SH-10404", tag: "New", ph: "", img: "assets/products/oc16.webp",
     imgs: ["assets/products/oc16.webp", "assets/products/oc16-2.webp", "assets/products/oc16-3.webp", "assets/products/oc16-4.webp", "assets/products/oc16-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White", price: 3693 }, { label: "Black", price: 3693 }],
@@ -3432,7 +3432,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc17", name: "Velvet Chair in Six Colours", cat: "Living Room", room: "Living Room", price: 3920, memberPrice: 3528, sku: "SH-10405", tag: "New", ph: "", img: "assets/products/oc17.webp",
+  { id: "oc17", optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/oc17.webp","Orange":"assets/products/oc17-5.webp"}, name: "Velvet Chair in Six Colours", cat: "Living Room", room: "Living Room", price: 3920, memberPrice: 3528, sku: "SH-10405", tag: "New", ph: "", img: "assets/products/oc17.webp",
     imgs: ["assets/products/oc17.webp", "assets/products/oc17-2.webp", "assets/products/oc17-3.webp", "assets/products/oc17-4.webp", "assets/products/oc17-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Ivory", price: 3920 }, { label: "Orange", price: 3920 }, { label: "Blue", price: 3920 }, { label: "Green", price: 3920 }, { label: "Pink", price: 3920 }, { label: "Grey", price: 3920 }],
@@ -3445,7 +3445,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Velvet", "Options": "6", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "oc18", name: "Velvet & Timber Chair", cat: "Living Room", room: "Living Room", price: 3952, memberPrice: 3557, sku: "SH-10406", tag: "New", ph: "", img: "assets/products/oc18.webp",
+  { id: "oc18", optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc18-5.webp"}, name: "Velvet & Timber Chair", cat: "Living Room", room: "Living Room", price: 3952, memberPrice: 3557, sku: "SH-10406", tag: "New", ph: "", img: "assets/products/oc18.webp",
     imgs: ["assets/products/oc18.webp", "assets/products/oc18-2.webp", "assets/products/oc18-3.webp", "assets/products/oc18-4.webp", "assets/products/oc18-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White", price: 3952 }, { label: "Green", price: 3952 }, { label: "Orange", price: 3952 }],
@@ -3497,7 +3497,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc22", name: "Ivory or Black Occasional Chair", cat: "Living Room", room: "Living Room", price: 4141, memberPrice: 3727, sku: "SH-10410", tag: "New", ph: "", img: "assets/products/oc22.webp",
+  { id: "oc22", optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/oc22-3.webp","Black":"assets/products/oc22-5.webp"}, name: "Ivory or Black Occasional Chair", cat: "Living Room", room: "Living Room", price: 4141, memberPrice: 3727, sku: "SH-10410", tag: "New", ph: "", img: "assets/products/oc22.webp",
     imgs: ["assets/products/oc22.webp", "assets/products/oc22-2.webp", "assets/products/oc22-3.webp", "assets/products/oc22-4.webp", "assets/products/oc22-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Ivory", price: 4141 }, { label: "Black", price: 4141 }],
@@ -3510,7 +3510,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc23", name: "Linen & Metal Chair", cat: "Living Room", room: "Living Room", price: 4259, memberPrice: 3833, sku: "SH-10411", tag: "New", ph: "", img: "assets/products/oc23.webp",
+  { id: "oc23", optionLabel: "Colour", sizeImg: {"Khaki":"assets/products/oc23-5.webp","Brown":"assets/products/oc23.webp"}, name: "Linen & Metal Chair", cat: "Living Room", room: "Living Room", price: 4259, memberPrice: 3833, sku: "SH-10411", tag: "New", ph: "", img: "assets/products/oc23.webp",
     imgs: ["assets/products/oc23.webp", "assets/products/oc23-2.webp", "assets/products/oc23-3.webp", "assets/products/oc23-4.webp", "assets/products/oc23-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Khaki", price: 4259 }, { label: "Brown", price: 4259 }],
@@ -3574,7 +3574,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc28", name: "Metal Swing Chair", cat: "Living Room", room: "Living Room", price: 4406, memberPrice: 3965, sku: "SH-10416", tag: "New", ph: "", img: "assets/products/oc28.webp",
+  { id: "oc28", optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc28-3.webp","Gold":"assets/products/oc28-4.webp"}, name: "Metal Swing Chair", cat: "Living Room", room: "Living Room", price: 4406, memberPrice: 3965, sku: "SH-10416", tag: "New", ph: "", img: "assets/products/oc28.webp",
     imgs: ["assets/products/oc28.webp", "assets/products/oc28-2.webp", "assets/products/oc28-3.webp", "assets/products/oc28-4.webp", "assets/products/oc28-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 4406 }, { label: "Gold", price: 4406 }],
@@ -3600,7 +3600,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "11", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc30", name: "Upholstered Corner Seat", cat: "Living Room", room: "Living Room", price: 4507, memberPrice: 4056, sku: "SH-10418", tag: "New", ph: "", img: "assets/products/oc30.webp",
+  { id: "oc30", optionLabel: "Colour", sizeImg: {"Snow White":"assets/products/oc30-2.jpg","Light Pink":"assets/products/oc30-3.webp"}, name: "Upholstered Corner Seat", cat: "Living Room", room: "Living Room", price: 4507, memberPrice: 4056, sku: "SH-10418", tag: "New", ph: "", img: "assets/products/oc30.webp",
     imgs: ["assets/products/oc30.webp", "assets/products/oc30-2.jpg", "assets/products/oc30-3.webp", "assets/products/oc30-4.webp", "assets/products/oc30-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Snow White", price: 4507 }, { label: "Light Pink", price: 4507 }],
@@ -3652,7 +3652,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc34", name: "Occasional Chair in Olive, White or Orange", cat: "Living Room", room: "Living Room", price: 4787, memberPrice: 4308, sku: "SH-10422", tag: "New", ph: "", img: "assets/products/oc34.webp",
+  { id: "oc34", optionLabel: "Colour", sizeImg: {"White":"assets/products/oc34.webp","Orange":"assets/products/oc34-4.webp"}, name: "Occasional Chair in Olive, White or Orange", cat: "Living Room", room: "Living Room", price: 4787, memberPrice: 4308, sku: "SH-10422", tag: "New", ph: "", img: "assets/products/oc34.webp",
     imgs: ["assets/products/oc34.webp", "assets/products/oc34-2.webp", "assets/products/oc34-3.webp", "assets/products/oc34-4.webp", "assets/products/oc34-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Olive", price: 4787 }, { label: "White", price: 4787 }, { label: "Orange", price: 4787 }],
@@ -3691,7 +3691,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Steel / metal", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Avoid abrasive pads on plated or brushed finishes, and check the feet for floor protectors." },
 
-  { id: "oc37", name: "Velvet Chair on Stainless Steel", cat: "Living Room", room: "Living Room", price: 4924, memberPrice: 4432, sku: "SH-10425", tag: "New", ph: "", img: "assets/products/oc37.webp",
+  { id: "oc37", optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc37-4.webp","Brown":"assets/products/oc37-5.webp","Light Green":"assets/products/oc37-3.webp"}, name: "Velvet Chair on Stainless Steel", cat: "Living Room", room: "Living Room", price: 4924, memberPrice: 4432, sku: "SH-10425", tag: "New", ph: "", img: "assets/products/oc37.webp",
     imgs: ["assets/products/oc37.webp", "assets/products/oc37-2.webp", "assets/products/oc37-3.webp", "assets/products/oc37-4.webp", "assets/products/oc37-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White", price: 4924 }, { label: "Green", price: 4924 }, { label: "Brown", price: 4924 }, { label: "Light Green", price: 4924 }, { label: "Beige", price: 4924 }],
@@ -3730,7 +3730,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc40", name: "Leather Chair in Seven Colours", cat: "Living Room", room: "Living Room", price: 4963, memberPrice: 4467, sku: "SH-10428", tag: "New", ph: "", img: "assets/products/oc40.webp",
+  { id: "oc40", optionLabel: "Colour", sizeImg: {"Khaki":"assets/products/oc40-5.webp","Grey":"assets/products/oc40-3.webp","White":"assets/products/oc40.webp","Orange":"assets/products/oc40-4.webp"}, name: "Leather Chair in Seven Colours", cat: "Living Room", room: "Living Room", price: 4963, memberPrice: 4467, sku: "SH-10428", tag: "New", ph: "", img: "assets/products/oc40.webp",
     imgs: ["assets/products/oc40.webp", "assets/products/oc40-2.webp", "assets/products/oc40-3.webp", "assets/products/oc40-4.webp", "assets/products/oc40-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 4963 }, { label: "Pink", price: 4963 }, { label: "Khaki", price: 4963 }, { label: "Grey", price: 4963 }, { label: "White", price: 4963 }, { label: "Chocolate", price: 4963 }, { label: "Orange", price: 4963 }],
@@ -3832,7 +3832,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc48", name: "Bouclé Chair with Ash & Metal Frame", cat: "Living Room", room: "Living Room", price: 5519, memberPrice: 4967, sku: "SH-10436", tag: "New", ph: "", img: "assets/products/oc48.webp",
+  { id: "oc48", optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc48-4.webp","Beige":"assets/products/oc48.webp"}, name: "Bouclé Chair with Ash & Metal Frame", cat: "Living Room", room: "Living Room", price: 5519, memberPrice: 4967, sku: "SH-10436", tag: "New", ph: "", img: "assets/products/oc48.webp",
     imgs: ["assets/products/oc48.webp", "assets/products/oc48-2.webp", "assets/products/oc48-3.webp", "assets/products/oc48-4.webp", "assets/products/oc48-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 5519 }, { label: "Beige", price: 5519 }, { label: "Caramel", price: 5519 }],
@@ -3845,7 +3845,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc49", name: "Chocolate or Black Cushion Chair", cat: "Living Room", room: "Living Room", price: 5533, memberPrice: 4980, sku: "SH-10437", tag: "New", ph: "", img: "assets/products/oc49.webp",
+  { id: "oc49", optionLabel: "Colour", sizeImg: {"Chocolate":"assets/products/oc49-2.webp","Black":"assets/products/oc49-5.webp"}, name: "Chocolate or Black Cushion Chair", cat: "Living Room", room: "Living Room", price: 5533, memberPrice: 4980, sku: "SH-10437", tag: "New", ph: "", img: "assets/products/oc49.webp",
     imgs: ["assets/products/oc49.webp", "assets/products/oc49-2.webp", "assets/products/oc49-3.webp", "assets/products/oc49-4.webp", "assets/products/oc49-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Chocolate", price: 5533 }, { label: "Black", price: 5533 }],
@@ -3858,7 +3858,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc50", name: "Leather Chair in Four Colours", cat: "Living Room", room: "Living Room", price: 5533, memberPrice: 4980, sku: "SH-10438", tag: "New", ph: "", img: "assets/products/oc50.webp",
+  { id: "oc50", optionLabel: "Colour", sizeImg: {"Navy":"assets/products/oc50-4.webp"}, name: "Leather Chair in Four Colours", cat: "Living Room", room: "Living Room", price: 5533, memberPrice: 4980, sku: "SH-10438", tag: "New", ph: "", img: "assets/products/oc50.webp",
     imgs: ["assets/products/oc50.webp", "assets/products/oc50-2.webp", "assets/products/oc50-3.webp", "assets/products/oc50-4.webp", "assets/products/oc50-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Navy", price: 5533 }, { label: "Orange", price: 5533 }, { label: "Brown", price: 5533 }, { label: "Black", price: 5533 }],
@@ -3884,7 +3884,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc52", name: "Bouclé & Leather Chair on Steel", cat: "Living Room", room: "Living Room", price: 5809, memberPrice: 5228, sku: "SH-10440", tag: "New", ph: "", img: "assets/products/oc52.webp",
+  { id: "oc52", optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc52-3.webp"}, name: "Bouclé & Leather Chair on Steel", cat: "Living Room", room: "Living Room", price: 5809, memberPrice: 5228, sku: "SH-10440", tag: "New", ph: "", img: "assets/products/oc52.webp",
     imgs: ["assets/products/oc52.webp", "assets/products/oc52-2.webp", "assets/products/oc52-3.webp", "assets/products/oc52-4.webp", "assets/products/oc52-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 5809 }, { label: "Orange", price: 5809 }],
@@ -3922,7 +3922,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc55", name: "Leather Chair, Four Neutrals", cat: "Living Room", room: "Living Room", price: 6250, memberPrice: 5625, sku: "SH-10443", tag: "New", ph: "", img: "assets/products/oc55.webp",
+  { id: "oc55", optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc55.webp","Tan":"assets/products/oc55-5.webp"}, name: "Leather Chair, Four Neutrals", cat: "Living Room", room: "Living Room", price: 6250, memberPrice: 5625, sku: "SH-10443", tag: "New", ph: "", img: "assets/products/oc55.webp",
     imgs: ["assets/products/oc55.webp", "assets/products/oc55-2.webp", "assets/products/oc55-3.webp", "assets/products/oc55-4.webp", "assets/products/oc55-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 6250 }, { label: "Grey", price: 6250 }, { label: "White", price: 6250 }, { label: "Tan", price: 6250 }],
@@ -3960,7 +3960,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "oc58", name: "Velvet Chair in Green, White or Blue", cat: "Living Room", room: "Living Room", price: 6411, memberPrice: 5770, sku: "SH-10446", tag: "New", ph: "", img: "assets/products/oc58.webp",
+  { id: "oc58", optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc58-5.webp","Blue":"assets/products/oc58-2.webp"}, name: "Velvet Chair in Green, White or Blue", cat: "Living Room", room: "Living Room", price: 6411, memberPrice: 5770, sku: "SH-10446", tag: "New", ph: "", img: "assets/products/oc58.webp",
     imgs: ["assets/products/oc58.webp", "assets/products/oc58-2.webp", "assets/products/oc58-3.webp", "assets/products/oc58-4.webp", "assets/products/oc58-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Green", price: 6411 }, { label: "Off White", price: 6411 }, { label: "Blue", price: 6411 }],
@@ -3999,7 +3999,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc61", name: "Sculptural Chair in Three Colours", cat: "Living Room", room: "Living Room", price: 6809, memberPrice: 6128, sku: "SH-10449", tag: "New", ph: "", img: "assets/products/oc61.webp",
+  { id: "oc61", optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc61-2.webp","Mustard":"assets/products/oc61-4.webp"}, name: "Sculptural Chair in Three Colours", cat: "Living Room", room: "Living Room", price: 6809, memberPrice: 6128, sku: "SH-10449", tag: "New", ph: "", img: "assets/products/oc61.webp",
     imgs: ["assets/products/oc61.webp", "assets/products/oc61-2.webp", "assets/products/oc61-3.webp", "assets/products/oc61-4.webp", "assets/products/oc61-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 6809 }, { label: "Mustard", price: 6809 }, { label: "Snow White", price: 6809 }],
@@ -4012,7 +4012,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc62", name: "Swivel Chair in Khaki, Navy or Orange", cat: "Living Room", room: "Living Room", price: 6887, memberPrice: 6198, sku: "SH-10450", tag: "New", ph: "", img: "assets/products/oc62.webp",
+  { id: "oc62", optionLabel: "Colour", sizeImg: {"Khaki Green":"assets/products/oc62.webp","Navy":"assets/products/oc62-3.webp","Orange":"assets/products/oc62-4.webp"}, name: "Swivel Chair in Khaki, Navy or Orange", cat: "Living Room", room: "Living Room", price: 6887, memberPrice: 6198, sku: "SH-10450", tag: "New", ph: "", img: "assets/products/oc62.webp",
     imgs: ["assets/products/oc62.webp", "assets/products/oc62-2.webp", "assets/products/oc62-3.webp", "assets/products/oc62-4.webp", "assets/products/oc62-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Khaki Green", price: 6887 }, { label: "Navy", price: 6887 }, { label: "Orange", price: 6887 }],
@@ -4025,7 +4025,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc63", name: "Two-Tone Leather Chair in Brown", cat: "Living Room", room: "Living Room", price: 6959, memberPrice: 6263, sku: "SH-10451", tag: "New", ph: "", img: "assets/products/oc63.webp",
+  { id: "oc63", optionLabel: "Colour", sizeImg: {"White + Brown":"assets/products/oc63.webp","Black + Brown":"assets/products/oc63-3.webp"}, name: "Two-Tone Leather Chair in Brown", cat: "Living Room", room: "Living Room", price: 6959, memberPrice: 6263, sku: "SH-10451", tag: "New", ph: "", img: "assets/products/oc63.webp",
     imgs: ["assets/products/oc63.webp", "assets/products/oc63-2.webp", "assets/products/oc63-3.webp", "assets/products/oc63-4.webp", "assets/products/oc63-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White + Brown", price: 6959 }, { label: "Black + Brown", price: 6959 }],
@@ -4075,7 +4075,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc67", name: "Occasional Chair in Snow White or Charcoal", cat: "Living Room", room: "Living Room", price: 7659, memberPrice: 6893, sku: "SH-10455", tag: "New", ph: "", img: "assets/products/oc67.webp",
+  { id: "oc67", optionLabel: "Colour", sizeImg: {"Snow White":"assets/products/oc67-3.webp","Charcoal Grey":"assets/products/oc67-5.webp"}, name: "Occasional Chair in Snow White or Charcoal", cat: "Living Room", room: "Living Room", price: 7659, memberPrice: 6893, sku: "SH-10455", tag: "New", ph: "", img: "assets/products/oc67.webp",
     imgs: ["assets/products/oc67.webp", "assets/products/oc67-2.webp", "assets/products/oc67-3.webp", "assets/products/oc67-4.webp", "assets/products/oc67-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Snow White", price: 7659 }, { label: "Charcoal Grey", price: 7659 }],
@@ -4102,7 +4102,7 @@ const PRODUCTS = [
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
   // ── Living Room, Office & lighting (final batch) ──
-  { id: "lr001q", name: "Timber Wall Light", cat: "Home Décor", room: "Home Décor", price: 350, memberPrice: 315, sku: "SH-10783", tag: "New", ph: "", img: "assets/products/lr001q.webp",
+  { id: "lr001q", optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr001q-3.webp"}, name: "Timber Wall Light", cat: "Home Décor", room: "Home Décor", price: 350, memberPrice: 315, sku: "SH-10783", tag: "New", ph: "", img: "assets/products/lr001q.webp",
     imgs: ["assets/products/lr001q.webp", "assets/products/lr001q-2.webp", "assets/products/lr001q-3.webp", "assets/products/lr001q-4.webp"],
     sizes: [{ label: "Black", price: 350 }, { label: "White", price: 350 }],
     desc: "Timber wall light. In Black or White.",
@@ -4275,7 +4275,7 @@ const PRODUCTS = [
     specs: { "Type": "Chandelier", "Material": "Crystal", "Options": "24", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lr015q", name: "Dining Chair", cat: "Dining", room: "Living Room", price: 944, memberPrice: 850, sku: "SH-10797", tag: "New", ph: "", img: "assets/products/lr015q.webp",
+  { id: "lr015q", optionLabel: "Colour", sizeImg: {"Blue":"assets/products/lr015q-4.webp","Grey":"assets/products/lr015q-2.webp"}, name: "Dining Chair", cat: "Dining", room: "Living Room", price: 944, memberPrice: 850, sku: "SH-10797", tag: "New", ph: "", img: "assets/products/lr015q.webp",
     imgs: ["assets/products/lr015q.webp", "assets/products/lr015q-2.webp", "assets/products/lr015q-3.webp", "assets/products/lr015q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Orange", price: 944 }, { label: "Blue", price: 944 }, { label: "Grey", price: 944 }],
@@ -4391,7 +4391,7 @@ const PRODUCTS = [
     specs: { "Type": "Pendant Light", "Material": "Marble", "Options": "12", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lr024q", name: "Dining Chair (Black / Grey)", cat: "Dining", room: "Living Room", price: 1326, memberPrice: 1193, sku: "SH-10806", tag: "New", ph: "", img: "assets/products/lr024q.webp",
+  { id: "lr024q", optionLabel: "Colour", name: "Dining Chair (Black / Grey)", cat: "Dining", room: "Living Room", price: 1326, memberPrice: 1193, sku: "SH-10806", tag: "New", ph: "", img: "assets/products/lr024q.webp",
     imgs: ["assets/products/lr024q.webp", "assets/products/lr024q-2.webp", "assets/products/lr024q-3.webp", "assets/products/lr024q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Orange", price: 1326 }, { label: "Black", price: 1326 }, { label: "Grey", price: 1326 }, { label: "Navy", price: 1326 }],
@@ -4479,7 +4479,7 @@ const PRODUCTS = [
     specs: { "Type": "Pendant Light", "Material": "Timber", "Options": "2", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lr031q", name: "Leather Dining Chair", cat: "Dining", room: "Living Room", price: 1513, memberPrice: 1362, sku: "SH-10813", tag: "New", ph: "", img: "assets/products/lr031q.webp",
+  { id: "lr031q", optionLabel: "Colour", sizeImg: {"White":"assets/products/lr031q-3.webp"}, name: "Leather Dining Chair", cat: "Dining", room: "Living Room", price: 1513, memberPrice: 1362, sku: "SH-10813", tag: "New", ph: "", img: "assets/products/lr031q.webp",
     imgs: ["assets/products/lr031q.webp", "assets/products/lr031q-2.webp", "assets/products/lr031q-3.webp", "assets/products/lr031q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 1513 }, { label: "Beige", price: 1513 }, { label: "White", price: 1513 }],
@@ -4492,7 +4492,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Chair", "Material": "Leather", "Options": "3", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr032q", name: "Leather Bar Stool in Four Colours", cat: "Dining", room: "Living Room", price: 1572, memberPrice: 1415, sku: "SH-10814", tag: "New", ph: "", img: "assets/products/lr032q.webp",
+  { id: "lr032q", optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr032q.webp","Tan":"assets/products/lr032q-4.webp"}, name: "Leather Bar Stool in Four Colours", cat: "Dining", room: "Living Room", price: 1572, memberPrice: 1415, sku: "SH-10814", tag: "New", ph: "", img: "assets/products/lr032q.webp",
     imgs: ["assets/products/lr032q.webp", "assets/products/lr032q-2.webp", "assets/products/lr032q-3.webp", "assets/products/lr032q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 1572 }, { label: "Tan", price: 1572 }, { label: "Grey", price: 1572 }, { label: "White", price: 1572 }],
@@ -4531,7 +4531,7 @@ const PRODUCTS = [
     specs: { "Type": "Chandelier", "Material": "Steel", "Options": "10", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lr035q", name: "Leather Dining Chair (Black / Beige)", cat: "Dining", room: "Living Room", price: 1639, memberPrice: 1475, sku: "SH-10817", tag: "New", ph: "", img: "assets/products/lr035q.webp",
+  { id: "lr035q", optionLabel: "Colour", name: "Leather Dining Chair (Black / Beige)", cat: "Dining", room: "Living Room", price: 1639, memberPrice: 1475, sku: "SH-10817", tag: "New", ph: "", img: "assets/products/lr035q.webp",
     imgs: ["assets/products/lr035q.webp", "assets/products/lr035q-2.webp", "assets/products/lr035q-3.webp", "assets/products/lr035q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Orange + Black", price: 1639 }, { label: "Orange + Gold", price: 1639 }, { label: "Beige + Gold", price: 1639 }, { label: "Beige + Black", price: 1639 }],
@@ -4557,7 +4557,7 @@ const PRODUCTS = [
     specs: { "Type": "Table Lamp", "Material": "Marble", "Options": "3", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lr037q", name: "Leather Dining Chair (Black / Tan)", cat: "Dining", room: "Living Room", price: 1726, memberPrice: 1553, sku: "SH-10819", tag: "New", ph: "", img: "assets/products/lr037q.webp",
+  { id: "lr037q", optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr037q-4.webp","Tan":"assets/products/lr037q-3.webp"}, name: "Leather Dining Chair (Black / Tan)", cat: "Dining", room: "Living Room", price: 1726, memberPrice: 1553, sku: "SH-10819", tag: "New", ph: "", img: "assets/products/lr037q.webp",
     imgs: ["assets/products/lr037q.webp", "assets/products/lr037q-2.webp", "assets/products/lr037q-3.webp", "assets/products/lr037q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 1726 }, { label: "Tan", price: 1726 }],
@@ -4570,7 +4570,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Chair", "Material": "Leather", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr038q", name: "Leather Dining Chair (Gold / Silver)", cat: "Dining", room: "Living Room", price: 1778, memberPrice: 1600, sku: "SH-10820", tag: "New", ph: "", img: "assets/products/lr038q.webp",
+  { id: "lr038q", optionLabel: "Colour", sizeImg: {"Gold":"assets/products/lr038q.webp"}, name: "Leather Dining Chair (Gold / Silver)", cat: "Dining", room: "Living Room", price: 1778, memberPrice: 1600, sku: "SH-10820", tag: "New", ph: "", img: "assets/products/lr038q.webp",
     imgs: ["assets/products/lr038q.webp", "assets/products/lr038q-2.webp", "assets/products/lr038q-3.webp", "assets/products/lr038q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Gold", price: 1778 }, { label: "Silver", price: 1778 }],
@@ -4596,7 +4596,7 @@ const PRODUCTS = [
     specs: { "Type": "Table Lamp", "Material": "Mixed", "Options": "9", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lr040q", name: "Metal Dining Chair", cat: "Dining", room: "Living Room", price: 1806, memberPrice: 1625, sku: "SH-10822", tag: "New", ph: "", img: "assets/products/lr040q.webp",
+  { id: "lr040q", optionLabel: "Colour", sizeImg: {"White + Orange":"assets/products/lr040q-4.webp"}, name: "Metal Dining Chair", cat: "Dining", room: "Living Room", price: 1806, memberPrice: 1625, sku: "SH-10822", tag: "New", ph: "", img: "assets/products/lr040q.webp",
     imgs: ["assets/products/lr040q.webp", "assets/products/lr040q-2.webp", "assets/products/lr040q-3.webp", "assets/products/lr040q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White + Orange", price: 1806 }, { label: "White + Grey", price: 1806 }, { label: "White", price: 1806 }, { label: "Emerald Green", price: 1806 }, { label: "Mocha", price: 1806 }, { label: "Grey", price: 1806 }, { label: "Tan", price: 1806 }],
@@ -4609,7 +4609,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Chair", "Material": "Metal", "Options": "7", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "lr041q", name: "Leather Dining Chair (Black / White)", cat: "Dining", room: "Living Room", price: 1828, memberPrice: 1645, sku: "SH-10823", tag: "New", ph: "", img: "assets/products/lr041q.webp",
+  { id: "lr041q", optionLabel: "Colour", name: "Leather Dining Chair (Black / White)", cat: "Dining", room: "Living Room", price: 1828, memberPrice: 1645, sku: "SH-10823", tag: "New", ph: "", img: "assets/products/lr041q.webp",
     imgs: ["assets/products/lr041q.webp", "assets/products/lr041q-2.webp", "assets/products/lr041q-3.webp", "assets/products/lr041q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Beige", price: 1828 }, { label: "White", price: 1828 }, { label: "Grey", price: 1828 }, { label: "Dark Grey", price: 1828 }, { label: "Black", price: 1828 }, { label: "Brown", price: 1828 }],
@@ -4647,7 +4647,7 @@ const PRODUCTS = [
     specs: { "Type": "Chandelier", "Material": "Mixed", "Options": "4", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lr044q", name: "Bouclé Dining Chair", cat: "Dining", room: "Living Room", price: 1957, memberPrice: 1761, sku: "SH-10826", tag: "New", ph: "", img: "assets/products/lr044q.webp",
+  { id: "lr044q", optionLabel: "Colour", sizeImg: {"White":"assets/products/lr044q-4.webp","Charcoal":"assets/products/lr044q-3.webp"}, name: "Bouclé Dining Chair", cat: "Dining", room: "Living Room", price: 1957, memberPrice: 1761, sku: "SH-10826", tag: "New", ph: "", img: "assets/products/lr044q.webp",
     imgs: ["assets/products/lr044q.webp", "assets/products/lr044q-2.webp", "assets/products/lr044q-3.webp", "assets/products/lr044q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White", price: 1957 }, { label: "Charcoal", price: 1957 }],
@@ -4724,7 +4724,7 @@ const PRODUCTS = [
     specs: { "Type": "Pendant Light", "Material": "Marble", "Options": "4", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lr050q", name: "Dining Chair (Grey / Blue)", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10832", tag: "New", ph: "", img: "assets/products/lr050q.webp",
+  { id: "lr050q", optionLabel: "Colour", sizeImg: {"Clear":"assets/products/lr050q.webp"}, name: "Dining Chair (Grey / Blue)", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10832", tag: "New", ph: "", img: "assets/products/lr050q.webp",
     imgs: ["assets/products/lr050q.webp", "assets/products/lr050q-2.webp", "assets/products/lr050q-3.webp", "assets/products/lr050q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Coffee", price: 2204 }, { label: "Smoke Grey", price: 2204 }, { label: "Clear", price: 2204 }, { label: "Light Blue", price: 2204 }],
@@ -4849,7 +4849,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Timber", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr060q", name: "Walnut Bar Stool", cat: "Dining", room: "Living Room", price: 3109, memberPrice: 2798, sku: "SH-10842", tag: "New", ph: "", img: "assets/products/lr060q.webp",
+  { id: "lr060q", optionLabel: "Colour", sizeImg: {"Brown":"assets/products/lr060q-3.webp"}, name: "Walnut Bar Stool", cat: "Dining", room: "Living Room", price: 3109, memberPrice: 2798, sku: "SH-10842", tag: "New", ph: "", img: "assets/products/lr060q.webp",
     imgs: ["assets/products/lr060q.webp", "assets/products/lr060q-2.webp", "assets/products/lr060q-3.webp", "assets/products/lr060q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Brown", price: 3109 }, { label: "Blue", price: 3109 }, { label: "Grey", price: 3109 }, { label: "Black", price: 3109 }],
@@ -4862,7 +4862,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Walnut", "Options": "4", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr061q", name: "Leather Bar Stool (2 options)", cat: "Dining", room: "Living Room", price: 3330, memberPrice: 2997, sku: "SH-10843", tag: "New", ph: "", img: "assets/products/lr061q.webp",
+  { id: "lr061q", optionLabel: "Colour", sizeImg: {"Gold":"assets/products/lr061q-3.webp"}, name: "Leather Bar Stool (2 options)", cat: "Dining", room: "Living Room", price: 3330, memberPrice: 2997, sku: "SH-10843", tag: "New", ph: "", img: "assets/products/lr061q.webp",
     imgs: ["assets/products/lr061q.webp", "assets/products/lr061q-2.webp", "assets/products/lr061q-3.webp", "assets/products/lr061q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Silver", price: 3330 }, { label: "Gold", price: 3330 }],
@@ -4875,7 +4875,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Leather", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr062q", name: "Timber Dining Chair", cat: "Dining", room: "Living Room", price: 3369, memberPrice: 3032, sku: "SH-10844", tag: "New", ph: "", img: "assets/products/lr062q.webp",
+  { id: "lr062q", optionLabel: "Colour", sizeImg: {"Off White + Natural":"assets/products/lr062q-2.webp","Off White + Walnut":"assets/products/lr062q-4.webp","Red + Natural":"assets/products/lr062q-3.webp"}, name: "Timber Dining Chair", cat: "Dining", room: "Living Room", price: 3369, memberPrice: 3032, sku: "SH-10844", tag: "New", ph: "", img: "assets/products/lr062q.webp",
     imgs: ["assets/products/lr062q.webp", "assets/products/lr062q-2.webp", "assets/products/lr062q-3.webp", "assets/products/lr062q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Off White + Natural", price: 3369 }, { label: "Off White + Walnut", price: 3369 }, { label: "Red + Natural", price: 3369 }],
@@ -4900,7 +4900,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Mixed", "Options": "12", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr064q", name: "Leather Bar Stool (Grey / Beige)", cat: "Dining", room: "Living Room", price: 4037, memberPrice: 3633, sku: "SH-10846", tag: "New", ph: "", img: "assets/products/lr064q.webp",
+  { id: "lr064q", optionLabel: "Colour", sizeImg: {"Beige":"assets/products/lr064q-2.webp"}, name: "Leather Bar Stool (Grey / Beige)", cat: "Dining", room: "Living Room", price: 4037, memberPrice: 3633, sku: "SH-10846", tag: "New", ph: "", img: "assets/products/lr064q.webp",
     imgs: ["assets/products/lr064q.webp", "assets/products/lr064q-2.webp", "assets/products/lr064q-3.webp", "assets/products/lr064q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Coffee", price: 4037 }, { label: "Grey", price: 4037 }, { label: "Green", price: 4037 }, { label: "Beige", price: 4037 }],
@@ -4977,7 +4977,7 @@ const PRODUCTS = [
     specs: { "Type": "Chandelier", "Material": "Mixed", "Options": "8", "Room": "Home Décor" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lr070q", name: "Walnut Console Table", cat: "Dining", room: "Living Room", price: 4957, memberPrice: 4461, sku: "SH-10852", tag: "New", ph: "", img: "assets/products/lr070q.webp",
+  { id: "lr070q", optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr070q-4.webp","Walnut":"assets/products/lr070q-3.webp"}, name: "Walnut Console Table", cat: "Dining", room: "Living Room", price: 4957, memberPrice: 4461, sku: "SH-10852", tag: "New", ph: "", img: "assets/products/lr070q.webp",
     imgs: ["assets/products/lr070q.webp", "assets/products/lr070q-2.webp", "assets/products/lr070q-3.webp", "assets/products/lr070q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 4957 }, { label: "Walnut", price: 4957 }],
@@ -5430,7 +5430,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Steel", "Options": "12", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "dn003q", name: "Metal Console Table", cat: "Dining", room: "Living Room", price: 3722, memberPrice: 3350, sku: "SH-10887", tag: "New", ph: "", img: "assets/products/dn003q.webp",
+  { id: "dn003q", optionLabel: "Colour", sizeImg: {"White":"assets/products/dn003q.webp"}, name: "Metal Console Table", cat: "Dining", room: "Living Room", price: 3722, memberPrice: 3350, sku: "SH-10887", tag: "New", ph: "", img: "assets/products/dn003q.webp",
     imgs: ["assets/products/dn003q.webp", "assets/products/dn003q-2.webp", "assets/products/dn003q-3.webp", "assets/products/dn003q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 3722 }, { label: "White", price: 3722 }],
@@ -5482,7 +5482,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Slate", "Options": "5", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn007q", name: "Marble Console Table", cat: "Dining", room: "Living Room", price: 7333, memberPrice: 6600, sku: "SH-10891", tag: "New", ph: "", img: "assets/products/dn007q.webp",
+  { id: "dn007q", optionLabel: "Colour", sizeImg: {"White":"assets/products/dn007q-3.webp","Green":"assets/products/dn007q-2.webp","Black":"assets/products/dn007q-4.webp"}, name: "Marble Console Table", cat: "Dining", room: "Living Room", price: 7333, memberPrice: 6600, sku: "SH-10891", tag: "New", ph: "", img: "assets/products/dn007q.webp",
     imgs: ["assets/products/dn007q.webp", "assets/products/dn007q-2.webp", "assets/products/dn007q-3.webp", "assets/products/dn007q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White", price: 7333 }, { label: "Green", price: 7333 }, { label: "Black", price: 7333 }],
@@ -6363,7 +6363,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Steel", "Options": "4", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "ow001q", name: "Office Chair", cat: "Office", room: "Office", price: 1643, memberPrice: 1479, sku: "SH-10960", tag: "New", ph: "", img: "assets/products/ow001q.webp",
+  { id: "ow001q", optionLabel: "Colour", sizeImg: {"Beige + Gold":"assets/products/ow001q.webp"}, name: "Office Chair", cat: "Office", room: "Office", price: 1643, memberPrice: 1479, sku: "SH-10960", tag: "New", ph: "", img: "assets/products/ow001q.webp",
     imgs: ["assets/products/ow001q.webp", "assets/products/ow001q-2.webp", "assets/products/ow001q-3.webp", "assets/products/ow001q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Blue + Gold", price: 1643 }, { label: "Grey + Gold", price: 1643 }, { label: "Green + Gold", price: 1643 }, { label: "Beige + Gold", price: 1643 }, { label: "Pink + Gold", price: 1643 }],
@@ -6388,7 +6388,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Slate", "Options": "6", "Room": "Office" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ow003q", name: "Leather Office Chair", cat: "Office", room: "Office", price: 4593, memberPrice: 4134, sku: "SH-10962", tag: "New", ph: "", img: "assets/products/ow003q.webp",
+  { id: "ow003q", optionLabel: "Colour", sizeImg: {"Black":"assets/products/ow003q.webp","Brown + Beige":"assets/products/ow003q-2.webp","Brown":"assets/products/ow003q-4.webp"}, name: "Leather Office Chair", cat: "Office", room: "Office", price: 4593, memberPrice: 4134, sku: "SH-10962", tag: "New", ph: "", img: "assets/products/ow003q.webp",
     imgs: ["assets/products/ow003q.webp", "assets/products/ow003q-2.webp", "assets/products/ow003q-3.webp", "assets/products/ow003q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Black", price: 4593 }, { label: "Brown + Beige", price: 4593 }, { label: "Brown", price: 4593 }, { label: "Dark Coffee + Brown", price: 4593 }, { label: "Purple", price: 4593 }],
@@ -6485,7 +6485,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Timber", "Options": "3", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow011q", name: "Leather Office Chair (Black / Grey)", cat: "Office", room: "Office", price: 6278, memberPrice: 5650, sku: "SH-10970", tag: "New", ph: "", img: "assets/products/ow011q.webp",
+  { id: "ow011q", optionLabel: "Colour", sizeImg: {"Grey":"assets/products/ow011q-4.webp","Brown":"assets/products/ow011q-2.webp","Black":"assets/products/ow011q-3.webp"}, name: "Leather Office Chair (Black / Grey)", cat: "Office", room: "Office", price: 6278, memberPrice: 5650, sku: "SH-10970", tag: "New", ph: "", img: "assets/products/ow011q.webp",
     imgs: ["assets/products/ow011q.webp", "assets/products/ow011q-2.webp", "assets/products/ow011q-3.webp", "assets/products/ow011q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Grey", price: 6278 }, { label: "Brown", price: 6278 }, { label: "Black", price: 6278 }],
@@ -6557,7 +6557,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "1", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow017q", name: "Leather Office Chair (White / Brown)", cat: "Office", room: "Office", price: 6759, memberPrice: 6083, sku: "SH-10976", tag: "New", ph: "", img: "assets/products/ow017q.webp",
+  { id: "ow017q", optionLabel: "Colour", sizeImg: {"Brown":"assets/products/ow017q.webp"}, name: "Leather Office Chair (White / Brown)", cat: "Office", room: "Office", price: 6759, memberPrice: 6083, sku: "SH-10976", tag: "New", ph: "", img: "assets/products/ow017q.webp",
     imgs: ["assets/products/ow017q.webp", "assets/products/ow017q-2.webp", "assets/products/ow017q-3.webp", "assets/products/ow017q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Brown", price: 6759 }, { label: "White", price: 6759 }],
@@ -6570,7 +6570,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "2", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow018q", name: "Walnut Office Chair", cat: "Office", room: "Office", price: 7222, memberPrice: 6500, sku: "SH-10977", tag: "New", ph: "", img: "assets/products/ow018q.webp",
+  { id: "ow018q", optionLabel: "Colour", sizeImg: {"Ivory/Beige":"assets/products/ow018q-3.webp"}, name: "Walnut Office Chair", cat: "Office", room: "Office", price: 7222, memberPrice: 6500, sku: "SH-10977", tag: "New", ph: "", img: "assets/products/ow018q.webp",
     imgs: ["assets/products/ow018q.webp", "assets/products/ow018q-2.webp", "assets/products/ow018q-3.webp", "assets/products/ow018q-4.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Ivory/Beige", price: 7222 }, { label: "Black", price: 7222 }],
@@ -6930,7 +6930,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedroom accessory", "Material": "Marble & metal", "Options": "1", "Room": "Bedroom" },
     care: "Wipe with a soft, damp cloth and dry. Avoid abrasive pads on plated finishes." },
 
-  { id: "ba04z", name: "Marble Coat Tree", cat: "Bedroom", room: "Bedroom", price: 1000, memberPrice: 900, sku: "SH-10679", tag: "New", ph: "", img: "assets/products/ba04z.webp",
+  { id: "ba04z", optionLabel: "Colour", sizeImg: {"White & Gold":"assets/products/ba04z-2.webp"}, name: "Marble Coat Tree", cat: "Bedroom", room: "Bedroom", price: 1000, memberPrice: 900, sku: "SH-10679", tag: "New", ph: "", img: "assets/products/ba04z.webp",
     imgs: ["assets/products/ba04z.webp", "assets/products/ba04z-2.webp", "assets/products/ba04z-3.webp", "assets/products/ba04z-4.webp", "assets/products/ba04z-5.webp"],
     sizes: [{ label: "White & Gold", price: 1000 }, { label: "Black & Gold", price: 1000 }],
     desc: "A coat tree in white and gold or black and gold, on marble.",
@@ -7317,7 +7317,7 @@ const PRODUCTS = [
     specs: { "Type": "Blanket / cushion", "Material": "Soft furnishing", "Options": "26", "Room": "Bedroom" },
     care: "Machine wash cold on a gentle cycle with like colours, or follow the care label where one is attached. Do not tumble dry hot, which flattens the pile." },
 
-  { id: "bp07z", name: "Faux Fur Cushion Cover", cat: "Bedroom", room: "Bedroom", price: 87, memberPrice: 78, sku: "SH-10711", tag: "New", ph: "", img: "assets/products/bp07z.webp",
+  { id: "bp07z", optionLabel: "Colour", name: "Faux Fur Cushion Cover", cat: "Bedroom", room: "Bedroom", price: 87, memberPrice: 78, sku: "SH-10711", tag: "New", ph: "", img: "assets/products/bp07z.webp",
     imgs: ["assets/products/bp07z.webp", "assets/products/bp07z-2.webp", "assets/products/bp07z-3.webp", "assets/products/bp07z-4.webp", "assets/products/bp07z-5.webp"],
     sizes: [{ label: "Grey", price: 87 }, { label: "White", price: 87 }, { label: "Green", price: 87 }, { label: "Pink", price: 87 }, { label: "Orange", price: 87 }, { label: "Beige", price: 87 }, { label: "Brown", price: 87 }, { label: "Black", price: 87 }, { label: "Light Brown", price: 87 }],
     desc: "Faux fur in grey, white, green, pink, orange, beige or brown.",
@@ -7341,7 +7341,7 @@ const PRODUCTS = [
     specs: { "Type": "Blanket / cushion", "Material": "Soft furnishing", "Options": "14", "Room": "Bedroom" },
     care: "Machine wash cold on a gentle cycle with like colours, or follow the care label where one is attached. Do not tumble dry hot, which flattens the pile." },
 
-  { id: "bp09z", name: "Plush Cushion Cover in Four Tones", cat: "Bedroom", room: "Bedroom", price: 87, memberPrice: 78, sku: "SH-10713", tag: "New", ph: "", img: "assets/products/bp09z.webp",
+  { id: "bp09z", optionLabel: "Colour", sizeImg: {"White":"assets/products/bp09z-5.webp","Black":"assets/products/bp09z-3.webp","Grey":"assets/products/bp09z-4.webp"}, name: "Plush Cushion Cover in Four Tones", cat: "Bedroom", room: "Bedroom", price: 87, memberPrice: 78, sku: "SH-10713", tag: "New", ph: "", img: "assets/products/bp09z.webp",
     imgs: ["assets/products/bp09z.webp", "assets/products/bp09z-2.webp", "assets/products/bp09z-3.webp", "assets/products/bp09z-4.webp", "assets/products/bp09z-5.webp"],
     sizes: [{ label: "White", price: 87 }, { label: "Black", price: 87 }, { label: "Grey", price: 87 }, { label: "Pink", price: 87 }],
     desc: "White, black, grey or pink, plush pile.",
@@ -7835,7 +7835,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs03z", name: "Bedside Table with Storage", cat: "Bedroom", room: "Bedroom", price: 2204, memberPrice: 1984, sku: "SH-10754", tag: "New", ph: "", img: "assets/products/bs03z.webp",
+  { id: "bs03z", optionLabel: "Colour", sizeImg: {"White":"assets/products/bs03z-3.webp","Black":"assets/products/bs03z-4.webp"}, name: "Bedside Table with Storage", cat: "Bedroom", room: "Bedroom", price: 2204, memberPrice: 1984, sku: "SH-10754", tag: "New", ph: "", img: "assets/products/bs03z.webp",
     imgs: ["assets/products/bs03z.webp", "assets/products/bs03z-2.webp", "assets/products/bs03z-3.webp", "assets/products/bs03z-4.webp", "assets/products/bs03z-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White", price: 2204 }, { label: "Black", price: 2204 }],
@@ -7848,7 +7848,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs04z", name: "Bedside Table in Natural or Black", cat: "Bedroom", room: "Bedroom", price: 2309, memberPrice: 2078, sku: "SH-10755", tag: "New", ph: "", img: "assets/products/bs04z.webp",
+  { id: "bs04z", optionLabel: "Colour", sizeImg: {"Black":"assets/products/bs04z.webp"}, name: "Bedside Table in Natural or Black", cat: "Bedroom", room: "Bedroom", price: 2309, memberPrice: 2078, sku: "SH-10755", tag: "New", ph: "", img: "assets/products/bs04z.webp",
     imgs: ["assets/products/bs04z.webp", "assets/products/bs04z-2.webp", "assets/products/bs04z-3.webp", "assets/products/bs04z-4.webp", "assets/products/bs04z-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Natural Brown", price: 2309 }, { label: "Black", price: 2309 }],
@@ -7874,7 +7874,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "21", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs06z", name: "Leather Bedside Table", cat: "Bedroom", room: "Bedroom", price: 2574, memberPrice: 2317, sku: "SH-10757", tag: "New", ph: "", img: "assets/products/bs06z.webp",
+  { id: "bs06z", optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/bs06z-3.webp","Grey":"assets/products/bs06z.webp"}, name: "Leather Bedside Table", cat: "Bedroom", room: "Bedroom", price: 2574, memberPrice: 2317, sku: "SH-10757", tag: "New", ph: "", img: "assets/products/bs06z.webp",
     imgs: ["assets/products/bs06z.webp", "assets/products/bs06z-2.webp", "assets/products/bs06z-3.webp", "assets/products/bs06z-4.webp", "assets/products/bs06z-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Ivory", price: 2574 }, { label: "Grey", price: 2574 }],
@@ -7913,7 +7913,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "6", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs09z", name: "Oak Bedside Table in Three Tones", cat: "Bedroom", room: "Bedroom", price: 2878, memberPrice: 2590, sku: "SH-10760", tag: "New", ph: "", img: "assets/products/bs09z.webp",
+  { id: "bs09z", optionLabel: "Colour", name: "Oak Bedside Table in Three Tones", cat: "Bedroom", room: "Bedroom", price: 2878, memberPrice: 2590, sku: "SH-10760", tag: "New", ph: "", img: "assets/products/bs09z.webp",
     imgs: ["assets/products/bs09z.webp", "assets/products/bs09z-2.webp", "assets/products/bs09z-3.webp", "assets/products/bs09z-4.webp", "assets/products/bs09z-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "Beige", price: 2878 }, { label: "Grey", price: 2878 }, { label: "Black", price: 2878 }],
@@ -8891,7 +8891,7 @@ const PRODUCTS = [
     specs: { "Type": "Decorative object", "Material": "Metal", "Options": "2" },
     care: "Dust with a dry cloth and buff gently. Avoid abrasive cleaners on plated finishes, and keep away from prolonged damp." },
 
-  { id: "dc02x", name: "Marble-Look Tissue Box Cover", cat: "Home Décor", room: "Home Décor", price: 222, memberPrice: 200, sku: "SH-10645", tag: "New", ph: "", img: "assets/products/dc02x.webp",
+  { id: "dc02x", optionLabel: "Colour", sizeImg: {"Black + White":"assets/products/dc02x-4.webp","White + Grey":"assets/products/dc02x-3.webp","White + Tan":"assets/products/dc02x-5.webp"}, name: "Marble-Look Tissue Box Cover", cat: "Home Décor", room: "Home Décor", price: 222, memberPrice: 200, sku: "SH-10645", tag: "New", ph: "", img: "assets/products/dc02x.webp",
     imgs: ["assets/products/dc02x.webp", "assets/products/dc02x-2.webp", "assets/products/dc02x-3.webp", "assets/products/dc02x-4.webp", "assets/products/dc02x-5.webp"],
     sizes: [{ label: "Black + White", price: 222 }, { label: "White + Grey", price: 222 }, { label: "White + Tan", price: 222 }],
     desc: "A tissue box cover in black and white, white and grey, or white and tan, because the cardboard box it hides is not doing your bathroom any favours.",
@@ -9102,7 +9102,7 @@ const PRODUCTS = [
     specs: { "Type": "Decorative object", "Material": "Natural travertine", "Options": "1" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so clear spills quickly and never use acidic cleaners." },
 
-  { id: "dc20x", name: "Travertine Tissue Box", cat: "Home Décor", room: "Home Décor", price: 535, memberPrice: 482, sku: "SH-10663", tag: "New", ph: "", img: "assets/products/dc20x.webp",
+  { id: "dc20x", optionLabel: "Colour", name: "Travertine Tissue Box", cat: "Home Décor", room: "Home Décor", price: 535, memberPrice: 482, sku: "SH-10663", tag: "New", ph: "", img: "assets/products/dc20x.webp",
     imgs: ["assets/products/dc20x.webp", "assets/products/dc20x-2.webp", "assets/products/dc20x-3.webp", "assets/products/dc20x-4.webp", "assets/products/dc20x-5.webp"],
     sizes: [{ label: "Beige", price: 535 }, { label: "Light Beige", price: 535 }],
     desc: "Travertine in beige or light beige.",
@@ -9149,7 +9149,7 @@ const PRODUCTS = [
     specs: { "Type": "Decorative object", "Material": "Natural travertine", "Options": "1" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so clear spills quickly and never use acidic cleaners." },
 
-  { id: "dc24x", name: "Curved Wine Holder", cat: "Kitchenware", room: "Home Décor", price: 646, memberPrice: 581, sku: "SH-10667", tag: "New", ph: "", img: "assets/products/dc24x.webp",
+  { id: "dc24x", optionLabel: "Colour", sizeImg: {"Gold":"assets/products/dc24x-3.webp","Black":"assets/products/dc24x-2.webp"}, name: "Curved Wine Holder", cat: "Kitchenware", room: "Home Décor", price: 646, memberPrice: 581, sku: "SH-10667", tag: "New", ph: "", img: "assets/products/dc24x.webp",
     imgs: ["assets/products/dc24x.webp", "assets/products/dc24x-2.webp", "assets/products/dc24x-3.webp", "assets/products/dc24x-4.webp", "assets/products/dc24x-5.webp"],
     sizes: [{ label: "Gold", price: 646 }, { label: "Black", price: 646 }],
     desc: "A curved holder that balances a bottle on its own, in gold or black. It looks like a trick, and it is.",
@@ -9185,7 +9185,7 @@ const PRODUCTS = [
     specs: { "Type": "Decorative object", "Material": "Natural travertine", "Options": "1" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so clear spills quickly and never use acidic cleaners." },
 
-  { id: "dc27x", name: "Marble Book Holder", cat: "Home Décor", room: "Home Décor", price: 791, memberPrice: 712, sku: "SH-10670", tag: "New", ph: "", img: "assets/products/dc27x.webp",
+  { id: "dc27x", optionLabel: "Colour", sizeImg: {"Green":"assets/products/dc27x-2.webp","White":"assets/products/dc27x-3.webp"}, name: "Marble Book Holder", cat: "Home Décor", room: "Home Décor", price: 791, memberPrice: 712, sku: "SH-10670", tag: "New", ph: "", img: "assets/products/dc27x.webp",
     imgs: ["assets/products/dc27x.webp", "assets/products/dc27x-2.webp", "assets/products/dc27x-3.webp", "assets/products/dc27x-4.webp", "assets/products/dc27x-5.webp"],
     sizes: [{ label: "Green", price: 791 }, { label: "White", price: 791 }],
     desc: "Marble in green or white. Green marble is the rarer and the better of the two.",
@@ -9233,7 +9233,7 @@ const PRODUCTS = [
     specs: { "Type": "Decorative object", "Material": "Resin / composite", "Options": "1" },
     care: "Wipe clean with a soft, damp cloth. Avoid abrasive cleaners and harsh solvents." },
 
-  { id: "dc31x", name: "Bar Cart", cat: "Kitchenware", room: "Home Décor", price: 3257, memberPrice: 2931, sku: "SH-10674", tag: "New", ph: "", img: "assets/products/dc31x.webp",
+  { id: "dc31x", optionLabel: "Colour", sizeImg: {"White + Gold":"assets/products/dc31x.webp","Black + Gold":"assets/products/dc31x-5.webp"}, name: "Bar Cart", cat: "Kitchenware", room: "Home Décor", price: 3257, memberPrice: 2931, sku: "SH-10674", tag: "New", ph: "", img: "assets/products/dc31x.webp",
     imgs: ["assets/products/dc31x.webp", "assets/products/dc31x-2.webp", "assets/products/dc31x-3.webp", "assets/products/dc31x-4.webp", "assets/products/dc31x-5.webp"],
     lead: "8 to 10 weeks",
     sizes: [{ label: "White + Gold", price: 3257 }, { label: "Black + Gold", price: 3257 }],
@@ -9376,7 +9376,7 @@ const PRODUCTS = [
     specs: { "Type": "Light fitting", "Material": "Natural stone", "Options": "2", "Install": "Licensed electrician for hard-wired fittings" },
     care: "Switch off and let it cool before cleaning. Wipe natural stone with a soft, damp cloth and dry it, avoiding acidic cleaners. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lt11", name: "Gold-Trimmed Table Lamp", cat: "Home Décor", room: "Home Décor", price: 722, memberPrice: 650, sku: "SH-10563", tag: "New", ph: "", img: "assets/products/lt11.webp",
+  { id: "lt11", optionLabel: "Colour", sizeImg: {"White + Gold":"assets/products/lt11-4.webp","Grey + Gold":"assets/products/lt11-2.webp"}, name: "Gold-Trimmed Table Lamp", cat: "Home Décor", room: "Home Décor", price: 722, memberPrice: 650, sku: "SH-10563", tag: "New", ph: "", img: "assets/products/lt11.webp",
     imgs: ["assets/products/lt11.webp", "assets/products/lt11-2.webp", "assets/products/lt11-3.webp", "assets/products/lt11-4.webp", "assets/products/lt11-5.webp"],
     sizes: [{ label: "White + Gold", price: 722 }, { label: "Grey + Gold", price: 722 }],
     desc: "White and gold, or grey and gold.",
@@ -9436,7 +9436,7 @@ const PRODUCTS = [
     specs: { "Type": "Light fitting", "Material": "Natural stone", "Options": "6", "Install": "Licensed electrician for hard-wired fittings" },
     care: "Switch off and let it cool before cleaning. Wipe natural stone with a soft, damp cloth and dry it, avoiding acidic cleaners. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lt16", name: "Table Lamp in Silver or Black", cat: "Home Décor", room: "Home Décor", price: 865, memberPrice: 778, sku: "SH-10568", tag: "New", ph: "", img: "assets/products/lt16.webp",
+  { id: "lt16", optionLabel: "Colour", sizeImg: {"Silver":"assets/products/lt16-5.webp"}, name: "Table Lamp in Silver or Black", cat: "Home Décor", room: "Home Décor", price: 865, memberPrice: 778, sku: "SH-10568", tag: "New", ph: "", img: "assets/products/lt16.webp",
     imgs: ["assets/products/lt16.webp", "assets/products/lt16-2.webp", "assets/products/lt16-3.webp", "assets/products/lt16-4.webp", "assets/products/lt16-5.webp"],
     sizes: [{ label: "Silver", price: 865 }, { label: "Black", price: 865 }],
     desc: "Silver or black, a plain lamp done well.",
@@ -9544,7 +9544,7 @@ const PRODUCTS = [
     specs: { "Type": "Light fitting", "Material": "Glass / metal", "Options": "12", "Install": "Licensed electrician for hard-wired fittings" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; for glass or crystal, a barely damp cloth then dry buffing keeps it clear. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lt25", name: "Crystal Lamp in Four Colours", cat: "Home Décor", room: "Home Décor", price: 1217, memberPrice: 1095, sku: "SH-10577", tag: "New", ph: "", img: "assets/products/lt25.webp",
+  { id: "lt25", optionLabel: "Colour", sizeImg: {"Navy":"assets/products/lt25-2.webp","Light Green":"assets/products/lt25-4.webp","Emerald Green":"assets/products/lt25-3.webp","Pink":"assets/products/lt25-5.webp"}, name: "Crystal Lamp in Four Colours", cat: "Home Décor", room: "Home Décor", price: 1217, memberPrice: 1095, sku: "SH-10577", tag: "New", ph: "", img: "assets/products/lt25.webp",
     imgs: ["assets/products/lt25.webp", "assets/products/lt25-2.webp", "assets/products/lt25-3.webp", "assets/products/lt25-4.webp", "assets/products/lt25-5.webp"],
     sizes: [{ label: "Navy", price: 1217 }, { label: "Light Green", price: 1217 }, { label: "Emerald Green", price: 1217 }, { label: "Pink", price: 1217 }],
     desc: "Crystal in navy, light green, emerald green or pink. Coloured crystal is unusual and worth it.",
@@ -9592,7 +9592,7 @@ const PRODUCTS = [
     specs: { "Type": "Light fitting", "Material": "Natural stone", "Options": "1", "Install": "Licensed electrician for hard-wired fittings" },
     care: "Switch off and let it cool before cleaning. Wipe natural stone with a soft, damp cloth and dry it, avoiding acidic cleaners. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lt29", name: "Travertine Wall Light, Light or Dark", cat: "Home Décor", room: "Home Décor", price: 1291, memberPrice: 1162, sku: "SH-10581", tag: "New", ph: "", img: "assets/products/lt29.webp",
+  { id: "lt29", optionLabel: "Colour", name: "Travertine Wall Light, Light or Dark", cat: "Home Décor", room: "Home Décor", price: 1291, memberPrice: 1162, sku: "SH-10581", tag: "New", ph: "", img: "assets/products/lt29.webp",
     imgs: ["assets/products/lt29.webp", "assets/products/lt29-2.webp", "assets/products/lt29-3.webp", "assets/products/lt29-4.webp", "assets/products/lt29-5.webp"],
     sizes: [{ label: "Light", price: 1291 }, { label: "Dark", price: 1291 }],
     desc: "Travertine in a light or dark stone.",
@@ -9808,7 +9808,7 @@ const PRODUCTS = [
     specs: { "Type": "Light fitting", "Material": "Glass / metal", "Options": "1", "Install": "Licensed electrician for hard-wired fittings" },
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; for glass or crystal, a barely damp cloth then dry buffing keeps it clear. Hard-wired fittings should be installed by a licensed electrician." },
 
-  { id: "lt47", name: "Pendant in Brown or Black", cat: "Home Décor", room: "Home Décor", price: 3498, memberPrice: 3148, sku: "SH-10599", tag: "New", ph: "", img: "assets/products/lt47.webp",
+  { id: "lt47", optionLabel: "Colour", sizeImg: {"Light Brown":"assets/products/lt47.webp","Dark Brown":"assets/products/lt47-4.webp","Black":"assets/products/lt47-3.webp"}, name: "Pendant in Brown or Black", cat: "Home Décor", room: "Home Décor", price: 3498, memberPrice: 3148, sku: "SH-10599", tag: "New", ph: "", img: "assets/products/lt47.webp",
     imgs: ["assets/products/lt47.webp", "assets/products/lt47-2.webp", "assets/products/lt47-3.webp", "assets/products/lt47-4.webp", "assets/products/lt47-5.webp"],
     sizes: [{ label: "Light Brown", price: 3498 }, { label: "Dark Brown", price: 3498 }, { label: "Black", price: 3498 }],
     desc: "Light brown, dark brown or black.",
@@ -10431,7 +10431,7 @@ const PRODUCTS = [
     specs: { "Type": "Candle holder", "Material": "Natural travertine", "Options": "1" },
     care: "Wipe with a soft, damp cloth and dry straight away. The open pores hold liquid, so clear spills quickly and never use acidic cleaners." },
 
-  { id: "cd08", name: "Marble Candle Holder in Three Stones", cat: "Home Décor", room: "Home Décor", price: 430, memberPrice: 387, sku: "SH-10464", tag: "New", ph: "", img: "assets/products/cd08.webp",
+  { id: "cd08", optionLabel: "Colour", sizeImg: {"Black":"assets/products/cd08-5.webp"}, name: "Marble Candle Holder in Three Stones", cat: "Home Décor", room: "Home Décor", price: 430, memberPrice: 387, sku: "SH-10464", tag: "New", ph: "", img: "assets/products/cd08.webp",
     imgs: ["assets/products/cd08.webp", "assets/products/cd08-2.webp", "assets/products/cd08-3.webp", "assets/products/cd08-4.webp", "assets/products/cd08-5.webp"],
     sizes: [{ label: "Black", price: 430 }, { label: "White", price: 430 }, { label: "Travertine", price: 430 }],
     desc: "Black marble, white marble or travertine.",
@@ -10562,7 +10562,7 @@ const PRODUCTS = [
     specs: { "Type": "Wall clock", "Material": "Timber", "Options": "1" },
     care: "Dust with a dry cloth. Keep out of direct sun and away from damp, and wipe spills promptly." },
 
-  { id: "cl03", name: "Leather-Look Wall Clock", cat: "Home Décor", room: "Home Décor", price: 420, memberPrice: 378, sku: "SH-10475", tag: "New", ph: "", img: "assets/products/cl03.webp",
+  { id: "cl03", optionLabel: "Colour", sizeImg: {"Grey":"assets/products/cl03-3.webp","Red":"assets/products/cl03-5.webp","Tan":"assets/products/cl03.webp"}, name: "Leather-Look Wall Clock", cat: "Home Décor", room: "Home Décor", price: 420, memberPrice: 378, sku: "SH-10475", tag: "New", ph: "", img: "assets/products/cl03.webp",
     imgs: ["assets/products/cl03.webp", "assets/products/cl03-2.webp", "assets/products/cl03-3.webp", "assets/products/cl03-4.webp", "assets/products/cl03-5.webp"],
     sizes: [{ label: "Grey", price: 420 }, { label: "Red", price: 420 }, { label: "Tan", price: 420 }, { label: "Light Tan", price: 420 }],
     desc: "A leather-look face in grey, red, tan or light tan.",
@@ -10682,7 +10682,7 @@ const PRODUCTS = [
     specs: { "Type": "Tray / bowl", "Material": "Ceramic", "Options": "6" },
     care: "Wipe clean with a soft, damp cloth. Avoid abrasive pads, which scratch the glaze and dull any metallic detail." },
 
-  { id: "tb06", name: "Leather Organiser Tray (Four Colours)", cat: "Home Décor", room: "Home Décor", price: 204, memberPrice: 184, sku: "SH-10485", tag: "New", ph: "", img: "assets/products/tb06.webp",
+  { id: "tb06", optionLabel: "Colour", sizeImg: {"Orange":"assets/products/tb06-3.webp","Blue":"assets/products/tb06-4.webp","Red":"assets/products/tb06-5.webp"}, name: "Leather Organiser Tray (Four Colours)", cat: "Home Décor", room: "Home Décor", price: 204, memberPrice: 184, sku: "SH-10485", tag: "New", ph: "", img: "assets/products/tb06.webp",
     imgs: ["assets/products/tb06.webp", "assets/products/tb06-2.webp", "assets/products/tb06-3.webp", "assets/products/tb06-4.webp", "assets/products/tb06-5.webp"],
     sizes: [{ label: "Orange", price: 204 }, { label: "Blue", price: 204 }, { label: "Red", price: 204 }, { label: "Brown", price: 204 }],
     desc: "Leather in orange, blue, red or brown. The coloured ones lift a plain dresser.",
@@ -10694,7 +10694,7 @@ const PRODUCTS = [
     specs: { "Type": "Tray / bowl", "Material": "Leather", "Options": "4" },
     care: "Wipe with a barely damp cloth. Keep out of direct sun, and condition occasionally so the leather doesn't dry out." },
 
-  { id: "tb07", name: "Leather Tray in Neutral Tones", cat: "Home Décor", room: "Home Décor", price: 222, memberPrice: 200, sku: "SH-10486", tag: "New", ph: "", img: "assets/products/tb07.webp",
+  { id: "tb07", optionLabel: "Colour", sizeImg: {"White":"assets/products/tb07-5.webp","Beige":"assets/products/tb07-2.webp","Orange":"assets/products/tb07-3.webp"}, name: "Leather Tray in Neutral Tones", cat: "Home Décor", room: "Home Décor", price: 222, memberPrice: 200, sku: "SH-10486", tag: "New", ph: "", img: "assets/products/tb07.webp",
     imgs: ["assets/products/tb07.webp", "assets/products/tb07-2.webp", "assets/products/tb07-3.webp", "assets/products/tb07-4.webp", "assets/products/tb07-5.webp"],
     sizes: [{ label: "White", price: 222 }, { label: "Beige", price: 222 }, { label: "Orange", price: 222 }],
     desc: "Leather in white, beige or orange.",
@@ -10706,7 +10706,7 @@ const PRODUCTS = [
     specs: { "Type": "Tray / bowl", "Material": "Leather", "Options": "3" },
     care: "Wipe with a barely damp cloth. Keep out of direct sun, and condition occasionally so the leather doesn't dry out." },
 
-  { id: "tb08", name: "Storage Tray (Four Colours)", cat: "Home Décor", room: "Home Décor", price: 222, memberPrice: 200, sku: "SH-10487", tag: "New", ph: "", img: "assets/products/tb08.webp",
+  { id: "tb08", optionLabel: "Colour", sizeImg: {"Dark Grey":"assets/products/tb08-5.webp","Orange":"assets/products/tb08-3.webp","Off White":"assets/products/tb08-4.webp"}, name: "Storage Tray (Four Colours)", cat: "Home Décor", room: "Home Décor", price: 222, memberPrice: 200, sku: "SH-10487", tag: "New", ph: "", img: "assets/products/tb08.webp",
     imgs: ["assets/products/tb08.webp", "assets/products/tb08-2.webp", "assets/products/tb08-3.webp", "assets/products/tb08-4.webp", "assets/products/tb08-5.webp"],
     sizes: [{ label: "Dark Grey", price: 222 }, { label: "Orange", price: 222 }, { label: "Green", price: 222 }, { label: "Off White", price: 222 }],
     desc: "Dark grey, orange, green or off white.",
@@ -10778,7 +10778,7 @@ const PRODUCTS = [
     specs: { "Type": "Tray / bowl", "Material": "Glass", "Options": "1" },
     care: "Wash by hand in warm soapy water and dry with a soft cloth to keep it clear. Avoid sudden temperature changes, which can crack glass." },
 
-  { id: "tb14", name: "Display Tray in Grey, Beige or Green", cat: "Home Décor", room: "Home Décor", price: 274, memberPrice: 247, sku: "SH-10493", tag: "New", ph: "", img: "assets/products/tb14.webp",
+  { id: "tb14", optionLabel: "Colour", sizeImg: {"Beige":"assets/products/tb14-4.webp","Green":"assets/products/tb14.webp"}, name: "Display Tray in Grey, Beige or Green", cat: "Home Décor", room: "Home Décor", price: 274, memberPrice: 247, sku: "SH-10493", tag: "New", ph: "", img: "assets/products/tb14.webp",
     imgs: ["assets/products/tb14.webp", "assets/products/tb14-2.webp", "assets/products/tb14-3.webp", "assets/products/tb14-4.webp", "assets/products/tb14-5.webp"],
     sizes: [{ label: "Grey", price: 274 }, { label: "Beige", price: 274 }, { label: "Green", price: 274 }],
     desc: "Three quiet colours for a tray that's meant to organise rather than announce itself.",
@@ -10790,7 +10790,7 @@ const PRODUCTS = [
     specs: { "Type": "Tray / bowl", "Material": "Ceramic", "Options": "3" },
     care: "Wipe clean with a soft, damp cloth. Avoid abrasive pads, which scratch the glaze and dull any metallic detail." },
 
-  { id: "tb15", name: "Leather Tray in Green or Khaki", cat: "Home Décor", room: "Home Décor", price: 276, memberPrice: 248, sku: "SH-10494", tag: "New", ph: "", img: "assets/products/tb15.webp",
+  { id: "tb15", optionLabel: "Colour", sizeImg: {"Green":"assets/products/tb15-4.webp","Black":"assets/products/tb15-5.webp"}, name: "Leather Tray in Green or Khaki", cat: "Home Décor", room: "Home Décor", price: 276, memberPrice: 248, sku: "SH-10494", tag: "New", ph: "", img: "assets/products/tb15.webp",
     imgs: ["assets/products/tb15.webp", "assets/products/tb15-2.webp", "assets/products/tb15-3.webp", "assets/products/tb15-4.webp", "assets/products/tb15-5.webp"],
     sizes: [{ label: "Green", price: 276 }, { label: "Black", price: 276 }, { label: "Khaki", price: 276 }],
     desc: "Leather in green, black or khaki.",
@@ -10814,7 +10814,7 @@ const PRODUCTS = [
     specs: { "Type": "Tray / bowl", "Material": "Metal", "Options": "4" },
     care: "Dust with a dry cloth and buff gently. Avoid abrasive cleaners on plated finishes, and keep away from prolonged damp." },
 
-  { id: "tb17", name: "Decorative Bowl, Off White or Silver", cat: "Home Décor", room: "Home Décor", price: 294, memberPrice: 265, sku: "SH-10496", tag: "New", ph: "", img: "assets/products/tb17.webp",
+  { id: "tb17", optionLabel: "Colour", sizeImg: {"Off White":"assets/products/tb17-4.webp","Silver":"assets/products/tb17-3.webp"}, name: "Decorative Bowl, Off White or Silver", cat: "Home Décor", room: "Home Décor", price: 294, memberPrice: 265, sku: "SH-10496", tag: "New", ph: "", img: "assets/products/tb17.webp",
     imgs: ["assets/products/tb17.webp", "assets/products/tb17-2.webp", "assets/products/tb17-3.webp", "assets/products/tb17-4.webp"],
     sizes: [{ label: "Off White", price: 294 }, { label: "Silver", price: 294 }],
     desc: "A decorative ceramic bowl in off white or silver.",
@@ -11017,7 +11017,7 @@ const PRODUCTS = [
     specs: { "Type": "Vase", "Material": "Glass", "Options": "4" },
     care: "Wash by hand in warm soapy water and dry with a soft cloth to keep it clear. Avoid sudden temperature changes, which can crack glass. If you're using fresh flowers, a glass liner or a smaller jar inside will protect the inside of the piece and make it far easier to clean." },
 
-  { id: "vs05", name: "Monochrome Vase, Black or White", cat: "Home Décor", room: "Home Décor", price: 109, memberPrice: 98, sku: "SH-10513", tag: "New", ph: "", img: "assets/products/vs05.webp",
+  { id: "vs05", optionLabel: "Colour", sizeImg: {"Black":"assets/products/vs05-5.webp","White":"assets/products/vs05-2.webp"}, name: "Monochrome Vase, Black or White", cat: "Home Décor", room: "Home Décor", price: 109, memberPrice: 98, sku: "SH-10513", tag: "New", ph: "", img: "assets/products/vs05.webp",
     imgs: ["assets/products/vs05.webp", "assets/products/vs05-2.webp", "assets/products/vs05-3.webp", "assets/products/vs05-4.webp", "assets/products/vs05-5.webp"],
     sizes: [{ label: "Black", price: 109 }, { label: "White", price: 128 }],
     desc: "One clean shape in black or white.",
@@ -11089,7 +11089,7 @@ const PRODUCTS = [
     specs: { "Type": "Vase", "Material": "Ceramic", "Options": "2" },
     care: "Wipe clean with a soft, damp cloth. Avoid abrasive pads, which scratch the glaze and dull any metallic detail. If you're using fresh flowers, a glass liner or a smaller jar inside will protect the inside of the piece and make it far easier to clean." },
 
-  { id: "vs11", name: "Ceramic Vase in Black or Cream", cat: "Home Décor", room: "Home Décor", price: 178, memberPrice: 160, sku: "SH-10519", tag: "New", ph: "", img: "assets/products/vs11.webp",
+  { id: "vs11", optionLabel: "Colour", sizeImg: {"Black":"assets/products/vs11-3.webp","Cream":"assets/products/vs11-5.webp"}, name: "Ceramic Vase in Black or Cream", cat: "Home Décor", room: "Home Décor", price: 178, memberPrice: 160, sku: "SH-10519", tag: "New", ph: "", img: "assets/products/vs11.webp",
     imgs: ["assets/products/vs11.webp", "assets/products/vs11-2.webp", "assets/products/vs11-3.webp", "assets/products/vs11-4.webp", "assets/products/vs11-5.webp"],
     sizes: [{ label: "Black", price: 178 }, { label: "Cream", price: 178 }],
     desc: "Ceramic in black or cream, simple and well proportioned.",
@@ -11113,7 +11113,7 @@ const PRODUCTS = [
     specs: { "Type": "Vase", "Material": "Metal", "Options": "2" },
     care: "Dust with a dry cloth and buff gently. Avoid abrasive cleaners on plated finishes, and keep away from prolonged damp. If you're using fresh flowers, a glass liner or a smaller jar inside will protect the inside of the piece and make it far easier to clean." },
 
-  { id: "vs13", name: "Vase in Black, White or Khaki", cat: "Home Décor", room: "Home Décor", price: 180, memberPrice: 162, sku: "SH-10521", tag: "New", ph: "", img: "assets/products/vs13.webp",
+  { id: "vs13", optionLabel: "Colour", sizeImg: {"White":"assets/products/vs13-5.webp","Khaki":"assets/products/vs13-3.webp"}, name: "Vase in Black, White or Khaki", cat: "Home Décor", room: "Home Décor", price: 180, memberPrice: 162, sku: "SH-10521", tag: "New", ph: "", img: "assets/products/vs13.webp",
     imgs: ["assets/products/vs13.webp", "assets/products/vs13-2.webp", "assets/products/vs13-3.webp", "assets/products/vs13-4.webp", "assets/products/vs13-5.webp"],
     sizes: [{ label: "Black", price: 180 }, { label: "White", price: 180 }, { label: "Khaki", price: 180 }],
     desc: "Three colours, khaki being the one that suits a room with timber and greenery.",
