@@ -3079,7 +3079,7 @@ const CURATED_HAMPERS = [
 /* ---- Rotating announcement bar ---- */
 const ANNOUNCE_STEADY = true;
 const ANNOUNCE_DESKTOP = "✦ Free shipping over $3,500, Australia-wide &nbsp;·&nbsp; 🌏 We ship to AU, NZ, UK, USA, Canada, Switzerland &amp; Germany &nbsp;·&nbsp; 🌸 New décor added weekly";
-const ANNOUNCE_MOBILE = "✦ Free shipping over $3,500 · 🌸 New décor weekly";
+const ANNOUNCE_MOBILE = "✦ Free shipping over $3,500 · New décor weekly";
 const ANNOUNCEMENTS = [
   "✦ Free shipping over $3,500, Australia-wide",
   "🌏 We ship to AU, NZ, UK, USA, Canada, Switzerland &amp; Germany",

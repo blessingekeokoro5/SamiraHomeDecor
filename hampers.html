@@ -19,7 +19,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
-  <link rel="stylesheet" href="css/styles.css?v=60">
+  <link rel="stylesheet" href="css/styles.css?v=61">
   <style>
     .kit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; align-items: stretch; }
     .kit-card { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
@@ -39,96 +39,75 @@
     .occ:hover { border-color: var(--rose-soft); }
     .occ.on { background: var(--rose); border-color: var(--rose); color: #fff; }
   </style>
+  <style>
+    .gh-head { background: linear-gradient(180deg, #f6efe4, var(--cream)); padding: 26px 0 8px; }
+    .gh-head h1 { font-size: clamp(2rem, 4.6vw, 3rem); margin: 8px 0 6px; }
+    .gh-head p { color: var(--body); margin: 0 0 16px; max-width: 560px; }
+    .gh-btns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; max-width: 520px; }
+    .gh-btns .btn { width: 100%; justify-content: center; text-align: center; min-height: 50px; display: inline-flex; align-items: center; padding: 12px 10px; }
+    .gh-perks { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 14px 0 0; }
+    .gh-perks li { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: .8rem; color: var(--ink); }
+    @media (max-width: 640px) { .gh-btns .btn { font-size: .66rem; letter-spacing: .08em; } .gh-perks li { font-size: .72rem; } }
+    .gh-custom { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 4px 18px; }
+    .gh-custom summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 14px 0; }
+    .gh-custom summary::-webkit-details-marker { display: none; }
+    .gh-custom summary span { flex: 1; }
+    .gh-custom summary small { display: block; color: var(--body); font-size: .84rem; margin-top: 2px; }
+    .gh-custom summary b { font-size: 1.4rem; font-weight: 400; }
+    .gh-custom[open] summary b { transform: rotate(45deg); }
+    .gh-custom .form-card { box-shadow: none; border: 0; padding: 4px 0 18px; }
+  </style>
 </head>
 <body data-page="hampers.html">
   <div id="site-header"></div>
 
-  <!-- Collection hero, add the photo at assets/collections/gift-hampers.png -->
-  <section class="collection-hero">
-    <img class="collection-hero-img" src="assets/collections/gift-hampers.png" alt="Gift Hampers collection" onerror="this.remove()">
-    <div class="collection-hero-box">
-      <div class="coll-script">Collection</div>
-      <h1 class="coll-title">Gift Hampers</h1>
-    </div>
-  </section>
-
-  <!-- Feature strip -->
-  <section class="section" style="padding-top:0;padding-bottom:0">
+  <!-- Gifts header -->
+  <section class="gh-head">
     <div class="container">
-      <div class="feature-strip">
-        <div class="feature-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.7"/><circle cx="17" cy="18" r="1.7"/></svg>
-          <span>Free shipping over $3,500</span>
-        </div>
-        <div class="feature-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg>
-          <span id="deliveryNote">1 to 2 Week Delivery</span>
-        </div>
-        <div class="feature-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 1.6 2.7-.2 1 2.5 2.3 1.4-.8 2.6.8 2.6-2.3 1.4-1 2.5-2.7-.2L12 21l-2.2-1.6-2.7.2-1-2.5-2.3-1.4.8-2.6-.8-2.6 2.3-1.4 1-2.5 2.7.2z"/><path d="M9 12l2 2 4-4"/></svg>
-          <span>100% Satisfaction Guarantee</span>
-        </div>
-        <div class="feature-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 6-13 15-13 0 9-5 15-13 13"/><path d="M5 19c3-4 6-6 10-7"/></svg>
-          <span>Eco Friendly</span>
-        </div>
+      <div class="breadcrumb"><a href="index.html">Home</a> / <a href="gifts-packaging.html">Gifts &amp; Packaging</a> / Gift Hampers</div>
+      <h1>Gift Hampers</h1>
+      <p>Ready-made hampers, or build your own, beautifully wrapped with a personal note.</p>
+      <div class="gh-btns">
+        <a class="btn btn--dark" href="hamper-maker.html">✦ Build your own hamper</a>
+        <a class="btn btn--outline" href="gift-cards.html">💳 Gift cards</a>
       </div>
+      <ul class="gh-perks">
+        <li>🛵 Same-day metro delivery</li>
+        <li>🎀 Navy &amp; gold gift wrap</li>
+        <li>🚚 Free shipping over $3,500</li>
+      </ul>
     </div>
   </section>
 
-  <div class="container" style="margin-top:-26px;position:relative;z-index:2">
-    <div class="sale-banner reveal" style="background:var(--forest)">
-      <span class="sale-pill" style="background:#000">🛵 Same-day</span>
-      <div class="sale-copy">
-        <h3 style="color:#fff">Same-day local delivery in metro areas</h3>
-        <p style="color:var(--rose-soft)">Gift hampers delivered today by <strong>Uber</strong> &amp; <strong>DoorDash</strong>, or pick up and lay-by, choose at checkout on gift hamper orders.</p>
-      </div>
-      <a class="btn btn--light" href="hamper-maker.html">Build your hamper →</a>
-    </div>
-  </div>
-
-  <section class="section" style="padding-bottom:12px">
-    <div class="container">
-      <div class="dm-banner reveal">
-        <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
-        <span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble b6"></span>
-        <span class="bubble b7"></span><span class="bubble b8"></span>
-        <div class="dm-banner-inner">
-          <div class="dm-mono">DM</div>
-          <div class="dm-wordmark">DM · Samira Home Decor</div>
-          <div class="dm-rule"><span>❖</span></div>
-          <div class="dm-sub">Gifts &amp; Hampers</div>
-          <p class="dm-tag">Curated pieces for elevated living</p>
-          <h2 class="dm-head">Australia's home, lifestyle &amp; fragrance store</h2>
-          <ul class="dm-cats">
-            <li>Living Room</li><li>Home Décor</li><li>Bedroom</li>
-            <li>Bathroom</li><li>Gift Hampers</li><li>Lifestyle</li>
-          </ul>
-          <div class="dm-cta">
-            <a class="btn btn--primary" href="shop.html">Shop the collection →</a>
-            <a class="btn btn--outline" href="hamper-maker.html">Build a hamper</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:24px">
+  <section class="section" style="padding-top:18px">
     <div class="container">
       <div class="section-head reveal"><span class="eyebrow">Ready to gift</span><h2>Hampers we've put together</h2>
-        <p>Each one is built from the same pieces as the Hamper Maker, so you can buy it as it is or open it up and change anything you like.</p></div>
+        <p>Buy one as it is, or open it in the Hamper Maker and change anything you like.</p></div>
       <div class="occ-pills" id="occPills"></div>
       <div class="grid grid-3" id="curatedGrid"></div>
       <p class="form-note" style="text-align:center;margin-top:20px">Prices are the sum of what's inside. Packaging and dispatch are chosen at the next step.</p>
     </div>
   </section>
 
-  <!-- Create your own -->
-  <section class="section bg-cream2">
-    <div class="container" style="max-width:900px">
-      <div class="section-head reveal"><span class="eyebrow">Create my own hamper</span><h2>Design a hamper, piece by piece</h2>
-        <p>Build your own box interactively, pick treats, drinks &amp; pamper touches and watch it come together. Or send us your brief below and we'll style it for you.</p>
-        <a class="btn btn--primary" href="hamper-maker.html" style="margin-top:14px">🎁 Open the Gift Hamper Maker →</a></div>
+  <!-- Signature packaging -->
+  <section class="section bg-cream2" id="signature-packaging">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our packaging</span>
+        <h2>Signature navy &amp; gold packaging</h2>
+        <p>Every gift leaves here in navy and gold. Choose <strong>Ready to send</strong> and it's packed in a plain navy box with gold ribbon, our foil sticker and a hand-written tag, dispatched in 3 to 5 business days. Choose <strong>signature packaging</strong> and it arrives in one of our printed kits below, made to order in 14 working days.</p>
+      </div>
+      <div class="kit-grid reveal" id="kitGrid"></div>
+      <p class="form-note" style="text-align:center;margin-top:18px">The printed kits below are made to order, so allow <strong>14 working days</strong>. In a hurry? <strong>Ready to send</strong> dispatches in 3 to 5 business days and still arrives navy, gold and hand-tied. Needed for a particular date? Tell us when you order and we'll confirm before you pay.</p>
+
+    </div>
+  </section>
+
+  <!-- Prefer us to style it? -->
+  <section class="section">
+    <div class="container" style="max-width:820px">
+      <details class="gh-custom">
+        <summary><span><strong>Prefer us to style it for you?</strong><small>Tell us the occasion and budget and we'll send a mock-up and quote within 1 business day.</small></span><b>+</b></summary>
       <div class="form-card reveal">
         <form data-demo-form data-success-msg="Lovely! Your custom hamper request is in, we'll send a mock-up and quote within 1 business day.">
           <div class="field-row">
@@ -146,26 +125,12 @@
           <div class="form-success"></div>
         </form>
       </div>
-    </div>
-  </section>
-
-
-  <!-- Signature packaging -->
-  <section class="section bg-cream2" id="signature-packaging">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Our packaging</span>
-        <h2>Signature navy &amp; gold packaging</h2>
-        <p>Every gift leaves here in navy and gold. Choose <strong>Ready to send</strong> and it's packed in a plain navy box with gold ribbon, our foil sticker and a hand-written tag, dispatched in 3 to 5 business days. Choose <strong>signature packaging</strong> and it arrives in one of our printed kits below, made to order in 14 working days.</p>
-      </div>
-      <div class="kit-grid reveal" id="kitGrid"></div>
-      <p class="form-note" style="text-align:center;margin-top:18px">The printed kits below are made to order, so allow <strong>14 working days</strong>. In a hurry? <strong>Ready to send</strong> dispatches in 3 to 5 business days and still arrives navy, gold and hand-tied. Needed for a particular date? Tell us when you order and we'll confirm before you pay.</p>
-
+      </details>
     </div>
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=58"></script>
+  <script src="js/data.js?v=59"></script>
   <script src="js/components.js?v=80"></script>
   <script src="js/cart.js?v=26"></script>
   <script src="js/main.js?v=14"></script>
