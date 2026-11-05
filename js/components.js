@@ -1455,6 +1455,7 @@ function renderSupport() {
     <div id="hdResults" hidden></div>
     <div id="hdHome">
       <div class="hd-actions">
+        <button type="button" class="hd-card" onclick="openLiveChat()"><span class="hd-ic">🟢</span><div class="hd-card-t"><strong>Live chat with our team</strong><small>Chat with a real person, right here</small></div><span class="hd-go">›</span></button>
         <form class="hd-card hd-track" id="hdTrack">
           <span class="hd-ic">🚚</span>
           <div class="hd-card-t"><strong>Track my order</strong><small>Enter your order number (starts with SHD-)</small></div>
@@ -1892,13 +1893,30 @@ document.addEventListener("DOMContentLoaded", function () {
    https://embed.tawk.to/XXXXXXXX/1abcd) and set it below.
    Left empty = no live chat loaded (the Help desk still works).
    ============================================================ */
-const TAWK_EMBED_SRC = ""; // <-- paste your Tawk.to embed src here
+const TAWK_EMBED_SRC = "https://embed.tawk.to/6aed0f57ab01d93c39ae893e/default";
 (function () {
   if (!TAWK_EMBED_SRC) return;
-  window.Tawk_API = window.Tawk_API || {};
+  var T = window.Tawk_API = window.Tawk_API || {};
   window.Tawk_LoadStart = new Date();
+  // Keep Tawk's own bubble hidden so it doesn't sit on top of our
+  // Stylera / Help buttons; it's opened from "Live chat" links instead.
+  var hide = function () { try { T.hideWidget(); } catch (e) {} };
+  var show = function () { try { T.showWidget(); T.maximize(); } catch (e) {} };
+  T.onLoad = function () { if (!T.isChatMaximized || !T.isChatMaximized()) hide(); };
+  T.onChatMinimized = hide;
+  T.onChatMessageAgent = show;   // team replied, pop the chat open
   var s = document.createElement("script");
   s.async = true; s.src = TAWK_EMBED_SRC; s.charset = "UTF-8";
   s.setAttribute("crossorigin", "*");
   document.head.appendChild(s);
 })();
+
+/* Open live chat with the team; falls back to WhatsApp if Tawk hasn't loaded */
+window.openLiveChat = function () {
+  var T = window.Tawk_API;
+  if (T && typeof T.maximize === "function") {
+    try { var p = document.getElementById("chatPanel"); if (p && p.classList.contains("open")) document.getElementById("chatClose").click(); } catch (e) {}
+    T.showWidget(); T.maximize(); return;
+  }
+  window.open((window.SAMIRA && SAMIRA.socials && SAMIRA.socials.whatsapp) || "https://wa.me/61451609398", "_blank", "noopener");
+};
