@@ -3,6 +3,7 @@
    nothing to run. A product with no entry simply shows no overview.
    Format: id: [ "summary", "good for" ] */
 const AI_OVERVIEWS = {
+  bd02: ["A curved island dresser for a walk-in robe or dressing room, made from solid wood with a glass top and deep drawers. It arrives fully assembled, comes in Nude, Black, Ash or Orange, and in five lengths from 100cm to 180cm. Made to order, with delivery in about 4 weeks.", "Walk-in robes, dressing rooms and boutique displays"],
   bt01: ["A five-piece bathroom set in hand-glazed ceramic with hand-painted gold marble veining, a gilded base trim and a smooth gold pump. It comes in White, Emerald Green or Black.", "Giving a basin or vanity a matching, more formal look"],
   bt02: ["A four-piece set cut from solid Emperador Dark marble, with a soap dispenser, toothbrush holder, soap dish and tray. The natural veining means every piece looks a little different.", "Bathrooms where you want real stone rather than a printed finish"],
   bt47: ["A four-piece crystal glass vanity set on a bevelled tray, with a refillable lotion pump, a lidded cotton bud jar, and your choice of a diffuser ball or a soap dish. It comes in Smoke Grey, Iridescent Clear or Amber Gold.", "Vanities, powder rooms and guest bathrooms"],

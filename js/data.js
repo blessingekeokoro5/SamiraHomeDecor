@@ -1314,6 +1314,26 @@ const PRODUCTS = [
     care: "Wipe clean with a dry cloth. Use floor protection on hard surfaces, such as a non-slip rug or felt feet protectors, and check periodically that the fixings are tight and the support legs sit firmly on the floor." },
 
   // ── Kitchenware ──
+  { id: "bd02", lead: "about 3 weeks", dispatch: "about 3 weeks", deliveryTime: "about 4 weeks in total", variantImg: {"Nude":"assets/products/bd02.webp","Black":"assets/products/bd02-4.webp","Ash":"assets/products/bd02-5.webp","Orange":"assets/products/bd02-6.webp"}, name: "Vela Curved Walk-In Robe Island Dresser with Glass Top", cat: "Bedroom", room: "Bedroom", price: 5550, memberPrice: 5500, sku: "SH-11327", tag: "New", ph: "", img: "assets/products/bd02.webp",
+    imgs: ["assets/products/bd02.webp", "assets/products/bd02-2.webp", "assets/products/bd02-3.webp", "assets/products/bd02-4.webp", "assets/products/bd02-5.webp", "assets/products/bd02-6.webp"],
+    sizes: [{ label: "100 x 68 x 80cm", price: 5550 }, { label: "120 x 68 x 80cm", price: 5550 }, { label: "140 x 68 x 80cm", price: 5550 }, { label: "160 x 68 x 80cm", price: 5550 }, { label: "180 x 68 x 80cm", price: 5550 }],
+    colours: [{ name: "Nude", hex: "#e6dccb" }, { name: "Black", hex: "#1c1c1c" }, { name: "Ash", hex: "#77787a" }, { name: "Orange", hex: "#c8662a" }],
+    desc: "Turn your walk-in robe into a boutique dressing room with the Vela island dresser. Softly curved ends and a sleek glass top give it a gallery-like presence, while deep, smooth-gliding drawers keep folded clothes, jewellery, watches and accessories neatly in reach. Crafted from solid wood and finished in your choice of Nude, Black, Ash or Orange, it works as the centrepiece of a dressing room, a statement storage piece in a large bedroom, or a display island for a retail or office space. Available in five lengths from 100cm to 180cm to suit your room. Made to order and delivered in about 4 weeks.",
+    features: [
+      "Curved island design that looks finished from every side",
+      "Glass top to display or protect watches, jewellery and accessories",
+      "Deep, wide drawers for folded clothing and everyday essentials",
+      "Solid wood frame and construction for long-lasting strength",
+      "Arrives fully assembled, no assembly required",
+      "Five lengths: 100, 120, 140, 160 and 180cm (all 68cm deep x 80cm high)",
+      "Four finishes: Nude, Black, Ash and Orange",
+      "Ideal for walk-in robes, dressing rooms, large bedrooms and boutique displays",
+      "Made to order, delivered in about 4 weeks"
+    ],
+    specs: { "Type": "Island dresser / walk-in robe storage cabinet", "Material": "Solid wood", "Frame material": "Solid wood", "Top": "Glass", "Assembly required": "No", "Customisable": "Yes", "Colours": "Nude, Black, Ash, Orange" },
+    dimensions: "100 / 120 / 140 / 160 / 180cm L x 68cm D x 80cm H", weight: "85 kg (100cm) to 145 kg (180cm), approx.",
+    boxContents: ["1 x island dresser (fully assembled)"],
+    care: "Dust and wipe with a soft, slightly damp cloth, then dry. Clean the glass top with a glass cleaner sprayed onto the cloth, not directly onto the furniture. Avoid harsh chemicals, abrasive pads and prolonged direct sunlight." },
   { id: "kw01", name: "KitchenAid Artisan Plus Stand Mixer 4.7L, Feather Pink", cat: "Kitchenware", room: "Kitchenware", price: 1099, memberPrice: 999, sku: "SH-11002", tag: "New", ph: "", img: "assets/products/kw01-1.webp",
     imgs: ["assets/products/kw01-1.webp", "assets/products/kw01-2.webp", "assets/products/kw01-3.webp", "assets/products/kw01-4.webp", "assets/products/kw01-5.webp"],
     desc: "The mixer people photograph as much as they use. Full metal construction, a 4.7 litre stainless bowl and planetary mixing that works the whole bowl rather than one side of it, so a cake batter comes together evenly and a bread dough is actually kneaded. Eleven speeds, including a half-fold speed for folding egg whites or chocolate through without knocking the air out, and a bowl light that comes on by itself when the head is lowered. The tilt head lifts clear to add flour or swap the beater. In Feather Pink, which is the reason most people choose this one over the stainless.",
