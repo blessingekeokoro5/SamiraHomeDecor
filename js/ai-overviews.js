@@ -147,7 +147,7 @@ const AI_OVERVIEWS = {
   lx66: ["A seven-piece outdoor dining set in white and beige.", "Long lunches and easy entertaining outdoors"],
   lx67: ["A six-seat curved wicker outdoor dining set in white and light grey with an extra-long table.", "Backyard gatherings"],
   lf31: ["A soft knitted throw in a warm, muted Morandi orange with a textured knit and tassel edges. It is made from a lightweight blend of acrylic, polyester and cotton, and comes in 127 x 170cm or 127 x 220cm.", "Cosying up a sofa or bed, naps, camping and travel"],
-  lx71: ["A round 80cm coffee table with a slate (sintered stone) top on a deep drum base, in Matte Black, Cloud White or Italian Grey. You can buy it on its own or as a set with a matching 60cm side table that has a tempered glass top. Some assembly is required.", "Modern living rooms and apartments that suit a low, sculptural centrepiece"],
+  lx71: ["A two-piece set: a round 80cm coffee table with a slate (sintered stone) top on a deep drum base, plus a matching 60cm side table with a tempered glass top. It comes in four colour combinations of Matte Black, Cloud White or Italian Grey. Some assembly is required.", "Modern living rooms and apartments that suit a low, sculptural centrepiece"],
   lf32: ["A thick, double-sided plush fleece blanket with wide ribbed stripes, soft and warm without being heavy. It comes in eight colours and works as a bed blanket, over-sheet, sofa throw or nap blanket.", "Cosy bedrooms and living rooms, especially in the cooler months"],
   lx68: ["A four-seat wicker outdoor dining set in natural with a relaxed, coastal look.", "Balconies and patios"],
   lx69: ["A nine-piece outdoor dining set in beige with a sintered stone top.", "Larger gatherings and long summer lunches"],
