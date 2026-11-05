@@ -246,6 +246,46 @@ function estArrival(bizDays) {
   try { return d.toLocaleDateString("en-AU", { weekday: "long", day: "numeric", month: "long" }); }
   catch (e) { return d.toDateString(); }
 }
+/* ---- Arrival date ranges, shown only at checkout ----
+   Counted in calendar days from the day the order is placed.
+   - Home décor, lifestyle & small items: 8 to 13 days
+     (supplier: an order placed Nov 5 arrives Nov 13–18)
+   - Furniture: about 4 weeks (28 to 33 days)
+   A product can set its own window with arriveDays: [min, max]. */
+const ARRIVE_DECOR = [8, 13];
+const ARRIVE_FURNITURE = [28, 33];
+const FURNITURE_RE = /\b(sofas?|couch|lounge suite|modular|daybed|armchairs?|chairs?|stools?|barstools?|bench|ottoman|tables?|desks?|bed frame|bed base|bedhead|headboard|beds?|dressers?|wardrobes?|robes? island|cabinets?|sideboards?|buffets?|console|bookcases?|bookshel(f|ves)|shelving unit|tallboy|chest of drawers|tv unit|entertainment unit|dining set|outdoor set|lounge set|hall ?stand)\b/i;
+const NOT_FURNITURE_RE = /\b(cushion|pillow|cover|throw|blanket|lamp|pendant|chandelier|sconce|blender|kettle|toaster|mixer|runner|sheet|quilt|duvet|mat|rug|vase|candle|diffuser|tray|placemat|napkin|cloth)\b/i;
+function isFurniture(p) {
+  if (!p) return false;
+  if (p.lead) return true;                                  // made-to-order pieces
+  const n = p.name || "";
+  return FURNITURE_RE.test(n) && !NOT_FURNITURE_RE.test(n.replace(/\b(bedside|side|coffee|dining|console) tables?\b/ig, "table"));
+}
+function arriveWindow(p) {
+  if (p && Array.isArray(p.arriveDays) && p.arriveDays.length === 2) return p.arriveDays;
+  return isFurniture(p) ? ARRIVE_FURNITURE : ARRIVE_DECOR;
+}
+function fmtArriveRange(win, from) {
+  const a = new Date(from || Date.now()), b = new Date(a);
+  a.setDate(a.getDate() + win[0]); b.setDate(b.getDate() + win[1]);
+  const M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return a.getMonth() === b.getMonth()
+    ? `${M[a.getMonth()]} ${a.getDate()}–${b.getDate()}`
+    : `${M[a.getMonth()]} ${a.getDate()} – ${M[b.getMonth()]} ${b.getDate()}`;
+}
+function arriveRange(p) { return fmtArriveRange(arriveWindow(p)); }
+/* Whole-cart window: the slowest item decides when everything has arrived */
+function cartArriveWindow() {
+  let w = null;
+  getCart().forEach(function (i) {
+    if (i.giftCard || i.hamper) return;
+    const p = (typeof findProduct === "function") ? findProduct(i.id) : null;
+    const x = arriveWindow(p || i);
+    if (!w || x[1] > w[1]) w = x;
+  });
+  return w;
+}
 /* Show a "Get it by" line for ready-to-ship furniture */
 function arrivalLine(p) {
   if (p.lead || !p.fastShip) return "";

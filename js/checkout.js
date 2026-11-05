@@ -81,11 +81,12 @@ function shipCountry() {
   const el = document.getElementById("coCountry");
   return (el && SHIP_ZONES[el.value]) ? el.value : "Australia";
 }
-// Australian delivery estimate: a product can set its own time (p.deliveryTime), and the slowest wins
+// Australian delivery estimate: worked out from each item's arrival window
+// worked out from today's date; the slowest item in the cart wins.
 function cartShipDays(days) {
-  if (days !== "3 to 8 business days") return days;
-  const own = getCart().map(function (i) { const p = (typeof findProduct === "function") ? findProduct(i.id) : null; return p && p.deliveryTime; }).filter(Boolean);
-  return own.length ? own[0] : days;
+  if (shipCountry() !== "Australia") return days;
+  const w = (typeof cartArriveWindow === "function") ? cartArriveWindow() : null;
+  return w ? "arrives " + fmtArriveRange(w) : days;
 }
 
 // Total billable weight (kg) of everything in the cart
@@ -213,7 +214,7 @@ function renderCheckout() {
     return `
     <div class="co-line">
       <span class="co-thumb"><span class="ph ${i.ph}" data-label="${i.name}"><img class="ph-img" src="${src}" alt="${i.name}" onerror="this.remove()"></span><span class="co-qty">${i.qty}</span></span>
-      <span class="co-name">${i.name}${(i.colour || i.size) ? ` · ${[i.colour, i.size].filter(Boolean).join(" · ")}` : ""}${i.contents ? `<small>${i.contents}</small>` : ""}</span>
+      <span class="co-name">${i.name}${(i.colour || i.size) ? ` · ${[i.colour, i.size].filter(Boolean).join(" · ")}` : ""}${i.contents ? `<small>${i.contents}</small>` : ""}${(!i.giftCard && !i.hamper && typeof arriveRange === "function") ? `<small>🚚 Arrives ${arriveRange(prod || i)}</small>` : ""}</span>
       <span class="co-price">${money(i.price * i.qty)}</span>
     </div>`;
   }).join("");
