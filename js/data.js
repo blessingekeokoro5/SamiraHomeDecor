@@ -2169,7 +2169,7 @@ const PRODUCTS = [
     care: "Hand wash or gentle machine wash cold in a laundry bag. Do not bleach or tumble dry; dry flat in the shade. Trim any loose threads rather than pulling them." },
   { id: "lf32", variantImg: {"Dark Grey":"assets/products/lf32-2.webp", "Beige":"assets/products/lf32-3.webp", "Blue-grey":"assets/products/lf32-4.webp", "Light Grey":"assets/products/lf32-5.webp", "Khaki":"assets/products/lf32-6.webp", "Pink":"assets/products/lf32-7.webp", "Olive Green":"assets/products/lf32-8.webp", "Fruit Green":"assets/products/lf32-9.webp"}, name: "Cloud Rib Plush Blanket", cat: "Lifestyle", room: "Lifestyle", price: 105, memberPrice: 55, sku: "SH-11330", tag: "New", ph: "", img: "assets/products/lf32.webp",
     imgs: ["assets/products/lf32.webp", "assets/products/lf32-2.webp", "assets/products/lf32-3.webp", "assets/products/lf32-4.webp", "assets/products/lf32-5.webp", "assets/products/lf32-6.webp", "assets/products/lf32-7.webp", "assets/products/lf32-8.webp", "assets/products/lf32-9.webp"],
-    sizes: [/*SIZES*/],
+    sizes: [{ label: "100 x 150cm", price: 105 }, { label: "127 x 152cm", price: 105 }, { label: "154 x 206cm", price: 105 }, { label: "200 x 230cm", price: 105 }, { label: "226 x 226cm", price: 105 }, { label: "226 x 244cm", price: 105 }, { label: "226 x 274cm", price: 105 }],
     colours: [{ name: "Dark Grey", hex: "#4b4f54" }, { name: "Beige", hex: "#ece0cc" }, { name: "Blue-grey", hex: "#7d93a6" }, { name: "Light Grey", hex: "#8e8a88" }, { name: "Khaki", hex: "#b8a88f" }, { name: "Pink", hex: "#d99a95" }, { name: "Olive Green", hex: "#8c9a5b" }, { name: "Fruit Green", hex: "#a7b84a" }],
     desc: "Sink into deep, cloud-soft comfort with this thick ribbed plush blanket. Wide channels of fluffy, double-sided fleece trap warmth without feeling heavy, and the sculpted stripes give it a luxe, boutique-hotel look on the bed or sofa. Use it as a cosy top blanket in winter, a soft over-sheet, a sofa throw, or a snuggly nap and travel blanket. Available in eight colours, from moody Dark Grey and Blue-grey to soft Beige, Pink and fresh Fruit Green.",
     features: [
@@ -2180,7 +2180,7 @@ const PRODUCTS = [
       "Eight colours to suit any bedroom or living room"
     ],
     specs: { "Type": "Plush blanket / throw", "Material": "Flannel fleece (polyester)", "Construction": "Double-sided, ribbed", "Pack size": "1 blanket" },
-    dimensions: "See size options", weight: "1.5 to 3.5 kg depending on size, approx.",
+    dimensions: "100 x 150cm (throw) up to 226 x 274cm (king bed)", weight: "0.9 kg (100 x 150cm) to 3.7 kg (226 x 274cm), approx.",
     boxContents: ["1 x plush blanket"],
     care: "Machine wash cold on a gentle cycle in a laundry bag, or hand wash. Do not bleach. Tumble dry low or line dry in the shade, then shake out to fluff the pile." },
   // ── Tables: coffee, side & console ──
