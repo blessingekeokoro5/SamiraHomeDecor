@@ -231,7 +231,7 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=52"></script>
+  <script src="js/data.js?v=53"></script>
   <script src="js/components.js?v=75"></script>
   <script src="js/cart.js?v=24"></script>
   <script src="js/main.js?v=10"></script>
@@ -272,6 +272,24 @@
       if (lbl) lbl.textContent = name;
       document.querySelectorAll(".pdp-swatch").forEach((s) => s.classList.remove("active"));
       if (btn) btn.classList.add("active");
+      pdpShowVariantImg();
+    }
+    // p.variantImg: { "Colour": photo } or, where a set also has options, { "Colour|Option": photo }
+    function variantImgFor(p, colour, size) {
+      const v = p && p.variantImg;
+      return v ? (v[colour + "|" + size] || v[colour] || null) : null;
+    }
+    function pdpShowVariantImg() {
+      const id = new URLSearchParams(location.search).get("id");
+      const prod = (typeof PRODUCTS !== "undefined") && PRODUCTS.find((x) => x.id === id);
+      const src = variantImgFor(prod, pdpColour, pdpSize);
+      if (!src) return;
+      const m = document.getElementById("pdpMainImg");
+      if (m) m.src = src;
+      document.querySelectorAll(".pdp-thumb").forEach((t) => {
+        const img = t.querySelector("img");
+        t.classList.toggle("active", !!img && img.getAttribute("src") === src);
+      });
     }
     let pdpSize = null, pdpSizePrice = null;
     function pdpSetSize(label, price, btn) {
@@ -296,6 +314,7 @@
           t.classList.toggle("active", !!img && img.getAttribute("src") === src);
         });
       }
+      pdpShowVariantImg();
     }
     function blurb(p) {
       const materials = { "Living/Indoor":"crafted for everyday comfort and effortless style",
@@ -564,7 +583,8 @@
       const saved = isWishlisted(p.id);
       // The per-size photos belong in the gallery too, or picking a size
       // would swap in a picture with no matching thumbnail.
-      const firstColourImg = (p.optionLabel === "Colour" && p.sizeImg && p.sizes && p.sizes[0]) ? p.sizeImg[p.sizes[0].label] : null;
+      const firstColourImg = variantImgFor(p, p.colours && p.colours[0] && p.colours[0].name, p.sizes && p.sizes[0] && p.sizes[0].label)
+        || ((p.optionLabel === "Colour" && p.sizeImg && p.sizes && p.sizes[0]) ? p.sizeImg[p.sizes[0].label] : null);
       const gimgs = [...new Set(
         (firstColourImg ? [firstColourImg] : []).concat((p.imgs && p.imgs.length) ? p.imgs : (p.img ? [p.img] : []))
           .concat(p.sizeImg ? Object.values(p.sizeImg) : [])
