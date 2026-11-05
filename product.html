@@ -137,6 +137,28 @@
     .pdp-trust { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 18px; font-size: 0.85rem; color: var(--body); }
     .pdp-trust span { display: flex; align-items: center; gap: 7px; }
     /* Assurance list (satisfaction / money-back / secure / trusted) */
+    /* Trust strip + "Our commitment" sheet */
+    .pdp-trust { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; align-items: center; gap: 8px; min-height: 0; height: auto; letter-spacing: normal; text-transform: none; width: 100%; background: #EEF5EF; color: #2F6B45; border: 0; border-radius: 8px; padding: 9px 12px; margin: 0 0 12px; font: inherit; font-size: .86rem; font-weight: 500; text-align: left; cursor: pointer; }
+    .pdp-trust:hover { background: #E3EFE5; }
+    .pdp-trust .pt-shield { width: 18px; height: 18px; flex: none; color: #2F8A55; }
+    .pdp-trust > span { flex: 1 1 auto; min-width: 0; }
+    @media (max-width: 420px) { .pdp-trust { font-size: .76rem; padding: 9px 10px; gap: 6px; } }
+    .pdp-trust .pt-chev { width: 16px; height: 16px; flex: none; margin-left: auto; }
+    .trust-sheet { position: fixed; inset: 0; z-index: 500; display: none; align-items: flex-end; justify-content: center; }
+    .trust-sheet.open { display: flex; }
+    .trust-sheet .ts-bg { position: absolute; inset: 0; background: rgba(20,20,20,.45); }
+    .trust-sheet .ts-card { position: relative; background: #fff; width: 100%; max-width: 560px; border-radius: 18px 18px 0 0; max-height: 85svh; overflow-y: auto; padding-bottom: max(18px, env(safe-area-inset-bottom)); animation: tsUp .25s ease; }
+    @media (min-width: 700px) { .trust-sheet { align-items: center; } .trust-sheet .ts-card { border-radius: 18px; } }
+    @keyframes tsUp { from { transform: translateY(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+    .ts-head { display: flex; align-items: center; justify-content: space-between; background: #F4F4F4; padding: 18px 20px; }
+    .ts-head h3 { margin: 0; font-size: 1.2rem; color: #111; }
+    .ts-close { background: none; border: 0; font-size: 1.5rem; line-height: 1; cursor: pointer; color: #111; padding: 4px 6px; }
+    .ts-sec { padding: 16px 20px 4px; }
+    .ts-sec h4 { display: flex; align-items: center; gap: 10px; margin: 0 0 6px; font-size: 1.02rem; color: #6B1E2A; }
+    .ts-sec h4 svg { width: 26px; height: 26px; flex: none; }
+    .ts-sec p, .ts-sec li { margin: 0; color: #555; font-size: .9rem; line-height: 1.55; }
+    .ts-sec ul { margin: 4px 0 0; padding-left: 18px; }
+    .ts-more { display: block; margin: 18px 20px 4px; text-align: center; background: #111; color: #fff; border-radius: 999px; padding: 13px; font-weight: 600; text-decoration: none; }
     .pdp-paybox { background: var(--cream-2); border-radius: 10px; padding: 14px 12px; margin: 4px 0 14px; }
     .pdp-paybox .pay-row { justify-content: center; }
     .pdp-assurance { list-style: none; padding: 16px 20px; margin: 0 0 18px; background: #0B1F3A; border-radius: 12px; border-bottom: 3px solid #C6A15B; }
@@ -692,6 +714,11 @@
                 : `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">✓ Ready to ship</span> <span style="color:var(--body)">Leaves our warehouse in <strong style="color:var(--ink)">${p.dispatch || "1 to 2 business days"}</strong>${p.deliveryTime ? `, delivered in <strong style="color:var(--ink)">${p.deliveryTime}</strong>` : ""}</span>`}
               ${(!p.lead && p.fastShip) ? `<div style="margin-top:8px;font-size:0.95rem;color:var(--body)">🚚 Get it by <strong style="color:var(--ink)">${(typeof estArrival === "function" ? estArrival(6) : "")}</strong></div>` : ""}
             </div>`}
+            <button type="button" class="pdp-trust" onclick="openTrustSheet()" aria-haspopup="dialog">
+              <svg class="pt-shield" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.3v6.2c0 4.6 3.1 8.6 7.5 10 4.4-1.4 7.5-5.4 7.5-10V5.3z" fill="currentColor"/><path d="m8.6 12.2 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Fast delivery · Security &amp; Privacy · Safe Payments</span>
+              <svg class="pt-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
             ${p.cat === "Packaging" ? "" : `<div class="pdp-paybox" aria-label="Payment options">
               <div class="pay-row">
                 <span class="pay-badge pay-visa">VISA</span>
@@ -902,6 +929,36 @@
     }
 
     render();
+  </script>
+
+  <div class="trust-sheet" id="trustSheet" aria-hidden="true">
+    <div class="ts-bg" onclick="closeTrustSheet()"></div>
+    <div class="ts-card" role="dialog" aria-modal="true" aria-labelledby="tsTitle">
+      <div class="ts-head"><h3 id="tsTitle">Samira Home Decor Commitment</h3><button class="ts-close" onclick="closeTrustSheet()" aria-label="Close">✕</button></div>
+      <div class="ts-sec">
+        <h4><svg viewBox="0 0 24 24"><path d="M12 2 3 6.5v11L12 22l9-4.5v-11z" fill="#6B1E2A"/><path d="M3 6.5 12 11l9-4.5M12 11v11" stroke="#fff" stroke-width="1.2" fill="none"/></svg>Fast delivery &amp; help with any issues</h4>
+        <p>Every order is tracked, and you'll see your estimated arrival dates at checkout.</p>
+        <ul>
+          <li>Arrived damaged? We'll repair, replace or refund it.</li>
+          <li>Wrong item or missing parcel? We'll make it right.</li>
+          <li>Just contact us within 7 days with your order number.</li>
+        </ul>
+      </div>
+      <div class="ts-sec">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="#6B1E2A" stroke-width="1.7" stroke-linejoin="round"><path d="M5 9h14l-1 11H6z"/><path d="M9 9V7a3 3 0 0 1 6 0v2"/><path d="m9.5 14 2 2 3.5-3.5" stroke-linecap="round"/></svg>Security &amp; Privacy</h4>
+        <p>We protect your privacy and keep your personal details safe and secure. We never sell your information.</p>
+      </div>
+      <div class="ts-sec">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="#6B1E2A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="8" r="5"/><path d="M14 5.8v4.4M12.6 6.8h2.1a.9.9 0 0 1 0 1.8h-1.4a.9.9 0 0 0 0 1.8h2.1"/><path d="M2 17h4l3 2h6l5-3.5a1.4 1.4 0 0 0-1.7-2.2L15 15.5H10"/></svg>Safe Payments</h4>
+        <p>Pay with trusted payment partners. Card payments are processed securely, and we never see or store your full card details.</p>
+      </div>
+      <a class="ts-more" href="policy.html?doc=returns">Learn more</a>
+    </div>
+  </div>
+  <script>
+    function openTrustSheet() { const t = document.getElementById("trustSheet"); if (t) { t.classList.add("open"); t.setAttribute("aria-hidden", "false"); } }
+    function closeTrustSheet() { const t = document.getElementById("trustSheet"); if (t) { t.classList.remove("open"); t.setAttribute("aria-hidden", "true"); } }
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeTrustSheet(); });
   </script>
 </body>
 </html>

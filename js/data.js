@@ -2400,6 +2400,22 @@ const PRODUCTS = [
     desc: "Beautiful from Every Angle. Storage from Both Sides. Bring texture, softness and clever storage to your living room with the Margot Oval Fluted Coffee Table in Natural . Its generous oval profile is wrapped in vertical fluted detailing, creating a sculptural centrepiece that looks considered from every angle. Two concealed drawers are positioned on opposite sides of the table, keeping remotes, coasters and everyday essentials neatly out of sight while remaining easy to reach from either side of your living space.",
     specs: { "Type": "Living Room > Tables > Coffee Tables" } },
 
+  { id: "lx71", arriveDays: [10, 18], variantImg: {"Matte Black + Brown Glass Side Table":"assets/products/lx71-2.webp", "Matte Black (coffee table only)":"assets/products/lx71-3.webp", "Cloud White (coffee table only)":"assets/products/lx71-4.webp", "Cloud White + Grey Glass Side Table":"assets/products/lx71-5.webp", "Cloud White + Brown Glass Side Table":"assets/products/lx71-6.webp", "Italian Grey + Black Glass Side Table":"assets/products/lx71-7.webp"}, name: "Luna Round Slate Coffee Table with Glass Side Table Option", cat: "Living Room", room: "Living Room", price: 3800, memberPrice: 3500, sku: "SH-11329", tag: "New", ph: "", img: "assets/products/lx71.webp",
+    imgs: ["assets/products/lx71.webp", "assets/products/lx71-2.webp", "assets/products/lx71-3.webp", "assets/products/lx71-4.webp", "assets/products/lx71-5.webp", "assets/products/lx71-6.webp", "assets/products/lx71-7.webp"],
+    colours: [{ name: "Matte Black + Brown Glass Side Table", hex: "#2b2724" }, { name: "Matte Black (coffee table only)", hex: "#2b2724" }, { name: "Cloud White (coffee table only)", hex: "#ece6dc" }, { name: "Cloud White + Grey Glass Side Table", hex: "#ece6dc" }, { name: "Cloud White + Brown Glass Side Table", hex: "#ece6dc" }, { name: "Italian Grey + Black Glass Side Table", hex: "#8d8c8a" }],
+    desc: "Bring quiet, Italian-inspired luxury to your living room with the Luna round coffee table. A smooth slate (sintered stone) top in matte black, cloud white or Italian grey sits on a deep, rounded drum base for a solid, sculptural look that suits modern apartments and family homes alike. Choose the coffee table on its own, or pair it with the matching 60cm side table, a slim column base with a round tempered glass top in brown, grey or black glass, for a layered, designer arrangement beside the sofa.",
+    features: [
+      "Round slate (sintered stone) top that resists heat, stains and scratches",
+      "Deep drum base for a solid, sculptural look",
+      "Three top finishes: Matte Black, Cloud White or Italian Grey",
+      "Option to add a matching 60cm side table with a tempered glass top",
+      "Coffee table 80cm wide x 33cm high, side table 60cm wide x 45cm high",
+      "Compact size suits apartments and smaller living rooms"
+    ],
+    specs: { "Type": "Coffee table", "Top": "Slate (sintered stone)", "Side table top": "Tempered glass (on set options)", "Shape": "Round", "Assembly required": "Yes", "Use": "Living room" },
+    dimensions: "Coffee table 80cm W x 80cm D x 33cm H. Side table 60cm W x 60cm D x 45cm H", weight: "35 kg (coffee table only), 50 kg (with side table), approx.",
+    boxContents: ["1 x round coffee table", "1 x glass side table (set options only)"],
+    care: "Wipe the slate top with a soft damp cloth and mild detergent, then dry. Clean the glass with glass cleaner sprayed onto a cloth. Use coasters under hot dishes and avoid dragging heavy objects across the surface." },
   { id: "lx06", name: "Fiona 120cm Curved Sintered Stone Coffee Table in Walnut", cat: "Living Room", room: "Living Room", price: 505, memberPrice: 455, sku: "SH-11254", tag: "New", ph: "", img: "assets/products/lx06.webp",
     imgs: ["assets/products/lx06.webp", "assets/products/lx06-2.webp", "assets/products/lx06-3.webp", "assets/products/lx06-4.webp", "assets/products/lx06-5.webp"],
     fastShip: true,
