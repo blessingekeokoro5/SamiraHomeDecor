@@ -86,6 +86,13 @@ function shipCountry() {
 // worked out from today's date; the slowest item in the cart wins.
 function cartShipDays(days) {
   if (shipCountry() !== "Australia") return days;
+  const cart = getCart();
+  if (typeof isGiftOrder === "function" && isGiftOrder(cart)) {
+    const express = window._fulfil === "express";
+    let w = null;
+    cart.forEach(function (i) { if (i.giftCard) return; const x = giftWindow(i, express); if (!w || x[1] > w[1]) w = x; });
+    return w ? (express ? "3 to 5 business days" : "5 to 10 business days") + " · arrives " + fmtBizRange(w) : days;
+  }
   const w = (typeof cartArriveWindow === "function") ? cartArriveWindow() : null;
   return w ? "arrives " + fmtArriveRange(w) : days;
 }
@@ -131,8 +138,7 @@ function checkoutTotals() {
   const afterVoucher = afterDisc - voucher;
   const q = shipQuote(afterDisc);
   let shipping = sub <= 0 ? 0 : q.fee;
-  if (window._fulfil === "pickup") shipping = 0;   // collect in-studio, no delivery fee
-  else if (window._fulfil === "sameday") shipping = sub <= 0 ? 0 : 15;   // flat same-day local courier fee (Uber/DoorDash)
+  if (window._fulfil === "express" && sub > 0) shipping += EXPRESS_EXTRA;   // gift orders only
   const preGift = afterVoucher + shipping;
   const gc = window._giftCard || null;
   // A gift card can be used online only when it covers the whole order.
@@ -147,14 +153,12 @@ function updateTotalsUI() {
   const shipTxt = t.shipping === 0 ? "Free" : money(t.shipping);
   const line = document.getElementById("coShipLine");
   // Block international checkout when the cart has an item too bulky to ship abroad.
-  const bulky = (t.country !== "Australia" && window._fulfil !== "pickup" && window._fulfil !== "sameday") ? bulkyIntlItem() : null;
+  const bulky = (t.country !== "Australia") ? bulkyIntlItem() : null;
   window._intlBlocked = !!bulky;
   if (line && bulky) {
     line.innerHTML = `<span style="color:var(--rose-deep)">⚠️ <strong>${bulky.name}</strong> is too large to ship to ${t.country} (over ${INTL_MAX_KG}kg). It can only be delivered within Australia — please remove it for an international order, or <a href="contact.html">contact us</a> for a freight quote.</span>`;
-  } else if (line) line.innerHTML = window._fulfil === "sameday"
-    ? `<strong>Same-day local</strong> · ${shipTxt} · via Uber / DoorDash, metro area`
-    : `<strong>Standard</strong> · ${shipTxt} · to ${t.country} · calculated for ~${t.weight}kg · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
-  const s = document.getElementById("sumShip"); if (s) s.textContent = window._fulfil === "pickup" ? "Free (pickup)" : shipTxt;
+  } else if (line) line.innerHTML = `<strong>${window._fulfil === "express" ? "Express" : "Standard"}</strong> · ${shipTxt} · to ${t.country} · calculated for ~${t.weight}kg · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
+  const s = document.getElementById("sumShip"); if (s) s.textContent = shipTxt;
   const gr = document.getElementById("sumGiftRow"); if (gr) gr.style.display = t.giftCard ? "flex" : "none";
   const gv = document.getElementById("sumGift"); if (gv) gv.textContent = "−" + money(t.giftCard);
   const tot = document.getElementById("sumTotal"); if (tot) tot.textContent = money(t.total);
@@ -215,20 +219,19 @@ function renderCheckout() {
     return `
     <div class="co-line">
       <span class="co-thumb"><span class="ph ${i.ph}" data-label="${i.name}"><img class="ph-img" src="${src}" alt="${i.name}" onerror="this.remove()"></span><span class="co-qty">${i.qty}</span></span>
-      <span class="co-name">${i.name}${(i.colour || i.size) ? ` · ${[i.colour, i.size].filter(Boolean).join(" · ")}` : ""}${i.contents ? `<small>${i.contents}</small>` : ""}${(!i.giftCard && !i.hamper && typeof arriveRange === "function") ? `<small>🚚 Arrives ${arriveRange(prod || i)}</small>` : ""}</span>
+      <span class="co-name">${i.name}${(i.colour || i.size) ? ` · ${[i.colour, i.size].filter(Boolean).join(" · ")}` : ""}${i.contents ? `<small>${i.contents}</small>` : ""}${i.giftCard ? "" : `<small class="co-eta" data-gift="${(i.hamper || String(i.id).startsWith("hamper-")) ? 1 : 0}" data-idx="${cart.indexOf(i)}">🚚 Arrives ${(i.hamper || String(i.id).startsWith("hamper-")) ? fmtBizRange(giftWindow(i, window._fulfil === "express")) : arriveRange(prod || i)}</small>`}</span>
       <span class="co-price">${money(i.price * i.qty)}</span>
     </div>`;
   }).join("");
 
   wrap.innerHTML = `
     <div class="fulfil">
-      <h3 class="fulfil-title">${giftOrder ? "Choose how you'd like to get your items" : "How you'll get your items"}</h3>
+      <h3 class="fulfil-title">${giftOrder ? "Choose your delivery speed" : "How you'll get your items"}</h3>
       <div class="fulfil-grid" id="fulfilGrid">
-        <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Delivery</span></button>
         ${giftOrder ? `
-        <button type="button" class="fulfil-opt" data-mode="sameday" onclick="setFulfil('sameday')"><span class="fic">🛵</span><span>Same-day local</span></button>
-        <button type="button" class="fulfil-opt" data-mode="pickup" onclick="setFulfil('pickup')"><span class="fic">🛍️</span><span>Pick up</span></button>
-        <button type="button" class="fulfil-opt" data-mode="layby" onclick="setFulfil('layby')"><span class="fic">🗓️</span><span>Lay-by</span></button>` : ""}
+        <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Standard<br><small>5 to 10 business days</small></span></button>
+        <button type="button" class="fulfil-opt" data-mode="express" onclick="setFulfil('express')"><span class="fic">⚡</span><span>Express<br><small>3 to 5 business days</small></span></button>` : `
+        <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Delivery</span></button>`}
       </div>
       <div class="fulfil-note" id="fulfilNote"></div>
     </div>
@@ -298,7 +301,7 @@ function renderCheckout() {
   setFulfil(window._fulfil);
 }
 
-/* Same-day, pick up and lay-by are for gift orders only: a cart of custom
+/* Express shipping is offered on gift orders only: a cart of custom
    gift hampers (gift cards may ride along). Everything else is Delivery.
    create-checkout-session.js applies the same rule. */
 function isGiftOrder(cart) {
@@ -308,44 +311,18 @@ function isGiftOrder(cart) {
     cart.every((i) => id(i).startsWith("hamper-") || id(i).startsWith("giftcard-"));
 }
 
-/* Fulfilment method: Delivery · Same-day · Pick up · Lay-by */
+/* Fulfilment method: Delivery, or for gift orders Standard / Express */
 function setFulfil(mode) {
+  if (mode !== "express") mode = "delivery";
   window._fulfil = mode;
   document.querySelectorAll("#fulfilGrid .fulfil-opt").forEach((b) => b.classList.toggle("active", b.dataset.mode === mode));
   const note = document.getElementById("fulfilNote");
-  const title = document.getElementById("shipTitle");
-  const delivery = document.getElementById("deliverySection");
-  const radio = document.getElementById("shipRadio");
-  const addr = document.querySelectorAll(".ship-addr");
-  const showAddr = (show) => {
-    addr.forEach((el) => (el.style.display = show ? "" : "none"));
-    ["coAddr", "coSuburb", "coPost"].forEach((id) => { const el = document.getElementById(id); if (el) el.required = show; });
-  };
-  if (mode === "pickup") {
-    showAddr(false);
-    if (title) title.textContent = "Contact for pickup";
-    if (delivery) delivery.style.display = "none";
-    if (radio) radio.style.display = "none";
-    if (note) note.innerHTML = "🛍️ <strong>Pick up</strong>collect from our Klemzig, Adelaide studio. We'll email you when your order is ready (usually 1 to 2 business days). No delivery fee.";
-  } else if (mode === "sameday") {
-    showAddr(true);
-    if (title) title.textContent = "Delivery address";
-    if (delivery) delivery.style.display = "";
-    if (radio) radio.style.display = "";
-    if (note) note.innerHTML = "🛵 <strong>Same-day local delivery</strong>for metro-area addresses, delivered today by <strong>Uber</strong> or <strong>DoorDash</strong> on orders placed before 2pm (Mon, Sat). Flat $15 local fee. We'll text you tracking once your courier is on the way. Not in a metro area? Choose Delivery instead.";
-  } else if (mode === "layby") {
-    showAddr(true);
-    if (title) title.textContent = "Delivery address";
-    if (delivery) delivery.style.display = "";
-    if (radio) radio.style.display = "";
-    if (note) note.innerHTML = "🗓️ <strong>Lay-by</strong>reserve your pieces with a 20% deposit today and pay the balance over 8 weeks. Your items are held for you and dispatched once paid in full. Submit below and our team will email you to set it up.";
-  } else {
-    showAddr(true);
-    if (title) title.textContent = "Delivery address";
-    if (delivery) delivery.style.display = "";
-    if (radio) radio.style.display = "";
-    if (note) note.innerHTML = isGiftOrder(getCart()) ? "" : "🚚 Delivered to your door. Same-day local, pick up and lay-by are available on <a href=\"hamper-maker.html\">gift hamper</a> orders.";
-  }
+  const gift = isGiftOrder(getCart());
+  if (note) note.innerHTML = !gift ? "🚚 Delivered to your door. Your arrival dates are shown below."
+    : (mode === "express" ? "⚡ <strong>Express</strong>arrives in 3 to 5 business days." : "🚚 <strong>Standard</strong>arrives in 5 to 10 business days.");
+  document.querySelectorAll(".co-eta[data-gift='1']").forEach((el) => {
+    const it = getCart()[+el.dataset.idx]; if (it) el.textContent = "🚚 Arrives " + fmtBizRange(giftWindow(it, mode === "express"));
+  });
   if (typeof updateTotalsUI === "function") updateTotalsUI();
 }
 

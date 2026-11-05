@@ -55,7 +55,7 @@ const SHIP_ZONES = {
   "Germany":        { base: 21.30, perKg: 28.60, days: [10, 24] },
 };
 const DEFAULT_ITEM_KG = 0.75;
-const SAMEDAY_FEE = 15;
+const EXPRESS_EXTRA = 0;   // extra charge for Express on gift orders (AUD), keep in step with js/cart.js
 
 /* ---- Discount ceiling ---------------------------------------
    The largest discount any legitimate shopper can reach: the 20%
@@ -200,13 +200,13 @@ function resolveLine(raw) {
 }
 
 function shippingFor(country, fulfil, lines, afterDiscount) {
-  if (fulfil === "pickup") return { amount: 0, label: "Click & collect — Klemzig studio", days: null };
-  if (fulfil === "sameday") return { amount: SAMEDAY_FEE, label: "Same-day local courier", days: [0, 1] };
 
   const zone = SHIP_ZONES[country] || SHIP_ZONES["Australia"];
   const kg = round2(Math.max(lines.reduce((n, l) => n + l.weight * l.qty, 0), 0.1));
   let amount = round2(zone.base + zone.perKg * kg);
   if (zone.freeOver && afterDiscount >= zone.freeOver) amount = 0;
+  if (fulfil === "express") return { amount: round2(amount + EXPRESS_EXTRA), label: "Express shipping", days: [3, 5] };
+  if (fulfil === "gift") return { amount, label: amount === 0 ? "Free standard shipping" : "Standard shipping", days: [5, 10] };
   return { amount, label: amount === 0 ? "Free standard shipping" : "Standard shipping", days: zone.days };
 }
 
@@ -260,12 +260,12 @@ exports.handler = async (event) => {
       return jsonResponse(400, { error: "That's more items than we can check out at once." });
     }
 
-    // Same-day and pick up are for gift hamper orders only (matches isGiftOrder
-    // in js/checkout.js); any other cart ships by standard delivery.
+    // Gift hamper orders (matches isGiftOrder in js/checkout.js) choose Standard
+    // (5 to 10 business days) or Express (3 to 5); everything else is standard delivery.
     const itemId = (i) => String((i && i.id) || "");
     const giftOrder = items.some((i) => itemId(i).startsWith("hamper-")) &&
       items.every((i) => itemId(i).startsWith("hamper-") || itemId(i).startsWith("giftcard-"));
-    if (!giftOrder) fulfil = "ship";
+    fulfil = !giftOrder ? "ship" : (fulfil === "express" ? "express" : "gift");
 
     // 1. Trusted prices, from the catalogue only.
     const lines = items.map(resolveLine);
@@ -274,7 +274,7 @@ exports.handler = async (event) => {
     // bulky furniture can only ship within Australia.
     const INTL_MAX_KG = 20;
     const shipCountry = String(customer.country || "Australia");
-    if (shipCountry !== "Australia" && fulfil !== "pickup" && fulfil !== "sameday") {
+    if (shipCountry !== "Australia") {
       const tooHeavy = lines.find((l) => l.weight > INTL_MAX_KG);
       if (tooHeavy) {
         return jsonResponse(400, { error: `"${tooHeavy.name}" is too large to ship outside Australia (over ${INTL_MAX_KG}kg). Please remove it for international orders, or contact us for a freight quote.` });
@@ -401,7 +401,7 @@ exports.handler = async (event) => {
       shipping_options,
       phone_number_collection: { enabled: true },
       customer_email: customer.email || undefined,
-      shipping_address_collection: fulfil === "pickup" ? undefined : { allowed_countries: SHIP_COUNTRIES },
+      shipping_address_collection: { allowed_countries: SHIP_COUNTRIES },
       billing_address_collection: "auto",
       // Prices are GST-inclusive (Australian standard) so no Stripe Tax is added.
       allow_promotion_codes: false,

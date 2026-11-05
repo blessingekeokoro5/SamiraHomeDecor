@@ -291,6 +291,22 @@ function fmtArriveRange(win, from) {
     : `${M[a.getMonth()]} ${a.getDate()} – ${M[b.getMonth()]} ${b.getDate()}`;
 }
 function arriveRange(p) { return fmtArriveRange(arriveWindow(p)); }
+/* Gift hampers: Standard 5 to 10 business days, Express 3 to 5 business days
+   (signature-packed hampers add their 14 working days of making time). */
+const GIFT_STANDARD_BD = [5, 10];
+const GIFT_EXPRESS_BD = [3, 5];
+const EXPRESS_EXTRA = 0;   // extra charge for Express on gift orders (AUD), set when confirmed
+function addBizDays(d, n) { const x = new Date(d); while (n > 0) { x.setDate(x.getDate() + 1); const g = x.getDay(); if (g !== 0 && g !== 6) n--; } return x; }
+function giftWindow(item, express) {
+  const w = express ? GIFT_EXPRESS_BD : GIFT_STANDARD_BD;
+  const extra = /14 working days/i.test((item && (item.dispatch || item.contents)) || "") ? 14 : 0;
+  return [w[0] + extra, w[1] + extra];
+}
+function fmtBizRange(win) {
+  const a = addBizDays(Date.now(), win[0]), b = addBizDays(Date.now(), win[1]);
+  const M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return a.getMonth() === b.getMonth() ? `${M[a.getMonth()]} ${a.getDate()}–${b.getDate()}` : `${M[a.getMonth()]} ${a.getDate()} – ${M[b.getMonth()]} ${b.getDate()}`;
+}
 /* Whole-cart window: the slowest item decides when everything has arrived */
 function cartArriveWindow() {
   let w = null;

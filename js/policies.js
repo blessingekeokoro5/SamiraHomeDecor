@@ -29,8 +29,8 @@ const FAQ_ITEMS = [
     a: "We accept Visa, Mastercard, American Express, PayPal, Apple Pay, Google Pay, Afterpay, Klarna and Zip. All prices are in Australian Dollars (AUD) and include GST where applicable." },
   { q: "Can I return an item?",
     a: "Yes. Your rights under the Australian Consumer Law always apply, and we also offer a 30-day change-of-mind window on eligible items. See our <a href='policy.html?doc=returns'>Returns &amp; Refund Policy</a> for full details." },
-  { q: "Do you deliver gift hampers locally?",
-    a: "Yes, gift hampers can be delivered locally in select metro areas for a fast, thoughtful delivery. See options on our <a href='hampers.html'>Gifting</a> page, or we ship hampers Australia-wide." },
+  { q: "How long do gift hampers take to arrive?",
+    a: "Gift hampers ship Australia-wide. Choose Standard delivery (5 to 10 business days) or Express (3 to 5 business days) at checkout, where you'll also see your estimated arrival dates. Browse our <a href='hampers.html'>Gift Hampers</a>." },
   { q: "How does the Gift Hamper Maker work?",
     a: "Head to our <a href='hamper-maker.html'>Gift Hamper Maker</a>, choose a box and add treats, drinks, pamper and home touches. Your box builds live with a running total (minimum $60), then add a gift note and pop it in your cart." },
   { q: "Can I create a custom gift?",
@@ -76,8 +76,8 @@ const POLICIES = {
       <h3>4. International delivery</h3>
       <p>As well as Australia, we ship to New Zealand, the United Kingdom, Canada, the USA, Switzerland and Germany. Delivery times and costs are calculated at checkout. <strong>Any customs duties, import taxes or fees are the responsibility of the customer</strong> and are not included in our prices or shipping charges.</p>
 
-      <h3>5. Local gift delivery</h3>
-      <p>Selected gift hampers can be delivered within select metro areas for fast local delivery. Delivery fees and availability are confirmed at the time of ordering.</p>
+      <h3>5. Gift hamper delivery</h3>
+      <p>Gift hampers are delivered Australia-wide by courier. At checkout you can choose <strong>Standard</strong> delivery (5 to 10 business days) or <strong>Express</strong> delivery (3 to 5 business days), and your estimated arrival dates are shown before you pay. Hampers with made-to-order signature packaging need an extra 14 working days. We don't currently offer same-day delivery, pick up or lay-by.</p>
 
       <h3>6. Order tracking</h3>
       <p>Once dispatched, you'll receive a confirmation with a tracking number. You can track your order at any time via our <a href="track.html">Track Your Order</a> page using your order number, email or phone number used at checkout. Deliveries are carried by reputable carriers such as Australia Post and Aramex.</p>
@@ -154,7 +154,7 @@ const POLICIES = {
       </ul>
 
       <h3>4. Disclosure to third parties</h3>
-      <p>We may share your information with trusted third parties who help us operate, such as payment providers, delivery couriers (e.g. Australia Post, Aramex), Uber for local delivery, and IT and marketing service providers. We require these parties to protect your information. We do not sell your personal information.</p>
+      <p>We may share your information with trusted third parties who help us operate, such as payment providers, delivery couriers (e.g. Australia Post, Aramex), and IT and marketing service providers. We require these parties to protect your information. We do not sell your personal information.</p>
 
       <h3>5. Storage &amp; security</h3>
       <p>We take reasonable steps to protect your personal information from misuse, loss, and unauthorised access, including secure systems and access controls. No method of transmission over the internet is completely secure, but we work to safeguard your data.</p>
