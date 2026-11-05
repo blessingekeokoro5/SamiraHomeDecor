@@ -12,6 +12,8 @@
    ============================================================ */
 
 const BREVO_API_KEY  = process.env.BREVO_API_KEY || "";
+const IG_URL = process.env.INSTAGRAM_URL || "https://www.instagram.com/samirahomedecor";
+const FB_URL = process.env.FACEBOOK_URL || "https://www.facebook.com/share/17aCKqQ3ns/?mibextid=wwXIfr";
 const SENDER_EMAIL   = process.env.SENDER_EMAIL || "hello@samirahomedecor.com.au";
 const SENDER_NAME    = process.env.SENDER_NAME || "Samira Home Decor";
 const BUSINESS_EMAIL = process.env.BUSINESS_EMAIL || "hello@samirahomedecor.com.au";
@@ -124,6 +126,12 @@ exports.handler = async (event) => {
     <div style="font-family:Arial,Helvetica,sans-serif;max-width:580px;margin:0 auto;color:#0B1F3A;padding:10px">
       ${fromBlock}
       ${inner}
+      <div style="text-align:center;margin:20px 0 6px;padding:16px;background:#F6F1E9;border-radius:12px">
+        <div style="font-size:14px;font-weight:bold;color:#0B1F3A;margin-bottom:4px">Follow us for new décor, styling ideas &amp; member offers</div>
+        <div style="font-size:12px;color:#8a7f77;margin-bottom:12px">Tag us when your order arrives, we love seeing your space ✨</div>
+        <a href="${IG_URL}" style="display:inline-block;margin:4px;background:#0B1F3A;color:#fff;text-decoration:none;padding:10px 18px;border-radius:30px;font-size:13px;font-weight:bold">📷 Instagram</a>
+        <a href="${FB_URL}" style="display:inline-block;margin:4px;background:#0B1F3A;color:#fff;text-decoration:none;padding:10px 18px;border-radius:30px;font-size:13px;font-weight:bold">👍 Facebook</a>
+      </div>
       <p style="color:#8a7f77;font-size:12px;text-align:center;line-height:1.6;margin-top:22px">Thank you for choosing Samira Home Decor ✦<br>Questions? Just reply to this email.</p>
     </div>`;
 
