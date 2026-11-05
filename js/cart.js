@@ -295,7 +295,7 @@ function arriveRange(p) { return fmtArriveRange(arriveWindow(p)); }
    (signature-packed hampers add their 14 working days of making time). */
 const GIFT_STANDARD_BD = [5, 10];
 const GIFT_EXPRESS_BD = [3, 5];
-const EXPRESS_EXTRA = 0;   // extra charge for Express on gift orders (AUD), set when confirmed
+const EXPRESS_EXTRA = 150;   // extra charge for Express on gift orders (AUD)
 function addBizDays(d, n) { const x = new Date(d); while (n > 0) { x.setDate(x.getDate() + 1); const g = x.getDay(); if (g !== 0 && g !== 6) n--; } return x; }
 function giftWindow(item, express) {
   const w = express ? GIFT_EXPRESS_BD : GIFT_STANDARD_BD;

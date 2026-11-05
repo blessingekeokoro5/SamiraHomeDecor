@@ -230,7 +230,7 @@ function renderCheckout() {
       <div class="fulfil-grid" id="fulfilGrid">
         ${giftOrder ? `
         <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Standard<br><small>5 to 10 business days</small></span></button>
-        <button type="button" class="fulfil-opt" data-mode="express" onclick="setFulfil('express')"><span class="fic">⚡</span><span>Express<br><small>3 to 5 business days</small></span></button>` : `
+        <button type="button" class="fulfil-opt" data-mode="express" onclick="setFulfil('express')"><span class="fic">⚡</span><span>Express<br><small>3 to 5 business days · +$150</small></span></button>` : `
         <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Delivery</span></button>`}
       </div>
       <div class="fulfil-note" id="fulfilNote"></div>
@@ -319,7 +319,7 @@ function setFulfil(mode) {
   const note = document.getElementById("fulfilNote");
   const gift = isGiftOrder(getCart());
   if (note) note.innerHTML = !gift ? "🚚 Delivered to your door. Your arrival dates are shown below."
-    : (mode === "express" ? "⚡ <strong>Express</strong>arrives in 3 to 5 business days." : "🚚 <strong>Standard</strong>arrives in 5 to 10 business days.");
+    : (mode === "express" ? "⚡ <strong>Express</strong>arrives in 3 to 5 business days. Adds $150 to shipping." : "🚚 <strong>Standard</strong>arrives in 5 to 10 business days.");
   document.querySelectorAll(".co-eta[data-gift='1']").forEach((el) => {
     const it = getCart()[+el.dataset.idx]; if (it) el.textContent = "🚚 Arrives " + fmtBizRange(giftWindow(it, mode === "express"));
   });

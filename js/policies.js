@@ -30,7 +30,7 @@ const FAQ_ITEMS = [
   { q: "Can I return an item?",
     a: "Yes. Your rights under the Australian Consumer Law always apply, and we also offer a 30-day change-of-mind window on eligible items. See our <a href='policy.html?doc=returns'>Returns &amp; Refund Policy</a> for full details." },
   { q: "How long do gift hampers take to arrive?",
-    a: "Gift hampers ship Australia-wide. Choose Standard delivery (5 to 10 business days) or Express (3 to 5 business days) at checkout, where you'll also see your estimated arrival dates. Browse our <a href='hampers.html'>Gift Hampers</a>." },
+    a: "Gift hampers ship Australia-wide. Choose Standard delivery (5 to 10 business days) or Express (3 to 5 business days, an extra $150) at checkout, where you'll also see your estimated arrival dates. Browse our <a href='hampers.html'>Gift Hampers</a>." },
   { q: "How does the Gift Hamper Maker work?",
     a: "Head to our <a href='hamper-maker.html'>Gift Hamper Maker</a>, choose a box and add treats, drinks, pamper and home touches. Your box builds live with a running total (minimum $60), then add a gift note and pop it in your cart." },
   { q: "Can I create a custom gift?",
@@ -77,7 +77,7 @@ const POLICIES = {
       <p>As well as Australia, we ship to New Zealand, the United Kingdom, Canada, the USA, Switzerland and Germany. Delivery times and costs are calculated at checkout. <strong>Any customs duties, import taxes or fees are the responsibility of the customer</strong> and are not included in our prices or shipping charges.</p>
 
       <h3>5. Gift hamper delivery</h3>
-      <p>Gift hampers are delivered Australia-wide by courier. At checkout you can choose <strong>Standard</strong> delivery (5 to 10 business days) or <strong>Express</strong> delivery (3 to 5 business days), and your estimated arrival dates are shown before you pay. Hampers with made-to-order signature packaging need an extra 14 working days. We don't currently offer same-day delivery, pick up or lay-by.</p>
+      <p>Gift hampers are delivered Australia-wide by courier. At checkout you can choose <strong>Standard</strong> delivery (5 to 10 business days) or <strong>Express</strong> delivery (3 to 5 business days, an extra $150), and your estimated arrival dates are shown before you pay. Hampers with made-to-order signature packaging need an extra 14 working days. We don't currently offer same-day delivery, pick up or lay-by.</p>
 
       <h3>6. Order tracking</h3>
       <p>Once dispatched, you'll receive a confirmation with a tracking number. You can track your order at any time via our <a href="track.html">Track Your Order</a> page using your order number, email or phone number used at checkout. Deliveries are carried by reputable carriers such as Australia Post and Aramex.</p>

@@ -55,7 +55,7 @@ const SHIP_ZONES = {
   "Germany":        { base: 21.30, perKg: 28.60, days: [10, 24] },
 };
 const DEFAULT_ITEM_KG = 0.75;
-const EXPRESS_EXTRA = 0;   // extra charge for Express on gift orders (AUD), keep in step with js/cart.js
+const EXPRESS_EXTRA = 150;   // extra charge for Express on gift orders (AUD), keep in step with js/cart.js
 
 /* ---- Discount ceiling ---------------------------------------
    The largest discount any legitimate shopper can reach: the 20%
