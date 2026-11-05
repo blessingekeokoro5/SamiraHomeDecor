@@ -467,6 +467,7 @@ async function startPayment(e) {
         return;
       }
 
+      if (data.orderNo) localStorage.setItem("dm_last_order", JSON.stringify({ orderNo: data.orderNo, total: t.total, email: customer.email || "" }));
       if (data.url) { window.location.href = data.url; return; }          // Stripe-hosted redirect
       if (data.id && window.Stripe && cfg.publishableKey) {                 // or redirectToCheckout by session id
         await window.Stripe(cfg.publishableKey).redirectToCheckout({ sessionId: data.id });
@@ -484,7 +485,7 @@ async function startPayment(e) {
 
   // --- Demo mode (no Stripe keys yet) ---
   setTimeout(() => {
-    const orderNo = "DM-" + (100000 + Math.floor(Math.random() * 899999));
+    const orderNo = "SHD-" + (100000 + Math.floor(Math.random() * 900000));
     localStorage.setItem("dm_last_order", JSON.stringify({ orderNo, total: t.total, email: customer.email }));
     localStorage.removeItem(CART_KEY);
     localStorage.removeItem("dm_coupon");

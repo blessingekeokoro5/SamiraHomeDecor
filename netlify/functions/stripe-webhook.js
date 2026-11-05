@@ -41,7 +41,8 @@ async function emailOrder(session, lineItems) {
 
   const body =
     `New paid order via Samira Home Decor 🎉\n\n` +
-    `Order (Stripe session): ${session.id}\n` +
+    `Order: ${(session.metadata && session.metadata.order_no) || session.client_reference_id || "(no number)"}\n` +
+    `Stripe session: ${session.id}\n` +
     `Payment status: ${session.payment_status}\n` +
     `Total: ${money(session.amount_total, session.currency)}\n` +
     (session.total_details && session.total_details.amount_shipping != null
@@ -66,7 +67,7 @@ async function emailOrder(session, lineItems) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         access_key: key,
-        subject: `Samira Home Decor — new paid order (${money(session.amount_total, session.currency)})`,
+        subject: `Samira Home Decor — new paid order ${(session.metadata && session.metadata.order_no) || ""} (${money(session.amount_total, session.currency)})`,
         from_name: "Samira Home décor for every house",
         email: to,
         message: body,
@@ -106,13 +107,13 @@ exports.handler = async (event) => {
         if (session.metadata && session.metadata.ref) {
           const buyer = (session.customer_details && session.customer_details.email) || "";
           const note = await recordReferral(session.metadata.ref, {
-            id: session.id, type: "order", friendEmail: buyer,
+            id: (session.metadata && session.metadata.order_no) || session.id, type: "order", friendEmail: buyer,
             friendName: session.customer_details ? session.customer_details.name : "",
             amount: (session.amount_total || 0) / 100,
           });
           await emailShop(
             "Samira Home Decor — referred order, 30% reward to send",
-            `Stripe session: ${session.id}\nCustomer: ${buyer}\nOrder total: ${money(session.amount_total, session.currency)}\n\nReferred by: ${note}\n\nSend the referrer their 30% reward, then mark it done in Admin > Referrals.`
+            `Order: ${(session.metadata && session.metadata.order_no) || ""}\nStripe session: ${session.id}\nCustomer: ${buyer}\nOrder total: ${money(session.amount_total, session.currency)}\n\nReferred by: ${note}\n\nSend the referrer their 30% reward, then mark it done in Admin > Referrals.`
           );
         }
 

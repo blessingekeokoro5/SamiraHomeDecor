@@ -79,6 +79,9 @@ const MAX_VOUCHER = Number(process.env.MAX_VOUCHER_AUD) || 20;
 const GIFT_CARD_MIN = 10;
 const GIFT_CARD_MAX = 2000;
 
+/* Samira Home Decor order numbers: SHD- followed by 6 digits, e.g. SHD-482913 */
+function newOrderNo() { return "SHD-" + Math.floor(100000 + Math.random() * 900000); }
+
 function jsonResponse(statusCode, obj) {
   return {
     statusCode,
@@ -325,7 +328,7 @@ exports.handler = async (event) => {
       // Spend it, then record the order — no Stripe session, so this is the
       // only place the shop hears about it.
       const remaining = await redeemGiftCard(card, orderTotal);
-      const orderNo = "DM-" + Math.floor(100000 + Math.random() * 899999);
+      const orderNo = newOrderNo();
 
       const refNote = body.ref ? await recordReferral(body.ref, { id: orderNo, type: "order", friendEmail: customer.email, friendName: customer.name, amount: orderTotal }) : "";
       await emailShop(
@@ -390,6 +393,7 @@ exports.handler = async (event) => {
       },
     ];
 
+    const orderNo = newOrderNo();
     const session = await getStripe().checkout.sessions.create({
       mode: "payment",
       line_items,
@@ -400,9 +404,12 @@ exports.handler = async (event) => {
       billing_address_collection: "auto",
       // Prices are GST-inclusive (Australian standard) so no Stripe Tax is added.
       allow_promotion_codes: false,
-      success_url: `${SITE_URL}/order-confirmed.html?session_id={CHECKOUT_SESSION_ID}`,
+      client_reference_id: orderNo,
+      payment_intent_data: { description: `Samira Home Decor order ${orderNo}`, metadata: { order_no: orderNo } },
+      success_url: `${SITE_URL}/order-confirmed.html?order=${orderNo}&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${SITE_URL}/cart.html`,
       metadata: {
+        order_no: orderNo,
         source: "samira-web",
         fulfil: String(fulfil),
         suburb: customer.suburb || "",
@@ -419,7 +426,7 @@ exports.handler = async (event) => {
       },
     });
 
-    return jsonResponse(200, { url: session.url, id: session.id });
+    return jsonResponse(200, { url: session.url, id: session.id, orderNo });
   } catch (err) {
     console.error("create-checkout-session error:", err.message);
     // Catalogue/validation problems are the shopper's to see; anything else is ours.

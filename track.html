@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
-  <link rel="stylesheet" href="css/styles.css?v=50">
+  <link rel="stylesheet" href="css/styles.css?v=51">
   <style>
     .track-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
     .track-tabs button { flex: 1; padding: 12px; border: 1.5px solid var(--line); background: #fff; border-radius: var(--radius-sm);
@@ -61,7 +61,7 @@
         <form id="trackForm">
           <div class="field" id="trackFieldWrap">
             <label id="trackLabel">Order number</label>
-            <input id="trackInput" placeholder="e.g. DM-100482" required>
+            <input id="trackInput" placeholder="e.g. SHD-100482" required>
           </div>
           <div class="field" id="verifyWrap">
             <label>Verify with email or phone used at checkout</label>
@@ -78,13 +78,13 @@
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=54"></script>
-  <script src="js/components.js?v=76"></script>
+  <script src="js/components.js?v=77"></script>
   <script src="js/cart.js?v=25"></script>
   <script src="js/main.js?v=10"></script>
   <script>
     let mode = "order";
     const LABELS = { order: "Order number", email: "Email address", phone: "Phone number" };
-    const PLACEH = { order: "e.g. DM-100482", email: "you@email.com", phone: "04XX XXX XXX" };
+    const PLACEH = { order: "e.g. SHD-100482", email: "you@email.com", phone: "04XX XXX XXX" };
 
     document.getElementById("trackTabs").addEventListener("click", (e) => {
       const btn = e.target.closest("button"); if (!btn) return;
@@ -118,7 +118,7 @@
       if (!val) return;
       const h = hash(val.toLowerCase());
       const stage = h % STEPS.length;                 // 0..5 how far along
-      const orderNo = mode === "order" && /dm-/i.test(val) ? val.toUpperCase() : "DM-" + (100000 + (h % 899999));
+      const orderNo = mode === "order" && /^(shd|dm)-/i.test(val) ? val.toUpperCase() : "SHD-" + (100000 + (h % 899999));
       const state = AU_STATES[h % AU_STATES.length];
       const courier = COURIERS[h % COURIERS.length];
       const trackNo = (courier === "Australia Post" ? "AP" : "AX") + (h % 9000000 + 1000000);

@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
-  <link rel="stylesheet" href="css/styles.css?v=50">
+  <link rel="stylesheet" href="css/styles.css?v=51">
 </head>
 <body data-page="order-confirmed.html">
   <div id="site-header"></div>
@@ -36,14 +36,16 @@
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=54"></script>
-  <script src="js/components.js?v=76"></script>
+  <script src="js/components.js?v=77"></script>
   <script src="js/cart.js?v=25"></script>
   <script src="js/main.js?v=10"></script>
   <script>
     (function () {
       try {
-        const o = JSON.parse(localStorage.getItem("dm_last_order"));
-        if (o) document.getElementById("confirmMsg").innerHTML =
+        let o = JSON.parse(localStorage.getItem("dm_last_order"));
+        const urlNo = new URLSearchParams(location.search).get("order");
+        if (urlNo && /^SHD-\d{6}$/.test(urlNo) && (!o || o.orderNo !== urlNo)) { o = Object.assign({}, o || {}, { orderNo: urlNo }); localStorage.setItem("dm_last_order", JSON.stringify(o)); }
+        if (o && o.orderNo) document.getElementById("confirmMsg").innerHTML =
           `Your order <strong>${o.orderNo}</strong> for <strong>${money(o.total)}</strong> has been placed, a confirmation is on its way to ${o.email || "your inbox"}.`;
       } catch (e) {}
       updateCartCount();
@@ -126,7 +128,7 @@
         if (!pend) return;
         const o = JSON.parse(localStorage.getItem("dm_last_order") || "null");
         const sid = new URLSearchParams(location.search).get("session_id");
-        const txn = (o && o.orderNo) || sid || ("DM-" + Date.now());
+        const txn = (o && o.orderNo) || sid || ("SHD-" + Date.now());
         if (typeof window.gtag === "function") {
           window.gtag("event", "purchase", {
             transaction_id: txn, currency: "AUD",

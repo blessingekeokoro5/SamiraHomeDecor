@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
-  <link rel="stylesheet" href="css/styles.css?v=50">
+  <link rel="stylesheet" href="css/styles.css?v=51">
   <style>
     .pdp { display: grid; grid-template-columns: 1fr 1fr; gap: 46px; align-items: start; }
     .pdp-gallery .main { position: relative; aspect-ratio: 1/1; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
@@ -261,7 +261,7 @@
   <div id="site-footer"></div>
   <script src="js/data.js?v=54"></script>
   <script src="js/ai-overviews.js?v=1"></script>
-  <script src="js/components.js?v=76"></script>
+  <script src="js/components.js?v=77"></script>
   <script src="js/cart.js?v=25"></script>
   <script src="js/main.js?v=10"></script>
   <script>
@@ -683,7 +683,7 @@
             <ul class="pdp-detail-list">
               ${p.brand ? `<li><span>Brand</span><span>${p.brand}</span></li>` : ""}
               <li><span>Category</span><span>${p.cat}</span></li>
-              <li><span>SKU</span><span>${p.sku || "DM-" + p.id.toUpperCase()}</span></li>
+              <li><span>SKU</span><span>${p.sku || "SH-" + p.id.toUpperCase()}</span></li>
               ${p.custom ? `<li><span>Made to order</span><span style="color:var(--rose-deep)">Customisable · allow extra time</span></li>` : ""}
               <li><span>Availability</span><span style="color:var(--forest)">${p.tag === "Coming Out Soon" ? "Coming out soon" : p.price == null ? "On enquiry" : "In stock"}</span></li>
             </ul>

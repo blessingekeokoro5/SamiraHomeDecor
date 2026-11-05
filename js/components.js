@@ -1451,9 +1451,9 @@ function renderSupport() {
       <div class="hd-actions">
         <form class="hd-card hd-track" id="hdTrack">
           <span class="hd-ic">🚚</span>
-          <div class="hd-card-t"><strong>Track my order</strong><small>Enter your order number (starts with DM-)</small></div>
+          <div class="hd-card-t"><strong>Track my order</strong><small>Enter your order number (starts with SHD-)</small></div>
           <div class="hd-track-row">
-            <input id="hdTrackNo" placeholder="e.g. DM-100482" aria-label="Order number" required>
+            <input id="hdTrackNo" placeholder="e.g. SHD-100482" aria-label="Order number" required>
             <button type="submit" class="btn btn--primary btn--sm">Track</button>
           </div>
         </form>
@@ -1509,7 +1509,7 @@ function dmSelectIssue(issue) {
   const el = document.getElementById("supportBody");
   if (!el) return;
   const orderField = /order|return|faulty|shipping/i.test(issue)
-    ? `<div class="field"><label>Order number (if you have one)</label><input id="supOrder" placeholder="DM-"></div>` : "";
+    ? `<div class="field"><label>Order number (if you have one)</label><input id="supOrder" placeholder="SHD-"></div>` : "";
   el.innerHTML = `
     <button class="support-back" type="button" onclick="dmMessageTopics()">← All topics</button>
     <div class="support-title">${issue}</div>
