@@ -5,7 +5,8 @@
    ============================================================ */
 
 const MEETING_TYPES = [
-  { key: "styling",  icon: "🛋️", label: "Property Styling / Staging",   place: "One of our stylists visits your property, within our service areas." },
+  { key: "istyling", icon: "🛋️", label: "Interior Styling",             place: "Refresh the home you live in: a stylist visits and creates a curated, shoppable plan." },
+  { key: "styling",  icon: "🏡", label: "Property Styling & Staging",   place: "Styling your home to sell or rent, within our service areas." },
   { key: "interior", icon: "🎨", label: "Interior Design Consultation", place: "A full in-home interior design consult to plan your whole space." },
   { key: "vacation", icon: "🏝️", label: "Vacation Rental Styling",      place: "An in-home consult to style and furnish your short-stay or Airbnb." },
   // Cleaning has its own booking system (fixed prices + live availability), so this tile links there.
@@ -15,6 +16,8 @@ const MEETING_TYPES = [
 const BK_DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
 let bk = { type: "styling", date: "", slot: "" };
+// Open on a chosen service, e.g. staging.html?service=istyling#book
+try { const sv = new URLSearchParams(location.search).get("service"); if (sv && MEETING_TYPES.some(m => m.key === sv && !m.href)) bk.type = sv; } catch (e) {}
 
 function initBooking() {
   const host = document.getElementById("bookingWidget");
@@ -92,7 +95,7 @@ function renderBooking(host) {
         <h4 style="margin-bottom:10px">Availability</h4>
         <div class="bk-av">${bkAvailabilityNote()}</div>
         <div class="bk-summary" id="bkSummary">
-          <div class="bk-sum-line"><span>Service</span><strong id="sumType">Property Styling / Staging</strong></div>
+          <div class="bk-sum-line"><span>Service</span><strong id="sumType">Property Styling &amp; Staging</strong></div>
           <div class="bk-sum-line"><span>Date</span><strong id="sumDate"></strong></div>
           <div class="bk-sum-line"><span>Time</span><strong id="sumTime"></strong></div>
         </div>
@@ -109,7 +112,7 @@ function wireBooking(host) {
   host.querySelectorAll("button.bk-type").forEach(b => b.addEventListener("click", () => {
     bk.type = b.dataset.type;
     host.querySelectorAll(".bk-type").forEach(x => x.classList.toggle("active", x === b));
-    document.getElementById("bkAddrWrap").style.display = (bk.type === "inhome" || bk.type === "interior") ? "block" : "none";
+    document.getElementById("bkAddrWrap").style.display = (bk.type === "inhome" || bk.type === "interior" || bk.type === "istyling" || bk.type === "styling" || bk.type === "vacation") ? "block" : "none";
     updatePlace(); updateSummary();
   }));
 
@@ -156,7 +159,7 @@ async function submitBooking(e) {
   const name = document.getElementById("bkName").value;
 
   const data = [
-    ["Service", "Property Styling / Interior Design consultation"],
+    ["Service", "Interior Styling, Property Styling & Staging or Interior Design consultation"],
     ["Type", m.label],
     ["Where", m.place],
     ["Date", new Date(bk.date + "T00:00:00").toLocaleDateString("en-AU", { weekday: "long", day: "numeric", month: "long", year: "numeric" })],

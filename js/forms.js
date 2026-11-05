@@ -72,7 +72,7 @@
   var NAME = { name: "Name", label: "Full name", required: true, half: true };
   var EMAIL = { name: "Email", label: "Email", type: "email", required: true, half: true };
   var PHONE = { name: "Phone", label: "Phone", type: "tel", half: true };
-  var SERVICES = ["Property Styling & Staging", "Interior Design", "Vacation Rental Styling", "Home Décor Personal Shopper"];
+  var SERVICES = ["Interior Styling", "Property Styling & Staging", "Interior Design", "Vacation Rental Styling", "Home Décor Personal Shopper"];
 
   window.DM_FORMS = {
     /* ---------------- CLIENT ---------------- */

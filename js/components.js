@@ -818,7 +818,7 @@ function buildEnquire() {
           <div class="field-row">
             <div class="field"><label>Phone</label><input type="tel"></div>
             <div class="field"><label>Service</label>
-              <select><option>Styled Spaces by Samira (new builds)</option><option>Property Styling</option><option>Property Staging</option><option>Interior Design</option><option>Trade &amp; Commercial</option><option>Gift hampers</option><option>Something else</option></select></div>
+              <select><option>Styled Spaces by Samira (new builds)</option><option>Interior Styling</option><option>Property Styling &amp; Staging (for sale)</option><option>Interior Design</option><option>Trade &amp; Commercial</option><option>Gift hampers</option><option>Something else</option></select></div>
           </div>
           <div class="field"><label>How did you hear about us?</label>
             <select><option value="">Select an option</option><option>Google search</option><option>Instagram</option><option>Facebook</option><option>Pinterest</option><option>Friend or referral</option><option>Real estate agent</option><option>Shopped with us before</option><option>Other</option></select></div>
