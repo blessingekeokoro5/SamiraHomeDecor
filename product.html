@@ -259,7 +259,7 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=62"></script>
+  <script src="js/data.js?v=63"></script>
   <script src="js/ai-overviews.js?v=3"></script>
   <script src="js/components.js?v=81"></script>
   <script src="js/cart.js?v=29"></script>
@@ -326,6 +326,17 @@
       const nm = document.getElementById("pdpSizeName"); if (nm) nm.textContent = label;
       const pe = document.getElementById("pdpPrice"); if (pe) pe.textContent = money(price);
       const be = document.getElementById("pdpBnpl"); if (be) be.innerHTML = bnplBadge(price);
+      // Member price follows the chosen size
+      try {
+        const pid = new URLSearchParams(location.search).get("id");
+        const pp = (typeof PRODUCTS !== "undefined") && PRODUCTS.find((x) => x.id === pid);
+        const sz = pp && Array.isArray(pp.sizes) && pp.sizes.find((z) => z.label === label);
+        const mp = (sz && sz.memberPrice) ? sz.memberPrice : (pp && pp.memberPrice ? Math.round(price * pp.memberPrice / (pp.was || pp.price)) : null);
+        if (mp) {
+          const me = document.getElementById("pdpMemberPrice"); if (me) me.textContent = money(mp);
+          const ms = document.getElementById("pdpMemberSave"); if (ms) ms.textContent = money(price - mp);
+        }
+      } catch (e) {}
       document.querySelectorAll(".pdp-size").forEach((s) => s.classList.remove("active"));
       if (btn) btn.classList.add("active");
       // A 360cm sofa and a single armchair are not the same object. If the
@@ -668,12 +679,12 @@
             ${p.cat === "Packaging" ? `<div class="price" id="pdpPrice" style="font-size:1.15rem;color:var(--rose-deep)">Retail &amp; wholesale · price on enquiry</div>` : `
             <div class="price" id="pdpPrice">${money((p.sizes && p.sizes.length) ? p.sizes[0].price : p.price)}${was}</div>
             ${p.dontPay ? `<div class="dont-pay" style="margin-top:8px"><span class="dp-tag">Don't Pay</span> <s>${money(p.dontPay)}</s><button class="dp-info" type="button" aria-label="Why should I not pay more?" onclick="showDontPayInfo(event)">ⓘ</button></div>` : ""}`}
-            ${(p.memberPrice && p.cat !== "Packaging") ? `<div class="member-price" style="margin-top:6px">✦ Members price ${money(p.memberPrice)} <a href="#" onclick="if(typeof openMemberModal==='function')openMemberModal();return false;" style="font-size:0.82rem">Join free →</a></div>` : ""}
+            ${(p.memberPrice && p.cat !== "Packaging") ? `<div class="member-price" style="margin-top:6px">✦ Members price <span id="pdpMemberPrice">${money((p.sizes && p.sizes.length && p.sizes[0].memberPrice) ? p.sizes[0].memberPrice : p.memberPrice)}</span> <a href="#" onclick="if(typeof openMemberModal==='function')openMemberModal();return false;" style="font-size:0.82rem">Join free →</a></div>` : ""}
             ${(p.memberPrice && p.cat !== "Packaging") ? `<div class="member-save">
               <div class="ms-head">Save with <span class="ms-badge">MEMBER ✔</span></div>
               <a class="ms-xmas" href="christmas-vouchers.html">🎄 Shop 3 times a year · Get up to $300 in Christmas vouchers</a>
               <ul class="ms-list">
-                <li><span class="ms-ic">🏷️</span><span><strong>Save ${money(p.price - p.memberPrice)}</strong> on the non-member price</span></li>
+                <li><span class="ms-ic">🏷️</span><span><strong>Save <span id="pdpMemberSave">${money((p.sizes && p.sizes.length && p.sizes[0].memberPrice) ? p.sizes[0].price - p.sizes[0].memberPrice : p.price - p.memberPrice)}</span></strong> on the non-member price</span></li>
                 <li><span class="ms-ic">💡</span><span>Get <strong>free styling tips</strong> for your home</span></li>
                 <li><span class="ms-ic">🎁</span><span>Go in the draw to <strong>win a free space-styling session</strong></span></li>
                 <li><span class="ms-ic">🎟️</span><span>Earn up to <strong>$300 in Christmas vouchers</strong> <a href="christmas-vouchers.html" style="font-size:.85em;color:inherit">(T&amp;Cs apply)</a></span></li>
