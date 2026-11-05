@@ -84,6 +84,35 @@
     .pk-tile-label { position: absolute; left: 15px; bottom: 12px; z-index: 3; color: #fff; font-family: var(--font-head); font-size: 1.15rem; line-height: 1.12; text-shadow: 0 1px 8px rgba(0,0,0,.45); margin: 0; }
     .pk-tile-text { display: block; padding: 12px 16px 16px; color: var(--body); font-size: .9rem; line-height: 1.5; }
     .pk-tile-cta { display: inline-block; margin: 0 16px 16px; color: var(--navy); font-weight: 600; font-size: .86rem; }
+    /* Custom pouch cards */
+    .pk-banners { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 22px; }
+    .pk-banners img { width: 100%; border-radius: 14px; display: block; box-shadow: var(--shadow-sm); }
+    @media (max-width: 700px) { .pk-banners { grid-template-columns: 1fr; } }
+    .pk-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
+    .pk-card-img { display: block; aspect-ratio: 1/1; background: #f2f1ef; }
+    .pk-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .pk-card-body { display: flex; flex-direction: column; flex: 1; padding: 16px 18px 18px; }
+    .pk-card-body h3 { font-size: 1.2rem; margin: 0 0 8px; }
+    .pk-card-body ul { list-style: none; margin: 0 0 16px; padding: 0; flex: 1; }
+    .pk-card-body li { position: relative; padding-left: 24px; margin: 0 0 6px; color: var(--body); font-size: .9rem; line-height: 1.45; }
+    .pk-card-body li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 17px; height: 17px; border-radius: 4px; background: #2f8a55; color: #fff; font-size: .7rem; font-weight: 700; display: grid; place-items: center; margin-top: 2px; }
+    .pk-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; }
+    .pk-wa svg { width: 18px; height: 18px; flex: none; }
+    @media (max-width: 600px) { .pk-cards { grid-template-columns: 1fr !important; } .pk-card-img { aspect-ratio: 4/3; } }
+    .pk-range-full { margin-top: 40px; }
+    .pk-range-title { font-size: 1.6rem; margin: 0 0 6px; text-align: center; }
+    .pk-range-sub { text-align: center; color: var(--body); margin: 0 auto 10px; max-width: 620px; }
+    .pk-range-group { margin: 26px 0 10px; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-deep, #9a7b3c); }
+    .pk-range-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    @media (max-width: 900px) { .pk-range-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .pk-range-grid { grid-template-columns: 1fr; } }
+    .pk-range-item { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; text-decoration: none; color: var(--ink); transition: border-color .15s, transform .15s; }
+    .pk-range-item:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .pk-ri-ic { width: 42px; height: 42px; flex: none; border-radius: 10px; background: var(--cream-2, #F3EDE3); display: grid; place-items: center; font-size: 1.3rem; }
+    .pk-ri-t { flex: 1; min-width: 0; }
+    .pk-ri-t strong { display: block; font-size: .95rem; margin-bottom: 2px; }
+    .pk-ri-t small { display: block; color: var(--body); font-size: .82rem; line-height: 1.4; }
+    .pk-ri-go { flex: none; color: #2f8a55; font-weight: 600; font-size: .82rem; }
   </style>
 </head>
 <body data-page="packaging.html">
@@ -180,69 +209,129 @@
     </div>
   </section>
 
-  <!-- Food & vendor packaging range -->
+  <!-- Custom printed pouches & coffee bags -->
   <section class="section" style="padding-top:0" id="packaging-range">
     <div class="container">
-      <div class="section-head reveal" style="margin-bottom:26px">
+      <div class="section-head reveal" style="margin-bottom:22px">
         <span class="eyebrow">For food vendors &amp; brands</span>
-        <h2>Food &amp; vendor packaging range</h2>
-        <p>Retail-ready, food-safe packaging for coffee, snacks, pantry and more. Every style can be ordered as plain stock or custom printed with your branding, from low minimums. Enquire for retail &amp; wholesale pricing.</p>
+        <h2>Custom pouches &amp; coffee bags</h2>
+        <p>Retail-ready, food-safe packaging in any size, style and finish, printed with your logo and artwork. Tap <strong>Enquire</strong> to chat with us on WhatsApp for pricing, minimums and samples.</p>
       </div>
-      <div class="grid grid-3">
-        <a class="pk-tile reveal" href="product.html?id=pk01"><span class="pk-tile-img" style="background:linear-gradient(135deg,#1f7a6e,#124b43)"><img src="assets/products/foodpouch-1.webp" alt="Food-vendor stand-up pouches, resealable zipper, 10-pack" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 14h16v20a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z"/><path d="M16 18h16"/><path d="M20 14v-3h8v3"/></svg><span class="pk-tile-label">Stand-up pouches (10-pack)</span></span><span class="pk-tile-text">Resealable zipper pouches that stand on the shelf — coffee, snacks, tea, powders &amp; pet treats.</span><span class="pk-tile-cta">View details →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#3b4a7a,#232f52)"><img src="assets/products/pk-flatbottom.webp" alt="Flat-bottom pouches" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 14h16v23H16z"/><path d="M16 18h16"/><path d="M16 37l3-4h10l3 4"/></svg><span class="pk-tile-label">Flat-bottom (box) pouches</span></span><span class="pk-tile-text">A premium box-bottom shape with four printable panels — coffee beans, granola &amp; nuts.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#845231,#5a3820)"><img src="assets/products/pk-coffee.webp" alt="Coffee bags with valve" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 14h16v20a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z"/><path d="M16 18h16"/><path d="M20 14v-3h8v3"/><circle cx="24" cy="26" r="2.5"/></svg><span class="pk-tile-label">Coffee bags with valve</span></span><span class="pk-tile-text">A one-way degassing valve keeps freshly roasted coffee fresh without trapping gas.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#a9824f,#7d6038)"><img src="assets/products/pk-kraft.webp" alt="Kraft paper pouches" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 14h16v20a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z"/><path d="M16 18h16"/><path d="M16 14l4-3h8l4 3"/></svg><span class="pk-tile-label">Kraft paper pouches</span></span><span class="pk-tile-text">A natural, earthy kraft look for granola, flour, dried goods and eco-minded brands.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#2f6fae,#1d4a78)"><img src="assets/products/pk-window.webp" alt="Window pouches" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 14h16v20a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z"/><path d="M16 18h16"/><rect x="20" y="22" width="8" height="10" rx="1"/></svg><span class="pk-tile-label">Window pouches</span></span><span class="pk-tile-text">A clear window shows off the product — lollies, nuts, baked goods &amp; samples.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#a84d7a,#773553)"><img src="assets/products/pk-spout.webp" alt="Spout pouches" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 16h16v18a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z"/><path d="M16 20h16"/><path d="M29 16l3-4h2v4"/></svg><span class="pk-tile-label">Spout pouches</span></span><span class="pk-tile-text">A pour-and-reseal spout for sauces, juices, purées and other liquids.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#6a4a8c,#483060)"><img src="assets/products/pk-sachet.webp" alt="Flat sachets" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M19 12h10v25H19z"/><path d="M19 16h10"/><path d="M22 12v-2h4v2"/></svg><span class="pk-tile-label">Flat sachets</span></span><span class="pk-tile-text">Slim three-side-seal sachets for samples, spices and single servings.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#4a5a66,#313f49)"><img src="assets/products/pk-vacuum.webp" alt="Vacuum seal bags" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="15" width="20" height="18" rx="2"/><rect x="19" y="20" width="10" height="8" rx="1"/></svg><span class="pk-tile-label">Vacuum seal bags</span></span><span class="pk-tile-text">Airtight bags for meat, cheese, meal prep and sous-vide.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#4f8c4a,#356231)"><img src="assets/products/pk-compostable.webp" alt="Compostable pouches" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 14h16v20a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z"/><path d="M16 18h16"/><path d="M24 25c1-2 4-2 5-1-1 2-4 2-5 1z"/></svg><span class="pk-tile-label">Compostable pouches</span></span><span class="pk-tile-text">Home or industrial compostable films for eco-conscious brands.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#9a7b2e,#6e571f)"><img src="assets/products/pk-mylar.webp" alt="Mylar foil bags" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 14h16v20a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z"/><path d="M16 18h16"/><path d="M21 22l2.5 3M26 21l1.8 2.5"/></svg><span class="pk-tile-label">Mylar / foil bags</span></span><span class="pk-tile-text">High-barrier foil for long shelf life, with light and moisture protection.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#863a6f,#5e2850)"><img src="assets/products/pk-gusset.webp" alt="Gusseted side-seal bags" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M17 13h14v24H17z"/><path d="M21 13v24M27 13v24"/></svg><span class="pk-tile-label">Gusseted side-seal bags</span></span><span class="pk-tile-text">Side-gusset bags for bread, bakery and bulk dry goods.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#6f7a3a,#515929)"><img src="assets/products/pk-rice.webp" alt="Rice and grain bags" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 14h16v20a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3z"/><path d="M16 18h16"/><circle cx="22" cy="27" r="1"/><circle cx="26" cy="28" r="1"/><circle cx="24" cy="31" r="1"/></svg><span class="pk-tile-label">Rice &amp; grain bags</span></span><span class="pk-tile-text">Sturdy bags for rice, grains, flour and bulk pantry staples.</span><span class="pk-tile-cta">Enquire →</span></a>
+      <div class="pk-banners reveal">
+        <img src="assets/products/pk-coffee-range.webp" alt="Custom printed coffee bags in kraft, white, black, gold and silver" loading="lazy">
+        <img src="assets/products/pk-coffee-detail.webp" alt="Coffee bag details: one-way valve, pull-to-open zipper, flat base and gold logo print" loading="lazy">
       </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:30px">
-        <a class="btn btn--primary btn--pill" href="#custom-enquiry">Start a custom packaging enquiry →</a>
+      <div class="grid grid-3 pk-cards">
+        <article class="pk-card reveal">
+          <div class="pk-card-img"><img src="assets/products/pk-coffee.webp" alt="Coffee bags" loading="lazy"></div>
+          <div class="pk-card-body">
+            <h3>Coffee bags</h3>
+            <ul><li>One-way degassing valve keeps roasted beans fresh</li><li>Resealable zipper for repeat use after opening</li><li>Matte, glossy or kraft finish with custom printing</li></ul>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20coffee%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+          </div>
+        </article>
+        <article class="pk-card reveal">
+          <div class="pk-card-img"><img src="assets/products/pk-standup.webp" alt="Stand-up pouches" loading="lazy"></div>
+          <div class="pk-card-body">
+            <h3>Stand-up pouches</h3>
+            <ul><li>Self-standing design for retail shelf presence</li><li>Resealable zipper for repeat use</li><li>Custom sizes, shapes and printing available</li></ul>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20stand-up%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+          </div>
+        </article>
+        <article class="pk-card reveal">
+          <div class="pk-card-img"><img src="assets/products/pk-flatbottom2.webp" alt="Flat-bottom pouches" loading="lazy"></div>
+          <div class="pk-card-body">
+            <h3>Flat-bottom pouches</h3>
+            <ul><li>Wide flat base for stable shelf display</li><li>Side gussets add extra fill capacity</li><li>Matte, glossy or kraft finish options</li></ul>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20flat-bottom%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+          </div>
+        </article>
+        <article class="pk-card reveal">
+          <div class="pk-card-img"><img src="assets/products/pk-kraftpaper.webp" alt="Kraft paper pouches" loading="lazy"></div>
+          <div class="pk-card-body">
+            <h3>Kraft paper pouches</h3>
+            <ul><li>Recyclable kraft paper construction</li><li>Natural, earth-tone look for eco-positioned brands</li><li>Available with or without a clear window</li></ul>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20kraft%20paper%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+          </div>
+        </article>
+        <article class="pk-card reveal">
+          <div class="pk-card-img"><img src="assets/products/pk-spout.webp" alt="Spout pouches" loading="lazy"></div>
+          <div class="pk-card-body">
+            <h3>Spout pouches</h3>
+            <ul><li>Leak-resistant spout for liquids, purées and gels</li><li>Stands upright on the shelf and in transit</li><li>Food-grade material</li></ul>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20spout%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+          </div>
+        </article>
+        <article class="pk-card reveal">
+          <div class="pk-card-img"><img src="assets/products/pk-retort.webp" alt="Retort pouches" loading="lazy"></div>
+          <div class="pk-card-body">
+            <h3>Retort pouches</h3>
+            <ul><li>Withstands sterilisation up to 145°C / 293°F</li><li>100% customisable: sizes, styles, printing and logo</li><li>Ideal for ready meals, sauces and cooking pouches</li></ul>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20retort%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+          </div>
+        </article>
+        <article class="pk-card reveal">
+          <div class="pk-card-img"><img src="assets/products/pk-window.webp" alt="Window pouches" loading="lazy"></div>
+          <div class="pk-card-body">
+            <h3>Window pouches</h3>
+            <ul><li>A clear window shows off the product</li><li>Great for lollies, nuts, baked goods and samples</li><li>Plain stock or custom printed</li></ul>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20window%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+          </div>
+        </article>
+        <article class="pk-card reveal">
+          <div class="pk-card-img"><img src="assets/products/pk-gusset.webp" alt="Gusseted side-seal bags" loading="lazy"></div>
+          <div class="pk-card-body">
+            <h3>Gusseted side-seal bags</h3>
+            <ul><li>Side gussets for bread, bakery and bulk dry goods</li><li>Holds more while staying slim on the shelf</li><li>Plain stock or custom printed</li></ul>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20gusseted%20side-seal%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+          </div>
+        </article>
+        <article class="pk-card reveal">
+          <a class="pk-card-img" href="product.html?id=pk01"><img src="assets/products/foodpouch-1.webp" alt="Food-vendor stand-up pouches, resealable zipper, 10-pack" loading="lazy"></a>
+          <div class="pk-card-body">
+            <h3>Plain stand-up pouches, 10-pack</h3>
+            <ul><li>Ready to buy now, no minimum order</li><li>Food-safe with a resealable zipper</li><li>Great for testing before you order custom print</li></ul>
+            <a class="btn btn--outline pk-wa" href="product.html?id=pk01">View &amp; buy</a>
+          </div>
+        </article>
+      </div>
+      <div class="pk-range-full reveal">
+        <h3 class="pk-range-title">Full packaging range</h3>
+        <p class="pk-range-sub">Every style below can be made in your size and finish, plain or custom printed. Tap any item to enquire on WhatsApp.</p>
+        <h4 class="pk-range-group">Bag styles</h4>
+        <div class="pk-range-grid">
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20three-side%20seal%20sachets.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">✉️</span><span class="pk-ri-t"><strong>Three-side seal sachets</strong><small>Flat pouches and sachets for samples, single serves, spices and cosmetics.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20ziplock%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🔒</span><span class="pk-ri-t"><strong>Ziplock bags</strong><small>Simple press-to-close bags that reseal again and again.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20shaped%20die-cut%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">✂️</span><span class="pk-ri-t"><strong>Shaped (die-cut) bags</strong><small>Custom outlines cut to your shape, so your pack stands out on the shelf.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+        </div>
+        <h4 class="pk-range-group">Materials & film</h4>
+        <div class="pk-range-grid">
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20aluminium%20foil%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🛡️</span><span class="pk-ri-t"><strong>Aluminium foil bags</strong><small>A strong barrier against light, air and moisture for longer shelf life.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20mylar%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">✨</span><span class="pk-ri-t"><strong>Mylar bags</strong><small>Metallised high-barrier film for dry goods, supplements and long-term storage.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20roll%20stock%20film.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🎞️</span><span class="pk-ri-t"><strong>Roll stock film</strong><small>Printed film on a roll for automatic filling and packing machines.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+        </div>
+        <h4 class="pk-range-group">Eco-friendly & specialty</h4>
+        <div class="pk-range-grid">
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20biodegradable%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🌱</span><span class="pk-ri-t"><strong>Biodegradable bags</strong><small>Plant-based and compostable material options for eco-minded brands.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20recyclable%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">♻️</span><span class="pk-ri-t"><strong>Recyclable pouches</strong><small>Single-material pouches that can go in soft-plastic recycling.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20child-resistant%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🧒</span><span class="pk-ri-t"><strong>Child-resistant bags</strong><small>Tested child-resistant zipper and smell-proof layers.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+        </div>
+        <h4 class="pk-range-group">By product</h4>
+        <div class="pk-range-grid">
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20tea%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🍵</span><span class="pk-ri-t"><strong>Tea bags & pouches</strong><small>Aroma-locking barrier pouches for loose-leaf and herbal tea.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20pet%20food%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🐾</span><span class="pk-ri-t"><strong>Pet food & treat bags</strong><small>Tough, resealable bags for kibble, freeze-dried and baked treats.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20powder%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🥄</span><span class="pk-ri-t"><strong>Powder bags</strong><small>For protein, collagen, flour and drink mixes, with a moisture barrier.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20snack%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🥨</span><span class="pk-ri-t"><strong>Snack bags</strong><small>Bright, eye-catching pouches for chips, nuts, lollies and trail mix.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20cookie%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🍪</span><span class="pk-ri-t"><strong>Cookie & bakery bags</strong><small>Frosted or clear resealable bags for cookies, biscuits and baked goods.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20rice%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🌾</span><span class="pk-ri-t"><strong>Rice & grain bags</strong><small>Sturdy bags for rice, grains, flour and bulk pantry staples.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20spice%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🌶️</span><span class="pk-ri-t"><strong>Spice bags</strong><small>Small barrier pouches that keep spices and seasonings fresh.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20frozen%20food%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">❄️</span><span class="pk-ri-t"><strong>Frozen food bags</strong><small>Freezer-safe bags that stay strong at low temperatures.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20vacuum%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🥩</span><span class="pk-ri-t"><strong>Vacuum bags</strong><small>Airtight bags for meat, cheese, meal prep and sous-vide.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+          <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20fruit%20and%20vegetable%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🍎</span><span class="pk-ri-t"><strong>Fruit & vegetable bags</strong><small>Breathable and anti-fog bags for fresh produce.</small></span><span class="pk-ri-go">Enquire ›</span></a>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:26px">
         <a class="btn btn--ghost btn--pill" href="#bulk" onclick="setTimeout(function(){switchPkgPanel('quote');},60)">Request a bulk quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Boxes, kits & supplies -->
-  <section class="section" style="padding-top:0" id="boxes-kits">
-    <div class="container">
-      <div class="section-head reveal" style="margin-bottom:26px">
-        <span class="eyebrow">Boxes, kits &amp; supplies</span>
-        <h2>Gift boxes, mailers &amp; packaging kits</h2>
-        <p>Everything to pack and present beautifully — ready to go, or custom printed with your branding. Enquire for retail &amp; wholesale pricing.</p>
-      </div>
-      <div class="grid grid-3">
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#b05a3c,#843f28)"><img src="assets/products/pk-giftbox.webp" alt="Gift boxes" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 11l12 6-12 6-12-6z"/><path d="M12 17v15l12 6 12-6V17"/><path d="M24 23v15"/></svg><span class="pk-tile-label">Gift boxes</span></span><span class="pk-tile-text">Rigid and folding gift boxes with ribbon and a foil sticker, ready to fill.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#7a6a3a,#5a4e29)"><img src="assets/products/pk-hamperbox.webp" alt="Hamper boxes" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M13 18h22v16H13z"/><path d="M13 18l4-5h14l4 5"/><path d="M24 13v21"/></svg><span class="pk-tile-label">Hamper boxes</span></span><span class="pk-tile-text">Sturdy hamper and gift-set boxes for curated bundles and corporate gifting.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#5a6a7a,#3f4d59)"><img src="assets/products/pk-mailer.webp" alt="Mailer & shipping boxes" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 17h20v17H14z"/><path d="M14 17l10 7 10-7"/></svg><span class="pk-tile-label">Mailer &amp; shipping boxes</span></span><span class="pk-tile-text">Protective mailers and shipping cartons that look great on the doorstep.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#4f7a8c,#375e6a)"><img src="assets/products/pk-kit.webp" alt="Packaging kits" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M13 20h22v15H13z"/><path d="M13 20l3-6h16l3 6"/><path d="M19 27h10"/></svg><span class="pk-tile-label">Packaging kits</span></span><span class="pk-tile-text">Ready-to-go kits with a box, filler, tissue and a tag — everything in one pack.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#a06a8c,#7a4f6a)"><img src="assets/products/pk-tissue.webp" alt="Tissue & filler" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M16 13h11l5 5v17H16z"/><path d="M27 13v5h5"/><path d="M20 24h8M20 28h8"/></svg><span class="pk-tile-label">Tissue &amp; filler</span></span><span class="pk-tile-text">Tissue paper, crinkle-cut and shredded filler to cushion and finish every parcel.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#a84d5a,#7f3a44)"><img src="assets/products/pk-ribbon.webp" alt="Ribbons & bows" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 24l-7-5a3.5 3.5 0 1 0 0 10z"/><path d="M24 24l7-5a3.5 3.5 0 1 1 0 10z"/><path d="M21 24l-3 10h12l-3-10"/></svg><span class="pk-tile-label">Ribbons &amp; bows</span></span><span class="pk-tile-text">Satin and grosgrain ribbon, bows and twine for a beautiful finishing touch.</span><span class="pk-tile-cta">Enquire →</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Labels, tags & finishing -->
-  <section class="section bg-cream2" style="padding-top:44px" id="labels-tags">
-    <div class="container">
-      <div class="section-head reveal" style="margin-bottom:26px">
-        <span class="eyebrow">Labels, tags &amp; finishing</span>
-        <h2>Custom labels, tags &amp; stickers</h2>
-        <p>Add your brand to every pack — custom printed labels, swing tags, stickers and cards, from low minimums.</p>
-      </div>
-      <div class="grid grid-3">
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#3b5a7a,#27405c)"><img src="assets/products/pk-label.webp" alt="Product labels" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 16h13l7 8-7 8H14z"/><circle cx="19" cy="24" r="1.8"/></svg><span class="pk-tile-label">Product labels</span></span><span class="pk-tile-text">Printed labels for pouches, jars and bottles — matte, gloss or kraft.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#7a4a8c,#583666)"><img src="assets/products/pk-sticker.webp" alt="Custom stickers" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="11"/><path d="M19 24l3.5 3.5L30 20"/></svg><span class="pk-tile-label">Custom stickers</span></span><span class="pk-tile-text">Round, square and die-cut stickers to seal boxes, bags and tissue.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#846a31,#5f4c22)"><img src="assets/products/pk-swingtag.webp" alt="Swing tags" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M27 12l9 9-13 13-9-9V12z"/><circle cx="21" cy="18" r="2"/></svg><span class="pk-tile-label">Swing tags</span></span><span class="pk-tile-text">Hang tags and gift tags on string or ribbon, printed both sides.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#4f8c6a,#366249)"><img src="assets/products/pk-card.webp" alt="Thank-you cards" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="15" width="22" height="16" rx="2"/><path d="M13 20h22"/><path d="M17 26h8"/></svg><span class="pk-tile-label">Thank-you cards</span></span><span class="pk-tile-text">Business cards, thank-you and insert cards to pop inside every order.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#8c6a4f,#664c37)"><img src="assets/products/pk-tape.webp" alt="Branded tape" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="11"/><circle cx="24" cy="24" r="4.5"/></svg><span class="pk-tile-label">Branded tape</span></span><span class="pk-tile-text">Paper and poly tape printed with your logo to seal and brand every box.</span><span class="pk-tile-cta">Enquire →</span></a>
-        <a class="pk-tile reveal" href="#custom-enquiry"><span class="pk-tile-img" style="background:linear-gradient(135deg,#9a3a3a,#732b2b)"><img src="assets/products/pk-waxseal.webp" alt="Wax seals" loading="lazy" onerror="this.remove()"><svg class="pk-ic" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="9"/><path d="M24 16l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z"/></svg><span class="pk-tile-label">Wax seals</span></span><span class="pk-tile-text">Self-adhesive wax seals for a premium, hand-finished touch.</span><span class="pk-tile-cta">Enquire →</span></a>
       </div>
     </div>
   </section>
@@ -306,37 +395,6 @@
   </section>
 
   <!-- Shop packs -->
-  <section class="section" style="padding-top:0">
-    <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a> / Packaging</div>
-      <div class="section-head" style="margin-bottom:26px">
-        <span class="eyebrow">Shop packaging</span>
-        <h2>Pouches, boxes &amp; kits, by the pack</h2>
-        <p>Ready-to-go packaging kits for small businesses, food vendors, gifting, hampers and celebrations. Tap any kit for full details, then enquire for retail &amp; wholesale pricing or request a bulk quote below.</p>
-      </div>
-
-      <div class="shop-bar">
-        <span id="pkgCount" class="shop-count"></span>
-        <label class="shop-sort">Sort
-          <select id="pkgSort" onchange="paintPkg()">
-            <option value="featured">Featured</option>
-            <option value="price-asc">Price: low to high</option>
-            <option value="price-desc">Price: high to low</option>
-            <option value="name">Name: A to Z</option>
-          </select>
-        </label>
-      </div>
-
-      <p class="pkg-soon">✦ <strong>Coming out soon.</strong> These kits are on their way and product photos are being uploaded. Enquire now to hear first when they're ready.</p>
-      <div class="grid grid-4" id="pkgGrid"></div>
-      <div id="pkgEmpty" class="empty-state" style="display:none">
-        <div class="em">📦</div>
-        <h3>Packs landing here soon</h3>
-        <p>We're stocking the packaging range. In the meantime, tell us what you need with a bulk quote below.</p>
-        <a class="btn btn--outline btn--pill" href="#bulk" onclick="setTimeout(function(){switchPkgPanel('quote');},60)">Request a bulk quote</a>
-      </div>
-    </div>
-  </section>
 
 
   <!-- Bulk & Commercial (forms open here from the buttons at the top) -->
@@ -488,7 +546,7 @@
       // If a button was clicked, jump to the form that opened
       if (btn) { const s = document.getElementById("bulk"); if (s) s.scrollIntoView({ behavior: "smooth", block: "start" }); }
     }
-    paintPkg();
+    if (document.getElementById("pkgGrid")) paintPkg();
     initReveal();
   </script>
 
