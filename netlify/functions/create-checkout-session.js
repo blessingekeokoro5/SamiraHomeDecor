@@ -42,7 +42,7 @@ function getStripe() {
 const SITE_URL = process.env.SITE_URL || "https://samirahomedecor.com.au";
 
 // Countries we ship to (ISO codes) — matches the site's shipping calculator regions
-const SHIP_COUNTRIES = ["AU", "NZ", "GB", "US", "CA", "NG"];
+const SHIP_COUNTRIES = ["AU", "NZ", "GB", "US", "CA", "CH", "DE"];
 
 /* ---- Shipping: mirrors SHIP_ZONES in js/checkout.js ---------- */
 const SHIP_ZONES = {
@@ -51,7 +51,8 @@ const SHIP_ZONES = {
   "United Kingdom": { base: 21.30, perKg: 28.60, days: [10, 24] },
   "United States":  { base: 16.10, perKg: 27.50, days: [10, 24] },
   "Canada":         { base: 16.10, perKg: 27.50, days: [10, 24] },
-  "Nigeria":        { base: 25.20, perKg: 37.30, days: [12, 30] },
+  "Switzerland":    { base: 21.30, perKg: 28.60, days: [10, 24] },
+  "Germany":        { base: 21.30, perKg: 28.60, days: [10, 24] },
 };
 const DEFAULT_ITEM_KG = 0.75;
 const SAMEDAY_FEE = 15;

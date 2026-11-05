@@ -159,12 +159,19 @@ const DM_CUR_INFO = {
   AUD: { symbol: "$", locale: "en-AU" }, NZD: { symbol: "$", locale: "en-NZ" },
   USD: { symbol: "$", locale: "en-US" }, GBP: { symbol: "£", locale: "en-GB" },
   EUR: { symbol: "€", locale: "en-IE" }, CAD: { symbol: "$", locale: "en-CA" },
-  AED: { symbol: "AED ", locale: "en-AE" }
+  CHF: { symbol: "CHF ", locale: "de-CH" }
 };
 let DM_CUR = "AUD";
 let DM_FX = {};   // rates relative to AUD, e.g. { NZD: 1.09, USD: 0.66 }
+let DM_CUR_AUTO = false;   // true when we picked the currency from where the visitor is
 try {
-  DM_CUR = localStorage.getItem("dm_currency") || "AUD";
+  DM_CUR = localStorage.getItem("dm_currency") || "";
+  // No choice saved yet: show prices in the visitor's own currency straight away
+  if (!DM_CUR && typeof detectRegion === "function" && typeof REGIONS !== "undefined") {
+    const r = REGIONS[detectRegion()];
+    DM_CUR = (r && r.cur) || "AUD";
+    DM_CUR_AUTO = DM_CUR !== "AUD";
+  }
   const c = JSON.parse(localStorage.getItem("dm_fx") || "null");
   if (c && c.rates) DM_FX = c.rates;
 } catch (e) {}
@@ -204,8 +211,17 @@ async function applyCurrency(code) {
   if (code !== "AUD") await refreshFx();
   location.reload();
 }
-// Keep rates fresh in the background (also enables conversion on next load).
-if (typeof window !== "undefined") { refreshFx(); }
+// Keep rates fresh in the background. On a visitor's first page in another
+// currency we may not have rates yet: fetch them, then redraw once.
+if (typeof window !== "undefined") {
+  const hadRate = !!dmRate(DM_CUR);
+  refreshFx().then(function () {
+    if (DM_CUR !== "AUD" && !hadRate && dmRate(DM_CUR)) {
+      try { if (sessionStorage.getItem("dm_fx_reloaded")) return; sessionStorage.setItem("dm_fx_reloaded", "1"); } catch (e) { return; }
+      location.reload();
+    }
+  });
+}
 
 /* ---- Product image: uses assets/products/<id>.jpg (or .png/.webp), else placeholder ---- */
 function prodImgTag(p) {

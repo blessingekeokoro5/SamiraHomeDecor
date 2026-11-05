@@ -1032,9 +1032,8 @@ const REGIONS = {
   GB: { name: "United Kingdom", flag: "🇬🇧", cur: "GBP" },
   US: { name: "United States", flag: "🇺🇸", cur: "USD" },
   CA: { name: "Canada", flag: "🇨🇦", cur: "CAD" },
-  AE: { name: "United Arab Emirates", flag: "🇦🇪", cur: "AED" },
-  DE: { name: "Germany", flag: "🇩🇪", cur: "EUR" },
-  NL: { name: "Netherlands", flag: "🇳🇱", cur: "EUR" }
+  CH: { name: "Switzerland", flag: "🇨🇭", cur: "CHF" },
+  DE: { name: "Germany", flag: "🇩🇪", cur: "EUR" }
 };
 const HOME_REGION = "AU";
 
@@ -1044,10 +1043,9 @@ function detectRegion() {
     if (/Australia/.test(tz)) return "AU";
     if (/Auckland/.test(tz)) return "NZ";
     if (/London/.test(tz)) return "GB";
-    if (/Dubai/.test(tz)) return "AE";
     if (/Toronto|Vancouver|Edmonton|Winnipeg|Halifax/.test(tz)) return "CA";
     if (/Berlin/.test(tz)) return "DE";
-    if (/Amsterdam/.test(tz)) return "NL";
+    if (/Zurich/.test(tz)) return "CH";
     if (/America\//.test(tz)) return "US";
     const lang = (navigator.language || "").toUpperCase();
     for (const code of Object.keys(REGIONS)) if (lang.endsWith("-" + code)) return code;
@@ -1063,7 +1061,7 @@ function buildCountryModal() {
     <div class="country-card" role="dialog" aria-label="Confirm your country">
       <button class="country-close" id="countryClose" aria-label="Close">✕</button>
       <h3>Confirm your country</h3>
-      <p>You're shopping the <strong>Samira Home Decor Australia</strong> store <span id="homeFlag">🇦🇺</span>. We ship to selected regions, Australia, New Zealand, Nigeria, the UK, USA &amp; Canada, confirm your region for delivery &amp; pricing info.</p>
+      <p>You're shopping the <strong>Samira Home Decor Australia</strong> store <span id="homeFlag">🇦🇺</span>. We ship to Australia, New Zealand, the UK, Canada, the USA, Switzerland &amp; Germany. Confirm your region to see prices in your currency.</p>
       <div class="country-detected" id="countryDetected"></div>
       <label class="country-select-label">Shopping from another country?
         <select id="countrySelect">${options}</select>
@@ -1101,6 +1099,7 @@ function initCountry() {
   updateRegionFlag();
   if (!modal) return;
   let chosen = null; try { chosen = localStorage.getItem("dm_region"); } catch (e) {}
+  if (chosen && !REGIONS[chosen]) chosen = null;   // a region we no longer ship to
   const detected = detectRegion();
 
   const sel = document.getElementById("countrySelect");
@@ -1413,7 +1412,7 @@ const CHAT_QUICK = [
   { label: "✦ Style a room for me" },
   { label: "📦 Shop packaging supplies" },
   { label: "🚚 Track my order" },
-  { label: "💬 Talk to a human" }
+  { label: "💬 Chat with a customer representative" }
 ];
 
 /* ---- Help desk (self-service home → FAQs, tracking, returns, message us) ---- */
@@ -1545,7 +1544,7 @@ function dmSelectIssue(issue) {
 const WA_HANDOFF = (SAMIRA.socials.whatsapp || "https://wa.me/61451609398") +
   "?text=" + encodeURIComponent("Hi Samira Home Decor 🙂 I'd like to chat with a team member about ");
 function waButton(label) {
-  return `<a class="chat-wa" href="${WA_HANDOFF}" target="_blank" rel="noopener">${IC.wa} ${label || "Chat with a human on WhatsApp"}</a>`;
+  return `<a class="chat-wa" href="${WA_HANDOFF}" target="_blank" rel="noopener">${IC.wa} ${label || "Chat with a customer representative on WhatsApp"}</a>`;
 }
 
 /* ---- Trained knowledge base: confident, specific answers ---- */
@@ -1559,7 +1558,7 @@ function chatReply(text) {
     html = `Hi, lovely to meet you! 👋 I'm Samira Stylera, your personal shopping assistant. I can help you find a home fragrance, styling piece or gift, build a gift hamper, or track an order. What are you after today?`;
 
   else if (has(/\b(human|real person|agent|team member|speak to someone|talk to someone|representative|customer service)\b/))
-    html = `Of course, I'll connect you with a real Samira Home Decor team member. Reach us straight away on WhatsApp, or email ${SAMIRA.email}.<br>${waButton()}`;
+    html = `Of course, I'll connect you with a Samira Home Decor customer representative. Reach us straight away on WhatsApp, or email ${SAMIRA.email}.<br>${waButton()}`;
 
   else if (has(/\b(fragrance|scent|diffuser|candle|room spray|essential oil)\b/))
     html = `Our ${link("shop.html?cat=Lifestyle", "Home Fragrances")} edit (in Lifestyle) has reed diffusers, scented candles, room sprays and essential oils 🌸, everything to layer your home with scent.`;
@@ -1632,7 +1631,7 @@ function chatReply(text) {
 
   else {
     unsure = true;
-    html = `That's a great question! I want to get it right, could you tell me a little more? I can help with styling, shipping, returns, hampers, bookings, pricing and tracking. Or I can connect you with a real team member: ${waButton("Chat with a human on WhatsApp")}`;
+    html = `That's a great question! I want to get it right, could you tell me a little more? I can help with styling, shipping, returns, hampers, bookings, pricing and tracking. Or I can connect you with a real team member: ${waButton("Chat with a customer representative on WhatsApp")}`;
   }
   return { html, unsure };
 }
@@ -1669,7 +1668,7 @@ function chatFeedback(id, good) {
   if (good) {
     chatAppend("bot", `Wonderful, so glad that helped! 😊 Anything else I can find or style for you?`);
   } else {
-    chatAppend("bot", `Thanks for the honesty, I'd like to get you a better answer. Try rephrasing, or I can connect you with a real Samira Home Decor team member right now:<br>${waButton()}`);
+    chatAppend("bot", `Thanks for the honesty, I'd like to get you a better answer. Try rephrasing, or I can connect you with a Samira Home Decor customer representative right now:<br>${waButton()}`);
   }
   maybeAskRating();
 }
@@ -1691,7 +1690,7 @@ function chatRate(n) {
   if (n >= 4) {
     chatAppend("bot", `Thank you, ${"★".repeat(n)}! 💛 I'm always here in the corner if you need me.`);
   } else {
-    chatAppend("bot", `Thank you for the feedback, I'd love to do better. Let me connect you with a real team member who can help properly:<br>${waButton()}`);
+    chatAppend("bot", `Thank you for the feedback, I'd love to do better. Let me connect you with a customer representative who can help properly:<br>${waButton()}`);
   }
 }
 

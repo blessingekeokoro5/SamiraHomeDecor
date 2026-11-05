@@ -18,7 +18,8 @@ const SHIP_ZONES = {
   "United Kingdom":  { base: 21.30, perKg: 28.60, days: "10 to 24 business days" },
   "United States":   { base: 16.10, perKg: 27.50, days: "10 to 24 business days" },
   "Canada":          { base: 16.10, perKg: 27.50, days: "10 to 24 business days" },
-  "Nigeria":         { base: 25.20, perKg: 37.30, days: "12 to 30 business days" }
+  "Switzerland":     { base: 21.30, perKg: 28.60, days: "10 to 24 business days" },
+  "Germany":         { base: 21.30, perKg: 28.60, days: "10 to 24 business days" }
 };
 const DEFAULT_ITEM_KG = 0.75; // used when a product has no weight set
 const INTL_MAX_KG = 20;       // Australia Post International Standard parcel limit
@@ -249,7 +250,7 @@ function renderCheckout() {
           </div>
           <div class="field-row">
             <div class="field ship-addr"><label>Country</label>
-              <select id="coCountry" onchange="updateTotalsUI()"><option>Australia</option><option>New Zealand</option><option>United Kingdom</option><option>United States</option><option>Canada</option><option>Nigeria</option></select></div>
+              <select id="coCountry" onchange="updateTotalsUI()"><option>Australia</option><option>New Zealand</option><option>United Kingdom</option><option>United States</option><option>Canada</option><option>Switzerland</option><option>Germany</option></select></div>
             <div class="field"><label>Phone</label><input id="coPhone" type="tel"></div>
           </div>
 

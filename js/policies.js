@@ -22,7 +22,7 @@ const FAQ_ITEMS = [
   { q: "Where do you ship from and how long does it take?",
     a: "All home-décor products are dispatched from our Sydney warehouse. Orders are usually processed within 1 to 2 business days. Standard delivery within Australia typically takes 3 to 8 business days depending on your location; larger furniture items may take longer and are quoted at checkout." },
   { q: "Do you ship internationally?",
-    a: "Yes, we ship worldwide, including Australia, New Zealand, USA, Canada, the Netherlands, Morocco, China, Germany, Switzerland and the UAE. International delivery times and costs vary by destination and are calculated at checkout. Any import duties or taxes are the responsibility of the customer." },
+    a: "Yes. As well as Australia, we ship to New Zealand, the United Kingdom, Canada, the USA, Switzerland and Germany. International delivery times and costs vary by destination and are calculated at checkout. Any import duties or taxes are the responsibility of the customer." },
   { q: "How do I track my order?",
     a: "Use our <a href='track.html'>Track Your Order</a> page and enter your order number, email or phone used at checkout. You'll also receive a tracking link by email once your order ships." },
   { q: "What payment methods do you accept?",
@@ -74,7 +74,7 @@ const POLICIES = {
       </ul>
 
       <h3>4. International delivery</h3>
-      <p>We ship worldwide, including New Zealand, the USA, Canada, the Netherlands, Morocco, China, Germany, Switzerland and the UAE. Delivery times and costs are calculated at checkout. <strong>Any customs duties, import taxes or fees are the responsibility of the customer</strong> and are not included in our prices or shipping charges.</p>
+      <p>As well as Australia, we ship to New Zealand, the United Kingdom, Canada, the USA, Switzerland and Germany. Delivery times and costs are calculated at checkout. <strong>Any customs duties, import taxes or fees are the responsibility of the customer</strong> and are not included in our prices or shipping charges.</p>
 
       <h3>5. Local gift delivery</h3>
       <p>Selected gift hampers can be delivered within select metro areas for fast local delivery. Delivery fees and availability are confirmed at the time of ordering.</p>
