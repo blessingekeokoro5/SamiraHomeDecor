@@ -1466,7 +1466,7 @@ function renderSupport() {
       <div id="hdPopular"><p class="support-lead">Loading…</p></div>
       <a class="support-more" href="policy.html?doc=faq">View all FAQs</a>
     </div>
-    <p class="hd-hours">Our team: Mon to Fri 9am to 5:30pm · Sat 10am to 4pm (AEST)</p>`;
+    <p class="hd-hours">Our team: Mon to Fri 9am to 5:30pm · Sat 10am to 4pm (Adelaide time)</p>`;
 
   dmLoadFaqs(items => {
     const pop = document.getElementById("hdPopular");
@@ -1616,7 +1616,7 @@ function chatReply(text) {
     html = `Good thinking, measure your space first! 📐 Each product page lists dimensions and assembly notes. If you tell me the item, I'll help you check it fits, or our team can confirm on ${link("contact.html", "Contact")}.`;
 
   else if (has(/\b(visit|showroom|studio|in person|appointment|open|hours|location|address|where are you)\b/))
-    html = `We're a proudly <strong>Australian</strong> 🇦🇺 online store, here Mon to Fri 9 to 5:30 and Sat 10 to 4 (AEST). Reach us via ${link("contact.html", "Contact")} or WhatsApp.`;
+    html = `We're a proudly <strong>Australian</strong> 🇦🇺 online store, here Mon to Fri 9 to 5:30 and Sat 10 to 4 (Adelaide time). Reach us via ${link("contact.html", "Contact")} or WhatsApp.`;
 
   else if (has(/\b(eco|sustainab|ethical|environment|natural material)\b/))
     html = `We love this question 🌱, we curate quality, considered pieces made to last, favour natural materials, and offer eco-friendly options (including for cleaning). Ask about a specific piece and I'll share what I know.`;
