@@ -82,6 +82,7 @@
     @media (max-width: 900px) { #featuredGrid.edit-row > * { flex-basis: calc((100% - 16px) / 2); } }
     @media (max-width: 640px) { #featuredGrid.edit-row > * { flex-basis: 74%; } .edit-arrow { display: none; } }
   </style>
+  <style>@media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr 1fr !important; } }</style>
 </head>
 <body data-page="index.html">
   <div id="site-header"></div>
@@ -213,9 +214,9 @@
       <div class="section-head reveal">
         <span class="eyebrow">More than a shop</span>
         <h2>Property styling &amp; interior design</h2>
-        <p>Beyond the products, our stylists help you create spaces you love, with interior styling, property styling for sale and interior design. Book an in-home consultation.</p>
+        <p>Beyond the products, our stylists help you create spaces you love, with interior styling, property styling for sale, interior design and personal shopping. Book an in-home consultation.</p>
       </div>
-      <div class="grid grid-3">
+      <div class="grid grid-4 svc-grid">
         <a class="card reveal cat-card" href="staging.html?service=istyling#book">
           <div class="card-media" style="aspect-ratio:3/4"><div class="ph" data-label="Interior Styling"><img class="ph-img" src="assets/service-styling.png" alt="Interior Styling" loading="lazy" onerror="this.remove()"></div></div>
           <div class="card-body"><div class="service-icon">🛋️</div><h3>Interior Styling</h3><p>Refresh the home you live in with a curated, shoppable plan, styled in-home.</p><span class="link-arrow">Book interior styling →</span></div>
@@ -227,6 +228,10 @@
         <a class="card reveal cat-card" href="staging.html?service=interior#book">
           <div class="card-media" style="aspect-ratio:3/4"><div class="ph forest" data-label="Interior Design"><img class="ph-img" src="assets/service-interior.png" alt="Interior Design" loading="lazy" onerror="this.remove()"></div></div>
           <div class="card-body"><div class="service-icon">🎨</div><h3>Interior Design</h3><p>A full design consult, layouts, palettes &amp; pieces, to plan a whole space.</p><span class="link-arrow">Book design →</span></div>
+        </a>
+        <a class="card reveal cat-card" href="personal-shopping.html">
+          <div class="card-media" style="aspect-ratio:3/4"><div class="ph" data-label="Home Décor Personal Shopper"><img class="ph-img" src="assets/services/staging-feature.jpg" alt="Home Décor Personal Shopper" loading="lazy" onerror="this.remove()"></div></div>
+          <div class="card-body"><div class="service-icon">🛍️</div><h3>Home Décor Personal Shopper</h3><p>We source the décor, furniture and art for your space, so you skip the shopping.</p><span class="link-arrow">Book a shopper →</span></div>
         </a>
       </div>
       <div class="text-center" style="margin-top:40px">
