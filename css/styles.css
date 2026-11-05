@@ -2155,3 +2155,49 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
   .revc-dot { position: relative; }
   .revc-dot::after { content: ""; position: absolute; inset: -14px -6px; }
 }
+
+/* Announcement bar: crisp, bright and full text on every screen */
+.announce { color: #fff; font-weight: 500; height: auto; min-height: 38px; padding: 9px 16px; letter-spacing: .14em; -webkit-font-smoothing: antialiased; }
+.announce-track { text-overflow: clip; text-shadow: none; }
+.announce-track.out { transform: translateY(-4px); }
+@media (max-width: 640px) {
+  .announce { min-height: 44px; padding: 12px 14px 10px; }
+  .announce, .announce-inner, .announce-track { font-size: .74rem !important; letter-spacing: .07em !important; }
+  .announce-track { white-space: normal; line-height: 1.35; padding: 0; }
+}
+
+/* Phone header: menu, logo and icons on one row, search below */
+@media (max-width: 640px) {
+  .nav-utility { flex-wrap: wrap; column-gap: 6px; }
+  .nav-utility > .brand { flex: 1 1 0; min-width: 0; overflow: hidden; }
+  .nav-utility-right { flex: 0 0 auto; margin-left: auto; gap: 2px; }
+  .nav-utility-right > * { min-width: 36px; }
+  .brand-logo-full { height: 34px; max-width: 132px; }
+  .brand-tagline { font-size: .5rem; letter-spacing: .03em; }
+  .nav-utility-right .icon-btn, .nav-utility-right #accountMenu { min-width: 34px; }
+}
+@media (max-width: 380px) { #regionBtn { display: none; } }
+
+/* Hero: clearer text over the photo, shorter on phones */
+.hero::before { background: linear-gradient(90deg, rgba(246,238,232,.92) 0%, rgba(246,238,232,.78) 55%, rgba(246,238,232,.45) 100%); }
+.hero-sub { color: var(--ink); }
+@media (max-width: 640px) {
+  .hero::before { background: linear-gradient(180deg, rgba(246,238,232,.9), rgba(246,238,232,.82)); }
+  .hero-grid { min-height: 0; padding-top: 40px; padding-bottom: 44px; }
+  .hero-sub .hs-more { display: none; }
+}
+
+/* Arrows only appear once you've scrolled down a little */
+@media (max-width: 640px) {
+  body:not(.dm-scrolled) .float-left { opacity: 0; pointer-events: none; transform: translateY(14px); }
+}
+
+/* Hero buttons: a tidy 2 x 2 block, every button the same width and height */
+.hero-cta-grid { display: grid !important; grid-auto-rows: 1fr; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; max-width: 660px; margin-top: 4px; }
+.hero-cta-grid .btn { width: 100%; margin: 0 !important; min-height: 54px; display: inline-flex; align-items: center; justify-content: center; text-align: center; padding: 14px 16px; white-space: normal; line-height: 1.25; }
+.hero-cta-grid .btn--outline { background: rgba(255,255,255,.88); border-color: var(--ink); color: var(--ink); }
+.hero-cta-grid .btn--outline:hover { background: #fff; }
+@media (max-width: 640px) {
+  .hero-cta-grid { grid-template-columns: 1fr; gap: 10px; max-width: none; }
+  .hero-cta-grid .btn { min-height: 52px; font-size: .78rem; }
+}

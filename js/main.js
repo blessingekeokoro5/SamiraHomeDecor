@@ -636,6 +636,7 @@ function findSimilar(id) {
     if (ticking) return; ticking = true;
     requestAnimationFrame(function () {
       const y = window.scrollY, d = y - last;
+      document.body.classList.toggle("dm-scrolled", y > 300);
       if (Math.abs(d) > 8) { document.body.classList.toggle("dm-scrolling-down", d > 0 && y > 200); last = y; }
       ticking = false;
     });

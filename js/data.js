@@ -3078,15 +3078,14 @@ const CURATED_HAMPERS = [
 
 /* ---- Rotating announcement bar ---- */
 const ANNOUNCEMENTS = [
-  "✦ Free shipping on orders over $3,500, Australia-wide",
-  "🌏 We ship to Australia, NZ, UK, USA, Canada, Switzerland &amp; Germany",
+  "✦ Free shipping over $3,500, Australia-wide",
+  "🌏 We ship to AU, NZ, UK, USA, Canada, Switzerland &amp; Germany",
   "🌸 New décor finds added weekly",
-  "⚡ In a hurry? Look for Ready to Ship pieces, delivered in a few days",
-  "💝 Members save 10% on their first order, join free",
-  "⭐ Loved by 500+ Australian homes · 4.9★ average review",
-  "🎁 Build your own luxury hamper, gifting made effortless",
-  "💡 Tip: tap the ♡ on any piece to save it to your wishlist for later",
-  "💬 For enquiries, message us on WhatsApp · Proudly Australian 🇦🇺"
+  "🚚 See your delivery dates at checkout",
+  "💝 Join free & get a $10 welcome voucher",
+  "🎁 Build your own luxury hamper",
+  "♡ Tap the heart to save pieces for later",
+  "💬 Questions? Message us on WhatsApp"
 ];
 
 /* ---- Reviews ---- */
