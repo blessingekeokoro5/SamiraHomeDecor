@@ -615,3 +615,16 @@ function findSimilar(id) {
   const term = p ? (p.cat || (p.name || "").split(" ").slice(-1)[0]) : "";
   location.href = "shop.html?q=" + encodeURIComponent(term);
 }
+
+/* Live product count: any element with data-product-count shows how many
+   products are for sale, rounded down to the nearest 10 ("over 140").
+   It updates by itself whenever products are added or removed. */
+(function () {
+  function paint() {
+    if (typeof PRODUCTS === "undefined") return;
+    const n = PRODUCTS.filter(function (p) { return p && p.price != null && p.cat !== "Packaging"; }).length;
+    const shown = n >= 20 ? Math.floor(n / 10) * 10 : n;
+    document.querySelectorAll("[data-product-count]").forEach(function (el) { el.textContent = shown; });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", paint); else paint();
+})();
