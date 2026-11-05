@@ -19,7 +19,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
-  <link rel="stylesheet" href="css/styles.css?v=51">
+  <link rel="stylesheet" href="css/styles.css?v=52">
   <style>
     .help-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
     .help-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-sm); }
@@ -159,7 +159,7 @@
               <div class="qr-card">
                 <img class="qr-img" alt="Scan to visit Samira Home Decor"
                      src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=0&data=https%3A%2F%2Fsamirahomedecor.com.au"
-                     onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph qr',dataset:{label:'QR'}}))">
+                     onerror="var d=document.createElement('div');d.className='ph qr';d.setAttribute('data-label','QR');this.replaceWith(d)">
                 <small>Scan to visit our site</small>
               </div>
             </div>
@@ -200,8 +200,8 @@
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=56"></script>
-  <script src="js/components.js?v=78"></script>
+  <script src="js/components.js?v=79"></script>
   <script src="js/cart.js?v=26"></script>
-  <script src="js/main.js?v=11"></script>
+  <script src="js/main.js?v=12"></script>
 </body>
 </html>

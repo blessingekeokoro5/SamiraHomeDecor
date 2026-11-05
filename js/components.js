@@ -631,10 +631,17 @@ function initFooterAccordion() {
   });
 }
 
+/* Previous page: go back if we came from this site, otherwise to the home page */
+function dmGoBack() {
+  let same = false;
+  try { same = document.referrer && new URL(document.referrer).origin === location.origin; } catch (e) {}
+  if (same && history.length > 1) history.back(); else location.href = "index.html";
+}
+
 function buildFloating() {
   return `
     <div class="float-left">
-      <button class="float-btn" onclick="history.back()" aria-label="Previous page" title="Previous page">←<span>Previous page</span></button>
+      <button class="float-btn" onclick="dmGoBack()" aria-label="Previous page" title="Previous page">←<span>Previous page</span></button>
       <button class="float-btn rose" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Return to top" title="Return to top">↑<span>Return to top</span></button>
     </div>
 

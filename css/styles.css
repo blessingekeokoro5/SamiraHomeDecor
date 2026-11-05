@@ -2120,3 +2120,38 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
   .grid-list .card-media { min-height: 150px; }
   .grid-list .card-body { padding: 14px; }
 }
+
+/* ============================================================
+   Phone fixes (Nov 2026)
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Arrows: show both (previous page + top), side by side, clear of the
+     phone's home bar and browser toolbar */
+  .float-left { flex-direction: row; left: 12px; bottom: calc(14px + env(safe-area-inset-bottom)); gap: 8px; transition: opacity .25s, transform .25s; }
+  .float-left .float-btn:first-child { display: inline-flex; }
+  .float-btn { width: 42px; height: 42px; font-size: 1.1rem; opacity: 1; }
+  .dm-launch { bottom: calc(14px + env(safe-area-inset-bottom)); }
+  /* Ask Samira Stylera becomes a round star button so it doesn't cover the page */
+  .launch-gift { width: 46px; height: 46px; padding: 0; justify-content: center; }
+  .launch-gift span:last-child { display: none; }
+  .launch-gift .lb-star { font-size: 1.15rem; }
+  /* Tuck the floating buttons away while scrolling down, back on scroll up */
+  body.dm-scrolling-down .float-left, body.dm-scrolling-down .dm-launch:not(.hidden) { opacity: 0; transform: translateY(14px); pointer-events: none; }
+
+  /* Product cards in 2 columns: nothing runs off the edge */
+  .product .card-body { min-width: 0; }
+  .product .card-badges { right: 54px; }
+  .product .badge-hot { font-size: .62rem; padding: 4px 8px; letter-spacing: .02em; max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .product .tag { font-size: .58rem; padding: 4px 8px; }
+  .card-actions { gap: 6px; }
+  .card-act { min-width: 0; padding: 8px; }
+  .card-act span { display: none; }
+  .product-foot { flex-direction: column; align-items: stretch; gap: 8px; padding-top: 12px; }
+  .product-foot .stars { font-size: .8rem; letter-spacing: 1px; }
+  .product-foot .btn { width: 100%; padding-left: 6px; padding-right: 6px; font-size: .7rem; letter-spacing: .08em; white-space: nowrap; }
+  .product .card-media > .dm-verified { max-width: calc(100% - 60px); }
+
+  /* Review slider dots: bigger tap area */
+  .revc-dot { position: relative; }
+  .revc-dot::after { content: ""; position: absolute; inset: -14px -6px; }
+}

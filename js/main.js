@@ -628,3 +628,16 @@ function findSimilar(id) {
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", paint); else paint();
 })();
+
+/* Phones: hide the floating buttons while scrolling down, show them on scroll up */
+(function () {
+  let last = window.scrollY, ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function () {
+      const y = window.scrollY, d = y - last;
+      if (Math.abs(d) > 8) { document.body.classList.toggle("dm-scrolling-down", d > 0 && y > 200); last = y; }
+      ticking = false;
+    });
+  }, { passive: true });
+})();
