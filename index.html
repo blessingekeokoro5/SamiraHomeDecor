@@ -84,6 +84,25 @@
   </style>
   <style>@media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr 1fr !important; } }</style>
   <style>.reviews-summary .star-half { position: relative; display: inline-block; color: rgba(198,161,91,.28); } .reviews-summary .star-half::before { content: "★"; position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: var(--gold, #C6A15B); }</style>
+  <style>
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .why-card { display: flex; flex-direction: column; background: #fff; border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--ink); box-shadow: var(--shadow-sm); transition: transform .2s; }
+    .why-card:hover { transform: translateY(-3px); }
+    .why-img { position: relative; aspect-ratio: 1/1; overflow: hidden; background: var(--cream-2); }
+    .why-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .why-body { padding: 14px 16px 18px; display: flex; flex-direction: column; flex: 1; }
+    .why-body h3 { font-size: 1.15rem; margin: 0 0 6px; }
+    .why-body p { color: var(--body); font-size: .9rem; line-height: 1.5; margin: 0 0 12px; flex: 1; }
+    .why-perks { list-style: none; padding: 0; margin: 26px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .why-perks li { display: flex; gap: 10px; background: rgba(255,255,255,.7); border: 1px solid var(--line); border-radius: 14px; padding: 14px; font-size: .86rem; color: var(--body); line-height: 1.45; }
+    .why-perks li > span { font-size: 1.2rem; color: var(--gold, #C6A15B); }
+    .why-perks strong { display: block; color: var(--ink); font-size: .95rem; margin-bottom: 2px; }
+    @media (max-width: 900px) { .why-grid, .why-perks { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) {
+      .why-grid { gap: 10px; } .why-body { padding: 10px 12px 14px; } .why-body h3 { font-size: .98rem; } .why-body p { font-size: .8rem; }
+      .why-perks { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
 </head>
 <body data-page="index.html">
   <div id="site-header"></div>
@@ -242,43 +261,40 @@
   </section>
 
 
-  <!-- ============ REVIEWS ============ -->
-  <section class="section bg-blush" id="reviews">
+  <!-- ============ WHY SHOPPERS CHOOSE US ============ -->
+  <section class="section bg-blush" id="why-us">
     <div class="container">
-      <div class="reviews-summary reveal">
-        <span class="eyebrow">Loved by our community</span>
-        <h2>Customer reviews</h2>
-        <div class="stars" aria-label="4.7 out of 5 stars">★★★★<span class="star-half">★</span></div>
-        <div class="score">4.7 / 5 · loved by 500+ Australian homes</div>
+      <div class="section-head reveal">
+        <span class="eyebrow">Why shop with us</span>
+        <h2>Why shoppers choose Samira Home Decor</h2>
+        <p>Pieces we're proud of, and the little things we do to make shopping with us easy.</p>
       </div>
-    </div>
-    <div class="container">
-      <div class="revc reveal">
-        <div class="revc-card" id="revcCard" aria-live="polite"></div>
-        <div class="revc-nav">
-          <button class="revc-arrow" id="revcPrev" type="button" aria-label="Previous review">&#8249;</button>
-          <div class="revc-dots" id="revcDots"></div>
-          <button class="revc-arrow" id="revcNext" type="button" aria-label="Next review">&#8250;</button>
-        </div>
+      <div class="why-grid">
+        <a class="why-card reveal" href="product.html?id=lf32">
+          <div class="why-img"><img src="assets/products/lf32.webp" alt="Cloud Rib Plush Blanket" loading="lazy"></div>
+          <div class="why-body"><h3>Cloud Rib Plush Blanket</h3><p>Thick, cloud-soft ribbed fleece in eight colours and seven sizes, from a sofa throw to a king bed.</p><span class="link-arrow">Shop the blanket →</span></div>
+        </a>
+        <a class="why-card reveal" href="product.html?id=lx71">
+          <div class="why-img"><img src="assets/products/lx71.webp" alt="Luna coffee table and glass side table set" loading="lazy"></div>
+          <div class="why-body"><h3>Luna Coffee Table Set</h3><p>A round slate coffee table and matching glass side table, styled together so your living room looks finished.</p><span class="link-arrow">Shop the set →</span></div>
+        </a>
+        <a class="why-card reveal" href="hamper-maker.html">
+          <div class="why-img"><img src="assets/cat-gifting.png" alt="Build your own gift hamper" loading="lazy"></div>
+          <div class="why-body"><h3>Build your own hamper</h3><p>Pick every piece, add a hand-written note and choose your navy &amp; gold packaging, from $60.</p><span class="link-arrow">Start building →</span></div>
+        </a>
+        <a class="why-card reveal" href="product.html?id=bt47">
+          <div class="why-img"><img src="assets/products/bt47.webp" alt="Lumière Crystal Bathroom Vanity Set" loading="lazy"></div>
+          <div class="why-body"><h3>Lumière Crystal Vanity Set</h3><p>Heavy crystal glass in smoke grey, iridescent clear or amber gold, for a boutique-hotel bathroom.</p><span class="link-arrow">Shop the set →</span></div>
+        </a>
       </div>
+      <ul class="why-perks reveal">
+        <li><span>✦</span><div><strong>Member prices</strong>Join free and pay the member price on every piece, charged automatically at checkout.</div></li>
+        <li><span>🚚</span><div><strong>Arrival dates up front</strong>See exactly when each item should arrive before you pay.</div></li>
+        <li><span>🌏</span><div><strong>We ship to 7 countries</strong>Australia, NZ, the UK, USA, Canada, Switzerland &amp; Germany.</div></li>
+        <li><span>💬</span><div><strong>Real people, real help</strong>Questions? Message us on WhatsApp and we'll help you choose.</div></li>
+      </ul>
+      <div class="text-center" style="margin-top:28px"><a class="btn btn--dark" href="shop.html">Shop the collection →</a></div>
     </div>
-    <style>
-      .revc{max-width:720px;margin:0 auto;text-align:center}
-      .revc-card{background:#fff;border-radius:22px;padding:42px 32px 34px;box-shadow:0 20px 54px -26px rgba(11,31,58,.35);position:relative;min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-      .revc-quote{font-family:Georgia,serif;font-size:4.4rem;line-height:.5;color:#E3DACB;height:28px}
-      .revc-stars{color:#C6A15B;letter-spacing:3px;margin:6px 0 14px}
-      .revc-body{font-style:italic;font-size:1.16rem;line-height:1.75;color:#2C2623;max-width:560px;margin:0}
-      .revc-who{margin-top:20px;font-weight:600;color:#8a7f77;font-size:.95rem}
-      .revc-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:22px}
-      .revc-dots{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;min-width:0}
-      .revc-arrow{flex:none}
-      @media(max-width:420px){.revc-nav{gap:10px}.revc-dots{gap:6px}.revc-dot{width:7px;height:7px}.revc-dot.active{width:18px}}
-      .revc-dot{width:9px;height:9px;border-radius:50%;background:#d9cfc2;border:0;padding:0;cursor:pointer;transition:all .2s}
-      .revc-dot.active{background:#0B1F3A;width:26px;border-radius:99px}
-      .revc-arrow{width:42px;height:42px;border-radius:50%;border:1.5px solid #d9cfc2;background:#fff;color:#0B1F3A;font-size:1.4rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-      .revc-arrow:hover{border-color:#0B1F3A;background:#0B1F3A;color:#fff}
-      @media(max-width:560px){.revc-body{font-size:1.04rem}.revc-card{padding:32px 20px}}
-    </style>
   </section>
 
   <section class="section help-band help-band--slim">
