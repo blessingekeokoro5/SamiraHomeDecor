@@ -2164,6 +2164,24 @@ const PRODUCTS = [
     specs: { "Type": "Tote bag" },
     care: "Spot clean with a damp cloth and mild soap, then air dry out of direct sun." },
 
+  { id: "lf31", name: "Morandi Orange Tassel Knit Throw", cat: "Lifestyle", room: "Lifestyle", price: 220, memberPrice: 200, sku: "SH-11328", tag: "New", ph: "", img: "assets/products/lf31.webp",
+    imgs: ["assets/products/lf31.webp", "assets/products/lf31-2.webp", "assets/products/lf31-3.webp", "assets/products/lf31-4.webp", "assets/products/lf31-5.webp"],
+    sizes: [{ label: "127 x 170cm", price: 220 }, { label: "127 x 220cm", price: 220 }],
+    colours: [{ name: "Morandi Orange", hex: "#c4602f" }],
+    desc: "Wrap yourself in warmth with this soft knitted throw in a muted Morandi orange, a warm, earthy tone that brings instant cosiness to any room. A textured waffle-style knit and playful tassel edges give it a relaxed, hand-crafted look, while the lightweight blend of acrylic, polyester and cotton keeps it warm without feeling heavy. Drape it over the sofa, fold it at the end of the bed, or take it along for naps, picnics, camping and road trips. Choose 127 x 170cm for the couch or 127 x 220cm for extra coverage on the bed.",
+    features: [
+      "Muted Morandi orange tone that adds warmth to neutral rooms",
+      "Textured knit with decorative tassel edges",
+      "Soft, lightweight and warm blend of acrylic, polyester and cotton",
+      "Holds its shape and resists pilling with everyday use",
+      "Two sizes: 127 x 170cm (sofa) and 127 x 220cm (bed)",
+      "Great for the couch, bed, naps, camping and travel",
+      "Sold as 1 throw, ready to use or gift"
+    ],
+    specs: { "Type": "Throw blanket", "Material": "Acrylic, polyester and cotton blend", "Construction": "Knitted with tassel edges", "Colour": "Morandi Orange", "Pack size": "1 throw" },
+    dimensions: "127 x 170cm or 127 x 220cm", weight: "1.0 kg (127 x 170cm), 1.3 kg (127 x 220cm), approx.",
+    boxContents: ["1 x knitted throw"],
+    care: "Hand wash or gentle machine wash cold in a laundry bag. Do not bleach or tumble dry; dry flat in the shade. Trim any loose threads rather than pulling them." },
   // ── Tables: coffee, side & console ──
 
 
