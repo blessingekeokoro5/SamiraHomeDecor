@@ -72,6 +72,16 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
   <link rel="stylesheet" href="css/styles.css?v=61">
+  <style>
+    .edit-wrap { position: relative; }
+    #featuredGrid.edit-row { display: flex !important; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 2px 10px; }
+    #featuredGrid.edit-row::-webkit-scrollbar { display: none; }
+    #featuredGrid.edit-row > * { flex: 0 0 calc((100% - 48px) / 4); scroll-snap-align: start; min-width: 0; }
+    .edit-arrow { position: absolute; top: 38%; z-index: 3; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: 1.6rem; line-height: 1; cursor: pointer; box-shadow: var(--shadow-sm); display: grid; place-items: center; }
+    .edit-prev { left: 4px; } .edit-next { right: 4px; }
+    @media (max-width: 900px) { #featuredGrid.edit-row > * { flex-basis: calc((100% - 16px) / 2); } }
+    @media (max-width: 640px) { #featuredGrid.edit-row > * { flex-basis: 74%; } .edit-arrow { display: none; } }
+  </style>
 </head>
 <body data-page="index.html">
   <div id="site-header"></div>
@@ -133,7 +143,11 @@
         <h2>Objects worth living with</h2>
         <p>A curated collection of accents, furniture and finishing touches, chosen to help you create a warm, beautiful home.</p>
       </div>
-      <div class="grid grid-4 reveal" id="featuredGrid"></div>
+      <div class="edit-wrap reveal">
+        <button class="edit-arrow edit-prev" id="editPrev" type="button" aria-label="Previous pieces">‹</button>
+        <div class="grid grid-4" id="featuredGrid"></div>
+        <button class="edit-arrow edit-next" id="editNext" type="button" aria-label="More pieces">›</button>
+      </div>
       <div class="text-center" style="margin-top:44px">
         <a class="btn btn--outline btn--pill" href="shop.html">Explore the full shop →</a>
       </div>
@@ -313,7 +327,7 @@
 
   <div id="site-footer"></div>
 
-  <script src="js/data.js?v=64"></script>
+  <script src="js/data.js?v=65"></script>
   <script src="js/components.js?v=82"></script>
   <script src="js/cart.js?v=29"></script>
   <script src="js/main.js?v=14"></script>
@@ -340,13 +354,40 @@
       }, 5000);
     })();
 
-    // Featured "edit": pick one tagged product from different categories for a varied mix
+    // Décor Edit: newest pieces first (added in the last 30 days), then a varied
+    // selection that changes every week, shown as a swipeable, auto-scrolling row.
     (function () {
-      const tagged = PRODUCTS.filter(p => p.tag && !p.comingSoon);
-      const seen = new Set(), pick = [];
-      for (const p of tagged) { if (!seen.has(p.cat)) { seen.add(p.cat); pick.push(p); } if (pick.length === 4) break; }
-      if (pick.length < 4) for (const p of tagged) { if (pick.indexOf(p) === -1) { pick.push(p); if (pick.length === 4) break; } }
+      const pool = PRODUCTS.filter(p => p.price != null && !p.comingSoon && p.cat !== "Packaging" && (p.img || (p.imgs && p.imgs.length)));
+      const now = Date.now(), DAY = 864e5;
+      const fresh = pool.filter(p => p.added && now - new Date(p.added).getTime() < 30 * DAY)
+                        .sort((a, b) => new Date(b.added) - new Date(a.added));
+      // Week number decides this week's mix, so everyone sees the same edit all week
+      const week = Math.floor((now / DAY + 4) / 7);
+      let seed = week * 9301 + 49297;
+      const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+      const rest = pool.filter(p => fresh.indexOf(p) === -1).map(p => [rnd(), p]).sort((a, b) => a[0] - b[0]).map(x => x[1]);
+      const pick = fresh.slice(0, 6), cats = {};
+      pick.forEach(p => cats[p.cat] = (cats[p.cat] || 0) + 1);
+      for (const p of rest) { if (pick.length >= 12) break; if ((cats[p.cat] || 0) < 2) { pick.push(p); cats[p.cat] = (cats[p.cat] || 0) + 1; } }
       renderProducts("featuredGrid", pick);
+      const grid = document.getElementById("featuredGrid");
+      if (!grid) return;
+      grid.classList.add("edit-row");
+      // Gentle auto-scroll; pauses while the shopper touches or hovers
+      let paused = false, t;
+      ["pointerdown", "touchstart", "mouseenter", "focusin"].forEach(ev => grid.addEventListener(ev, () => { paused = true; clearTimeout(t); t = setTimeout(() => paused = false, 8000); }, { passive: true }));
+      grid.addEventListener("mouseleave", () => { paused = false; });
+      setInterval(() => {
+        if (paused || document.hidden) return;
+        const card = grid.firstElementChild; if (!card) return;
+        const step = card.getBoundingClientRect().width + 16;
+        const atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
+        grid.scrollTo({ left: atEnd ? 0 : grid.scrollLeft + step, behavior: "smooth" });
+      }, 4000);
+      const prev = document.getElementById("editPrev"), next = document.getElementById("editNext");
+      const move = d => { const c = grid.firstElementChild; if (c) grid.scrollBy({ left: d * (c.getBoundingClientRect().width + 16), behavior: "smooth" }); paused = true; clearTimeout(t); t = setTimeout(() => paused = false, 8000); };
+      if (prev) prev.onclick = () => move(-1);
+      if (next) next.onclick = () => move(1);
     })();
     // Testimonial carousel (one at a time, dots + arrows, auto-advance)
     (function () {
