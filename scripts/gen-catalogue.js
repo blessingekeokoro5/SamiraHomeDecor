@@ -63,8 +63,10 @@ PRODUCTS.forEach((p) => {
   if (!p || !p.id) return;
   const base = num(p.price);
   const sizes = {};
+  const sizesMember = {};
   (Array.isArray(p.sizes) ? p.sizes : []).forEach((s) => {
     if (s && typeof s === "object" && s.label != null && num(s.price) != null) sizes[String(s.label)] = num(s.price);
+    if (s && typeof s === "object" && s.label != null && num(s.memberPrice) != null) sizesMember[String(s.label)] = num(s.memberPrice);
   });
   products[p.id] = {
     name: String(p.name || ""),
@@ -73,6 +75,7 @@ PRODUCTS.forEach((p) => {
     memberPrice: num(p.memberPrice),
     weight: num(p.weight) != null ? num(p.weight) : estimateWeight(p),
     sizes,
+    sizesMember,
   };
 });
 

@@ -83,6 +83,24 @@ const GIFT_CARD_MAX = 2000;
 /* Samira Home Decor order numbers: SHD- followed by 6 digits, e.g. SHD-482913 */
 function newOrderNo() { return "SHD-" + Math.floor(100000 + Math.random() * 900000); }
 
+/* ---- Member pricing ----
+   Members log in with an emailed code; auth-verify-code signs a token for
+   their email. We re-check that signature here, so only a real logged-in
+   member is charged member prices. */
+const crypto = require("crypto");
+const AUTH_SECRET = process.env.AUTH_SECRET || process.env.BREVO_API_KEY || "samira-home-decor-fallback-secret";
+const MEMBER_TOKEN_DAYS = 400;
+function verifyMember(m) {
+  try {
+    const email = String((m && m.email) || "").trim().toLowerCase();
+    const [issued, sig] = String((m && m.token) || "").split(".");
+    if (!email || !issued || !sig) return false;
+    if (Date.now() - Number(issued) > MEMBER_TOKEN_DAYS * 864e5) return false;
+    const good = crypto.createHmac("sha256", AUTH_SECRET).update(email + "|" + issued).digest("hex");
+    return good.length === sig.length && crypto.timingSafeEqual(Buffer.from(good), Buffer.from(sig));
+  } catch (e) { return false; }
+}
+
 function jsonResponse(statusCode, obj) {
   return {
     statusCode,
@@ -138,7 +156,7 @@ function halloweenOn() {
 
 /* Resolve one cart line to a trusted { name, unitPrice, qty, weight }.
    Throws if the line can't be justified from the catalogue. */
-function resolveLine(raw) {
+function resolveLine(raw, member) {
   const qty = Math.max(1, Math.min(99, parseInt(raw && raw.qty, 10) || 1));
   const id = String((raw && raw.id) || "");
 
@@ -184,6 +202,13 @@ function resolveLine(raw) {
   const size = raw.size != null ? String(raw.size) : "";
   let unitPrice = p.price;
   if (size && Object.prototype.hasOwnProperty.call(p.sizes, size)) unitPrice = p.sizes[size];
+
+  // Logged-in members pay the member price (a size may set its own).
+  if (member && p.memberPrice != null && p.cat !== "Packaging" && p.price > 0) {
+    const sm = p.sizesMember || {};
+    if (size && sm[size] != null && unitPrice > 0) unitPrice = Math.min(unitPrice, sm[size]);
+    else unitPrice = unitPrice * Math.min(1, p.memberPrice / p.price);
+  }
 
   if (p.cat !== "Packaging" && halloweenOn()) {
     // Halloween: 15% off storewide; replaces the other promos rather than stacking.
@@ -275,7 +300,8 @@ exports.handler = async (event) => {
     fulfil = !giftOrder ? "ship" : (fulfil === "express" ? "express" : "gift");
 
     // 1. Trusted prices, from the catalogue only.
-    const lines = items.map(resolveLine);
+    const isMemberBuyer = verifyMember(body.member);
+    const lines = items.map((i) => resolveLine(i, isMemberBuyer));
 
     // Australia Post International Standard tops out at 20 kg per parcel, so
     // bulky furniture can only ship within Australia.

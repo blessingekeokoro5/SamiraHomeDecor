@@ -220,7 +220,7 @@ function renderCheckout() {
     <div class="co-line">
       <span class="co-thumb"><span class="ph ${i.ph}" data-label="${i.name}"><img class="ph-img" src="${src}" alt="${i.name}" onerror="this.remove()"></span><span class="co-qty">${i.qty}</span></span>
       <span class="co-name">${i.name}${(i.colour || i.size) ? ` · ${[i.colour, i.size].filter(Boolean).join(" · ")}` : ""}${i.contents ? `<small>${i.contents}</small>` : ""}${i.giftCard ? "" : `<small class="co-eta" data-gift="${(i.hamper || String(i.id).startsWith("hamper-")) ? 1 : 0}" data-idx="${cart.indexOf(i)}">🚚 Arrives ${(i.hamper || String(i.id).startsWith("hamper-")) ? fmtBizRange(giftWindow(i, window._fulfil === "express")) : arriveRange(prod || i)}</small>`}</span>
-      <span class="co-price">${money(i.price * i.qty)}</span>
+      <span class="co-price">${linePrice(i) < i.price ? `<s style="opacity:.5;font-weight:400">${money(i.price * i.qty)}</s> ` : ""}${money(linePrice(i) * i.qty)}</span>
     </div>`;
   }).join("");
 
@@ -409,6 +409,7 @@ async function startPayment(e) {
             hamper: i.hamper || undefined,       // custom hampers carry their components
             kit: i.kit || undefined              // signature packaging kit (priced on the server)
           })),
+          member: (typeof isMember === "function" && isMember()) ? (function () { try { return { email: JSON.parse(localStorage.getItem("decomuse_account")).email, token: localStorage.getItem("shd_auth_token") }; } catch (e) { return undefined; } })() : undefined,
           discountPct: od.pct || 0,
           voucher: t.voucher || 0, voucherCode: t.voucherCode || "",
           fulfil: window._fulfil || "ship",

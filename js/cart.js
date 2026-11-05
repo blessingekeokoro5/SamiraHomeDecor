@@ -13,7 +13,27 @@ function saveCart(cart) {
   updateCartCount();
 }
 function cartCount() { return getCart().reduce((n, i) => n + i.qty, 0); }
-function cartTotal() { return getCart().reduce((n, i) => n + i.price * i.qty, 0); }
+/* ---- Member pricing ----
+   Logged-in members pay each product's member price. The cart stores the
+   regular price; linePrice() gives what this shopper actually pays, and the
+   payment server re-checks the login before charging the member price. */
+function isMember() {
+  try { const a = JSON.parse(localStorage.getItem("decomuse_account") || "null"); return !!(a && a.email && localStorage.getItem("shd_auth_token")); } catch (e) { return false; }
+}
+function memberRatio(p, size) {
+  if (!p || !p.memberPrice || p.cat === "Packaging") return 1;
+  const promo = p.was ? p.price / p.was : 1;          // sale already applied to p.price
+  const base = p.was || p.price;
+  const s = size && Array.isArray(p.sizes) ? p.sizes.find(z => z && z.label === size) : null;
+  if (s && s.memberPrice && s.price) return Math.min(1, s.memberPrice / (s.price / promo));
+  return Math.min(1, p.memberPrice / base);
+}
+function linePrice(i) {
+  if (!i || i.giftCard || i.hamper || /^(hamper|giftcard)-/.test(String(i.id)) || !isMember()) return i.price;
+  const p = (typeof findProduct === "function") ? findProduct(i.id) : null;
+  return Math.round(i.price * memberRatio(p, i.size) * 100) / 100;
+}
+function cartTotal() { return getCart().reduce((n, i) => n + linePrice(i) * i.qty, 0); }
 
 function findProduct(id) { return PRODUCTS.find(p => p.id === id); }
 
