@@ -81,6 +81,13 @@ function shipCountry() {
   const el = document.getElementById("coCountry");
   return (el && SHIP_ZONES[el.value]) ? el.value : "Australia";
 }
+// Australian delivery estimate: a product can set its own time (p.deliveryTime), and the slowest wins
+function cartShipDays(days) {
+  if (days !== "3 to 8 business days") return days;
+  const own = getCart().map(function (i) { const p = (typeof findProduct === "function") ? findProduct(i.id) : null; return p && p.deliveryTime; }).filter(Boolean);
+  return own.length ? own[0] : days;
+}
+
 // Total billable weight (kg) of everything in the cart
 function cartWeight() {
   let kg = 0;
@@ -130,7 +137,7 @@ function checkoutTotals() {
   const giftCard = (gc && gc.amount >= preGift && preGift > 0) ? preGift : 0;
   const total = preGift - giftCard;
   const gst = Math.round((total / 11)); // GST component of a GST-inclusive total
-  return { sub, discount, discLabel: disc.label, voucher, voucherCode: vou ? vou.code : null, shipping, preGift, giftCard, giftCode: gc ? gc.code : null, total, gst, coupon: window._coupon, country: shipCountry(), weight: q.weight, shipDays: q.days, freeOver: q.freeOver };
+  return { sub, discount, discLabel: disc.label, voucher, voucherCode: vou ? vou.code : null, shipping, preGift, giftCard, giftCode: gc ? gc.code : null, total, gst, coupon: window._coupon, country: shipCountry(), weight: q.weight, shipDays: cartShipDays(q.days), freeOver: q.freeOver };
 }
 
 function updateTotalsUI() {
