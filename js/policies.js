@@ -42,7 +42,7 @@ const FAQ_ITEMS = [
   { q: "How long do customised orders take to be delivered?",
     a: "Standard orders are dispatched within 1 to 2 business days. Customised, personalised and made-to-order items take a few additional days to create before they ship, so your total delivery time will be a little longer. We'll always confirm an estimated timeframe once we accept your custom order." },
   { q: "How can I contact Samira Home Decor?",
-    a: "Email <a href='mailto:hello@samirahomedecor.com.au'>hello@samirahomedecor.com.au</a>, or message us on WhatsApp. We're a proudly Australian online store 🇦🇺." }
+    a: "Email <a href='mailto:hello@samirahomedecor.com.au'>hello@samirahomedecor.com.au</a>, or chat with us live. We're a proudly Australian online store 🇦🇺." }
 ];
 
 const POLICIES = {
@@ -121,7 +121,7 @@ const POLICIES = {
       <p>This does not exclude your ACL rights where such an item is faulty.</p>
 
       <h3>5. How to request a return</h3>
-      <p>Email <a href="mailto:hello@samirahomedecor.com.au">hello@samirahomedecor.com.au</a>, or message us on WhatsApp, with your order number and reason for return. We'll provide return instructions. Please do not send items back before contacting us.</p>
+      <p>Email <a href="mailto:hello@samirahomedecor.com.au">hello@samirahomedecor.com.au</a>, or chat with us live, with your order number and reason for return. We'll provide return instructions. Please do not send items back before contacting us.</p>
 
       <h3>6. Refunds</h3>
       <p>Approved refunds are made to your original payment method within <strong>5 to 10 business days</strong> of us receiving and inspecting the returned item. Payment processing times may vary by provider.</p>

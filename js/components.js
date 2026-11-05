@@ -1467,7 +1467,6 @@ function renderSupport() {
         <a class="hd-card" href="returns.html"><span class="hd-ic">↩️</span><div class="hd-card-t"><strong>Returns &amp; exchanges</strong><small>Start a return or check what's eligible</small></div><span class="hd-go">›</span></a>
         <button type="button" class="hd-card" onclick="dmSelectIssue('Change or cancel an order')"><span class="hd-ic">✏️</span><div class="hd-card-t"><strong>Change or cancel an order</strong><small>Tell us quickly, before it ships</small></div><span class="hd-go">›</span></button>
         <button type="button" class="hd-card" onclick="dmMessageTopics()"><span class="hd-ic">📩</span><div class="hd-card-t"><strong>Send us a message</strong><small>We usually reply within a few hours</small></div><span class="hd-go">›</span></button>
-        <a class="hd-card" href="${WA_HANDOFF}" target="_blank" rel="noopener"><span class="hd-ic">💬</span><div class="hd-card-t"><strong>Chat on WhatsApp</strong><small>Fast replies during business hours</small></div><span class="hd-go">›</span></a>
       </div>
       <div class="hd-sec">Popular questions</div>
       <div id="hdPopular"><p class="support-lead">Loading…</p></div>
@@ -1548,11 +1547,9 @@ function dmSelectIssue(issue) {
   });
 }
 
-// Pre-filled WhatsApp handoff to a real team member
-const WA_HANDOFF = (SAMIRA.socials.whatsapp || "https://wa.me/61451609398") +
-  "?text=" + encodeURIComponent("Hi Samira Home Decor 🙂 I'd like to chat with a team member about ");
+// Hand off to a real team member via live chat (Tawk.to)
 function waButton(label) {
-  return `<a class="chat-wa" href="${WA_HANDOFF}" target="_blank" rel="noopener">${IC.wa} ${label || "Chat with a customer representative on WhatsApp"}</a>`;
+  return `<a class="chat-wa" href="contact.html" onclick="openLiveChat();return false;">${IC.chat || "💬"} ${label || "Live chat with a customer representative"}</a>`;
 }
 
 /* ---- Trained knowledge base: confident, specific answers ---- */
@@ -1566,7 +1563,7 @@ function chatReply(text) {
     html = `Hi, lovely to meet you! 👋 I'm Samira Stylera, your personal shopping assistant. I can help you find a home fragrance, styling piece or gift, build a gift hamper, or track an order. What are you after today?`;
 
   else if (has(/\b(human|real person|agent|team member|speak to someone|talk to someone|representative|customer service)\b/))
-    html = `Of course, I'll connect you with a Samira Home Decor customer representative. Reach us straight away on WhatsApp, or email ${SAMIRA.email}.<br>${waButton()}`;
+    html = `Of course, I'll connect you with a Samira Home Decor customer representative. Start a live chat straight away, or email ${SAMIRA.email}.<br>${waButton()}`;
 
   else if (has(/\b(fragrance|scent|diffuser|candle|room spray|essential oil)\b/))
     html = `Our ${link("shop.html?cat=Lifestyle", "Home Fragrances")} edit (in Lifestyle) has reed diffusers, scented candles, room sprays and essential oils 🌸, everything to layer your home with scent.`;
@@ -1623,7 +1620,7 @@ function chatReply(text) {
     html = `Good thinking, measure your space first! 📐 Each product page lists dimensions and assembly notes. If you tell me the item, I'll help you check it fits, or our team can confirm on ${link("contact.html", "Contact")}.`;
 
   else if (has(/\b(visit|showroom|studio|in person|appointment|open|hours|location|address|where are you)\b/))
-    html = `We're a proudly <strong>Australian</strong> 🇦🇺 online store, here Mon to Fri 9 to 5:30 and Sat 10 to 4 (Adelaide time). Reach us via ${link("contact.html", "Contact")} or WhatsApp.`;
+    html = `We're a proudly <strong>Australian</strong> 🇦🇺 online store, here Mon to Fri 9 to 5:30 and Sat 10 to 4 (Adelaide time). Reach us via ${link("contact.html", "Contact")} or live chat.`;
 
   else if (has(/\b(eco|sustainab|ethical|environment|natural material)\b/))
     html = `We love this question 🌱, we curate quality, considered pieces made to last, favour natural materials, and offer eco-friendly options (including for cleaning). Ask about a specific piece and I'll share what I know.`;
@@ -1632,14 +1629,14 @@ function chatReply(text) {
     html = `Thanks for your interest! For any opportunities, email us at ${SAMIRA.email} 🌿.`;
 
   else if (has(/\b(contact|call|phone|email|reach|number)\b/))
-    html = `You can email us at ${SAMIRA.email}, or via ${link("contact.html", "Contact")} 💬. Prefer a real person now? ${waButton("Chat on WhatsApp")}`;
+    html = `You can email us at ${SAMIRA.email}, or via ${link("contact.html", "Contact")} 💬. Prefer a real person now? ${waButton("Live chat with our team")}`;
 
   else if (has(/\b(thank|thanks|cheers|awesome|great|perfect|love)\b/))
     html = `You're so welcome! 💛 Is there anything else I can help you find or style today?`;
 
   else {
     unsure = true;
-    html = `That's a great question! I want to get it right, could you tell me a little more? I can help with styling, shipping, returns, hampers, bookings, pricing and tracking. Or I can connect you with a real team member: ${waButton("Chat with a customer representative on WhatsApp")}`;
+    html = `That's a great question! I want to get it right, could you tell me a little more? I can help with styling, shipping, returns, hampers, bookings, pricing and tracking. Or I can connect you with a real team member: ${waButton("Chat live with a customer representative")}`;
   }
   return { html, unsure };
 }
@@ -1911,12 +1908,14 @@ const TAWK_EMBED_SRC = "https://embed.tawk.to/6aed0f57ab01d93c39ae893e/default";
   document.head.appendChild(s);
 })();
 
-/* Open live chat with the team; falls back to WhatsApp if Tawk hasn't loaded */
-window.openLiveChat = function () {
+/* Open live chat with the team; optional msg is passed to the agent as context.
+   Falls back to the Contact page if Tawk hasn't loaded. */
+window.openLiveChat = function (msg) {
   var T = window.Tawk_API;
   if (T && typeof T.maximize === "function") {
     try { var p = document.getElementById("chatPanel"); if (p && p.classList.contains("open")) document.getElementById("chatClose").click(); } catch (e) {}
+    try { if (msg) T.addEvent("Enquiry", { message: String(msg).slice(0, 250), page: location.pathname }); } catch (e) {}
     T.showWidget(); T.maximize(); return;
   }
-  window.open((window.SAMIRA && SAMIRA.socials && SAMIRA.socials.whatsapp) || "https://wa.me/61451609398", "_blank", "noopener");
+  location.href = "contact.html";
 };

@@ -154,7 +154,7 @@ function initForms() {
         success.classList.add("show");
         success.textContent = ok
           ? (form.dataset.successMsg || "Thank you! Your request has been sent to the Samira Home Decor team, we'll be in touch within 2 business hours.")
-          : "Sorry, something went wrong. Please email hello@samirahomedecor.com.au or message us on WhatsApp.";
+          : "Sorry, something went wrong. Please email hello@samirahomedecor.com.au or use live chat.";
       }
       form.reset();
       if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label; }

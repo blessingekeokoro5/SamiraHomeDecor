@@ -1263,7 +1263,7 @@ const PRODUCTS = [
   { id: "pk01", name: "Food-Vendor Stand-Up Pouches, Resealable Zipper (10-Pack)", cat: "Packaging", room: "Packaging", price: 12.95, memberPrice: 11.65, sku: "SH-10113", tag: "New", ph: "", img: "assets/products/foodpouch-1.webp",
     imgs: ["assets/products/foodpouch-1.webp", "assets/products/foodpouch-2.webp", "assets/products/foodpouch-3.webp"],
     sizes: [{ label: "100 × 150 + 35 mm · 10-pack", price: 12.95 }, { label: "120 × 170 + 35 mm · 10-pack", price: 15.95 }],
-    desc: "Food-safe, resealable stand-up pouches that keep your product fresh and looking retail-ready, ideal for coffee, granola, nuts, dried fruit, spices, lollies, protein and pet treats. The multi-layer PET + PA + PE structure blocks moisture and odour, while the zipper top opens and reseals again and again. Made with recycled materials and finished with vibrant flexo printing. Buy retail packs here, or order wholesale in bulk with your own logo and artwork, message us on WhatsApp for the rate card, samples or custom branding.",
+    desc: "Food-safe, resealable stand-up pouches that keep your product fresh and looking retail-ready, ideal for coffee, granola, nuts, dried fruit, spices, lollies, protein and pet treats. The multi-layer PET + PA + PE structure blocks moisture and odour, while the zipper top opens and reseals again and again. Made with recycled materials and finished with vibrant flexo printing. Buy retail packs here, or order wholesale in bulk with your own logo and artwork, chat with us live for the rate card, samples or custom branding.",
     features: [
       "Resealable zipper top keeps food fresh between uses",
       "Food-grade multi-layer PET + PA + PE barrier",
@@ -3108,7 +3108,7 @@ const ANNOUNCEMENTS = [
   "💝 Join free & get a 10% off your first order",
   "🎁 Build your own luxury hamper",
   "♡ Tap the heart to save pieces for later",
-  "💬 Questions? Message us on WhatsApp"
+  "💬 Questions? Live chat with our team"
 ];
 
 /* ---- Reviews ---- */
