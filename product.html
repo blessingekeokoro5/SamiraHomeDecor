@@ -143,6 +143,12 @@
     .pdp-assurance li { display: flex; align-items: center; gap: 12px; padding: 6px 0; font-size: 0.94rem; color: #fff; font-weight: 500; letter-spacing: 0.01em; }
     .pdp-assurance .pa-ic { width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; color: #C6A15B; }
     .pdp-assurance .pa-ic svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .pdp-ai { margin: 18px 0; padding: 16px 18px; background: #fff; border: 1px solid var(--gold); border-radius: 14px; }
+    .pdp-ai-head { font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 6px; }
+    .pdp-ai-head span { color: var(--gold); }
+    .pdp-ai p { margin: 0 0 8px; font-size: 0.95rem; line-height: 1.55; color: var(--body); }
+    .pdp-ai-good strong { color: var(--ink); }
+    .pdp-ai small { display: block; font-size: 0.76rem; line-height: 1.4; color: var(--muted); }
     /* Collapsible product info (Description / Features + Specs / Shipping + Returns) */
     .pdp-accordion { margin: 22px 0 6px; border-top: 1px solid var(--line); }
     .pdp-accordion details { border-bottom: 1px solid var(--line); }
@@ -232,6 +238,7 @@
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=54"></script>
+  <script src="js/ai-overviews.js?v=1"></script>
   <script src="js/components.js?v=75"></script>
   <script src="js/cart.js?v=24"></script>
   <script src="js/main.js?v=10"></script>
@@ -491,6 +498,16 @@
     }
 
     // Collapsible product info: Description · Features + Specs · Shipping + Returns
+    function aiOverviewHtml(p) {
+      const o = (typeof AI_OVERVIEWS !== "undefined") && AI_OVERVIEWS[p.id];
+      if (!o) return "";
+      return `<section class="pdp-ai" aria-label="AI overview">
+        <div class="pdp-ai-head"><span aria-hidden="true">✦</span> AI overview</div>
+        <p>${o[0]}</p>
+        ${o[1] ? `<p class="pdp-ai-good"><strong>Good for:</strong> ${o[1]}</p>` : ""}
+        <small>Written by AI from this product's details, and it can make mistakes. Please check the specifications before you buy.</small>
+      </section>`;
+    }
     function productAccordion(p) {
       const desc = p.desc || blurb(p);
       const specs = productSpecsHtml(p);
@@ -701,6 +718,7 @@
               <button type="button" onclick="toggleWishlist('${p.id}', this)">${saved ? "♥ Saved" : "♡ Save"}</button>
             </div>
             ${p.cat === "Packaging" ? "" : `<div class="pdp-social">🛒 <span><strong>Other people want this.</strong> Over <b>${cartWant(p)}</b> people have this in their carts right now.</span></div>`}
+            ${aiOverviewHtml(p)}
             ${productAccordion(p)}
             <a class="pdp-trade" href="trade.html">🧳 <span><strong>Shopping for a business?</strong> Join our Trade &amp; Commercial Program for exclusive trade pricing →</span></a>
           </div>
