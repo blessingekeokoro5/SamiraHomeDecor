@@ -259,7 +259,7 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=65"></script>
+  <script src="js/data.js?v=66"></script>
   <script src="js/ai-overviews.js?v=4"></script>
   <script src="js/components.js?v=82"></script>
   <script src="js/cart.js?v=29"></script>
@@ -415,7 +415,8 @@
     // Individual customer reviews, drawn from the review pool, seeded per product so they stay consistent, and paginated
     let _rv = { list: [], page: 1, per: 5 };
     function buildReviewList(p) {
-      const pool = (typeof REVIEWS !== "undefined" && REVIEWS.length) ? REVIEWS : [];
+      // Only reviews written for this product (reviews without a product id apply to all)
+      const pool = (typeof REVIEWS !== "undefined" && REVIEWS.length) ? REVIEWS.filter(r => !r.product || r.product === p.id) : [];
       if (!pool.length) return [];
       let seed = 0; for (let i = 0; i < p.id.length; i++) seed = (seed * 31 + p.id.charCodeAt(i)) >>> 0;
       const n = Math.min(pool.length, 12), out = [], base = Date.now();
