@@ -133,85 +133,65 @@
     .pk-ri-t strong { display: block; font-size: .95rem; margin-bottom: 2px; }
     .pk-ri-t small { display: block; color: var(--body); font-size: .82rem; line-height: 1.4; }
     .pk-ri-go { flex: none; color: #2f8a55; font-weight: 600; font-size: .82rem; }
+    /* Page header */
+    .pk-head { background: linear-gradient(180deg, #eef4f1, var(--cream)); padding: 28px 0 18px; }
+    .pk-head h1 { font-size: clamp(2rem, 4.6vw, 3rem); margin: 8px 0 8px; }
+    .pk-head p { max-width: 640px; color: var(--body); margin: 0 0 16px; }
+    .pk-jump { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pk-jump a { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); font-size: .84rem; text-decoration: none; }
+    .pk-jump a:hover { border-color: var(--gold); }
+    html { scroll-behavior: smooth; } #packaging-range, #full-range, #signature-packaging, #bulk, #custom-enquiry { scroll-margin-top: 150px; }
+    /* Phones: every pouch in one 2-column grid, all visible together */
+    @media (max-width: 760px) {
+      .pk-cards { display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px; overflow: visible; margin: 0; padding: 0; }
+      .pk-card { flex: none; }
+      .pk-card-body { padding: 10px 10px 12px; }
+      .pk-card-body h3 { font-size: .95rem; margin-bottom: 6px; }
+      .pk-card-body ul { margin-bottom: 10px; }
+      .pk-card-body li { font-size: .74rem; padding-left: 18px; margin-bottom: 4px; }
+      .pk-card-body li::before { width: 13px; height: 13px; font-size: .55rem; }
+      .pk-wa { font-size: .64rem !important; padding: 10px 6px !important; letter-spacing: .06em; gap: 5px; }
+      .pk-wa svg { width: 14px; height: 14px; }
+      .pk-head { padding-top: 18px; }
+      .pk-jump { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px 4px; }
+      .pk-jump::-webkit-scrollbar { display: none; }
+      .pk-jump a { white-space: nowrap; }
+    }
+    /* Compact feature strip on this page */
+    .pk-feat .feature-strip { padding: 14px 0 6px; gap: 10px; }
+    .pk-feat .feature-item { flex-direction: row; text-align: left; gap: 10px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+    .pk-feat .feature-item svg { width: 24px; height: 24px; flex: none; }
+    .pk-feat .feature-item span { font-family: var(--font-body); font-size: .84rem; line-height: 1.3; }
+    @media (max-width: 720px) { .pk-feat .feature-strip { grid-template-columns: 1fr 1fr; gap: 8px; } .pk-feat .feature-item span { font-size: .74rem; } }
+    #packaging-range .section-head { margin-top: 0; }
   </style>
 </head>
 <body data-page="packaging.html">
   <div id="site-header"></div>
 
-  <!-- Rotating packaging hero -->
-  <section class="pk-hero" id="pkHero">
-    <div class="pk-hero-inner container">
-      <div class="pk-hero-copy">
-        <span class="pk-tag" id="pkTag">New · Design your own</span>
-        <h1 id="pkTitle">Your brand on every pack</h1>
-        <p id="pkText">Custom-printed pouches, boxes and labels — made to order from low minimums.</p>
-        <a class="btn btn--primary btn--pill" id="pkCta" href="#custom-enquiry">Get a quote →</a>
-      </div>
-      <div class="pk-hero-art"><img id="pkImg" src="assets/products/foodpouch-1.webp" alt="Samira Home Decor custom packaging" onerror="this.style.visibility='hidden'"></div>
-    </div>
-    <div class="pk-dots" id="pkDots"></div>
-  </section>
-  <script>
-  (function(){
-    var SLIDES=[
-      {tag:"New · Design your own", title:"Your brand on every pack", text:"Custom-printed pouches, boxes and labels — made to order from low minimums.", cta:"Get a quote →", href:"#custom-enquiry", img:"assets/products/foodpouch-1.webp", bg:"#eef4f1"},
-      {tag:"For food vendors", title:"Retail-ready food packaging", text:"Food-safe stand-up pouches, coffee bags and kraft packs that look beautiful on the shelf.", cta:"Explore the range →", href:"#packaging-range", img:"assets/products/foodpouch-2.webp", bg:"#efeaf6"},
-      {tag:"Elevate your brand", title:"From concept to finished pack", text:"We help you choose the right style, add your branding and bring it to life.", cta:"Enquire about custom →", href:"#custom-enquiry", img:"assets/products/foodpouch-3.webp", bg:"#f7ede8"}
-    ];
-    var hero=document.getElementById("pkHero"); if(!hero) return;
-    var tag=document.getElementById("pkTag"),title=document.getElementById("pkTitle"),text=document.getElementById("pkText"),cta=document.getElementById("pkCta"),img=document.getElementById("pkImg"),dots=document.getElementById("pkDots");
-    var i=0,timer;
-    function render(n){ var s=SLIDES[n]; hero.style.background=s.bg;
-      tag.textContent=s.tag; title.textContent=s.title; text.textContent=s.text; cta.textContent=s.cta; cta.setAttribute("href",s.href);
-      img.style.visibility=""; img.onerror=function(){this.style.visibility="hidden";}; img.src=s.img; img.alt=s.title;
-      var copy=hero.querySelector(".pk-hero-copy"); copy.classList.remove("pk-fade"); void copy.offsetWidth; copy.classList.add("pk-fade");
-      for(var k=0;k<dots.children.length;k++){ dots.children[k].classList.toggle("on", k===n); }
-    }
-    for(var n=0;n<SLIDES.length;n++){ (function(idx){ var b=document.createElement("button"); b.type="button"; b.setAttribute("aria-label","Slide "+(idx+1)); b.addEventListener("click",function(){ i=idx; render(i); restart(); }); dots.appendChild(b); })(n); }
-    function next(){ i=(i+1)%SLIDES.length; render(i); }
-    function restart(){ clearInterval(timer); timer=setInterval(next,6000); }
-    render(0); restart();
-  })();
-  </script>
-
-
-  <!-- Signature packaging -->
-  <section class="section bg-cream2" id="signature-packaging">
+  <!-- Packaging page header -->
+  <section class="pk-head">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Our packaging</span>
-        <h2>Signature navy &amp; gold packaging</h2>
-        <p>Every gift leaves here in navy and gold. Choose <strong>Ready to send</strong> and it's packed in a plain navy box with gold ribbon, our foil sticker and a hand-written tag, dispatched in 3 to 5 business days. Choose <strong>signature packaging</strong> and it arrives in one of our printed kits below, made to order in 14 working days.</p>
-      </div>
-      <div class="kit-grid reveal" id="kitGrid"></div>
-      <p class="form-note" style="text-align:center;margin-top:18px">The printed kits below are made to order, so allow <strong>14 working days</strong>. In a hurry? <strong>Ready to send</strong> dispatches in 3 to 5 business days and still arrives navy, gold and hand-tied. Needed for a particular date? Tell us when you order and we'll confirm before you pay.</p>
-
-    </div>
-  </section>
-
-  <!-- Business options (top) -->
-  <section class="section" style="padding-bottom:0">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Bulk &amp; Commercial</span>
-        <h2>Ordering for a business?</h2>
-        <p>Food vendors, cafés, gift studios and retailers, pick an option and we'll take it from there.</p>
-      </div>
-      <div class="pkg-tabs" id="pkgTabs">
-        <button type="button" class="pkg-tab active" data-panel="wholesale" onclick="switchPkgPanel('wholesale', this)">🏷️ Wholesale Packaging</button>
-        <button type="button" class="pkg-tab" data-panel="custom" onclick="switchPkgPanel('custom', this)">🎨 Custom Branded Packaging</button>
-        <button type="button" class="pkg-tab" data-panel="quote" onclick="switchPkgPanel('quote', this)">📦 Request a Bulk Quote</button>
-      </div>
+      <div class="breadcrumb"><a href="index.html">Home</a> / Packaging</div>
+      <h1>Packaging for your brand</h1>
+      <p>Custom-printed pouches, coffee bags and gift packaging, made to order from low minimums. Pick a style below and enquire on WhatsApp, or request a bulk quote.</p>
+      <nav class="pk-jump" aria-label="Jump to">
+        <a href="#packaging-range">Pouches &amp; coffee bags</a>
+        <a href="#full-range">Full range</a>
+        <a href="#signature-packaging">Gift packaging</a>
+        <a href="#bulk">Wholesale &amp; bulk</a>
+        <a href="#custom-enquiry">Custom enquiry</a>
+      </nav>
     </div>
   </section>
 
   <!-- Feature strip -->
-  <section class="section" style="padding-top:0">
+  <section class="pk-feat">
     <div class="container">
       <div class="feature-strip">
         <div class="feature-item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.7"/><circle cx="17" cy="18" r="1.7"/></svg>
-          <span>Free Shipping on All Orders</span>
+          <span>Free Shipping over $3,500 (AU)</span>
         </div>
         <div class="feature-item">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg>
@@ -230,7 +210,7 @@
   </section>
 
   <!-- Custom printed pouches & coffee bags -->
-  <section class="section" style="padding-top:0" id="packaging-range">
+  <section class="section" style="padding-top:8px" id="packaging-range">
     <div class="container">
       <div class="section-head reveal" style="margin-bottom:22px">
         <span class="eyebrow">For food vendors &amp; brands</span>
@@ -241,14 +221,13 @@
         <img src="assets/products/pk-coffee-range.webp" alt="Custom printed coffee bags in kraft, white, black, gold and silver" loading="lazy">
         <img src="assets/products/pk-coffee-detail.webp" alt="Coffee bag details: one-way valve, pull-to-open zipper, flat base and gold logo print" loading="lazy">
       </div>
-      <p class="pk-swipe-hint">Swipe to see all 9 styles →</p>
       <div class="grid grid-3 pk-cards">
         <article class="pk-card reveal">
           <div class="pk-card-img"><img src="assets/products/pk-coffee.webp" alt="Coffee bags" loading="lazy"></div>
           <div class="pk-card-body">
             <h3>Coffee bags</h3>
             <ul><li>One-way degassing valve keeps roasted beans fresh</li><li>Resealable zipper for repeat use after opening</li><li>Matte, glossy or kraft finish with custom printing</li></ul>
-            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20coffee%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20coffee%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire</a>
           </div>
         </article>
         <article class="pk-card reveal">
@@ -256,7 +235,7 @@
           <div class="pk-card-body">
             <h3>Stand-up pouches</h3>
             <ul><li>Self-standing design for retail shelf presence</li><li>Resealable zipper for repeat use</li><li>Custom sizes, shapes and printing available</li></ul>
-            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20stand-up%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20stand-up%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire</a>
           </div>
         </article>
         <article class="pk-card reveal">
@@ -264,7 +243,7 @@
           <div class="pk-card-body">
             <h3>Flat-bottom pouches</h3>
             <ul><li>Wide flat base for stable shelf display</li><li>Side gussets add extra fill capacity</li><li>Matte, glossy or kraft finish options</li></ul>
-            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20flat-bottom%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20flat-bottom%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire</a>
           </div>
         </article>
         <article class="pk-card reveal">
@@ -272,7 +251,7 @@
           <div class="pk-card-body">
             <h3>Kraft paper pouches</h3>
             <ul><li>Recyclable kraft paper construction</li><li>Natural, earth-tone look for eco-positioned brands</li><li>Available with or without a clear window</li></ul>
-            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20kraft%20paper%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20kraft%20paper%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire</a>
           </div>
         </article>
         <article class="pk-card reveal">
@@ -280,7 +259,7 @@
           <div class="pk-card-body">
             <h3>Spout pouches</h3>
             <ul><li>Leak-resistant spout for liquids, purées and gels</li><li>Stands upright on the shelf and in transit</li><li>Food-grade material</li></ul>
-            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20spout%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20spout%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire</a>
           </div>
         </article>
         <article class="pk-card reveal">
@@ -288,7 +267,7 @@
           <div class="pk-card-body">
             <h3>Retort pouches</h3>
             <ul><li>Withstands sterilisation up to 145°C / 293°F</li><li>100% customisable: sizes, styles, printing and logo</li><li>Ideal for ready meals, sauces and cooking pouches</li></ul>
-            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20retort%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20retort%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire</a>
           </div>
         </article>
         <article class="pk-card reveal">
@@ -296,7 +275,7 @@
           <div class="pk-card-body">
             <h3>Window pouches</h3>
             <ul><li>A clear window shows off the product</li><li>Great for lollies, nuts, baked goods and samples</li><li>Plain stock or custom printed</li></ul>
-            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20window%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20window%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire</a>
           </div>
         </article>
         <article class="pk-card reveal">
@@ -304,7 +283,7 @@
           <div class="pk-card-body">
             <h3>Gusseted side-seal bags</h3>
             <ul><li>Side gussets for bread, bakery and bulk dry goods</li><li>Holds more while staying slim on the shelf</li><li>Plain stock or custom printed</li></ul>
-            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20gusseted%20side-seal%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire on WhatsApp</a>
+            <a class="btn btn--primary pk-wa" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20gusseted%20side-seal%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.2 1.4z"/></svg> Enquire</a>
           </div>
         </article>
         <article class="pk-card reveal">
@@ -316,7 +295,7 @@
           </div>
         </article>
       </div>
-      <div class="pk-range-full reveal">
+      <div class="pk-range-full reveal" id="full-range">
         <h3 class="pk-range-title">Full packaging range</h3>
         <p class="pk-range-sub">Every style below can be made in your size and finish, plain or custom printed. Tap any item to enquire on WhatsApp.</p>
         <details class="pk-range-det" open>
@@ -365,70 +344,35 @@
     </div>
   </section>
 
-  <!-- Custom packaging enquiry -->
-  <section class="section bg-cream2" id="custom-enquiry">
-    <div class="container" style="max-width:820px">
-      <div class="section-head reveal" style="margin-bottom:22px">
-        <span class="eyebrow">Make it yours</span>
-        <h2>Custom packaging enquiry</h2>
-        <p>Tell us about your product and the look you want, and we'll come back with options, a mockup and pricing. Fields marked * are required.</p>
+  <!-- Signature packaging -->
+  <section class="section bg-cream2" id="signature-packaging">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our packaging</span>
+        <h2>Signature navy &amp; gold packaging</h2>
+        <p>Every gift leaves here in navy and gold. Choose <strong>Ready to send</strong> and it's packed in a plain navy box with gold ribbon, our foil sticker and a hand-written tag, dispatched in 3 to 5 business days. Choose <strong>signature packaging</strong> and it arrives in one of our printed kits below, made to order in 14 working days.</p>
       </div>
-      <div class="form-card reveal">
-        <form data-demo-form data-form-name="Custom packaging enquiry" data-success-msg="Thank you! Your custom packaging enquiry has been received. We'll be in touch with options, a mockup and pricing — please email any artwork to hello@samirahomedecor.com.au.">
-          <div class="field-row">
-            <div class="field"><label>Business / brand name *</label><input required></div>
-            <div class="field"><label>Contact name</label><input></div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label>Email *</label><input type="email" required></div>
-            <div class="field"><label>Phone</label><input type="tel"></div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label>What are you packaging?</label>
-              <select><option>Coffee</option><option>Tea</option><option>Snacks</option><option>Nuts &amp; dried fruit</option><option>Protein / powder</option><option>Pet food &amp; treats</option><option>Confectionery</option><option>Granola / cereal</option><option>Sauce / liquid</option><option>Other</option></select>
-            </div>
-            <div class="field"><label>Pouch / bag style</label>
-              <select><option>Not sure — recommend one</option><option>Stand-up pouch</option><option>Flat-bottom (box) pouch</option><option>Coffee bag with valve</option><option>Kraft pouch</option><option>Window pouch</option><option>Spout pouch</option><option>Flat sachet (3-side seal)</option><option>Vacuum bag</option><option>Compostable pouch</option><option>Mylar / foil bag</option></select>
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label>Material / finish</label>
-              <select><option>Not sure</option><option>Matte</option><option>Gloss</option><option>Kraft paper</option><option>Clear / transparent</option><option>Metallised foil</option><option>Compostable / eco</option></select>
-            </div>
-            <div class="field"><label>Size or capacity</label><input placeholder="e.g. 250g, 1kg, or W×H×gusset in mm"></div>
-          </div>
-          <div class="field"><label>Features you'd like</label>
-            <div style="display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:6px">
-              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Resealable zipper</label>
-              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> One-way valve</label>
-              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Tear notch</label>
-              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Hang hole</label>
-              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Clear window</label>
-              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Rounded corners</label>
-            </div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label>Custom print / branding</label>
-              <select><option>Yes — artwork ready</option><option>Yes — I need design help</option><option>No — plain stock</option></select>
-            </div>
-            <div class="field"><label>Quantity required</label><input placeholder="e.g. 500 units (low minimums available)"></div>
-          </div>
-          <div class="field"><label>Target launch / deadline</label><input placeholder="e.g. in 6 weeks, or a date"></div>
-          <div class="field"><label>Anything else?</label><textarea style="min-height:90px" placeholder="Colours, brand references, shelf life, certifications…"></textarea></div>
-          <button class="btn btn--primary btn--block" type="submit">Send custom packaging enquiry</button>
-          <div class="form-success" style="display:none;color:var(--forest);margin-top:12px"></div>
-          <p class="form-note" style="text-align:center;margin-top:10px">Have artwork? Email it to <a href="mailto:hello@samirahomedecor.com.au?subject=Custom%20packaging%20artwork">hello@samirahomedecor.com.au</a> after submitting.</p>
-        </form>
-      </div>
+      <div class="kit-grid reveal" id="kitGrid"></div>
+      <p class="form-note" style="text-align:center;margin-top:18px">The printed kits below are made to order, so allow <strong>14 working days</strong>. In a hurry? <strong>Ready to send</strong> dispatches in 3 to 5 business days and still arrives navy, gold and hand-tied. Needed for a particular date? Tell us when you order and we'll confirm before you pay.</p>
+
     </div>
   </section>
 
-  <!-- Shop packs -->
 
 
   <!-- Bulk & Commercial (forms open here from the buttons at the top) -->
-  <section class="section bg-cream2" id="bulk">
+  <section class="section" id="bulk">
     <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Bulk &amp; Commercial</span>
+        <h2>Ordering for a business?</h2>
+        <p>Food vendors, cafés, gift studios and retailers, pick an option and we'll take it from there.</p>
+      </div>
+      <div class="pkg-tabs" id="pkgTabs">
+        <button type="button" class="pkg-tab active" data-panel="wholesale" onclick="switchPkgPanel('wholesale', this)">🏷️ Wholesale Packaging</button>
+        <button type="button" class="pkg-tab" data-panel="custom" onclick="switchPkgPanel('custom', this)">🎨 Custom Branded Packaging</button>
+        <button type="button" class="pkg-tab" data-panel="quote" onclick="switchPkgPanel('quote', this)">📦 Request a Bulk Quote</button>
+      </div>
       <!-- 1. Wholesale -->
       <div class="pkg-panel" id="pkgWholesale">
         <div class="split reveal">
@@ -543,6 +487,65 @@
       </div>
     </div>
   </section>
+
+  <!-- Custom packaging enquiry -->
+  <section class="section bg-cream2" id="custom-enquiry">
+    <div class="container" style="max-width:820px">
+      <div class="section-head reveal" style="margin-bottom:22px">
+        <span class="eyebrow">Make it yours</span>
+        <h2>Custom packaging enquiry</h2>
+        <p>Tell us about your product and the look you want, and we'll come back with options, a mockup and pricing. Fields marked * are required.</p>
+      </div>
+      <div class="form-card reveal">
+        <form data-demo-form data-form-name="Custom packaging enquiry" data-success-msg="Thank you! Your custom packaging enquiry has been received. We'll be in touch with options, a mockup and pricing — please email any artwork to hello@samirahomedecor.com.au.">
+          <div class="field-row">
+            <div class="field"><label>Business / brand name *</label><input required></div>
+            <div class="field"><label>Contact name</label><input></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Email *</label><input type="email" required></div>
+            <div class="field"><label>Phone</label><input type="tel"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>What are you packaging?</label>
+              <select><option>Coffee</option><option>Tea</option><option>Snacks</option><option>Nuts &amp; dried fruit</option><option>Protein / powder</option><option>Pet food &amp; treats</option><option>Confectionery</option><option>Granola / cereal</option><option>Sauce / liquid</option><option>Other</option></select>
+            </div>
+            <div class="field"><label>Pouch / bag style</label>
+              <select><option>Not sure — recommend one</option><option>Stand-up pouch</option><option>Flat-bottom (box) pouch</option><option>Coffee bag with valve</option><option>Kraft pouch</option><option>Window pouch</option><option>Spout pouch</option><option>Flat sachet (3-side seal)</option><option>Vacuum bag</option><option>Compostable pouch</option><option>Mylar / foil bag</option></select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Material / finish</label>
+              <select><option>Not sure</option><option>Matte</option><option>Gloss</option><option>Kraft paper</option><option>Clear / transparent</option><option>Metallised foil</option><option>Compostable / eco</option></select>
+            </div>
+            <div class="field"><label>Size or capacity</label><input placeholder="e.g. 250g, 1kg, or W×H×gusset in mm"></div>
+          </div>
+          <div class="field"><label>Features you'd like</label>
+            <div style="display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:6px">
+              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Resealable zipper</label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> One-way valve</label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Tear notch</label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Hang hole</label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Clear window</label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;cursor:pointer"><input type="checkbox"> Rounded corners</label>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Custom print / branding</label>
+              <select><option>Yes — artwork ready</option><option>Yes — I need design help</option><option>No — plain stock</option></select>
+            </div>
+            <div class="field"><label>Quantity required</label><input placeholder="e.g. 500 units (low minimums available)"></div>
+          </div>
+          <div class="field"><label>Target launch / deadline</label><input placeholder="e.g. in 6 weeks, or a date"></div>
+          <div class="field"><label>Anything else?</label><textarea style="min-height:90px" placeholder="Colours, brand references, shelf life, certifications…"></textarea></div>
+          <button class="btn btn--primary btn--block" type="submit">Send custom packaging enquiry</button>
+          <div class="form-success" style="display:none;color:var(--forest);margin-top:12px"></div>
+          <p class="form-note" style="text-align:center;margin-top:10px">Have artwork? Email it to <a href="mailto:hello@samirahomedecor.com.au?subject=Custom%20packaging%20artwork">hello@samirahomedecor.com.au</a> after submitting.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
 
   <div id="site-footer"></div>
 

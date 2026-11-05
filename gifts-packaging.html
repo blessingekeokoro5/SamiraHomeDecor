@@ -17,63 +17,72 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
   <link rel="stylesheet" href="css/styles.css?v=59">
+  <style>
+    .gp-head { background: linear-gradient(180deg, #eef4f1, var(--cream)); padding: 30px 0 10px; text-align: center; }
+    .gp-head .breadcrumb { text-align: left; }
+    .gp-head h1 { font-size: clamp(1.9rem, 4.4vw, 2.8rem); margin: 10px 0 8px; }
+    .gp-head p { color: var(--body); margin: 0 auto; max-width: 520px; }
+    .gp-choose { padding-top: 24px; }
+    .gp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 980px; margin: 0 auto; }
+    .gp-choice { background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+    .gp-img { display: block; height: 260px; overflow: hidden; background: var(--cream-2); }
+    .gp-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gp-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+    .gp-body h2 { font-size: 1.6rem; margin: 0 0 6px; }
+    .gp-body p { color: var(--body); margin: 0 0 16px; flex: 1; }
+    .gp-main { width: 100%; justify-content: center; text-align: center; min-height: 52px; display: inline-flex; align-items: center; }
+    .gp-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .gp-links a { flex: 1 1 auto; text-align: center; padding: 9px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: .82rem; color: var(--ink); text-decoration: none; background: var(--cream); }
+    .gp-links a:hover { border-color: var(--gold); }
+    @media (max-width: 700px) {
+      .gp-grid { grid-template-columns: 1fr; gap: 16px; }
+      .gp-img { height: 170px; }
+      .gp-body { padding: 16px; }
+      .gp-body h2 { font-size: 1.35rem; }
+      .gp-links a { font-size: .76rem; padding: 8px 10px; }
+    }
+  </style>
 </head>
 <body data-page="gifts-packaging.html">
   <div id="site-header"></div>
 
-  <section class="page-banner">
+  <section class="gp-head">
     <div class="container">
       <div class="breadcrumb"><a href="index.html">Home</a> / Gifts &amp; Packaging</div>
-      <span class="eyebrow">Two ways to give &amp; send</span>
-      <h1>Gifts &amp; Packaging</h1>
-      <p>Ready-made luxury gifting, and the pouches, boxes and kits to package it beautifully, whether you're treating someone or supplying your business.</p>
+      <h1>What are you looking for?</h1>
+      <p>Choose gifts to treat someone special, or packaging for your business.</p>
     </div>
   </section>
 
-  <!-- Two hubs side by side -->
-  <section class="section">
+  <section class="section gp-choose">
     <div class="container">
-      <div class="split reveal">
-        <a class="gp-card" href="hampers.html">
-          <div class="gp-media"><div class="ph" data-label="Gifts"><img class="ph-img" src="assets/cat-gifting.png" alt="Gift hampers" loading="lazy" style="object-fit:contain;background:var(--cream)" onerror="this.remove()"></div></div>
+      <div class="gp-grid">
+        <div class="gp-choice">
+          <a class="gp-img" href="hampers.html"><img src="assets/cat-gifting.png" alt="Gift hampers and gifts"></a>
           <div class="gp-body">
-            <div class="service-icon">🎁</div>
-            <h2>Gift Hampers</h2>
-            <p>Ready-made luxury hampers, gift cards, or build your own gift box with our Hamper Maker, beautifully wrapped and finished with a personal note.</p>
-            <span class="link-arrow">Explore gifting →</span>
+            <h2>🎁 Gifts</h2>
+            <p>Luxury hampers, gift items and gift cards, beautifully wrapped with a personal note.</p>
+            <a class="btn btn--dark gp-main" href="hampers.html">Shop gifts &amp; hampers →</a>
+            <div class="gp-links">
+              <a href="hamper-maker.html">✦ Build your own hamper</a>
+              <a href="gift-cards.html">💳 Gift cards</a>
+              <a href="corporate-gifting.html">🏢 Corporate gifting</a>
+            </div>
           </div>
-        </a>
-        <a class="gp-card" href="packaging.html">
-          <div class="gp-media"><div class="ph" data-label="Packaging"><img class="ph-img" src="assets/collections/packaging.png" alt="Packaging supplies" loading="lazy" onerror="this.remove()"></div></div>
+        </div>
+        <div class="gp-choice">
+          <a class="gp-img" href="packaging.html"><img style="object-position:center 80%" src="assets/products/pk-coffee-range.webp" alt="Custom printed pouches and coffee bags"></a>
           <div class="gp-body">
-            <div class="service-icon">📦</div>
-            <h2>Packaging</h2>
-            <p>Food-vendor pouches, gift boxes, hamper boxes and ready-to-go kits. Buy fixed-price packs, or request a bulk &amp; custom-branded quote for your business.</p>
-            <span class="link-arrow">Shop packaging →</span>
+            <h2>📦 Packaging</h2>
+            <p>Custom-printed pouches, coffee bags and gift packaging for your brand, from low minimums.</p>
+            <a class="btn btn--dark gp-main" href="packaging.html">Shop packaging →</a>
+            <div class="gp-links">
+              <a href="packaging.html#packaging-range">Pouches &amp; coffee bags</a>
+              <a href="packaging.html#signature-packaging">Gift packaging</a>
+              <a href="packaging.html#bulk">Wholesale &amp; bulk quote</a>
+            </div>
           </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Packaging preview -->
-  <section class="section bg-cream2" style="background:var(--cream-2)">
-    <div class="container">
-      <div class="section-head reveal"><span class="eyebrow">From the packaging range</span><h2>Packaging packs</h2></div>
-      <div class="grid grid-4" id="gpPackGrid"></div>
-      <div class="center" style="margin-top:30px"><a class="btn btn--primary" href="packaging.html">Shop all packaging →</a></div>
-    </div>
-  </section>
-
-  <!-- Gifting CTA -->
-  <section class="section">
-    <div class="container center reveal">
-      <span class="eyebrow">Need it gift-ready?</span>
-      <h2 style="margin:8px 0 14px">Luxury hampers, thoughtfully composed</h2>
-      <p class="muted" style="max-width:560px;margin:0 auto 22px">For birthdays, corporate gifting and celebrations, hand-styled and delivered with care.</p>
-      <div class="btn-row" style="justify-content:center">
-        <a class="btn btn--primary" href="hampers.html">Explore gift hampers</a>
-        <a class="btn btn--outline" href="hamper-maker.html">Build your own hamper</a>
+        </div>
       </div>
     </div>
   </section>
@@ -84,11 +93,7 @@
   <script src="js/cart.js?v=26"></script>
   <script src="js/main.js?v=14"></script>
   <script>
-    (function () {
-      var packs = PRODUCTS.filter(function (p) { return (p.cat === "Packaging" || p.room === "Packaging"); }).slice(0, 4);
-      renderProducts("gpPackGrid", packs);
-      initReveal();
-    })();
+    if (typeof initReveal === "function") initReveal();
   </script>
 </body>
 </html>
