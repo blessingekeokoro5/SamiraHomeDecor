@@ -83,6 +83,7 @@
     @media (max-width: 640px) { #featuredGrid.edit-row > * { flex-basis: 74%; } .edit-arrow { display: none; } }
   </style>
   <style>@media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr 1fr !important; } }</style>
+  <style>.reviews-summary .star-half { position: relative; display: inline-block; color: rgba(198,161,91,.28); } .reviews-summary .star-half::before { content: "★"; position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: var(--gold, #C6A15B); }</style>
 </head>
 <body data-page="index.html">
   <div id="site-header"></div>
@@ -247,8 +248,8 @@
       <div class="reviews-summary reveal">
         <span class="eyebrow">Loved by our community</span>
         <h2>Customer reviews</h2>
-        <div class="stars">★★★★★</div>
-        <div class="score">4.9 / 5 · loved by 500+ Australian homes</div>
+        <div class="stars" aria-label="4.7 out of 5 stars">★★★★<span class="star-half">★</span></div>
+        <div class="score">4.7 / 5 · loved by 500+ Australian homes</div>
       </div>
     </div>
     <div class="container">
