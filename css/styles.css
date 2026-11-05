@@ -535,14 +535,16 @@ em { font-style: italic; color: var(--rose-deep); }
 .member-card--rewards .member-later { color: #b9aaa0; margin-top: 14px; }
 .member-card--rewards .member-later:hover { color: #fff; }
 @media (max-width: 640px) {
-  .member-modal { padding: 12px; }
-  .member-card--rewards { padding: 30px 18px 18px; max-height: calc(100vh - 24px); }
+  /* Keep the card clear of the phone's browser bars (iOS Safari floats them over the page) */
+  .member-modal { padding: max(64px, calc(env(safe-area-inset-top) + 16px)) 12px max(72px, calc(env(safe-area-inset-bottom) + 16px)); }
+  .member-card--rewards { padding: 30px 18px 18px; max-height: 100%; }
   .rw-brand { font-size: 1.5rem; letter-spacing: .08em; }
   .rw-offer { font-size: .74rem; margin-top: 10px; }
   /* Compact icon-left benefit rows so all three fit without scrolling */
   .rw-benefits { grid-template-columns: 1fr; gap: 14px; margin: 20px 0 4px; text-align: left; }
   .rw-benefit { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; align-items: center; padding: 0; }
-  .rw-ic { grid-row: 1 / -1; align-self: center; height: auto; margin: 0; }
+  .rw-ic { grid-column: 1; grid-row: 1 / span 3; align-self: center; height: auto; margin: 0; }
+  .rw-benefit h4, .rw-benefit p, .rw-benefit .rw-rate { grid-column: 2; }
   .rw-ic svg { width: 40px; height: 40px; }
   .rw-benefit h4 { margin-bottom: 2px; }
   .rw-rate { margin-top: 2px; }
