@@ -87,7 +87,7 @@
     /* Custom pouch cards */
     .pk-banners { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 22px; }
     .pk-banners img { width: 100%; border-radius: 14px; display: block; box-shadow: var(--shadow-sm); }
-    @media (max-width: 700px) { .pk-banners { grid-template-columns: 1fr; } }
+    @media (max-width: 700px) { .pk-banners { grid-template-columns: 1fr; } .pk-banners img + img { display: none; } }
     .pk-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); }
     .pk-card-img { display: block; aspect-ratio: 1/1; background: #f2f1ef; }
     .pk-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -98,10 +98,30 @@
     .pk-card-body li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 17px; height: 17px; border-radius: 4px; background: #2f8a55; color: #fff; font-size: .7rem; font-weight: 700; display: grid; place-items: center; margin-top: 2px; }
     .pk-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; }
     .pk-wa svg { width: 18px; height: 18px; flex: none; }
-    @media (max-width: 600px) { .pk-cards { grid-template-columns: 1fr !important; } .pk-card-img { aspect-ratio: 4/3; } }
+    /* Phones: pouch cards sit side by side in one swipeable row */
+    @media (max-width: 760px) {
+      .pk-cards { display: flex !important; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; margin: 0 -16px; padding: 4px 16px 12px; scrollbar-width: none; }
+      .pk-cards::-webkit-scrollbar { display: none; }
+      .pk-card { flex: 0 0 72%; scroll-snap-align: start; }
+      .pk-card-img { aspect-ratio: 1/1; }
+      .pk-card-body { padding: 12px 14px 14px; }
+      .pk-card-body h3 { font-size: 1.05rem; }
+      .pk-card-body li { font-size: .84rem; }
+      .pk-swipe-hint { display: block !important; }
+      .pk-wa { font-size: .74rem; padding-left: 10px; padding-right: 10px; }
+    }
+    .pk-swipe-hint { display: none; text-align: center; font-size: .82rem; color: var(--muted); margin: 0 0 10px; }
     .pk-range-full { margin-top: 40px; }
     .pk-range-title { font-size: 1.6rem; margin: 0 0 6px; text-align: center; }
     .pk-range-sub { text-align: center; color: var(--body); margin: 0 auto 10px; max-width: 620px; }
+    .pk-range-det { border-top: 1px solid var(--line); }
+    .pk-range-det:last-of-type { border-bottom: 1px solid var(--line); }
+    summary.pk-range-group { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px; padding: 16px 2px; margin: 0 !important; }
+    summary.pk-range-group::-webkit-details-marker { display: none; }
+    summary.pk-range-group span { margin-left: auto; font-size: .78rem; letter-spacing: .04em; text-transform: none; color: var(--muted); }
+    summary.pk-range-group::after { content: "+"; font-size: 1.3rem; line-height: 1; color: var(--ink); }
+    .pk-range-det[open] summary.pk-range-group::after { content: "−"; }
+    .pk-range-det .pk-range-grid { padding: 0 0 18px; }
     .pk-range-group { margin: 26px 0 10px; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-deep, #9a7b3c); }
     .pk-range-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
     @media (max-width: 900px) { .pk-range-grid { grid-template-columns: 1fr 1fr; } }
@@ -221,6 +241,7 @@
         <img src="assets/products/pk-coffee-range.webp" alt="Custom printed coffee bags in kraft, white, black, gold and silver" loading="lazy">
         <img src="assets/products/pk-coffee-detail.webp" alt="Coffee bag details: one-way valve, pull-to-open zipper, flat base and gold logo print" loading="lazy">
       </div>
+      <p class="pk-swipe-hint">Swipe to see all 9 styles →</p>
       <div class="grid grid-3 pk-cards">
         <article class="pk-card reveal">
           <div class="pk-card-img"><img src="assets/products/pk-coffee.webp" alt="Coffee bags" loading="lazy"></div>
@@ -298,25 +319,32 @@
       <div class="pk-range-full reveal">
         <h3 class="pk-range-title">Full packaging range</h3>
         <p class="pk-range-sub">Every style below can be made in your size and finish, plain or custom printed. Tap any item to enquire on WhatsApp.</p>
-        <h4 class="pk-range-group">Bag styles</h4>
+        <details class="pk-range-det" open>
+          <summary class="pk-range-group">Bag styles <span>3 styles</span></summary>
         <div class="pk-range-grid">
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20three-side%20seal%20sachets.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">✉️</span><span class="pk-ri-t"><strong>Three-side seal sachets</strong><small>Flat pouches and sachets for samples, single serves, spices and cosmetics.</small></span><span class="pk-ri-go">Enquire ›</span></a>
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20ziplock%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🔒</span><span class="pk-ri-t"><strong>Ziplock bags</strong><small>Simple press-to-close bags that reseal again and again.</small></span><span class="pk-ri-go">Enquire ›</span></a>
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20shaped%20die-cut%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">✂️</span><span class="pk-ri-t"><strong>Shaped (die-cut) bags</strong><small>Custom outlines cut to your shape, so your pack stands out on the shelf.</small></span><span class="pk-ri-go">Enquire ›</span></a>
         </div>
-        <h4 class="pk-range-group">Materials & film</h4>
+        </details>
+        <details class="pk-range-det">
+          <summary class="pk-range-group">Materials & film <span>3 styles</span></summary>
         <div class="pk-range-grid">
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20aluminium%20foil%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🛡️</span><span class="pk-ri-t"><strong>Aluminium foil bags</strong><small>A strong barrier against light, air and moisture for longer shelf life.</small></span><span class="pk-ri-go">Enquire ›</span></a>
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20mylar%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">✨</span><span class="pk-ri-t"><strong>Mylar bags</strong><small>Metallised high-barrier film for dry goods, supplements and long-term storage.</small></span><span class="pk-ri-go">Enquire ›</span></a>
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20roll%20stock%20film.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🎞️</span><span class="pk-ri-t"><strong>Roll stock film</strong><small>Printed film on a roll for automatic filling and packing machines.</small></span><span class="pk-ri-go">Enquire ›</span></a>
         </div>
-        <h4 class="pk-range-group">Eco-friendly & specialty</h4>
+        </details>
+        <details class="pk-range-det">
+          <summary class="pk-range-group">Eco-friendly & specialty <span>3 styles</span></summary>
         <div class="pk-range-grid">
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20biodegradable%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🌱</span><span class="pk-ri-t"><strong>Biodegradable bags</strong><small>Plant-based and compostable material options for eco-minded brands.</small></span><span class="pk-ri-go">Enquire ›</span></a>
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20recyclable%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">♻️</span><span class="pk-ri-t"><strong>Recyclable pouches</strong><small>Single-material pouches that can go in soft-plastic recycling.</small></span><span class="pk-ri-go">Enquire ›</span></a>
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20child-resistant%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🧒</span><span class="pk-ri-t"><strong>Child-resistant bags</strong><small>Tested child-resistant zipper and smell-proof layers.</small></span><span class="pk-ri-go">Enquire ›</span></a>
         </div>
-        <h4 class="pk-range-group">By product</h4>
+        </details>
+        <details class="pk-range-det">
+          <summary class="pk-range-group">By product <span>10 styles</span></summary>
         <div class="pk-range-grid">
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20tea%20pouches.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🍵</span><span class="pk-ri-t"><strong>Tea bags & pouches</strong><small>Aroma-locking barrier pouches for loose-leaf and herbal tea.</small></span><span class="pk-ri-go">Enquire ›</span></a>
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20pet%20food%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🐾</span><span class="pk-ri-t"><strong>Pet food & treat bags</strong><small>Tough, resealable bags for kibble, freeze-dried and baked treats.</small></span><span class="pk-ri-go">Enquire ›</span></a>
@@ -329,6 +357,7 @@
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20vacuum%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🥩</span><span class="pk-ri-t"><strong>Vacuum bags</strong><small>Airtight bags for meat, cheese, meal prep and sous-vide.</small></span><span class="pk-ri-go">Enquire ›</span></a>
           <a class="pk-range-item" href="https://wa.me/61451609398?text=Hi%20Samira%20Home%20Decor%2C%20I%27d%20like%20a%20quote%20for%20custom%20fruit%20and%20vegetable%20bags.%20Quantity%3A%20___%2C%20size%3A%20___%2C%20printing/logo%3A%20___" target="_blank" rel="noopener"><span class="pk-ri-ic" aria-hidden="true">🍎</span><span class="pk-ri-t"><strong>Fruit & vegetable bags</strong><small>Breathable and anti-fog bags for fresh produce.</small></span><span class="pk-ri-go">Enquire ›</span></a>
         </div>
+        </details>
       </div>
       <div style="text-align:center;margin-top:26px">
         <a class="btn btn--ghost btn--pill" href="#bulk" onclick="setTimeout(function(){switchPkgPanel('quote');},60)">Request a bulk quote</a>
