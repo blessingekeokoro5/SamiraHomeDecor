@@ -86,6 +86,8 @@
     .speed-top strong { font-size: 0.9rem; color: var(--ink); }
     .speed-top em { font-style: normal; font-size: 0.78rem; color: var(--rose-deep); font-weight: 600; }
     .speed small { display: block; margin-top: 4px; font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
+    #hmAdd.is-waiting { background: #e9e1d2; color: var(--ink); border-color: #e9e1d2; }
+    .hm-min-info { background: #fff7e6; border: 1px solid #ecd9ae; border-radius: 10px; padding: 10px 12px; font-size: .84rem; color: var(--ink); margin: 0 0 10px; line-height: 1.45; }
   </style>
 </head>
 <body data-page="hamper-maker.html">
@@ -135,7 +137,8 @@
               <textarea id="hmNote" placeholder="Write a message for the card…" style="min-height:70px"></textarea>
             </div>
             <p class="hm-lead-time" id="hmLead">🕒 Packed and dispatched in <strong>3 to 5 business days</strong>.</p>
-            <button class="btn btn--primary btn--block" id="hmAdd" disabled onclick="addHamper()">Add hamper to cart</button>
+            <p class="hm-min-info">ℹ️ Hampers have a <strong>$60 minimum</strong>. The <strong>Add hamper to cart</strong> button works once your hamper reaches $60.</p>
+            <button class="btn btn--primary btn--block" id="hmAdd" onclick="addHamper()">Add hamper to cart</button>
             <div class="form-success" id="hmSuccess" style="margin-top:10px"></div>
           </div>
         </aside>
@@ -209,7 +212,9 @@
       document.getElementById("hmCount").textContent = hmCount() + (hmCount() === 1 ? " item" : " items");
       document.getElementById("hmBar").style.width = Math.min(100, (total / HAMPER_MIN) * 100) + "%";
       const ok = total >= HAMPER_MIN;
-      document.getElementById("hmAdd").disabled = !ok;
+      const addBtn = document.getElementById("hmAdd");
+      addBtn.classList.toggle("is-waiting", !ok);
+      addBtn.textContent = ok ? "Add hamper to cart" : (total > 0 ? `Add ${money(HAMPER_MIN - total)} more to continue` : "Add items to your hamper");
       document.getElementById("hmMinNote").innerHTML = ok
         ? "✓ Ready to gift!"
         : `Add ${money(HAMPER_MIN - total)} more to reach the $${HAMPER_MIN} minimum`;
@@ -249,7 +254,12 @@
 
     function addHamper() {
       const lines = hmItemsList();
-      if (!lines.length) return;
+      if (!lines.length || hmTotal() < HAMPER_MIN) {
+        const short = HAMPER_MIN - hmTotal();
+        showToast(lines.length ? `Add ${money(short)} more, hampers start at $${HAMPER_MIN}` : `Pick a few items first, hampers start at $${HAMPER_MIN}`);
+        const items = document.getElementById("hmPills"); if (items) items.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
       const note = document.getElementById("hmNote").value.trim();
       const speed = currentSpeed();
       const kit = PACKAGING_KITS.find(k => k.id === hmKit) || PACKAGING_KITS[0];

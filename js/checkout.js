@@ -239,6 +239,7 @@ function renderCheckout() {
       <div>
         <form id="checkoutForm" class="form-card">
           <div class="co-section">Contact</div>
+          ${!(acc && acc.email) ? `<p class="form-note" style="margin:0 0 10px">Checking out as a guest. <a href="account.html">Log in</a> to save this order to your account (optional).</p>` : ""}
           <div class="field"><label>Email</label><input id="coEmail" type="email" value="${acc.email || ""}" required></div>
 
           <div class="co-section" id="shipTitle">Delivery address</div>
@@ -335,22 +336,8 @@ async function startPayment(e) {
     const el = document.getElementById("coShipLine"); if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
     return;
   }
-  // Must be logged in to place an order, so it saves to the account and can be tracked.
-  const _acct = (typeof getAccount === "function") ? getAccount() : null;
-  if (!_acct || !_acct.email) {
-    let gate = document.getElementById("coLoginGate");
-    if (!gate) {
-      gate = document.createElement("div");
-      gate.id = "coLoginGate";
-      gate.className = "fulfil-note";
-      gate.style.color = "var(--rose-deep)";
-      const pb = document.getElementById("payBtn");
-      if (pb && pb.parentNode) pb.parentNode.insertBefore(gate, pb);
-    }
-    gate.innerHTML = '🔒 Please <a href="account.html">log in or create a free account</a> to place your order, it lets you track it every step of the way, from picking to your door.';
-    gate.scrollIntoView({ behavior: "smooth", block: "center" });
-    return;
-  }
+  // Guests can check out too; members get the order saved to their account.
+  // The order is tracked by order number and email either way.
   const btn = document.getElementById("payBtn");
   const cfg = (typeof SAMIRA !== "undefined" && SAMIRA.stripe) || {};
   const cart = getCart();
