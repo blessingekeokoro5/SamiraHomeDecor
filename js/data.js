@@ -201,6 +201,43 @@ const PRODUCTS = [
 
 
 
+  { id: "bt47", name: "Lumière Crystal Bathroom Vanity Set — 4 Piece", cat: "Bathroom", room: "Bathroom", price: 500, memberPrice: 450, sku: "SH-11324", tag: "New", ph: "", img: "assets/products/bt47.webp",
+    imgs: ["assets/products/bt47.webp", "assets/products/bt47-2.webp", "assets/products/bt47-3.webp", "assets/products/bt47-4.webp", "assets/products/bt47-5.webp", "assets/products/bt47-6.webp", "assets/products/bt47-7.webp", "assets/products/bt47-8.webp", "assets/products/bt47-9.webp", "assets/products/bt47-10.webp", "assets/products/bt47-11.webp", "assets/products/bt47-12.webp"],
+    sizes: [{ label: "Set with Diffuser Ball", price: 500 }, { label: "Set with Soap Dish", price: 500 }],
+    colours: [{ name: "Smoke Grey", hex: "#4a4d52" }, { name: "Iridescent Clear", hex: "#dfe8ec" }, { name: "Amber Gold", hex: "#c8913a" }],
+    desc: "Bring a boutique-hotel feel to your bathroom with the Lumière vanity set, cut from heavy, high-clarity crystal glass that catches the light from every angle. A bevelled crystal tray anchors a square lotion pump, a lidded cotton bud jar and your choice of a faceted diffuser ball or a slatted soap dish, keeping your basin tidy while looking like a styled display. Choose smoke grey for a moody, modern finish, iridescent clear for a soft rainbow shimmer, or amber gold for warmth and glamour. A beautiful upgrade for your own vanity and a gift that feels truly special.",
+    features: [
+      "Heavy, high-clarity crystal glass with polished bevelled edges",
+      "Four coordinating pieces on a matching vanity tray",
+      "Choose a faceted diffuser ball (add your own reeds and oil) or a soap dish with a removable draining grate",
+      "Refillable lotion pump with a chrome finish, ideal for hand wash, lotion or body wash",
+      "Lidded cotton bud jar keeps cotton buds, cotton pads or hair ties neat",
+      "Three finishes: Smoke Grey, Iridescent Clear and Amber Gold",
+      "Also suits a powder room, dressing table or guest bathroom"
+    ],
+    specs: { "Type": "Bathroom accessories set", "Material": "Crystal glass; metal pump and grate", "Pieces": "4", "Finish": "Smoke Grey / Iridescent Clear / Amber Gold", "Pump": "Refillable", "Location": "Vanity / benchtop" },
+    dimensions: "Tray 32cm L x 12cm W x 1.5cm H | Lotion pump 7cm W x 7cm D x 16cm H | Cotton bud jar 5cm W x 5cm D x 10cm H | Diffuser ball 7.5cm diameter | Soap dish 12.5cm L x 9.5cm W x 2.5cm H", weight: "3.9 kg",
+    boxContents: ["1 x crystal vanity tray", "1 x lotion pump bottle", "1 x lidded cotton bud jar", "1 x diffuser ball OR 1 x soap dish (depending on the set chosen)"],
+    care: "Wipe clean with a soft damp cloth and dry with a lint-free cloth for a streak-free shine. Hand wash only; do not use abrasive cleaners or put in the dishwasher. Handle with care: crystal glass can chip if knocked." },
+  { id: "bt48", name: "Trio Wall-Mounted Shower Dispenser — 3 in 1", cat: "Bathroom", room: "Bathroom", price: 180, memberPrice: 150, sku: "SH-11325", tag: "New", ph: "", img: "assets/products/bt48.webp",
+    imgs: ["assets/products/bt48.webp", "assets/products/bt48-2.webp", "assets/products/bt48-3.webp", "assets/products/bt48-4.webp", "assets/products/bt48-5.webp"],
+    colours: [{ name: "White", hex: "#f2f2f0" }, { name: "Black", hex: "#1c1c1c" }, { name: "Gold", hex: "#c9a24a" }],
+    desc: "Clear the clutter from your shower ledge with this three-chamber dispenser that keeps shampoo, conditioner and body wash neatly in one place. It mounts straight onto tiles, glass or smooth walls with a strong adhesive backing, so there's no drilling and no damage, which makes it ideal for rentals. Each chamber has its own easy-press button that releases just the right amount, and the tinted windows let you see when it's time for a refill. A tidy, hotel-style upgrade for family bathrooms, guest rooms and Airbnb stays.",
+    features: [
+      "Three separate chambers for shampoo, conditioner and body wash",
+      "No-drill installation with strong adhesive backing, renter friendly",
+      "Easy one-press pump buttons dispense a controlled amount",
+      "Tinted chamber windows show liquid levels at a glance",
+      "Flip-top lids for quick, mess-free refilling",
+      "Durable, water-resistant ABS construction",
+      "Suits showers, bathrooms, hotels, Airbnbs and guest rooms",
+      "Available in White, Black and Gold"
+    ],
+    specs: { "Type": "Wall-mounted dispenser", "Material": "ABS plastic", "Chambers": "3", "Installation": "Adhesive, no drilling", "Location": "Shower / bathroom wall" },
+    dimensions: "21cm W x 21.5cm H x 7cm D", weight: "0.6 kg",
+    boxContents: ["1 x 3-chamber dispenser", "1 x adhesive mounting backing"],
+    care: "Wipe with a soft damp cloth. Rinse chambers with warm water between refills. Install on a clean, dry, smooth surface and wait 24 hours before filling for the strongest hold." },
+
   // ── Living Room ──
 
 
@@ -1066,6 +1103,23 @@ const PRODUCTS = [
     specs: { "Type": "3-in-1 diffuser / humidifier / night light", "Capacity": "200ml", "Timer": "1 / 3 / 5 hours", "Noise level": "As low as 40 dB", "Feature": "Flame-effect light" },
     boxContents: ["1 × Oil Diffuser", "1 × English manual"],
     care: "Do not open the cap while in use, to avoid water leakage. Fill with water below the maximum line, overfilling can let water re-enter the main unit and damage the circuit board. Keep water away from the heat-dissipation vents (they are not waterproof). Empty and wipe dry after use." },
+  { id: "hd10", name: "Ondine Abstract Curve Cushion Covers — Set of 2 (45cm)", cat: "Home Décor", room: "Home Décor", price: 180, memberPrice: 150, sku: "SH-11326", tag: "New", ph: "", img: "assets/products/hd10.webp",
+    imgs: ["assets/products/hd10.webp", "assets/products/hd10-2.webp", "assets/products/hd10-3.webp", "assets/products/hd10-4.webp", "assets/products/hd10-5.webp", "assets/products/hd10-6.webp", "assets/products/hd10-7.webp", "assets/products/hd10-8.webp"],
+    colours: [{ name: "Rust", hex: "#a4441f" }, { name: "Brown", hex: "#6b4423" }, { name: "Camel", hex: "#b08a5a" }, { name: "Light Brown", hex: "#a08870" }, { name: "Beige", hex: "#d9c9a3" }, { name: "Grey", hex: "#6e6e6e" }],
+    desc: "Add instant texture and warmth to your sofa or bed with this pair of 45cm cushion covers. Soft, raised loops are tufted into flowing abstract curves across a creamy textured base, giving each cover a hand-crafted, wabi-sabi feel that looks beautiful up close. Choose from six earthy tones, from bold rust and rich brown to soft beige and calming grey, and pair them with neutrals for an effortless, layered look. Sold as covers only, so you can refresh your space season after season using inserts you already own.",
+    features: [
+      "Set of 2 matching cushion covers",
+      "Raised tufted-loop design in flowing abstract curves",
+      "Soft, textured cream base fabric with a natural wabi-sabi look",
+      "Concealed zip for easy insert changes and washing",
+      "Fits a standard 45cm x 45cm cushion insert",
+      "Six colours: Rust, Brown, Camel, Light Brown, Beige and Grey",
+      "Suits sofas, beds, armchairs and reading nooks"
+    ],
+    specs: { "Type": "Cushion cover", "Pack size": "2 covers", "Material": "Woven textured fabric with tufted loop detail", "Closure": "Hidden zip", "Insert included": "No", "Shape": "Square" },
+    dimensions: "45cm x 45cm (each cover)", weight: "0.5 kg",
+    boxContents: ["2 x cushion covers (inserts not included)"],
+    care: "Turn inside out and hand wash or gentle machine wash cold in a laundry bag. Do not bleach or tumble dry; dry flat in the shade. Trim any loose loops with scissors rather than pulling them." },
   { id: "hd08", name: "Alban Bouclé Pillow Cover", cat: "Home Décor", room: "Living Room", price: 59, memberPrice: 55, sku: "SH-10110", tag: "New", ph: "", img: "assets/products/hd08.webp?v=2",
     imgs: ["assets/products/hd08.webp?v=2", "assets/products/hd08-2.webp?v=2", "assets/products/hd08-3.webp?v=2", "assets/products/hd08-4.webp?v=2", "assets/products/hd08-5.webp?v=2", "assets/products/hd08-6.webp?v=2", "assets/products/hd08-7.webp?v=2", "assets/products/hd08-8.webp?v=2", "assets/products/hd08-9.webp?v=2"],
     colours: [{ name: "Red", hex: "#7c1c26" }, { name: "Pink", hex: "#e9c3cb" }, { name: "White", hex: "#f2efe9" }, { name: "Brown", hex: "#5b4636" }, { name: "Blue", hex: "#9fb2c4" }, { name: "Khaki", hex: "#b3a37a" }, { name: "Green", hex: "#b9c7a8" }],
