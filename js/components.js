@@ -1792,6 +1792,11 @@ function initChat() {
 function rotateAnnouncements() {
   const track = document.getElementById("announceTrack");
   if (!track || typeof ANNOUNCEMENTS === "undefined" || ANNOUNCEMENTS.length < 2) return;
+  // Steady bar: one fixed message, no flashing (set ANNOUNCE_STEADY = false to rotate again)
+  if (typeof ANNOUNCE_STEADY === "undefined" || ANNOUNCE_STEADY) {
+    track.innerHTML = (window.matchMedia && matchMedia("(max-width: 640px)").matches && typeof ANNOUNCE_MOBILE !== "undefined") ? ANNOUNCE_MOBILE : ANNOUNCE_DESKTOP;
+    return;
+  }
   let i = 0;
   setInterval(() => {
     i = (i + 1) % ANNOUNCEMENTS.length;

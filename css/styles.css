@@ -2200,3 +2200,11 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
   .hero-cta-grid .btn { min-height: 46px; padding: 10px 8px; font-size: .64rem; letter-spacing: .08em; }
   .hero-cta-grid .btn--outline { background: rgba(255,255,255,.72); }
 }
+
+/* Steady top bar: no movement, and on phones the text sits a little lower,
+   clear of the soft blur iPhone Safari adds along the very top edge */
+.announce-track, .announce-track.out { transition: none !important; transform: none !important; opacity: 1 !important; }
+@media (max-width: 640px) {
+  .announce { min-height: 50px; padding: 20px 14px 10px; align-items: flex-end; }
+  .announce-track { white-space: nowrap; }
+}
