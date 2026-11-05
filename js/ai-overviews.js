@@ -151,6 +151,7 @@ const AI_OVERVIEWS = {
   lx65: ["A four-seat outdoor dining set with a stone tabletop and a sturdy aluminium frame.", "Balconies and smaller outdoor areas"],
   lx66: ["A seven-piece outdoor dining set in white and beige.", "Long lunches and easy entertaining outdoors"],
   lx67: ["A six-seat curved wicker outdoor dining set in white and light grey with an extra-long table.", "Backyard gatherings"],
+  lf31: ["A soft knitted throw in a warm, muted Morandi orange with a textured knit and tassel edges. It is made from a lightweight blend of acrylic, polyester and cotton, and comes in 127 x 170cm or 127 x 220cm.", "Cosying up a sofa or bed, naps, camping and travel"],
   lx68: ["A four-seat wicker outdoor dining set in natural with a relaxed, coastal look.", "Balconies and patios"],
   lx69: ["A nine-piece outdoor dining set in beige with a sintered stone top.", "Larger gatherings and long summer lunches"],
   lx70: ["An eight-seat outdoor dining set with an extendable solid acacia timber table and rope chairs.", "Entertaining on a patio or in an alfresco area"],
