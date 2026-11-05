@@ -1278,56 +1278,8 @@ const PRODUCTS = [
     warranty: "5 year manufacturer's warranty",
     care: "Unplug before cleaning and wipe the body with a warm, damp cloth, never submerge it. The bowl, flat beater, dough hook and pouring shield are dishwasher safe; the wire whisk is best washed by hand and dried straight away." },
 
-  { id: "kw02", name: "Smeg 50s Style Electric Kettle 1.7L, Pastel Pink", cat: "Kitchenware", room: "Kitchenware", price: 287, memberPrice: 258, sku: "SH-11003", tag: "New", ph: "", img: "assets/products/kw02-1.webp",
-    imgs: ["assets/products/kw02-1.webp", "assets/products/kw02-2.webp", "assets/products/kw02-3.webp", "assets/products/kw02-4.webp", "assets/products/kw02-5.webp"],
-    desc: "A kettle you leave out rather than hide away. Boils 1.7L, enough for a full pot of tea or a round of coffees, with 2400W behind it. Enamel-coated stainless steel body. Small things that matter: soft opening lid, anti slip feet and limescale filter. Finished in Pastel Pink.",
-    features: [
-      "1.7L capacity",
-      "2400W element",
-      "Soft opening lid",
-      "Anti slip feet",
-      "Limescale filter",
-      "Water level indicator",
-      "2 year manufacturer's warranty"
-    ],
-    specs: { "Brand": "Smeg", "Model": "KLF03PKAU", "Type": "Electric Kettle", "Capacity": "1.7L", "Power": "2400W", "Materials": "Enamel-coated stainless steel body", "Colour": "Pastel Pink", "Weight": "1.6 kg" },
-    dims: { w: 17.1, d: 22.6, h: 24.8, unit: "cm", printed: true },
-    warranty: "2 year manufacturer's warranty",
-    care: "Wipe the body with a soft, damp cloth and dry it, never submerge the kettle or its base. Rinse the limescale filter under the tap now and then, and descale with a kettle descaler if your water is hard." },
 
-  { id: "kw03", name: "Smeg 50s Style Electric Kettle 1.7L, Pastel Green", cat: "Kitchenware", room: "Kitchenware", price: 287, memberPrice: 258, sku: "SH-11004", tag: "New", ph: "", img: "assets/products/kw03-1.webp",
-    imgs: ["assets/products/kw03-1.webp", "assets/products/kw03-2.webp", "assets/products/kw03-3.webp", "assets/products/kw03-4.webp"],
-    desc: "A kettle you leave out rather than hide away. Boils 1.7L, enough for a full pot of tea or a round of coffees, with 2400W behind it. Enamel coated stainless steel body. Small things that matter: soft opening lid, anti slip feet and limescale filter. Pastel Green, and worth leaving on the bench.",
-    features: [
-      "1.7L capacity",
-      "2400W element",
-      "Soft opening lid",
-      "Anti slip feet",
-      "Limescale filter",
-      "Water level indicator",
-      "2 year manufacturer's warranty"
-    ],
-    specs: { "Brand": "Smeg", "Model": "KLF03PGAU", "Type": "Electric Kettle", "Capacity": "1.7L", "Power": "2400W", "Materials": "Enamel coated stainless steel body, Stainless steel lid / spout / lever, Chrome handle and base", "Colour": "Pastel Green", "Weight": "1.6 kg" },
-    dims: { w: 17.1, d: 22.6, h: 24.8, unit: "cm", printed: true },
-    warranty: "2 year manufacturer's warranty",
-    care: "Wipe the body with a soft, damp cloth and dry it, never submerge the kettle or its base. Rinse the limescale filter under the tap now and then, and descale with a kettle descaler if your water is hard." },
 
-  { id: "kw04", name: "Smeg 50s Style Electric Kettle 1.7L, Cream", cat: "Kitchenware", room: "Kitchenware", price: 287, memberPrice: 258, sku: "SH-11005", tag: "New", ph: "", img: "assets/products/kw04-1.webp",
-    imgs: ["assets/products/kw04-1.webp", "assets/products/kw04-2.webp", "assets/products/kw04-3.webp", "assets/products/kw04-4.webp", "assets/products/kw04-5.webp"],
-    desc: "A kettle you leave out rather than hide away. Boils 1.7L, enough for a full pot of tea or a round of coffees, with 2400W behind it. Enamel coated stainless steel body. Small things that matter: soft opening lid, anti slip feet and limescale filter. In Cream, which is half the reason to buy it.",
-    features: [
-      "1.7L capacity",
-      "2400W element",
-      "Soft opening lid",
-      "Anti slip feet",
-      "Limescale filter",
-      "Water level indicator",
-      "2 year manufacturer's warranty"
-    ],
-    specs: { "Brand": "Smeg", "Model": "KLF03CRAU", "Type": "Electric Kettle", "Capacity": "1.7L", "Power": "2400W", "Materials": "Enamel coated stainless steel body, Stainless steel lid / spout / lever, Chrome handle and base", "Colour": "Cream", "Weight": "1.6 kg" },
-    dims: { w: 17.1, d: 22.6, h: 24.8, unit: "cm", printed: true },
-    warranty: "2 year manufacturer's warranty",
-    care: "Wipe the body with a soft, damp cloth and dry it, never submerge the kettle or its base. Rinse the limescale filter under the tap now and then, and descale with a kettle descaler if your water is hard." },
 
   { id: "kw05", name: "Smeg 50s Style Two-Slice Toaster, Pastel Blue", cat: "Kitchenware", room: "Kitchenware", price: 287, memberPrice: 258, sku: "SH-11006", tag: "New", ph: "", img: "assets/products/kw05-1.webp",
     imgs: ["assets/products/kw05-1.webp", "assets/products/kw05-2.webp", "assets/products/kw05-3.webp", "assets/products/kw05-4.webp", "assets/products/kw05-5.webp"],
