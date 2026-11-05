@@ -631,6 +631,7 @@ function findSimilar(id) {
 
 /* Phones: hide the floating buttons while scrolling down, show them on scroll up */
 (function () {
+  if (/(^|\/)(index\.html)?$/.test(location.pathname)) document.body.classList.add("dm-home");
   let last = window.scrollY, ticking = false;
   window.addEventListener("scroll", function () {
     if (ticking) return; ticking = true;

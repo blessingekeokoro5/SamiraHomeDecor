@@ -2179,17 +2179,14 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
 @media (max-width: 380px) { #regionBtn { display: none; } }
 
 /* Hero: clearer text over the photo, shorter on phones */
-.hero::before { background: linear-gradient(90deg, rgba(246,238,232,.92) 0%, rgba(246,238,232,.78) 55%, rgba(246,238,232,.45) 100%); }
 .hero-sub { color: var(--ink); }
 @media (max-width: 640px) {
-  .hero::before { background: linear-gradient(180deg, rgba(246,238,232,.9), rgba(246,238,232,.82)); }
-  .hero-grid { min-height: 0; padding-top: 40px; padding-bottom: 44px; }
   .hero-sub .hs-more { display: none; }
 }
 
 /* Arrows only appear once you've scrolled down a little */
 @media (max-width: 640px) {
-  body:not(.dm-scrolled) .float-left { opacity: 0; pointer-events: none; transform: translateY(14px); }
+  body:not(.dm-scrolled) .float-left, body.dm-home:not(.dm-scrolled) .dm-launch:not(.hidden) { opacity: 0; pointer-events: none; transform: translateY(14px); }
 }
 
 /* Hero buttons: a tidy 2 x 2 block, every button the same width and height */
@@ -2198,6 +2195,8 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
 .hero-cta-grid .btn--outline { background: rgba(255,255,255,.88); border-color: var(--ink); color: var(--ink); }
 .hero-cta-grid .btn--outline:hover { background: #fff; }
 @media (max-width: 640px) {
-  .hero-cta-grid { grid-template-columns: 1fr; gap: 10px; max-width: none; }
-  .hero-cta-grid .btn { min-height: 52px; font-size: .78rem; }
+  /* Phones: a compact 2 x 2 block so the slideshow photo stays on show */
+  .hero-cta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; max-width: none; }
+  .hero-cta-grid .btn { min-height: 46px; padding: 10px 8px; font-size: .64rem; letter-spacing: .08em; }
+  .hero-cta-grid .btn--outline { background: rgba(255,255,255,.72); }
 }
