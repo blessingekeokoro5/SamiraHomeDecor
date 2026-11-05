@@ -88,6 +88,7 @@
     .speed small { display: block; margin-top: 4px; font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
     #hmAdd.is-waiting { background: #e9e1d2; color: var(--ink); border-color: #e9e1d2; }
     .hm-min-info { background: #fff7e6; border: 1px solid #ecd9ae; border-radius: 10px; padding: 10px 12px; font-size: .84rem; color: var(--ink); margin: 0 0 10px; line-height: 1.45; }
+    .kit-price { display: block; font-size: .74rem; font-weight: 600; color: var(--gold-deep, #9a7b3c); margin-top: 2px; }
   </style>
 </head>
 <body data-page="hamper-maker.html">
@@ -162,7 +163,7 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=59"></script>
+  <script src="js/data.js?v=60"></script>
   <script src="js/components.js?v=81"></script>
   <script src="js/cart.js?v=28"></script>
   <script src="js/main.js?v=14"></script>
@@ -208,7 +209,8 @@
         ? lines.map(l => `<div class="hm-line"><span>${l.item.emoji} ${l.item.name}${l.qty > 1 ? ' ×' + l.qty : ''}</span><span>${money(l.item.price * l.qty)} <button class="x" onclick="chg('${l.item.id}',-${l.qty})">✕</button></span></div>`).join("")
         : `<div class="hm-empty">Your hamper is empty, start adding some lovely things ✦</div>`;
       const total = hmTotal();
-      document.getElementById("hmTotal").textContent = money(total);
+      const kp = (typeof kitPrice === "function") ? kitPrice() : 0;
+      document.getElementById("hmTotal").innerHTML = money(total + kp) + (kp ? `<small style="display:block;font-size:.72rem;font-weight:400;color:var(--muted)">incl. ${money(kp)} packaging</small>` : "");
       document.getElementById("hmCount").textContent = hmCount() + (hmCount() === 1 ? " item" : " items");
       document.getElementById("hmBar").style.width = Math.min(100, (total / HAMPER_MIN) * 100) + "%";
       const ok = total >= HAMPER_MIN;
@@ -222,7 +224,9 @@
     }
 
     let hmSpeed = PACKING_SPEEDS[0].id;
-    let hmKit = PACKAGING_KITS[0].id;
+    const HM_KITS = PACKAGING_KITS.filter(k => !k.hidden && k.price != null);
+    let hmKit = HM_KITS[0].id;
+    function kitPrice() { return currentSpeed().kits ? ((HM_KITS.find(k => k.id === hmKit) || HM_KITS[0]).price || 0) : 0; }
     function currentSpeed() { return PACKING_SPEEDS.find(x => x.id === hmSpeed) || PACKING_SPEEDS[0]; }
     function renderSpeeds() {
       const el = document.getElementById("hmSpeeds");
@@ -240,17 +244,18 @@
         ? '🕒 Packed and dispatched in <strong>3 to 5 business days</strong>.'
         : '🕒 Our printed kit is made to order, please allow <strong>14 working days</strong> for dispatch.';
     }
-    function pickSpeed(id) { hmSpeed = id; renderSpeeds(); renderKits(); }
+    function pickSpeed(id) { hmSpeed = id; renderSpeeds(); renderKits(); renderBox(); }
     function renderKits() {
       const el = document.getElementById("hmKits");
       if (!el) return;
-      el.innerHTML = PACKAGING_KITS.map(k => `
+      el.innerHTML = HM_KITS.map(k => `
         <button type="button" class="kit ${k.id === hmKit ? 'on' : ''}" onclick="pickKit('${k.id}')" title="${k.note}">
           <span class="kit-img">${k.img ? `<img src="${k.img}" alt="${k.name}" loading="lazy" onerror="this.remove()">` : ""}</span>
           <span class="kit-name">${k.name}</span>
+          <span class="kit-price">+${money(k.price)}</span>
         </button>`).join("");
     }
-    function pickKit(id) { hmKit = id; renderKits(); }
+    function pickKit(id) { hmKit = id; renderKits(); renderBox(); }
 
     function addHamper() {
       const lines = hmItemsList();
@@ -262,15 +267,16 @@
       }
       const note = document.getElementById("hmNote").value.trim();
       const speed = currentSpeed();
-      const kit = PACKAGING_KITS.find(k => k.id === hmKit) || PACKAGING_KITS[0];
-      const packedIn = speed.kits ? kit.name : "Plain navy gift box, gold ribbon & tag";
+      const kit = HM_KITS.find(k => k.id === hmKit) || HM_KITS[0];
+      const packedIn = speed.kits ? kit.name + " (+" + money(kit.price) + ")" : "Plain navy gift box, gold ribbon & tag";
       const contents = "Packed in: " + packedIn + " · Dispatch: " + speed.days + " · "
         + lines.map(l => l.qty > 1 ? `${l.item.name} ×${l.qty}` : l.item.name).join(", ");
       const cart = getCart();
       cart.push({
         id: "hamper-" + Date.now(),
         name: "Custom Gift Hamper (" + hmCount() + " items)",
-        price: hmTotal(),
+        price: hmTotal() + kitPrice(),
+        kit: speed.kits ? kit.id : undefined,
         cat: "Gift Hamper" + (note ? " · Note added" : ""),
         ph: "rose",
         qty: 1,
@@ -300,10 +306,10 @@
     (function () {
       var el = document.getElementById("kitGrid");
       if (!el || typeof PACKAGING_KITS === "undefined") return;
-      el.innerHTML = PACKAGING_KITS.map(function (k) {
+      el.innerHTML = PACKAGING_KITS.filter(function (k) { return !k.hidden; }).map(function (k) {
         return '<figure class="kit-card">' +
           '<div class="kit-shot">' + (k.img ? '<img src="' + k.img + '" alt="' + k.name + '" loading="lazy" onerror="this.closest(\'.kit-shot\').classList.add(\'no-img\');this.remove()">' : '') + '</div>' +
-          '<figcaption><strong>' + k.name + '</strong><small>' + k.note + '</small></figcaption>' +
+          '<figcaption><strong>' + k.name + (k.price != null ? ' · ' + money(k.price) : '') + '</strong><small>' + k.note + '</small></figcaption>' +
           '</figure>';
       }).join("");
     })();

@@ -165,7 +165,14 @@ function resolveLine(raw) {
       count += q;
     });
     if (total < CATALOGUE.hamperMin) throw new Error(`Hampers start at $${CATALOGUE.hamperMin}.`);
-    return { name: `Custom Gift Hamper (${count} items)`, sku: "hamper", unitPrice: round2(total), qty, weight: DEFAULT_ITEM_KG * count };
+    // Signature packaging kit, priced from the catalogue (never from the browser)
+    let kitName = "";
+    if (raw.kit) {
+      const kit = (CATALOGUE.packagingKits || {})[String(raw.kit)];
+      if (!kit) throw new Error("That packaging kit isn't available, please choose another.");
+      total += kit.price; kitName = " + " + kit.name;
+    }
+    return { name: `Custom Gift Hamper (${count} items)${kitName}`, sku: "hamper", unitPrice: round2(total), qty, weight: DEFAULT_ITEM_KG * count };
   }
 
   // --- Catalogue products ---

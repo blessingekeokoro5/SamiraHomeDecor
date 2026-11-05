@@ -406,7 +406,8 @@ async function startPayment(e) {
           items: cart.map(i => ({
             id: i.id, qty: i.qty, colour: i.colour || undefined, size: i.size || undefined,
             giftCard: i.giftCard || undefined,   // gift cards carry their own amount
-            hamper: i.hamper || undefined        // custom hampers carry their components
+            hamper: i.hamper || undefined,       // custom hampers carry their components
+            kit: i.kit || undefined              // signature packaging kit (priced on the server)
           })),
           discountPct: od.pct || 0,
           voucher: t.voucher || 0, voucherCode: t.voucherCode || "",

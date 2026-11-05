@@ -130,7 +130,7 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=59"></script>
+  <script src="js/data.js?v=60"></script>
   <script src="js/components.js?v=81"></script>
   <script src="js/cart.js?v=28"></script>
   <script src="js/main.js?v=14"></script>
@@ -140,10 +140,10 @@
     (function () {
       var el = document.getElementById("kitGrid");
       if (!el || typeof PACKAGING_KITS === "undefined") return;
-      el.innerHTML = PACKAGING_KITS.map(function (k) {
+      el.innerHTML = PACKAGING_KITS.filter(function (k) { return !k.hidden; }).map(function (k) {
         return '<figure class="kit-card">' +
           '<div class="kit-shot">' + (k.img ? '<img src="' + k.img + '" alt="' + k.name + '" loading="lazy" onerror="this.closest(\'.kit-shot\').classList.add(\'no-img\');this.remove()">' : '') + '</div>' +
-          '<figcaption><strong>' + k.name + '</strong><small>' + k.note + '</small></figcaption>' +
+          '<figcaption><strong>' + k.name + (k.price != null ? ' · ' + money(k.price) : '') + '</strong><small>' + k.note + '</small></figcaption>' +
           '</figure>';
       }).join("");
     })();
