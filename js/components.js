@@ -440,7 +440,7 @@ function buildFooter() {
       <div class="container news-bar-inner">
         <div class="news-copy">
           <span class="news-badge">✦ The Edit</span>
-          <div><strong>Sign up &amp; get a $10 welcome voucher</strong><span>New arrivals, member offers &amp; styling inspiration, straight to your inbox.</span></div>
+          <div><strong>Sign up &amp; get 10% off your first order</strong><span>New arrivals, member offers &amp; styling inspiration, straight to your inbox.</span></div>
         </div>
         <form class="news-form2" data-newsletter>
           <input type="email" placeholder="Your email address" aria-label="Email" required>
@@ -847,7 +847,7 @@ function initEnquire() {
   });
 }
 
-/* ---- Newsletter popup (timed, once per visitor) → $10 welcome voucher ---- */
+/* ---- Newsletter popup (timed, once per visitor) → 10% off your first order ---- */
 function buildNewsletterPopup() {
   return `
   <style id="nl-pop-css">
@@ -873,14 +873,14 @@ function buildNewsletterPopup() {
     .nl-shop{margin-top:8px;background:#0B1F3A!important;color:#fff!important}
   </style>
   <div class="nl-pop" id="nlPop" aria-hidden="true">
-    <div class="nl-card" role="dialog" aria-modal="true" aria-label="Subscribe for a $10 welcome voucher">
+    <div class="nl-card" role="dialog" aria-modal="true" aria-label="Subscribe for a 10% off your first order">
       <button class="nl-x" id="nlClose" type="button" aria-label="Close">&times;</button>
       <div class="nl-img"></div>
       <div class="nl-body">
         <div id="nlFormWrap">
           <h2>A welcome gift before you go</h2>
           <div class="nl-rule"></div>
-          <p>Join our list for design news and early access — and receive a <strong>$10 welcome voucher</strong>.</p>
+          <p>Join our list for design news and early access — and receive a <strong>10% off your first order</strong>.</p>
           <form id="nlSubscribe" novalidate>
             <input type="email" name="email" placeholder="Your email address" autocomplete="email" required>
             <button type="submit">Send me my code</button>
@@ -891,7 +891,7 @@ function buildNewsletterPopup() {
         <div class="nl-thanks" id="nlThanks" hidden>
           <h2>Thank you for subscribing</h2>
           <div class="nl-rule"></div>
-          <p>An email is on its way with your <strong>$10 voucher</strong> code — we've also applied it to your cart automatically.</p>
+          <p>An email is on its way with your <strong>10% off</strong> code — we've also applied it to your cart automatically.</p>
           <p class="nl-happy">Happy shopping!</p>
           <button type="button" class="nl-shop" onclick="location.href='shop.html'">Start shopping</button>
         </div>
@@ -925,18 +925,18 @@ function initNewsletterPopup() {
     const email = (new FormData(form).get("email") || "").toString().trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { st.className = "nl-status err"; st.textContent = "Please enter a valid email address."; return; }
     st.className = "nl-status"; st.textContent = "Sending your code…";
-    // Apply the $10 welcome voucher to their cart
+    // Apply the 10% off your first order to their cart
     if (typeof setVoucher === "function" && typeof WELCOME_VOUCHER !== "undefined") setVoucher(WELCOME_VOUCHER);
     try { localStorage.setItem("shd_news", "subscribed"); localStorage.setItem("shd_sub_email", email); } catch (e2) {}
     try {
       await fetch("/.netlify/functions/send-submission", {
         method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
-          subject: "New newsletter subscriber — $10 welcome voucher",
-          fields: [["Email", email], ["Source", "Welcome popup"], ["Code issued", "WELCOME10 ($10 voucher)"]],
+          subject: "New newsletter subscriber — 10% off your first order",
+          fields: [["Email", email], ["Source", "Welcome popup"], ["Code issued", "WELCOME10 (10% off first order)"]],
           replyto: email, name: "",
-          welcomeCode: "WELCOME10", discountLabel: "$10 welcome voucher",
-          customerSubject: "Your $10 welcome voucher — Samira Home Decor",
+          welcomeCode: "WELCOME10", discountLabel: "10% off your first order",
+          customerSubject: "Your 10% off your first order — Samira Home Decor",
         }),
       });
     } catch (e3) { /* code still works on-site even if the email send hiccups */ }
@@ -1279,7 +1279,7 @@ function buildMemberBanner() {
     <button class="promo-close" id="promoClose" aria-label="Close">✕</button>
     <span class="promo-badge">✦ Samira Members</span>
     <div class="promo-copy">
-      <strong>Join free and get a $10 welcome voucher</strong>
+      <strong>Join free and get a 10% off your first order</strong>
       <span>30% referral reward · Christmas vouchers · early access</span>
     </div>
     <button class="btn btn--primary btn--sm" onclick="openMemberModal();hideMemberBanner();">Become a member</button>
@@ -1314,7 +1314,7 @@ function initMemberBanner() {
 }
 
 /* ============================================================
-   Membership sign-up modal ($10 voucher + perks)
+   Membership sign-up modal (10% first-order offer + perks)
    ============================================================ */
 function buildMemberModal() {
   const icGift = `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="7" y="18" width="34" height="9" rx="1.5"/><path d="M10 27v14a1.5 1.5 0 0 0 1.5 1.5h25A1.5 1.5 0 0 0 38 41V27M24 18v24"/><path d="M24 18s-3-8-8-7c-3.4.7-3 6 1 7h7zM24 18s3-8 8-7c3.4.7 3 6-1 7h-7z"/></svg>`;
@@ -1327,7 +1327,7 @@ function buildMemberModal() {
       <button class="member-close" id="memberClose" aria-label="Close">✕</button>
       <div class="rw-head">
         <span class="rw-brand">SAMIRA <strong>REWARDS</strong></span>
-        <p class="rw-offer">Sign up &amp; get a <strong>$10 welcome voucher</strong> to spend on your order</p>
+        <p class="rw-offer">Sign up &amp; get <strong>10% off your first order</strong></p>
       </div>
       <div class="rw-benefits">
         <div class="rw-benefit">
@@ -1393,7 +1393,7 @@ function initMemberModal() {
       });
     }
     closeMemberModal();
-    showToast("Welcome to Samira Home Decor! Your $10 welcome voucher is ready 🎉");
+    showToast("Welcome to Samira Home Decor! Your 10% off your first order is ready 🎉");
   });
 
   // Auto-show once per session on visit (unless already a member or dismissed)
@@ -1604,10 +1604,10 @@ function chatReply(text) {
     html = `Yes, shop now, pay later! 💳 We offer <strong>Afterpay, Klarna and Zip</strong> at checkout, alongside Visa, Mastercard, Amex, PayPal and Apple/Google Pay.`;
 
   else if (has(/\b(member|membership|join|sign up|loyalty|rewards)\b/))
-    html = `Join free and get a <strong>$10 welcome voucher</strong> 🎉, plus a 30% referral reward, Christmas vouchers of up to $300 and early access to new arrivals. Look for the "Become a member" banner, or I can pop it open for you!`;
+    html = `Join free and get <strong>10% off your first order</strong> 🎉, plus a 30% referral reward, Christmas vouchers of up to $300 and early access to new arrivals. Look for the "Become a member" banner, or I can pop it open for you!`;
 
   else if (has(/\b(price|cost|how much|expensive|cheap|budget|afford|discount|sale|coupon|promo|voucher)\b/))
-    html = `We have something for every budget, from $14 coasters to statement furniture 💛. New here? <strong>Become a member for a $10 welcome voucher</strong>, then filter by category in the ${link("shop.html", "Shop")}. Gift cards are available too!`;
+    html = `We have something for every budget, from $14 coasters to statement furniture 💛. New here? <strong>Become a member for 10% off your first order</strong>, then filter by category in the ${link("shop.html", "Shop")}. Gift cards are available too!`;
 
   else if (has(/\b(track|tracking|where.*order|order status|my order|find my order)\b/))
     html = `You can track your order anytime on our ${link("track.html", "Track Your Order")} page, just enter your order number, email or phone used at checkout 📦. You'll also get a tracking link by email when it ships.`;

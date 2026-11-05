@@ -147,10 +147,10 @@
 
   <div id="site-footer"></div>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="js/data.js?v=65"></script>
-  <script src="js/components.js?v=82"></script>
-  <script src="js/cart.js?v=29"></script>
-  <script src="js/main.js?v=14"></script>
+  <script src="js/data.js?v=66"></script>
+  <script src="js/components.js?v=83"></script>
+  <script src="js/cart.js?v=30"></script>
+  <script src="js/main.js?v=15"></script>
   <script src="js/order-status.js"></script>
   <script>
     let accMode = "signup";
@@ -197,7 +197,7 @@
       if (accMode === "signup") {
         el.innerHTML = `
           <div style="background:var(--blush);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:20px;font-size:0.9rem;color:var(--rose-deep)">
-            🎉 Join free and get a <strong>$10 welcome voucher</strong> plus member perks.
+            🎉 Join free and get <strong>10% off your first order</strong> plus member perks.
           </div>
           <form onsubmit="return requestCode(event)">
             <div class="field"><label>Full name</label><input id="suName" autocomplete="name" required></div>
@@ -211,7 +211,7 @@
           <form onsubmit="return requestCode(event)">
             <div class="field"><label>Email</label><input id="authEmailInput" type="email" autocomplete="email" required></div>
             <button type="submit" class="btn btn--primary btn--block" id="authSendBtn">Email me a login code</button>
-            <p class="form-note" style="text-align:center;margin-top:12px">No password needed — we'll email you a one-time code. New here? <a href="#" onclick="setMode('signup');return false;">Create an account</a> for a $10 welcome voucher.</p>
+            <p class="form-note" style="text-align:center;margin-top:12px">No password needed — we'll email you a one-time code. New here? <a href="#" onclick="setMode('signup');return false;">Create an account</a> for 10% off your first order.</p>
           </form>
           ${legal}`;
       }
@@ -324,7 +324,7 @@
         memberSince: base.memberSince || todayAU(),
         memberNo: base.memberNo || genMemberNo(),
         orders: base.orders || [],
-        vouchers: base.vouchers || [{ code: genVoucherCode(), amount: 10, label: "Welcome voucher" }],
+        vouchers: base.vouchers || [{ code: genVoucherCode(), pct: 10, label: "Welcome voucher" }],
       });
       saveAccount(acc);
       try { localStorage.setItem("dm_member", "1"); } catch (_) {}
@@ -350,7 +350,7 @@
       const existing = getAccount();
       if (existing && existing.email) { existing.email = email; existing.provider = label; saveAccount(existing); showToast("Welcome back! 👋"); render(); return; }
       saveAccount({ name: "", email, provider: label, member: true, memberSince: todayAU(),
-        memberNo: genMemberNo(), orders: [], vouchers: [{ code: genVoucherCode(), amount: 10, label: "Welcome voucher" }] });
+        memberNo: genMemberNo(), orders: [], vouchers: [{ code: genVoucherCode(), pct: 10, label: "Welcome voucher" }] });
       try { localStorage.setItem("dm_member", "1"); } catch (err) {}
       showToast(`Signed in with ${label}, welcome to Samira Home Decor! 🎉`);
       render();
@@ -362,7 +362,7 @@
         saveAccount(Object.assign(existing, { name: p.name || existing.name || "", email: p.email, provider: "Google",
           member: true, memberSince: existing.memberSince || todayAU(),
           memberNo: existing.memberNo || genMemberNo(), orders: existing.orders || [],
-          vouchers: existing.vouchers || [{ code: genVoucherCode(), amount: 10, label: "Welcome voucher" }] }));
+          vouchers: existing.vouchers || [{ code: genVoucherCode(), pct: 10, label: "Welcome voucher" }] }));
         try { localStorage.setItem("dm_member", "1"); } catch (err) {}
         showToast("Signed in with Google 🎉"); render();
       } catch (e) { showToast("Google sign-in could not be completed"); }
@@ -374,15 +374,15 @@
       if (!acc.memberNo) { acc.memberNo = genMemberNo(); changed = true; }
       if (!Array.isArray(acc.orders)) { acc.orders = getStoredOrders(acc.email); changed = true; }
       if (!Array.isArray(acc.vouchers)) { acc.vouchers = []; changed = true; }
-      // The 10% welcome code has ended: members who still held it get the $10 welcome voucher
+      // Members without a first-order offer yet get the 10% welcome offer
       if ("coupon" in acc) {
-        if (!acc.orders.length && !acc.vouchers.some(v => /welcome/i.test(v.label || ""))) acc.vouchers.push({ code: genVoucherCode(), amount: 10, label: "Welcome voucher" });
+        if (!acc.orders.length && !acc.vouchers.some(v => /welcome/i.test(v.label || ""))) acc.vouchers.push({ code: genVoucherCode(), pct: 10, label: "Welcome voucher" });
         delete acc.coupon;
         changed = true;
       }
       // The points program has ended: convert any balance into $10 vouchers once
       if ("points" in acc) {
-        for (let i = 0; i < Math.floor((acc.points || 0) / 100); i++) acc.vouchers.push({ code: genVoucherCode(), amount: 10, label: "Points reward" });
+        for (let i = 0; i < Math.floor((acc.points || 0) / 100); i++) acc.vouchers.push({ code: genVoucherCode(), pct: 10, label: "Points reward" });
         delete acc.points;
         changed = true;
       }
@@ -451,8 +451,7 @@
     const XMAS_TIERS = [
       { name: "Silver", min: 0, amt: 50 },
       { name: "Sapphire", min: 1500, amt: 100 },
-      { name: "Gold", min: 3500, amt: 200 },
-      { name: "Platinum", min: 5000, amt: 300 }
+      { name: "Gold", min: 3500, amt: 300 }
     ];
     // Only home decor items count: gift cards, vouchers, hampers, gift items and packaging don't.
     function xmasIsDecor(it) {
@@ -507,10 +506,10 @@
         <div class="ar-grid">
           <div class="ar-card">
             <div class="ar-ic">🎉</div>
-            <h4>$10 welcome voucher</h4>
+            <h4>10% off your first order</h4>
             ${welcome
               ? `<p>Ready to use on your next order. Code <strong>${welcome.code}</strong></p><button class="btn btn--dark btn--sm" onclick="applyVoucher('${welcome.code}')">Apply to next order</button>`
-              : `<p>You've used your welcome voucher. Thank you for shopping with us.</p>`}
+              : `<p>You've used your first-order discount. Thank you for shopping with us.</p>`}
           </div>
           <div class="ar-card">
             <div class="ar-ic">💌</div>
@@ -539,7 +538,7 @@
       const acc = getAccount();
       const v = (acc.vouchers || []).find(x => x.code === code && !x.used);
       if (!v) return;
-      if (typeof setVoucher === "function") setVoucher({ code: v.code, amount: v.amount });
+      if (typeof setVoucher === "function") setVoucher({ code: v.code, amount: v.amount, label: v.label });
       showToast("Voucher applied, it'll show at checkout ✦");
       location.href = "cart.html";
     }

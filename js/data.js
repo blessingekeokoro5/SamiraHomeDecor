@@ -3105,7 +3105,7 @@ const ANNOUNCEMENTS = [
   "🌏 We ship to AU, NZ, UK, USA, Canada, Switzerland &amp; Germany",
   "🌸 New décor finds added weekly",
   "🚚 See your delivery dates at checkout",
-  "💝 Join free & get a $10 welcome voucher",
+  "💝 Join free & get a 10% off your first order",
   "🎁 Build your own luxury hamper",
   "♡ Tap the heart to save pieces for later",
   "💬 Questions? Message us on WhatsApp"

@@ -86,20 +86,27 @@ function orderDiscount(sub) {
   try { const f = getFlashSale(); if (f.active) flashPct = f.percent; } catch (e) {}
   let campaignPct = 0, campaignLabel = "";
   try { const c = getCampaign(); if (c.active) { campaignPct = c.percent; campaignLabel = c.label; } } catch (e) {}
-  const pct = Math.max(flashPct, campaignPct);
+  // First-order 10% off (welcome offer); the best single discount applies, they don't stack
+  let welcomePct = 0;
+  try { const v = getVoucher(); if (v && v.pct) welcomePct = v.pct; } catch (e) {}
+  const pct = Math.max(flashPct, campaignPct, welcomePct);
   let label = "";
   if (pct > 0) {
     if (campaignPct === pct) label = `${campaignLabel} (${pct}% off)`;
-    else label = `Flash sale (${pct}% off)`;
+    else if (flashPct === pct) label = `Flash sale (${pct}% off)`;
+    else label = `First order ${pct}% off`;
   }
   return { pct, amount: Math.round(sub * pct / 100), label };
 }
 
 /* Rewards / gift dollar-voucher applied to the next order (separate from % coupons) */
 function getVoucher() { try { return JSON.parse(localStorage.getItem("dm_voucher") || "null"); } catch (e) { return null; } }
-function setVoucher(v) { try { v ? localStorage.setItem("dm_voucher", JSON.stringify(v)) : localStorage.removeItem("dm_voucher"); } catch (e) {} }
-const WELCOME_VOUCHER = { code: "WELCOME10", amount: 10, label: "Welcome voucher" };
-/* The old 10% welcome code became the $10 welcome voucher: honour it for anyone who already had it applied */
+function setVoucher(v) {
+  // Welcome vouchers are now 10% off the first order
+  if (v && (v.code === "WELCOME10" || /welcome/i.test(v.label || ""))) v = { code: v.code, pct: 10, label: "First order 10% off" };
+  try { v ? localStorage.setItem("dm_voucher", JSON.stringify(v)) : localStorage.removeItem("dm_voucher"); } catch (e) {} }
+const WELCOME_VOUCHER = { code: "WELCOME10", pct: 10, label: "First order 10% off" };
+/* Welcome offer: 10% off the first order. Older $10 welcome vouchers already in a cart become the 10% offer. */
 (function () {
   try {
     if (localStorage.getItem("dm_coupon") && !getVoucher()) setVoucher(WELCOME_VOUCHER);
@@ -485,3 +492,7 @@ async function emailMyBag() {
     bagMailtoFallback(cart);
   }
 }
+
+(function () {
+  try { const v = JSON.parse(localStorage.getItem("dm_voucher") || "null"); if (v && !v.pct && (v.code === "WELCOME10" || /welcome/i.test(v.label || ""))) setVoucher(v); } catch (e) {}
+})();
