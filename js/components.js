@@ -1931,3 +1931,25 @@ window.openLiveChat = function (msg) {
     (document.head || document.documentElement).appendChild(s);
   } catch (e) {}
 })();
+
+
+/* Priority WhatsApp chat for overseas customers. Opens WhatsApp with a
+   ready-to-fill message so the team has everything for a fast reply. */
+function overseasWAText(o) {
+  o = o || {};
+  const v = (x) => (x && String(x).trim()) || "";
+  const links = (o.links || []).filter(Boolean);
+  return [
+    "Hi Samira Home Decor, I'm an overseas customer and would like some help.",
+    "",
+    "Name: " + v(o.name),
+    "Phone: " + v(o.phone),
+    "Location: " + v(o.location),
+    "Email: " + v(o.email),
+    "Enquiring about: " + v(o.enquiry),
+    "Product link" + (links.length > 1 ? "s" : "") + ": " + (links.length ? links.join("\n") : ""),
+    "Photos: (attach any photos to this chat)"
+  ].join("\n");
+}
+function overseasWAUrl(o) { return "https://wa.me/61451609398?text=" + encodeURIComponent(overseasWAText(o)); }
+function openOverseasWA(o) { window.open(overseasWAUrl(o), "_blank", "noopener"); }
