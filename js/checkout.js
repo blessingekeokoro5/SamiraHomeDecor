@@ -174,6 +174,10 @@ function checkoutTotals() {
 }
 
 function updateTotalsUI() {
+  const ih = document.getElementById("intlHelp");
+  if (ih) ih.innerHTML = shipCountry() !== "Australia"
+    ? `<a href="https://wa.me/61451609398?text=${encodeURIComponent("Hi Samira Home Decor, I'm checking out from " + shipCountry() + " and need some help with my order.")}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 14px;border-radius:10px;background:#E9F7EF;color:#0B1F3A;text-decoration:none;font-size:.92rem;line-height:1.4"><span style="font-size:1.4rem">💬</span><span><strong>Priority help for overseas customers.</strong> Chat with us directly on WhatsApp for quick assistance with your order.</span></a>`
+    : "";
   const t = checkoutTotals();
   const shipTxt = t.shipping === 0 ? "Free" : money(t.shipping);
   const line = document.getElementById("coShipLine");
@@ -262,6 +266,7 @@ function renderCheckout() {
         <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Delivery</span></button>`}`}
       </div>
       <div class="fulfil-note" id="fulfilNote"></div>
+      <div id="intlHelp"></div>
     </div>
     <div class="co-grid">
       <div>
