@@ -109,6 +109,7 @@ function cartWeight() {
       return;
     }
     const p = (typeof findProduct === "function") ? findProduct(i.id) : null;
+    if (p && p.expressShip) return;                           // own per-item express fee
     const raw = (p && p.weight) != null ? p.weight : i.weight;
     let w = null;
     // First number only"88 kg / 100 kg" must read as 88, not 88100.
@@ -119,12 +120,25 @@ function cartWeight() {
   return Math.round(Math.max(kg, 0.1) * 100) / 100;
 }
 // Weight-based quote for the selected region
+/* Express-only items (sofas): their own delivery fee per item, kept out of
+   the weight-based quote. Must match shippingFor() on the payment server. */
+function expressShipFee() {
+  let fee = 0;
+  getCart().forEach(function (i) {
+    const p = (!i.giftCard && !i.hamper && typeof findProduct === "function") ? findProduct(i.id) : null;
+    if (p && p.expressShip) fee += p.expressShip * (i.qty || 1);
+  });
+  return fee;
+}
 function shipQuote(afterDisc) {
   const z = SHIP_ZONES[shipCountry()] || SHIP_ZONES["Australia"];
   const weight = cartWeight();
-  let fee = Math.round((z.base + z.perKg * weight) * 100) / 100;
-  if (z.freeOver && afterDisc >= z.freeOver) fee = 0;
-  return { fee: fee, weight: weight, days: z.days, freeOver: z.freeOver };
+  const xfee = expressShipFee();
+  const hasRest = getCart().some(function (i) { const p = (!i.giftCard && !i.hamper && typeof findProduct === "function") ? findProduct(i.id) : null; return !i.giftCard && !(p && p.expressShip); });
+  let fee = hasRest ? Math.round((z.base + z.perKg * weight) * 100) / 100 : 0;
+  if (hasRest && z.freeOver && afterDisc >= z.freeOver) fee = 0;
+  fee += xfee;
+  return { fee: fee, weight: weight, days: z.days, freeOver: z.freeOver, express: xfee > 0 };
 }
 
 function checkoutTotals() {
@@ -157,7 +171,7 @@ function updateTotalsUI() {
   window._intlBlocked = !!bulky;
   if (line && bulky) {
     line.innerHTML = `<span style="color:var(--rose-deep)">⚠️ <strong>${bulky.name}</strong> is too large to ship to ${t.country} (over ${INTL_MAX_KG}kg). It can only be delivered within Australia — please remove it for an international order, or <a href="contact.html">contact us</a> for a freight quote.</span>`;
-  } else if (line) line.innerHTML = `<strong>${window._fulfil === "express" ? "Express" : "Standard"}</strong> · ${shipTxt} · to ${t.country} · calculated for ~${t.weight}kg · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
+  } else if (line) line.innerHTML = `<strong>${(window._fulfil === "express" || expressShipFee() > 0) ? "Express" : "Standard"}</strong> · ${shipTxt} · to ${t.country} · calculated for ~${t.weight}kg · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
   const s = document.getElementById("sumShip"); if (s) s.textContent = shipTxt;
   const gr = document.getElementById("sumGiftRow"); if (gr) gr.style.display = t.giftCard ? "flex" : "none";
   const gv = document.getElementById("sumGift"); if (gv) gv.textContent = "−" + money(t.giftCard);

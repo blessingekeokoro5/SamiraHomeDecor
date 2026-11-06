@@ -228,15 +228,24 @@ function resolveLine(raw, member) {
     unitPrice: round2(unitPrice),
     qty,
     weight: p.weight != null ? p.weight : DEFAULT_ITEM_KG,
+    expressShip: p.expressShip != null ? p.expressShip : null,
   };
 }
 
 function shippingFor(country, fulfil, lines, afterDiscount) {
 
   const zone = SHIP_ZONES[country] || SHIP_ZONES["Australia"];
-  const kg = round2(Math.max(lines.reduce((n, l) => n + l.weight * l.qty, 0), 0.1));
-  let amount = round2(zone.base + zone.perKg * kg);
-  if (zone.freeOver && afterDiscount >= zone.freeOver) amount = 0;
+  // Express-only items (sofas) carry their own delivery fee per item and
+  // are left out of the weight-based quote. Keep in step with js/checkout.js.
+  const expressFee = round2(lines.reduce((n, l) => n + (l.expressShip ? l.expressShip * l.qty : 0), 0));
+  const rest = lines.filter((l) => !l.expressShip);
+  let amount = 0;
+  if (rest.length) {
+    const kg = round2(Math.max(rest.reduce((n, l) => n + l.weight * l.qty, 0), 0.1));
+    amount = round2(zone.base + zone.perKg * kg);
+    if (zone.freeOver && afterDiscount >= zone.freeOver) amount = 0;
+  }
+  if (expressFee > 0) return { amount: round2(amount + expressFee), label: "Express delivery", days: [4, 14] };
   if (fulfil === "express") return { amount: round2(amount + EXPRESS_EXTRA), label: "Express shipping", days: [3, 5] };
   if (fulfil === "gift") return { amount, label: amount === 0 ? "Free standard shipping" : "Standard shipping", days: [5, 10] };
   return { amount, label: amount === 0 ? "Free standard shipping" : "Standard shipping", days: zone.days };

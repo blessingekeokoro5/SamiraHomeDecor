@@ -259,7 +259,7 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=69"></script>
+  <script src="js/data.js?v=70"></script>
   <script src="js/ai-overviews.js?v=4"></script>
   <script src="js/components.js?v=85"></script>
   <script src="js/cart.js?v=30"></script>
@@ -710,7 +710,12 @@
               <button class="btn btn--primary" onclick="addToCart('${p.id}', pdpQty, pdpColour, pdpSize, pdpSizePrice)">Add to cart</button>
             </div>`}
             ${p.price == null ? (p.tag !== "Coming Out Soon" ? "" : `<p style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)"><strong style="color:var(--ink)">Coming out soon.</strong> This kit is on its way and product photos are being uploaded. Enquire now to hear first when it's ready.</p>`) : `<div style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)">
-              ${p.lead
+              ${p.expressShip
+                ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">⚡ Express delivery only</span> <span style="color:var(--body)">Order today, receive around <strong style="color:var(--ink)">${typeof arriveRange === "function" ? arriveRange(p) : ""}</strong></span>
+                  <div style="margin-top:8px">Estimated delivery cost: about <strong style="color:var(--ink)">$${Number(p.expressShip).toLocaleString("en-AU")}</strong> per item, added at checkout.</div>
+                  <div style="margin-top:6px;font-size:.84rem">Delivery times can't be guaranteed if there are delays beyond our control, but we'll always keep you updated on your delivery's progress.</div>
+                  <a class="btn btn--outline" style="margin-top:10px" href="contact.html?subject=${encodeURIComponent("Delivery enquiry: " + p.name)}" onclick="if(typeof openLiveChat==='function'){openLiveChat(this.dataset.msg);return false;}" data-msg="${("Hi Samira Home Decor, I'd like to confirm the final delivery cost and timing for: " + p.name).replace(/"/g, "&quot;")}">💬 Enquire to confirm delivery</a>`
+                : p.lead
                 ? `<span style="display:inline-block;font-size:.78rem;font-weight:600;color:#8a7f77;background:#F4EFE6;padding:5px 12px;border-radius:20px">⏳ Made to order</span> <span style="color:var(--body)">Ships in <strong style="color:var(--ink)">${p.lead}</strong></span>`
                 : `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">✓ Ready to ship</span> <span style="color:var(--body)">Leaves our warehouse in <strong style="color:var(--ink)">${p.dispatch || "1 to 2 business days"}</strong>${p.deliveryTime ? `, delivered in <strong style="color:var(--ink)">${p.deliveryTime}</strong>` : ""}</span>`}
               ${(!p.lead && p.fastShip) ? `<div style="margin-top:8px;font-size:0.95rem;color:var(--body)">🚚 Get it by <strong style="color:var(--ink)">${(typeof estArrival === "function" ? estArrival(6) : "")}</strong></div>` : ""}

@@ -76,6 +76,7 @@ PRODUCTS.forEach((p) => {
     weight: num(p.weight) != null ? num(p.weight) : estimateWeight(p),
     sizes,
     sizesMember,
+    expressShip: num(p.expressShip),             // express-only delivery fee per item (sofas)
   };
 });
 
