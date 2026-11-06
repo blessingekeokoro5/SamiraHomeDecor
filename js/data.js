@@ -2455,7 +2455,9 @@ const PRODUCTS = [
   { id: "lx74", added: "2026-11-06", arriveDays: [6, 11], variantImg: {"Dark Khaki":"assets/products/lx74.webp", "White":"assets/products/lx74-7.webp", "Charcoal":"assets/products/lx74-8.webp"}, name: "Lumen Smart Bedside Table with Wireless Charging & Night Glow", cat: "Bedroom", room: "Bedroom", price: 1500, memberPrice: 1200, sku: "SH-11333", tag: "New", ph: "", img: "assets/products/lx74.webp",
     imgs: ["assets/products/lx74.webp", "assets/products/lx74-2.webp", "assets/products/lx74-3.webp", "assets/products/lx74-4.webp", "assets/products/lx74-5.webp", "assets/products/lx74-6.webp", "assets/products/lx74-7.webp", "assets/products/lx74-8.webp", "assets/products/lx74-9.webp"],
     colours: [{ name: "Dark Khaki", hex: "#b89a7e" }, { name: "White", hex: "#f2efe9" }, { name: "Charcoal", hex: "#2a2a2a" }],
-    desc: "Meet Lumen, the bedside table that does more than hold your book. Set your phone down on the glass top to charge it wirelessly overnight, or plug in through the built-in USB-C port. A halo of LED light frames the top in your choice of three light colours, and a motion-sensor night light glows warmly beneath the base when you get up, lighting your way without waking anyone. Two smooth-gliding drawers keep chargers, glasses and night-time essentials tidy, and the solid pine frame wrapped in soft-touch microfibre leather brings a calm, modern look to any bedroom.",
+    optionLabel: "Version",
+    sizes: [{ label: "Standard", price: 1500, memberPrice: 1200 }, { label: "Standard + Bluetooth speaker", price: 1520, memberPrice: 1220 }, { label: "Standard + password lock", price: 1520, memberPrice: 1220 }, { label: "Standard + Bluetooth speaker + password lock", price: 1540, memberPrice: 1240 }],
+    desc: "Meet Lumen, the bedside table that does more than hold your book. Set your phone down on the glass top to charge it wirelessly overnight, or plug in through the built-in USB-C port. A halo of LED light frames the top in your choice of three light colours, and a motion-sensor night light glows warmly beneath the base when you get up, lighting your way without waking anyone. Two smooth-gliding drawers keep chargers, glasses and night-time essentials tidy, and the solid pine frame wrapped in soft-touch microfibre leather brings a calm, modern look to any bedroom. Upgrade to add a built-in Bluetooth speaker, a password-lock drawer for valuables, or both.",
     features: [
       "Built-in wireless charging pad on the tempered glass top",
       "USB-C charging port for a second device",
@@ -2463,9 +2465,9 @@ const PRODUCTS = [
       "Motion-sensor night light under the base",
       "Two smooth-glide drawers for bedside storage",
       "Solid pine frame wrapped in microfibre leather",
-      "Three colours: Dark Khaki, White or Charcoal"
-    ],
-    specs: { "Type": "Smart bedside table", "Frame": "Solid pine wood", "Covering": "Microfibre leather", "Top": "Tempered glass", "Drawers": "2", "Charging": "Wireless charging pad and USB-C port", "Lighting": "3-colour LED light ring and motion-sensor night light", "Power": "Plugs into a wall socket", "Use": "Bedroom" },
+      "Optional upgrades: Bluetooth speaker and/or password-lock drawer",
+      "Three colours: Dark Khaki, White or Charcoal"    ],
+    specs: { "Type": "Smart bedside table", "Frame": "Solid pine wood", "Covering": "Microfibre leather", "Top": "Tempered glass", "Drawers": "2", "Charging": "Wireless charging pad and USB-C port", "Lighting": "3-colour LED light ring and motion-sensor night light", "Versions": "Standard, + Bluetooth speaker, + password lock, or both", "Power": "Plugs into a wall socket", "Use": "Bedroom" },
     dimensions: "50cm W x 40cm D x 48cm H",
     boxContents: ["1 x smart bedside table", "Power cable"],
     care: "Wipe the leather and frame with a soft damp cloth and dry. Clean the glass top with glass cleaner sprayed onto a cloth, not directly onto the table. Unplug before cleaning and keep liquids away from the charging area." },
