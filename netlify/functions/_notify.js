@@ -18,7 +18,7 @@ async function emailShop(subject, body) {
       body: JSON.stringify({
         access_key: key,
         subject,
-        from_name: "Samira Home décor for every house",
+        from_name: "Samira Home Decor",
         email: to,
         message: body,
       }),

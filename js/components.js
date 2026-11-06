@@ -96,7 +96,7 @@ const TIKTOK_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" width="20" heig
 const YOUTUBE_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg>';
 
 /* ---- Logo loader: try common formats before falling back to the drawn mark ---- */
-const LOGO_SRCS = ["assets/logo.svg?v=6", "assets/logo.png", "assets/logo.jpg", "assets/logo.jpeg", "assets/logo.webp"];
+const LOGO_SRCS = ["assets/logo.svg?v=7", "assets/logo.png", "assets/logo.jpg", "assets/logo.jpeg", "assets/logo.webp"];
 function nextLogo(img) {
   const i = (+img.dataset.i || 0) + 1;
   if (i < LOGO_SRCS.length) { img.dataset.i = i; img.src = LOGO_SRCS[i]; }
@@ -326,18 +326,21 @@ function buildHeader() {
     <div class="container nav-utility">
       <button class="nav-toggle" id="navToggle" aria-label="Menu">${IC.menu}</button>
       <a class="brand" href="index.html" aria-label="Samira Home Decor home">
-        <img class="brand-logo-full" src="assets/logo.svg?v=6" data-i="0" alt="Samira Home Decor, Style Your Space by Samira" onerror="nextLogo(this)">
+        <img class="brand-logo-full" src="assets/logo.svg?v=7" data-i="0" alt="Samira Home Decor, Style Your Space by Samira" onerror="nextLogo(this)">
         <span class="brand-mark">
           <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <!-- house mark: double roof, pendant lamp, two potted plants -->
-            <path d="M6 94 V45 L46 5 L54 13"/><path d="M20 94 V52 L62 9 L96 43 V94"/><path d="M20 94 H96"/><path d="M51 30 V40"/><path d="M43 47 C43 39.5 59 39.5 59 47 Z"/><path d="M37 78 H57 L54 93 H40 Z"/><path d="M47 78 C39 72 34 64 37 57 C44 61 47 69 47 78 Z"/><path d="M47 78 C49 67 54 61 61 60 C61 68 55 74 47 78 Z"/><path d="M47 78 C46 70 47 63 51 58"/><path d="M67 70 H83 L80 93 H70 Z"/><path d="M75 70 C70 63 67 56 66 49 C71 54 74 61 75 70 Z"/><path d="M75 70 C75 61 77 53 80 46 C81 54 79 62 75 70 Z"/><path d="M75 70 C79 63 84 58 89 56 C87 62 82 67 75 70 Z"/><path d="M75 70 C72 66 68 63 63 62"/>
+            <!-- house mark: home outline with chimney and a heart -->
+            <path d="M6 50 L50 10 L70 28.2"/><path d="M80 37.3 L94 50"/>
+            <path d="M70 28.2 V14 H80 V37.3"/>
+            <path d="M18 39.1 V92 H82 V39.1"/>
+            <path d="M50 76 C37 66 34 57 40 52 C45 48 50 51 50 55.5 C50 51 55 48 60 52 C66 57 63 66 50 76 Z" fill="currentColor" stroke="none"/>
           </svg>
         </span>
         <span class="brand-text">
           <span class="bt-main">Samira Home Decor</span>
           <span class="bt-sub">Style Your Space</span>
         </span>
-        <span class="brand-tagline">Home décor for every house</span>
+        <span class="brand-tagline">Beautiful Spaces, Brighter Lives</span>
       </a>
       <form class="header-search" id="headerSearch" role="search">
         <button type="button" class="hs-tag" onclick="location.href='stylist.html'">Get inspired</button>

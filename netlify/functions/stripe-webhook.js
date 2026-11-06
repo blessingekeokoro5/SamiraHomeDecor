@@ -68,7 +68,7 @@ async function emailOrder(session, lineItems) {
       body: JSON.stringify({
         access_key: key,
         subject: `Samira Home Decor — new paid order ${(session.metadata && session.metadata.order_no) || ""} (${money(session.amount_total, session.currency)})`,
-        from_name: "Samira Home décor for every house",
+        from_name: "Samira Home Decor",
         email: to,
         message: body,
       }),

@@ -60,7 +60,7 @@ exports.handler = async (event) => {
     <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#0B1F3A;padding:8px">
       <div style="text-align:center;padding:22px 0 6px">
         <div style="font-family:Georgia,serif;font-size:28px;font-weight:bold;letter-spacing:3px;color:#14365F">Samira Home Decor</div>
-        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8a7f77">Home décor for every house</div>
+        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8a7f77">Beautiful Spaces, Brighter Lives</div>
       </div>
       <div style="background:#14365F;color:#fff;border-radius:14px;padding:24px 28px;text-align:center;border-bottom:4px solid #C6A15B">
         <div style="font-size:22px;font-family:Georgia,serif">${esc(heading)} ✦</div>

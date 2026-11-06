@@ -84,7 +84,7 @@ function buildHtml(featured) {
     </div>
     <div style="text-align:center;padding:22px 0 8px">
       <div style="font-family:Georgia,serif;font-size:27px;font-weight:bold;color:${NAVY}">Samira Home Decor</div>
-      <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${TAUPE};margin-top:4px">Home décor for every house</div>
+      <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${TAUPE};margin-top:4px">Beautiful Spaces, Brighter Lives</div>
     </div>
     <a href="${heroHref}" style="text-decoration:none"><img src="${heroImg}" width="100%" alt="${heroAlt}" style="display:block;width:100%;height:360px;object-fit:cover;border-radius:14px"></a>
     <div style="background:${NAVY};border-radius:0 0 14px 14px;padding:22px;text-align:center;border-bottom:4px solid ${GOLD};margin-top:-6px">

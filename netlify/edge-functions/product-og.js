@@ -53,7 +53,7 @@ export default async function handler(request, context) {
     const raw = product.i ? "/" + String(product.i).replace(/^\//, "") : FALLBACK_IMG;
     const image = `${SITE}/.netlify/images?url=${encodeURIComponent(raw)}&w=1200&h=630&fit=cover&fm=jpg&q=82`;
     const title = `${product.n}${product.p ? " — " + money(product.p) : ""} | Samira Home Decor`;
-    const description = product.d || "Home décor for every house, delivered Australia-wide.";
+    const description = product.d || "Beautiful spaces, brighter lives. Home décor delivered Australia-wide.";
     const pageUrl = `${SITE}/product.html?id=${encodeURIComponent(id)}`;
 
     // Straight string work on the head: no rewriter dependency, nothing to break.

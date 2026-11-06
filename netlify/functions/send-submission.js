@@ -50,7 +50,7 @@ const isEmail = (s) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(s || ""));
 // Shared branded header: blue banner + gold accent bar — matches the order email
 function brandHeader(title, subtitle, brand, tagline) {
   const name = brand || SENDER_NAME;
-  const tag = tagline || "Home décor for every house";
+  const tag = tagline || "Beautiful Spaces, Brighter Lives";
   return `
     <div style="text-align:center;padding:22px 0 6px">
       <div style="font-family:Georgia,serif;font-size:28px;font-weight:bold;letter-spacing:3px;color:#14365F">${esc(name)}</div>
@@ -104,7 +104,7 @@ function welcomeHtml(name, code, discountLabel) {
     <!-- brand header -->
     <div style="text-align:center;padding:20px 0 12px">
       <div style="font-family:Georgia,serif;font-size:27px;font-weight:bold;color:${NAVY}">Samira Home Decor</div>
-      <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${TAUPE};margin-top:4px">Home décor for every house</div>
+      <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:${TAUPE};margin-top:4px">Beautiful Spaces, Brighter Lives</div>
     </div>
     <!-- welcome banner -->
     <div style="background:${NAVY};border-radius:14px;padding:24px;text-align:center;border-bottom:4px solid ${GOLD}">
