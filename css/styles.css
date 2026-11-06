@@ -2250,3 +2250,5 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
   .svc-display-tile { border-radius: 12px; }
   .svc-display-tile span { font-size: .7rem; padding: 5px 9px; left: 8px; bottom: 8px; }
 }
+@media (max-width: 600px) { .brand-tagline { font-size: .46rem; letter-spacing: .02em; overflow: visible; } }
+@media (max-width: 380px) { .brand-tagline { font-size: .42rem; letter-spacing: 0; } }
