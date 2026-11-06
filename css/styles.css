@@ -1518,7 +1518,7 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
 }
 
 /* Shop-by-room bar (Home Styling page) */
-.room-nav { background: var(--ink); }
+.room-nav { background: var(--ink); overflow: hidden; }
 /* "Spaces we style" scrolling strip */
 .spaces-inner { display: flex; align-items: center; gap: 24px; padding: 13px 0; }
 .spaces-label { color: var(--rose-soft); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.7rem; font-weight: 600; white-space: nowrap; flex: none; }
@@ -1531,7 +1531,7 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
 .spaces-track i { color: rgba(255,255,255,0.35); font-style: normal; }
 .spaces-marquee:hover .spaces-track { animation-play-state: paused; }
 @keyframes spacesScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@media (max-width: 600px) { .spaces-inner { flex-direction: column; gap: 8px; padding: 12px 0; } }
+@media (max-width: 600px) { .spaces-inner { flex-direction: column; align-items: stretch; gap: 8px; padding: 12px 0; } .spaces-label { text-align: center; } .spaces-marquee { width: 100%; } }
 
 /* Product image zoom (magnifier button + lightbox) */
 .zoom-btn { position: absolute; bottom: 10px; right: 10px; z-index: 4; width: 34px; height: 34px;
@@ -2208,4 +2208,27 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
   .announce { min-height: 50px; padding: 20px 10px 10px; align-items: flex-end; }
   .announce, .announce-inner, .announce-track { font-size: .7rem !important; letter-spacing: .05em !important; }
   .announce-track { white-space: normal; }
+}
+
+/* Service packages: one per row on phones (product grids keep two) */
+@media (max-width: 640px) {
+  .grid-3:has(> .pkg) { grid-template-columns: 1fr; gap: 22px; }
+  .pkg { padding: 26px 22px; }
+}
+
+/* Services page on phones: two services and two projects per row, so
+   the booking form isn't buried under a very long page */
+@media (max-width: 760px) {
+  .svc-circles { grid-template-columns: repeat(2, 1fr); gap: 22px 14px; max-width: none; }
+  .svc-circle { margin: 0; }
+  .svc-title { font-size: 1rem; padding: 0 10px; }
+  .svc-circle figcaption { font-size: 0.8rem; margin-top: 10px; line-height: 1.45; }
+  .svc-circle figcaption .btn { padding: 7px 12px; font-size: 0.7rem; }
+}
+@media (max-width: 700px) {
+  .proj-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .news-copy, .news-form2 { min-width: 0; max-width: 100%; box-sizing: border-box; }
+  .news-form2 input { min-width: 0; }
 }

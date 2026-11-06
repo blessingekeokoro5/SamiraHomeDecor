@@ -19,7 +19,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
-  <link rel="stylesheet" href="css/styles.css?v=61">
+  <link rel="stylesheet" href="css/styles.css?v=62">
   <style>
     .svc-hero { position: relative; overflow: hidden; border-radius: var(--radius-lg); min-height: 540px; display: flex; align-items: center; box-shadow: var(--shadow); }
     .svc-hero-slides { position: absolute; inset: 0; z-index: 0; }
@@ -52,10 +52,13 @@
       <span class="eyebrow">Property Styling / Staging · Interior Design · Vacation Rentals · Home Décor Personal Shopper</span>
       <h1>Beautifully styled, effortlessly you</h1>
       <p>Personalised property styling &amp; staging, interior design and vacation rental styling, for living beautifully today or selling faster tomorrow. Enquire to get started.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px">
+        <a class="btn btn--primary" href="#book">Book a consultation</a>
+        <a class="btn btn--outline" href="#services">View our services</a>
+      </div>
     </div>
   </section>
 
-  <!-- Spaces we style -->
   <section class="room-nav" aria-label="Spaces we style">
     <div class="container spaces-inner">
       <span class="spaces-label">Spaces we style</span>
@@ -68,38 +71,7 @@
     </div>
   </section>
 
-  <!-- Intro -->
-  <section class="section">
-    <div class="container">
-      <div class="svc-hero reveal">
-        <div class="svc-hero-slides" id="svcHeroSlides">
-          <div class="svc-hero-slide active" style="background-image:url('assets/hero.jpg')"></div>
-          <div class="svc-hero-slide" style="background-image:url('assets/services/staging-feature.jpg')"></div>
-          <div class="svc-hero-slide" style="background-image:url('assets/services/interior-design-feature.jpg')"></div>
-          <div class="svc-hero-slide" style="background-image:url('assets/services/property-styling.jpg')"></div>
-        </div>
-        <div class="svc-hero-scrim"></div>
-        <div class="svc-hero-inner">
-          <span class="eyebrow">Considered, layered &amp; lived-in</span>
-          <h2>Styling that tells your story</h2>
-          <p class="lead">Whether you're refreshing a single room or preparing a home for market, we bring a considered eye, a curated inventory and hands-on care, so your space feels warm, intentional and unmistakably yours.</p>
-          <ul class="feature-list">
-            <li>In-home styling consultations</li>
-            <li>Full-home staging for sale</li>
-            <li>Interior design plans, room by room</li>
-            <li>Shoppable styling plans from the Samira Home Decor shop</li>
-          </ul>
-          <div class="btn-row" style="margin-top:26px">
-            <a class="btn btn--primary" href="#book">Book a consultation</a>
-            <a class="btn btn--outline" href="stylist.html">✦ Try Samira Stylera</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Three services -->
-  <section class="section bg-cream2">
+  <section class="section bg-cream2" id="services">
     <div class="container">
       <div class="section-head reveal"><span class="eyebrow">Services</span><h2>Ways to work together</h2>
         <p>We're dedicated to helping you live beautifully today, or sell faster tomorrow, with a considered, hands-on approach.</p></div>
@@ -129,11 +101,38 @@
           <figcaption>Residential &amp; commercial cleaning — standard, deep, spring, move-in, end-of-lease and office cleans, booked online with clear, fixed prices.<br><a class="btn btn--outline btn--sm" href="cleaning-services.html" style="margin-top:12px">Learn more →</a></figcaption>
         </figure>
       </div>
-      <div class="text-center" style="margin-top:40px"><a class="btn btn--dark" href="contact.html">Get in touch →</a></div>
+      <div class="text-center" style="margin-top:40px"><a class="btn btn--dark" href="#book">Book a consultation →</a> <a class="btn btn--outline" href="contact.html" style="margin-left:8px">Get in touch</a></div>
     </div>
   </section>
 
-  <!-- Our process -->
+  <section class="section" id="packages">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Styling packages</span><h2>Considered packages, tailored to you</h2>
+        <p>Every space is different, so each package is priced to suit your project. Tell us what you need and we'll send a personalised quote.</p></div>
+      <div class="grid grid-3">
+        <div class="pkg reveal"><h3>Property Styling / Staging</h3><div class="amount amount--quote">Price on enquiry</div>
+          <ul><li>In-home styling consultations</li><li>Room-by-room styling plan &amp; mood board</li><li>Full-home staging for sale</li><li>Furniture &amp; décor hire</li><li>Install, style &amp; de-stage</li><li>Photography styling</li></ul>
+          <a class="btn btn--outline btn--block" href="#" onclick="openEnquire();return false;">Request a quote</a></div>
+        <div class="pkg featured reveal"><h3>Interior Design</h3><div class="amount amount--quote">Price on enquiry</div>
+          <ul><li>Full interior design consultation</li><li>Layouts, palettes &amp; material selections</li><li>Curated, shoppable product plan</li><li>Sourcing &amp; coordination</li><li>Project managed to completion</li><li>Styling &amp; the final reveal</li></ul>
+          <a class="btn btn--primary btn--block" href="#" onclick="openEnquire();return false;">Request a quote</a></div>
+        <div class="pkg reveal"><h3>Vacation Rentals</h3><div class="amount amount--quote">Price on enquiry</div>
+          <ul><li>Short-stay &amp; Airbnb styling &amp; fit-out</li><li>Turnkey furnishing packages</li><li>Photography-ready, guest-friendly styling</li><li>Durable, low-maintenance pieces</li><li>Refresh &amp; restock options</li><li>Design that lifts bookings</li></ul>
+          <a class="btn btn--outline btn--block" href="#" onclick="openEnquire();return false;">Request a quote</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-blush" id="book">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Consultation booking</span><h2>Book your session</h2>
+        <p>Choose an in-home styling, staging or interior design consultation, pick a day &amp; time that suits you, and we'll confirm by email.</p></div>
+      <div class="form-card reveal">
+        <div id="bookingWidget"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="section-head reveal"><span class="eyebrow eyebrow-lined">Our process</span><h2>How we bring your space to life</h2>
@@ -164,7 +163,35 @@
     </div>
   </section>
 
-  <!-- Who are our clients (staging) -->
+  <section class="section">
+    <div class="container">
+      <div class="svc-hero reveal">
+        <div class="svc-hero-slides" id="svcHeroSlides">
+          <div class="svc-hero-slide active" style="background-image:url('assets/hero.jpg')"></div>
+          <div class="svc-hero-slide" style="background-image:url('assets/services/staging-feature.jpg')"></div>
+          <div class="svc-hero-slide" style="background-image:url('assets/services/interior-design-feature.jpg')"></div>
+          <div class="svc-hero-slide" style="background-image:url('assets/services/property-styling.jpg')"></div>
+        </div>
+        <div class="svc-hero-scrim"></div>
+        <div class="svc-hero-inner">
+          <span class="eyebrow">Considered, layered &amp; lived-in</span>
+          <h2>Styling that tells your story</h2>
+          <p class="lead">Whether you're refreshing a single room or preparing a home for market, we bring a considered eye, a curated inventory and hands-on care, so your space feels warm, intentional and unmistakably yours.</p>
+          <ul class="feature-list">
+            <li>In-home styling consultations</li>
+            <li>Full-home staging for sale</li>
+            <li>Interior design plans, room by room</li>
+            <li>Shoppable styling plans from the Samira Home Decor shop</li>
+          </ul>
+          <div class="btn-row" style="margin-top:26px">
+            <a class="btn btn--primary" href="#book">Book a consultation</a>
+            <a class="btn btn--outline" href="stylist.html">✦ Try Samira Stylera</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="stage-clients">
     <div class="sc-text reveal">
       <div class="sc-inner">
@@ -184,7 +211,6 @@
     <div class="sc-image" style="background-image:url('assets/services/staging-feature.jpg')" role="img" aria-label="A beautifully staged Samira Home Decor kitchen interior"></div>
   </section>
 
-  <!-- Interior Design (image left, text right) -->
   <section class="stage-clients">
     <div class="sc-image" style="background-image:url('assets/services/interior-design-feature.jpg')" role="img" aria-label="A beautifully designed Samira Home Decor bedroom interior"></div>
     <div class="sc-text reveal">
@@ -205,7 +231,6 @@
     </div>
   </section>
 
-  <!-- Our latest projects -->
   <section class="section">
     <div class="container">
       <div class="section-head reveal">
@@ -216,36 +241,6 @@
       <div class="proj-grid" id="projGrid"></div>
       <div class="text-center" style="margin-top:40px">
         <a class="btn btn--dark" href="portfolio.html">View our full portfolio →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Packages -->
-  <section class="section bg-cream2">
-    <div class="container">
-      <div class="section-head reveal"><span class="eyebrow">Styling packages</span><h2>Considered packages, tailored to you</h2>
-        <p>Every space is different, so each package is priced to suit your project. Tell us what you need and we'll send a personalised quote.</p></div>
-      <div class="grid grid-3">
-        <div class="pkg reveal"><h3>Property Styling / Staging</h3><div class="amount amount--quote">Price on enquiry</div>
-          <ul><li>In-home styling consultations</li><li>Room-by-room styling plan &amp; mood board</li><li>Full-home staging for sale</li><li>Furniture &amp; décor hire</li><li>Install, style &amp; de-stage</li><li>Photography styling</li></ul>
-          <a class="btn btn--outline btn--block" href="#" onclick="openEnquire();return false;">Request a quote</a></div>
-        <div class="pkg featured reveal"><h3>Interior Design</h3><div class="amount amount--quote">Price on enquiry</div>
-          <ul><li>Full interior design consultation</li><li>Layouts, palettes &amp; material selections</li><li>Curated, shoppable product plan</li><li>Sourcing &amp; coordination</li><li>Project managed to completion</li><li>Styling &amp; the final reveal</li></ul>
-          <a class="btn btn--primary btn--block" href="#" onclick="openEnquire();return false;">Request a quote</a></div>
-        <div class="pkg reveal"><h3>Vacation Rentals</h3><div class="amount amount--quote">Price on enquiry</div>
-          <ul><li>Short-stay &amp; Airbnb styling &amp; fit-out</li><li>Turnkey furnishing packages</li><li>Photography-ready, guest-friendly styling</li><li>Durable, low-maintenance pieces</li><li>Refresh &amp; restock options</li><li>Design that lifts bookings</li></ul>
-          <a class="btn btn--outline btn--block" href="#" onclick="openEnquire();return false;">Request a quote</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Booking calendar -->
-  <section class="section bg-blush" id="book">
-    <div class="container">
-      <div class="section-head reveal"><span class="eyebrow">Consultation booking</span><h2>Book your session</h2>
-        <p>Choose an in-home styling, staging or interior design consultation, pick a day &amp; time that suits you, and we'll confirm by email.</p></div>
-      <div class="form-card reveal">
-        <div id="bookingWidget"></div>
       </div>
     </div>
   </section>
