@@ -2233,22 +2233,40 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
   .news-form2 input { min-width: 0; }
 }
 
-/* Services page display banner: van, styling and cleaning photos */
-.svc-display { background: var(--ink, #0B1F3A); padding: 18px 0; }
-.svc-display-grid { max-width: 1240px; margin: 0 auto; padding: 0 18px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; height: 460px; }
-.svc-display-tile { position: relative; display: block; overflow: hidden; border-radius: 16px; }
-.svc-display-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
-.svc-display-tile:hover img { transform: scale(1.03); }
-.tile-van img { object-position: 30% 50%; }
-.tile-style img, .tile-clean img { object-position: center 30%; }
-.svc-display-tile span { position: absolute; left: 12px; bottom: 12px; background: rgba(11,31,58,.82); color: #fff; font-size: .8rem; font-weight: 600; letter-spacing: .04em; padding: 7px 12px; border-radius: 999px; }
+/* Services page display banner: the van photo is shown whole (never
+   cropped or squeezed), with the styling and cleaning photos below. */
+.svc-display { background: var(--ink, #0B1F3A); padding: 22px 0; }
+.svc-display-van { max-width: 1100px; margin: 0 auto 16px; padding: 0 18px; }
+.svc-display-van img { display: block; width: 100%; height: auto; border-radius: 16px; }
+.svc-display-grid { max-width: 1100px; margin: 0 auto; padding: 0 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.svc-display-tile { position: relative; display: block; overflow: hidden; border-radius: 16px; aspect-ratio: 4 / 5; max-height: 640px; }
+.svc-display-tile img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; transition: transform .6s ease; }
+a.svc-display-tile:hover img { transform: scale(1.03); }
+.svc-display-tile span { position: absolute; left: 12px; bottom: 12px; background: rgba(11,31,58,.82); color: #fff; font-size: .82rem; font-weight: 600; letter-spacing: .04em; padding: 7px 13px; border-radius: 999px; }
+.svc-display--single .svc-display-grid { grid-template-columns: 1fr; max-width: 560px; }
+.svc-display--single .svc-display-tile { aspect-ratio: 2 / 3; max-height: 72vh; }
 @media (max-width: 760px) {
   .svc-display { padding: 12px 0; }
-  .svc-display-grid { grid-template-columns: 1fr 1fr; height: auto; gap: 10px; padding: 0 12px; }
-  .tile-van { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
-  .tile-style, .tile-clean { aspect-ratio: 2 / 3; max-height: 44vh; }
-  .svc-display-tile { border-radius: 12px; }
+  .svc-display-van { padding: 0 10px; margin-bottom: 10px; }
+  .svc-display-van img { border-radius: 10px; }
+  .svc-display-grid { gap: 10px; padding: 0 10px; }
+  .svc-display-tile { border-radius: 12px; aspect-ratio: 2 / 3; }
   .svc-display-tile span { font-size: .7rem; padding: 5px 9px; left: 8px; bottom: 8px; }
+  .svc-display--single .svc-display-tile { max-height: 62vh; margin: 0 auto; }
 }
 @media (max-width: 600px) { .brand-tagline { font-size: .46rem; letter-spacing: .02em; overflow: visible; } }
 @media (max-width: 380px) { .brand-tagline { font-size: .42rem; letter-spacing: 0; } }
+
+/* Laptop widths: keep the cart icon on screen */
+@media (min-width: 861px) and (max-width: 1440px) {
+  .nav-utility { gap: 14px; }
+  .header-search { min-width: 0; }
+  .nav-utility-right { gap: 8px; flex: 0 0 auto; }
+}
+@media (min-width: 861px) and (max-width: 1320px) {
+  .header-search .hs-tag { padding: 6px 9px; font-size: .66rem; }
+  .account-trigger .acc-label { display: none; }
+}
+@media (min-width: 861px) and (max-width: 1100px) {
+  .header-search .hs-tag { display: none; }
+}

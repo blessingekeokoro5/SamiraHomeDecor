@@ -19,7 +19,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
-  <link rel="stylesheet" href="css/styles.css?v=64">
+  <link rel="stylesheet" href="css/styles.css?v=66">
   <style>
     .svc-hero { position: relative; overflow: hidden; border-radius: var(--radius-lg); min-height: 540px; display: flex; align-items: center; box-shadow: var(--shadow); }
     .svc-hero-slides { position: absolute; inset: 0; z-index: 0; }
@@ -46,15 +46,6 @@
 <body data-page="staging.html">
   <div id="site-header"></div>
 
-  <!-- Display banner -->
-  <section class="svc-display" aria-label="Samira Home Decor styling, delivery and cleaning">
-    <div class="svc-display-grid">
-      <a class="svc-display-tile tile-van" href="#services"><img src="assets/services/banner-van.jpg?v=3" width="800" height="533" alt="Samira Home Decor van delivering styled décor to a client's home" loading="eager"></a>
-      <a class="svc-display-tile tile-style" href="property-styling-staging.html"><img src="assets/services/banner-styling.jpg?v=2" width="1024" height="1536" alt="Samira Home Decor stylist arranging a coffee table" loading="eager"><span>Home styling &amp; staging</span></a>
-      <a class="svc-display-tile tile-clean" href="cleaning-services.html"><img src="assets/services/banner-cleaning.jpg?v=2" width="1024" height="1536" alt="Samira Cleaning team member wiping a kitchen bench" loading="eager"><span>Cleaning services</span></a>
-    </div>
-  </section>
-
   <section class="page-banner">
     <div class="container">
       <div class="breadcrumb"><a href="index.html">Home</a> / Services</div>
@@ -67,6 +58,16 @@
       </div>
     </div>
   </section>
+
+  <!-- Display banner: van photo shown whole, then styling and cleaning -->
+  <section class="svc-display" aria-label="Samira Home Decor styling, delivery and cleaning">
+    <div class="svc-display-van"><img src="assets/services/banner-van.jpg?v=4" width="1536" height="1024" alt="Samira Home Decor van delivering styled décor to a client's home" loading="eager"></div>
+    <div class="svc-display-grid">
+      <a class="svc-display-tile" href="property-styling-staging.html"><img src="assets/services/banner-styling.jpg?v=2" width="1024" height="1536" alt="Samira Home Decor stylist arranging a coffee table" loading="lazy"><span>Home styling &amp; staging</span></a>
+      <a class="svc-display-tile" href="cleaning-services.html"><img src="assets/services/banner-cleaning.jpg?v=2" width="1024" height="1536" alt="Samira Cleaning team member wiping a kitchen bench" loading="lazy"><span>Cleaning services</span></a>
+    </div>
+  </section>
+
 
   <section class="room-nav" aria-label="Spaces we style">
     <div class="container spaces-inner">
