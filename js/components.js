@@ -1547,7 +1547,7 @@ function dmSelectIssue(issue) {
   });
 }
 
-// Hand off to a real team member via live chat (Tawk.to)
+// Hand off to a real team member via live chat (Tidio)
 function waButton(label) {
   return `<a class="chat-wa" href="contact.html" onclick="openLiveChat();return false;">${IC.chat || "💬"} ${label || "Live chat with a customer representative"}</a>`;
 }
@@ -1884,38 +1884,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ============================================================
-   Live chat (Tawk.to), paste your embed src to switch it on.
-   Sign up free at tawk.to → Administration → Chat Widget → copy
-   the src URL from the embed code (looks like
-   https://embed.tawk.to/XXXXXXXX/1abcd) and set it below.
+   Live chat (Tidio). To change accounts, paste the src from
+   Tidio → Settings → Live chat → Installation (manual install).
    Left empty = no live chat loaded (the Help desk still works).
    ============================================================ */
-const TAWK_EMBED_SRC = "https://embed.tawk.to/6aed0f57ab01d93c39ae893e/default";
+const TIDIO_SRC = "https://code.tidio.co/zcdbx87dxqrxsock4arzm0clcdfqkx4j.js";
 (function () {
-  if (!TAWK_EMBED_SRC) return;
-  var T = window.Tawk_API = window.Tawk_API || {};
-  window.Tawk_LoadStart = new Date();
-  // Keep Tawk's own bubble hidden so it doesn't sit on top of our
+  if (!TIDIO_SRC) return;
+  // Keep Tidio's own bubble hidden so it doesn't sit on top of our
   // Stylera / Help buttons; it's opened from "Live chat" links instead.
-  var hide = function () { try { T.hideWidget(); } catch (e) {} };
-  var show = function () { try { T.showWidget(); T.maximize(); } catch (e) {} };
-  T.onLoad = function () { if (!T.isChatMaximized || !T.isChatMaximized()) hide(); };
-  T.onChatMinimized = hide;
-  T.onChatMessageAgent = show;   // team replied, pop the chat open
+  function wire() {
+    var api = window.tidioChatApi;
+    if (!api) return;
+    api.hide();
+    api.on("close", function () { api.hide(); });
+    api.on("messageFromOperator", function () { api.show(); api.open(); }); // team replied, pop it open
+  }
+  if (window.tidioChatApi) window.tidioChatApi.on("ready", wire);
+  else document.addEventListener("tidioChat-ready", wire);
   var s = document.createElement("script");
-  s.async = true; s.src = TAWK_EMBED_SRC; s.charset = "UTF-8";
-  s.setAttribute("crossorigin", "*");
-  document.head.appendChild(s);
+  s.async = true; s.src = TIDIO_SRC;
+  document.body ? document.body.appendChild(s) : document.head.appendChild(s);
 })();
 
-/* Open live chat with the team; optional msg is passed to the agent as context.
-   Falls back to the Contact page if Tawk hasn't loaded. */
+/* Open live chat with the team. Falls back to the Contact page if Tidio hasn't loaded. */
 window.openLiveChat = function (msg) {
-  var T = window.Tawk_API;
-  if (T && typeof T.maximize === "function") {
+  var api = window.tidioChatApi;
+  if (api && typeof api.open === "function") {
     try { var p = document.getElementById("chatPanel"); if (p && p.classList.contains("open")) document.getElementById("chatClose").click(); } catch (e) {}
-    try { if (msg) T.addEvent("Enquiry", { message: String(msg).slice(0, 250), page: location.pathname }); } catch (e) {}
-    T.showWidget(); T.maximize(); return;
+    api.show(); api.open(); return;
   }
   location.href = "contact.html";
 };
