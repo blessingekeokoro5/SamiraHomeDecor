@@ -85,7 +85,7 @@
         { name: "Service", label: "Service", type: "select", options: SERVICES.concat(["Not sure yet"]), required: true, half: true },
         { name: "Preferred date", label: "Preferred date", type: "date", half: true },
         { name: "Preferred time", label: "Preferred time", type: "select", options: ["Morning", "Afternoon", "Evening", "Flexible"], half: true },
-        { name: "How did you hear", label: "How did you hear about us?", type: "select", options: ["Google", "Instagram", "Facebook", "Referral", "Real estate agent", "Shopped before", "Other"], half: true },
+        { name: "How did you hear", label: "How did you hear about us?", type: "select", options: ["Google", "Instagram", "Referral", "Real estate agent", "Shopped before", "Other"], half: true },
         { name: "Notes", label: "Anything we should know?", type: "textarea", ph: "Goals, timing, access…" },
         { consent: "I agree to be contacted about my booking and consent to Samira Home Decor collecting these details.", name: "Consent to contact", required: true }
       ]
@@ -224,7 +224,7 @@
         NAME, EMAIL, PHONE,
         { sec: "Preferences" },
         { name: "Interests", label: "What are you most interested in?", type: "textarea" },
-        { name: "How did you hear", label: "How did you hear about us?", type: "select", options: ["Google", "Instagram", "Facebook", "Referral", "In store", "Other"], half: true },
+        { name: "How did you hear", label: "How did you hear about us?", type: "select", options: ["Google", "Instagram", "Referral", "In store", "Other"], half: true },
         { name: "Marketing consent", label: "Email me offers & news?", type: "select", options: ["Yes", "No"], half: true },
         { consent: "I agree to the Samira Home Decor membership & privacy terms.", name: "Agrees to membership terms", required: true }
       ]

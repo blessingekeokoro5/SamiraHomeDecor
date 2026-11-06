@@ -74,7 +74,6 @@
           <div class="ref-btns">
             <button type="button" class="btn btn--dark btn--sm" id="refNative" hidden>Share</button>
             <a class="btn btn--outline btn--sm" id="refWa" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn btn--outline btn--sm" id="refFb" target="_blank" rel="noopener">Facebook</a>
             <a class="btn btn--outline btn--sm" id="refSms">Text message</a>
             <a class="btn btn--outline btn--sm" id="refMail">Email</a>
           </div>
@@ -136,7 +135,6 @@
         const enc = encodeURIComponent(text + url);
         $("refUrl").value = url;
         $("refWa").href = "https://wa.me/?text=" + enc;
-        $("refFb").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url);
         $("refSms").href = "sms:?&body=" + enc;
         $("refMail").href = "mailto:?subject=" + encodeURIComponent("You'll love Samira Home Decor") + "&body=" + enc;
         if (navigator.share) {
