@@ -26,7 +26,6 @@ const SAMIRA = {
   availability: { 0: null, 1: [9, 17], 2: [9, 17], 3: [9, 17], 4: [9, 17], 5: [9, 17], 6: [10, 16] },
   socials: {
     instagram: "https://www.instagram.com/samirahomedecor",
-    facebook: "https://www.facebook.com/share/17aCKqQ3ns/?mibextid=wwXIfr",
     tiktok: "https://www.tiktok.com/@sys_samira",
     youtube: "https://www.youtube.com/@sys_samira",
     whatsapp: "https://wa.me/61451609398"

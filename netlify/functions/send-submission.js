@@ -171,7 +171,6 @@ function welcomeHtml(name, code, discountLabel) {
       <div style="font-family:Georgia,serif;font-size:21px;letter-spacing:1px;color:#fff">Samira Home Decor</div>
       <div style="margin:12px 0 10px">
         ${soc("https://www.instagram.com/samirahomedecor", "Instagram")} <span style="color:${TAUPE}">·</span>
-        ${soc("https://www.facebook.com/share/17aCKqQ3ns/?mibextid=wwXIfr", "Facebook")} <span style="color:${TAUPE}">·</span>
         ${soc("https://www.tiktok.com/@sys_samira", "TikTok")} <span style="color:${TAUPE}">·</span>
         ${soc("https://www.youtube.com/@sys_samira", "YouTube")}
       </div>

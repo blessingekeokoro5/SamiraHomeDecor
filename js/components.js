@@ -268,7 +268,6 @@ function buildHeader() {
   ];
   const socials = SAMIRA.socials || {};
   const socialLinks = [];
-  if (socials.facebook) socialLinks.push(`<a href="${socials.facebook}" target="_blank" rel="noopener" aria-label="Facebook">${IC.facebook}</a>`);
   if (socials.instagram) socialLinks.push(`<a href="${socials.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${IC.instagram}</a>`);
   if (socials.tiktok) socialLinks.push(`<a href="${socials.tiktok}" target="_blank" rel="noopener" aria-label="TikTok">${TIKTOK_SVG}</a>`);
   if (socials.youtube) socialLinks.push(`<a href="${socials.youtube}" target="_blank" rel="noopener" aria-label="YouTube">${YOUTUBE_SVG}</a>`);
@@ -486,7 +485,6 @@ function buildFooter() {
 
           <h4 style="margin-top:24px">Follow us on</h4>
           <div class="socials">
-            <a href="${SAMIRA.socials.facebook}" target="_blank" rel="noopener" aria-label="Facebook">${IC.facebook}</a>
             <a href="${SAMIRA.socials.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${IC.instagram}</a>
             <a href="${SAMIRA.socials.tiktok}" target="_blank" rel="noopener" aria-label="TikTok">${TIKTOK_SVG}</a>
             <a href="${SAMIRA.socials.youtube}" target="_blank" rel="noopener" aria-label="YouTube">${YOUTUBE_SVG}</a>

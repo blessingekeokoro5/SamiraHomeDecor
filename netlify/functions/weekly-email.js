@@ -109,7 +109,6 @@ function buildHtml(featured) {
       <div style="font-family:Georgia,serif;font-size:20px;letter-spacing:1px;color:#fff">Samira Home Decor</div>
       <div style="margin:12px 0 8px">
         <a href="https://www.instagram.com/samirahomedecor" style="color:${GOLD};text-decoration:none;font-size:12px">Instagram</a> <span style="color:${TAUPE}">·</span>
-        <a href="https://www.facebook.com/share/17aCKqQ3ns/?mibextid=wwXIfr" style="color:${GOLD};text-decoration:none;font-size:12px">Facebook</a> <span style="color:${TAUPE}">·</span>
         <a href="https://www.tiktok.com/@sys_samira" style="color:${GOLD};text-decoration:none;font-size:12px">TikTok</a> <span style="color:${TAUPE}">·</span>
         <a href="https://www.youtube.com/@sys_samira" style="color:${GOLD};text-decoration:none;font-size:12px">YouTube</a>
       </div>
