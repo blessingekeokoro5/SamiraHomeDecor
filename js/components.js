@@ -1419,6 +1419,7 @@ const CHAT_QUICK = [
   { label: "✦ Style a room for me" },
   { label: "📦 Shop packaging supplies" },
   { label: "🚚 Track my order" },
+  { label: "🌏 Shopping from overseas" },
   { label: "💬 Chat with a customer representative" }
 ];
 
@@ -1579,6 +1580,10 @@ function chatReply(text) {
 
   else if (has(/\b(packaging|pouch|pouches|mailer|carton|bulk packaging|packaging supplies)\b/))
     html = `We've got you! 📦 Our ${link("packaging.html", "Packaging")} range has food-vendor pouches, gift boxes, hamper boxes and ready-to-go kits, buy fixed-price packs or ${link("packaging.html#bulk", "request a bulk quote")} for your business.`;
+
+  else if (has(/\b(overseas|international|internationally|abroad|outside australia|worldwide|new zealand|nz|uk|united kingdom|england|britain|london|usa|united states|america|canada|switzerland|germany|europe)\b/)
+        || (chatIsOverseas() && has(/\b(ship|shipping|deliver|delivery|postage|freight|how long|arrive)\b/)))
+    html = `We'd love to help! 🌏 We deliver to New Zealand, the UK, Canada, the USA, Switzerland and Germany. As an <strong>overseas customer</strong> you get <strong>priority help on WhatsApp</strong>. Fill in your details and we'll reply fast:${overseasChatForm()}`;
 
   else if (has(/\b(ship|shipping|deliver|delivery|post|postage|freight|worldwide|international|country|countries|how long|when.*(arrive|get|receive)|dispatch)\b/))
     html = `Great question! 📦 We offer <strong>free standard shipping on orders over $3,500</strong> Australia-wide, and you'll see your estimated arrival dates at checkout. Gift hampers arrive in <strong>5 to 10 business days</strong> (Standard) or <strong>3 to 5 business days</strong> (Express). We ship to <strong>Australia, New Zealand, the UK, Canada, the USA, Switzerland &amp; Germany</strong>. Full details in our ${link("policy.html?doc=delivery", "Delivery policy")}.`;
@@ -1953,3 +1958,44 @@ function overseasWAText(o) {
 }
 function overseasWAUrl(o) { return "https://wa.me/61451609398?text=" + encodeURIComponent(overseasWAText(o)); }
 function openOverseasWA(o) { window.open(overseasWAUrl(o), "_blank", "noopener"); }
+
+
+/* ---- Overseas priority help inside the site chat ----
+   Collects the shopper's details, then opens WhatsApp with them filled in. */
+function chatIsOverseas() {
+  try { return !/^Australia\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone || ""); } catch (e) { return false; }
+}
+let overseasFormSeq = 0;
+function overseasChatForm() {
+  const k = "ov" + (++overseasFormSeq);
+  const onProduct = /product\.html/.test(location.pathname);
+  const f = (id, ph, type) => `<input id="${k}-${id}" type="${type || "text"}" placeholder="${ph}" autocomplete="on" oninput="this.style.borderColor='';document.getElementById('${k}-err').textContent=''" style="width:100%;box-sizing:border-box;padding:9px 11px;margin:0 0 7px;border:1px solid #d9d2c5;border-radius:8px;font:inherit;font-size:.9rem;background:#fff;color:#0B1F3A">`;
+  return `<div class="ov-form" style="margin-top:10px">
+    ${f("name", "Your name")}
+    ${f("phone", "Phone (with country code)", "tel")}
+    ${f("loc", "City and country")}
+    ${f("email", "Email address", "email")}
+    <textarea id="${k}-q" rows="2" placeholder="What are you enquiring about?" oninput="this.style.borderColor='';document.getElementById('${k}-err').textContent=''" style="width:100%;box-sizing:border-box;padding:9px 11px;margin:0 0 7px;border:1px solid #d9d2c5;border-radius:8px;font:inherit;font-size:.9rem;background:#fff;color:#0B1F3A;resize:vertical"></textarea>
+    <input id="${k}-link" type="url" placeholder="Product link (optional)" value="${onProduct ? location.href.replace(/"/g, "&quot;") : ""}" style="width:100%;box-sizing:border-box;padding:9px 11px;margin:0 0 7px;border:1px solid #d9d2c5;border-radius:8px;font:inherit;font-size:.9rem;background:#fff;color:#0B1F3A">
+    <div style="font-size:.78rem;color:#8a7f77;margin:0 0 8px">📷 You can attach photos once WhatsApp opens.</div>
+    <div id="${k}-err" style="font-size:.82rem;color:#b3261e;margin:0 0 6px"></div>
+    <button type="button" onclick="submitOverseasChat('${k}')" style="width:100%;padding:10px;border:none;border-radius:8px;background:#25D366;color:#fff;font:inherit;font-weight:600;cursor:pointer">💬 Continue on WhatsApp</button>
+  </div>`;
+}
+function submitOverseasChat(k) {
+  const el = (id) => document.getElementById(k + "-" + id);
+  const val = (id) => (el(id) ? el(id).value.trim() : "");
+  const err = el("err");
+  const need = [["name", "your name"], ["phone", "your phone number"], ["loc", "your city and country"], ["email", "your email"], ["q", "what you're enquiring about"]];
+  const missing = need.filter(([id]) => !val(id));
+  need.forEach(([id]) => { if (el(id)) el(id).style.borderColor = ""; });
+  if (missing.length) {
+    missing.forEach(([id]) => { el(id).style.borderColor = "#b3261e"; });
+    err.textContent = "Please add " + missing.map((m) => m[1]).join(", ") + ".";
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val("email"))) { el("email").style.borderColor = "#b3261e"; err.textContent = "That email doesn't look right."; return; }
+  if (val("phone").replace(/\D/g, "").length < 7) { el("phone").style.borderColor = "#b3261e"; err.textContent = "Please check your phone number."; return; }
+  openOverseasWA({ name: val("name"), phone: val("phone"), location: val("loc"), email: val("email"), enquiry: val("q"), links: [val("link")] });
+  if (typeof chatAppend === "function") chatAppend("bot", `Thanks ${val("name").split(" ")[0].replace(/</g, "&lt;")}! 💛 WhatsApp is opening with your details. Attach any photos there and hit send, and our team will reply as soon as possible.`);
+}
