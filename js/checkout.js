@@ -176,7 +176,7 @@ function checkoutTotals() {
 function updateTotalsUI() {
   const ih = document.getElementById("intlHelp");
   if (ih) ih.innerHTML = shipCountry() !== "Australia"
-    ? `<a href="https://wa.me/61451609398?text=${encodeURIComponent("Hi Samira Home Decor, I'm checking out from " + shipCountry() + " and need some help with my order.")}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 14px;border-radius:10px;background:#E9F7EF;color:#0B1F3A;text-decoration:none;font-size:.92rem;line-height:1.4"><span style="font-size:1.4rem">💬</span><span><strong>Priority help for overseas customers.</strong> Chat with us directly on WhatsApp for quick assistance with your order.</span></a>`
+    ? `<a href="https://wa.me/61451609398" onclick="openCheckoutWA();return false;" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 14px;border-radius:10px;background:#E9F7EF;color:#0B1F3A;text-decoration:none;font-size:.92rem;line-height:1.4"><span style="font-size:1.4rem">💬</span><span><strong>Priority help for overseas customers.</strong> Chat with us directly on WhatsApp for quick assistance with your order.</span></a>`
     : "";
   const t = checkoutTotals();
   const shipTxt = t.shipping === 0 ? "Free" : money(t.shipping);
@@ -503,3 +503,21 @@ async function startPayment(e) {
 }
 
 document.addEventListener("DOMContentLoaded", renderCheckout);
+
+
+/* Overseas priority WhatsApp: prefill what the shopper has typed so far
+   and links to the items in their bag. */
+function openCheckoutWA() {
+  const g = (id) => { const el = document.getElementById(id); return el ? el.value : ""; };
+  const links = getCart().filter((i) => !i.giftCard && !i.hamper && !String(i.id).startsWith("hamper-"))
+    .map((i) => "https://www.samirahomedecor.com.au/product.html?id=" + encodeURIComponent(i.id));
+  const names = getCart().map((i) => i.name).filter(Boolean).join(", ");
+  openOverseasWA({
+    name: (g("coFirst") + " " + g("coLast")).trim(),
+    phone: g("coPhone"),
+    email: g("coEmail"),
+    location: [g("coSuburb"), g("coPost"), shipCountry()].filter((x) => x && x.trim()).join(", "),
+    enquiry: "My order" + (names ? " (" + names + ")" : ""),
+    links: links
+  });
+}
