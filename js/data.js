@@ -3148,6 +3148,20 @@ const REVIEWS = [
   { rating: 5, title: "Gift card delivered instantly", body: "Sent a last-minute gift card and it landed in my sister's inbox looking so elegant. She loved choosing her own pieces.", who: "Hannah C. · Wollongong, NSW" }
 ];
 
+/* ---- Real product reviews ----
+   Only genuine reviews from real customers go here, keyed by product
+   id. Product pages show these and nothing else: no invented reviews
+   and no made-up star counts. A product with no entry shows
+   "No reviews yet".
+     lx72: [ { rating: 5, title: "Love it", body: "...", who: "Jane D.", date: "2026-11-20" } ],
+*/
+const PRODUCT_REVIEWS = {
+};
+function realReviews(id) {
+  try { return (typeof PRODUCT_REVIEWS !== "undefined" && PRODUCT_REVIEWS[id]) || []; } catch (e) { return []; }
+}
+
+
 /* ============================================================
    HALLOWEEN SALE — 15% off every priced shop product (Adelaide
    time), 31 Oct to 2 Nov inclusive, repeating every year. Packaging

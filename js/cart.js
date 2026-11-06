@@ -403,7 +403,7 @@ function productCard(p) {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg><span>Download</span></button>
         </div>
         <div class="product-foot">
-          <span class="stars">★★★★★</span>
+          ${(typeof realReviews === "function" && realReviews(p.id).length) ? `<span class="stars">${"★".repeat(Math.round(realReviews(p.id).reduce((t, r) => t + r.rating, 0) / realReviews(p.id).length))}</span>` : "<span></span>"}
           ${p.cat === "Packaging"
             ? `<a class="btn btn--primary btn--sm" href="product.html?id=${p.id}">View details</a>`
             : `<button class="btn btn--primary btn--sm" onclick="addToCart('${p.id}')">Add to cart</button>`}
