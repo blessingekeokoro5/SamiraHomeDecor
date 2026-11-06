@@ -1916,3 +1916,18 @@ window.openLiveChat = function (msg) {
   }
   location.href = "contact.html";
 };
+
+/* ---- Product photos: no right-click / drag / long-press save ----
+   A deterrent for casual copying; watermarks and the protect-photos
+   edge function do the heavy lifting. */
+(function () {
+  var PHOTO = /assets\/(products|hamper)\//;
+  function isPhoto(el) { return el && el.tagName === "IMG" && PHOTO.test(el.currentSrc || el.src || ""); }
+  document.addEventListener("contextmenu", function (e) { if (isPhoto(e.target)) e.preventDefault(); });
+  document.addEventListener("dragstart", function (e) { if (isPhoto(e.target)) e.preventDefault(); });
+  try {
+    var s = document.createElement("style");
+    s.textContent = 'img[src*="assets/products/"],img[src*="assets/hamper/"]{-webkit-touch-callout:none;-webkit-user-drag:none;user-select:none}';
+    (document.head || document.documentElement).appendChild(s);
+  } catch (e) {}
+})();
