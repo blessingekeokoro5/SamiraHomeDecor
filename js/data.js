@@ -1674,7 +1674,7 @@ const PRODUCTS = [
     specs: { "Type": "Sofa", "Upholstery": "Leather", "Options": "7", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills straight away with a barely damp one. Keep it out of direct sun and away from heaters, which dry the hide and crack it. Condition once or twice a year." },
 
-  { id: "ct01", arriveDays: [28, 33], name: "Glass Coffee & Side Table Set", cat: "Living Room", room: "Living Room", price: 2065, memberPrice: 1858, sku: "SH-10265", tag: "New", ph: "", img: "assets/products/ct01.webp",
+  { id: "ct01", arriveDays: [28, 33], expressOpt: 7000, name: "Glass Coffee & Side Table Set", cat: "Living Room", room: "Living Room", price: 2065, memberPrice: 1858, sku: "SH-10265", tag: "New", ph: "", img: "assets/products/ct01.webp",
     imgs: ["assets/products/ct01.webp", "assets/products/ct01-2.webp", "assets/products/ct01-3.webp", "assets/products/ct01-4.webp", "assets/products/ct01-5.webp"],
    
     sizes: [{ label: "Small", price: 2065 }, { label: "Large", price: 2106 }, { label: "Set", price: 4170 }],
@@ -1687,7 +1687,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Glass", "Options": "3", "Room": "Living / Indoor" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "ct02", arriveDays: [28, 33], name: "Round Travertine Coffee & Side Table", cat: "Living Room", room: "Living Room", price: 2630, memberPrice: 2367, sku: "SH-10266", tag: "New", ph: "", img: "assets/products/ct02.webp",
+  { id: "ct02", arriveDays: [28, 33], expressOpt: 7000, name: "Round Travertine Coffee & Side Table", cat: "Living Room", room: "Living Room", price: 2630, memberPrice: 2367, sku: "SH-10266", tag: "New", ph: "", img: "assets/products/ct02.webp",
     imgs: ["assets/products/ct02.webp", "assets/products/ct02-2.webp", "assets/products/ct02-3.webp", "assets/products/ct02-4.webp", "assets/products/ct02-5.webp"],
    
     sizes: [{ label: "Black / 50cm (Side table)", price: 2630 }, { label: "Walnut / 50cm (Side table)", price: 2630 }, { label: "Black / 70cm", price: 4435 }, { label: "Walnut / 70cm", price: 4435 }, { label: "Black / 80cm", price: 5013 }, { label: "Walnut / 80cm", price: 5013 }, { label: "Black / 90cm", price: 5546 }, { label: "Walnut / 90cm", price: 5546 }],
@@ -1700,7 +1700,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "8", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct03", arriveDays: [28, 33], name: "Three-Size Round Coffee Table", cat: "Living Room", room: "Living Room", price: 2654, memberPrice: 2389, sku: "SH-10267", tag: "New", ph: "", img: "assets/products/ct03.webp",
+  { id: "ct03", arriveDays: [28, 33], expressOpt: 7000, name: "Three-Size Round Coffee Table", cat: "Living Room", room: "Living Room", price: 2654, memberPrice: 2389, sku: "SH-10267", tag: "New", ph: "", img: "assets/products/ct03.webp",
     imgs: ["assets/products/ct03.webp", "assets/products/ct03-2.webp", "assets/products/ct03-3.webp", "assets/products/ct03-4.webp", "assets/products/ct03-5.webp"],
    
     sizes: [{ label: "45cm", price: 2654 }, { label: "90cm", price: 5504 }, { label: "100cm", price: 5874 }],
@@ -1713,7 +1713,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct04", arriveDays: [28, 33], name: "Round Timber Coffee & Side Table", cat: "Living Room", room: "Living Room", price: 2769, memberPrice: 2492, sku: "SH-10268", tag: "New", ph: "", img: "assets/products/ct04.webp",
+  { id: "ct04", arriveDays: [28, 33], expressOpt: 7000, name: "Round Timber Coffee & Side Table", cat: "Living Room", room: "Living Room", price: 2769, memberPrice: 2492, sku: "SH-10268", tag: "New", ph: "", img: "assets/products/ct04.webp",
     imgs: ["assets/products/ct04.webp", "assets/products/ct04-2.webp", "assets/products/ct04-3.webp", "assets/products/ct04-4.webp", "assets/products/ct04-5.webp"],
    
     sizes: [{ label: "Side Table", price: 2769 }, { label: "Coffee Table", price: 4254 }],
@@ -1726,7 +1726,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct05", arriveDays: [28, 33], name: "Round Oak Coffee Table & Nest", cat: "Living Room", room: "Living Room", price: 2785, memberPrice: 2506, sku: "SH-10269", tag: "New", ph: "", img: "assets/products/ct05.webp",
+  { id: "ct05", arriveDays: [28, 33], expressOpt: 7000, name: "Round Oak Coffee Table & Nest", cat: "Living Room", room: "Living Room", price: 2785, memberPrice: 2506, sku: "SH-10269", tag: "New", ph: "", img: "assets/products/ct05.webp",
     imgs: ["assets/products/ct05.webp", "assets/products/ct05-2.webp", "assets/products/ct05-3.webp", "assets/products/ct05-4.webp", "assets/products/ct05-5.webp"],
    
     sizes: [{ label: "50cm", price: 2785 }, { label: "90cm", price: 5274 }, { label: "Complete Set", price: 8059 }],
@@ -1739,7 +1739,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct06", arriveDays: [28, 33], name: "Colour-Choice Coffee Table", cat: "Living Room", room: "Living Room", price: 2946, memberPrice: 2651, sku: "SH-10270", tag: "New", ph: "", img: "assets/products/ct06.webp",
+  { id: "ct06", arriveDays: [28, 33], expressOpt: 7000, name: "Colour-Choice Coffee Table", cat: "Living Room", room: "Living Room", price: 2946, memberPrice: 2651, sku: "SH-10270", tag: "New", ph: "", img: "assets/products/ct06.webp",
     imgs: ["assets/products/ct06.webp", "assets/products/ct06-2.webp", "assets/products/ct06-3.webp", "assets/products/ct06-4.webp", "assets/products/ct06-5.webp"],
    
     sizes: [{ label: "Side Table / Green", price: 2946 }, { label: "Side Table / Black", price: 2946 }, { label: "Side Table / White", price: 2946 }, { label: "Side Table / Beige", price: 2946 }, { label: "Small / Green", price: 3996 }, { label: "Small / Black", price: 3996 }, { label: "Small / White", price: 3996 }, { label: "Small / Beige", price: 3996 }, { label: "Large / Green", price: 5013 }, { label: "Large / Black", price: 5013 }, { label: "Large / White", price: 5013 }, { label: "Large / Beige", price: 5013 }],
@@ -1752,7 +1752,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "12", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct07", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/ct07-4.webp","Chocolate":"assets/products/ct07.webp"}, name: "Tinted Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 3120, memberPrice: 2808, sku: "SH-10271", tag: "New", ph: "", img: "assets/products/ct07.webp",
+  { id: "ct07", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/ct07-4.webp","Chocolate":"assets/products/ct07.webp"}, name: "Tinted Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 3120, memberPrice: 2808, sku: "SH-10271", tag: "New", ph: "", img: "assets/products/ct07.webp",
     imgs: ["assets/products/ct07.webp", "assets/products/ct07-2.webp", "assets/products/ct07-3.webp", "assets/products/ct07-4.webp"],
    
     sizes: [{ label: "Black", price: 3120 }, { label: "Chocolate", price: 3120 }],
@@ -1765,7 +1765,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Glass", "Options": "2", "Room": "Living / Indoor" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "ct08", arriveDays: [28, 33], name: "Marble & Glass Rectangular Coffee Table", cat: "Living Room", room: "Living Room", price: 3311, memberPrice: 2980, sku: "SH-10272", tag: "New", ph: "", img: "assets/products/ct08.webp",
+  { id: "ct08", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Glass Rectangular Coffee Table", cat: "Living Room", room: "Living Room", price: 3311, memberPrice: 2980, sku: "SH-10272", tag: "New", ph: "", img: "assets/products/ct08.webp",
     imgs: ["assets/products/ct08.webp", "assets/products/ct08-2.webp", "assets/products/ct08-3.webp", "assets/products/ct08-4.webp", "assets/products/ct08-5.webp"],
    
     sizes: [{ label: "30cm (Side Table)", price: 3311 }, { label: "130cm", price: 8541 }, { label: "140cm", price: 9011 }],
@@ -1778,7 +1778,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct09", arriveDays: [28, 33], name: "Oak Coffee Table Pair", cat: "Living Room", room: "Living Room", price: 3804, memberPrice: 3424, sku: "SH-10273", tag: "New", ph: "", img: "assets/products/ct09.webp",
+  { id: "ct09", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Coffee Table Pair", cat: "Living Room", room: "Living Room", price: 3804, memberPrice: 3424, sku: "SH-10273", tag: "New", ph: "", img: "assets/products/ct09.webp",
     imgs: ["assets/products/ct09.webp", "assets/products/ct09-2.webp", "assets/products/ct09-3.webp", "assets/products/ct09-4.webp", "assets/products/ct09-5.webp"],
    
     sizes: [{ label: "50cm", price: 3804 }, { label: "80cm", price: 6107 }],
@@ -1791,7 +1791,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct10", arriveDays: [28, 33], name: "Marble Nesting Coffee Tables", cat: "Living Room", room: "Living Room", price: 4259, memberPrice: 3833, sku: "SH-10274", tag: "New", ph: "", img: "assets/products/ct10.webp",
+  { id: "ct10", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Nesting Coffee Tables", cat: "Living Room", room: "Living Room", price: 4259, memberPrice: 3833, sku: "SH-10274", tag: "New", ph: "", img: "assets/products/ct10.webp",
     imgs: ["assets/products/ct10.webp", "assets/products/ct10-2.webp", "assets/products/ct10-3.webp", "assets/products/ct10-4.webp", "assets/products/ct10-5.webp"],
    
     sizes: [{ label: "Table A", price: 4259 }, { label: "Table B", price: 4259 }, { label: "Table C", price: 6296 }, { label: "Complete Set", price: 14815 }],
@@ -1804,7 +1804,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "4", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct11", arriveDays: [28, 33], name: "Stainless Steel Coffee Table Set", cat: "Living Room", room: "Living Room", price: 4426, memberPrice: 3983, sku: "SH-10275", tag: "New", ph: "", img: "assets/products/ct11.webp",
+  { id: "ct11", arriveDays: [28, 33], expressOpt: 7000, name: "Stainless Steel Coffee Table Set", cat: "Living Room", room: "Living Room", price: 4426, memberPrice: 3983, sku: "SH-10275", tag: "New", ph: "", img: "assets/products/ct11.webp",
     imgs: ["assets/products/ct11.webp", "assets/products/ct11-2.webp", "assets/products/ct11-3.webp", "assets/products/ct11-4.webp", "assets/products/ct11-5.webp"],
    
     sizes: [{ label: "80cm Set", price: 4426 }, { label: "90cm Set", price: 4611 }, { label: "100cm Set", price: 4796 }],
@@ -1817,7 +1817,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Steel / metal", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "ct12", arriveDays: [28, 33], name: "Square Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 4485, memberPrice: 4036, sku: "SH-10276", tag: "New", ph: "", img: "assets/products/ct12.webp",
+  { id: "ct12", arriveDays: [28, 33], expressOpt: 7000, name: "Square Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 4485, memberPrice: 4036, sku: "SH-10276", tag: "New", ph: "", img: "assets/products/ct12.webp",
     imgs: ["assets/products/ct12.webp", "assets/products/ct12-2.webp", "assets/products/ct12-3.webp", "assets/products/ct12-4.webp", "assets/products/ct12-5.webp"],
    
     sizes: [{ label: "Black / 80cm", price: 4485 }, { label: "White / 80cm", price: 4485 }, { label: "Black / 100cm", price: 4937 }, { label: "White / 100cm", price: 4937 }, { label: "Black / 120cm", price: 5319 }, { label: "White / 120cm", price: 5319 }],
@@ -1830,7 +1830,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Glass", "Options": "6", "Room": "Living / Indoor" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "ct13", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/ct13.webp","Gold":"assets/products/ct13-3.webp"}, name: "Stone & Steel Coffee Table", cat: "Living Room", room: "Living Room", price: 4565, memberPrice: 4108, sku: "SH-10277", tag: "New", ph: "", img: "assets/products/ct13.webp",
+  { id: "ct13", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/ct13.webp","Gold":"assets/products/ct13-3.webp"}, name: "Stone & Steel Coffee Table", cat: "Living Room", room: "Living Room", price: 4565, memberPrice: 4108, sku: "SH-10277", tag: "New", ph: "", img: "assets/products/ct13.webp",
     imgs: ["assets/products/ct13.webp", "assets/products/ct13-2.webp", "assets/products/ct13-3.webp", "assets/products/ct13-4.webp", "assets/products/ct13-5.webp"],
    
     sizes: [{ label: "Black", price: 4565 }, { label: "Gold", price: 4565 }],
@@ -1843,7 +1843,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct14", arriveDays: [28, 33], name: "Two-Piece Coffee Table Set", cat: "Living Room", room: "Living Room", price: 4628, memberPrice: 4165, sku: "SH-10278", tag: "New", ph: "", img: "assets/products/ct14.webp",
+  { id: "ct14", arriveDays: [28, 33], expressOpt: 7000, name: "Two-Piece Coffee Table Set", cat: "Living Room", room: "Living Room", price: 4628, memberPrice: 4165, sku: "SH-10278", tag: "New", ph: "", img: "assets/products/ct14.webp",
     imgs: ["assets/products/ct14.webp", "assets/products/ct14-2.webp", "assets/products/ct14-3.webp", "assets/products/ct14-4.webp", "assets/products/ct14-5.webp"],
    
     sizes: [{ label: "100cm", price: 4628 }, { label: "120cm", price: 5035 }, { label: "130cm", price: 5554 }],
@@ -1856,7 +1856,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct15", arriveDays: [28, 33], name: "Round Timber Coffee Table", cat: "Living Room", room: "Living Room", price: 4735, memberPrice: 4262, sku: "SH-10279", tag: "New", ph: "", img: "assets/products/ct15.webp",
+  { id: "ct15", arriveDays: [28, 33], expressOpt: 7000, name: "Round Timber Coffee Table", cat: "Living Room", room: "Living Room", price: 4735, memberPrice: 4262, sku: "SH-10279", tag: "New", ph: "", img: "assets/products/ct15.webp",
     imgs: ["assets/products/ct15.webp", "assets/products/ct15-2.webp", "assets/products/ct15-3.webp", "assets/products/ct15-4.webp", "assets/products/ct15-5.webp"],
    
     desc: "A single round timber table with nothing to decide: one size, one finish, good grain.",
@@ -1868,7 +1868,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct16", arriveDays: [28, 33], name: "Solid Timber Coffee Table (95cm)", cat: "Living Room", room: "Living Room", price: 4920, memberPrice: 4428, sku: "SH-10280", tag: "New", ph: "", img: "assets/products/ct16.webp",
+  { id: "ct16", arriveDays: [28, 33], expressOpt: 7000, name: "Solid Timber Coffee Table (95cm)", cat: "Living Room", room: "Living Room", price: 4920, memberPrice: 4428, sku: "SH-10280", tag: "New", ph: "", img: "assets/products/ct16.webp",
     imgs: ["assets/products/ct16.webp", "assets/products/ct16-2.webp", "assets/products/ct16-3.webp", "assets/products/ct16-4.webp", "assets/products/ct16-5.webp"],
    
     sizes: [{ label: "95cm", price: 4920 }],
@@ -1881,7 +1881,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct17", arriveDays: [28, 33], name: "Nesting Travertine Coffee Tables", cat: "Living Room", room: "Living Room", price: 5120, memberPrice: 4608, sku: "SH-10281", tag: "New", ph: "", img: "assets/products/ct17.webp",
+  { id: "ct17", arriveDays: [28, 33], expressOpt: 7000, name: "Nesting Travertine Coffee Tables", cat: "Living Room", room: "Living Room", price: 5120, memberPrice: 4608, sku: "SH-10281", tag: "New", ph: "", img: "assets/products/ct17.webp",
     imgs: ["assets/products/ct17.webp", "assets/products/ct17-2.webp", "assets/products/ct17-3.webp", "assets/products/ct17-4.webp", "assets/products/ct17-5.webp"],
    
     sizes: [{ label: "90cm", price: 5120 }, { label: "110cm", price: 5550 }],
@@ -1894,7 +1894,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct18", arriveDays: [28, 33], name: "Round Stone & Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 5139, memberPrice: 4625, sku: "SH-10282", tag: "New", ph: "", img: "assets/products/ct18.webp",
+  { id: "ct18", arriveDays: [28, 33], expressOpt: 7000, name: "Round Stone & Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 5139, memberPrice: 4625, sku: "SH-10282", tag: "New", ph: "", img: "assets/products/ct18.webp",
     imgs: ["assets/products/ct18.webp", "assets/products/ct18-2.webp", "assets/products/ct18-3.webp", "assets/products/ct18-4.webp"],
    
     sizes: [{ label: "80cm ø", price: 5139 }, { label: "90cm ø", price: 5324 }, { label: "100cm ø", price: 5509 }],
@@ -1907,7 +1907,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Glass", "Options": "3", "Room": "Living / Indoor" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "ct19", arriveDays: [28, 33], name: "Steel Coffee Table Set, Gold or Black", cat: "Living Room", room: "Living Room", price: 5337, memberPrice: 4803, sku: "SH-10283", tag: "New", ph: "", img: "assets/products/ct19.webp",
+  { id: "ct19", arriveDays: [28, 33], expressOpt: 7000, name: "Steel Coffee Table Set, Gold or Black", cat: "Living Room", room: "Living Room", price: 5337, memberPrice: 4803, sku: "SH-10283", tag: "New", ph: "", img: "assets/products/ct19.webp",
     imgs: ["assets/products/ct19.webp", "assets/products/ct19-2.webp", "assets/products/ct19-3.webp", "assets/products/ct19-4.webp", "assets/products/ct19-5.webp"],
    
     sizes: [{ label: "Gold Set", price: 5337 }, { label: "Black Set", price: 5337 }],
@@ -1920,7 +1920,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Steel / metal", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "ct20", arriveDays: [28, 33], name: "Complete Coffee Table Set", cat: "Living Room", room: "Living Room", price: 5348, memberPrice: 4813, sku: "SH-10284", tag: "New", ph: "", img: "assets/products/ct20.webp",
+  { id: "ct20", arriveDays: [28, 33], expressOpt: 7000, name: "Complete Coffee Table Set", cat: "Living Room", room: "Living Room", price: 5348, memberPrice: 4813, sku: "SH-10284", tag: "New", ph: "", img: "assets/products/ct20.webp",
     imgs: ["assets/products/ct20.webp", "assets/products/ct20-2.webp", "assets/products/ct20-3.webp", "assets/products/ct20-4.webp", "assets/products/ct20-5.webp"],
    
     sizes: [{ label: "Complete Set", price: 5348 }],
@@ -1933,7 +1933,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct21", arriveDays: [28, 33], name: "Marble & Timber Coffee Table", cat: "Living Room", room: "Living Room", price: 5407, memberPrice: 4866, sku: "SH-10285", tag: "New", ph: "", img: "assets/products/ct21.webp",
+  { id: "ct21", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Timber Coffee Table", cat: "Living Room", room: "Living Room", price: 5407, memberPrice: 4866, sku: "SH-10285", tag: "New", ph: "", img: "assets/products/ct21.webp",
     imgs: ["assets/products/ct21.webp", "assets/products/ct21-2.webp", "assets/products/ct21-3.webp", "assets/products/ct21-4.webp", "assets/products/ct21-5.webp"],
    
     sizes: [{ label: "White / 100cm", price: 5407 }, { label: "Grey / 100cm", price: 5407 }, { label: "Black / 100cm", price: 5407 }, { label: "White / 110cm", price: 6106 }, { label: "Grey / 110cm", price: 6106 }, { label: "Black / 110cm", price: 6106 }, { label: "White / 120cm", price: 6296 }, { label: "Grey / 120cm", price: 6296 }, { label: "Black / 120cm", price: 6296 }],
@@ -1946,7 +1946,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "9", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct22", arriveDays: [28, 33], name: "Travertine Round Coffee Table", cat: "Living Room", room: "Living Room", price: 5531, memberPrice: 4978, sku: "SH-10286", tag: "New", ph: "", img: "assets/products/ct22.webp",
+  { id: "ct22", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Round Coffee Table", cat: "Living Room", room: "Living Room", price: 5531, memberPrice: 4978, sku: "SH-10286", tag: "New", ph: "", img: "assets/products/ct22.webp",
     imgs: ["assets/products/ct22.webp", "assets/products/ct22-2.webp", "assets/products/ct22-3.webp", "assets/products/ct22-4.webp", "assets/products/ct22-5.webp"],
    
     sizes: [{ label: "70cm", price: 5531 }, { label: "80cm", price: 6231 }, { label: "90cm", price: 6809 }],
@@ -1959,7 +1959,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct23", arriveDays: [28, 33], name: "Marble, Steel & Glass Coffee Table Set", cat: "Living Room", room: "Living Room", price: 6046, memberPrice: 5441, sku: "SH-10287", tag: "New", ph: "", img: "assets/products/ct23.webp",
+  { id: "ct23", arriveDays: [28, 33], expressOpt: 7000, name: "Marble, Steel & Glass Coffee Table Set", cat: "Living Room", room: "Living Room", price: 6046, memberPrice: 5441, sku: "SH-10287", tag: "New", ph: "", img: "assets/products/ct23.webp",
     imgs: ["assets/products/ct23.webp", "assets/products/ct23-2.webp", "assets/products/ct23-3.webp", "assets/products/ct23-4.webp", "assets/products/ct23-5.webp"],
    
     sizes: [{ label: "90cm Set", price: 6046 }, { label: "100cm Set", price: 6480 }, { label: "120cm Set", price: 6809 }],
@@ -1972,7 +1972,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct24", arriveDays: [28, 33], name: "Slate & Metal Coffee Table Set", cat: "Living Room", room: "Living Room", price: 6157, memberPrice: 5541, sku: "SH-10288", tag: "New", ph: "", img: "assets/products/ct24.webp",
+  { id: "ct24", arriveDays: [28, 33], expressOpt: 7000, name: "Slate & Metal Coffee Table Set", cat: "Living Room", room: "Living Room", price: 6157, memberPrice: 5541, sku: "SH-10288", tag: "New", ph: "", img: "assets/products/ct24.webp",
     imgs: ["assets/products/ct24.webp", "assets/products/ct24-2.webp", "assets/products/ct24-3.webp", "assets/products/ct24-4.webp", "assets/products/ct24-5.webp"],
    
     sizes: [{ label: "Gold Set", price: 6157 }, { label: "Black Set", price: 6157 }],
@@ -1985,7 +1985,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct25", arriveDays: [28, 33], name: "Bronze or Silver Coffee Table Set", cat: "Living Room", room: "Living Room", price: 6478, memberPrice: 5830, sku: "SH-10289", tag: "New", ph: "", img: "assets/products/ct25.webp",
+  { id: "ct25", arriveDays: [28, 33], expressOpt: 7000, name: "Bronze or Silver Coffee Table Set", cat: "Living Room", room: "Living Room", price: 6478, memberPrice: 5830, sku: "SH-10289", tag: "New", ph: "", img: "assets/products/ct25.webp",
     imgs: ["assets/products/ct25.webp", "assets/products/ct25-2.webp", "assets/products/ct25-3.webp", "assets/products/ct25-4.webp", "assets/products/ct25-5.webp"],
    
     sizes: [{ label: "Bronze Set", price: 6478 }, { label: "Silver Set", price: 6478 }],
@@ -1998,7 +1998,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Steel / metal", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "ct26", arriveDays: [28, 33], name: "Marble-Top Coffee Table with Metal Base", cat: "Living Room", room: "Living Room", price: 6607, memberPrice: 5946, sku: "SH-10290", tag: "New", ph: "", img: "assets/products/ct26.webp",
+  { id: "ct26", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Top Coffee Table with Metal Base", cat: "Living Room", room: "Living Room", price: 6607, memberPrice: 5946, sku: "SH-10290", tag: "New", ph: "", img: "assets/products/ct26.webp",
     imgs: ["assets/products/ct26.webp", "assets/products/ct26-2.webp", "assets/products/ct26-3.webp", "assets/products/ct26-4.webp", "assets/products/ct26-5.webp"],
    
     sizes: [{ label: "120cm (table only) / Black", price: 6607 }, { label: "120cm (table only) / Gold", price: 6607 }, { label: "130cm (table only) / Black", price: 6769 }, { label: "130cm (table only) / Gold", price: 6769 }, { label: "140cm (table only) / Black", price: 7091 }, { label: "140cm (table only) / Gold", price: 7091 }, { label: "120cm (complete set) / Black", price: 7572 }, { label: "120cm (complete set) / Gold", price: 7572 }, { label: "130cm (complete set) / Black", price: 7733 }, { label: "130cm (complete set) / Gold", price: 7733 }, { label: "140cm (complete set) / Black", price: 8056 }, { label: "140cm (complete set) / Gold", price: 8056 }],
@@ -2011,7 +2011,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "12", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct27", arriveDays: [28, 33], name: "Rotating Walnut & Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 6809, memberPrice: 6128, sku: "SH-10291", tag: "New", ph: "", img: "assets/products/ct27.webp",
+  { id: "ct27", arriveDays: [28, 33], expressOpt: 7000, name: "Rotating Walnut & Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 6809, memberPrice: 6128, sku: "SH-10291", tag: "New", ph: "", img: "assets/products/ct27.webp",
     imgs: ["assets/products/ct27.webp", "assets/products/ct27-2.webp", "assets/products/ct27-3.webp", "assets/products/ct27-4.webp", "assets/products/ct27-5.webp"],
    
     sizes: [{ label: "Walnut", price: 6809 }],
@@ -2024,7 +2024,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct28", arriveDays: [28, 33], name: "Metal Coffee Table, Silver or Black", cat: "Living Room", room: "Living Room", price: 6830, memberPrice: 6147, sku: "SH-10292", tag: "New", ph: "", img: "assets/products/ct28.webp",
+  { id: "ct28", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Coffee Table, Silver or Black", cat: "Living Room", room: "Living Room", price: 6830, memberPrice: 6147, sku: "SH-10292", tag: "New", ph: "", img: "assets/products/ct28.webp",
     imgs: ["assets/products/ct28.webp", "assets/products/ct28-2.webp", "assets/products/ct28-3.webp", "assets/products/ct28-4.webp", "assets/products/ct28-5.webp"],
    
     sizes: [{ label: "Silver / 100cm", price: 6830 }, { label: "Black / 100cm", price: 6830 }, { label: "Silver / 130cm", price: 7263 }, { label: "Black / 130cm", price: 7263 }],
@@ -2037,7 +2037,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Steel / metal", "Options": "4", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "ct29", arriveDays: [28, 33], name: "Marble & Ash Coffee Table", cat: "Living Room", room: "Living Room", price: 6943, memberPrice: 6249, sku: "SH-10293", tag: "New", ph: "", img: "assets/products/ct29.webp",
+  { id: "ct29", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Ash Coffee Table", cat: "Living Room", room: "Living Room", price: 6943, memberPrice: 6249, sku: "SH-10293", tag: "New", ph: "", img: "assets/products/ct29.webp",
     imgs: ["assets/products/ct29.webp", "assets/products/ct29-2.webp", "assets/products/ct29-3.webp", "assets/products/ct29-4.webp", "assets/products/ct29-5.webp"],
    
     desc: "Marble over ash timber: pale stone, pale wood, and a quiet result.",
@@ -2049,7 +2049,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct30", arriveDays: [28, 33], name: "Marble Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7083, memberPrice: 6375, sku: "SH-10294", tag: "New", ph: "", img: "assets/products/ct30.webp",
+  { id: "ct30", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7083, memberPrice: 6375, sku: "SH-10294", tag: "New", ph: "", img: "assets/products/ct30.webp",
     imgs: ["assets/products/ct30.webp", "assets/products/ct30-2.webp", "assets/products/ct30-3.webp", "assets/products/ct30-4.webp", "assets/products/ct30-5.webp"],
    
     sizes: [{ label: "Complete Set", price: 7083 }],
@@ -2062,7 +2062,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct31", arriveDays: [28, 33], name: "Glass & Steel Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7096, memberPrice: 6386, sku: "SH-10295", tag: "New", ph: "", img: "assets/products/ct31.webp",
+  { id: "ct31", arriveDays: [28, 33], expressOpt: 7000, name: "Glass & Steel Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7096, memberPrice: 6386, sku: "SH-10295", tag: "New", ph: "", img: "assets/products/ct31.webp",
     imgs: ["assets/products/ct31.webp", "assets/products/ct31-2.webp", "assets/products/ct31-3.webp", "assets/products/ct31-4.webp", "assets/products/ct31-5.webp"],
    
     sizes: [{ label: "120cm Set", price: 7096 }, { label: "130cm Set", price: 7315 }, { label: "140cm Set", price: 7648 }],
@@ -2075,7 +2075,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Glass", "Options": "3", "Room": "Living / Indoor" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "ct32", arriveDays: [28, 33], name: "Round Oak & Steel Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7174, memberPrice: 6457, sku: "SH-10296", tag: "New", ph: "", img: "assets/products/ct32.webp",
+  { id: "ct32", arriveDays: [28, 33], expressOpt: 7000, name: "Round Oak & Steel Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7174, memberPrice: 6457, sku: "SH-10296", tag: "New", ph: "", img: "assets/products/ct32.webp",
     imgs: ["assets/products/ct32.webp", "assets/products/ct32-2.webp", "assets/products/ct32-3.webp", "assets/products/ct32-4.webp", "assets/products/ct32-5.webp"],
    
     sizes: [{ label: "80cm Set", price: 7174 }, { label: "90cm Set", price: 7367 }, { label: "100cm Set", price: 8144 }],
@@ -2088,7 +2088,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct33", arriveDays: [28, 33], name: "Round Walnut & Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 7346, memberPrice: 6611, sku: "SH-10297", tag: "New", ph: "", img: "assets/products/ct33.webp",
+  { id: "ct33", arriveDays: [28, 33], expressOpt: 7000, name: "Round Walnut & Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 7346, memberPrice: 6611, sku: "SH-10297", tag: "New", ph: "", img: "assets/products/ct33.webp",
     imgs: ["assets/products/ct33.webp", "assets/products/ct33-2.webp", "assets/products/ct33-3.webp", "assets/products/ct33-4.webp", "assets/products/ct33-5.webp"],
    
     desc: "Walnut and glass in a single round design, dark timber under clear glass.",
@@ -2100,7 +2100,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct34", arriveDays: [28, 33], name: "White Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 7383, memberPrice: 6645, sku: "SH-10298", tag: "New", ph: "", img: "assets/products/ct34.webp",
+  { id: "ct34", arriveDays: [28, 33], expressOpt: 7000, name: "White Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 7383, memberPrice: 6645, sku: "SH-10298", tag: "New", ph: "", img: "assets/products/ct34.webp",
     imgs: ["assets/products/ct34.webp", "assets/products/ct34-2.webp", "assets/products/ct34-3.webp", "assets/products/ct34-4.webp", "assets/products/ct34-5.webp"],
    
     sizes: [{ label: "White", price: 7383 }],
@@ -2113,7 +2113,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct35", arriveDays: [28, 33], name: "Snow White Stone Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7507, memberPrice: 6756, sku: "SH-10299", tag: "New", ph: "", img: "assets/products/ct35.webp",
+  { id: "ct35", arriveDays: [28, 33], expressOpt: 7000, name: "Snow White Stone Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7507, memberPrice: 6756, sku: "SH-10299", tag: "New", ph: "", img: "assets/products/ct35.webp",
     imgs: ["assets/products/ct35.webp", "assets/products/ct35-2.webp", "assets/products/ct35-3.webp", "assets/products/ct35-4.webp", "assets/products/ct35-5.webp"],
    
     sizes: [{ label: "Snow White", price: 7507 }],
@@ -2126,7 +2126,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct36", arriveDays: [28, 33], name: "Oval Marble Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7620, memberPrice: 6858, sku: "SH-10300", tag: "New", ph: "", img: "assets/products/ct36.webp",
+  { id: "ct36", arriveDays: [28, 33], expressOpt: 7000, name: "Oval Marble Coffee Table Set", cat: "Living Room", room: "Living Room", price: 7620, memberPrice: 6858, sku: "SH-10300", tag: "New", ph: "", img: "assets/products/ct36.webp",
     imgs: ["assets/products/ct36.webp", "assets/products/ct36-2.webp", "assets/products/ct36-3.webp", "assets/products/ct36-4.webp", "assets/products/ct36-5.webp"],
    
     sizes: [{ label: "Gold / 120cm Set", price: 7620 }, { label: "Black / 120cm Set", price: 7620 }, { label: "Gold / 130cm Set", price: 8031 }, { label: "Black / 130cm Set", price: 8031 }],
@@ -2139,7 +2139,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "4", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct37", arriveDays: [28, 33], name: "Oak & Stone Coffee Table", cat: "Living Room", room: "Living Room", price: 7759, memberPrice: 6983, sku: "SH-10301", tag: "New", ph: "", img: "assets/products/ct37.webp",
+  { id: "ct37", arriveDays: [28, 33], expressOpt: 7000, name: "Oak & Stone Coffee Table", cat: "Living Room", room: "Living Room", price: 7759, memberPrice: 6983, sku: "SH-10301", tag: "New", ph: "", img: "assets/products/ct37.webp",
     imgs: ["assets/products/ct37.webp", "assets/products/ct37-2.webp", "assets/products/ct37-3.webp", "assets/products/ct37-4.webp", "assets/products/ct37-5.webp"],
    
     sizes: [{ label: "120cm / White + Tan", price: 7759 }, { label: "120cm / White", price: 7759 }, { label: "130cm / White + Tan", price: 8093 }, { label: "130cm / White", price: 8093 }],
@@ -2152,7 +2152,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "4", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct38", arriveDays: [28, 33], name: "Rectangular Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 7880, memberPrice: 7092, sku: "SH-10302", tag: "New", ph: "", img: "assets/products/ct38.webp",
+  { id: "ct38", arriveDays: [28, 33], expressOpt: 7000, name: "Rectangular Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 7880, memberPrice: 7092, sku: "SH-10302", tag: "New", ph: "", img: "assets/products/ct38.webp",
     imgs: ["assets/products/ct38.webp", "assets/products/ct38-2.webp", "assets/products/ct38-3.webp", "assets/products/ct38-4.webp", "assets/products/ct38-5.webp"],
    
     sizes: [{ label: "90cm", price: 7880 }, { label: "120cm", price: 8806 }],
@@ -2165,7 +2165,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct39", arriveDays: [28, 33], name: "Tan & White Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 7956, memberPrice: 7160, sku: "SH-10303", tag: "New", ph: "", img: "assets/products/ct39.webp",
+  { id: "ct39", arriveDays: [28, 33], expressOpt: 7000, name: "Tan & White Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 7956, memberPrice: 7160, sku: "SH-10303", tag: "New", ph: "", img: "assets/products/ct39.webp",
     imgs: ["assets/products/ct39.webp", "assets/products/ct39-2.webp", "assets/products/ct39-3.webp", "assets/products/ct39-4.webp", "assets/products/ct39-5.webp"],
    
     sizes: [{ label: "Tan + White", price: 7956 }],
@@ -2178,7 +2178,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct40", arriveDays: [28, 33], name: "Round Gold & Glass Coffee Table Set", cat: "Living Room", room: "Living Room", price: 8074, memberPrice: 7267, sku: "SH-10304", tag: "New", ph: "", img: "assets/products/ct40.webp",
+  { id: "ct40", arriveDays: [28, 33], expressOpt: 7000, name: "Round Gold & Glass Coffee Table Set", cat: "Living Room", room: "Living Room", price: 8074, memberPrice: 7267, sku: "SH-10304", tag: "New", ph: "", img: "assets/products/ct40.webp",
     imgs: ["assets/products/ct40.webp", "assets/products/ct40-2.webp", "assets/products/ct40-3.webp", "assets/products/ct40-4.webp", "assets/products/ct40-5.webp"],
    
     sizes: [{ label: "Complete Set", price: 8074 }],
@@ -2191,7 +2191,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Glass", "Options": "1", "Room": "Living / Indoor" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "ct41", arriveDays: [28, 33], name: "Solid Travertine Round Coffee Table", cat: "Living Room", room: "Living Room", price: 8220, memberPrice: 7398, sku: "SH-10305", tag: "New", ph: "", img: "assets/products/ct41.webp",
+  { id: "ct41", arriveDays: [28, 33], expressOpt: 7000, name: "Solid Travertine Round Coffee Table", cat: "Living Room", room: "Living Room", price: 8220, memberPrice: 7398, sku: "SH-10305", tag: "New", ph: "", img: "assets/products/ct41.webp",
     imgs: ["assets/products/ct41.webp", "assets/products/ct41-2.webp", "assets/products/ct41-3.webp", "assets/products/ct41-4.webp", "assets/products/ct41-5.webp"],
    
     desc: "One piece of travertine, round, with the pitted texture the stone is known for.",
@@ -2203,7 +2203,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct42", arriveDays: [28, 33], name: "Steel Coffee Table Set (Three Sizes)", cat: "Living Room", room: "Living Room", price: 8237, memberPrice: 7413, sku: "SH-10306", tag: "New", ph: "", img: "assets/products/ct42.webp",
+  { id: "ct42", arriveDays: [28, 33], expressOpt: 7000, name: "Steel Coffee Table Set (Three Sizes)", cat: "Living Room", room: "Living Room", price: 8237, memberPrice: 7413, sku: "SH-10306", tag: "New", ph: "", img: "assets/products/ct42.webp",
     imgs: ["assets/products/ct42.webp", "assets/products/ct42-2.webp", "assets/products/ct42-3.webp", "assets/products/ct42-4.webp", "assets/products/ct42-5.webp"],
    
     sizes: [{ label: "80cm Set", price: 8237 }, { label: "90cm Set", price: 8843 }, { label: "100cm Set", price: 9572 }],
@@ -2216,7 +2216,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Steel / metal", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "ct43", arriveDays: [28, 33], name: "Round Marble & Gold Coffee Table", cat: "Living Room", room: "Living Room", price: 8378, memberPrice: 7540, sku: "SH-10307", tag: "New", ph: "", img: "assets/products/ct43.webp",
+  { id: "ct43", arriveDays: [28, 33], expressOpt: 7000, name: "Round Marble & Gold Coffee Table", cat: "Living Room", room: "Living Room", price: 8378, memberPrice: 7540, sku: "SH-10307", tag: "New", ph: "", img: "assets/products/ct43.webp",
     imgs: ["assets/products/ct43.webp", "assets/products/ct43-2.webp", "assets/products/ct43-3.webp", "assets/products/ct43-4.webp", "assets/products/ct43-5.webp"],
    
     sizes: [{ label: "Gold + White", price: 8378 }],
@@ -2229,7 +2229,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct44", arriveDays: [28, 33], name: "Emerald Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 8481, memberPrice: 7633, sku: "SH-10308", tag: "New", ph: "", img: "assets/products/ct44.webp",
+  { id: "ct44", arriveDays: [28, 33], expressOpt: 7000, name: "Emerald Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 8481, memberPrice: 7633, sku: "SH-10308", tag: "New", ph: "", img: "assets/products/ct44.webp",
     imgs: ["assets/products/ct44.webp", "assets/products/ct44-2.webp", "assets/products/ct44-3.webp", "assets/products/ct44-4.webp", "assets/products/ct44-5.webp"],
    
     sizes: [{ label: "Coffee Table", price: 8481 }, { label: "Complete Set", price: 11109 }],
@@ -2242,7 +2242,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct45", arriveDays: [28, 33], name: "Solid Walnut Coffee Table", cat: "Living Room", room: "Living Room", price: 8513, memberPrice: 7662, sku: "SH-10309", tag: "New", ph: "", img: "assets/products/ct45.webp",
+  { id: "ct45", arriveDays: [28, 33], expressOpt: 7000, name: "Solid Walnut Coffee Table", cat: "Living Room", room: "Living Room", price: 8513, memberPrice: 7662, sku: "SH-10309", tag: "New", ph: "", img: "assets/products/ct45.webp",
     imgs: ["assets/products/ct45.webp", "assets/products/ct45-2.webp", "assets/products/ct45-3.webp", "assets/products/ct45-4.webp", "assets/products/ct45-5.webp"],
    
     desc: "Walnut, solid and dark, with grain worth looking at up close.",
@@ -2254,7 +2254,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct46", arriveDays: [28, 33], name: "Round Slate & Gold Coffee Table", cat: "Living Room", room: "Living Room", price: 8869, memberPrice: 7982, sku: "SH-10310", tag: "New", ph: "", img: "assets/products/ct46.webp",
+  { id: "ct46", arriveDays: [28, 33], expressOpt: 7000, name: "Round Slate & Gold Coffee Table", cat: "Living Room", room: "Living Room", price: 8869, memberPrice: 7982, sku: "SH-10310", tag: "New", ph: "", img: "assets/products/ct46.webp",
     imgs: ["assets/products/ct46.webp", "assets/products/ct46-2.webp", "assets/products/ct46-3.webp", "assets/products/ct46-4.webp", "assets/products/ct46-5.webp"],
    
     sizes: [{ label: "80cm ø", price: 8869 }, { label: "90cm ø", price: 9239 }],
@@ -2267,7 +2267,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct47", arriveDays: [28, 33], name: "Large Marble & Gold Coffee Table", cat: "Living Room", room: "Living Room", price: 8941, memberPrice: 8047, sku: "SH-10311", tag: "New", ph: "", img: "assets/products/ct47.webp",
+  { id: "ct47", arriveDays: [28, 33], expressOpt: 7000, name: "Large Marble & Gold Coffee Table", cat: "Living Room", room: "Living Room", price: 8941, memberPrice: 8047, sku: "SH-10311", tag: "New", ph: "", img: "assets/products/ct47.webp",
     imgs: ["assets/products/ct47.webp", "assets/products/ct47-2.webp", "assets/products/ct47-3.webp", "assets/products/ct47-4.webp", "assets/products/ct47-5.webp"],
    
     sizes: [{ label: "130cm", price: 8941 }, { label: "140cm", price: 9726 }],
@@ -2280,7 +2280,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct48", arriveDays: [28, 33], name: "Tri-Tone Walnut Coffee Table", cat: "Living Room", room: "Living Room", price: 9031, memberPrice: 8128, sku: "SH-10312", tag: "New", ph: "", img: "assets/products/ct48.webp",
+  { id: "ct48", arriveDays: [28, 33], expressOpt: 7000, name: "Tri-Tone Walnut Coffee Table", cat: "Living Room", room: "Living Room", price: 9031, memberPrice: 8128, sku: "SH-10312", tag: "New", ph: "", img: "assets/products/ct48.webp",
     imgs: ["assets/products/ct48.webp", "assets/products/ct48-2.webp", "assets/products/ct48-3.webp", "assets/products/ct48-4.webp", "assets/products/ct48-5.webp"],
    
     sizes: [{ label: "Tri-Color", price: 9031 }],
@@ -2293,7 +2293,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct49", arriveDays: [28, 33], name: "Marble & Metal Coffee Table", cat: "Living Room", room: "Living Room", price: 9143, memberPrice: 8229, sku: "SH-10313", tag: "New", ph: "", img: "assets/products/ct49.webp",
+  { id: "ct49", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Metal Coffee Table", cat: "Living Room", room: "Living Room", price: 9143, memberPrice: 8229, sku: "SH-10313", tag: "New", ph: "", img: "assets/products/ct49.webp",
     imgs: ["assets/products/ct49.webp", "assets/products/ct49-2.webp", "assets/products/ct49-3.webp", "assets/products/ct49-4.webp", "assets/products/ct49-5.webp"],
    
     desc: "Marble on metal, single size, nothing extra.",
@@ -2305,7 +2305,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct50", arriveDays: [28, 33], name: "Travertine & Oak Coffee Table Set", cat: "Living Room", room: "Living Room", price: 9235, memberPrice: 8312, sku: "SH-10314", tag: "New", ph: "", img: "assets/products/ct50.webp",
+  { id: "ct50", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine & Oak Coffee Table Set", cat: "Living Room", room: "Living Room", price: 9235, memberPrice: 8312, sku: "SH-10314", tag: "New", ph: "", img: "assets/products/ct50.webp",
     imgs: ["assets/products/ct50.webp", "assets/products/ct50-2.webp", "assets/products/ct50-3.webp", "assets/products/ct50-4.webp", "assets/products/ct50-5.webp"],
    
     sizes: [{ label: "Black Set", price: 9235 }, { label: "Chocolate Set", price: 9235 }],
@@ -2318,7 +2318,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct51", arriveDays: [28, 33], name: "Two-Tier Coffee Table Set", cat: "Living Room", room: "Living Room", price: 9711, memberPrice: 8740, sku: "SH-10315", tag: "New", ph: "", img: "assets/products/ct51.webp",
+  { id: "ct51", arriveDays: [28, 33], expressOpt: 7000, name: "Two-Tier Coffee Table Set", cat: "Living Room", room: "Living Room", price: 9711, memberPrice: 8740, sku: "SH-10315", tag: "New", ph: "", img: "assets/products/ct51.webp",
     imgs: ["assets/products/ct51.webp", "assets/products/ct51-2.webp", "assets/products/ct51-3.webp", "assets/products/ct51-4.webp", "assets/products/ct51-5.webp"],
    
     sizes: [{ label: "Complete Set", price: 9711 }],
@@ -2331,7 +2331,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct52", arriveDays: [28, 33], name: "Travertine Coffee Table (Four Sizes)", cat: "Living Room", room: "Living Room", price: 9896, memberPrice: 8906, sku: "SH-10316", tag: "New", ph: "", img: "assets/products/ct52.webp",
+  { id: "ct52", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Coffee Table (Four Sizes)", cat: "Living Room", room: "Living Room", price: 9896, memberPrice: 8906, sku: "SH-10316", tag: "New", ph: "", img: "assets/products/ct52.webp",
     imgs: ["assets/products/ct52.webp", "assets/products/ct52-2.webp", "assets/products/ct52-3.webp", "assets/products/ct52-4.webp", "assets/products/ct52-5.webp"],
    
     sizes: [{ label: "100cm", price: 9896 }, { label: "120cm", price: 10081 }, { label: "140cm", price: 10722 }, { label: "160cm", price: 11333 }],
@@ -2344,7 +2344,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "4", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct53", arriveDays: [28, 33], name: "Walnut & Steel Coffee Table", cat: "Living Room", room: "Living Room", price: 10241, memberPrice: 9217, sku: "SH-10317", tag: "New", ph: "", img: "assets/products/ct53.webp",
+  { id: "ct53", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut & Steel Coffee Table", cat: "Living Room", room: "Living Room", price: 10241, memberPrice: 9217, sku: "SH-10317", tag: "New", ph: "", img: "assets/products/ct53.webp",
     imgs: ["assets/products/ct53.webp", "assets/products/ct53-2.webp", "assets/products/ct53-3.webp", "assets/products/ct53-4.webp", "assets/products/ct53-5.webp"],
    
     desc: "Walnut on steel, dark timber against a fine frame.",
@@ -2356,7 +2356,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct54", arriveDays: [28, 33], name: "Marble Coffee Table (120 or 130cm)", cat: "Living Room", room: "Living Room", price: 10370, memberPrice: 9333, sku: "SH-10318", tag: "New", ph: "", img: "assets/products/ct54.webp",
+  { id: "ct54", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Coffee Table (120 or 130cm)", cat: "Living Room", room: "Living Room", price: 10370, memberPrice: 9333, sku: "SH-10318", tag: "New", ph: "", img: "assets/products/ct54.webp",
     imgs: ["assets/products/ct54.webp", "assets/products/ct54-2.webp", "assets/products/ct54-3.webp", "assets/products/ct54-4.webp", "assets/products/ct54-5.webp"],
    
     sizes: [{ label: "120cm", price: 10370 }, { label: "130cm", price: 11089 }],
@@ -2369,7 +2369,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct55", arriveDays: [28, 33], name: "Oak Coffee Table in Brown or Black", cat: "Living Room", room: "Living Room", price: 10472, memberPrice: 9425, sku: "SH-10319", tag: "New", ph: "", img: "assets/products/ct55.webp",
+  { id: "ct55", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Coffee Table in Brown or Black", cat: "Living Room", room: "Living Room", price: 10472, memberPrice: 9425, sku: "SH-10319", tag: "New", ph: "", img: "assets/products/ct55.webp",
     imgs: ["assets/products/ct55.webp", "assets/products/ct55-2.webp", "assets/products/ct55-3.webp", "assets/products/ct55-4.webp", "assets/products/ct55-5.webp"],
    
     sizes: [{ label: "Brown / 120cm", price: 10472 }, { label: "Black / 120cm", price: 10472 }, { label: "Brown / 130cm", price: 14444 }, { label: "Black / 130cm", price: 14444 }],
@@ -2382,7 +2382,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "4", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct56", arriveDays: [28, 33], name: "Marble Coffee Table Set (90 or 110cm)", cat: "Living Room", room: "Living Room", price: 10574, memberPrice: 9517, sku: "SH-10320", tag: "New", ph: "", img: "assets/products/ct56.webp",
+  { id: "ct56", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Coffee Table Set (90 or 110cm)", cat: "Living Room", room: "Living Room", price: 10574, memberPrice: 9517, sku: "SH-10320", tag: "New", ph: "", img: "assets/products/ct56.webp",
     imgs: ["assets/products/ct56.webp", "assets/products/ct56-2.webp", "assets/products/ct56-3.webp", "assets/products/ct56-4.webp", "assets/products/ct56-5.webp"],
    
     sizes: [{ label: "90cm Set", price: 10574 }, { label: "110cm Set", price: 10926 }],
@@ -2395,7 +2395,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct57", arriveDays: [28, 33], name: "Walnut & Steel Coffee Table Set", cat: "Living Room", room: "Living Room", price: 10861, memberPrice: 9775, sku: "SH-10321", tag: "New", ph: "", img: "assets/products/ct57.webp",
+  { id: "ct57", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut & Steel Coffee Table Set", cat: "Living Room", room: "Living Room", price: 10861, memberPrice: 9775, sku: "SH-10321", tag: "New", ph: "", img: "assets/products/ct57.webp",
     imgs: ["assets/products/ct57.webp", "assets/products/ct57-2.webp", "assets/products/ct57-3.webp", "assets/products/ct57-4.webp", "assets/products/ct57-5.webp"],
    
     sizes: [{ label: "80cm Set", price: 10861 }, { label: "90cm Set", price: 11111 }, { label: "100cm Set", price: 11435 }],
@@ -2408,7 +2408,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct58", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Tan + White":"assets/products/ct58-2.webp"}, name: "Two-Tone Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 10920, memberPrice: 9828, sku: "SH-10322", tag: "New", ph: "", img: "assets/products/ct58.webp",
+  { id: "ct58", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Tan + White":"assets/products/ct58-2.webp"}, name: "Two-Tone Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 10920, memberPrice: 9828, sku: "SH-10322", tag: "New", ph: "", img: "assets/products/ct58.webp",
     imgs: ["assets/products/ct58.webp", "assets/products/ct58-2.webp", "assets/products/ct58-3.webp", "assets/products/ct58-4.webp", "assets/products/ct58-5.webp"],
    
     sizes: [{ label: "Tan + White", price: 10920 }, { label: "Grey + White", price: 10920 }],
@@ -2421,7 +2421,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct59", arriveDays: [28, 33], name: "Chocolate or Calacatta Stone Coffee Table", cat: "Living Room", room: "Living Room", price: 10924, memberPrice: 9832, sku: "SH-10323", tag: "New", ph: "", img: "assets/products/ct59.webp",
+  { id: "ct59", arriveDays: [28, 33], expressOpt: 7000, name: "Chocolate or Calacatta Stone Coffee Table", cat: "Living Room", room: "Living Room", price: 10924, memberPrice: 9832, sku: "SH-10323", tag: "New", ph: "", img: "assets/products/ct59.webp",
     imgs: ["assets/products/ct59.webp", "assets/products/ct59-2.webp", "assets/products/ct59-3.webp", "assets/products/ct59-4.webp", "assets/products/ct59-5.webp"],
    
     sizes: [{ label: "Chocolate", price: 10924 }, { label: "Calacatta White", price: 10924 }],
@@ -2434,7 +2434,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct60", arriveDays: [28, 33], name: "Charcoal & White Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 10926, memberPrice: 9833, sku: "SH-10324", tag: "New", ph: "", img: "assets/products/ct60.webp",
+  { id: "ct60", arriveDays: [28, 33], expressOpt: 7000, name: "Charcoal & White Marble Coffee Table", cat: "Living Room", room: "Living Room", price: 10926, memberPrice: 9833, sku: "SH-10324", tag: "New", ph: "", img: "assets/products/ct60.webp",
     imgs: ["assets/products/ct60.webp", "assets/products/ct60-2.webp", "assets/products/ct60-3.webp", "assets/products/ct60-4.webp", "assets/products/ct60-5.webp"],
    
     sizes: [{ label: "Charcoal Grey + White", price: 10926 }],
@@ -2447,7 +2447,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct61", arriveDays: [28, 33], name: "Charcoal Marble & Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 11056, memberPrice: 9950, sku: "SH-10325", tag: "New", ph: "", img: "assets/products/ct61.webp",
+  { id: "ct61", arriveDays: [28, 33], expressOpt: 7000, name: "Charcoal Marble & Glass Coffee Table", cat: "Living Room", room: "Living Room", price: 11056, memberPrice: 9950, sku: "SH-10325", tag: "New", ph: "", img: "assets/products/ct61.webp",
     imgs: ["assets/products/ct61.webp", "assets/products/ct61-2.webp", "assets/products/ct61-3.webp", "assets/products/ct61-4.webp", "assets/products/ct61-5.webp"],
    
     sizes: [{ label: "Charcoal Grey", price: 11056 }],
@@ -2460,7 +2460,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct62", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White + Gold":"assets/products/ct62-2.webp","Chocolate + Gold":"assets/products/ct62-4.webp"}, name: "Marble & Gold Rectangular Coffee Table", cat: "Living Room", room: "Living Room", price: 11457, memberPrice: 10311, sku: "SH-10326", tag: "New", ph: "", img: "assets/products/ct62.webp",
+  { id: "ct62", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White + Gold":"assets/products/ct62-2.webp","Chocolate + Gold":"assets/products/ct62-4.webp"}, name: "Marble & Gold Rectangular Coffee Table", cat: "Living Room", room: "Living Room", price: 11457, memberPrice: 10311, sku: "SH-10326", tag: "New", ph: "", img: "assets/products/ct62.webp",
     imgs: ["assets/products/ct62.webp", "assets/products/ct62-2.webp", "assets/products/ct62-3.webp", "assets/products/ct62-4.webp", "assets/products/ct62-5.webp"],
    
     sizes: [{ label: "White + Gold", price: 11457 }, { label: "Chocolate + Gold", price: 11457 }],
@@ -2473,7 +2473,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct63", arriveDays: [28, 33], name: "Round Oak Coffee Table Set", cat: "Living Room", room: "Living Room", price: 11748, memberPrice: 10573, sku: "SH-10327", tag: "New", ph: "", img: "assets/products/ct63.webp",
+  { id: "ct63", arriveDays: [28, 33], expressOpt: 7000, name: "Round Oak Coffee Table Set", cat: "Living Room", room: "Living Room", price: 11748, memberPrice: 10573, sku: "SH-10327", tag: "New", ph: "", img: "assets/products/ct63.webp",
     imgs: ["assets/products/ct63.webp", "assets/products/ct63-2.webp", "assets/products/ct63-3.webp", "assets/products/ct63-4.webp", "assets/products/ct63-5.webp"],
    
     sizes: [{ label: "80cm ø Set", price: 11748 }, { label: "90cm ø Set", price: 12041 }],
@@ -2486,7 +2486,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Solid timber", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "ct64", arriveDays: [28, 33], name: "Veined Marble Coffee Table Set", cat: "Living Room", room: "Living Room", price: 11852, memberPrice: 10667, sku: "SH-10328", tag: "New", ph: "", img: "assets/products/ct64.webp",
+  { id: "ct64", arriveDays: [28, 33], expressOpt: 7000, name: "Veined Marble Coffee Table Set", cat: "Living Room", room: "Living Room", price: 11852, memberPrice: 10667, sku: "SH-10328", tag: "New", ph: "", img: "assets/products/ct64.webp",
     imgs: ["assets/products/ct64.webp", "assets/products/ct64-2.webp", "assets/products/ct64-3.webp", "assets/products/ct64-4.webp", "assets/products/ct64-5.webp"],
    
     sizes: [{ label: "White + Light Veins", price: 11852 }, { label: "White + Dark Veins", price: 11852 }],
@@ -2499,7 +2499,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct65", arriveDays: [28, 33], name: "Large Round Travertine Coffee Table", cat: "Living Room", room: "Living Room", price: 12361, memberPrice: 11125, sku: "SH-10329", tag: "New", ph: "", img: "assets/products/ct65.webp",
+  { id: "ct65", arriveDays: [28, 33], expressOpt: 7000, name: "Large Round Travertine Coffee Table", cat: "Living Room", room: "Living Room", price: 12361, memberPrice: 11125, sku: "SH-10329", tag: "New", ph: "", img: "assets/products/ct65.webp",
     imgs: ["assets/products/ct65.webp", "assets/products/ct65-2.webp", "assets/products/ct65-3.webp", "assets/products/ct65-4.webp", "assets/products/ct65-5.webp"],
    
     sizes: [{ label: "90cm", price: 12361 }, { label: "110cm", price: 12935 }],
@@ -2512,7 +2512,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct66", arriveDays: [28, 33], name: "Marble Coffee Table Collection", cat: "Living Room", room: "Living Room", price: 12550, memberPrice: 11295, sku: "SH-10330", tag: "New", ph: "", img: "assets/products/ct66.webp",
+  { id: "ct66", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Coffee Table Collection", cat: "Living Room", room: "Living Room", price: 12550, memberPrice: 11295, sku: "SH-10330", tag: "New", ph: "", img: "assets/products/ct66.webp",
     imgs: ["assets/products/ct66.webp", "assets/products/ct66-2.webp", "assets/products/ct66-3.webp", "assets/products/ct66-4.webp", "assets/products/ct66-5.webp"],
    
     sizes: [{ label: "Set: B", price: 12550 }, { label: "Set: C", price: 12674 }, { label: "Set: A", price: 12767 }],
@@ -2525,7 +2525,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct67", arriveDays: [28, 33], name: "Rectangular Travertine Coffee Table", cat: "Living Room", room: "Living Room", price: 12630, memberPrice: 11367, sku: "SH-10331", tag: "New", ph: "", img: "assets/products/ct67.webp",
+  { id: "ct67", arriveDays: [28, 33], expressOpt: 7000, name: "Rectangular Travertine Coffee Table", cat: "Living Room", room: "Living Room", price: 12630, memberPrice: 11367, sku: "SH-10331", tag: "New", ph: "", img: "assets/products/ct67.webp",
     imgs: ["assets/products/ct67.webp", "assets/products/ct67-2.webp", "assets/products/ct67-3.webp", "assets/products/ct67-4.webp", "assets/products/ct67-5.webp"],
    
     desc: "Rectangular travertine, one size, cut from solid stone.",
@@ -2537,7 +2537,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct68", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White":"assets/products/ct68.webp","Green":"assets/products/ct68-3.webp"}, name: "Marble Coffee Table in White or Green", cat: "Living Room", room: "Living Room", price: 13333, memberPrice: 12000, sku: "SH-10332", tag: "New", ph: "", img: "assets/products/ct68.webp",
+  { id: "ct68", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White":"assets/products/ct68.webp","Green":"assets/products/ct68-3.webp"}, name: "Marble Coffee Table in White or Green", cat: "Living Room", room: "Living Room", price: 13333, memberPrice: 12000, sku: "SH-10332", tag: "New", ph: "", img: "assets/products/ct68.webp",
     imgs: ["assets/products/ct68.webp", "assets/products/ct68-2.webp", "assets/products/ct68-3.webp", "assets/products/ct68-4.webp", "assets/products/ct68-5.webp"],
    
     sizes: [{ label: "White", price: 13333 }, { label: "Green", price: 13333 }],
@@ -2550,7 +2550,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "ct69", arriveDays: [28, 33], name: "Titanium Finish Slate Coffee Table", cat: "Living Room", room: "Living Room", price: 14067, memberPrice: 12660, sku: "SH-10333", tag: "New", ph: "", img: "assets/products/ct69.webp",
+  { id: "ct69", arriveDays: [28, 33], expressOpt: 7000, name: "Titanium Finish Slate Coffee Table", cat: "Living Room", room: "Living Room", price: 14067, memberPrice: 12660, sku: "SH-10333", tag: "New", ph: "", img: "assets/products/ct69.webp",
     imgs: ["assets/products/ct69.webp", "assets/products/ct69-2.webp", "assets/products/ct69-3.webp", "assets/products/ct69-4.webp", "assets/products/ct69-5.webp"],
    
     sizes: [{ label: "Titanium Black", price: 14067 }, { label: "Titanium Gold", price: 14067 }],
@@ -2563,7 +2563,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural stone", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ct70", arriveDays: [28, 33], name: "Large Travertine Coffee Table", cat: "Living Room", room: "Living Room", price: 16296, memberPrice: 14666, sku: "SH-10334", tag: "New", ph: "", img: "assets/products/ct70.webp",
+  { id: "ct70", arriveDays: [28, 33], expressOpt: 7000, name: "Large Travertine Coffee Table", cat: "Living Room", room: "Living Room", price: 16296, memberPrice: 14666, sku: "SH-10334", tag: "New", ph: "", img: "assets/products/ct70.webp",
     imgs: ["assets/products/ct70.webp", "assets/products/ct70-2.webp", "assets/products/ct70-3.webp", "assets/products/ct70-4.webp", "assets/products/ct70-5.webp"],
    
     desc: "A large rectangular block of travertine, for a room with the scale to carry it.",
@@ -2575,7 +2575,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "ct71", arriveDays: [28, 33], name: "Oversized Round Travertine Coffee Table", cat: "Living Room", room: "Living Room", price: 16606, memberPrice: 14945, sku: "SH-10335", tag: "New", ph: "", img: "assets/products/ct71.webp",
+  { id: "ct71", arriveDays: [28, 33], expressOpt: 7000, name: "Oversized Round Travertine Coffee Table", cat: "Living Room", room: "Living Room", price: 16606, memberPrice: 14945, sku: "SH-10335", tag: "New", ph: "", img: "assets/products/ct71.webp",
     imgs: ["assets/products/ct71.webp", "assets/products/ct71-2.webp", "assets/products/ct71-3.webp", "assets/products/ct71-4.webp", "assets/products/ct71-5.webp"],
    
     desc: "The largest round travertine table here, and the heaviest piece in the collection.",
@@ -2587,7 +2587,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee table", "Material": "Natural travertine", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "st01", arriveDays: [28, 33], name: "Glass Side Table", cat: "Living Room", room: "Living Room", price: 1093, memberPrice: 984, sku: "SH-10336", tag: "New", ph: "", img: "assets/products/st01.webp",
+  { id: "st01", arriveDays: [28, 33], expressOpt: 7000, name: "Glass Side Table", cat: "Living Room", room: "Living Room", price: 1093, memberPrice: 984, sku: "SH-10336", tag: "New", ph: "", img: "assets/products/st01.webp",
     imgs: ["assets/products/st01.webp", "assets/products/st01-2.webp", "assets/products/st01-3.webp", "assets/products/st01-4.webp", "assets/products/st01-5.webp"],
    
     sizes: [{ label: "Black", price: 1093 }],
@@ -2600,7 +2600,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Glass", "Options": "1", "Room": "Living / Indoor" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "st02", arriveDays: [28, 33], name: "Oak Side Table (Two Sizes)", cat: "Living Room", room: "Living Room", price: 1111, memberPrice: 1000, sku: "SH-10337", tag: "New", ph: "", img: "assets/products/st02.webp",
+  { id: "st02", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Side Table (Two Sizes)", cat: "Living Room", room: "Living Room", price: 1111, memberPrice: 1000, sku: "SH-10337", tag: "New", ph: "", img: "assets/products/st02.webp",
     imgs: ["assets/products/st02.webp", "assets/products/st02-2.webp", "assets/products/st02-3.webp", "assets/products/st02-4.webp", "assets/products/st02-5.webp"],
    
     sizes: [{ label: "S", price: 1111 }, { label: "L", price: 1222 }],
@@ -2613,7 +2613,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Solid timber", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "st03", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/st03-4.webp","Black":"assets/products/st03-3.webp"}, name: "Ivory or Black Side Table", cat: "Living Room", room: "Living Room", price: 1624, memberPrice: 1462, sku: "SH-10338", tag: "New", ph: "", img: "assets/products/st03.webp",
+  { id: "st03", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/st03-4.webp","Black":"assets/products/st03-3.webp"}, name: "Ivory or Black Side Table", cat: "Living Room", room: "Living Room", price: 1624, memberPrice: 1462, sku: "SH-10338", tag: "New", ph: "", img: "assets/products/st03.webp",
     imgs: ["assets/products/st03.webp", "assets/products/st03-2.webp", "assets/products/st03-3.webp", "assets/products/st03-4.webp", "assets/products/st03-5.webp"],
    
     sizes: [{ label: "Ivory", price: 1624 }, { label: "Black", price: 1624 }],
@@ -2626,7 +2626,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural stone", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "st04", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/st04-3.webp","White":"assets/products/st04-5.webp"}, name: "Steel Side Table, Black or White", cat: "Living Room", room: "Living Room", price: 1646, memberPrice: 1481, sku: "SH-10339", tag: "New", ph: "", img: "assets/products/st04.webp",
+  { id: "st04", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/st04-3.webp","White":"assets/products/st04-5.webp"}, name: "Steel Side Table, Black or White", cat: "Living Room", room: "Living Room", price: 1646, memberPrice: 1481, sku: "SH-10339", tag: "New", ph: "", img: "assets/products/st04.webp",
     imgs: ["assets/products/st04.webp", "assets/products/st04-2.webp", "assets/products/st04-3.webp", "assets/products/st04-4.webp", "assets/products/st04-5.webp"],
    
     sizes: [{ label: "Black", price: 1646 }, { label: "White", price: 1646 }],
@@ -2639,7 +2639,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Steel / metal", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "st05", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/st05-3.webp"}, name: "Metal Side Table", cat: "Living Room", room: "Living Room", price: 1656, memberPrice: 1490, sku: "SH-10340", tag: "New", ph: "", img: "assets/products/st05.webp",
+  { id: "st05", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/st05-3.webp"}, name: "Metal Side Table", cat: "Living Room", room: "Living Room", price: 1656, memberPrice: 1490, sku: "SH-10340", tag: "New", ph: "", img: "assets/products/st05.webp",
     imgs: ["assets/products/st05.webp", "assets/products/st05-2.webp", "assets/products/st05-3.webp", "assets/products/st05-4.webp", "assets/products/st05-5.webp"],
    
     sizes: [{ label: "Black", price: 1656 }, { label: "White", price: 1656 }],
@@ -2652,7 +2652,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Steel / metal", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "st06", arriveDays: [28, 33], name: "Stainless Steel Side Table (Three Designs)", cat: "Living Room", room: "Living Room", price: 1657, memberPrice: 1491, sku: "SH-10341", tag: "New", ph: "", img: "assets/products/st06.webp",
+  { id: "st06", arriveDays: [28, 33], expressOpt: 7000, name: "Stainless Steel Side Table (Three Designs)", cat: "Living Room", room: "Living Room", price: 1657, memberPrice: 1491, sku: "SH-10341", tag: "New", ph: "", img: "assets/products/st06.webp",
     imgs: ["assets/products/st06.webp", "assets/products/st06-2.webp", "assets/products/st06-3.webp", "assets/products/st06-4.webp", "assets/products/st06-5.webp"],
    
     sizes: [{ label: "A", price: 1657 }, { label: "B", price: 1657 }, { label: "C", price: 1657 }],
@@ -2665,7 +2665,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Steel / metal", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "st07", arriveDays: [28, 33], name: "Silver Stainless Steel Side Table", cat: "Living Room", room: "Living Room", price: 2167, memberPrice: 1950, sku: "SH-10342", tag: "New", ph: "", img: "assets/products/st07.webp",
+  { id: "st07", arriveDays: [28, 33], expressOpt: 7000, name: "Silver Stainless Steel Side Table", cat: "Living Room", room: "Living Room", price: 2167, memberPrice: 1950, sku: "SH-10342", tag: "New", ph: "", img: "assets/products/st07.webp",
     imgs: ["assets/products/st07.webp", "assets/products/st07-2.webp", "assets/products/st07-3.webp", "assets/products/st07-4.webp", "assets/products/st07-5.webp"],
    
     sizes: [{ label: "Silver", price: 2167 }],
@@ -2678,7 +2678,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Steel / metal", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "st08", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White + Gold":"assets/products/st08-2.webp","Orange + Gold":"assets/products/st08-3.webp"}, name: "Gold-Trimmed Side Table", cat: "Living Room", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10343", tag: "New", ph: "", img: "assets/products/st08.webp",
+  { id: "st08", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White + Gold":"assets/products/st08-2.webp","Orange + Gold":"assets/products/st08-3.webp"}, name: "Gold-Trimmed Side Table", cat: "Living Room", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10343", tag: "New", ph: "", img: "assets/products/st08.webp",
     imgs: ["assets/products/st08.webp", "assets/products/st08-2.webp", "assets/products/st08-3.webp", "assets/products/st08-4.webp", "assets/products/st08-5.webp"],
    
     sizes: [{ label: "White + Gold", price: 2204 }, { label: "Orange + Gold", price: 2204 }],
@@ -2691,7 +2691,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Steel / metal", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "st09", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Natural":"assets/products/st09.webp","Black":"assets/products/st09-3.webp","Walnut":"assets/products/st09-5.webp"}, name: "Ash Timber Side Table", cat: "Living Room", room: "Living Room", price: 2220, memberPrice: 1998, sku: "SH-10344", tag: "New", ph: "", img: "assets/products/st09.webp",
+  { id: "st09", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Natural":"assets/products/st09.webp","Black":"assets/products/st09-3.webp","Walnut":"assets/products/st09-5.webp"}, name: "Ash Timber Side Table", cat: "Living Room", room: "Living Room", price: 2220, memberPrice: 1998, sku: "SH-10344", tag: "New", ph: "", img: "assets/products/st09.webp",
     imgs: ["assets/products/st09.webp", "assets/products/st09-2.webp", "assets/products/st09-3.webp", "assets/products/st09-4.webp", "assets/products/st09-5.webp"],
    
     sizes: [{ label: "Natural", price: 2220 }, { label: "Black", price: 2220 }, { label: "Walnut", price: 2220 }],
@@ -2704,7 +2704,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Solid timber", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "st10", arriveDays: [28, 33], name: "Rattan Side Table", cat: "Living Room", room: "Living Room", price: 2278, memberPrice: 2050, sku: "SH-10345", tag: "New", ph: "", img: "assets/products/st10.webp",
+  { id: "st10", arriveDays: [28, 33], expressOpt: 7000, name: "Rattan Side Table", cat: "Living Room", room: "Living Room", price: 2278, memberPrice: 2050, sku: "SH-10345", tag: "New", ph: "", img: "assets/products/st10.webp",
     imgs: ["assets/products/st10.webp", "assets/products/st10-2.webp", "assets/products/st10-3.webp", "assets/products/st10-4.webp", "assets/products/st10-5.webp"],
    
     sizes: [{ label: "Black + Tan", price: 2278 }],
@@ -2717,7 +2717,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, which fades and dries timber, and use coasters under anything hot or wet." },
 
-  { id: "st11", arriveDays: [28, 33], name: "Stone & Silver Side Table", cat: "Living Room", room: "Living Room", price: 2494, memberPrice: 2245, sku: "SH-10346", tag: "New", ph: "", img: "assets/products/st11.webp",
+  { id: "st11", arriveDays: [28, 33], expressOpt: 7000, name: "Stone & Silver Side Table", cat: "Living Room", room: "Living Room", price: 2494, memberPrice: 2245, sku: "SH-10346", tag: "New", ph: "", img: "assets/products/st11.webp",
     imgs: ["assets/products/st11.webp", "assets/products/st11-2.webp", "assets/products/st11-3.webp", "assets/products/st11-4.webp", "assets/products/st11-5.webp"],
    
     sizes: [{ label: "White + Silver", price: 2494 }],
@@ -2730,7 +2730,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural stone", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "st12", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Gold":"assets/products/st12-5.webp","Silver":"assets/products/st12-4.webp"}, name: "Round Side Table, Gold or Silver", cat: "Living Room", room: "Living Room", price: 2759, memberPrice: 2483, sku: "SH-10347", tag: "New", ph: "", img: "assets/products/st12.webp",
+  { id: "st12", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Gold":"assets/products/st12-5.webp","Silver":"assets/products/st12-4.webp"}, name: "Round Side Table, Gold or Silver", cat: "Living Room", room: "Living Room", price: 2759, memberPrice: 2483, sku: "SH-10347", tag: "New", ph: "", img: "assets/products/st12.webp",
     imgs: ["assets/products/st12.webp", "assets/products/st12-2.webp", "assets/products/st12-3.webp", "assets/products/st12-4.webp", "assets/products/st12-5.webp"],
    
     sizes: [{ label: "Gold", price: 2759 }, { label: "Silver", price: 2759 }],
@@ -2743,7 +2743,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Steel / metal", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "st13", arriveDays: [28, 33], name: "Travertine Side Table", cat: "Living Room", room: "Living Room", price: 3069, memberPrice: 2762, sku: "SH-10348", tag: "New", ph: "", img: "assets/products/st13.webp",
+  { id: "st13", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Side Table", cat: "Living Room", room: "Living Room", price: 3069, memberPrice: 2762, sku: "SH-10348", tag: "New", ph: "", img: "assets/products/st13.webp",
     imgs: ["assets/products/st13.webp", "assets/products/st13-2.webp", "assets/products/st13-3.webp", "assets/products/st13-4.webp"],
    
     sizes: [{ label: "Travertine", price: 3069 }],
@@ -2756,7 +2756,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural travertine", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "st14", arriveDays: [28, 33], name: "Travertine Side Table (Two Heights)", cat: "Living Room", room: "Living Room", price: 3496, memberPrice: 3146, sku: "SH-10349", tag: "New", ph: "", img: "assets/products/st14.webp",
+  { id: "st14", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Side Table (Two Heights)", cat: "Living Room", room: "Living Room", price: 3496, memberPrice: 3146, sku: "SH-10349", tag: "New", ph: "", img: "assets/products/st14.webp",
     imgs: ["assets/products/st14.webp", "assets/products/st14-2.webp", "assets/products/st14-3.webp", "assets/products/st14-4.webp", "assets/products/st14-5.webp"],
    
     sizes: [{ label: "Travertine / 65cm H", price: 3496 }, { label: "Travertine / 90cm H", price: 4009 }],
@@ -2769,7 +2769,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural travertine", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "st15", arriveDays: [28, 33], name: "Marble & Glass Side Table", cat: "Living Room", room: "Living Room", price: 3515, memberPrice: 3164, sku: "SH-10350", tag: "New", ph: "", img: "assets/products/st15.webp",
+  { id: "st15", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Glass Side Table", cat: "Living Room", room: "Living Room", price: 3515, memberPrice: 3164, sku: "SH-10350", tag: "New", ph: "", img: "assets/products/st15.webp",
     imgs: ["assets/products/st15.webp", "assets/products/st15-2.webp", "assets/products/st15-3.webp", "assets/products/st15-4.webp", "assets/products/st15-5.webp"],
    
     sizes: [{ label: "Off White", price: 3515 }],
@@ -2782,7 +2782,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "st16", arriveDays: [28, 33], name: "Travertine & Glass Side Table", cat: "Living Room", room: "Living Room", price: 3889, memberPrice: 3500, sku: "SH-10351", tag: "New", ph: "", img: "assets/products/st16.webp",
+  { id: "st16", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine & Glass Side Table", cat: "Living Room", room: "Living Room", price: 3889, memberPrice: 3500, sku: "SH-10351", tag: "New", ph: "", img: "assets/products/st16.webp",
     imgs: ["assets/products/st16.webp", "assets/products/st16-2.webp", "assets/products/st16-3.webp", "assets/products/st16-4.webp"],
    
     desc: "Travertine and glass together, one size.",
@@ -2794,7 +2794,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural travertine", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so use coasters and deal with spills immediately. Never use acidic cleaners." },
 
-  { id: "st17", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Off White":"assets/products/st17-3.webp"}, name: "Marble Side Table, Black or Off White", cat: "Living Room", room: "Living Room", price: 4074, memberPrice: 3667, sku: "SH-10352", tag: "New", ph: "", img: "assets/products/st17.webp",
+  { id: "st17", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Off White":"assets/products/st17-3.webp"}, name: "Marble Side Table, Black or Off White", cat: "Living Room", room: "Living Room", price: 4074, memberPrice: 3667, sku: "SH-10352", tag: "New", ph: "", img: "assets/products/st17.webp",
     imgs: ["assets/products/st17.webp", "assets/products/st17-2.webp", "assets/products/st17-3.webp", "assets/products/st17-4.webp", "assets/products/st17-5.webp"],
    
     sizes: [{ label: "Black", price: 4074 }, { label: "Off White", price: 4074 }],
@@ -2807,7 +2807,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural marble", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "st18", arriveDays: [28, 33], name: "Marble & Cement Side Table", cat: "Living Room", room: "Living Room", price: 4250, memberPrice: 3825, sku: "SH-10353", tag: "New", ph: "", img: "assets/products/st18.webp",
+  { id: "st18", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Cement Side Table", cat: "Living Room", room: "Living Room", price: 4250, memberPrice: 3825, sku: "SH-10353", tag: "New", ph: "", img: "assets/products/st18.webp",
     imgs: ["assets/products/st18.webp", "assets/products/st18-2.webp", "assets/products/st18-3.webp", "assets/products/st18-4.webp", "assets/products/st18-5.webp"],
    
     desc: "Marble with cement, an unusual pairing that suits a more industrial room.",
@@ -2819,7 +2819,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural stone", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "st19", arriveDays: [28, 33], name: "White Marble Side Table", cat: "Living Room", room: "Living Room", price: 4980, memberPrice: 4482, sku: "SH-10354", tag: "New", ph: "", img: "assets/products/st19.webp",
+  { id: "st19", arriveDays: [28, 33], expressOpt: 7000, name: "White Marble Side Table", cat: "Living Room", room: "Living Room", price: 4980, memberPrice: 4482, sku: "SH-10354", tag: "New", ph: "", img: "assets/products/st19.webp",
     imgs: ["assets/products/st19.webp", "assets/products/st19-2.webp", "assets/products/st19-3.webp", "assets/products/st19-4.webp", "assets/products/st19-5.webp"],
    
     sizes: [{ label: "White Marble", price: 4980 }],
@@ -2832,7 +2832,7 @@ const PRODUCTS = [
     specs: { "Type": "Side table", "Material": "Natural marble", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil, which etch the surface. Avoid acidic or abrasive cleaners." },
 
-  { id: "dc01", arriveDays: [28, 33], name: "Velvet Stool with Gold Base", cat: "Dining", room: "Living Room", price: 1013, memberPrice: 912, sku: "SH-10355", tag: "New", ph: "", img: "assets/products/dc01.webp",
+  { id: "dc01", arriveDays: [28, 33], expressOpt: 7000, name: "Velvet Stool with Gold Base", cat: "Dining", room: "Living Room", price: 1013, memberPrice: 912, sku: "SH-10355", tag: "New", ph: "", img: "assets/products/dc01.webp",
     imgs: ["assets/products/dc01.webp", "assets/products/dc01-2.webp", "assets/products/dc01-3.webp", "assets/products/dc01-4.webp", "assets/products/dc01-5.webp"],
    
     sizes: [{ label: "Plaid", price: 1013 }, { label: "Light Grey", price: 1013 }, { label: "Charcoal Grey", price: 1013 }, { label: "Emerald Green", price: 1013 }, { label: "Navy Blue", price: 1013 }],
@@ -2845,7 +2845,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "5", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc02", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Copper":"assets/products/dc02-4.webp"}, name: "Armless Leather Dining Chair", cat: "Dining", room: "Living Room", price: 1087, memberPrice: 978, sku: "SH-10356", tag: "New", ph: "", img: "assets/products/dc02.webp",
+  { id: "dc02", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Copper":"assets/products/dc02-4.webp"}, name: "Armless Leather Dining Chair", cat: "Dining", room: "Living Room", price: 1087, memberPrice: 978, sku: "SH-10356", tag: "New", ph: "", img: "assets/products/dc02.webp",
     imgs: ["assets/products/dc02.webp", "assets/products/dc02-2.webp", "assets/products/dc02-3.webp", "assets/products/dc02-4.webp", "assets/products/dc02-5.webp"],
    
     sizes: [{ label: "Grey", price: 1087 }, { label: "Blue", price: 1087 }, { label: "Copper", price: 1087 }],
@@ -2858,7 +2858,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc03", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Orange":"assets/products/dc03-5.webp","Grey":"assets/products/dc03.webp"}, name: "Leather Dining Chair in Five Colours", cat: "Dining", room: "Living Room", price: 1119, memberPrice: 1007, sku: "SH-10357", tag: "New", ph: "", img: "assets/products/dc03.webp",
+  { id: "dc03", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Orange":"assets/products/dc03-5.webp","Grey":"assets/products/dc03.webp"}, name: "Leather Dining Chair in Five Colours", cat: "Dining", room: "Living Room", price: 1119, memberPrice: 1007, sku: "SH-10357", tag: "New", ph: "", img: "assets/products/dc03.webp",
     imgs: ["assets/products/dc03.webp", "assets/products/dc03-2.webp", "assets/products/dc03-3.webp", "assets/products/dc03-4.webp", "assets/products/dc03-5.webp"],
    
     sizes: [{ label: "Tan", price: 1119 }, { label: "Orange", price: 1119 }, { label: "Grey", price: 1119 }, { label: "Cream", price: 1119 }, { label: "Mocha", price: 1119 }],
@@ -2871,7 +2871,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "5", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc04", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Light Grey":"assets/products/dc04-5.webp","Coffee":"assets/products/dc04-4.webp"}, name: "Dining Chair in Six Colours", cat: "Dining", room: "Living Room", price: 1465, memberPrice: 1318, sku: "SH-10358", tag: "New", ph: "", img: "assets/products/dc04.webp",
+  { id: "dc04", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Light Grey":"assets/products/dc04-5.webp","Coffee":"assets/products/dc04-4.webp"}, name: "Dining Chair in Six Colours", cat: "Dining", room: "Living Room", price: 1465, memberPrice: 1318, sku: "SH-10358", tag: "New", ph: "", img: "assets/products/dc04.webp",
     imgs: ["assets/products/dc04.webp", "assets/products/dc04-2.webp", "assets/products/dc04-3.webp", "assets/products/dc04-4.webp", "assets/products/dc04-5.webp"],
    
     sizes: [{ label: "Light Grey", price: 1465 }, { label: "Green", price: 1465 }, { label: "Coffee", price: 1465 }, { label: "Dark Grey", price: 1465 }, { label: "Ivory", price: 1465 }, { label: "Ivory  + Brown", price: 1465 }, { label: "Ivory + Grey", price: 1465 }, { label: "Grey + Brown", price: 1465 }, { label: "Ivory + Orange", price: 1465 }],
@@ -2884,7 +2884,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "9", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc05", arriveDays: [28, 33], name: "Dining Chair in Seven Pastels", cat: "Dining", room: "Living Room", price: 1476, memberPrice: 1328, sku: "SH-10359", tag: "New", ph: "", img: "assets/products/dc05.webp",
+  { id: "dc05", arriveDays: [28, 33], expressOpt: 7000, name: "Dining Chair in Seven Pastels", cat: "Dining", room: "Living Room", price: 1476, memberPrice: 1328, sku: "SH-10359", tag: "New", ph: "", img: "assets/products/dc05.webp",
     imgs: ["assets/products/dc05.webp", "assets/products/dc05-2.webp", "assets/products/dc05-3.webp", "assets/products/dc05-4.webp", "assets/products/dc05-5.jpg"],
    
     sizes: [{ label: "Tan", price: 1476 }, { label: "Grey", price: 1476 }, { label: "Light Blue", price: 1476 }, { label: "Khaki", price: 1476 }, { label: "Peach", price: 1476 }, { label: "Aqua Blue", price: 1476 }, { label: "Lemon Beige", price: 1476 }],
@@ -2897,7 +2897,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "7", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc06", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Grey":"assets/products/dc06-4.webp"}, name: "Grey Dining Chair, With or Without Timber", cat: "Dining", room: "Living Room", price: 1604, memberPrice: 1444, sku: "SH-10360", tag: "New", ph: "", img: "assets/products/dc06.webp",
+  { id: "dc06", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Grey":"assets/products/dc06-4.webp"}, name: "Grey Dining Chair, With or Without Timber", cat: "Dining", room: "Living Room", price: 1604, memberPrice: 1444, sku: "SH-10360", tag: "New", ph: "", img: "assets/products/dc06.webp",
     imgs: ["assets/products/dc06.webp", "assets/products/dc06-2.webp", "assets/products/dc06-3.webp", "assets/products/dc06-4.webp", "assets/products/dc06-5.webp"],
    
     sizes: [{ label: "Grey", price: 1604 }, { label: "Grey + Timber", price: 1604 }],
@@ -2910,7 +2910,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Solid timber", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "dc07", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Brown":"assets/products/dc07-5.webp"}, name: "Bouclé Dining Chair on Ash", cat: "Dining", room: "Living Room", price: 1630, memberPrice: 1467, sku: "SH-10361", tag: "New", ph: "", img: "assets/products/dc07.webp",
+  { id: "dc07", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Brown":"assets/products/dc07-5.webp"}, name: "Bouclé Dining Chair on Ash", cat: "Dining", room: "Living Room", price: 1630, memberPrice: 1467, sku: "SH-10361", tag: "New", ph: "", img: "assets/products/dc07.webp",
     imgs: ["assets/products/dc07.webp", "assets/products/dc07-2.webp", "assets/products/dc07-3.webp", "assets/products/dc07-4.webp", "assets/products/dc07-5.webp"],
    
     sizes: [{ label: "Black", price: 1630 }, { label: "Brown", price: 1630 }],
@@ -2923,7 +2923,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Bouclé", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "dc08", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Off White":"assets/products/dc08-3.webp"}, name: "Bouclé Dining Chair with Metal Legs", cat: "Dining", room: "Living Room", price: 1639, memberPrice: 1475, sku: "SH-10362", tag: "New", ph: "", img: "assets/products/dc08.webp",
+  { id: "dc08", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Off White":"assets/products/dc08-3.webp"}, name: "Bouclé Dining Chair with Metal Legs", cat: "Dining", room: "Living Room", price: 1639, memberPrice: 1475, sku: "SH-10362", tag: "New", ph: "", img: "assets/products/dc08.webp",
     imgs: ["assets/products/dc08.webp", "assets/products/dc08-2.webp", "assets/products/dc08-3.webp", "assets/products/dc08-4.webp", "assets/products/dc08-5.webp"],
    
     sizes: [{ label: "Off White", price: 1639 }, { label: "Orange", price: 1639 }, { label: "Grey", price: 1639 }, { label: "Green", price: 1639 }],
@@ -2936,7 +2936,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Bouclé", "Options": "4", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "dc09", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Beige":"assets/products/dc09-3.webp"}, name: "Leather & Timber Dining Chair", cat: "Dining", room: "Living Room", price: 1648, memberPrice: 1483, sku: "SH-10363", tag: "New", ph: "", img: "assets/products/dc09.webp",
+  { id: "dc09", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Beige":"assets/products/dc09-3.webp"}, name: "Leather & Timber Dining Chair", cat: "Dining", room: "Living Room", price: 1648, memberPrice: 1483, sku: "SH-10363", tag: "New", ph: "", img: "assets/products/dc09.webp",
     imgs: ["assets/products/dc09.webp", "assets/products/dc09-2.webp", "assets/products/dc09-3.webp", "assets/products/dc09-4.webp", "assets/products/dc09-5.webp"],
    
     sizes: [{ label: "Beige", price: 1648 }, { label: "Grey", price: 1648 }, { label: "Emerald Green", price: 1648 }],
@@ -2949,7 +2949,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc10", arriveDays: [28, 33], name: "Leather Dining Chair in Six Neutrals", cat: "Dining", room: "Living Room", price: 1685, memberPrice: 1516, sku: "SH-10364", tag: "New", ph: "", img: "assets/products/dc10.webp",
+  { id: "dc10", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Dining Chair in Six Neutrals", cat: "Dining", room: "Living Room", price: 1685, memberPrice: 1516, sku: "SH-10364", tag: "New", ph: "", img: "assets/products/dc10.webp",
     imgs: ["assets/products/dc10.webp", "assets/products/dc10-2.webp", "assets/products/dc10-3.webp", "assets/products/dc10-4.webp", "assets/products/dc10-5.webp"],
    
     sizes: [{ label: "Charcoal Grey", price: 1685 }, { label: "Chocolate", price: 1685 }, { label: "Dark Tan", price: 1685 }, { label: "Ivory", price: 2204 }, { label: "Shale Grey", price: 2204 }, { label: "Off White", price: 2204 }, { label: "Black", price: 2204 }],
@@ -2962,7 +2962,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "7", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc11", arriveDays: [28, 33], name: "Velvet Swivel Bar Stool", cat: "Dining", room: "Living Room", price: 1785, memberPrice: 1606, sku: "SH-10365", tag: "New", ph: "", img: "assets/products/dc11.webp",
+  { id: "dc11", arriveDays: [28, 33], expressOpt: 7000, name: "Velvet Swivel Bar Stool", cat: "Dining", room: "Living Room", price: 1785, memberPrice: 1606, sku: "SH-10365", tag: "New", ph: "", img: "assets/products/dc11.webp",
     imgs: ["assets/products/dc11.webp", "assets/products/dc11-2.webp", "assets/products/dc11-3.webp", "assets/products/dc11-4.webp", "assets/products/dc11-5.webp"],
    
     sizes: [{ label: "Black + Gold / 75cm", price: 1785 }, { label: "Black + Black / 75cm", price: 1785 }, { label: "White + Gold / 75cm", price: 1785 }, { label: "White + Black / 75cm", price: 1785 }, { label: "Green + Gold / 75cm", price: 1785 }, { label: "Green + Black / 75cm", price: 1785 }, { label: "Grey + Gold / 75cm", price: 1785 }, { label: "Grey + Black / 75cm", price: 1785 }, { label: "Navy + Gold / 75cm", price: 1785 }, { label: "Navy + Black / 75cm", price: 1785 }, { label: "Black + Gold / 65cm", price: 1952 }, { label: "Black + Black / 65cm", price: 1952 }, { label: "White + Gold / 65cm", price: 1952 }, { label: "White + Black / 65cm", price: 1952 }, { label: "Green + Gold / 65cm", price: 1952 }, { label: "Green + Black / 65cm", price: 1952 }, { label: "Grey + Gold / 65cm", price: 1952 }, { label: "Grey + Black / 65cm", price: 1952 }, { label: "Navy + Gold / 65cm", price: 1952 }, { label: "Navy + Black / 65cm", price: 1952 }],
@@ -2975,7 +2975,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "20", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc12", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/dc12-5.webp"}, name: "Leather Dining Chair on Steel", cat: "Dining", room: "Living Room", price: 1828, memberPrice: 1645, sku: "SH-10366", tag: "New", ph: "", img: "assets/products/dc12.webp",
+  { id: "dc12", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/dc12-5.webp"}, name: "Leather Dining Chair on Steel", cat: "Dining", room: "Living Room", price: 1828, memberPrice: 1645, sku: "SH-10366", tag: "New", ph: "", img: "assets/products/dc12.webp",
     imgs: ["assets/products/dc12.webp", "assets/products/dc12-2.webp", "assets/products/dc12-3.webp", "assets/products/dc12-4.webp", "assets/products/dc12-5.webp"],
    
     sizes: [{ label: "Ivory", price: 1828 }, { label: "Black", price: 1828 }],
@@ -2988,7 +2988,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc13", arriveDays: [28, 33], optionLabel: "Colour", name: "Swivel Chair in Tan or Grey", cat: "Dining", room: "Living Room", price: 1830, memberPrice: 1647, sku: "SH-10367", tag: "New", ph: "", img: "assets/products/dc13.webp",
+  { id: "dc13", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", name: "Swivel Chair in Tan or Grey", cat: "Dining", room: "Living Room", price: 1830, memberPrice: 1647, sku: "SH-10367", tag: "New", ph: "", img: "assets/products/dc13.webp",
     imgs: ["assets/products/dc13.webp", "assets/products/dc13-2.webp", "assets/products/dc13-3.webp", "assets/products/dc13-4.webp", "assets/products/dc13-5.webp"],
    
     sizes: [{ label: "Tan", price: 1830 }, { label: "Charcoal Grey", price: 1830 }, { label: "Light Grey", price: 1830 }],
@@ -3001,7 +3001,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc14", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Tan":"assets/products/dc14.webp","Beige":"assets/products/dc14-5.webp"}, name: "Leather Swivel Bar Stool", cat: "Dining", room: "Living Room", price: 2111, memberPrice: 1900, sku: "SH-10368", tag: "New", ph: "", img: "assets/products/dc14.webp",
+  { id: "dc14", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Tan":"assets/products/dc14.webp","Beige":"assets/products/dc14-5.webp"}, name: "Leather Swivel Bar Stool", cat: "Dining", room: "Living Room", price: 2111, memberPrice: 1900, sku: "SH-10368", tag: "New", ph: "", img: "assets/products/dc14.webp",
     imgs: ["assets/products/dc14.webp", "assets/products/dc14-2.webp", "assets/products/dc14-3.webp", "assets/products/dc14-4.webp", "assets/products/dc14-5.webp"],
    
     sizes: [{ label: "Tan", price: 2111 }, { label: "Beige", price: 2111 }, { label: "Emerald Green", price: 2111 }],
@@ -3014,7 +3014,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc15", arriveDays: [28, 33], optionLabel: "Colour", name: "Walnut & Leather Dining Chair", cat: "Dining", room: "Living Room", price: 2180, memberPrice: 1962, sku: "SH-10369", tag: "New", ph: "", img: "assets/products/dc15.webp",
+  { id: "dc15", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", name: "Walnut & Leather Dining Chair", cat: "Dining", room: "Living Room", price: 2180, memberPrice: 1962, sku: "SH-10369", tag: "New", ph: "", img: "assets/products/dc15.webp",
     imgs: ["assets/products/dc15.webp", "assets/products/dc15-2.webp", "assets/products/dc15-3.webp", "assets/products/dc15-4.webp", "assets/products/dc15-5.webp"],
    
     sizes: [{ label: "Black", price: 2180 }, { label: "Off White", price: 2180 }],
@@ -3027,7 +3027,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Solid timber", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "dc16", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Beige":"assets/products/dc16-5.webp"}, name: "Leather Bar Stool on Steel", cat: "Dining", room: "Living Room", price: 2198, memberPrice: 1978, sku: "SH-10370", tag: "New", ph: "", img: "assets/products/dc16.webp",
+  { id: "dc16", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Beige":"assets/products/dc16-5.webp"}, name: "Leather Bar Stool on Steel", cat: "Dining", room: "Living Room", price: 2198, memberPrice: 1978, sku: "SH-10370", tag: "New", ph: "", img: "assets/products/dc16.webp",
     imgs: ["assets/products/dc16.webp", "assets/products/dc16-2.webp", "assets/products/dc16-3.webp", "assets/products/dc16-4.webp", "assets/products/dc16-5.webp"],
    
     sizes: [{ label: "Tan", price: 2198 }, { label: "Beige", price: 2198 }, { label: "Khaki", price: 2198 }, { label: "Grey", price: 2198 }],
@@ -3040,7 +3040,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "4", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc17", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/dc17-5.webp","Beige":"assets/products/dc17-2.webp"}, name: "Leather Bar Stool", cat: "Dining", room: "Living Room", price: 2202, memberPrice: 1982, sku: "SH-10371", tag: "New", ph: "", img: "assets/products/dc17.webp",
+  { id: "dc17", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/dc17-5.webp","Beige":"assets/products/dc17-2.webp"}, name: "Leather Bar Stool", cat: "Dining", room: "Living Room", price: 2202, memberPrice: 1982, sku: "SH-10371", tag: "New", ph: "", img: "assets/products/dc17.webp",
     imgs: ["assets/products/dc17.webp", "assets/products/dc17-2.webp", "assets/products/dc17-3.webp", "assets/products/dc17-4.webp", "assets/products/dc17-5.webp"],
    
     sizes: [{ label: "Black", price: 2202 }, { label: "Beige", price: 2202 }],
@@ -3053,7 +3053,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc18", arriveDays: [28, 33], name: "Linen Bar Stool, Gold or Silver", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10372", tag: "New", ph: "", img: "assets/products/dc18.webp",
+  { id: "dc18", arriveDays: [28, 33], expressOpt: 7000, name: "Linen Bar Stool, Gold or Silver", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10372", tag: "New", ph: "", img: "assets/products/dc18.webp",
     imgs: ["assets/products/dc18.webp", "assets/products/dc18-2.webp", "assets/products/dc18-3.webp", "assets/products/dc18-4.webp", "assets/products/dc18-5.webp"],
    
     sizes: [{ label: "Gold / 65cm", price: 2204 }, { label: "Gold / 75cm", price: 2204 }, { label: "Silver / 65cm", price: 2204 }, { label: "Silver / 75cm", price: 2204 }],
@@ -3066,7 +3066,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "4", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc19", arriveDays: [28, 33], name: "Velvet Bar Stool in Two Heights", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10373", tag: "New", ph: "", img: "assets/products/dc19.webp",
+  { id: "dc19", arriveDays: [28, 33], expressOpt: 7000, name: "Velvet Bar Stool in Two Heights", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10373", tag: "New", ph: "", img: "assets/products/dc19.webp",
     imgs: ["assets/products/dc19.webp", "assets/products/dc19-2.webp", "assets/products/dc19-3.webp", "assets/products/dc19-4.webp", "assets/products/dc19-5.webp"],
    
     sizes: [{ label: "Emerald Green / 65cm", price: 2204 }, { label: "Tan / 65cm", price: 2204 }, { label: "Royal Blue / 65cm", price: 2204 }, { label: "Ocean Blue / 65cm", price: 2204 }, { label: "Ivory / 65cm", price: 2204 }, { label: "Emerald Green / 75cm", price: 2389 }, { label: "Tan / 75cm", price: 2389 }, { label: "Royal Blue / 75cm", price: 2389 }, { label: "Ocean Blue / 75cm", price: 2389 }, { label: "Ivory / 75cm", price: 2389 }],
@@ -3079,7 +3079,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "10", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc20", arriveDays: [28, 33], name: "Tall Velvet Stool (80cm)", cat: "Dining", room: "Living Room", price: 2207, memberPrice: 1986, sku: "SH-10374", tag: "New", ph: "", img: "assets/products/dc20.webp",
+  { id: "dc20", arriveDays: [28, 33], expressOpt: 7000, name: "Tall Velvet Stool (80cm)", cat: "Dining", room: "Living Room", price: 2207, memberPrice: 1986, sku: "SH-10374", tag: "New", ph: "", img: "assets/products/dc20.webp",
     imgs: ["assets/products/dc20.webp", "assets/products/dc20-2.webp", "assets/products/dc20-3.webp", "assets/products/dc20-4.webp", "assets/products/dc20-5.webp"],
    
     sizes: [{ label: "Grey / 80cm", price: 2207 }, { label: "Emerald Green / 80cm", price: 2207 }, { label: "Navy / 80cm", price: 2207 }, { label: "Ivory / 80cm", price: 2207 }, { label: "Grey / 100cm", price: 2641 }, { label: "Emerald Green / 100cm", price: 2641 }, { label: "Navy / 100cm", price: 2641 }, { label: "Ivory / 100cm", price: 2641 }, { label: "Grey / 120cm", price: 3070 }, { label: "Emerald Green / 120cm", price: 3070 }, { label: "Navy / 120cm", price: 3070 }, { label: "Ivory / 120cm", price: 3070 }],
@@ -3092,7 +3092,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "12", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc21", arriveDays: [28, 33], name: "Tan Dining Chair", cat: "Dining", room: "Living Room", price: 2219, memberPrice: 1997, sku: "SH-10375", tag: "New", ph: "", img: "assets/products/dc21.webp",
+  { id: "dc21", arriveDays: [28, 33], expressOpt: 7000, name: "Tan Dining Chair", cat: "Dining", room: "Living Room", price: 2219, memberPrice: 1997, sku: "SH-10375", tag: "New", ph: "", img: "assets/products/dc21.webp",
     imgs: ["assets/products/dc21.webp", "assets/products/dc21-2.webp", "assets/products/dc21-3.webp", "assets/products/dc21-4.webp", "assets/products/dc21-5.webp"],
    
     sizes: [{ label: "Tan", price: 2219 }],
@@ -3105,7 +3105,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc22", arriveDays: [28, 33], name: "Upholstered Hallway Bench (80 or 100cm)", cat: "Dining", room: "Living Room", price: 2294, memberPrice: 2065, sku: "SH-10376", tag: "New", ph: "", img: "assets/products/dc22.webp",
+  { id: "dc22", arriveDays: [28, 33], expressOpt: 7000, name: "Upholstered Hallway Bench (80 or 100cm)", cat: "Dining", room: "Living Room", price: 2294, memberPrice: 2065, sku: "SH-10376", tag: "New", ph: "", img: "assets/products/dc22.webp",
     imgs: ["assets/products/dc22.webp", "assets/products/dc22-2.webp", "assets/products/dc22-3.webp", "assets/products/dc22-4.webp", "assets/products/dc22-5.webp"],
    
     sizes: [{ label: "80cm", price: 2294 }, { label: "100cm", price: 2665 }],
@@ -3118,7 +3118,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc23", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/dc23-3.webp","Grey":"assets/products/dc23-4.webp","Emerald Green":"assets/products/dc23-5.webp"}, name: "Velvet Bar Stool with Gold Base", cat: "Dining", room: "Living Room", price: 2304, memberPrice: 2074, sku: "SH-10377", tag: "New", ph: "", img: "assets/products/dc23.webp",
+  { id: "dc23", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/dc23-3.webp","Grey":"assets/products/dc23-4.webp","Emerald Green":"assets/products/dc23-5.webp"}, name: "Velvet Bar Stool with Gold Base", cat: "Dining", room: "Living Room", price: 2304, memberPrice: 2074, sku: "SH-10377", tag: "New", ph: "", img: "assets/products/dc23.webp",
     imgs: ["assets/products/dc23.webp", "assets/products/dc23-2.webp", "assets/products/dc23-3.webp", "assets/products/dc23-4.webp", "assets/products/dc23-5.webp"],
    
     sizes: [{ label: "Black", price: 2304 }, { label: "Grey", price: 2304 }, { label: "Emerald Green", price: 2304 }],
@@ -3131,7 +3131,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc24", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Grey":"assets/products/dc24-5.webp","Black":"assets/products/dc24-4.webp"}, name: "Bar Stool in Four Colours", cat: "Dining", room: "Living Room", price: 2352, memberPrice: 2117, sku: "SH-10378", tag: "New", ph: "", img: "assets/products/dc24.webp",
+  { id: "dc24", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Grey":"assets/products/dc24-5.webp","Black":"assets/products/dc24-4.webp"}, name: "Bar Stool in Four Colours", cat: "Dining", room: "Living Room", price: 2352, memberPrice: 2117, sku: "SH-10378", tag: "New", ph: "", img: "assets/products/dc24.webp",
     imgs: ["assets/products/dc24.webp", "assets/products/dc24-2.webp", "assets/products/dc24-3.webp", "assets/products/dc24-4.webp", "assets/products/dc24-5.webp"],
    
     sizes: [{ label: "Grey", price: 2352 }, { label: "Black", price: 2352 }, { label: "Green", price: 2352 }, { label: "Off White", price: 2352 }],
@@ -3144,7 +3144,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "4", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc25", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Green":"assets/products/dc25-5.webp"}, name: "Dining Chair in Green, Brown or Ivory", cat: "Dining", room: "Living Room", price: 2352, memberPrice: 2117, sku: "SH-10379", tag: "New", ph: "", img: "assets/products/dc25.webp",
+  { id: "dc25", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Green":"assets/products/dc25-5.webp"}, name: "Dining Chair in Green, Brown or Ivory", cat: "Dining", room: "Living Room", price: 2352, memberPrice: 2117, sku: "SH-10379", tag: "New", ph: "", img: "assets/products/dc25.webp",
     imgs: ["assets/products/dc25.webp", "assets/products/dc25-2.webp", "assets/products/dc25-3.webp", "assets/products/dc25-4.webp", "assets/products/dc25-5.webp"],
    
     sizes: [{ label: "Green", price: 2352 }, { label: "Brown", price: 2352 }, { label: "Ivory", price: 2352 }],
@@ -3157,7 +3157,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc26", arriveDays: [28, 33], name: "Leather & Ash Dining Chair", cat: "Dining", room: "Living Room", price: 2376, memberPrice: 2138, sku: "SH-10380", tag: "New", ph: "", img: "assets/products/dc26.webp",
+  { id: "dc26", arriveDays: [28, 33], expressOpt: 7000, name: "Leather & Ash Dining Chair", cat: "Dining", room: "Living Room", price: 2376, memberPrice: 2138, sku: "SH-10380", tag: "New", ph: "", img: "assets/products/dc26.webp",
     imgs: ["assets/products/dc26.webp", "assets/products/dc26-2.webp", "assets/products/dc26-3.webp", "assets/products/dc26-4.webp", "assets/products/dc26-5.webp"],
    
     desc: "Leather on ash timber, one finish.",
@@ -3169,7 +3169,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc27", arriveDays: [28, 33], name: "Coffee-Toned Dining Chair", cat: "Dining", room: "Living Room", price: 2511, memberPrice: 2260, sku: "SH-10381", tag: "New", ph: "", img: "assets/products/dc27.webp",
+  { id: "dc27", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee-Toned Dining Chair", cat: "Dining", room: "Living Room", price: 2511, memberPrice: 2260, sku: "SH-10381", tag: "New", ph: "", img: "assets/products/dc27.webp",
     imgs: ["assets/products/dc27.webp", "assets/products/dc27-2.webp", "assets/products/dc27-3.webp", "assets/products/dc27-4.webp", "assets/products/dc27-5.webp"],
    
     sizes: [{ label: "Coffee", price: 2511 }],
@@ -3182,7 +3182,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc28", arriveDays: [28, 33], name: "Sculptural Dining Chair", cat: "Dining", room: "Living Room", price: 2574, memberPrice: 2317, sku: "SH-10382", tag: "New", ph: "", img: "assets/products/dc28.webp",
+  { id: "dc28", arriveDays: [28, 33], expressOpt: 7000, name: "Sculptural Dining Chair", cat: "Dining", room: "Living Room", price: 2574, memberPrice: 2317, sku: "SH-10382", tag: "New", ph: "", img: "assets/products/dc28.webp",
     imgs: ["assets/products/dc28.webp", "assets/products/dc28-2.webp", "assets/products/dc28-3.webp", "assets/products/dc28-4.webp", "assets/products/dc28-5.webp"],
    
     desc: "One shape, one finish, more sculptural than most dining chairs.",
@@ -3194,7 +3194,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc29", arriveDays: [28, 33], name: "Shoe Changing Bench (Five Lengths)", cat: "Dining", room: "Living Room", price: 2589, memberPrice: 2330, sku: "SH-10383", tag: "New", ph: "", img: "assets/products/dc29.webp",
+  { id: "dc29", arriveDays: [28, 33], expressOpt: 7000, name: "Shoe Changing Bench (Five Lengths)", cat: "Dining", room: "Living Room", price: 2589, memberPrice: 2330, sku: "SH-10383", tag: "New", ph: "", img: "assets/products/dc29.webp",
     imgs: ["assets/products/dc29.webp", "assets/products/dc29-2.webp", "assets/products/dc29-3.webp", "assets/products/dc29-4.webp", "assets/products/dc29-5.webp"],
    
     sizes: [{ label: "Tan / 60cm", price: 2589 }, { label: "Black / 60cm", price: 2589 }, { label: "Natural / 60cm", price: 2589 }, { label: "Tan / 80cm", price: 3259 }, { label: "Black / 80cm", price: 3259 }, { label: "Natural / 80cm", price: 3259 }, { label: "Tan / 100cm", price: 4437 }, { label: "Black / 100cm", price: 4437 }, { label: "Natural / 100cm", price: 4437 }, { label: "Tan / 120cm", price: 4696 }, { label: "Black / 120cm", price: 4696 }, { label: "Natural / 120cm", price: 4696 }, { label: "Tan / 140cm", price: 5533 }, { label: "Black / 140cm", price: 5533 }, { label: "Natural / 140cm", price: 5533 }],
@@ -3207,7 +3207,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "15", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc30", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Orange":"assets/products/dc30-3.webp"}, name: "Leather Bar Stool in Five Colours", cat: "Dining", room: "Living Room", price: 2739, memberPrice: 2465, sku: "SH-10384", tag: "New", ph: "", img: "assets/products/dc30.webp",
+  { id: "dc30", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Orange":"assets/products/dc30-3.webp"}, name: "Leather Bar Stool in Five Colours", cat: "Dining", room: "Living Room", price: 2739, memberPrice: 2465, sku: "SH-10384", tag: "New", ph: "", img: "assets/products/dc30.webp",
     imgs: ["assets/products/dc30.webp", "assets/products/dc30-2.webp", "assets/products/dc30-3.webp", "assets/products/dc30-4.webp", "assets/products/dc30-5.webp"],
    
     sizes: [{ label: "Orange", price: 2739 }, { label: "Black", price: 2739 }, { label: "Grey", price: 2739 }, { label: "Brown", price: 2739 }, { label: "White", price: 2739 }],
@@ -3220,7 +3220,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "5", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc31", arriveDays: [28, 33], name: "Cushioned Leather Bar Stool", cat: "Dining", room: "Living Room", price: 3046, memberPrice: 2741, sku: "SH-10385", tag: "New", ph: "", img: "assets/products/dc31.webp",
+  { id: "dc31", arriveDays: [28, 33], expressOpt: 7000, name: "Cushioned Leather Bar Stool", cat: "Dining", room: "Living Room", price: 3046, memberPrice: 2741, sku: "SH-10385", tag: "New", ph: "", img: "assets/products/dc31.webp",
     imgs: ["assets/products/dc31.webp", "assets/products/dc31-2.webp", "assets/products/dc31-3.webp", "assets/products/dc31-4.webp", "assets/products/dc31-5.webp"],
    
     desc: "Leather with a deeper cushion than most stools, on stainless steel.",
@@ -3232,7 +3232,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dc32", arriveDays: [28, 33], name: "Velvet Bench (120cm)", cat: "Dining", room: "Living Room", price: 3300, memberPrice: 2970, sku: "SH-10386", tag: "New", ph: "", img: "assets/products/dc32.webp",
+  { id: "dc32", arriveDays: [28, 33], expressOpt: 7000, name: "Velvet Bench (120cm)", cat: "Dining", room: "Living Room", price: 3300, memberPrice: 2970, sku: "SH-10386", tag: "New", ph: "", img: "assets/products/dc32.webp",
     imgs: ["assets/products/dc32.webp", "assets/products/dc32-2.webp", "assets/products/dc32-3.webp", "assets/products/dc32-4.webp", "assets/products/dc32-5.webp"],
    
     sizes: [{ label: "Plaid / 120cm", price: 3300 }, { label: "Dark Grey / 120cm", price: 3300 }, { label: "Grey / 120cm", price: 3300 }, { label: "Off White / 120cm", price: 3300 }, { label: "Black + White / 120cm", price: 3300 }, { label: "Copper / 120cm", price: 3300 }, { label: "Plaid / 160cm", price: 3474 }, { label: "Dark Grey / 160cm", price: 3474 }, { label: "Grey / 160cm", price: 3474 }, { label: "Off White / 160cm", price: 3474 }, { label: "Black + White / 160cm", price: 3474 }, { label: "Copper / 160cm", price: 3474 }, { label: "Plaid / 180cm", price: 4026 }, { label: "Dark Grey / 180cm", price: 4026 }, { label: "Grey / 180cm", price: 4026 }, { label: "Off White / 180cm", price: 4026 }, { label: "Black + White / 180cm", price: 4026 }, { label: "Copper / 180cm", price: 4026 }],
@@ -3245,7 +3245,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Velvet", "Options": "18", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "dc33", arriveDays: [28, 33], name: "Linen Dining Chair on Timber", cat: "Dining", room: "Living Room", price: 3544, memberPrice: 3190, sku: "SH-10387", tag: "New", ph: "", img: "assets/products/dc33.webp",
+  { id: "dc33", arriveDays: [28, 33], expressOpt: 7000, name: "Linen Dining Chair on Timber", cat: "Dining", room: "Living Room", price: 3544, memberPrice: 3190, sku: "SH-10387", tag: "New", ph: "", img: "assets/products/dc33.webp",
     imgs: ["assets/products/dc33.webp", "assets/products/dc33-2.webp", "assets/products/dc33-3.webp", "assets/products/dc33-4.webp", "assets/products/dc33-5.webp"],
    
     desc: "Linen and cotton on timber, one finish.",
@@ -3257,7 +3257,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "dc34", arriveDays: [28, 33], name: "Bouclé Bench in Six Lengths", cat: "Dining", room: "Living Room", price: 4148, memberPrice: 3733, sku: "SH-10388", tag: "New", ph: "", img: "assets/products/dc34.webp",
+  { id: "dc34", arriveDays: [28, 33], expressOpt: 7000, name: "Bouclé Bench in Six Lengths", cat: "Dining", room: "Living Room", price: 4148, memberPrice: 3733, sku: "SH-10388", tag: "New", ph: "", img: "assets/products/dc34.webp",
     imgs: ["assets/products/dc34.webp", "assets/products/dc34-2.webp", "assets/products/dc34-3.webp", "assets/products/dc34-4.webp", "assets/products/dc34-5.webp"],
    
     sizes: [{ label: "60cm", price: 4148 }, { label: "80cm", price: 4185 }, { label: "100cm", price: 4550 }, { label: "120cm", price: 4981 }, { label: "140cm", price: 5369 }, { label: "160cm", price: 5556 }],
@@ -3270,7 +3270,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining chair / stool", "Upholstery": "Bouclé", "Options": "6", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc01", arriveDays: [28, 33], name: "Metal-Frame Chair & Ottoman", cat: "Living Room", room: "Living Room", price: 1444, memberPrice: 1300, sku: "SH-10389", tag: "New", ph: "", img: "assets/products/oc01.webp",
+  { id: "oc01", arriveDays: [28, 33], expressOpt: 7000, name: "Metal-Frame Chair & Ottoman", cat: "Living Room", room: "Living Room", price: 1444, memberPrice: 1300, sku: "SH-10389", tag: "New", ph: "", img: "assets/products/oc01.webp",
     imgs: ["assets/products/oc01.webp", "assets/products/oc01-2.webp", "assets/products/oc01-3.webp", "assets/products/oc01-4.webp", "assets/products/oc01-5.webp"],
    
     sizes: [{ label: "Ottoman", price: 1444 }, { label: "Chair", price: 4143 }, { label: "Complete Set", price: 5772 }],
@@ -3283,7 +3283,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Steel / metal", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Avoid abrasive pads on plated or brushed finishes, and check the feet for floor protectors." },
 
-  { id: "oc02", arriveDays: [28, 33], name: "Swivel Chair & Footstool", cat: "Living Room", room: "Living Room", price: 1463, memberPrice: 1317, sku: "SH-10390", tag: "New", ph: "", img: "assets/products/oc02.webp",
+  { id: "oc02", arriveDays: [28, 33], expressOpt: 7000, name: "Swivel Chair & Footstool", cat: "Living Room", room: "Living Room", price: 1463, memberPrice: 1317, sku: "SH-10390", tag: "New", ph: "", img: "assets/products/oc02.webp",
     imgs: ["assets/products/oc02.webp", "assets/products/oc02-2.webp", "assets/products/oc02-3.webp", "assets/products/oc02-4.webp", "assets/products/oc02-5.webp"],
    
     sizes: [{ label: "Foot Stool", price: 1463 }, { label: "Chair", price: 5526 }],
@@ -3296,7 +3296,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc03", arriveDays: [28, 33], optionLabel: "Colour", name: "Cushioned Chair in Three Colours", cat: "Living Room", room: "Living Room", price: 2293, memberPrice: 2064, sku: "SH-10391", tag: "New", ph: "", img: "assets/products/oc03.webp",
+  { id: "oc03", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", name: "Cushioned Chair in Three Colours", cat: "Living Room", room: "Living Room", price: 2293, memberPrice: 2064, sku: "SH-10391", tag: "New", ph: "", img: "assets/products/oc03.webp",
     imgs: ["assets/products/oc03.webp", "assets/products/oc03-2.webp", "assets/products/oc03-3.webp", "assets/products/oc03-4.webp", "assets/products/oc03-5.webp"],
    
     sizes: [{ label: "White", price: 2293 }, { label: "Green", price: 2293 }, { label: "Tan", price: 2293 }],
@@ -3309,7 +3309,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc04", arriveDays: [28, 33], name: "Bouclé Chair with Gold Base", cat: "Living Room", room: "Living Room", price: 2774, memberPrice: 2497, sku: "SH-10392", tag: "New", ph: "", img: "assets/products/oc04.webp",
+  { id: "oc04", arriveDays: [28, 33], expressOpt: 7000, name: "Bouclé Chair with Gold Base", cat: "Living Room", room: "Living Room", price: 2774, memberPrice: 2497, sku: "SH-10392", tag: "New", ph: "", img: "assets/products/oc04.webp",
     imgs: ["assets/products/oc04.webp", "assets/products/oc04-2.webp", "assets/products/oc04-3.webp", "assets/products/oc04-4.webp", "assets/products/oc04-5.webp"],
    
     sizes: [{ label: "White", price: 2774 }, { label: "Khaki", price: 2774 }, { label: "Light Green", price: 2774 }, { label: "Charcoal Grey", price: 2774 }, { label: "Ocean Blue", price: 2774 }],
@@ -3322,7 +3322,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "5", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc05", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Tan":"assets/products/oc05-3.webp","Beige":"assets/products/oc05-5.webp","Emerald Green":"assets/products/oc05-4.webp"}, name: "Cotton Chair with Steel Frame", cat: "Living Room", room: "Living Room", price: 2831, memberPrice: 2548, sku: "SH-10393", tag: "New", ph: "", img: "assets/products/oc05.webp",
+  { id: "oc05", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Tan":"assets/products/oc05-3.webp","Beige":"assets/products/oc05-5.webp","Emerald Green":"assets/products/oc05-4.webp"}, name: "Cotton Chair with Steel Frame", cat: "Living Room", room: "Living Room", price: 2831, memberPrice: 2548, sku: "SH-10393", tag: "New", ph: "", img: "assets/products/oc05.webp",
     imgs: ["assets/products/oc05.webp", "assets/products/oc05-2.webp", "assets/products/oc05-3.webp", "assets/products/oc05-4.webp", "assets/products/oc05-5.webp"],
    
     sizes: [{ label: "Tan", price: 2831 }, { label: "Navy", price: 2831 }, { label: "Grey", price: 2831 }, { label: "Beige", price: 2831 }, { label: "Emerald Green", price: 2831 }],
@@ -3335,7 +3335,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "5", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc06", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White":"assets/products/oc06-2.webp"}, name: "Bouclé Chair in White or Pink", cat: "Living Room", room: "Living Room", price: 3130, memberPrice: 2817, sku: "SH-10394", tag: "New", ph: "", img: "assets/products/oc06.webp",
+  { id: "oc06", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White":"assets/products/oc06-2.webp"}, name: "Bouclé Chair in White or Pink", cat: "Living Room", room: "Living Room", price: 3130, memberPrice: 2817, sku: "SH-10394", tag: "New", ph: "", img: "assets/products/oc06.webp",
     imgs: ["assets/products/oc06.webp", "assets/products/oc06-2.webp", "assets/products/oc06-3.webp", "assets/products/oc06-4.webp", "assets/products/oc06-5.webp"],
    
     sizes: [{ label: "White", price: 3130 }, { label: "Pink", price: 3130 }],
@@ -3348,7 +3348,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc07", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black +  White":"assets/products/oc07-2.webp","Orange":"assets/products/oc07-5.webp","Navy":"assets/products/oc07-4.webp","Orange + Grey":"assets/products/oc07-3.webp"}, name: "Two-Tone Leather Chair", cat: "Living Room", room: "Living Room", price: 3304, memberPrice: 2974, sku: "SH-10395", tag: "New", ph: "", img: "assets/products/oc07.webp",
+  { id: "oc07", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black +  White":"assets/products/oc07-2.webp","Orange":"assets/products/oc07-5.webp","Navy":"assets/products/oc07-4.webp","Orange + Grey":"assets/products/oc07-3.webp"}, name: "Two-Tone Leather Chair", cat: "Living Room", room: "Living Room", price: 3304, memberPrice: 2974, sku: "SH-10395", tag: "New", ph: "", img: "assets/products/oc07.webp",
     imgs: ["assets/products/oc07.webp", "assets/products/oc07-2.webp", "assets/products/oc07-3.webp", "assets/products/oc07-4.webp", "assets/products/oc07-5.webp"],
    
     sizes: [{ label: "Black +  White", price: 3304 }, { label: "Orange", price: 3304 }, { label: "Navy", price: 3304 }, { label: "Orange + Grey", price: 3304 }],
@@ -3361,7 +3361,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "4", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc08", arriveDays: [28, 33], name: "Green Cotton Cushion Chair", cat: "Living Room", room: "Living Room", price: 3307, memberPrice: 2976, sku: "SH-10396", tag: "New", ph: "", img: "assets/products/oc08.webp",
+  { id: "oc08", arriveDays: [28, 33], expressOpt: 7000, name: "Green Cotton Cushion Chair", cat: "Living Room", room: "Living Room", price: 3307, memberPrice: 2976, sku: "SH-10396", tag: "New", ph: "", img: "assets/products/oc08.webp",
     imgs: ["assets/products/oc08.webp", "assets/products/oc08-2.webp", "assets/products/oc08-3.webp", "assets/products/oc08-4.webp", "assets/products/oc08-5.webp"],
    
     sizes: [{ label: "Green", price: 3307 }],
@@ -3374,7 +3374,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc09", arriveDays: [28, 33], name: "Ash Timber Occasional Chair", cat: "Living Room", room: "Living Room", price: 3352, memberPrice: 3017, sku: "SH-10397", tag: "New", ph: "", img: "assets/products/oc09.webp",
+  { id: "oc09", arriveDays: [28, 33], expressOpt: 7000, name: "Ash Timber Occasional Chair", cat: "Living Room", room: "Living Room", price: 3352, memberPrice: 3017, sku: "SH-10397", tag: "New", ph: "", img: "assets/products/oc09.webp",
     imgs: ["assets/products/oc09.webp", "assets/products/oc09-2.webp", "assets/products/oc09-3.webp", "assets/products/oc09-4.webp", "assets/products/oc09-5.webp"],
    
     desc: "Ash timber with a clean frame, the sort of chair that works at a desk as easily as beside a sofa.",
@@ -3386,7 +3386,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "oc10", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Snow White":"assets/products/oc10-3.webp"}, name: "Metal-Frame Chair in Three Tones", cat: "Living Room", room: "Living Room", price: 3519, memberPrice: 3167, sku: "SH-10398", tag: "New", ph: "", img: "assets/products/oc10.webp",
+  { id: "oc10", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Snow White":"assets/products/oc10-3.webp"}, name: "Metal-Frame Chair in Three Tones", cat: "Living Room", room: "Living Room", price: 3519, memberPrice: 3167, sku: "SH-10398", tag: "New", ph: "", img: "assets/products/oc10.webp",
     imgs: ["assets/products/oc10.webp", "assets/products/oc10-2.webp", "assets/products/oc10-3.webp", "assets/products/oc10-4.webp", "assets/products/oc10-5.webp"],
    
     sizes: [{ label: "Snow White", price: 3519 }, { label: "Charcoal Grey", price: 3519 }, { label: "Black", price: 3519 }],
@@ -3399,7 +3399,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Steel / metal", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Avoid abrasive pads on plated or brushed finishes, and check the feet for floor protectors." },
 
-  { id: "oc11", arriveDays: [28, 33], name: "Plain or Plaid Cushion Chair", cat: "Living Room", room: "Living Room", price: 3519, memberPrice: 3167, sku: "SH-10399", tag: "New", ph: "", img: "assets/products/oc11.webp",
+  { id: "oc11", arriveDays: [28, 33], expressOpt: 7000, name: "Plain or Plaid Cushion Chair", cat: "Living Room", room: "Living Room", price: 3519, memberPrice: 3167, sku: "SH-10399", tag: "New", ph: "", img: "assets/products/oc11.webp",
     imgs: ["assets/products/oc11.webp", "assets/products/oc11-2.webp", "assets/products/oc11-3.webp", "assets/products/oc11-4.webp", "assets/products/oc11-5.webp"],
    
     sizes: [{ label: "White", price: 3519 }, { label: "Plaid", price: 3519 }],
@@ -3412,7 +3412,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc12", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc12-5.webp"}, name: "Transparent Shell Chair", cat: "Living Room", room: "Living Room", price: 3656, memberPrice: 3290, sku: "SH-10400", tag: "New", ph: "", img: "assets/products/oc12.webp",
+  { id: "oc12", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc12-5.webp"}, name: "Transparent Shell Chair", cat: "Living Room", room: "Living Room", price: 3656, memberPrice: 3290, sku: "SH-10400", tag: "New", ph: "", img: "assets/products/oc12.webp",
     imgs: ["assets/products/oc12.webp", "assets/products/oc12-2.webp", "assets/products/oc12-3.webp", "assets/products/oc12-4.webp", "assets/products/oc12-5.webp"],
    
     sizes: [{ label: "Green", price: 3656 }, { label: "Clear", price: 3656 }, { label: "Tan + White", price: 3656 }],
@@ -3425,7 +3425,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Steel / metal", "Options": "3", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Avoid abrasive pads on plated or brushed finishes, and check the feet for floor protectors." },
 
-  { id: "oc13", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Beige":"assets/products/oc13-2.webp","Orange":"assets/products/oc13-5.webp"}, name: "Cushion Chair in Beige or Orange", cat: "Living Room", room: "Living Room", price: 3674, memberPrice: 3307, sku: "SH-10401", tag: "New", ph: "", img: "assets/products/oc13.webp",
+  { id: "oc13", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Beige":"assets/products/oc13-2.webp","Orange":"assets/products/oc13-5.webp"}, name: "Cushion Chair in Beige or Orange", cat: "Living Room", room: "Living Room", price: 3674, memberPrice: 3307, sku: "SH-10401", tag: "New", ph: "", img: "assets/products/oc13.webp",
     imgs: ["assets/products/oc13.webp", "assets/products/oc13-2.webp", "assets/products/oc13-3.webp", "assets/products/oc13-4.webp", "assets/products/oc13-5.webp"],
    
     sizes: [{ label: "Beige", price: 3674 }, { label: "Orange", price: 3674 }],
@@ -3438,7 +3438,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc14", arriveDays: [28, 33], name: "Snow White Chair with Optional Ottoman", cat: "Living Room", room: "Living Room", price: 3680, memberPrice: 3312, sku: "SH-10402", tag: "New", ph: "", img: "assets/products/oc14.webp",
+  { id: "oc14", arriveDays: [28, 33], expressOpt: 7000, name: "Snow White Chair with Optional Ottoman", cat: "Living Room", room: "Living Room", price: 3680, memberPrice: 3312, sku: "SH-10402", tag: "New", ph: "", img: "assets/products/oc14.webp",
     imgs: ["assets/products/oc14.webp", "assets/products/oc14-2.webp", "assets/products/oc14-3.webp", "assets/products/oc14-4.webp", "assets/products/oc14-5.webp"],
    
     sizes: [{ label: "Snow White / - Ottoman", price: 3680 }, { label: "Snow White / + Ottoman", price: 4941 }],
@@ -3451,7 +3451,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc15", arriveDays: [28, 33], name: "Lambswool Chair in White & Black", cat: "Living Room", room: "Living Room", price: 3685, memberPrice: 3316, sku: "SH-10403", tag: "New", ph: "", img: "assets/products/oc15.webp",
+  { id: "oc15", arriveDays: [28, 33], expressOpt: 7000, name: "Lambswool Chair in White & Black", cat: "Living Room", room: "Living Room", price: 3685, memberPrice: 3316, sku: "SH-10403", tag: "New", ph: "", img: "assets/products/oc15.webp",
     imgs: ["assets/products/oc15.webp", "assets/products/oc15-2.webp", "assets/products/oc15-3.webp", "assets/products/oc15-4.webp", "assets/products/oc15-5.webp"],
    
     sizes: [{ label: "White + Black", price: 3685 }],
@@ -3464,7 +3464,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Wool / lambswool", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum gently and air it rather than washing. Blot spills straight away, and keep it out of prolonged damp." },
 
-  { id: "oc16", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White":"assets/products/oc16.webp","Black":"assets/products/oc16-3.webp"}, name: "Monochrome Occasional Chair", cat: "Living Room", room: "Living Room", price: 3693, memberPrice: 3324, sku: "SH-10404", tag: "New", ph: "", img: "assets/products/oc16.webp",
+  { id: "oc16", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White":"assets/products/oc16.webp","Black":"assets/products/oc16-3.webp"}, name: "Monochrome Occasional Chair", cat: "Living Room", room: "Living Room", price: 3693, memberPrice: 3324, sku: "SH-10404", tag: "New", ph: "", img: "assets/products/oc16.webp",
     imgs: ["assets/products/oc16.webp", "assets/products/oc16-2.webp", "assets/products/oc16-3.webp", "assets/products/oc16-4.webp", "assets/products/oc16-5.webp"],
    
     sizes: [{ label: "White", price: 3693 }, { label: "Black", price: 3693 }],
@@ -3477,7 +3477,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc17", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/oc17.webp","Orange":"assets/products/oc17-5.webp"}, name: "Velvet Chair in Six Colours", cat: "Living Room", room: "Living Room", price: 3920, memberPrice: 3528, sku: "SH-10405", tag: "New", ph: "", img: "assets/products/oc17.webp",
+  { id: "oc17", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/oc17.webp","Orange":"assets/products/oc17-5.webp"}, name: "Velvet Chair in Six Colours", cat: "Living Room", room: "Living Room", price: 3920, memberPrice: 3528, sku: "SH-10405", tag: "New", ph: "", img: "assets/products/oc17.webp",
     imgs: ["assets/products/oc17.webp", "assets/products/oc17-2.webp", "assets/products/oc17-3.webp", "assets/products/oc17-4.webp", "assets/products/oc17-5.webp"],
    
     sizes: [{ label: "Ivory", price: 3920 }, { label: "Orange", price: 3920 }, { label: "Blue", price: 3920 }, { label: "Green", price: 3920 }, { label: "Pink", price: 3920 }, { label: "Grey", price: 3920 }],
@@ -3490,7 +3490,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Velvet", "Options": "6", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "oc18", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc18-5.webp"}, name: "Velvet & Timber Chair", cat: "Living Room", room: "Living Room", price: 3952, memberPrice: 3557, sku: "SH-10406", tag: "New", ph: "", img: "assets/products/oc18.webp",
+  { id: "oc18", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc18-5.webp"}, name: "Velvet & Timber Chair", cat: "Living Room", room: "Living Room", price: 3952, memberPrice: 3557, sku: "SH-10406", tag: "New", ph: "", img: "assets/products/oc18.webp",
     imgs: ["assets/products/oc18.webp", "assets/products/oc18-2.webp", "assets/products/oc18-3.webp", "assets/products/oc18-4.webp", "assets/products/oc18-5.webp"],
    
     sizes: [{ label: "White", price: 3952 }, { label: "Green", price: 3952 }, { label: "Orange", price: 3952 }],
@@ -3503,7 +3503,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Velvet", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "oc19", arriveDays: [28, 33], name: "Off White Cushion Chair", cat: "Living Room", room: "Living Room", price: 4130, memberPrice: 3717, sku: "SH-10407", tag: "New", ph: "", img: "assets/products/oc19.webp",
+  { id: "oc19", arriveDays: [28, 33], expressOpt: 7000, name: "Off White Cushion Chair", cat: "Living Room", room: "Living Room", price: 4130, memberPrice: 3717, sku: "SH-10407", tag: "New", ph: "", img: "assets/products/oc19.webp",
     imgs: ["assets/products/oc19.webp", "assets/products/oc19-2.webp", "assets/products/oc19-3.webp", "assets/products/oc19-4.webp"],
    
     sizes: [{ label: "Off White", price: 4130 }],
@@ -3516,7 +3516,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc20", arriveDays: [28, 33], name: "Leather Swivel Chair", cat: "Living Room", room: "Living Room", price: 4135, memberPrice: 3722, sku: "SH-10408", tag: "New", ph: "", img: "assets/products/oc20.webp",
+  { id: "oc20", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Swivel Chair", cat: "Living Room", room: "Living Room", price: 4135, memberPrice: 3722, sku: "SH-10408", tag: "New", ph: "", img: "assets/products/oc20.webp",
     imgs: ["assets/products/oc20.webp", "assets/products/oc20-2.webp", "assets/products/oc20-3.webp", "assets/products/oc20-4.webp", "assets/products/oc20-5.webp"],
    
     sizes: [{ label: "Beige", price: 4135 }],
@@ -3529,7 +3529,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc21", arriveDays: [28, 33], name: "Leather & Steel Chair", cat: "Living Room", room: "Living Room", price: 4137, memberPrice: 3723, sku: "SH-10409", tag: "New", ph: "", img: "assets/products/oc21.webp",
+  { id: "oc21", arriveDays: [28, 33], expressOpt: 7000, name: "Leather & Steel Chair", cat: "Living Room", room: "Living Room", price: 4137, memberPrice: 3723, sku: "SH-10409", tag: "New", ph: "", img: "assets/products/oc21.webp",
     imgs: ["assets/products/oc21.webp", "assets/products/oc21-2.webp", "assets/products/oc21-3.webp", "assets/products/oc21-4.webp", "assets/products/oc21-5.webp"],
    
     sizes: [{ label: "Off White", price: 4137 }],
@@ -3542,7 +3542,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc22", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/oc22-3.webp","Black":"assets/products/oc22-5.webp"}, name: "Ivory or Black Occasional Chair", cat: "Living Room", room: "Living Room", price: 4141, memberPrice: 3727, sku: "SH-10410", tag: "New", ph: "", img: "assets/products/oc22.webp",
+  { id: "oc22", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/oc22-3.webp","Black":"assets/products/oc22-5.webp"}, name: "Ivory or Black Occasional Chair", cat: "Living Room", room: "Living Room", price: 4141, memberPrice: 3727, sku: "SH-10410", tag: "New", ph: "", img: "assets/products/oc22.webp",
     imgs: ["assets/products/oc22.webp", "assets/products/oc22-2.webp", "assets/products/oc22-3.webp", "assets/products/oc22-4.webp", "assets/products/oc22-5.webp"],
    
     sizes: [{ label: "Ivory", price: 4141 }, { label: "Black", price: 4141 }],
@@ -3555,7 +3555,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc23", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Khaki":"assets/products/oc23-5.webp","Brown":"assets/products/oc23.webp"}, name: "Linen & Metal Chair", cat: "Living Room", room: "Living Room", price: 4259, memberPrice: 3833, sku: "SH-10411", tag: "New", ph: "", img: "assets/products/oc23.webp",
+  { id: "oc23", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Khaki":"assets/products/oc23-5.webp","Brown":"assets/products/oc23.webp"}, name: "Linen & Metal Chair", cat: "Living Room", room: "Living Room", price: 4259, memberPrice: 3833, sku: "SH-10411", tag: "New", ph: "", img: "assets/products/oc23.webp",
     imgs: ["assets/products/oc23.webp", "assets/products/oc23-2.webp", "assets/products/oc23-3.webp", "assets/products/oc23-4.webp", "assets/products/oc23-5.webp"],
    
     sizes: [{ label: "Khaki", price: 4259 }, { label: "Brown", price: 4259 }],
@@ -3568,7 +3568,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc24", arriveDays: [28, 33], name: "Two-Tone Swivel Chair", cat: "Living Room", room: "Living Room", price: 4343, memberPrice: 3909, sku: "SH-10412", tag: "New", ph: "", img: "assets/products/oc24.webp",
+  { id: "oc24", arriveDays: [28, 33], expressOpt: 7000, name: "Two-Tone Swivel Chair", cat: "Living Room", room: "Living Room", price: 4343, memberPrice: 3909, sku: "SH-10412", tag: "New", ph: "", img: "assets/products/oc24.webp",
     imgs: ["assets/products/oc24.webp", "assets/products/oc24-2.webp", "assets/products/oc24-3.webp", "assets/products/oc24-4.webp", "assets/products/oc24-5.webp"],
    
     sizes: [{ label: "Ivory/grey", price: 4343 }],
@@ -3581,7 +3581,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc25", arriveDays: [28, 33], name: "Occasional Chair in Five Colours", cat: "Living Room", room: "Living Room", price: 4350, memberPrice: 3915, sku: "SH-10413", tag: "New", ph: "", img: "assets/products/oc25.webp",
+  { id: "oc25", arriveDays: [28, 33], expressOpt: 7000, name: "Occasional Chair in Five Colours", cat: "Living Room", room: "Living Room", price: 4350, memberPrice: 3915, sku: "SH-10413", tag: "New", ph: "", img: "assets/products/oc25.webp",
     imgs: ["assets/products/oc25.webp", "assets/products/oc25-2.webp", "assets/products/oc25-3.webp", "assets/products/oc25-4.webp", "assets/products/oc25-5.webp"],
    
     sizes: [{ label: "Snow White", price: 4350 }, { label: "Grey", price: 4350 }, { label: "Charcoal Grey", price: 4350 }, { label: "Khaki Green", price: 4350 }, { label: "Midnight Blue", price: 4350 }, { label: "Tan", price: 4350 }],
@@ -3594,7 +3594,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "6", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc26", arriveDays: [28, 33], name: "Bouclé Chair with Timber Frame", cat: "Living Room", room: "Living Room", price: 4365, memberPrice: 3928, sku: "SH-10414", tag: "New", ph: "", img: "assets/products/oc26.webp",
+  { id: "oc26", arriveDays: [28, 33], expressOpt: 7000, name: "Bouclé Chair with Timber Frame", cat: "Living Room", room: "Living Room", price: 4365, memberPrice: 3928, sku: "SH-10414", tag: "New", ph: "", img: "assets/products/oc26.webp",
     imgs: ["assets/products/oc26.webp", "assets/products/oc26-2.webp", "assets/products/oc26-3.webp", "assets/products/oc26-4.webp", "assets/products/oc26-5.webp"],
    
     desc: "Bouclé on timber, cushioned, in a single considered finish.",
@@ -3606,7 +3606,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc27", arriveDays: [28, 33], name: "Tan Occasional Chair", cat: "Living Room", room: "Living Room", price: 4380, memberPrice: 3942, sku: "SH-10415", tag: "New", ph: "", img: "assets/products/oc27.webp",
+  { id: "oc27", arriveDays: [28, 33], expressOpt: 7000, name: "Tan Occasional Chair", cat: "Living Room", room: "Living Room", price: 4380, memberPrice: 3942, sku: "SH-10415", tag: "New", ph: "", img: "assets/products/oc27.webp",
     imgs: ["assets/products/oc27.webp", "assets/products/oc27-2.webp", "assets/products/oc27-3.webp", "assets/products/oc27-4.webp", "assets/products/oc27-5.webp"],
    
     sizes: [{ label: "Tan", price: 4380 }],
@@ -3619,7 +3619,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc28", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc28-3.webp","Gold":"assets/products/oc28-4.webp"}, name: "Metal Swing Chair", cat: "Living Room", room: "Living Room", price: 4406, memberPrice: 3965, sku: "SH-10416", tag: "New", ph: "", img: "assets/products/oc28.webp",
+  { id: "oc28", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc28-3.webp","Gold":"assets/products/oc28-4.webp"}, name: "Metal Swing Chair", cat: "Living Room", room: "Living Room", price: 4406, memberPrice: 3965, sku: "SH-10416", tag: "New", ph: "", img: "assets/products/oc28.webp",
     imgs: ["assets/products/oc28.webp", "assets/products/oc28-2.webp", "assets/products/oc28-3.webp", "assets/products/oc28-4.webp", "assets/products/oc28-5.webp"],
    
     sizes: [{ label: "Black", price: 4406 }, { label: "Gold", price: 4406 }],
@@ -3632,7 +3632,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Steel / metal", "Options": "2", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Avoid abrasive pads on plated or brushed finishes, and check the feet for floor protectors." },
 
-  { id: "oc29", arriveDays: [28, 33], name: "Leather Chair in Eight Colours", cat: "Living Room", room: "Living Room", price: 4426, memberPrice: 3983, sku: "SH-10417", tag: "New", ph: "", img: "assets/products/oc29.webp",
+  { id: "oc29", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Chair in Eight Colours", cat: "Living Room", room: "Living Room", price: 4426, memberPrice: 3983, sku: "SH-10417", tag: "New", ph: "", img: "assets/products/oc29.webp",
     imgs: ["assets/products/oc29.webp", "assets/products/oc29-2.webp", "assets/products/oc29-3.webp", "assets/products/oc29-4.webp", "assets/products/oc29-5.webp"],
    
     sizes: [{ label: "Orange", price: 4426 }, { label: "Navy", price: 4426 }, { label: "Yellow", price: 4426 }, { label: "Pastel Blue", price: 4426 }, { label: "Tan", price: 4426 }, { label: "Ivory", price: 4426 }, { label: "Off White", price: 4426 }, { label: "Peacock Blue", price: 4426 }, { label: "Black", price: 4426 }, { label: "Orange + Grey", price: 4426 }, { label: "Yellow + Black", price: 4426 }],
@@ -3645,7 +3645,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "11", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc30", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Snow White":"assets/products/oc30-2.jpg","Light Pink":"assets/products/oc30-3.webp"}, name: "Upholstered Corner Seat", cat: "Living Room", room: "Living Room", price: 4507, memberPrice: 4056, sku: "SH-10418", tag: "New", ph: "", img: "assets/products/oc30.webp",
+  { id: "oc30", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Snow White":"assets/products/oc30-2.jpg","Light Pink":"assets/products/oc30-3.webp"}, name: "Upholstered Corner Seat", cat: "Living Room", room: "Living Room", price: 4507, memberPrice: 4056, sku: "SH-10418", tag: "New", ph: "", img: "assets/products/oc30.webp",
     imgs: ["assets/products/oc30.webp", "assets/products/oc30-2.jpg", "assets/products/oc30-3.webp", "assets/products/oc30-4.webp", "assets/products/oc30-5.webp"],
    
     sizes: [{ label: "Snow White", price: 4507 }, { label: "Light Pink", price: 4507 }],
@@ -3658,7 +3658,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc31", arriveDays: [28, 33], name: "Deep Orange Statement Chair", cat: "Living Room", room: "Living Room", price: 4565, memberPrice: 4108, sku: "SH-10419", tag: "New", ph: "", img: "assets/products/oc31.webp",
+  { id: "oc31", arriveDays: [28, 33], expressOpt: 7000, name: "Deep Orange Statement Chair", cat: "Living Room", room: "Living Room", price: 4565, memberPrice: 4108, sku: "SH-10419", tag: "New", ph: "", img: "assets/products/oc31.webp",
     imgs: ["assets/products/oc31.webp", "assets/products/oc31-2.webp", "assets/products/oc31-3.webp", "assets/products/oc31-4.webp", "assets/products/oc31-5.webp"],
    
     sizes: [{ label: "Deep Orange/Red", price: 4565 }],
@@ -3671,7 +3671,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc32", arriveDays: [28, 33], name: "Timber Swing Chair", cat: "Living Room", room: "Living Room", price: 4733, memberPrice: 4260, sku: "SH-10420", tag: "New", ph: "", img: "assets/products/oc32.webp",
+  { id: "oc32", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Swing Chair", cat: "Living Room", room: "Living Room", price: 4733, memberPrice: 4260, sku: "SH-10420", tag: "New", ph: "", img: "assets/products/oc32.webp",
     imgs: ["assets/products/oc32.webp", "assets/products/oc32-2.webp", "assets/products/oc32-3.webp", "assets/products/oc32-4.webp", "assets/products/oc32-5.webp"],
    
     sizes: [{ label: "120cm x 50cm", price: 4733 }, { label: "120cm x 60cm", price: 5181 }, { label: "140cm x 50cm", price: 5285 }, { label: "120cm x 70cm", price: 5556 }, { label: "140cm x 60cm", price: 5741 }, { label: "140cm x 70cm", price: 6444 }],
@@ -3684,7 +3684,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Solid timber", "Options": "6", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "oc33", arriveDays: [28, 33], name: "Cream Bouclé Chair", cat: "Living Room", room: "Living Room", price: 4781, memberPrice: 4303, sku: "SH-10421", tag: "New", ph: "", img: "assets/products/oc33.webp",
+  { id: "oc33", arriveDays: [28, 33], expressOpt: 7000, name: "Cream Bouclé Chair", cat: "Living Room", room: "Living Room", price: 4781, memberPrice: 4303, sku: "SH-10421", tag: "New", ph: "", img: "assets/products/oc33.webp",
     imgs: ["assets/products/oc33.webp", "assets/products/oc33-2.webp", "assets/products/oc33-3.webp", "assets/products/oc33-4.webp", "assets/products/oc33-5.webp"],
    
     sizes: [{ label: "Cream", price: 4781 }],
@@ -3697,7 +3697,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc34", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White":"assets/products/oc34.webp","Orange":"assets/products/oc34-4.webp"}, name: "Occasional Chair in Olive, White or Orange", cat: "Living Room", room: "Living Room", price: 4787, memberPrice: 4308, sku: "SH-10422", tag: "New", ph: "", img: "assets/products/oc34.webp",
+  { id: "oc34", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White":"assets/products/oc34.webp","Orange":"assets/products/oc34-4.webp"}, name: "Occasional Chair in Olive, White or Orange", cat: "Living Room", room: "Living Room", price: 4787, memberPrice: 4308, sku: "SH-10422", tag: "New", ph: "", img: "assets/products/oc34.webp",
     imgs: ["assets/products/oc34.webp", "assets/products/oc34-2.webp", "assets/products/oc34-3.webp", "assets/products/oc34-4.webp", "assets/products/oc34-5.webp"],
    
     sizes: [{ label: "Olive", price: 4787 }, { label: "White", price: 4787 }, { label: "Orange", price: 4787 }],
@@ -3710,7 +3710,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc35", arriveDays: [28, 33], name: "Chair with Optional Foot Stool", cat: "Living Room", room: "Living Room", price: 4889, memberPrice: 4400, sku: "SH-10423", tag: "New", ph: "", img: "assets/products/oc35.webp",
+  { id: "oc35", arriveDays: [28, 33], expressOpt: 7000, name: "Chair with Optional Foot Stool", cat: "Living Room", room: "Living Room", price: 4889, memberPrice: 4400, sku: "SH-10423", tag: "New", ph: "", img: "assets/products/oc35.webp",
     imgs: ["assets/products/oc35.webp", "assets/products/oc35-2.webp", "assets/products/oc35-3.webp", "assets/products/oc35-4.webp", "assets/products/oc35-5.webp"],
    
     sizes: [{ label: "Tan / - Foot Stool", price: 4889 }, { label: "Green / - Foot Stool", price: 4889 }, { label: "White / - Foot Stool", price: 4889 }, { label: "Tan / + Foot Stool", price: 6556 }, { label: "Green / + Foot Stool", price: 6556 }, { label: "White / + Foot Stool", price: 6556 }],
@@ -3723,7 +3723,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "6", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc36", arriveDays: [28, 33], name: "Off White Steel-Frame Chair", cat: "Living Room", room: "Living Room", price: 4915, memberPrice: 4424, sku: "SH-10424", tag: "New", ph: "", img: "assets/products/oc36.webp",
+  { id: "oc36", arriveDays: [28, 33], expressOpt: 7000, name: "Off White Steel-Frame Chair", cat: "Living Room", room: "Living Room", price: 4915, memberPrice: 4424, sku: "SH-10424", tag: "New", ph: "", img: "assets/products/oc36.webp",
     imgs: ["assets/products/oc36.webp", "assets/products/oc36-2.webp", "assets/products/oc36-3.webp", "assets/products/oc36-4.webp", "assets/products/oc36-5.webp"],
    
     sizes: [{ label: "Off White", price: 4915 }],
@@ -3736,7 +3736,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Steel / metal", "Options": "1", "Room": "Living / Indoor" },
     care: "Wipe with a soft, damp cloth and dry. Avoid abrasive pads on plated or brushed finishes, and check the feet for floor protectors." },
 
-  { id: "oc37", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc37-4.webp","Brown":"assets/products/oc37-5.webp","Light Green":"assets/products/oc37-3.webp"}, name: "Velvet Chair on Stainless Steel", cat: "Living Room", room: "Living Room", price: 4924, memberPrice: 4432, sku: "SH-10425", tag: "New", ph: "", img: "assets/products/oc37.webp",
+  { id: "oc37", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc37-4.webp","Brown":"assets/products/oc37-5.webp","Light Green":"assets/products/oc37-3.webp"}, name: "Velvet Chair on Stainless Steel", cat: "Living Room", room: "Living Room", price: 4924, memberPrice: 4432, sku: "SH-10425", tag: "New", ph: "", img: "assets/products/oc37.webp",
     imgs: ["assets/products/oc37.webp", "assets/products/oc37-2.webp", "assets/products/oc37-3.webp", "assets/products/oc37-4.webp", "assets/products/oc37-5.webp"],
    
     sizes: [{ label: "White", price: 4924 }, { label: "Green", price: 4924 }, { label: "Brown", price: 4924 }, { label: "Light Green", price: 4924 }, { label: "Beige", price: 4924 }],
@@ -3749,7 +3749,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Velvet", "Options": "5", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "oc38", arriveDays: [28, 33], name: "Gold & Cream Velvet Chair", cat: "Living Room", room: "Living Room", price: 4939, memberPrice: 4445, sku: "SH-10426", tag: "New", ph: "", img: "assets/products/oc38.webp",
+  { id: "oc38", arriveDays: [28, 33], expressOpt: 7000, name: "Gold & Cream Velvet Chair", cat: "Living Room", room: "Living Room", price: 4939, memberPrice: 4445, sku: "SH-10426", tag: "New", ph: "", img: "assets/products/oc38.webp",
     imgs: ["assets/products/oc38.webp", "assets/products/oc38-2.webp", "assets/products/oc38-3.webp", "assets/products/oc38-4.webp", "assets/products/oc38-5.webp"],
    
     sizes: [{ label: "Gold + Cream", price: 4939 }],
@@ -3762,7 +3762,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Velvet", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "oc39", arriveDays: [28, 33], name: "Ivory Occasional Chair", cat: "Living Room", room: "Living Room", price: 4944, memberPrice: 4450, sku: "SH-10427", tag: "New", ph: "", img: "assets/products/oc39.webp",
+  { id: "oc39", arriveDays: [28, 33], expressOpt: 7000, name: "Ivory Occasional Chair", cat: "Living Room", room: "Living Room", price: 4944, memberPrice: 4450, sku: "SH-10427", tag: "New", ph: "", img: "assets/products/oc39.webp",
     imgs: ["assets/products/oc39.webp", "assets/products/oc39-2.webp", "assets/products/oc39-3.webp", "assets/products/oc39-4.webp", "assets/products/oc39-5.webp"],
    
     sizes: [{ label: "Ivory", price: 4944 }],
@@ -3775,7 +3775,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc40", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Khaki":"assets/products/oc40-5.webp","Grey":"assets/products/oc40-3.webp","White":"assets/products/oc40.webp","Orange":"assets/products/oc40-4.webp"}, name: "Leather Chair in Seven Colours", cat: "Living Room", room: "Living Room", price: 4963, memberPrice: 4467, sku: "SH-10428", tag: "New", ph: "", img: "assets/products/oc40.webp",
+  { id: "oc40", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Khaki":"assets/products/oc40-5.webp","Grey":"assets/products/oc40-3.webp","White":"assets/products/oc40.webp","Orange":"assets/products/oc40-4.webp"}, name: "Leather Chair in Seven Colours", cat: "Living Room", room: "Living Room", price: 4963, memberPrice: 4467, sku: "SH-10428", tag: "New", ph: "", img: "assets/products/oc40.webp",
     imgs: ["assets/products/oc40.webp", "assets/products/oc40-2.webp", "assets/products/oc40-3.webp", "assets/products/oc40-4.webp", "assets/products/oc40-5.webp"],
    
     sizes: [{ label: "Black", price: 4963 }, { label: "Pink", price: 4963 }, { label: "Khaki", price: 4963 }, { label: "Grey", price: 4963 }, { label: "White", price: 4963 }, { label: "Chocolate", price: 4963 }, { label: "Orange", price: 4963 }],
@@ -3788,7 +3788,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "7", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc41", arriveDays: [28, 33], name: "Ash & Fabric Occasional Chair", cat: "Living Room", room: "Living Room", price: 5093, memberPrice: 4584, sku: "SH-10429", tag: "New", ph: "", img: "assets/products/oc41.webp",
+  { id: "oc41", arriveDays: [28, 33], expressOpt: 7000, name: "Ash & Fabric Occasional Chair", cat: "Living Room", room: "Living Room", price: 5093, memberPrice: 4584, sku: "SH-10429", tag: "New", ph: "", img: "assets/products/oc41.webp",
     imgs: ["assets/products/oc41.webp", "assets/products/oc41-2.webp", "assets/products/oc41-3.webp", "assets/products/oc41-4.webp", "assets/products/oc41-5.webp"],
    
     desc: "Fabric on an ash timber frame, cushioned.",
@@ -3800,7 +3800,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "oc42", arriveDays: [28, 33], name: "Coffee-Toned Cushion Chair", cat: "Living Room", room: "Living Room", price: 5135, memberPrice: 4622, sku: "SH-10430", tag: "New", ph: "", img: "assets/products/oc42.webp",
+  { id: "oc42", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee-Toned Cushion Chair", cat: "Living Room", room: "Living Room", price: 5135, memberPrice: 4622, sku: "SH-10430", tag: "New", ph: "", img: "assets/products/oc42.webp",
     imgs: ["assets/products/oc42.webp", "assets/products/oc42-2.webp", "assets/products/oc42-3.webp", "assets/products/oc42-4.webp", "assets/products/oc42-5.webp"],
    
     sizes: [{ label: "Coffee", price: 5135 }],
@@ -3813,7 +3813,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc43", arriveDays: [28, 33], name: "Army Green Swivel Chair", cat: "Living Room", room: "Living Room", price: 5148, memberPrice: 4633, sku: "SH-10431", tag: "New", ph: "", img: "assets/products/oc43.webp",
+  { id: "oc43", arriveDays: [28, 33], expressOpt: 7000, name: "Army Green Swivel Chair", cat: "Living Room", room: "Living Room", price: 5148, memberPrice: 4633, sku: "SH-10431", tag: "New", ph: "", img: "assets/products/oc43.webp",
     imgs: ["assets/products/oc43.webp", "assets/products/oc43-2.webp", "assets/products/oc43-3.webp", "assets/products/oc43-4.webp", "assets/products/oc43-5.webp"],
    
     sizes: [{ label: "Army Green", price: 5148 }],
@@ -3826,7 +3826,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc44", arriveDays: [28, 33], name: "Occasional Chair in Burnt Orange", cat: "Living Room", room: "Living Room", price: 5178, memberPrice: 4660, sku: "SH-10432", tag: "New", ph: "", img: "assets/products/oc44.webp",
+  { id: "oc44", arriveDays: [28, 33], expressOpt: 7000, name: "Occasional Chair in Burnt Orange", cat: "Living Room", room: "Living Room", price: 5178, memberPrice: 4660, sku: "SH-10432", tag: "New", ph: "", img: "assets/products/oc44.webp",
     imgs: ["assets/products/oc44.webp", "assets/products/oc44-2.webp", "assets/products/oc44-3.webp", "assets/products/oc44-4.webp", "assets/products/oc44-5.webp"],
    
     sizes: [{ label: "Burnt Orange", price: 5178 }, { label: "Emerald Green", price: 5178 }, { label: "Grey", price: 5178 }, { label: "Ocean Green", price: 5178 }, { label: "White", price: 5178 }],
@@ -3839,7 +3839,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "5", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc45", arriveDays: [28, 33], name: "Velvet Chair with Oak Legs", cat: "Living Room", room: "Living Room", price: 5202, memberPrice: 4682, sku: "SH-10433", tag: "New", ph: "", img: "assets/products/oc45.webp",
+  { id: "oc45", arriveDays: [28, 33], expressOpt: 7000, name: "Velvet Chair with Oak Legs", cat: "Living Room", room: "Living Room", price: 5202, memberPrice: 4682, sku: "SH-10433", tag: "New", ph: "", img: "assets/products/oc45.webp",
     imgs: ["assets/products/oc45.webp", "assets/products/oc45-2.webp", "assets/products/oc45-3.webp", "assets/products/oc45-4.webp", "assets/products/oc45-5.webp"],
    
     sizes: [{ label: "Army Green", price: 5202 }, { label: "Yellow", price: 5202 }, { label: "Orange", price: 5202 }, { label: "Purple Pink", price: 5202 }, { label: "Off-White", price: 5202 }, { label: "Grey", price: 5202 }, { label: "Black", price: 5202 }, { label: "Dark Green", price: 5202 }],
@@ -3852,7 +3852,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Velvet", "Options": "8", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "oc46", arriveDays: [28, 33], name: "Ivory Wool Chair", cat: "Living Room", room: "Living Room", price: 5306, memberPrice: 4775, sku: "SH-10434", tag: "New", ph: "", img: "assets/products/oc46.webp",
+  { id: "oc46", arriveDays: [28, 33], expressOpt: 7000, name: "Ivory Wool Chair", cat: "Living Room", room: "Living Room", price: 5306, memberPrice: 4775, sku: "SH-10434", tag: "New", ph: "", img: "assets/products/oc46.webp",
     imgs: ["assets/products/oc46.webp", "assets/products/oc46-2.webp", "assets/products/oc46-3.webp", "assets/products/oc46-4.webp", "assets/products/oc46-5.webp"],
    
     sizes: [{ label: "Ivory", price: 5306 }],
@@ -3865,7 +3865,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Wool / lambswool", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum gently and air it rather than washing. Blot spills straight away, and keep it out of prolonged damp." },
 
-  { id: "oc47", arriveDays: [28, 33], name: "Leather Cushion Chair", cat: "Living Room", room: "Living Room", price: 5324, memberPrice: 4792, sku: "SH-10435", tag: "New", ph: "", img: "assets/products/oc47.webp",
+  { id: "oc47", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Cushion Chair", cat: "Living Room", room: "Living Room", price: 5324, memberPrice: 4792, sku: "SH-10435", tag: "New", ph: "", img: "assets/products/oc47.webp",
     imgs: ["assets/products/oc47.webp", "assets/products/oc47-2.webp", "assets/products/oc47-3.webp", "assets/products/oc47-4.webp", "assets/products/oc47-5.webp"],
    
     desc: "Leather with deep cushions, one finish, no decisions.",
@@ -3877,7 +3877,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc48", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc48-4.webp","Beige":"assets/products/oc48.webp"}, name: "Bouclé Chair with Ash & Metal Frame", cat: "Living Room", room: "Living Room", price: 5519, memberPrice: 4967, sku: "SH-10436", tag: "New", ph: "", img: "assets/products/oc48.webp",
+  { id: "oc48", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc48-4.webp","Beige":"assets/products/oc48.webp"}, name: "Bouclé Chair with Ash & Metal Frame", cat: "Living Room", room: "Living Room", price: 5519, memberPrice: 4967, sku: "SH-10436", tag: "New", ph: "", img: "assets/products/oc48.webp",
     imgs: ["assets/products/oc48.webp", "assets/products/oc48-2.webp", "assets/products/oc48-3.webp", "assets/products/oc48-4.webp", "assets/products/oc48-5.webp"],
    
     sizes: [{ label: "Black", price: 5519 }, { label: "Beige", price: 5519 }, { label: "Caramel", price: 5519 }],
@@ -3890,7 +3890,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc49", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Chocolate":"assets/products/oc49-2.webp","Black":"assets/products/oc49-5.webp"}, name: "Chocolate or Black Cushion Chair", cat: "Living Room", room: "Living Room", price: 5533, memberPrice: 4980, sku: "SH-10437", tag: "New", ph: "", img: "assets/products/oc49.webp",
+  { id: "oc49", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Chocolate":"assets/products/oc49-2.webp","Black":"assets/products/oc49-5.webp"}, name: "Chocolate or Black Cushion Chair", cat: "Living Room", room: "Living Room", price: 5533, memberPrice: 4980, sku: "SH-10437", tag: "New", ph: "", img: "assets/products/oc49.webp",
     imgs: ["assets/products/oc49.webp", "assets/products/oc49-2.webp", "assets/products/oc49-3.webp", "assets/products/oc49-4.webp", "assets/products/oc49-5.webp"],
    
     sizes: [{ label: "Chocolate", price: 5533 }, { label: "Black", price: 5533 }],
@@ -3903,7 +3903,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc50", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Navy":"assets/products/oc50-4.webp"}, name: "Leather Chair in Four Colours", cat: "Living Room", room: "Living Room", price: 5533, memberPrice: 4980, sku: "SH-10438", tag: "New", ph: "", img: "assets/products/oc50.webp",
+  { id: "oc50", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Navy":"assets/products/oc50-4.webp"}, name: "Leather Chair in Four Colours", cat: "Living Room", room: "Living Room", price: 5533, memberPrice: 4980, sku: "SH-10438", tag: "New", ph: "", img: "assets/products/oc50.webp",
     imgs: ["assets/products/oc50.webp", "assets/products/oc50-2.webp", "assets/products/oc50-3.webp", "assets/products/oc50-4.webp", "assets/products/oc50-5.webp"],
    
     sizes: [{ label: "Navy", price: 5533 }, { label: "Orange", price: 5533 }, { label: "Brown", price: 5533 }, { label: "Black", price: 5533 }],
@@ -3916,7 +3916,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "4", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc51", arriveDays: [28, 33], name: "Lounge Chair with Optional Stool", cat: "Living Room", room: "Living Room", price: 5741, memberPrice: 5167, sku: "SH-10439", tag: "New", ph: "", img: "assets/products/oc51.webp",
+  { id: "oc51", arriveDays: [28, 33], expressOpt: 7000, name: "Lounge Chair with Optional Stool", cat: "Living Room", room: "Living Room", price: 5741, memberPrice: 5167, sku: "SH-10439", tag: "New", ph: "", img: "assets/products/oc51.webp",
     imgs: ["assets/products/oc51.webp", "assets/products/oc51-2.webp", "assets/products/oc51-3.webp", "assets/products/oc51-4.webp", "assets/products/oc51-5.webp"],
    
     sizes: [{ label: "- Foot Stool", price: 5741 }, { label: "+ Foot Stool", price: 6791 }],
@@ -3929,7 +3929,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc52", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc52-3.webp"}, name: "Bouclé & Leather Chair on Steel", cat: "Living Room", room: "Living Room", price: 5809, memberPrice: 5228, sku: "SH-10440", tag: "New", ph: "", img: "assets/products/oc52.webp",
+  { id: "oc52", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc52-3.webp"}, name: "Bouclé & Leather Chair on Steel", cat: "Living Room", room: "Living Room", price: 5809, memberPrice: 5228, sku: "SH-10440", tag: "New", ph: "", img: "assets/products/oc52.webp",
     imgs: ["assets/products/oc52.webp", "assets/products/oc52-2.webp", "assets/products/oc52-3.webp", "assets/products/oc52-4.webp", "assets/products/oc52-5.webp"],
    
     sizes: [{ label: "Black", price: 5809 }, { label: "Orange", price: 5809 }],
@@ -3942,7 +3942,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Bouclé", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum gently with a brush head and blot spills. Trim any snagged loop with scissors rather than pulling it." },
 
-  { id: "oc53", arriveDays: [28, 33], name: "Leather Chair on Stainless Steel", cat: "Living Room", room: "Living Room", price: 6109, memberPrice: 5498, sku: "SH-10441", tag: "New", ph: "", img: "assets/products/oc53.webp",
+  { id: "oc53", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Chair on Stainless Steel", cat: "Living Room", room: "Living Room", price: 6109, memberPrice: 5498, sku: "SH-10441", tag: "New", ph: "", img: "assets/products/oc53.webp",
     imgs: ["assets/products/oc53.webp", "assets/products/oc53-2.webp", "assets/products/oc53-3.webp", "assets/products/oc53-4.webp", "assets/products/oc53-5.webp"],
    
     sizes: [{ label: "French Cream", price: 6109 }, { label: "Black", price: 6109 }, { label: "Emerald Green", price: 6109 }],
@@ -3955,7 +3955,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc54", arriveDays: [28, 33], name: "Leather & Timber Lounge Chair", cat: "Living Room", room: "Living Room", price: 6109, memberPrice: 5498, sku: "SH-10442", tag: "New", ph: "", img: "assets/products/oc54.webp",
+  { id: "oc54", arriveDays: [28, 33], expressOpt: 7000, name: "Leather & Timber Lounge Chair", cat: "Living Room", room: "Living Room", price: 6109, memberPrice: 5498, sku: "SH-10442", tag: "New", ph: "", img: "assets/products/oc54.webp",
     imgs: ["assets/products/oc54.webp", "assets/products/oc54-2.webp", "assets/products/oc54-3.webp", "assets/products/oc54-4.webp", "assets/products/oc54-5.webp"],
    
     desc: "Leather on timber, cushioned, in one finish.",
@@ -3967,7 +3967,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc55", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc55.webp","Tan":"assets/products/oc55-5.webp"}, name: "Leather Chair, Four Neutrals", cat: "Living Room", room: "Living Room", price: 6250, memberPrice: 5625, sku: "SH-10443", tag: "New", ph: "", img: "assets/products/oc55.webp",
+  { id: "oc55", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc55.webp","Tan":"assets/products/oc55-5.webp"}, name: "Leather Chair, Four Neutrals", cat: "Living Room", room: "Living Room", price: 6250, memberPrice: 5625, sku: "SH-10443", tag: "New", ph: "", img: "assets/products/oc55.webp",
     imgs: ["assets/products/oc55.webp", "assets/products/oc55-2.webp", "assets/products/oc55-3.webp", "assets/products/oc55-4.webp", "assets/products/oc55-5.webp"],
    
     sizes: [{ label: "Black", price: 6250 }, { label: "Grey", price: 6250 }, { label: "White", price: 6250 }, { label: "Tan", price: 6250 }],
@@ -3980,7 +3980,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "4", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc56", arriveDays: [28, 33], name: "Velvet Chair on Timber", cat: "Living Room", room: "Living Room", price: 6254, memberPrice: 5629, sku: "SH-10444", tag: "New", ph: "", img: "assets/products/oc56.webp",
+  { id: "oc56", arriveDays: [28, 33], expressOpt: 7000, name: "Velvet Chair on Timber", cat: "Living Room", room: "Living Room", price: 6254, memberPrice: 5629, sku: "SH-10444", tag: "New", ph: "", img: "assets/products/oc56.webp",
     imgs: ["assets/products/oc56.webp", "assets/products/oc56-2.webp", "assets/products/oc56-3.webp", "assets/products/oc56-4.webp", "assets/products/oc56-5.webp"],
    
     sizes: [{ label: "Khaki", price: 6254 }, { label: "Creamy White", price: 6254 }, { label: "Grey", price: 6254 }],
@@ -3993,7 +3993,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Velvet", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "oc57", arriveDays: [28, 33], name: "Walnut Frame Occasional Chair", cat: "Living Room", room: "Living Room", price: 6406, memberPrice: 5765, sku: "SH-10445", tag: "New", ph: "", img: "assets/products/oc57.webp",
+  { id: "oc57", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Frame Occasional Chair", cat: "Living Room", room: "Living Room", price: 6406, memberPrice: 5765, sku: "SH-10445", tag: "New", ph: "", img: "assets/products/oc57.webp",
     imgs: ["assets/products/oc57.webp", "assets/products/oc57-2.webp", "assets/products/oc57-3.webp", "assets/products/oc57-4.webp", "assets/products/oc57-5.webp"],
    
     desc: "A walnut frame with cushions, dark timber doing the structural work.",
@@ -4005,7 +4005,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "oc58", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc58-5.webp","Blue":"assets/products/oc58-2.webp"}, name: "Velvet Chair in Green, White or Blue", cat: "Living Room", room: "Living Room", price: 6411, memberPrice: 5770, sku: "SH-10446", tag: "New", ph: "", img: "assets/products/oc58.webp",
+  { id: "oc58", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Green":"assets/products/oc58-5.webp","Blue":"assets/products/oc58-2.webp"}, name: "Velvet Chair in Green, White or Blue", cat: "Living Room", room: "Living Room", price: 6411, memberPrice: 5770, sku: "SH-10446", tag: "New", ph: "", img: "assets/products/oc58.webp",
     imgs: ["assets/products/oc58.webp", "assets/products/oc58-2.webp", "assets/products/oc58-3.webp", "assets/products/oc58-4.webp", "assets/products/oc58-5.webp"],
    
     sizes: [{ label: "Green", price: 6411 }, { label: "Off White", price: 6411 }, { label: "Blue", price: 6411 }],
@@ -4018,7 +4018,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Velvet", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "oc59", arriveDays: [28, 33], name: "Lambswool Chair on Timber", cat: "Living Room", room: "Living Room", price: 6644, memberPrice: 5980, sku: "SH-10447", tag: "New", ph: "", img: "assets/products/oc59.webp",
+  { id: "oc59", arriveDays: [28, 33], expressOpt: 7000, name: "Lambswool Chair on Timber", cat: "Living Room", room: "Living Room", price: 6644, memberPrice: 5980, sku: "SH-10447", tag: "New", ph: "", img: "assets/products/oc59.webp",
     imgs: ["assets/products/oc59.webp", "assets/products/oc59-2.webp", "assets/products/oc59-3.webp", "assets/products/oc59-4.webp", "assets/products/oc59-5.webp"],
    
     sizes: [{ label: "Beige", price: 6644 }],
@@ -4031,7 +4031,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Wool / lambswool", "Options": "1", "Room": "Living / Indoor" },
     care: "Vacuum gently and air it rather than washing. Blot spills straight away, and keep it out of prolonged damp." },
 
-  { id: "oc60", arriveDays: [28, 33], name: "Leather Rocking Chair", cat: "Living Room", room: "Living Room", price: 6806, memberPrice: 6125, sku: "SH-10448", tag: "New", ph: "", img: "assets/products/oc60.webp",
+  { id: "oc60", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Rocking Chair", cat: "Living Room", room: "Living Room", price: 6806, memberPrice: 6125, sku: "SH-10448", tag: "New", ph: "", img: "assets/products/oc60.webp",
     imgs: ["assets/products/oc60.webp", "assets/products/oc60-2.webp", "assets/products/oc60-3.webp", "assets/products/oc60-4.webp", "assets/products/oc60-5.webp"],
    
     sizes: [{ label: "Cream", price: 6806 }],
@@ -4044,7 +4044,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc61", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc61-2.webp","Mustard":"assets/products/oc61-4.webp"}, name: "Sculptural Chair in Three Colours", cat: "Living Room", room: "Living Room", price: 6809, memberPrice: 6128, sku: "SH-10449", tag: "New", ph: "", img: "assets/products/oc61.webp",
+  { id: "oc61", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/oc61-2.webp","Mustard":"assets/products/oc61-4.webp"}, name: "Sculptural Chair in Three Colours", cat: "Living Room", room: "Living Room", price: 6809, memberPrice: 6128, sku: "SH-10449", tag: "New", ph: "", img: "assets/products/oc61.webp",
     imgs: ["assets/products/oc61.webp", "assets/products/oc61-2.webp", "assets/products/oc61-3.webp", "assets/products/oc61-4.webp", "assets/products/oc61-5.webp"],
    
     sizes: [{ label: "Black", price: 6809 }, { label: "Mustard", price: 6809 }, { label: "Snow White", price: 6809 }],
@@ -4057,7 +4057,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc62", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Khaki Green":"assets/products/oc62.webp","Navy":"assets/products/oc62-3.webp","Orange":"assets/products/oc62-4.webp"}, name: "Swivel Chair in Khaki, Navy or Orange", cat: "Living Room", room: "Living Room", price: 6887, memberPrice: 6198, sku: "SH-10450", tag: "New", ph: "", img: "assets/products/oc62.webp",
+  { id: "oc62", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Khaki Green":"assets/products/oc62.webp","Navy":"assets/products/oc62-3.webp","Orange":"assets/products/oc62-4.webp"}, name: "Swivel Chair in Khaki, Navy or Orange", cat: "Living Room", room: "Living Room", price: 6887, memberPrice: 6198, sku: "SH-10450", tag: "New", ph: "", img: "assets/products/oc62.webp",
     imgs: ["assets/products/oc62.webp", "assets/products/oc62-2.webp", "assets/products/oc62-3.webp", "assets/products/oc62-4.webp", "assets/products/oc62-5.webp"],
    
     sizes: [{ label: "Khaki Green", price: 6887 }, { label: "Navy", price: 6887 }, { label: "Orange", price: 6887 }],
@@ -4070,7 +4070,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "3", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc63", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White + Brown":"assets/products/oc63.webp","Black + Brown":"assets/products/oc63-3.webp"}, name: "Two-Tone Leather Chair in Brown", cat: "Living Room", room: "Living Room", price: 6959, memberPrice: 6263, sku: "SH-10451", tag: "New", ph: "", img: "assets/products/oc63.webp",
+  { id: "oc63", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White + Brown":"assets/products/oc63.webp","Black + Brown":"assets/products/oc63-3.webp"}, name: "Two-Tone Leather Chair in Brown", cat: "Living Room", room: "Living Room", price: 6959, memberPrice: 6263, sku: "SH-10451", tag: "New", ph: "", img: "assets/products/oc63.webp",
     imgs: ["assets/products/oc63.webp", "assets/products/oc63-2.webp", "assets/products/oc63-3.webp", "assets/products/oc63-4.webp", "assets/products/oc63-5.webp"],
    
     sizes: [{ label: "White + Brown", price: 6959 }, { label: "Black + Brown", price: 6959 }],
@@ -4083,7 +4083,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "2", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc64", arriveDays: [28, 33], name: "Walnut & Cushion Lounge Chair", cat: "Living Room", room: "Living Room", price: 7204, memberPrice: 6484, sku: "SH-10452", tag: "New", ph: "", img: "assets/products/oc64.webp",
+  { id: "oc64", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut & Cushion Lounge Chair", cat: "Living Room", room: "Living Room", price: 7204, memberPrice: 6484, sku: "SH-10452", tag: "New", ph: "", img: "assets/products/oc64.webp",
     imgs: ["assets/products/oc64.webp", "assets/products/oc64-2.webp", "assets/products/oc64-3.webp", "assets/products/oc64-4.webp", "assets/products/oc64-5.webp"],
    
     desc: "A walnut frame with deep cushions.",
@@ -4095,7 +4095,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Solid timber", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "oc65", arriveDays: [28, 33], name: "Ash Chair in Purple, Yellow or Beige", cat: "Living Room", room: "Living Room", price: 7204, memberPrice: 6484, sku: "SH-10453", tag: "New", ph: "", img: "assets/products/oc65.webp",
+  { id: "oc65", arriveDays: [28, 33], expressOpt: 7000, name: "Ash Chair in Purple, Yellow or Beige", cat: "Living Room", room: "Living Room", price: 7204, memberPrice: 6484, sku: "SH-10453", tag: "New", ph: "", img: "assets/products/oc65.webp",
     imgs: ["assets/products/oc65.webp", "assets/products/oc65-2.webp", "assets/products/oc65-3.webp", "assets/products/oc65-4.webp", "assets/products/oc65-5.webp"],
    
     sizes: [{ label: "Royal Purple", price: 7204 }, { label: "Lemon Yellow", price: 7204 }, { label: "Cream Beige", price: 7204 }],
@@ -4108,7 +4108,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Solid timber", "Options": "3", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun and check the joints occasionally, tightening any fixings." },
 
-  { id: "oc66", arriveDays: [28, 33], name: "Leather & Walnut Chair", cat: "Living Room", room: "Living Room", price: 7370, memberPrice: 6633, sku: "SH-10454", tag: "New", ph: "", img: "assets/products/oc66.webp",
+  { id: "oc66", arriveDays: [28, 33], expressOpt: 7000, name: "Leather & Walnut Chair", cat: "Living Room", room: "Living Room", price: 7370, memberPrice: 6633, sku: "SH-10454", tag: "New", ph: "", img: "assets/products/oc66.webp",
     imgs: ["assets/products/oc66.webp", "assets/products/oc66-2.webp", "assets/products/oc66-3.webp", "assets/products/oc66-4.webp", "assets/products/oc66-5.webp"],
    
     desc: "Leather on walnut, one finish, properly made.",
@@ -4120,7 +4120,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Leather", "Options": "1", "Room": "Living / Indoor" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "oc67", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Snow White":"assets/products/oc67-3.webp","Charcoal Grey":"assets/products/oc67-5.webp"}, name: "Occasional Chair in Snow White or Charcoal", cat: "Living Room", room: "Living Room", price: 7659, memberPrice: 6893, sku: "SH-10455", tag: "New", ph: "", img: "assets/products/oc67.webp",
+  { id: "oc67", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Snow White":"assets/products/oc67-3.webp","Charcoal Grey":"assets/products/oc67-5.webp"}, name: "Occasional Chair in Snow White or Charcoal", cat: "Living Room", room: "Living Room", price: 7659, memberPrice: 6893, sku: "SH-10455", tag: "New", ph: "", img: "assets/products/oc67.webp",
     imgs: ["assets/products/oc67.webp", "assets/products/oc67-2.webp", "assets/products/oc67-3.webp", "assets/products/oc67-4.webp", "assets/products/oc67-5.webp"],
    
     sizes: [{ label: "Snow White", price: 7659 }, { label: "Charcoal Grey", price: 7659 }],
@@ -4133,7 +4133,7 @@ const PRODUCTS = [
     specs: { "Type": "Occasional chair", "Upholstery": "Upholstery fabric", "Options": "2", "Room": "Living / Indoor" },
     care: "Vacuum regularly and blot spills immediately. Plump and rotate cushions so they wear evenly." },
 
-  { id: "oc68", arriveDays: [28, 33], name: "Leather Chair with Optional Foot Stool", cat: "Living Room", room: "Living Room", price: 7759, memberPrice: 6983, sku: "SH-10456", tag: "New", ph: "", img: "assets/products/oc68.webp",
+  { id: "oc68", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Chair with Optional Foot Stool", cat: "Living Room", room: "Living Room", price: 7759, memberPrice: 6983, sku: "SH-10456", tag: "New", ph: "", img: "assets/products/oc68.webp",
     imgs: ["assets/products/oc68.webp", "assets/products/oc68-2.webp", "assets/products/oc68-3.webp", "assets/products/oc68-4.webp", "assets/products/oc68-5.webp"],
    
     sizes: [{ label: "Brown / - Foot Stool", price: 7759 }, { label: "Black / - Foot Stool", price: 7759 }, { label: "Brown / + Foot Stool", price: 9611 }, { label: "Black / + Foot Stool", price: 9611 }],
@@ -4569,7 +4569,7 @@ const PRODUCTS = [
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
 
-  { id: "lr015q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Blue":"assets/products/lr015q-4.webp","Grey":"assets/products/lr015q-2.webp"}, name: "Dining Chair", cat: "Dining", room: "Living Room", price: 944, memberPrice: 850, sku: "SH-10797", tag: "New", ph: "", img: "assets/products/lr015q.webp",
+  { id: "lr015q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Blue":"assets/products/lr015q-4.webp","Grey":"assets/products/lr015q-2.webp"}, name: "Dining Chair", cat: "Dining", room: "Living Room", price: 944, memberPrice: 850, sku: "SH-10797", tag: "New", ph: "", img: "assets/products/lr015q.webp",
     imgs: ["assets/products/lr015q.webp", "assets/products/lr015q-2.webp", "assets/products/lr015q-3.webp", "assets/products/lr015q-4.webp"],
    
     sizes: [{ label: "Orange", price: 944 }, { label: "Blue", price: 944 }, { label: "Grey", price: 944 }],
@@ -4688,7 +4688,7 @@ const PRODUCTS = [
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
 
-  { id: "lr024q", arriveDays: [28, 33], optionLabel: "Colour", name: "Dining Chair (Black / Grey)", cat: "Dining", room: "Living Room", price: 1326, memberPrice: 1193, sku: "SH-10806", tag: "New", ph: "", img: "assets/products/lr024q.webp",
+  { id: "lr024q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", name: "Dining Chair (Black / Grey)", cat: "Dining", room: "Living Room", price: 1326, memberPrice: 1193, sku: "SH-10806", tag: "New", ph: "", img: "assets/products/lr024q.webp",
     imgs: ["assets/products/lr024q.webp", "assets/products/lr024q-2.webp", "assets/products/lr024q-3.webp", "assets/products/lr024q-4.webp"],
    
     sizes: [{ label: "Orange", price: 1326 }, { label: "Black", price: 1326 }, { label: "Grey", price: 1326 }, { label: "Navy", price: 1326 }],
@@ -4778,7 +4778,7 @@ const PRODUCTS = [
 
 
 
-  { id: "lr031q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White":"assets/products/lr031q-3.webp"}, name: "Leather Dining Chair", cat: "Dining", room: "Living Room", price: 1513, memberPrice: 1362, sku: "SH-10813", tag: "New", ph: "", img: "assets/products/lr031q.webp",
+  { id: "lr031q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White":"assets/products/lr031q-3.webp"}, name: "Leather Dining Chair", cat: "Dining", room: "Living Room", price: 1513, memberPrice: 1362, sku: "SH-10813", tag: "New", ph: "", img: "assets/products/lr031q.webp",
     imgs: ["assets/products/lr031q.webp", "assets/products/lr031q-2.webp", "assets/products/lr031q-3.webp", "assets/products/lr031q-4.webp"],
    
     sizes: [{ label: "Black", price: 1513 }, { label: "Beige", price: 1513 }, { label: "White", price: 1513 }],
@@ -4791,7 +4791,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Chair", "Material": "Leather", "Options": "3", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr032q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr032q.webp","Tan":"assets/products/lr032q-4.webp"}, name: "Leather Bar Stool in Four Colours", cat: "Dining", room: "Living Room", price: 1572, memberPrice: 1415, sku: "SH-10814", tag: "New", ph: "", img: "assets/products/lr032q.webp",
+  { id: "lr032q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr032q.webp","Tan":"assets/products/lr032q-4.webp"}, name: "Leather Bar Stool in Four Colours", cat: "Dining", room: "Living Room", price: 1572, memberPrice: 1415, sku: "SH-10814", tag: "New", ph: "", img: "assets/products/lr032q.webp",
     imgs: ["assets/products/lr032q.webp", "assets/products/lr032q-2.webp", "assets/products/lr032q-3.webp", "assets/products/lr032q-4.webp"],
    
     sizes: [{ label: "Black", price: 1572 }, { label: "Tan", price: 1572 }, { label: "Grey", price: 1572 }, { label: "White", price: 1572 }],
@@ -4831,7 +4831,7 @@ const PRODUCTS = [
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
 
-  { id: "lr035q", arriveDays: [28, 33], optionLabel: "Colour", name: "Leather Dining Chair (Black / Beige)", cat: "Dining", room: "Living Room", price: 1639, memberPrice: 1475, sku: "SH-10817", tag: "New", ph: "", img: "assets/products/lr035q.webp",
+  { id: "lr035q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", name: "Leather Dining Chair (Black / Beige)", cat: "Dining", room: "Living Room", price: 1639, memberPrice: 1475, sku: "SH-10817", tag: "New", ph: "", img: "assets/products/lr035q.webp",
     imgs: ["assets/products/lr035q.webp", "assets/products/lr035q-2.webp", "assets/products/lr035q-3.webp", "assets/products/lr035q-4.webp"],
    
     sizes: [{ label: "Orange + Black", price: 1639 }, { label: "Orange + Gold", price: 1639 }, { label: "Beige + Gold", price: 1639 }, { label: "Beige + Black", price: 1639 }],
@@ -4859,7 +4859,7 @@ const PRODUCTS = [
 
 
 
-  { id: "lr037q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr037q-4.webp","Tan":"assets/products/lr037q-3.webp"}, name: "Leather Dining Chair (Black / Tan)", cat: "Dining", room: "Living Room", price: 1726, memberPrice: 1553, sku: "SH-10819", tag: "New", ph: "", img: "assets/products/lr037q.webp",
+  { id: "lr037q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr037q-4.webp","Tan":"assets/products/lr037q-3.webp"}, name: "Leather Dining Chair (Black / Tan)", cat: "Dining", room: "Living Room", price: 1726, memberPrice: 1553, sku: "SH-10819", tag: "New", ph: "", img: "assets/products/lr037q.webp",
     imgs: ["assets/products/lr037q.webp", "assets/products/lr037q-2.webp", "assets/products/lr037q-3.webp", "assets/products/lr037q-4.webp"],
    
     sizes: [{ label: "Black", price: 1726 }, { label: "Tan", price: 1726 }],
@@ -4872,7 +4872,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Chair", "Material": "Leather", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr038q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Gold":"assets/products/lr038q.webp"}, name: "Leather Dining Chair (Gold / Silver)", cat: "Dining", room: "Living Room", price: 1778, memberPrice: 1600, sku: "SH-10820", tag: "New", ph: "", img: "assets/products/lr038q.webp",
+  { id: "lr038q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Gold":"assets/products/lr038q.webp"}, name: "Leather Dining Chair (Gold / Silver)", cat: "Dining", room: "Living Room", price: 1778, memberPrice: 1600, sku: "SH-10820", tag: "New", ph: "", img: "assets/products/lr038q.webp",
     imgs: ["assets/products/lr038q.webp", "assets/products/lr038q-2.webp", "assets/products/lr038q-3.webp", "assets/products/lr038q-4.webp"],
    
     sizes: [{ label: "Gold", price: 1778 }, { label: "Silver", price: 1778 }],
@@ -4901,7 +4901,7 @@ const PRODUCTS = [
 
 
 
-  { id: "lr040q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White + Orange":"assets/products/lr040q-4.webp"}, name: "Metal Dining Chair", cat: "Dining", room: "Living Room", price: 1806, memberPrice: 1625, sku: "SH-10822", tag: "New", ph: "", img: "assets/products/lr040q.webp",
+  { id: "lr040q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White + Orange":"assets/products/lr040q-4.webp"}, name: "Metal Dining Chair", cat: "Dining", room: "Living Room", price: 1806, memberPrice: 1625, sku: "SH-10822", tag: "New", ph: "", img: "assets/products/lr040q.webp",
     imgs: ["assets/products/lr040q.webp", "assets/products/lr040q-2.webp", "assets/products/lr040q-3.webp", "assets/products/lr040q-4.webp"],
    
     sizes: [{ label: "White + Orange", price: 1806 }, { label: "White + Grey", price: 1806 }, { label: "White", price: 1806 }, { label: "Emerald Green", price: 1806 }, { label: "Mocha", price: 1806 }, { label: "Grey", price: 1806 }, { label: "Tan", price: 1806 }],
@@ -4914,7 +4914,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Chair", "Material": "Metal", "Options": "7", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "lr041q", arriveDays: [28, 33], optionLabel: "Colour", name: "Leather Dining Chair (Black / White)", cat: "Dining", room: "Living Room", price: 1828, memberPrice: 1645, sku: "SH-10823", tag: "New", ph: "", img: "assets/products/lr041q.webp",
+  { id: "lr041q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", name: "Leather Dining Chair (Black / White)", cat: "Dining", room: "Living Room", price: 1828, memberPrice: 1645, sku: "SH-10823", tag: "New", ph: "", img: "assets/products/lr041q.webp",
     imgs: ["assets/products/lr041q.webp", "assets/products/lr041q-2.webp", "assets/products/lr041q-3.webp", "assets/products/lr041q-4.webp"],
    
     sizes: [{ label: "Beige", price: 1828 }, { label: "White", price: 1828 }, { label: "Grey", price: 1828 }, { label: "Dark Grey", price: 1828 }, { label: "Black", price: 1828 }, { label: "Brown", price: 1828 }],
@@ -4927,7 +4927,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Chair", "Material": "Leather", "Options": "6", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr042q", arriveDays: [28, 33], name: "Bar Stool", cat: "Dining", room: "Living Room", price: 1833, memberPrice: 1650, sku: "SH-10824", tag: "New", ph: "", img: "assets/products/lr042q.webp",
+  { id: "lr042q", arriveDays: [28, 33], expressOpt: 7000, name: "Bar Stool", cat: "Dining", room: "Living Room", price: 1833, memberPrice: 1650, sku: "SH-10824", tag: "New", ph: "", img: "assets/products/lr042q.webp",
     imgs: ["assets/products/lr042q.webp", "assets/products/lr042q-2.webp", "assets/products/lr042q-3.webp", "assets/products/lr042q-4.webp"],
    
     sizes: [{ label: "Black / 60cm", price: 1833 }, { label: "Grey / 60cm", price: 1833 }, { label: "Blue / 60cm", price: 1833 }, { label: "Green / 60cm", price: 1833 }, { label: "Black / 90cm", price: 2387 }, { label: "Grey / 90cm", price: 2387 }, { label: "Blue / 90cm", price: 2387 }, { label: "Green / 90cm", price: 2387 }, { label: "Black / 100cm", price: 2685 }, { label: "Grey / 100cm", price: 2685 }, { label: "Blue / 100cm", price: 2685 }, { label: "Green / 100cm", price: 2685 }, { label: "Black / 120cm", price: 3087 }, { label: "Grey / 120cm", price: 3087 }, { label: "Blue / 120cm", price: 3087 }, { label: "Green / 120cm", price: 3087 }],
@@ -4953,7 +4953,7 @@ const PRODUCTS = [
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
 
-  { id: "lr044q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White":"assets/products/lr044q-4.webp","Charcoal":"assets/products/lr044q-3.webp"}, name: "Bouclé Dining Chair", cat: "Dining", room: "Living Room", price: 1957, memberPrice: 1761, sku: "SH-10826", tag: "New", ph: "", img: "assets/products/lr044q.webp",
+  { id: "lr044q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White":"assets/products/lr044q-4.webp","Charcoal":"assets/products/lr044q-3.webp"}, name: "Bouclé Dining Chair", cat: "Dining", room: "Living Room", price: 1957, memberPrice: 1761, sku: "SH-10826", tag: "New", ph: "", img: "assets/products/lr044q.webp",
     imgs: ["assets/products/lr044q.webp", "assets/products/lr044q-2.webp", "assets/products/lr044q-3.webp", "assets/products/lr044q-4.webp"],
    
     sizes: [{ label: "White", price: 1957 }, { label: "Charcoal", price: 1957 }],
@@ -4981,7 +4981,7 @@ const PRODUCTS = [
 
 
 
-  { id: "lr046q", arriveDays: [28, 33], name: "Leather Bar Stool (65cm to 75cm)", cat: "Dining", room: "Living Room", price: 2130, memberPrice: 1917, sku: "SH-10828", tag: "New", ph: "", img: "assets/products/lr046q.webp",
+  { id: "lr046q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Bar Stool (65cm to 75cm)", cat: "Dining", room: "Living Room", price: 2130, memberPrice: 1917, sku: "SH-10828", tag: "New", ph: "", img: "assets/products/lr046q.webp",
     imgs: ["assets/products/lr046q.webp", "assets/products/lr046q-2.webp", "assets/products/lr046q-3.webp", "assets/products/lr046q-4.webp"],
    
     sizes: [{ label: "Light Grey / 65cm", price: 2130 }, { label: "Dark Grey / 65cm", price: 2130 }, { label: "Orange / 65cm", price: 2130 }, { label: "Ocean Blue / 65cm", price: 2130 }, { label: "Light Grey / 75cm", price: 2315 }, { label: "Dark Grey / 75cm", price: 2315 }, { label: "Orange / 75cm", price: 2315 }, { label: "Ocean Blue / 75cm", price: 2315 }],
@@ -4994,7 +4994,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Leather", "Options": "8", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr047q", arriveDays: [28, 33], name: "Leather Bar Stool (Gold / Silver)", cat: "Dining", room: "Living Room", price: 2148, memberPrice: 1933, sku: "SH-10829", tag: "New", ph: "", img: "assets/products/lr047q.webp",
+  { id: "lr047q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Bar Stool (Gold / Silver)", cat: "Dining", room: "Living Room", price: 2148, memberPrice: 1933, sku: "SH-10829", tag: "New", ph: "", img: "assets/products/lr047q.webp",
     imgs: ["assets/products/lr047q.webp", "assets/products/lr047q-2.webp", "assets/products/lr047q-3.webp", "assets/products/lr047q-4.webp"],
    
     sizes: [{ label: "Titanium Gold", price: 2148 }, { label: "Silver", price: 2148 }, { label: "Rose Gold", price: 2148 }],
@@ -5007,7 +5007,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Leather", "Options": "3", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr048q", arriveDays: [28, 33], name: "Velvet Bar Stool", cat: "Dining", room: "Living Room", price: 2185, memberPrice: 1966, sku: "SH-10830", tag: "New", ph: "", img: "assets/products/lr048q.webp",
+  { id: "lr048q", arriveDays: [28, 33], expressOpt: 7000, name: "Velvet Bar Stool", cat: "Dining", room: "Living Room", price: 2185, memberPrice: 1966, sku: "SH-10830", tag: "New", ph: "", img: "assets/products/lr048q.webp",
     imgs: ["assets/products/lr048q.webp", "assets/products/lr048q-2.webp", "assets/products/lr048q-3.webp", "assets/products/lr048q-4.webp"],
    
     sizes: [{ label: "Charcoal Grey / 65cm", price: 2185 }, { label: "Charcoal Grey / 75cm", price: 2185 }, { label: "Navy Blue / 65cm", price: 2185 }, { label: "Navy Blue / 75cm", price: 2185 }, { label: "Emerald Green / 65cm", price: 2185 }, { label: "Emerald Green / 75cm", price: 2185 }, { label: "Off White / 65cm", price: 2185 }, { label: "Off White / 75cm", price: 2185 }, { label: "Pink / 65cm", price: 2185 }, { label: "Pink / 75cm", price: 2185 }, { label: "Black / 65cm", price: 2185 }, { label: "Black / 75cm", price: 2185 }],
@@ -5035,7 +5035,7 @@ const PRODUCTS = [
 
 
 
-  { id: "lr050q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Clear":"assets/products/lr050q.webp"}, name: "Dining Chair (Grey / Blue)", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10832", tag: "New", ph: "", img: "assets/products/lr050q.webp",
+  { id: "lr050q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Clear":"assets/products/lr050q.webp"}, name: "Dining Chair (Grey / Blue)", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10832", tag: "New", ph: "", img: "assets/products/lr050q.webp",
     imgs: ["assets/products/lr050q.webp", "assets/products/lr050q-2.webp", "assets/products/lr050q-3.webp", "assets/products/lr050q-4.webp"],
    
     sizes: [{ label: "Coffee", price: 2204 }, { label: "Smoke Grey", price: 2204 }, { label: "Clear", price: 2204 }, { label: "Light Blue", price: 2204 }],
@@ -5047,7 +5047,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Chair", "Material": "Mixed", "Options": "4", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr051q", arriveDays: [28, 33], name: "Leather Dining Chair (Beige)", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10833", tag: "New", ph: "", img: "assets/products/lr051q.webp",
+  { id: "lr051q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Dining Chair (Beige)", cat: "Dining", room: "Living Room", price: 2204, memberPrice: 1984, sku: "SH-10833", tag: "New", ph: "", img: "assets/products/lr051q.webp",
     imgs: ["assets/products/lr051q.webp", "assets/products/lr051q-2.webp", "assets/products/lr051q-3.webp", "assets/products/lr051q-4.webp"],
    
     sizes: [{ label: "Beige", price: 2204 }],
@@ -5085,7 +5085,7 @@ const PRODUCTS = [
     care: "Switch it off and let it cool before cleaning. Dust with a dry, soft cloth; glass and crystal want a barely damp cloth then buffing. Hard-wired fittings should be installed by a licensed electrician." },
 
 
-  { id: "lr054q", arriveDays: [28, 33], name: "Bar Stool (Black / Gold)", cat: "Dining", room: "Living Room", price: 2313, memberPrice: 2082, sku: "SH-10836", tag: "New", ph: "", img: "assets/products/lr054q.webp",
+  { id: "lr054q", arriveDays: [28, 33], expressOpt: 7000, name: "Bar Stool (Black / Gold)", cat: "Dining", room: "Living Room", price: 2313, memberPrice: 2082, sku: "SH-10836", tag: "New", ph: "", img: "assets/products/lr054q.webp",
     imgs: ["assets/products/lr054q.webp", "assets/products/lr054q-2.webp", "assets/products/lr054q-3.webp", "assets/products/lr054q-4.webp"],
    
     sizes: [{ label: "Titanium Gold", price: 2313 }, { label: "Titanium Black", price: 2648 }],
@@ -5145,7 +5145,7 @@ const PRODUCTS = [
 
 
 
-  { id: "lr058q", arriveDays: [28, 33], name: "Slate Console Table", cat: "Dining", room: "Living Room", price: 3026, memberPrice: 2723, sku: "SH-10840", tag: "New", ph: "", img: "assets/products/lr058q.webp",
+  { id: "lr058q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Console Table", cat: "Dining", room: "Living Room", price: 3026, memberPrice: 2723, sku: "SH-10840", tag: "New", ph: "", img: "assets/products/lr058q.webp",
     imgs: ["assets/products/lr058q.webp", "assets/products/lr058q-2.webp", "assets/products/lr058q-3.webp", "assets/products/lr058q-4.webp"],
    
     sizes: [{ label: "Gold + White / 80cm", price: 3026 }, { label: "Gold + Black / 80cm", price: 3026 }, { label: "Gold + White / 100cm", price: 3269 }, { label: "Gold + Black / 100cm", price: 3269 }, { label: "Gold + White / 120cm", price: 3489 }, { label: "Gold + Black / 120cm", price: 3489 }],
@@ -5158,7 +5158,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Slate", "Options": "6", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "lr059q", arriveDays: [28, 33], name: "Timber Bar Stool", cat: "Dining", room: "Living Room", price: 3106, memberPrice: 2795, sku: "SH-10841", tag: "New", ph: "", img: "assets/products/lr059q.webp",
+  { id: "lr059q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Bar Stool", cat: "Dining", room: "Living Room", price: 3106, memberPrice: 2795, sku: "SH-10841", tag: "New", ph: "", img: "assets/products/lr059q.webp",
     imgs: ["assets/products/lr059q.webp", "assets/products/lr059q-2.webp", "assets/products/lr059q-3.webp", "assets/products/lr059q-4.webp"],
    
     sizes: [{ label: "Beige / 90cm", price: 3106 }, { label: "Beige / 120cm", price: 3630 }],
@@ -5171,7 +5171,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Timber", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr060q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Brown":"assets/products/lr060q-3.webp"}, name: "Walnut Bar Stool", cat: "Dining", room: "Living Room", price: 3109, memberPrice: 2798, sku: "SH-10842", tag: "New", ph: "", img: "assets/products/lr060q.webp",
+  { id: "lr060q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Brown":"assets/products/lr060q-3.webp"}, name: "Walnut Bar Stool", cat: "Dining", room: "Living Room", price: 3109, memberPrice: 2798, sku: "SH-10842", tag: "New", ph: "", img: "assets/products/lr060q.webp",
     imgs: ["assets/products/lr060q.webp", "assets/products/lr060q-2.webp", "assets/products/lr060q-3.webp", "assets/products/lr060q-4.webp"],
    
     sizes: [{ label: "Brown", price: 3109 }, { label: "Blue", price: 3109 }, { label: "Grey", price: 3109 }, { label: "Black", price: 3109 }],
@@ -5184,7 +5184,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Walnut", "Options": "4", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr061q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Gold":"assets/products/lr061q-3.webp"}, name: "Leather Bar Stool (2 options)", cat: "Dining", room: "Living Room", price: 3330, memberPrice: 2997, sku: "SH-10843", tag: "New", ph: "", img: "assets/products/lr061q.webp",
+  { id: "lr061q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Gold":"assets/products/lr061q-3.webp"}, name: "Leather Bar Stool (2 options)", cat: "Dining", room: "Living Room", price: 3330, memberPrice: 2997, sku: "SH-10843", tag: "New", ph: "", img: "assets/products/lr061q.webp",
     imgs: ["assets/products/lr061q.webp", "assets/products/lr061q-2.webp", "assets/products/lr061q-3.webp", "assets/products/lr061q-4.webp"],
    
     sizes: [{ label: "Silver", price: 3330 }, { label: "Gold", price: 3330 }],
@@ -5197,7 +5197,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Leather", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr062q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Off White + Natural":"assets/products/lr062q-2.webp","Off White + Walnut":"assets/products/lr062q-4.webp","Red + Natural":"assets/products/lr062q-3.webp"}, name: "Timber Dining Chair", cat: "Dining", room: "Living Room", price: 3369, memberPrice: 3032, sku: "SH-10844", tag: "New", ph: "", img: "assets/products/lr062q.webp",
+  { id: "lr062q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Off White + Natural":"assets/products/lr062q-2.webp","Off White + Walnut":"assets/products/lr062q-4.webp","Red + Natural":"assets/products/lr062q-3.webp"}, name: "Timber Dining Chair", cat: "Dining", room: "Living Room", price: 3369, memberPrice: 3032, sku: "SH-10844", tag: "New", ph: "", img: "assets/products/lr062q.webp",
     imgs: ["assets/products/lr062q.webp", "assets/products/lr062q-2.webp", "assets/products/lr062q-3.webp", "assets/products/lr062q-4.webp"],
    
     sizes: [{ label: "Off White + Natural", price: 3369 }, { label: "Off White + Walnut", price: 3369 }, { label: "Red + Natural", price: 3369 }],
@@ -5210,7 +5210,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Chair", "Material": "Timber", "Options": "3", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr063q", arriveDays: [28, 33], name: "Console Table", cat: "Dining", room: "Living Room", price: 3661, memberPrice: 3295, sku: "SH-10845", tag: "New", ph: "", img: "assets/products/lr063q.webp",
+  { id: "lr063q", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table", cat: "Dining", room: "Living Room", price: 3661, memberPrice: 3295, sku: "SH-10845", tag: "New", ph: "", img: "assets/products/lr063q.webp",
     imgs: ["assets/products/lr063q.webp", "assets/products/lr063q-2.webp", "assets/products/lr063q-3.webp", "assets/products/lr063q-4.webp"],
    
     sizes: [{ label: "A / 100cm", price: 3661 }, { label: "B / 100cm", price: 3661 }, { label: "C / 100cm", price: 3661 }, { label: "D / 100cm", price: 3661 }, { label: "A / 120cm", price: 4041 }, { label: "B / 120cm", price: 4041 }, { label: "C / 120cm", price: 4041 }, { label: "D / 120cm", price: 4041 }, { label: "A / 150cm", price: 4341 }, { label: "B / 150cm", price: 4341 }, { label: "C / 150cm", price: 4341 }, { label: "D / 150cm", price: 4341 }],
@@ -5222,7 +5222,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Mixed", "Options": "12", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr064q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Beige":"assets/products/lr064q-2.webp"}, name: "Leather Bar Stool (Grey / Beige)", cat: "Dining", room: "Living Room", price: 4037, memberPrice: 3633, sku: "SH-10846", tag: "New", ph: "", img: "assets/products/lr064q.webp",
+  { id: "lr064q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Beige":"assets/products/lr064q-2.webp"}, name: "Leather Bar Stool (Grey / Beige)", cat: "Dining", room: "Living Room", price: 4037, memberPrice: 3633, sku: "SH-10846", tag: "New", ph: "", img: "assets/products/lr064q.webp",
     imgs: ["assets/products/lr064q.webp", "assets/products/lr064q-2.webp", "assets/products/lr064q-3.webp", "assets/products/lr064q-4.webp"],
    
     sizes: [{ label: "Coffee", price: 4037 }, { label: "Grey", price: 4037 }, { label: "Green", price: 4037 }, { label: "Beige", price: 4037 }],
@@ -5235,7 +5235,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Leather", "Options": "4", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr065q", arriveDays: [28, 33], name: "Bar Stool (100cm to 120cm)", cat: "Dining", room: "Living Room", price: 4167, memberPrice: 3750, sku: "SH-10847", tag: "New", ph: "", img: "assets/products/lr065q.webp",
+  { id: "lr065q", arriveDays: [28, 33], expressOpt: 7000, name: "Bar Stool (100cm to 120cm)", cat: "Dining", room: "Living Room", price: 4167, memberPrice: 3750, sku: "SH-10847", tag: "New", ph: "", img: "assets/products/lr065q.webp",
     imgs: ["assets/products/lr065q.webp", "assets/products/lr065q-2.webp", "assets/products/lr065q-3.webp", "assets/products/lr065q-4.webp"],
    
     sizes: [{ label: "100cm", price: 4167 }, { label: "120cm", price: 4881 }],
@@ -5247,7 +5247,7 @@ const PRODUCTS = [
     specs: { "Type": "Bar Stool", "Material": "Mixed", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr066q", arriveDays: [28, 33], name: "Console Table (100cm to 160cm)", cat: "Dining", room: "Living Room", price: 4507, memberPrice: 4056, sku: "SH-10848", tag: "New", ph: "", img: "assets/products/lr066q.webp",
+  { id: "lr066q", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table (100cm to 160cm)", cat: "Dining", room: "Living Room", price: 4507, memberPrice: 4056, sku: "SH-10848", tag: "New", ph: "", img: "assets/products/lr066q.webp",
     imgs: ["assets/products/lr066q.webp", "assets/products/lr066q-2.webp", "assets/products/lr066q-3.webp", "assets/products/lr066q-4.webp"],
    
     sizes: [{ label: "White + Gold / 100cm", price: 4507 }, { label: "Black + Gold / 100cm", price: 4507 }, { label: "White + Gold / 120cm", price: 4948 }, { label: "Black + Gold / 120cm", price: 4948 }, { label: "White + Gold / 140cm", price: 5315 }, { label: "Black + Gold / 140cm", price: 5315 }, { label: "White + Gold / 160cm", price: 5533 }, { label: "Black + Gold / 160cm", price: 5533 }],
@@ -5260,7 +5260,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Mixed", "Options": "8", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr067q", arriveDays: [28, 33], name: "Slate Console Table (90cm to 150cm)", cat: "Dining", room: "Living Room", price: 4570, memberPrice: 4113, sku: "SH-10849", tag: "New", ph: "", img: "assets/products/lr067q.webp",
+  { id: "lr067q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Console Table (90cm to 150cm)", cat: "Dining", room: "Living Room", price: 4570, memberPrice: 4113, sku: "SH-10849", tag: "New", ph: "", img: "assets/products/lr067q.webp",
     imgs: ["assets/products/lr067q.webp", "assets/products/lr067q-2.webp", "assets/products/lr067q-3.webp", "assets/products/lr067q-4.webp"],
    
     sizes: [{ label: "90cm", price: 4570 }, { label: "100cm", price: 5326 }, { label: "120cm", price: 6367 }, { label: "150cm", price: 7385 }],
@@ -5302,7 +5302,7 @@ const PRODUCTS = [
 
 
 
-  { id: "lr070q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr070q-4.webp","Walnut":"assets/products/lr070q-3.webp"}, name: "Walnut Console Table", cat: "Dining", room: "Living Room", price: 4957, memberPrice: 4461, sku: "SH-10852", tag: "New", ph: "", img: "assets/products/lr070q.webp",
+  { id: "lr070q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/lr070q-4.webp","Walnut":"assets/products/lr070q-3.webp"}, name: "Walnut Console Table", cat: "Dining", room: "Living Room", price: 4957, memberPrice: 4461, sku: "SH-10852", tag: "New", ph: "", img: "assets/products/lr070q.webp",
     imgs: ["assets/products/lr070q.webp", "assets/products/lr070q-2.webp", "assets/products/lr070q-3.webp", "assets/products/lr070q-4.webp"],
    
     sizes: [{ label: "Black", price: 4957 }, { label: "Walnut", price: 4957 }],
@@ -5315,7 +5315,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Walnut", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr071q", arriveDays: [28, 33], name: "Timber Dining Table", cat: "Dining", room: "Living Room", price: 6461, memberPrice: 5815, sku: "SH-10853", tag: "New", ph: "", img: "assets/products/lr071q.webp",
+  { id: "lr071q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dining Table", cat: "Dining", room: "Living Room", price: 6461, memberPrice: 5815, sku: "SH-10853", tag: "New", ph: "", img: "assets/products/lr071q.webp",
     imgs: ["assets/products/lr071q.webp", "assets/products/lr071q-2.webp", "assets/products/lr071q-3.webp", "assets/products/lr071q-4.webp"],
    
     sizes: [{ label: "120cm / 0 x Dining Chairs (table only)", price: 6461 }, { label: "140cm / 0 x Dining Chairs (table only)", price: 8426 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 11370 }, { label: "120cm / Table + 2 x Dining Chairs", price: 11646 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 12178 }, { label: "200cm / 0 x Dining Chairs (table only)", price: 13600 }, { label: "140cm / Table + 2 x Dining Chairs", price: 13611 }, { label: "160cm / Table + 2 x Dining Chairs", price: 16556 }, { label: "120cm / Table + 4 x Dining Chairs", price: 16831 }, { label: "180cm / Table + 2 x Dining Chairs", price: 17363 }, { label: "200cm / Table + 2 x Dining Chairs", price: 18785 }, { label: "140cm / Table + 4 x Dining Chairs", price: 18796 }, { label: "160cm / Table + 4 x Dining Chairs", price: 21741 }, { label: "120cm / Table + 6 x Dining Chairs", price: 22017 }, { label: "180cm / Table + 4 x Dining Chairs", price: 22548 }, { label: "200cm / Table + 4 x Dining Chairs", price: 23970 }, { label: "140cm / Table + 6 x Dining Chairs", price: 23981 }, { label: "160cm / Table + 6 x Dining Chairs", price: 26759 }, { label: "180cm / Table + 6 x Dining Chairs", price: 27733 }, { label: "200cm / Table + 6 x Dining Chairs", price: 29156 }],
@@ -5328,7 +5328,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Timber", "Options": "20", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr072q", arriveDays: [28, 33], name: "Slate Dining Table", cat: "Dining", room: "Living Room", price: 6583, memberPrice: 5925, sku: "SH-10854", tag: "New", ph: "", img: "assets/products/lr072q.webp",
+  { id: "lr072q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table", cat: "Dining", room: "Living Room", price: 6583, memberPrice: 5925, sku: "SH-10854", tag: "New", ph: "", img: "assets/products/lr072q.webp",
     imgs: ["assets/products/lr072q.webp", "assets/products/lr072q-2.webp", "assets/products/lr072q-3.webp", "assets/products/lr072q-4.webp"],
    
     sizes: [{ label: "120cm / 0 x Dining Chairs (table only)", price: 6583 }, { label: "130cm / 0 x Dining Chairs (table only)", price: 7593 }, { label: "140cm / 0 x Dining Chairs (table only)", price: 9237 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 10326 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 11407 }, { label: "120cm / Table + 2 x Dining Chairs", price: 11769 }, { label: "130cm / Table + 2 x Dining Chairs", price: 12778 }, { label: "140cm / Table + 2 x Dining Chairs", price: 14422 }, { label: "150cm / Table + 2 x Dining Chairs", price: 15511 }, { label: "160cm / Table + 2 x Dining Chairs", price: 16593 }, { label: "120cm / Table + 4 x Dining Chairs", price: 16954 }, { label: "130cm / Table + 4 x Dining Chairs", price: 17963 }, { label: "140cm / Table + 4 x Dining Chairs", price: 19607 }, { label: "150cm / Table + 4 x Dining Chairs", price: 20696 }, { label: "160cm / Table + 4 x Dining Chairs", price: 21778 }, { label: "120cm / Table + 6 x Dining Chairs", price: 22139 }, { label: "130cm / Table + 6 x Dining Chairs", price: 23148 }, { label: "140cm / Table + 6 x Dining Chairs", price: 24793 }, { label: "150cm / Table + 6 x Dining Chairs", price: 25881 }, { label: "160cm / Table + 6 x Dining Chairs", price: 26963 }],
@@ -5501,7 +5501,7 @@ const PRODUCTS = [
 
 
   // ── Bedroom ──
-  { id: "lr074q", arriveDays: [28, 33], name: "Leather Dining Table", cat: "Dining", room: "Living Room", price: 7959, memberPrice: 7163, sku: "SH-10856", tag: "New", ph: "", img: "assets/products/lr074q.webp",
+  { id: "lr074q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Dining Table", cat: "Dining", room: "Living Room", price: 7959, memberPrice: 7163, sku: "SH-10856", tag: "New", ph: "", img: "assets/products/lr074q.webp",
     imgs: ["assets/products/lr074q.webp", "assets/products/lr074q-2.webp", "assets/products/lr074q-3.webp", "assets/products/lr074q-4.webp"],
    
     sizes: [{ label: "130cm / Square", price: 7959 }, { label: "130cm / Oval", price: 7959 }, { label: "140cm / Square", price: 9237 }, { label: "140cm / Oval", price: 9237 }, { label: "160cm / Square", price: 10093 }, { label: "160cm / Oval", price: 10093 }, { label: "180cm / Square", price: 11074 }, { label: "180cm / Oval", price: 11074 }],
@@ -5514,7 +5514,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Leather", "Options": "8", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr075q", arriveDays: [28, 33], name: "Slate Dining Table (110cm to 135cm)", cat: "Dining", room: "Living Room", price: 8241, memberPrice: 7417, sku: "SH-10857", tag: "New", ph: "", img: "assets/products/lr075q.webp",
+  { id: "lr075q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (110cm to 135cm)", cat: "Dining", room: "Living Room", price: 8241, memberPrice: 7417, sku: "SH-10857", tag: "New", ph: "", img: "assets/products/lr075q.webp",
     imgs: ["assets/products/lr075q.webp", "assets/products/lr075q-2.webp", "assets/products/lr075q-3.webp", "assets/products/lr075q-4.webp"],
    
     sizes: [{ label: "110cm / '+ Turntable / 0 x Dining Chairs (table only)", price: 8241 }, { label: "110cm / '- Turntable / 0 x Dining Chairs (table only)", price: 8241 }, { label: "120cm / '+ Turntable / 0 x Dining Chairs (table only)", price: 9200 }, { label: "120cm / '- Turntable / 0 x Dining Chairs (table only)", price: 9200 }, { label: "135cm / '+ Turntable / 0 x Dining Chairs (table only)", price: 10083 }, { label: "135cm / '- Turntable / 0 x Dining Chairs (table only)", price: 10083 }, { label: "110cm / '+ Turntable / Table + 2 x Dining Chairs", price: 13426 }, { label: "110cm / '- Turntable / Table + 2 x Dining Chairs", price: 13426 }, { label: "120cm / '+ Turntable / Table + 2 x Dining Chairs", price: 14385 }, { label: "120cm / '- Turntable / Table + 2 x Dining Chairs", price: 14385 }, { label: "135cm / '+ Turntable / Table + 2 x Dining Chairs", price: 15269 }, { label: "135cm / '- Turntable / Table + 2 x Dining Chairs", price: 15269 }, { label: "110cm / '+ Turntable / Table + 4 x Dining Chairs", price: 18611 }, { label: "110cm / '- Turntable / Table + 4 x Dining Chairs", price: 18611 }, { label: "120cm / '+ Turntable / Table + 4 x Dining Chairs", price: 19570 }, { label: "120cm / '- Turntable / Table + 4 x Dining Chairs", price: 19570 }, { label: "135cm / '+ Turntable / Table + 4 x Dining Chairs", price: 20454 }, { label: "135cm / '- Turntable / Table + 4 x Dining Chairs", price: 20454 }, { label: "110cm / '+ Turntable / Table + 6 x Dining Chairs", price: 23796 }, { label: "110cm / '- Turntable / Table + 6 x Dining Chairs", price: 23796 }, { label: "120cm / '+ Turntable / Table + 6 x Dining Chairs", price: 24756 }, { label: "120cm / '- Turntable / Table + 6 x Dining Chairs", price: 24756 }, { label: "135cm / '+ Turntable / Table + 6 x Dining Chairs", price: 25639 }, { label: "135cm / '- Turntable / Table + 6 x Dining Chairs", price: 25639 }],
@@ -5527,7 +5527,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "24", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "lr076q", arriveDays: [28, 33], name: "Marble Dining Table", cat: "Dining", room: "Living Room", price: 8519, memberPrice: 7667, sku: "SH-10858", tag: "New", ph: "", img: "assets/products/lr076q.webp",
+  { id: "lr076q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table", cat: "Dining", room: "Living Room", price: 8519, memberPrice: 7667, sku: "SH-10858", tag: "New", ph: "", img: "assets/products/lr076q.webp",
     imgs: ["assets/products/lr076q.webp", "assets/products/lr076q-2.webp", "assets/products/lr076q-3.webp", "assets/products/lr076q-4.webp"],
    
     sizes: [{ label: "White + Black / 120cm", price: 8519 }, { label: "Grey + Grey / 120cm", price: 8519 }, { label: "Black / 120cm", price: 8519 }, { label: "Slate White / 120cm", price: 8519 }, { label: "White + Black / 130cm", price: 9250 }, { label: "Grey + Grey / 130cm", price: 9250 }, { label: "Black / 130cm", price: 9250 }, { label: "Slate White / 130cm", price: 9250 }, { label: "White + Black / 150cm", price: 11444 }, { label: "Grey + Grey / 150cm", price: 11444 }, { label: "Black / 150cm", price: 11444 }, { label: "Slate White / 150cm", price: 11444 }, { label: "White + Black / 160cm", price: 12956 }, { label: "Grey + Grey / 160cm", price: 12956 }, { label: "Black / 160cm", price: 12956 }, { label: "Slate White / 160cm", price: 12956 }],
@@ -5540,7 +5540,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "16", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "lr077q", arriveDays: [28, 33], name: "Travertine Dining Table", cat: "Dining", room: "Living Room", price: 8770, memberPrice: 7893, sku: "SH-10859", tag: "New", ph: "", img: "assets/products/lr077q.webp",
+  { id: "lr077q", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Dining Table", cat: "Dining", room: "Living Room", price: 8770, memberPrice: 7893, sku: "SH-10859", tag: "New", ph: "", img: "assets/products/lr077q.webp",
     imgs: ["assets/products/lr077q.webp", "assets/products/lr077q-2.webp", "assets/products/lr077q-3.webp", "assets/products/lr077q-4.webp"],
    
     sizes: [{ label: "70cm / 0 x Dining Chairs (table only)", price: 8770 }, { label: "80cm / 0 x Dining Chairs (table only)", price: 9196 }, { label: "90cm / 0 x Dining Chairs (table only)", price: 9896 }, { label: "100cm / 0 x Dining Chairs (table only)", price: 10426 }, { label: "110cm / 0 x Dining Chairs (table only)", price: 10924 }, { label: "120cm / 0 x Dining Chairs (table only)", price: 11333 }, { label: "70cm / Table + 2 x Dining Chairs", price: 13215 }, { label: "80cm / Table + 2 x Dining Chairs", price: 13641 }, { label: "90cm / Table + 2 x Dining Chairs", price: 14341 }, { label: "100cm / Table + 2 x Dining Chairs", price: 14870 }, { label: "110cm / Table + 2 x Dining Chairs", price: 15369 }, { label: "120cm / Table + 2 x Dining Chairs", price: 15778 }, { label: "70cm / Table + 4 x Dining Chairs", price: 17659 }, { label: "80cm / Table + 4 x Dining Chairs", price: 18085 }, { label: "90cm / Table + 4 x Dining Chairs", price: 18785 }, { label: "100cm / Table + 4 x Dining Chairs", price: 19315 }, { label: "110cm / Table + 4 x Dining Chairs", price: 19813 }, { label: "120cm / Table + 4 x Dining Chairs", price: 20222 }, { label: "70cm / Table + 6 x Dining Chairs", price: 22104 }, { label: "80cm / Table + 6 x Dining Chairs", price: 22530 }, { label: "90cm / Table + 6 x Dining Chairs", price: 23230 }, { label: "100cm / Table + 6 x Dining Chairs", price: 23759 }, { label: "110cm / Table + 6 x Dining Chairs", price: 24257 }, { label: "120cm / Table + 6 x Dining Chairs", price: 24667 }],
@@ -5553,7 +5553,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Travertine", "Options": "24", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so deal with spills immediately and never use acidic cleaners." },
 
-  { id: "lr078q", arriveDays: [28, 33], name: "Timber Dining Table (140cm to 240cm)", cat: "Dining", room: "Living Room", price: 8917, memberPrice: 8025, sku: "SH-10860", tag: "New", ph: "", img: "assets/products/lr078q.webp",
+  { id: "lr078q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dining Table (140cm to 240cm)", cat: "Dining", room: "Living Room", price: 8917, memberPrice: 8025, sku: "SH-10860", tag: "New", ph: "", img: "assets/products/lr078q.webp",
     imgs: ["assets/products/lr078q.webp", "assets/products/lr078q-2.webp", "assets/products/lr078q-3.webp", "assets/products/lr078q-4.webp"],
    
     sizes: [{ label: "Natural / 140cm / 0 x Dining Chairs (table only)", price: 8917 }, { label: "Walnut / 140cm / 0 x Dining Chairs (table only)", price: 8917 }, { label: "Natural / 160cm / 0 x Dining Chairs (table only)", price: 9822 }, { label: "Walnut / 160cm / 0 x Dining Chairs (table only)", price: 9822 }, { label: "Natural / 180cm / 0 x Dining Chairs (table only)", price: 10678 }, { label: "Walnut / 180cm / 0 x Dining Chairs (table only)", price: 10678 }, { label: "Natural / 200cm / 0 x Dining Chairs (table only)", price: 11585 }, { label: "Walnut / 200cm / 0 x Dining Chairs (table only)", price: 11585 }, { label: "Natural / 140cm / Table + 6 x Dining Chairs", price: 11689 }, { label: "Walnut / 140cm / Table + 6 x Dining Chairs", price: 11689 }, { label: "Natural / 200cm / Table + 2 x Dining Chairs", price: 12509 }, { label: "Walnut / 200cm / Table + 2 x Dining Chairs", price: 12509 }, { label: "Natural / 160cm / Table + 6 x Dining Chairs", price: 12594 }, { label: "Walnut / 160cm / Table + 6 x Dining Chairs", price: 12594 }, { label: "Natural / 180cm / Table + 6 x Dining Chairs", price: 13450 }, { label: "Walnut / 180cm / Table + 6 x Dining Chairs", price: 13450 }, { label: "Natural / 140cm / Table + 2 x Dining Chairs", price: 14102 }, { label: "Walnut / 140cm / Table + 2 x Dining Chairs", price: 14102 }, { label: "Natural / 200cm / Table + 6 x Dining Chairs", price: 14357 }, { label: "Walnut / 200cm / Table + 6 x Dining Chairs", price: 14357 }, { label: "Natural / 220cm / 0 x Dining Chairs (table only)", price: 14778 }, { label: "Walnut / 220cm / 0 x Dining Chairs (table only)", price: 14778 }, { label: "Natural / 160cm / Table + 2 x Dining Chairs", price: 15007 }, { label: "Walnut / 160cm / Table + 2 x Dining Chairs", price: 15007 }, { label: "Natural / 180cm / Table + 2 x Dining Chairs", price: 15863 }, { label: "Walnut / 180cm / Table + 2 x Dining Chairs", price: 15863 }, { label: "Natural / 240cm / 0 x Dining Chairs (table only)", price: 15970 }, { label: "Walnut / 240cm / 0 x Dining Chairs (table only)", price: 15970 }, { label: "Natural / 220cm / Table + 6 x Dining Chairs", price: 17550 }, { label: "Walnut / 220cm / Table + 6 x Dining Chairs", price: 17550 }, { label: "Natural / 240cm / Table + 6 x Dining Chairs", price: 18743 }, { label: "Walnut / 240cm / Table + 6 x Dining Chairs", price: 18743 }, { label: "Natural / 140cm / Table + 4 x Dining Chairs", price: 19287 }, { label: "Walnut / 140cm / Table + 4 x Dining Chairs", price: 19287 }, { label: "Natural / 220cm / Table + 2 x Dining Chairs", price: 19963 }, { label: "Walnut / 220cm / Table + 2 x Dining Chairs", price: 19963 }, { label: "Natural / 160cm / Table + 4 x Dining Chairs", price: 20193 }, { label: "Walnut / 160cm / Table + 4 x Dining Chairs", price: 20193 }, { label: "Natural / 180cm / Table + 4 x Dining Chairs", price: 21048 }, { label: "Walnut / 180cm / Table + 4 x Dining Chairs", price: 21048 }, { label: "Natural / 240cm / Table + 2 x Dining Chairs", price: 21156 }, { label: "Walnut / 240cm / Table + 2 x Dining Chairs", price: 21156 }, { label: "Natural / 200cm / Table + 4 x Dining Chairs", price: 21956 }, { label: "Walnut / 200cm / Table + 4 x Dining Chairs", price: 21956 }, { label: "Natural / 140cm / Table + 8 x Dining Chairs", price: 24472 }, { label: "Walnut / 140cm / Table + 8 x Dining Chairs", price: 24472 }, { label: "Natural / 220cm / Table + 4 x Dining Chairs", price: 25148 }, { label: "Walnut / 220cm / Table + 4 x Dining Chairs", price: 25148 }, { label: "Natural / 160cm / Table + 8 x Dining Chairs", price: 25378 }, { label: "Walnut / 160cm / Table + 8 x Dining Chairs", price: 25378 }, { label: "Natural / 180cm / Table + 8 x Dining Chairs", price: 26233 }, { label: "Walnut / 180cm / Table + 8 x Dining Chairs", price: 26233 }, { label: "Natural / 240cm / Table + 4 x Dining Chairs", price: 26341 }, { label: "Walnut / 240cm / Table + 4 x Dining Chairs", price: 26341 }, { label: "Natural / 200cm / Table + 8 x Dining Chairs", price: 27141 }, { label: "Walnut / 200cm / Table + 8 x Dining Chairs", price: 27141 }, { label: "Natural / 220cm / Table + 8 x Dining Chairs", price: 30333 }, { label: "Walnut / 220cm / Table + 8 x Dining Chairs", price: 30333 }, { label: "Natural / 240cm / Table + 8 x Dining Chairs", price: 31526 }, { label: "Walnut / 240cm / Table + 8 x Dining Chairs", price: 31526 }],
@@ -5566,7 +5566,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Timber", "Options": "60", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr079q", arriveDays: [28, 33], name: "Oak Dining Table", cat: "Dining", room: "Living Room", price: 9074, memberPrice: 8167, sku: "SH-10861", tag: "New", ph: "", img: "assets/products/lr079q.webp",
+  { id: "lr079q", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Dining Table", cat: "Dining", room: "Living Room", price: 9074, memberPrice: 8167, sku: "SH-10861", tag: "New", ph: "", img: "assets/products/lr079q.webp",
     imgs: ["assets/products/lr079q.webp", "assets/products/lr079q-2.webp", "assets/products/lr079q-3.webp", "assets/products/lr079q-4.webp"],
    
     sizes: [{ label: "90cm / 0 x Dining Chairs (table only)", price: 9074 }, { label: "100cm / 0 x Dining Chairs (table only)", price: 9611 }, { label: "110cm / 0 x Dining Chairs (table only)", price: 10500 }, { label: "120cm / 0 x Dining Chairs (table only)", price: 10904 }, { label: "130cm / 0 x Dining Chairs (table only)", price: 11741 }, { label: "90cm / Table + 2 x Dining Chairs", price: 13519 }, { label: "100cm / Table + 2 x Dining Chairs", price: 14056 }, { label: "110cm / Table + 2 x Dining Chairs", price: 14944 }, { label: "120cm / Table + 2 x Dining Chairs", price: 15348 }, { label: "130cm / Table + 2 x Dining Chairs", price: 16185 }, { label: "90cm / Table + 4 x Dining Chairs", price: 17963 }, { label: "100cm / Table + 4 x Dining Chairs", price: 18500 }, { label: "110cm / Table + 4 x Dining Chairs", price: 19389 }, { label: "120cm / Table + 4 x Dining Chairs", price: 19793 }, { label: "130cm / Table + 4 x Dining Chairs", price: 20630 }, { label: "90cm / Table + 6 x Dining Chairs", price: 22407 }, { label: "100cm / Table + 6 x Dining Chairs", price: 22944 }, { label: "110cm / Table + 6 x Dining Chairs", price: 23833 }, { label: "120cm / Table + 6 x Dining Chairs", price: 24237 }, { label: "130cm / Table + 6 x Dining Chairs", price: 25074 }],
@@ -5579,7 +5579,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Oak", "Options": "20", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr080q", arriveDays: [28, 33], name: "Slate Dining Table (130cm to 180cm)", cat: "Dining", room: "Living Room", price: 9211, memberPrice: 8290, sku: "SH-10862", tag: "New", ph: "", img: "assets/products/lr080q.webp",
+  { id: "lr080q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (130cm to 180cm)", cat: "Dining", room: "Living Room", price: 9211, memberPrice: 8290, sku: "SH-10862", tag: "New", ph: "", img: "assets/products/lr080q.webp",
     imgs: ["assets/products/lr080q.webp", "assets/products/lr080q-2.webp", "assets/products/lr080q-3.webp", "assets/products/lr080q-4.webp"],
    
     sizes: [{ label: "130cm / 0 x Dining Chairs (table only)", price: 9211 }, { label: "140cm / 0 x Dining Chairs (table only)", price: 9815 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 10685 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 11083 }, { label: "130cm / Table + 2 x Dining Chairs", price: 14396 }, { label: "140cm / Table + 2 x Dining Chairs", price: 15000 }, { label: "160cm / Table + 2 x Dining Chairs", price: 15870 }, { label: "180cm / Table + 2 x Dining Chairs", price: 16269 }, { label: "130cm / Table + 4 x Dining Chairs", price: 19581 }, { label: "140cm / Table + 4 x Dining Chairs", price: 20185 }, { label: "160cm / Table + 4 x Dining Chairs", price: 21056 }, { label: "180cm / Table + 4 x Dining Chairs", price: 21454 }, { label: "130cm / Table + 6 x Dining Chairs", price: 24767 }, { label: "140cm / Table + 6 x Dining Chairs", price: 25370 }, { label: "160cm / Table + 6 x Dining Chairs", price: 26241 }, { label: "180cm / Table + 6 x Dining Chairs", price: 26639 }],
@@ -5592,7 +5592,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "16", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "lr081q", arriveDays: [28, 33], name: "Marble Dining Table (140cm to 240cm)", cat: "Dining", room: "Living Room", price: 9237, memberPrice: 8313, sku: "SH-10863", tag: "New", ph: "", img: "assets/products/lr081q.webp",
+  { id: "lr081q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (140cm to 240cm)", cat: "Dining", room: "Living Room", price: 9237, memberPrice: 8313, sku: "SH-10863", tag: "New", ph: "", img: "assets/products/lr081q.webp",
     imgs: ["assets/products/lr081q.webp", "assets/products/lr081q-2.webp", "assets/products/lr081q-3.webp", "assets/products/lr081q-4.webp"],
    
     sizes: [{ label: "140cm", price: 9237 }, { label: "160cm", price: 9685 }, { label: "180cm", price: 10296 }, { label: "200cm", price: 11093 }, { label: "220cm", price: 12352 }, { label: "240cm", price: 12759 }],
@@ -5605,7 +5605,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "6", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "lr082q", arriveDays: [28, 33], name: "Timber Dining Table (100cm to 150cm)", cat: "Dining", room: "Living Room", price: 9257, memberPrice: 8331, sku: "SH-10864", tag: "New", ph: "", img: "assets/products/lr082q.webp",
+  { id: "lr082q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dining Table (100cm to 150cm)", cat: "Dining", room: "Living Room", price: 9257, memberPrice: 8331, sku: "SH-10864", tag: "New", ph: "", img: "assets/products/lr082q.webp",
     imgs: ["assets/products/lr082q.webp", "assets/products/lr082q-2.webp", "assets/products/lr082q-3.webp", "assets/products/lr082q-4.webp"],
    
     sizes: [{ label: "100cm", price: 9257 }, { label: "110cm", price: 10319 }, { label: "120cm", price: 11585 }, { label: "130cm", price: 12537 }, { label: "140cm", price: 13544 }, { label: "150cm", price: 14493 }],
@@ -5618,7 +5618,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Timber", "Options": "6", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr083q", arriveDays: [28, 33], name: "Slate Dining Table (110cm to 150cm)", cat: "Dining", room: "Living Room", price: 9402, memberPrice: 8462, sku: "SH-10865", tag: "New", ph: "", img: "assets/products/lr083q.webp",
+  { id: "lr083q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (110cm to 150cm)", cat: "Dining", room: "Living Room", price: 9402, memberPrice: 8462, sku: "SH-10865", tag: "New", ph: "", img: "assets/products/lr083q.webp",
     imgs: ["assets/products/lr083q.webp", "assets/products/lr083q-2.webp", "assets/products/lr083q-3.webp", "assets/products/lr083q-4.webp"],
    
     sizes: [{ label: "110cm / '- Turn Table / 0 x Dining Chairs (table only)", price: 9402 }, { label: "110cm / '+ Turn Table / 0 x Dining Chairs (table only)", price: 9402 }, { label: "120cm / '- Turn Table / 0 x Dining Chairs (table only)", price: 9748 }, { label: "120cm / '+ Turn Table / 0 x Dining Chairs (table only)", price: 9748 }, { label: "135cm / '- Turn Table / 0 x Dining Chairs (table only)", price: 11952 }, { label: "135cm / '+ Turn Table / 0 x Dining Chairs (table only)", price: 11952 }, { label: "150cm / '- Turn Table / 0 x Dining Chairs (table only)", price: 12572 }, { label: "150cm / '+ Turn Table / 0 x Dining Chairs (table only)", price: 12572 }, { label: "110cm / '- Turn Table / Table + 2 x Dining Chairs", price: 14587 }, { label: "110cm / '+ Turn Table / Table + 2 x Dining Chairs", price: 14587 }, { label: "120cm / '- Turn Table / Table + 2 x Dining Chairs", price: 14933 }, { label: "120cm / '+ Turn Table / Table + 2 x Dining Chairs", price: 14933 }, { label: "135cm / '- Turn Table / Table + 2 x Dining Chairs", price: 17137 }, { label: "135cm / '+ Turn Table / Table + 2 x Dining Chairs", price: 17137 }, { label: "150cm / '- Turn Table / Table + 2 x Dining Chairs", price: 17757 }, { label: "150cm / '+ Turn Table / Table + 2 x Dining Chairs", price: 17757 }, { label: "110cm / '- Turn Table / Table + 4 x Dining Chairs", price: 19772 }, { label: "110cm / '+ Turn Table / Table + 4 x Dining Chairs", price: 19772 }, { label: "120cm / '- Turn Table / Table + 4 x Dining Chairs", price: 20119 }, { label: "120cm / '+ Turn Table / Table + 4 x Dining Chairs", price: 20119 }, { label: "135cm / '- Turn Table / Table + 4 x Dining Chairs", price: 22322 }, { label: "135cm / '+ Turn Table / Table + 4 x Dining Chairs", price: 22322 }, { label: "150cm / '- Turn Table / Table + 4 x Dining Chairs", price: 22943 }, { label: "150cm / '+ Turn Table / Table + 4 x Dining Chairs", price: 22943 }, { label: "110cm / '- Turn Table / Table + 6 x Dining Chairs", price: 24957 }, { label: "110cm / '+ Turn Table / Table + 6 x Dining Chairs", price: 24957 }, { label: "120cm / '- Turn Table / Table + 6 x Dining Chairs", price: 25304 }, { label: "120cm / '+ Turn Table / Table + 6 x Dining Chairs", price: 25304 }, { label: "135cm / '- Turn Table / Table + 6 x Dining Chairs", price: 27507 }, { label: "135cm / '+ Turn Table / Table + 6 x Dining Chairs", price: 27507 }, { label: "150cm / '- Turn Table / Table + 6 x Dining Chairs", price: 28128 }, { label: "150cm / '+ Turn Table / Table + 6 x Dining Chairs", price: 28128 }],
@@ -5631,7 +5631,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "32", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "lr084q", arriveDays: [28, 33], name: "Walnut Dining Table", cat: "Dining", room: "Living Room", price: 10272, memberPrice: 9245, sku: "SH-10866", tag: "New", ph: "", img: "assets/products/lr084q.webp",
+  { id: "lr084q", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Dining Table", cat: "Dining", room: "Living Room", price: 10272, memberPrice: 9245, sku: "SH-10866", tag: "New", ph: "", img: "assets/products/lr084q.webp",
     imgs: ["assets/products/lr084q.webp", "assets/products/lr084q-2.webp", "assets/products/lr084q-3.webp", "assets/products/lr084q-4.webp"],
    
     sizes: [{ label: "160cm", price: 10272 }, { label: "180cm", price: 11809 }, { label: "200cm", price: 12713 }, { label: "220cm", price: 14787 }],
@@ -5644,7 +5644,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Walnut", "Options": "4", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr085q", arriveDays: [28, 33], name: "Slate Dining Table (Black / Brown)", cat: "Dining", room: "Living Room", price: 10370, memberPrice: 9333, sku: "SH-10867", tag: "New", ph: "", img: "assets/products/lr085q.webp",
+  { id: "lr085q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (Black / Brown)", cat: "Dining", room: "Living Room", price: 10370, memberPrice: 9333, sku: "SH-10867", tag: "New", ph: "", img: "assets/products/lr085q.webp",
     imgs: ["assets/products/lr085q.webp", "assets/products/lr085q-2.webp", "assets/products/lr085q-3.webp", "assets/products/lr085q-4.webp"],
    
     sizes: [{ label: "Brown / 110cm / 0 x Dining Chairs (table only)", price: 10370 }, { label: "Black / 110cm / 0 x Dining Chairs (table only)", price: 10370 }, { label: "Brown / 120cm / 0 x Dining Chairs (table only)", price: 10741 }, { label: "Black / 120cm / 0 x Dining Chairs (table only)", price: 10741 }, { label: "Brown / 135cm / 0 x Dining Chairs (table only)", price: 11531 }, { label: "Black / 135cm / 0 x Dining Chairs (table only)", price: 11531 }, { label: "Brown / 150cm / 0 x Dining Chairs (table only)", price: 12213 }, { label: "Black / 150cm / 0 x Dining Chairs (table only)", price: 12213 }, { label: "Brown / 110cm / Table + 2 x Dining Chairs", price: 15556 }, { label: "Black / 110cm / Table + 2 x Dining Chairs", price: 15556 }, { label: "Brown / 120cm / Table + 2 x Dining Chairs", price: 15926 }, { label: "Black / 120cm / Table + 2 x Dining Chairs", price: 15926 }, { label: "Brown / 135cm / Table + 2 x Dining Chairs", price: 16717 }, { label: "Black / 135cm / Table + 2 x Dining Chairs", price: 16717 }, { label: "Brown / 150cm / Table + 2 x Dining Chairs", price: 17398 }, { label: "Black / 150cm / Table + 2 x Dining Chairs", price: 17398 }, { label: "Brown / 110cm / Table + 4 x Dining Chairs", price: 20741 }, { label: "Black / 110cm / Table + 4 x Dining Chairs", price: 20741 }, { label: "Brown / 120cm / Table + 4 x Dining Chairs", price: 21111 }, { label: "Black / 120cm / Table + 4 x Dining Chairs", price: 21111 }, { label: "Brown / 135cm / Table + 4 x Dining Chairs", price: 21902 }, { label: "Black / 135cm / Table + 4 x Dining Chairs", price: 21902 }, { label: "Brown / 150cm / Table + 4 x Dining Chairs", price: 22583 }, { label: "Black / 150cm / Table + 4 x Dining Chairs", price: 22583 }, { label: "Brown / 110cm / Table + 6 x Dining Chairs", price: 25926 }, { label: "Black / 110cm / Table + 6 x Dining Chairs", price: 25926 }, { label: "Brown / 120cm / Table + 6 x Dining Chairs", price: 26296 }, { label: "Black / 120cm / Table + 6 x Dining Chairs", price: 26296 }, { label: "Brown / 135cm / Table + 6 x Dining Chairs", price: 27087 }, { label: "Black / 135cm / Table + 6 x Dining Chairs", price: 27087 }, { label: "Brown / 150cm / Table + 6 x Dining Chairs", price: 27769 }, { label: "Black / 150cm / Table + 6 x Dining Chairs", price: 27769 }],
@@ -5657,7 +5657,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "32", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "lr086q", arriveDays: [28, 33], name: "Leather Dining Table (140cm to 200cm)", cat: "Dining", room: "Living Room", price: 11004, memberPrice: 9904, sku: "SH-10868", tag: "New", ph: "", img: "assets/products/lr086q.webp",
+  { id: "lr086q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Dining Table (140cm to 200cm)", cat: "Dining", room: "Living Room", price: 11004, memberPrice: 9904, sku: "SH-10868", tag: "New", ph: "", img: "assets/products/lr086q.webp",
     imgs: ["assets/products/lr086q.webp", "assets/products/lr086q-2.webp", "assets/products/lr086q-3.webp", "assets/products/lr086q-4.webp"],
    
     sizes: [{ label: "Snow White / 140cm / 0 x Dining Chairs (table only)", price: 11004 }, { label: "Snow White / 160cm / 0 x Dining Chairs (table only)", price: 12356 }, { label: "Snow White / 140cm / Table + 2 x Dining Chairs", price: 16189 }, { label: "Snow White / 180cm / 0 x Dining Chairs (table only)", price: 17319 }, { label: "Snow White / 160cm / Table + 2 x Dining Chairs", price: 17541 }, { label: "Snow White / 140cm / Table + 4 x Dining Chairs", price: 19893 }, { label: "Snow White / 200cm / 0 x Dining Chairs (table only)", price: 19963 }, { label: "Snow White / 160cm / Table + 4 x Dining Chairs", price: 21244 }, { label: "Snow White / 180cm / Table + 2 x Dining Chairs", price: 22504 }, { label: "Snow White / 140cm / Table + 6 x Dining Chairs", price: 24337 }, { label: "Snow White / 200cm / Table + 2 x Dining Chairs", price: 25148 }, { label: "Snow White / 160cm / Table + 6 x Dining Chairs", price: 25689 }, { label: "Snow White / 180cm / Table + 4 x Dining Chairs", price: 26207 }, { label: "Snow White / 200cm / Table + 4 x Dining Chairs", price: 28852 }, { label: "Snow White / 180cm / Table + 6 x Dining Chairs", price: 30652 }, { label: "Snow White / 200cm / Table + 6 x Dining Chairs", price: 33296 }],
@@ -5670,7 +5670,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Leather", "Options": "16", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr087q", arriveDays: [28, 33], name: "Marble Dining Table (120cm to 180cm)", cat: "Dining", room: "Living Room", price: 11007, memberPrice: 9906, sku: "SH-10869", tag: "New", ph: "", img: "assets/products/lr087q.webp",
+  { id: "lr087q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (120cm to 180cm)", cat: "Dining", room: "Living Room", price: 11007, memberPrice: 9906, sku: "SH-10869", tag: "New", ph: "", img: "assets/products/lr087q.webp",
     imgs: ["assets/products/lr087q.webp", "assets/products/lr087q-2.webp", "assets/products/lr087q-3.webp", "assets/products/lr087q-4.webp"],
    
     sizes: [{ label: "120cm / 0 x Dining Chairs (table only)", price: 11007 }, { label: "130cm / 0 x Dining Chairs (table only)", price: 12630 }, { label: "140cm / 0 x Dining Chairs (table only)", price: 14256 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 15878 }, { label: "120cm / Table + 2 x Dining Chairs", price: 16563 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 17500 }, { label: "130cm / Table + 2 x Dining Chairs", price: 18185 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 19122 }, { label: "140cm / Table + 2 x Dining Chairs", price: 19811 }, { label: "150cm / Table + 2 x Dining Chairs", price: 21433 }, { label: "120cm / Table + 4 x Dining Chairs", price: 22119 }, { label: "160cm / Table + 2 x Dining Chairs", price: 23056 }, { label: "130cm / Table + 4 x Dining Chairs", price: 23741 }, { label: "180cm / Table + 2 x Dining Chairs", price: 24678 }, { label: "140cm / Table + 4 x Dining Chairs", price: 25367 }, { label: "150cm / Table + 4 x Dining Chairs", price: 26989 }, { label: "120cm / Table + 6 x Dining Chairs", price: 27674 }, { label: "160cm / Table + 4 x Dining Chairs", price: 28611 }, { label: "130cm / Table + 6 x Dining Chairs", price: 29296 }, { label: "180cm / Table + 4 x Dining Chairs", price: 30233 }, { label: "140cm / Table + 6 x Dining Chairs", price: 30922 }, { label: "150cm / Table + 6 x Dining Chairs", price: 32544 }, { label: "160cm / Table + 6 x Dining Chairs", price: 34167 }, { label: "180cm / Table + 6 x Dining Chairs", price: 35789 }],
@@ -5683,7 +5683,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "24", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "lr088q", arriveDays: [28, 33], name: "Timber Dining Table (Black / Tan)", cat: "Dining", room: "Living Room", price: 11069, memberPrice: 9962, sku: "SH-10870", tag: "New", ph: "", img: "assets/products/lr088q.webp",
+  { id: "lr088q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dining Table (Black / Tan)", cat: "Dining", room: "Living Room", price: 11069, memberPrice: 9962, sku: "SH-10870", tag: "New", ph: "", img: "assets/products/lr088q.webp",
     imgs: ["assets/products/lr088q.webp", "assets/products/lr088q-2.webp", "assets/products/lr088q-3.webp", "assets/products/lr088q-4.webp"],
    
     sizes: [{ label: "Black / 100cm", price: 11069 }, { label: "Tan / 100cm", price: 11069 }, { label: "Black / 120cm", price: 11452 }, { label: "Tan / 120cm", price: 11452 }, { label: "Black / 130cm", price: 11944 }, { label: "Tan / 130cm", price: 11944 }, { label: "Black / 150cm", price: 12385 }, { label: "Tan / 150cm", price: 12385 }],
@@ -5696,7 +5696,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Timber", "Options": "8", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr089q", arriveDays: [28, 33], name: "Travertine Dining Table (120cm to 180cm)", cat: "Dining", room: "Living Room", price: 11093, memberPrice: 9984, sku: "SH-10871", tag: "New", ph: "", img: "assets/products/lr089q.webp",
+  { id: "lr089q", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Dining Table (120cm to 180cm)", cat: "Dining", room: "Living Room", price: 11093, memberPrice: 9984, sku: "SH-10871", tag: "New", ph: "", img: "assets/products/lr089q.webp",
     imgs: ["assets/products/lr089q.webp", "assets/products/lr089q-2.webp", "assets/products/lr089q-3.webp", "assets/products/lr089q-4.webp"],
    
     sizes: [{ label: "Travertine / 120cm", price: 11093 }, { label: "Travertine / 130cm", price: 11748 }, { label: "Travertine / 140cm", price: 12509 }, { label: "Travertine / 160cm", price: 12759 }, { label: "Travertine / 180cm", price: 13056 }],
@@ -5709,7 +5709,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Travertine", "Options": "5", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so deal with spills immediately and never use acidic cleaners." },
 
-  { id: "lr090q", arriveDays: [28, 33], name: "Slate Dining Table (160cm to 220cm)", cat: "Dining", room: "Living Room", price: 12185, memberPrice: 10966, sku: "SH-10872", tag: "New", ph: "", img: "assets/products/lr090q.webp",
+  { id: "lr090q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (160cm to 220cm)", cat: "Dining", room: "Living Room", price: 12185, memberPrice: 10966, sku: "SH-10872", tag: "New", ph: "", img: "assets/products/lr090q.webp",
     imgs: ["assets/products/lr090q.webp", "assets/products/lr090q-2.webp", "assets/products/lr090q-3.webp", "assets/products/lr090q-4.webp"],
    
     sizes: [{ label: "160cm", price: 12185 }, { label: "180cm", price: 13800 }, { label: "200cm", price: 16659 }, { label: "220cm", price: 18322 }],
@@ -5722,7 +5722,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "4", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "lr091q", arriveDays: [28, 33], name: "Marble Dining Table (140cm to 180cm)", cat: "Dining", room: "Living Room", price: 12426, memberPrice: 11183, sku: "SH-10873", tag: "New", ph: "", img: "assets/products/lr091q.webp",
+  { id: "lr091q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (140cm to 180cm)", cat: "Dining", room: "Living Room", price: 12426, memberPrice: 11183, sku: "SH-10873", tag: "New", ph: "", img: "assets/products/lr091q.webp",
     imgs: ["assets/products/lr091q.webp", "assets/products/lr091q-2.webp", "assets/products/lr091q-3.webp", "assets/products/lr091q-4.webp"],
    
     sizes: [{ label: "140cm / 0 x Dining Chairs (table only)", price: 12426 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 14574 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 16343 }, { label: "140cm / Table + 2 x Dining Chairs", price: 17981 }, { label: "160cm / Table + 2 x Dining Chairs", price: 20130 }, { label: "180cm / Table + 2 x Dining Chairs", price: 21898 }, { label: "140cm / Table + 4 x Dining Chairs", price: 23537 }, { label: "160cm / Table + 4 x Dining Chairs", price: 25685 }, { label: "180cm / Table + 4 x Dining Chairs", price: 27454 }, { label: "140cm / Table + 6 x Dining Chairs", price: 29093 }, { label: "160cm / Table + 6 x Dining Chairs", price: 31241 }, { label: "180cm / Table + 6 x Dining Chairs", price: 33009 }, { label: "140cm / Table + 8 x Dining Chairs", price: 34648 }, { label: "160cm / Table + 8 x Dining Chairs", price: 36796 }, { label: "180cm / Table + 8 x Dining Chairs", price: 38565 }],
@@ -5735,7 +5735,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "15", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "lr092q", arriveDays: [28, 33], name: "Slate Dining Table (160cm to 180cm)", cat: "Dining", room: "Living Room", price: 12550, memberPrice: 11295, sku: "SH-10874", tag: "New", ph: "", img: "assets/products/lr092q.webp",
+  { id: "lr092q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (160cm to 180cm)", cat: "Dining", room: "Living Room", price: 12550, memberPrice: 11295, sku: "SH-10874", tag: "New", ph: "", img: "assets/products/lr092q.webp",
     imgs: ["assets/products/lr092q.webp", "assets/products/lr092q-2.webp", "assets/products/lr092q-3.webp", "assets/products/lr092q-4.webp"],
    
     sizes: [{ label: "160cm / 0 x Dining Chairs (table only)", price: 12550 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 13954 }, { label: "160cm / Table + 2 x Dining Chairs", price: 17735 }, { label: "180cm / Table + 2 x Dining Chairs", price: 19139 }, { label: "160cm / Table + 4 x Dining Chairs", price: 22920 }, { label: "180cm / Table + 4 x Dining Chairs", price: 24324 }, { label: "160cm / Table + 6 x Dining Chairs", price: 28106 }, { label: "180cm / Table + 6 x Dining Chairs", price: 29509 }],
@@ -5748,7 +5748,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "8", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "lr093q", arriveDays: [28, 33], name: "Oak Dining Table (110cm to 150cm)", cat: "Dining", room: "Living Room", price: 12778, memberPrice: 11500, sku: "SH-10875", tag: "New", ph: "", img: "assets/products/lr093q.webp",
+  { id: "lr093q", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Dining Table (110cm to 150cm)", cat: "Dining", room: "Living Room", price: 12778, memberPrice: 11500, sku: "SH-10875", tag: "New", ph: "", img: "assets/products/lr093q.webp",
     imgs: ["assets/products/lr093q.webp", "assets/products/lr093q-2.webp", "assets/products/lr093q-3.webp", "assets/products/lr093q-4.webp"],
    
     sizes: [{ label: "110cm / 0 x Dining Chairs (table only)", price: 12778 }, { label: "120cm / 0 x Dining Chairs (table only)", price: 13304 }, { label: "135cm / 0 x Dining Chairs (table only)", price: 15589 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 16624 }, { label: "110cm / Table + 2 x Dining Chairs", price: 17963 }, { label: "120cm / Table + 2 x Dining Chairs", price: 18489 }, { label: "135cm / Table + 2 x Dining Chairs", price: 20774 }, { label: "150cm / Table + 2 x Dining Chairs", price: 21809 }, { label: "110cm / Table + 4 x Dining Chairs", price: 23148 }, { label: "120cm / Table + 4 x Dining Chairs", price: 23674 }, { label: "135cm / Table + 4 x Dining Chairs", price: 25959 }, { label: "150cm / Table + 4 x Dining Chairs", price: 26994 }, { label: "110cm / Table + 6 x Dining Chairs", price: 28333 }, { label: "120cm / Table + 6 x Dining Chairs", price: 28859 }, { label: "135cm / Table + 6 x Dining Chairs", price: 31144 }, { label: "150cm / Table + 6 x Dining Chairs", price: 32180 }],
@@ -5761,7 +5761,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Oak", "Options": "16", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr094q", arriveDays: [28, 33], name: "Travertine Dining Table (140cm to 200cm)", cat: "Dining", room: "Living Room", price: 12778, memberPrice: 11500, sku: "SH-10876", tag: "New", ph: "", img: "assets/products/lr094q.webp",
+  { id: "lr094q", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Dining Table (140cm to 200cm)", cat: "Dining", room: "Living Room", price: 12778, memberPrice: 11500, sku: "SH-10876", tag: "New", ph: "", img: "assets/products/lr094q.webp",
     imgs: ["assets/products/lr094q.webp", "assets/products/lr094q-2.webp", "assets/products/lr094q-3.webp", "assets/products/lr094q-4.webp"],
    
     sizes: [{ label: "140cm / 0 x Dining Chairs (table only)", price: 12778 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 14741 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 16722 }, { label: "140cm / Table + 2 x Dining Chairs", price: 17222 }, { label: "200cm / 0 x Dining Chairs (table only)", price: 18963 }, { label: "160cm / Table + 2 x Dining Chairs", price: 19185 }, { label: "180cm / Table + 2 x Dining Chairs", price: 21167 }, { label: "140cm / Table + 4 x Dining Chairs", price: 21667 }, { label: "200cm / Table + 2 x Dining Chairs", price: 23407 }, { label: "160cm / Table + 4 x Dining Chairs", price: 23630 }, { label: "180cm / Table + 4 x Dining Chairs", price: 25611 }, { label: "140cm / Table + 6 x Dining Chairs", price: 26111 }, { label: "200cm / Table + 4 x Dining Chairs", price: 27852 }, { label: "160cm / Table + 6 x Dining Chairs", price: 28074 }, { label: "180cm / Table + 6 x Dining Chairs", price: 30056 }, { label: "140cm / Table + 8 x Dining Chairs", price: 30556 }, { label: "200cm / Table + 6 x Dining Chairs", price: 32296 }, { label: "160cm / Table + 8 x Dining Chairs", price: 32519 }, { label: "180cm / Table + 8 x Dining Chairs", price: 34500 }, { label: "200cm / Table + 8 x Dining Chairs", price: 36741 }],
@@ -5774,7 +5774,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Travertine", "Options": "20", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so deal with spills immediately and never use acidic cleaners." },
 
-  { id: "lr095q", arriveDays: [28, 33], name: "Timber Dining Table (160cm to 280cm)", cat: "Dining", room: "Living Room", price: 13496, memberPrice: 12146, sku: "SH-10877", tag: "New", ph: "", img: "assets/products/lr095q.webp",
+  { id: "lr095q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dining Table (160cm to 280cm)", cat: "Dining", room: "Living Room", price: 13496, memberPrice: 12146, sku: "SH-10877", tag: "New", ph: "", img: "assets/products/lr095q.webp",
     imgs: ["assets/products/lr095q.webp", "assets/products/lr095q-2.webp", "assets/products/lr095q-3.webp", "assets/products/lr095q-4.webp"],
    
     sizes: [{ label: "160cm / 0 x Dining Chairs (table only)", price: 13496 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 15056 }, { label: "200cm / 0 x Dining Chairs (table only)", price: 17433 }, { label: "160cm / Table + 2 x Dining Chairs", price: 17941 }, { label: "220cm / 0 x Dining Chairs (table only)", price: 19015 }, { label: "180cm / Table + 2 x Dining Chairs", price: 19500 }, { label: "240cm / 0 x Dining Chairs (table only)", price: 20370 }, { label: "200cm / Table + 2 x Dining Chairs", price: 21878 }, { label: "260cm / 0 x Dining Chairs (table only)", price: 22056 }, { label: "160cm / Table + 4 x Dining Chairs", price: 22385 }, { label: "280cm / 0 x Dining Chairs (table only)", price: 23181 }, { label: "220cm / Table + 2 x Dining Chairs", price: 23459 }, { label: "180cm / Table + 4 x Dining Chairs", price: 23944 }, { label: "200cm / Table + 4 x Dining Chairs", price: 26322 }, { label: "240cm / Table + 2 x Dining Chairs", price: 26500 }, { label: "260cm / Table + 2 x Dining Chairs", price: 26500 }, { label: "160cm / Table + 6 x Dining Chairs", price: 26830 }, { label: "280cm / Table + 2 x Dining Chairs", price: 27626 }, { label: "220cm / Table + 4 x Dining Chairs", price: 27904 }, { label: "180cm / Table + 6 x Dining Chairs", price: 28389 }, { label: "240cm / Table + 4 x Dining Chairs", price: 29259 }, { label: "200cm / Table + 6 x Dining Chairs", price: 30767 }, { label: "260cm / Table + 4 x Dining Chairs", price: 30944 }, { label: "160cm / Table + 8 x Dining Chairs", price: 31274 }, { label: "280cm / Table + 4 x Dining Chairs", price: 32070 }, { label: "220cm / Table + 6 x Dining Chairs", price: 32348 }, { label: "180cm / Table + 8 x Dining Chairs", price: 32833 }, { label: "240cm / Table + 6 x Dining Chairs", price: 33704 }, { label: "200cm / Table + 8 x Dining Chairs", price: 35211 }, { label: "260cm / Table + 6 x Dining Chairs", price: 35389 }, { label: "280cm / Table + 6 x Dining Chairs", price: 36515 }, { label: "220cm / Table + 8 x Dining Chairs", price: 36793 }, { label: "240cm / Table + 8 x Dining Chairs", price: 38148 }, { label: "260cm / Table + 8 x Dining Chairs", price: 39833 }, { label: "280cm / Table + 8 x Dining Chairs", price: 40959 }],
@@ -5787,7 +5787,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Timber", "Options": "35", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "lr096q", arriveDays: [28, 33], name: "Travertine Dining Table (1 options)", cat: "Dining", room: "Living Room", price: 14072, memberPrice: 12665, sku: "SH-10878", tag: "New", ph: "", img: "assets/products/lr096q.webp",
+  { id: "lr096q", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Dining Table (1 options)", cat: "Dining", room: "Living Room", price: 14072, memberPrice: 12665, sku: "SH-10878", tag: "New", ph: "", img: "assets/products/lr096q.webp",
     imgs: ["assets/products/lr096q.webp", "assets/products/lr096q-2.webp", "assets/products/lr096q-3.webp", "assets/products/lr096q-4.webp"],
    
     sizes: [{ label: "Travertine", price: 14072 }],
@@ -5798,7 +5798,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Travertine", "Options": "1", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so deal with spills immediately and never use acidic cleaners." },
 
-  { id: "lr097q", arriveDays: [28, 33], name: "Leather Dining Table (140cm to 160cm)", cat: "Dining", room: "Living Room", price: 14741, memberPrice: 13267, sku: "SH-10879", tag: "New", ph: "", img: "assets/products/lr097q.webp",
+  { id: "lr097q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Dining Table (140cm to 160cm)", cat: "Dining", room: "Living Room", price: 14741, memberPrice: 13267, sku: "SH-10879", tag: "New", ph: "", img: "assets/products/lr097q.webp",
     imgs: ["assets/products/lr097q.webp", "assets/products/lr097q-2.webp", "assets/products/lr097q-3.webp", "assets/products/lr097q-4.webp"],
    
     sizes: [{ label: "140cm / 0 x Dining Chairs (table only)", price: 14741 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 15715 }, { label: "140cm / Table + 2 x Dining Chairs", price: 16859 }, { label: "160cm / Table + 2 x Dining Chairs", price: 17833 }, { label: "140cm / Table + 4 x Dining Chairs", price: 18978 }, { label: "160cm / Table + 4 x Dining Chairs", price: 19952 }, { label: "140cm / Table + 6 x Dining Chairs", price: 21096 }, { label: "160cm / Table + 6 x Dining Chairs", price: 22070 }, { label: "140cm / Table + 8 x Dining Chairs", price: 23215 }, { label: "160cm / Table + 8 x Dining Chairs", price: 24189 }],
@@ -5811,7 +5811,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Leather", "Options": "10", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "lr098q", arriveDays: [28, 33], name: "Marble Dining Table (160cm to 200cm)", cat: "Dining", room: "Living Room", price: 16148, memberPrice: 14533, sku: "SH-10880", tag: "New", ph: "", img: "assets/products/lr098q.webp",
+  { id: "lr098q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (160cm to 200cm)", cat: "Dining", room: "Living Room", price: 16148, memberPrice: 14533, sku: "SH-10880", tag: "New", ph: "", img: "assets/products/lr098q.webp",
     imgs: ["assets/products/lr098q.webp", "assets/products/lr098q-2.webp", "assets/products/lr098q-3.webp", "assets/products/lr098q-4.webp"],
    
     sizes: [{ label: "160cm", price: 16148 }, { label: "180cm", price: 18291 }, { label: "200cm", price: 21017 }],
@@ -5824,7 +5824,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "3", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "lr099q", arriveDays: [28, 33], name: "Marble Dining Table (140cm to 220cm)", cat: "Dining", room: "Living Room", price: 16667, memberPrice: 15000, sku: "SH-10881", tag: "New", ph: "", img: "assets/products/lr099q.webp",
+  { id: "lr099q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (140cm to 220cm)", cat: "Dining", room: "Living Room", price: 16667, memberPrice: 15000, sku: "SH-10881", tag: "New", ph: "", img: "assets/products/lr099q.webp",
     imgs: ["assets/products/lr099q.webp", "assets/products/lr099q-2.webp", "assets/products/lr099q-3.webp", "assets/products/lr099q-4.webp"],
    
     sizes: [{ label: "White + Black / 140cm / 0 x Dining Chair (table only)", price: 16667 }, { label: "White + Gold / 140cm / 0 x Dining Chair (table only)", price: 16667 }, { label: "White + Black / 160cm / 0 x Dining Chair (table only)", price: 17944 }, { label: "White + Gold / 160cm / 0 x Dining Chair (table only)", price: 17944 }, { label: "White + Black / 180cm / 0 x Dining Chair (table only)", price: 18933 }, { label: "White + Gold / 180cm / 0 x Dining Chair (table only)", price: 18933 }, { label: "White + Black / 200cm / 0 x Dining Chair (table only)", price: 20156 }, { label: "White + Gold / 200cm / 0 x Dining Chair (table only)", price: 20156 }, { label: "White + Black / 140cm / Table + 2 x Dining Chairs", price: 21852 }, { label: "White + Gold / 140cm / Table + 2 x Dining Chairs", price: 21852 }, { label: "White + Black / 220cm / 0 x Dining Chair (table only)", price: 22198 }, { label: "White + Gold / 220cm / 0 x Dining Chair (table only)", price: 22198 }, { label: "White + Black / 160cm / Table + 2 x Dining Chairs", price: 23130 }, { label: "White + Gold / 160cm / Table + 2 x Dining Chairs", price: 23130 }, { label: "White + Black / 180cm / Table + 2 x Dining Chairs", price: 24119 }, { label: "White + Gold / 180cm / Table + 2 x Dining Chairs", price: 24119 }, { label: "White + Black / 200cm / Table + 2 x Dining Chairs", price: 25341 }, { label: "White + Gold / 200cm / Table + 2 x Dining Chairs", price: 25341 }, { label: "White + Black / 140cm / Table + 4 x Dining Chairs", price: 27037 }, { label: "White + Gold / 140cm / Table + 4 x Dining Chairs", price: 27037 }, { label: "White + Black / 220cm / Table + 2 x Dining Chairs", price: 27383 }, { label: "White + Gold / 220cm / Table + 2 x Dining Chairs", price: 27383 }, { label: "White + Black / 160cm / Table + 4 x Dining Chairs", price: 28315 }, { label: "White + Gold / 160cm / Table + 4 x Dining Chairs", price: 28315 }, { label: "White + Black / 180cm / Table + 4 x Dining Chairs", price: 29304 }, { label: "White + Gold / 180cm / Table + 4 x Dining Chairs", price: 29304 }, { label: "White + Black / 200cm / Table + 4 x Dining Chairs", price: 30526 }, { label: "White + Gold / 200cm / Table + 4 x Dining Chairs", price: 30526 }, { label: "White + Black / 140cm / Table + 6 x Dining Chairs", price: 32222 }, { label: "White + Gold / 140cm / Table + 6 x Dining Chairs", price: 32222 }, { label: "White + Black / 220cm / Table + 4 x Dining Chairs", price: 32569 }, { label: "White + Gold / 220cm / Table + 4 x Dining Chairs", price: 32569 }, { label: "White + Black / 160cm / Table + 6 x Dining Chairs", price: 33500 }, { label: "White + Gold / 160cm / Table + 6 x Dining Chairs", price: 33500 }, { label: "White + Black / 180cm / Table + 6 x Dining Chairs", price: 34489 }, { label: "White + Gold / 180cm / Table + 6 x Dining Chairs", price: 34489 }, { label: "White + Black / 200cm / Table + 6 x Dining Chairs", price: 35711 }, { label: "White + Gold / 200cm / Table + 6 x Dining Chairs", price: 35711 }, { label: "White + Black / 140cm / Table + 8 x Dining Chairs", price: 37407 }, { label: "White + Gold / 140cm / Table + 8 x Dining Chairs", price: 37407 }, { label: "White + Black / 220cm / Table + 6 x Dining Chairs", price: 37754 }, { label: "White + Gold / 220cm / Table + 6 x Dining Chairs", price: 37754 }, { label: "White + Black / 160cm / Table + 8 x Dining Chairs", price: 38685 }, { label: "White + Gold / 160cm / Table + 8 x Dining Chairs", price: 38685 }, { label: "White + Black / 180cm / Table + 8 x Dining Chairs", price: 39674 }, { label: "White + Gold / 180cm / Table + 8 x Dining Chairs", price: 39674 }, { label: "White + Black / 200cm / Table + 8 x Dining Chairs", price: 40896 }, { label: "White + Gold / 200cm / Table + 8 x Dining Chairs", price: 40896 }, { label: "White + Black / 220cm / Table + 8 x Dining Chairs", price: 42939 }, { label: "White + Gold / 220cm / Table + 8 x Dining Chairs", price: 42939 }],
@@ -5837,7 +5837,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "50", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "lr100q", arriveDays: [28, 33], name: "Travertine Dining Table (130cm to 200cm)", cat: "Dining", room: "Living Room", price: 21396, memberPrice: 19256, sku: "SH-10882", tag: "New", ph: "", img: "assets/products/lr100q.webp",
+  { id: "lr100q", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Dining Table (130cm to 200cm)", cat: "Dining", room: "Living Room", price: 21396, memberPrice: 19256, sku: "SH-10882", tag: "New", ph: "", img: "assets/products/lr100q.webp",
     imgs: ["assets/products/lr100q.webp", "assets/products/lr100q-2.webp", "assets/products/lr100q-3.webp", "assets/products/lr100q-4.webp"],
    
     sizes: [{ label: "130cm / 0 x Dining Chairs (table only)", price: 21396 }, { label: "140cm / 0 x Dining Chairs (table only)", price: 22102 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 22813 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 23519 }, { label: "200cm / 0 x Dining Chairs (table only)", price: 24426 }, { label: "130cm / Table + 2 x Dining Chairs", price: 25841 }, { label: "140cm / Table + 2 x Dining Chairs", price: 26546 }, { label: "160cm / Table + 2 x Dining Chairs", price: 27257 }, { label: "180cm / Table + 2 x Dining Chairs", price: 27963 }, { label: "200cm / Table + 2 x Dining Chairs", price: 28870 }, { label: "130cm / Table + 4 x Dining Chairs", price: 30285 }, { label: "140cm / Table + 4 x Dining Chairs", price: 30991 }, { label: "160cm / Table + 4 x Dining Chairs", price: 31702 }, { label: "180cm / Table + 4 x Dining Chairs", price: 32407 }, { label: "200cm / Table + 4 x Dining Chairs", price: 33315 }, { label: "130cm / Table + 6 x Dining Chairs", price: 34730 }, { label: "140cm / Table + 6 x Dining Chairs", price: 35435 }, { label: "160cm / Table + 6 x Dining Chairs", price: 36146 }, { label: "180cm / Table + 6 x Dining Chairs", price: 36852 }, { label: "200cm / Table + 6 x Dining Chairs", price: 37759 }],
@@ -5850,7 +5850,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Travertine", "Options": "20", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so deal with spills immediately and never use acidic cleaners." },
 
-  { id: "lr101q", arriveDays: [28, 33], name: "Marble Dining Table (180cm to 220cm)", cat: "Dining", room: "Living Room", price: 22206, memberPrice: 19985, sku: "SH-10883", tag: "New", ph: "", img: "assets/products/lr101q.webp",
+  { id: "lr101q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (180cm to 220cm)", cat: "Dining", room: "Living Room", price: 22206, memberPrice: 19985, sku: "SH-10883", tag: "New", ph: "", img: "assets/products/lr101q.webp",
     imgs: ["assets/products/lr101q.webp", "assets/products/lr101q-2.webp", "assets/products/lr101q-3.webp", "assets/products/lr101q-4.webp"],
    
     sizes: [{ label: "180cm", price: 22206 }, { label: "200cm", price: 23281 }, { label: "220cm", price: 24359 }],
@@ -5863,7 +5863,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "3", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "lr102q", arriveDays: [28, 33], name: "Travertine Dining Table (180cm to 240cm)", cat: "Dining", room: "Living Room", price: 22859, memberPrice: 20573, sku: "SH-10884", tag: "New", ph: "", img: "assets/products/lr102q.webp",
+  { id: "lr102q", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Dining Table (180cm to 240cm)", cat: "Dining", room: "Living Room", price: 22859, memberPrice: 20573, sku: "SH-10884", tag: "New", ph: "", img: "assets/products/lr102q.webp",
     imgs: ["assets/products/lr102q.webp", "assets/products/lr102q-2.webp", "assets/products/lr102q-3.webp", "assets/products/lr102q-4.webp"],
    
     sizes: [{ label: "180cm", price: 22859 }, { label: "240cm", price: 34646 }],
@@ -5876,7 +5876,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Travertine", "Options": "2", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so deal with spills immediately and never use acidic cleaners." },
 
-  { id: "dn001q", arriveDays: [28, 33], name: "Steel Console Table", cat: "Dining", room: "Living Room", price: 3026, memberPrice: 2723, sku: "SH-10885", tag: "New", ph: "", img: "assets/products/dn001q.webp",
+  { id: "dn001q", arriveDays: [28, 33], expressOpt: 7000, name: "Steel Console Table", cat: "Dining", room: "Living Room", price: 3026, memberPrice: 2723, sku: "SH-10885", tag: "New", ph: "", img: "assets/products/dn001q.webp",
     imgs: ["assets/products/dn001q.webp", "assets/products/dn001q-2.webp", "assets/products/dn001q-3.webp", "assets/products/dn001q-4.webp"],
    
     sizes: [{ label: "100cm", price: 3026 }, { label: "120cm", price: 3281 }, { label: "140cm", price: 3533 }, { label: "160cm", price: 3789 }],
@@ -5889,7 +5889,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Steel", "Options": "4", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "dn002q", arriveDays: [28, 33], name: "Steel Console Table (100cm to 140cm)", cat: "Dining", room: "Living Room", price: 3328, memberPrice: 2995, sku: "SH-10886", tag: "New", ph: "", img: "assets/products/dn002q.webp",
+  { id: "dn002q", arriveDays: [28, 33], expressOpt: 7000, name: "Steel Console Table (100cm to 140cm)", cat: "Dining", room: "Living Room", price: 3328, memberPrice: 2995, sku: "SH-10886", tag: "New", ph: "", img: "assets/products/dn002q.webp",
     imgs: ["assets/products/dn002q.webp", "assets/products/dn002q-2.webp", "assets/products/dn002q-3.webp", "assets/products/dn002q-4.webp"],
    
     sizes: [{ label: "100cm / Black + White", price: 3328 }, { label: "100cm / Black + Cream", price: 3328 }, { label: "100cm / Gold + Cream", price: 3328 }, { label: "100cm / Gold + Grey", price: 3328 }, { label: "120cm / Black + White", price: 3698 }, { label: "120cm / Black + Cream", price: 3698 }, { label: "120cm / Gold + Cream", price: 3698 }, { label: "120cm / Gold + Grey", price: 3698 }, { label: "140cm / Black + White", price: 4054 }, { label: "140cm / Black + Cream", price: 4054 }, { label: "140cm / Gold + Cream", price: 4054 }, { label: "140cm / Gold + Grey", price: 4054 }],
@@ -5902,7 +5902,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Steel", "Options": "12", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "dn003q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White":"assets/products/dn003q.webp"}, name: "Metal Console Table", cat: "Dining", room: "Living Room", price: 3722, memberPrice: 3350, sku: "SH-10887", tag: "New", ph: "", img: "assets/products/dn003q.webp",
+  { id: "dn003q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White":"assets/products/dn003q.webp"}, name: "Metal Console Table", cat: "Dining", room: "Living Room", price: 3722, memberPrice: 3350, sku: "SH-10887", tag: "New", ph: "", img: "assets/products/dn003q.webp",
     imgs: ["assets/products/dn003q.webp", "assets/products/dn003q-2.webp", "assets/products/dn003q-3.webp", "assets/products/dn003q-4.webp"],
    
     sizes: [{ label: "Black", price: 3722 }, { label: "White", price: 3722 }],
@@ -5915,7 +5915,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Metal", "Options": "2", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "dn004q", arriveDays: [28, 33], name: "Travertine Console Table", cat: "Dining", room: "Living Room", price: 4554, memberPrice: 4099, sku: "SH-10888", tag: "New", ph: "", img: "assets/products/dn004q.webp",
+  { id: "dn004q", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine Console Table", cat: "Dining", room: "Living Room", price: 4554, memberPrice: 4099, sku: "SH-10888", tag: "New", ph: "", img: "assets/products/dn004q.webp",
     imgs: ["assets/products/dn004q.webp", "assets/products/dn004q-2.webp", "assets/products/dn004q-3.webp", "assets/products/dn004q-4.webp"],
    
     sizes: [{ label: "100cm", price: 4554 }, { label: "120cm", price: 4980 }, { label: "140cm", price: 5778 }, { label: "160cm", price: 6185 }, { label: "180cm", price: 7200 }],
@@ -5928,7 +5928,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Travertine", "Options": "5", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry straight away. Travertine's open pores hold liquid, so deal with spills immediately and never use acidic cleaners." },
 
-  { id: "dn005q", arriveDays: [28, 33], name: "Slate Console Table (100cm to 160cm)", cat: "Dining", room: "Living Room", price: 5948, memberPrice: 5353, sku: "SH-10889", tag: "New", ph: "", img: "assets/products/dn005q.webp",
+  { id: "dn005q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Console Table (100cm to 160cm)", cat: "Dining", room: "Living Room", price: 5948, memberPrice: 5353, sku: "SH-10889", tag: "New", ph: "", img: "assets/products/dn005q.webp",
     imgs: ["assets/products/dn005q.webp", "assets/products/dn005q-2.webp", "assets/products/dn005q-3.webp", "assets/products/dn005q-4.webp"],
    
     sizes: [{ label: "100cm", price: 5948 }, { label: "120cm", price: 6556 }, { label: "140cm", price: 7156 }, { label: "160cm", price: 7574 }],
@@ -5941,7 +5941,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Slate", "Options": "4", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn006q", arriveDays: [28, 33], name: "Slate Console Table (80cm to 160cm)", cat: "Dining", room: "Living Room", price: 6365, memberPrice: 5728, sku: "SH-10890", tag: "New", ph: "", img: "assets/products/dn006q.webp",
+  { id: "dn006q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Console Table (80cm to 160cm)", cat: "Dining", room: "Living Room", price: 6365, memberPrice: 5728, sku: "SH-10890", tag: "New", ph: "", img: "assets/products/dn006q.webp",
     imgs: ["assets/products/dn006q.webp", "assets/products/dn006q-2.webp", "assets/products/dn006q-3.webp", "assets/products/dn006q-4.webp"],
    
     sizes: [{ label: "80cm", price: 6365 }, { label: "100cm", price: 6813 }, { label: "120cm", price: 7387 }, { label: "140cm", price: 7769 }, { label: "160cm", price: 7939 }],
@@ -5954,7 +5954,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Slate", "Options": "5", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn007q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White":"assets/products/dn007q-3.webp","Green":"assets/products/dn007q-2.webp","Black":"assets/products/dn007q-4.webp"}, name: "Marble Console Table", cat: "Dining", room: "Living Room", price: 7333, memberPrice: 6600, sku: "SH-10891", tag: "New", ph: "", img: "assets/products/dn007q.webp",
+  { id: "dn007q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White":"assets/products/dn007q-3.webp","Green":"assets/products/dn007q-2.webp","Black":"assets/products/dn007q-4.webp"}, name: "Marble Console Table", cat: "Dining", room: "Living Room", price: 7333, memberPrice: 6600, sku: "SH-10891", tag: "New", ph: "", img: "assets/products/dn007q.webp",
     imgs: ["assets/products/dn007q.webp", "assets/products/dn007q-2.webp", "assets/products/dn007q-3.webp", "assets/products/dn007q-4.webp"],
    
     sizes: [{ label: "White", price: 7333 }, { label: "Green", price: 7333 }, { label: "Black", price: 7333 }],
@@ -5967,7 +5967,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Marble", "Options": "3", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "dn008q", arriveDays: [28, 33], name: "Timber Dining Table (120cm to 180cm)", cat: "Dining", room: "Living Room", price: 7546, memberPrice: 6791, sku: "SH-10892", tag: "New", ph: "", img: "assets/products/dn008q.webp",
+  { id: "dn008q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dining Table (120cm to 180cm)", cat: "Dining", room: "Living Room", price: 7546, memberPrice: 6791, sku: "SH-10892", tag: "New", ph: "", img: "assets/products/dn008q.webp",
     imgs: ["assets/products/dn008q.webp", "assets/products/dn008q-2.webp", "assets/products/dn008q-3.webp", "assets/products/dn008q-4.webp"],
    
     sizes: [{ label: "120cm / 0 x Dining Chairs (table only)", price: 7546 }, { label: "130cm / 0 x Dining Chairs (table only)", price: 8244 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 8946 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 9296 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 10813 }, { label: "120cm / Table + 2 x Dining Chairs", price: 13102 }, { label: "130cm / Table + 2 x Dining Chairs", price: 13800 }, { label: "150cm / Table + 2 x Dining Chairs", price: 14502 }, { label: "160cm / Table + 2 x Dining Chairs", price: 14852 }, { label: "180cm / Table + 2 x Dining Chairs", price: 16369 }, { label: "120cm / Table + 4 x Dining Chairs", price: 18657 }, { label: "130cm / Table + 4 x Dining Chairs", price: 19356 }, { label: "150cm / Table + 4 x Dining Chairs", price: 20057 }, { label: "160cm / Table + 4 x Dining Chairs", price: 20407 }, { label: "180cm / Table + 4 x Dining Chairs", price: 21924 }, { label: "120cm / Table + 6 x Dining Chairs", price: 24213 }, { label: "130cm / Table + 6 x Dining Chairs", price: 24911 }, { label: "150cm / Table + 6 x Dining Chairs", price: 25613 }, { label: "160cm / Table + 6 x Dining Chairs", price: 25963 }, { label: "180cm / Table + 6 x Dining Chairs", price: 27480 }],
@@ -5980,7 +5980,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Timber", "Options": "20", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "dn009q", arriveDays: [28, 33], name: "Timber Dining Table (80cm to 130cm)", cat: "Dining", room: "Living Room", price: 7613, memberPrice: 6852, sku: "SH-10893", tag: "New", ph: "", img: "assets/products/dn009q.webp",
+  { id: "dn009q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dining Table (80cm to 130cm)", cat: "Dining", room: "Living Room", price: 7613, memberPrice: 6852, sku: "SH-10893", tag: "New", ph: "", img: "assets/products/dn009q.webp",
     imgs: ["assets/products/dn009q.webp", "assets/products/dn009q-2.webp", "assets/products/dn009q-3.webp", "assets/products/dn009q-4.webp"],
    
     sizes: [{ label: "80cm / 0 x Dining Chairs (table only)", price: 7613 }, { label: "90cm / 0 x Dining Chairs (table only)", price: 8237 }, { label: "100cm / 0 x Dining Chairs (table only)", price: 8470 }, { label: "110cm / 0 x Dining Chairs (table only)", price: 9600 }, { label: "120cm / 0 x Dining Chairs (table only)", price: 10339 }, { label: "130cm / 0 x Dining Chairs (table only)", price: 11380 }, { label: "80cm / Table + 2 x Dining Chairs", price: 12057 }, { label: "90cm / Table + 2 x Dining Chairs", price: 12681 }, { label: "100cm / Table + 2 x Dining Chairs", price: 12915 }, { label: "110cm / Table + 2 x Dining Chairs", price: 14044 }, { label: "120cm / Table + 2 x Dining Chairs", price: 14783 }, { label: "130cm / Table + 2 x Dining Chairs", price: 15824 }, { label: "80cm / Table + 4 x Dining Chairs", price: 16502 }, { label: "90cm / Table + 4 x Dining Chairs", price: 17126 }, { label: "100cm / Table + 4 x Dining Chairs", price: 17359 }, { label: "110cm / Table + 4 x Dining Chairs", price: 18489 }, { label: "120cm / Table + 4 x Dining Chairs", price: 19228 }, { label: "130cm / Table + 4 x Dining Chairs", price: 20269 }],
@@ -5993,7 +5993,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Timber", "Options": "18", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "dn010q", arriveDays: [28, 33], name: "Marble Console Table (100cm to 160cm)", cat: "Dining", room: "Living Room", price: 7935, memberPrice: 7142, sku: "SH-10894", tag: "New", ph: "", img: "assets/products/dn010q.webp",
+  { id: "dn010q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Console Table (100cm to 160cm)", cat: "Dining", room: "Living Room", price: 7935, memberPrice: 7142, sku: "SH-10894", tag: "New", ph: "", img: "assets/products/dn010q.webp",
     imgs: ["assets/products/dn010q.webp", "assets/products/dn010q-2.webp", "assets/products/dn010q-3.webp", "assets/products/dn010q-4.webp"],
    
     sizes: [{ label: "White + Black / 100cm", price: 7935 }, { label: "White / 100cm", price: 7935 }, { label: "Black / 100cm", price: 7935 }, { label: "White + Black / 120cm", price: 8704 }, { label: "White / 120cm", price: 8704 }, { label: "Black / 120cm", price: 8704 }, { label: "White + Black / 140cm", price: 9217 }, { label: "White / 140cm", price: 9217 }, { label: "Black / 140cm", price: 9217 }, { label: "White + Black / 160cm", price: 10139 }, { label: "White / 160cm", price: 10139 }, { label: "Black / 160cm", price: 10139 }],
@@ -6006,7 +6006,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Marble", "Options": "12", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "dn011q", arriveDays: [28, 33], name: "Leather Dining Table (130cm to 180cm)", cat: "Dining", room: "Living Room", price: 8106, memberPrice: 7295, sku: "SH-10895", tag: "New", ph: "", img: "assets/products/dn011q.webp",
+  { id: "dn011q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Dining Table (130cm to 180cm)", cat: "Dining", room: "Living Room", price: 8106, memberPrice: 7295, sku: "SH-10895", tag: "New", ph: "", img: "assets/products/dn011q.webp",
     imgs: ["assets/products/dn011q.webp", "assets/products/dn011q-2.webp", "assets/products/dn011q-3.webp", "assets/products/dn011q-4.webp"],
    
     sizes: [{ label: "130cm / 0 x Dining Chairs (table only)", price: 8106 }, { label: "140cm / 0 x Dining Chairs (table only)", price: 9026 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 9789 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 10819 }, { label: "130cm / Table + 2 x Dining Chairs", price: 13661 }, { label: "140cm / Table + 2 x Dining Chairs", price: 14581 }, { label: "160cm / Table + 2 x Dining Chairs", price: 15344 }, { label: "180cm / Table + 2 x Dining Chairs", price: 16374 }, { label: "130cm / Table + 4 x Dining Chairs", price: 19217 }, { label: "140cm / Table + 4 x Dining Chairs", price: 20137 }, { label: "160cm / Table + 4 x Dining Chairs", price: 20900 }, { label: "180cm / Table + 4 x Dining Chairs", price: 21930 }, { label: "130cm / Table + 6 x Dining Chairs", price: 24772 }, { label: "140cm / Table + 6 x Dining Chairs", price: 25693 }, { label: "160cm / Table + 6 x Dining Chairs", price: 26456 }, { label: "180cm / Table + 6 x Dining Chairs", price: 27485 }],
@@ -6019,7 +6019,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Leather", "Options": "16", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "dn012q", arriveDays: [28, 33], name: "Oak Dining Table (90cm to 130cm)", cat: "Dining", room: "Living Room", price: 8204, memberPrice: 7384, sku: "SH-10896", tag: "New", ph: "", img: "assets/products/dn012q.webp",
+  { id: "dn012q", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Dining Table (90cm to 130cm)", cat: "Dining", room: "Living Room", price: 8204, memberPrice: 7384, sku: "SH-10896", tag: "New", ph: "", img: "assets/products/dn012q.webp",
     imgs: ["assets/products/dn012q.webp", "assets/products/dn012q-2.webp", "assets/products/dn012q-3.webp", "assets/products/dn012q-4.webp"],
    
     sizes: [{ label: "Tan / 90cm", price: 8204 }, { label: "Chocolate / 90cm", price: 8204 }, { label: "White / 90cm", price: 8204 }, { label: "Natural / 90cm", price: 8204 }, { label: "Tan / 100cm", price: 8556 }, { label: "Chocolate / 100cm", price: 8556 }, { label: "White / 100cm", price: 8556 }, { label: "Natural / 100cm", price: 8556 }, { label: "Tan / 110cm", price: 9565 }, { label: "Chocolate / 110cm", price: 9565 }, { label: "White / 110cm", price: 9565 }, { label: "Natural / 110cm", price: 9565 }, { label: "Tan / 120cm", price: 10250 }, { label: "Chocolate / 120cm", price: 10250 }, { label: "White / 120cm", price: 10250 }, { label: "Natural / 120cm", price: 10250 }, { label: "Tan / 130cm", price: 10719 }, { label: "Chocolate / 130cm", price: 10719 }, { label: "White / 130cm", price: 10719 }, { label: "Natural / 130cm", price: 10719 }],
@@ -6032,7 +6032,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Oak", "Options": "20", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "dn013q", arriveDays: [28, 33], name: "Slate Dining Table (80cm to 120cm)", cat: "Dining", room: "Living Room", price: 8222, memberPrice: 7400, sku: "SH-10897", tag: "New", ph: "", img: "assets/products/dn013q.webp",
+  { id: "dn013q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (80cm to 120cm)", cat: "Dining", room: "Living Room", price: 8222, memberPrice: 7400, sku: "SH-10897", tag: "New", ph: "", img: "assets/products/dn013q.webp",
     imgs: ["assets/products/dn013q.webp", "assets/products/dn013q-2.webp", "assets/products/dn013q-3.webp", "assets/products/dn013q-4.webp"],
    
     sizes: [{ label: "80cm / 0 x Dining Chairs (table only)", price: 8222 }, { label: "90cm / 0 x Dining Chairs (table only)", price: 8444 }, { label: "100cm / 0 x Dining Chairs (table only)", price: 8833 }, { label: "110cm / 0 x Dining Chairs (table only)", price: 9074 }, { label: "120cm / 0 x Dining Chairs (table only)", price: 9648 }, { label: "80cm / Table + 2 x Dining Chairs", price: 13407 }, { label: "90cm / Table + 2 x Dining Chairs", price: 13630 }, { label: "100cm / Table + 2 x Dining Chairs", price: 14019 }, { label: "110cm / Table + 2 x Dining Chairs", price: 14259 }, { label: "120cm / Table + 2 x Dining Chairs", price: 14833 }, { label: "80cm / Table + 4 x Dining Chairs", price: 18593 }, { label: "90cm / Table + 4 x Dining Chairs", price: 18815 }, { label: "100cm / Table + 4 x Dining Chairs", price: 19204 }, { label: "110cm / Table + 4 x Dining Chairs", price: 19444 }, { label: "120cm / Table + 4 x Dining Chairs", price: 20019 }, { label: "80cm / Table + 6 x Dining Chairs", price: 23778 }, { label: "90cm / Table + 6 x Dining Chairs", price: 24000 }, { label: "100cm / Table + 6 x Dining Chairs", price: 24389 }, { label: "110cm / Table + 6 x Dining Chairs", price: 24630 }, { label: "120cm / Table + 6 x Dining Chairs", price: 25204 }],
@@ -6045,7 +6045,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "20", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn014q", arriveDays: [28, 33], name: "Slate Dining Table (Black / White)", cat: "Dining", room: "Living Room", price: 8226, memberPrice: 7403, sku: "SH-10898", tag: "New", ph: "", img: "assets/products/dn014q.webp",
+  { id: "dn014q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (Black / White)", cat: "Dining", room: "Living Room", price: 8226, memberPrice: 7403, sku: "SH-10898", tag: "New", ph: "", img: "assets/products/dn014q.webp",
     imgs: ["assets/products/dn014q.webp", "assets/products/dn014q-2.webp", "assets/products/dn014q-3.webp", "assets/products/dn014q-4.webp"],
    
     sizes: [{ label: "Black / 80cm / 0 x Dining Chairs (table only)", price: 8226 }, { label: "White / 80cm / 0 x Dining Chairs (table only)", price: 8226 }, { label: "Black / 90cm / 0 x Dining Chairs (table only)", price: 9000 }, { label: "White / 90cm / 0 x Dining Chairs (table only)", price: 9000 }, { label: "Black / 100cm / 0 x Dining Chairs (table only)", price: 10052 }, { label: "White / 100cm / 0 x Dining Chairs (table only)", price: 10052 }, { label: "Black / 110cm / 0 x Dining Chairs (table only)", price: 10281 }, { label: "White / 110cm / 0 x Dining Chairs (table only)", price: 10281 }, { label: "Black / 120cm / 0 x Dining Chairs (table only)", price: 10496 }, { label: "White / 120cm / 0 x Dining Chairs (table only)", price: 10496 }, { label: "Black / 80cm / Table + 2 x Dining Chairs", price: 13041 }, { label: "White / 80cm / Table + 2 x Dining Chairs", price: 13041 }, { label: "Black / 90cm / Table + 2 x Dining Chairs", price: 13815 }, { label: "White / 90cm / Table + 2 x Dining Chairs", price: 13815 }, { label: "Black / 100cm / Table + 2 x Dining Chairs", price: 14867 }, { label: "White / 100cm / Table + 2 x Dining Chairs", price: 14867 }, { label: "Black / 110cm / Table + 2 x Dining Chairs", price: 15096 }, { label: "White / 110cm / Table + 2 x Dining Chairs", price: 15096 }, { label: "Black / 120cm / Table + 2 x Dining Chairs", price: 15311 }, { label: "White / 120cm / Table + 2 x Dining Chairs", price: 15311 }, { label: "Black / 80cm / Table + 4 x Dining Chairs", price: 17856 }, { label: "White / 80cm / Table + 4 x Dining Chairs", price: 17856 }, { label: "Black / 90cm / Table + 4 x Dining Chairs", price: 18630 }, { label: "White / 90cm / Table + 4 x Dining Chairs", price: 18630 }, { label: "Black / 100cm / Table + 4 x Dining Chairs", price: 19681 }, { label: "White / 100cm / Table + 4 x Dining Chairs", price: 19681 }, { label: "Black / 110cm / Table + 4 x Dining Chairs", price: 19911 }, { label: "White / 110cm / Table + 4 x Dining Chairs", price: 19911 }, { label: "Black / 120cm / Table + 4 x Dining Chairs", price: 20126 }, { label: "White / 120cm / Table + 4 x Dining Chairs", price: 20126 }, { label: "Black / 80cm / Table + 6 x Dining Chairs", price: 22670 }, { label: "White / 80cm / Table + 6 x Dining Chairs", price: 22670 }, { label: "Black / 90cm / Table + 6 x Dining Chairs", price: 23444 }, { label: "White / 90cm / Table + 6 x Dining Chairs", price: 23444 }, { label: "Black / 100cm / Table + 6 x Dining Chairs", price: 24496 }, { label: "White / 100cm / Table + 6 x Dining Chairs", price: 24496 }, { label: "Black / 110cm / Table + 6 x Dining Chairs", price: 24726 }, { label: "White / 110cm / Table + 6 x Dining Chairs", price: 24726 }, { label: "Black / 120cm / Table + 6 x Dining Chairs", price: 24941 }, { label: "White / 120cm / Table + 6 x Dining Chairs", price: 24941 }],
@@ -6058,7 +6058,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "40", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn015q", arriveDays: [28, 33], name: "Glass Dining Table", cat: "Dining", room: "Living Room", price: 8330, memberPrice: 7497, sku: "SH-10899", tag: "New", ph: "", img: "assets/products/dn015q.webp",
+  { id: "dn015q", arriveDays: [28, 33], expressOpt: 7000, name: "Glass Dining Table", cat: "Dining", room: "Living Room", price: 8330, memberPrice: 7497, sku: "SH-10899", tag: "New", ph: "", img: "assets/products/dn015q.webp",
     imgs: ["assets/products/dn015q.webp", "assets/products/dn015q-2.webp", "assets/products/dn015q-3.webp", "assets/products/dn015q-4.webp"],
    
     sizes: [{ label: "Black / 120cm / 0 x Dining Chairs (table only)", price: 8330 }, { label: "Tan / 120cm / 0 x Dining Chairs (table only)", price: 8330 }, { label: "Transparent / 120cm / 0 x Dining Chairs (table only)", price: 8330 }, { label: "Black / 140cm / 0 x Dining Chairs (table only)", price: 9074 }, { label: "Tan / 140cm / 0 x Dining Chairs (table only)", price: 9074 }, { label: "Transparent / 140cm / 0 x Dining Chairs (table only)", price: 9074 }, { label: "Black / 160cm / 0 x Dining Chairs (table only)", price: 9804 }, { label: "Tan / 160cm / 0 x Dining Chairs (table only)", price: 9804 }, { label: "Transparent / 160cm / 0 x Dining Chairs (table only)", price: 9804 }, { label: "Black / 180cm / 0 x Dining Chairs (table only)", price: 10663 }, { label: "Tan / 180cm / 0 x Dining Chairs (table only)", price: 10663 }, { label: "Transparent / 180cm / 0 x Dining Chairs (table only)", price: 10663 }, { label: "Black / 200cm / 0 x Dining Chairs (table only)", price: 12741 }, { label: "Tan / 200cm / 0 x Dining Chairs (table only)", price: 12741 }, { label: "Transparent / 200cm / 0 x Dining Chairs (table only)", price: 12741 }, { label: "Black / 120cm / Table + 2 x Dining Chairs", price: 13885 }, { label: "Tan / 120cm / Table + 2 x Dining Chairs", price: 13885 }, { label: "Transparent / 120cm / Table + 2 x Dining Chairs", price: 13885 }, { label: "Black / 140cm / Table + 2 x Dining Chairs", price: 14630 }, { label: "Tan / 140cm / Table + 2 x Dining Chairs", price: 14630 }, { label: "Transparent / 140cm / Table + 2 x Dining Chairs", price: 14630 }, { label: "Black / 160cm / Table + 2 x Dining Chairs", price: 15359 }, { label: "Tan / 160cm / Table + 2 x Dining Chairs", price: 15359 }, { label: "Transparent / 160cm / Table + 2 x Dining Chairs", price: 15359 }, { label: "Black / 180cm / Table + 2 x Dining Chairs", price: 16219 }, { label: "Tan / 180cm / Table + 2 x Dining Chairs", price: 16219 }, { label: "Transparent / 180cm / Table + 2 x Dining Chairs", price: 16219 }, { label: "Black / 200cm / Table + 2 x Dining Chairs", price: 18296 }, { label: "Tan / 200cm / Table + 2 x Dining Chairs", price: 18296 }, { label: "Transparent / 200cm / Table + 2 x Dining Chairs", price: 18296 }, { label: "Black / 120cm / Table + 4 x Dining Chairs", price: 19441 }, { label: "Tan / 120cm / Table + 4 x Dining Chairs", price: 19441 }, { label: "Transparent / 120cm / Table + 4 x Dining Chairs", price: 19441 }, { label: "Black / 140cm / Table + 4 x Dining Chairs", price: 20185 }, { label: "Tan / 140cm / Table + 4 x Dining Chairs", price: 20185 }, { label: "Transparent / 140cm / Table + 4 x Dining Chairs", price: 20185 }, { label: "Black / 160cm / Table + 4 x Dining Chairs", price: 20915 }, { label: "Tan / 160cm / Table + 4 x Dining Chairs", price: 20915 }, { label: "Transparent / 160cm / Table + 4 x Dining Chairs", price: 20915 }, { label: "Black / 180cm / Table + 4 x Dining Chairs", price: 21774 }, { label: "Tan / 180cm / Table + 4 x Dining Chairs", price: 21774 }, { label: "Transparent / 180cm / Table + 4 x Dining Chairs", price: 21774 }, { label: "Black / 200cm / Table + 4 x Dining Chairs", price: 23852 }, { label: "Tan / 200cm / Table + 4 x Dining Chairs", price: 23852 }, { label: "Transparent / 200cm / Table + 4 x Dining Chairs", price: 23852 }, { label: "Black / 120cm / Table + 6 x Dining Chairs", price: 24996 }, { label: "Tan / 120cm / Table + 6 x Dining Chairs", price: 24996 }, { label: "Transparent / 120cm / Table + 6 x Dining Chairs", price: 24996 }, { label: "Black / 140cm / Table + 6 x Dining Chairs", price: 25741 }, { label: "Tan / 140cm / Table + 6 x Dining Chairs", price: 25741 }, { label: "Transparent / 140cm / Table + 6 x Dining Chairs", price: 25741 }, { label: "Black / 160cm / Table + 6 x Dining Chairs", price: 26470 }, { label: "Tan / 160cm / Table + 6 x Dining Chairs", price: 26470 }, { label: "Transparent / 160cm / Table + 6 x Dining Chairs", price: 26470 }, { label: "Black / 180cm / Table + 6 x Dining Chairs", price: 27330 }, { label: "Tan / 180cm / Table + 6 x Dining Chairs", price: 27330 }, { label: "Transparent / 180cm / Table + 6 x Dining Chairs", price: 27330 }, { label: "Black / 200cm / Table + 6 x Dining Chairs", price: 29407 }, { label: "Tan / 200cm / Table + 6 x Dining Chairs", price: 29407 }, { label: "Transparent / 200cm / Table + 6 x Dining Chairs", price: 29407 }, { label: "Black / 120cm / Table + 8 x Dining Chairs", price: 30552 }, { label: "Tan / 120cm / Table + 8 x Dining Chairs", price: 30552 }, { label: "Transparent / 120cm / Table + 8 x Dining Chairs", price: 30552 }, { label: "Black / 140cm / Table + 8 x Dining Chairs", price: 31296 }, { label: "Tan / 140cm / Table + 8 x Dining Chairs", price: 31296 }, { label: "Transparent / 140cm / Table + 8 x Dining Chairs", price: 31296 }, { label: "Black / 160cm / Table + 8 x Dining Chairs", price: 32026 }, { label: "Tan / 160cm / Table + 8 x Dining Chairs", price: 32026 }, { label: "Transparent / 160cm / Table + 8 x Dining Chairs", price: 32026 }, { label: "Black / 180cm / Table + 8 x Dining Chairs", price: 32885 }, { label: "Tan / 180cm / Table + 8 x Dining Chairs", price: 32885 }, { label: "Transparent / 180cm / Table + 8 x Dining Chairs", price: 32885 }, { label: "Black / 200cm / Table + 8 x Dining Chairs", price: 34963 }, { label: "Tan / 200cm / Table + 8 x Dining Chairs", price: 34963 }, { label: "Transparent / 200cm / Table + 8 x Dining Chairs", price: 34963 }],
@@ -6071,7 +6071,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Glass", "Options": "75", "Room": "Living Room" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "dn016q", arriveDays: [28, 33], name: "Oak Dining Table (160cm to 220cm)", cat: "Dining", room: "Living Room", price: 8556, memberPrice: 7700, sku: "SH-10900", tag: "New", ph: "", img: "assets/products/dn016q.webp",
+  { id: "dn016q", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Dining Table (160cm to 220cm)", cat: "Dining", room: "Living Room", price: 8556, memberPrice: 7700, sku: "SH-10900", tag: "New", ph: "", img: "assets/products/dn016q.webp",
     imgs: ["assets/products/dn016q.webp", "assets/products/dn016q-2.webp", "assets/products/dn016q-3.webp", "assets/products/dn016q-4.webp"],
    
     sizes: [{ label: "160cm", price: 8556 }, { label: "180cm", price: 9167 }, { label: "200cm", price: 10124 }, { label: "220cm", price: 11628 }],
@@ -6084,7 +6084,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Oak", "Options": "4", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "dn017q", arriveDays: [28, 33], name: "Console Table (120cm to 160cm)", cat: "Dining", room: "Living Room", price: 8907, memberPrice: 8016, sku: "SH-10901", tag: "New", ph: "", img: "assets/products/dn017q.webp",
+  { id: "dn017q", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table (120cm to 160cm)", cat: "Dining", room: "Living Room", price: 8907, memberPrice: 8016, sku: "SH-10901", tag: "New", ph: "", img: "assets/products/dn017q.webp",
     imgs: ["assets/products/dn017q.webp", "assets/products/dn017q-2.webp", "assets/products/dn017q-3.webp", "assets/products/dn017q-4.webp"],
    
     sizes: [{ label: "120cm", price: 8907 }, { label: "140cm", price: 9976 }, { label: "160cm", price: 10722 }],
@@ -6096,7 +6096,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Material": "Mixed", "Options": "3", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "dn018q", arriveDays: [28, 33], name: "Glass Dining Table (80cm to 120cm)", cat: "Dining", room: "Living Room", price: 9022, memberPrice: 8120, sku: "SH-10902", tag: "New", ph: "", img: "assets/products/dn018q.webp",
+  { id: "dn018q", arriveDays: [28, 33], expressOpt: 7000, name: "Glass Dining Table (80cm to 120cm)", cat: "Dining", room: "Living Room", price: 9022, memberPrice: 8120, sku: "SH-10902", tag: "New", ph: "", img: "assets/products/dn018q.webp",
     imgs: ["assets/products/dn018q.webp", "assets/products/dn018q-2.webp", "assets/products/dn018q-3.webp", "assets/products/dn018q-4.webp"],
    
     sizes: [{ label: "80cm / 0 x Dining Chairs (table only)", price: 9022 }, { label: "90cm / 0 x Dining Chairs (table only)", price: 9241 }, { label: "100cm / 0 x Dining Chairs (table only)", price: 9678 }, { label: "120cm / 0 x Dining Chairs (table only)", price: 10444 }, { label: "80cm / Table + 2 x Dining Chairs", price: 13837 }, { label: "90cm / Table + 2 x Dining Chairs", price: 14056 }, { label: "100cm / Table + 2 x Dining Chairs", price: 14493 }, { label: "120cm / Table + 2 x Dining Chairs", price: 15259 }, { label: "80cm / Table + 4 x Dining Chairs", price: 18652 }, { label: "90cm / Table + 4 x Dining Chairs", price: 18870 }, { label: "100cm / Table + 4 x Dining Chairs", price: 19307 }, { label: "120cm / Table + 4 x Dining Chairs", price: 20074 }, { label: "80cm / Table + 6 x Dining Chairs", price: 23467 }, { label: "90cm / Table + 6 x Dining Chairs", price: 23685 }, { label: "100cm / Table + 6 x Dining Chairs", price: 24122 }, { label: "120cm / Table + 6 x Dining Chairs", price: 24889 }],
@@ -6109,7 +6109,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Glass", "Options": "16", "Room": "Living Room" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "dn019q", arriveDays: [28, 33], name: "Slate Dining Table (140cm to 180cm)", cat: "Dining", room: "Living Room", price: 9167, memberPrice: 8250, sku: "SH-10903", tag: "New", ph: "", img: "assets/products/dn019q.webp",
+  { id: "dn019q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (140cm to 180cm)", cat: "Dining", room: "Living Room", price: 9167, memberPrice: 8250, sku: "SH-10903", tag: "New", ph: "", img: "assets/products/dn019q.webp",
     imgs: ["assets/products/dn019q.webp", "assets/products/dn019q-2.webp", "assets/products/dn019q-3.webp", "assets/products/dn019q-4.webp"],
    
     sizes: [{ label: "140cm / 0 x Dining Chairs (table only)", price: 9167 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 10500 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 12769 }, { label: "140cm / Table + 2 x Dining Chairs", price: 14352 }, { label: "160cm / Table + 2 x Dining Chairs", price: 15685 }, { label: "180cm / Table + 2 x Dining Chairs", price: 17954 }, { label: "140cm / Table + 4 x Dining Chairs", price: 19537 }, { label: "160cm / Table + 4 x Dining Chairs", price: 20870 }, { label: "180cm / Table + 4 x Dining Chairs", price: 23139 }, { label: "140cm / Table + 6 x Dining Chairs", price: 24722 }, { label: "160cm / Table + 6 x Dining Chairs", price: 26056 }, { label: "180cm / Table + 6 x Dining Chairs", price: 28324 }],
@@ -6122,7 +6122,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "12", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn020q", arriveDays: [28, 33], name: "Glass Dining Table (180cm to 260cm)", cat: "Dining", room: "Living Room", price: 9406, memberPrice: 8465, sku: "SH-10904", tag: "New", ph: "", img: "assets/products/dn020q.webp",
+  { id: "dn020q", arriveDays: [28, 33], expressOpt: 7000, name: "Glass Dining Table (180cm to 260cm)", cat: "Dining", room: "Living Room", price: 9406, memberPrice: 8465, sku: "SH-10904", tag: "New", ph: "", img: "assets/products/dn020q.webp",
     imgs: ["assets/products/dn020q.webp", "assets/products/dn020q-2.webp", "assets/products/dn020q-3.webp", "assets/products/dn020q-4.webp"],
    
     sizes: [{ label: "180cm / 0 x Dining Chairs (table only)", price: 9406 }, { label: "200cm / 0 x Dining Chairs (table only)", price: 9959 }, { label: "220cm / 0 x Dining Chairs (table only)", price: 10813 }, { label: "240cm / 0 x Dining Chairs (table only)", price: 11287 }, { label: "180cm / Table + 2 x Dining Chairs", price: 11506 }, { label: "260cm / 0 x Dining Chairs (table only)", price: 11656 }, { label: "200cm / Table + 2 x Dining Chairs", price: 12059 }, { label: "220cm / Table + 2 x Dining Chairs", price: 12913 }, { label: "240cm / Table + 2 x Dining Chairs", price: 13387 }, { label: "180cm / Table + 4 x Dining Chairs", price: 13606 }, { label: "260cm / Table + 2 x Dining Chairs", price: 13756 }, { label: "200cm / Table + 4 x Dining Chairs", price: 14159 }, { label: "220cm / Table + 4 x Dining Chairs", price: 15013 }, { label: "240cm / Table + 4 x Dining Chairs", price: 15487 }, { label: "180cm / Table + 6 x Dining Chairs", price: 15706 }, { label: "260cm / Table + 4 x Dining Chairs", price: 15856 }, { label: "200cm / Table + 6 x Dining Chairs", price: 16259 }, { label: "220cm / Table + 6 x Dining Chairs", price: 17113 }, { label: "240cm / Table + 6 x Dining Chairs", price: 17587 }, { label: "180cm / Table + 8 x Dining Chairs", price: 17806 }, { label: "260cm / Table + 6 x Dining Chairs", price: 17956 }, { label: "200cm / Table + 8 x Dining Chairs", price: 18359 }, { label: "220cm / Table + 8 x Dining Chairs", price: 19213 }, { label: "240cm / Table + 8 x Dining Chairs", price: 19687 }, { label: "260cm / Table + 8 x Dining Chairs", price: 20056 }],
@@ -6135,7 +6135,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Glass", "Options": "25", "Room": "Living Room" },
     care: "Clean with a soft cloth and a mild glass cleaner. Lift rather than drag when moving, and avoid knocking the edges, which is where glass chips." },
 
-  { id: "dn021q", arriveDays: [28, 33], name: "Slate Dining Table (80cm to 150cm)", cat: "Dining", room: "Living Room", price: 9781, memberPrice: 8803, sku: "SH-10905", tag: "New", ph: "", img: "assets/products/dn021q.webp",
+  { id: "dn021q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (80cm to 150cm)", cat: "Dining", room: "Living Room", price: 9781, memberPrice: 8803, sku: "SH-10905", tag: "New", ph: "", img: "assets/products/dn021q.webp",
     imgs: ["assets/products/dn021q.webp", "assets/products/dn021q-2.webp", "assets/products/dn021q-3.webp", "assets/products/dn021q-4.webp"],
    
     sizes: [{ label: "80cm / 0 x Dining Chairs (table only)", price: 9781 }, { label: "90cm / 0 x Dining Chairs (table only)", price: 10370 }, { label: "100cm / 0 x Dining Chairs (table only)", price: 11944 }, { label: "110cm / 0 x Dining Chairs (table only)", price: 12515 }, { label: "120cm / 0 x Dining Chairs (table only)", price: 13404 }, { label: "130cm / 0 x Dining Chairs (table only)", price: 14407 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 15000 }, { label: "80cm / Table + 2 x Dining Chairs", price: 15337 }, { label: "90cm / Table + 2 x Dining Chairs", price: 15926 }, { label: "100cm / Table + 2 x Dining Chairs", price: 17500 }, { label: "110cm / Table + 2 x Dining Chairs", price: 18070 }, { label: "120cm / Table + 2 x Dining Chairs", price: 18959 }, { label: "130cm / Table + 2 x Dining Chairs", price: 19963 }, { label: "150cm / Table + 2 x Dining Chairs", price: 20556 }, { label: "80cm / Table + 4 x Dining Chairs", price: 20893 }, { label: "90cm / Table + 4 x Dining Chairs", price: 21481 }, { label: "100cm / Table + 4 x Dining Chairs", price: 23056 }, { label: "110cm / Table + 4 x Dining Chairs", price: 23626 }, { label: "120cm / Table + 4 x Dining Chairs", price: 24515 }, { label: "130cm / Table + 4 x Dining Chairs", price: 25519 }, { label: "150cm / Table + 4 x Dining Chairs", price: 26111 }, { label: "80cm / Table + 6 x Dining Chairs", price: 26448 }, { label: "90cm / Table + 6 x Dining Chairs", price: 27037 }, { label: "100cm / Table + 6 x Dining Chairs", price: 28611 }, { label: "110cm / Table + 6 x Dining Chairs", price: 29181 }, { label: "120cm / Table + 6 x Dining Chairs", price: 30070 }, { label: "130cm / Table + 6 x Dining Chairs", price: 31074 }, { label: "150cm / Table + 6 x Dining Chairs", price: 31667 }],
@@ -6148,7 +6148,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "28", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn022q", arriveDays: [28, 33], name: "Slate Dining Table (120cm to 200cm)", cat: "Dining", room: "Living Room", price: 10294, memberPrice: 9265, sku: "SH-10906", tag: "New", ph: "", img: "assets/products/dn022q.webp",
+  { id: "dn022q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (120cm to 200cm)", cat: "Dining", room: "Living Room", price: 10294, memberPrice: 9265, sku: "SH-10906", tag: "New", ph: "", img: "assets/products/dn022q.webp",
     imgs: ["assets/products/dn022q.webp", "assets/products/dn022q-2.webp", "assets/products/dn022q-3.webp", "assets/products/dn022q-4.webp"],
    
     sizes: [{ label: "120cm", price: 10294 }, { label: "140cm", price: 10919 }, { label: "160cm", price: 11439 }, { label: "180cm", price: 11809 }, { label: "200cm", price: 12776 }],
@@ -6161,7 +6161,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "5", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn023q", arriveDays: [28, 33], name: "Marble Dining Table (25 options)", cat: "Dining", room: "Living Room", price: 10504, memberPrice: 9454, sku: "SH-10907", tag: "New", ph: "", img: "assets/products/dn023q.webp",
+  { id: "dn023q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (25 options)", cat: "Dining", room: "Living Room", price: 10504, memberPrice: 9454, sku: "SH-10907", tag: "New", ph: "", img: "assets/products/dn023q.webp",
     imgs: ["assets/products/dn023q.webp", "assets/products/dn023q-2.webp", "assets/products/dn023q-3.webp", "assets/products/dn023q-4.webp"],
    
     sizes: [{ label: "140cm / 0 x Dining Chairs (table only)", price: 10504 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 11148 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 11791 }, { label: "200cm / 0 x Dining Chairs (table only)", price: 12963 }, { label: "240cm / 0 x Dining Chairs (table only)", price: 13796 }, { label: "140cm / Table + 2 x Dining Chairs", price: 16059 }, { label: "160cm / Table + 2 x Dining Chairs", price: 16704 }, { label: "180cm / Table + 2 x Dining Chairs", price: 17346 }, { label: "200cm / Table + 2 x Dining Chairs", price: 18519 }, { label: "240cm / Table + 2 x Dining Chairs", price: 19352 }, { label: "140cm / Table + 4 x Dining Chairs", price: 21615 }, { label: "160cm / Table + 4 x Dining Chairs", price: 22259 }, { label: "180cm / Table + 4 x Dining Chairs", price: 22902 }, { label: "200cm / Table + 4 x Dining Chairs", price: 24074 }, { label: "240cm / Table + 4 x Dining Chairs", price: 24907 }, { label: "140cm / Table + 6 x Dining Chairs", price: 27170 }, { label: "160cm / Table + 6 x Dining Chairs", price: 27815 }, { label: "180cm / Table + 6 x Dining Chairs", price: 28457 }, { label: "200cm / Table + 6 x Dining Chairs", price: 29630 }, { label: "240cm / Table + 6 x Dining Chairs", price: 30463 }, { label: "140cm / Table + 8 x Dining Chairs", price: 32726 }, { label: "160cm / Table + 8 x Dining Chairs", price: 33370 }, { label: "180cm / Table + 8 x Dining Chairs", price: 34013 }, { label: "200cm / Table + 8 x Dining Chairs", price: 35185 }, { label: "240cm / Table + 8 x Dining Chairs", price: 36019 }],
@@ -6174,7 +6174,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "25", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "dn024q", arriveDays: [28, 33], name: "Slate Dining Table (2 options)", cat: "Dining", room: "Living Room", price: 10593, memberPrice: 9534, sku: "SH-10908", tag: "New", ph: "", img: "assets/products/dn024q.webp",
+  { id: "dn024q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (2 options)", cat: "Dining", room: "Living Room", price: 10593, memberPrice: 9534, sku: "SH-10908", tag: "New", ph: "", img: "assets/products/dn024q.webp",
     imgs: ["assets/products/dn024q.webp", "assets/products/dn024q-2.webp", "assets/products/dn024q-3.webp", "assets/products/dn024q-4.webp"],
    
     sizes: [{ label: "160cm", price: 10593 }, { label: "180cm", price: 11074 }],
@@ -6187,7 +6187,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "2", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn025q", arriveDays: [28, 33], name: "Marble Dining Table (140cm to 200cm)", cat: "Dining", room: "Living Room", price: 10920, memberPrice: 9828, sku: "SH-10909", tag: "New", ph: "", img: "assets/products/dn025q.webp",
+  { id: "dn025q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (140cm to 200cm)", cat: "Dining", room: "Living Room", price: 10920, memberPrice: 9828, sku: "SH-10909", tag: "New", ph: "", img: "assets/products/dn025q.webp",
     imgs: ["assets/products/dn025q.webp", "assets/products/dn025q-2.webp", "assets/products/dn025q-3.webp", "assets/products/dn025q-4.webp"],
    
     sizes: [{ label: "140cm / 0 x Dining Chair (table only)", price: 10920 }, { label: "160cm / 0 x Dining Chair (table only)", price: 11107 }, { label: "180cm / 0 x Dining Chair (table only)", price: 11341 }, { label: "200cm / 0 x Dining Chair (table only)", price: 14294 }, { label: "140cm / Table + 2 x Dining Chairs", price: 16476 }, { label: "160cm / Table + 2 x Dining Chairs", price: 16663 }, { label: "180cm / Table + 2 x Dining Chairs", price: 16896 }, { label: "200cm / Table + 2 x Dining Chairs", price: 19850 }, { label: "140cm / Table + 4 x Dining Chairs", price: 22031 }, { label: "160cm / Table + 4 x Dining Chairs", price: 22219 }, { label: "180cm / Table + 4 x Dining Chairs", price: 22452 }, { label: "200cm / Table + 4 x Dining Chairs", price: 25406 }, { label: "140cm / Table + 6 x Dining Chairs", price: 27587 }, { label: "160cm / Table + 6 x Dining Chairs", price: 27774 }, { label: "180cm / Table + 6 x Dining Chairs", price: 28007 }, { label: "200cm / Table + 6 x Dining Chairs", price: 30961 }],
@@ -6200,7 +6200,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "16", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "dn026q", arriveDays: [28, 33], name: "Marble Dining Table (16 options)", cat: "Dining", room: "Living Room", price: 10954, memberPrice: 9859, sku: "SH-10910", tag: "New", ph: "", img: "assets/products/dn026q.webp",
+  { id: "dn026q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (16 options)", cat: "Dining", room: "Living Room", price: 10954, memberPrice: 9859, sku: "SH-10910", tag: "New", ph: "", img: "assets/products/dn026q.webp",
     imgs: ["assets/products/dn026q.webp", "assets/products/dn026q-2.webp", "assets/products/dn026q-3.webp", "assets/products/dn026q-4.webp"],
    
     sizes: [{ label: "140cm / 0 x Dining Chairs (table only)", price: 10954 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 11407 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 12026 }, { label: "200cm / 0 x Dining Chairs (table only)", price: 13098 }, { label: "140cm / Table + 2 x Dining Chairs", price: 16509 }, { label: "160cm / Table + 2 x Dining Chairs", price: 16963 }, { label: "180cm / Table + 2 x Dining Chairs", price: 17581 }, { label: "200cm / Table + 2 x Dining Chairs", price: 18654 }, { label: "140cm / Table + 4 x Dining Chairs", price: 22065 }, { label: "160cm / Table + 4 x Dining Chairs", price: 22519 }, { label: "180cm / Table + 4 x Dining Chairs", price: 23137 }, { label: "200cm / Table + 4 x Dining Chairs", price: 24209 }, { label: "140cm / Table + 6 x Dining Chairs", price: 27620 }, { label: "160cm / Table + 6 x Dining Chairs", price: 28074 }, { label: "180cm / Table + 6 x Dining Chairs", price: 28693 }, { label: "200cm / Table + 6 x Dining Chairs", price: 29765 }],
@@ -6213,7 +6213,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "16", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "dn027q", arriveDays: [28, 33], name: "Slate Dining Table (100cm to 150cm)", cat: "Dining", room: "Living Room", price: 11106, memberPrice: 9995, sku: "SH-10911", tag: "New", ph: "", img: "assets/products/dn027q.webp",
+  { id: "dn027q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (100cm to 150cm)", cat: "Dining", room: "Living Room", price: 11106, memberPrice: 9995, sku: "SH-10911", tag: "New", ph: "", img: "assets/products/dn027q.webp",
     imgs: ["assets/products/dn027q.webp", "assets/products/dn027q-2.webp", "assets/products/dn027q-3.webp", "assets/products/dn027q-4.webp"],
    
     sizes: [{ label: "100cm / 0 x Dining Chairs (table only)", price: 11106 }, { label: "120cm / 0 x Dining Chairs (table only)", price: 12528 }, { label: "130cm / 0 x Dining Chairs (table only)", price: 13439 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 14259 }, { label: "100cm / Table + 2 x Dining Chairs", price: 18057 }, { label: "120cm / Table + 2 x Dining Chairs", price: 19146 }, { label: "130cm / Table + 2 x Dining Chairs", price: 20057 }, { label: "150cm / Table + 2 x Dining Chairs", price: 20878 }, { label: "100cm / Table + 4 x Dining Chairs", price: 24343 }, { label: "120cm / Table + 4 x Dining Chairs", price: 25765 }, { label: "130cm / Table + 4 x Dining Chairs", price: 26676 }, { label: "150cm / Table + 4 x Dining Chairs", price: 27496 }, { label: "100cm / Table + 6 x Dining Chairs", price: 30928 }, { label: "120cm / Table + 6 x Dining Chairs", price: 32350 }, { label: "130cm / Table + 6 x Dining Chairs", price: 33261 }, { label: "150cm / Table + 6 x Dining Chairs", price: 34081 }, { label: "100cm / Table + 8 x Dining Chairs", price: 37580 }, { label: "120cm / Table + 8 x Dining Chairs", price: 39002 }, { label: "130cm / Table + 8 x Dining Chairs", price: 39913 }, { label: "150cm / Table + 8 x Dining Chairs", price: 40733 }],
@@ -6226,7 +6226,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "20", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn028q", arriveDays: [28, 33], name: "Slate Dining Table (16 options)", cat: "Dining", room: "Living Room", price: 11315, memberPrice: 10184, sku: "SH-10912", tag: "New", ph: "", img: "assets/products/dn028q.webp",
+  { id: "dn028q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (16 options)", cat: "Dining", room: "Living Room", price: 11315, memberPrice: 10184, sku: "SH-10912", tag: "New", ph: "", img: "assets/products/dn028q.webp",
     imgs: ["assets/products/dn028q.webp", "assets/products/dn028q-2.webp", "assets/products/dn028q-3.webp", "assets/products/dn028q-4.webp"],
    
     sizes: [{ label: "110cm / 0 x Dining Chairs (table only)", price: 11315 }, { label: "120cm / 0 x Dining Chairs (table only)", price: 12167 }, { label: "130cm / 0 x Dining Chairs (table only)", price: 13037 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 14233 }, { label: "110cm / Table + 2 x Dining Chairs", price: 16500 }, { label: "120cm / Table + 2 x Dining Chairs", price: 17352 }, { label: "130cm / Table + 2 x Dining Chairs", price: 18222 }, { label: "150cm / Table + 2 x Dining Chairs", price: 19419 }, { label: "110cm / Table + 4 x Dining Chairs", price: 21685 }, { label: "120cm / Table + 4 x Dining Chairs", price: 22537 }, { label: "130cm / Table + 4 x Dining Chairs", price: 23407 }, { label: "150cm / Table + 4 x Dining Chairs", price: 24604 }, { label: "110cm / Table + 6 x Dining Chairs", price: 26870 }, { label: "120cm / Table + 6 x Dining Chairs", price: 27722 }, { label: "130cm / Table + 6 x Dining Chairs", price: 28593 }, { label: "150cm / Table + 6 x Dining Chairs", price: 29789 }],
@@ -6239,7 +6239,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "16", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn029q", arriveDays: [28, 33], name: "Leather Dining Table (20 options)", cat: "Dining", room: "Living Room", price: 11470, memberPrice: 10323, sku: "SH-10913", tag: "New", ph: "", img: "assets/products/dn029q.webp",
+  { id: "dn029q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Dining Table (20 options)", cat: "Dining", room: "Living Room", price: 11470, memberPrice: 10323, sku: "SH-10913", tag: "New", ph: "", img: "assets/products/dn029q.webp",
     imgs: ["assets/products/dn029q.webp", "assets/products/dn029q-2.webp", "assets/products/dn029q-3.webp", "assets/products/dn029q-4.webp"],
    
     sizes: [{ label: "130cm / 0 x Dining Chairs (table only)", price: 11470 }, { label: "140cm / 0 x Dining Chairs (table only)", price: 11915 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 12919 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 13600 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 14744 }, { label: "130cm / Table + 2 x Dining Chairs", price: 16656 }, { label: "140cm / Table + 2 x Dining Chairs", price: 17100 }, { label: "150cm / Table + 2 x Dining Chairs", price: 18104 }, { label: "160cm / Table + 2 x Dining Chairs", price: 18785 }, { label: "180cm / Table + 2 x Dining Chairs", price: 19930 }, { label: "130cm / Table + 4 x Dining Chairs", price: 21841 }, { label: "140cm / Table + 4 x Dining Chairs", price: 22285 }, { label: "150cm / Table + 4 x Dining Chairs", price: 23289 }, { label: "160cm / Table + 4 x Dining Chairs", price: 23970 }, { label: "180cm / Table + 4 x Dining Chairs", price: 25115 }, { label: "130cm / Table + 6 x Dining Chairs", price: 27026 }, { label: "140cm / Table + 6 x Dining Chairs", price: 27470 }, { label: "150cm / Table + 6 x Dining Chairs", price: 28474 }, { label: "160cm / Table + 6 x Dining Chairs", price: 29156 }, { label: "180cm / Table + 6 x Dining Chairs", price: 30300 }],
@@ -6252,7 +6252,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Leather", "Options": "20", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "dn030q", arriveDays: [28, 33], name: "Timber Dining Table (110cm to 150cm)", cat: "Dining", room: "Living Room", price: 11807, memberPrice: 10626, sku: "SH-10914", tag: "New", ph: "", img: "assets/products/dn030q.webp",
+  { id: "dn030q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dining Table (110cm to 150cm)", cat: "Dining", room: "Living Room", price: 11807, memberPrice: 10626, sku: "SH-10914", tag: "New", ph: "", img: "assets/products/dn030q.webp",
     imgs: ["assets/products/dn030q.webp", "assets/products/dn030q-2.webp", "assets/products/dn030q-3.webp", "assets/products/dn030q-4.webp"],
    
     sizes: [{ label: "110cm / 0 x Dining Chair (table only)", price: 11807 }, { label: "120cm / 0 x Dining Chair (table only)", price: 12185 }, { label: "130cm / 0 x Dining Chair (table only)", price: 13459 }, { label: "150cm / 0 x Dining Chair (table only)", price: 16222 }, { label: "110cm / Table + 2 x Dining Chairs", price: 16252 }, { label: "120cm / Table + 2 x Dining Chairs", price: 16630 }, { label: "130cm / Table + 2 x Dining Chairs", price: 17904 }, { label: "150cm / Table + 2 x Dining Chairs", price: 20667 }, { label: "110cm / Table + 4 x Dining Chairs", price: 20696 }, { label: "120cm / Table + 4 x Dining Chairs", price: 21074 }, { label: "130cm / Table + 4 x Dining Chairs", price: 22348 }, { label: "150cm / Table + 4 x Dining Chairs", price: 25111 }, { label: "110cm / Table + 6 x Dining Chairs", price: 25141 }, { label: "120cm / Table + 6 x Dining Chairs", price: 25519 }, { label: "130cm / Table + 6 x Dining Chairs", price: 26793 }, { label: "150cm / Table + 6 x Dining Chairs", price: 29556 }],
@@ -6265,7 +6265,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Timber", "Options": "16", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "dn031q", arriveDays: [28, 33], name: "Slate Dining Table (Gold / Silver)", cat: "Dining", room: "Living Room", price: 12289, memberPrice: 11060, sku: "SH-10915", tag: "New", ph: "", img: "assets/products/dn031q.webp",
+  { id: "dn031q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (Gold / Silver)", cat: "Dining", room: "Living Room", price: 12289, memberPrice: 11060, sku: "SH-10915", tag: "New", ph: "", img: "assets/products/dn031q.webp",
     imgs: ["assets/products/dn031q.webp", "assets/products/dn031q-2.webp", "assets/products/dn031q-3.webp", "assets/products/dn031q-4.webp"],
    
     sizes: [{ label: "Gold / 130cm / 0 x Dining Chairs (table only)", price: 12289 }, { label: "Silver / 130cm / 0 x Dining Chairs (table only)", price: 12289 }, { label: "Gold / 140cm / 0 x Dining Chairs (table only)", price: 12811 }, { label: "Silver / 140cm / 0 x Dining Chairs (table only)", price: 12811 }, { label: "Gold / 150cm / 0 x Dining Chairs (table only)", price: 13252 }, { label: "Silver / 150cm / 0 x Dining Chairs (table only)", price: 13252 }, { label: "Gold / 160cm / 0 x Dining Chairs (table only)", price: 13943 }, { label: "Silver / 160cm / 0 x Dining Chairs (table only)", price: 13943 }, { label: "Gold / 180cm / 0 x Dining Chairs (table only)", price: 14811 }, { label: "Silver / 180cm / 0 x Dining Chairs (table only)", price: 14811 }, { label: "Gold / 130cm / Table + 2 x Dining Chairs", price: 17844 }, { label: "Silver / 130cm / Table + 2 x Dining Chairs", price: 17844 }, { label: "Gold / 140cm / Table + 2 x Dining Chairs", price: 18367 }, { label: "Silver / 140cm / Table + 2 x Dining Chairs", price: 18367 }, { label: "Gold / 150cm / Table + 2 x Dining Chairs", price: 18807 }, { label: "Silver / 150cm / Table + 2 x Dining Chairs", price: 18807 }, { label: "Gold / 160cm / Table + 2 x Dining Chairs", price: 19498 }, { label: "Silver / 160cm / Table + 2 x Dining Chairs", price: 19498 }, { label: "Gold / 180cm / Table + 2 x Dining Chairs", price: 20367 }, { label: "Silver / 180cm / Table + 2 x Dining Chairs", price: 20367 }, { label: "Gold / 130cm / Table + 4 x Dining Chairs", price: 23400 }, { label: "Silver / 130cm / Table + 4 x Dining Chairs", price: 23400 }, { label: "Gold / 140cm / Table + 4 x Dining Chairs", price: 23922 }, { label: "Silver / 140cm / Table + 4 x Dining Chairs", price: 23922 }, { label: "Gold / 150cm / Table + 4 x Dining Chairs", price: 24363 }, { label: "Silver / 150cm / Table + 4 x Dining Chairs", price: 24363 }, { label: "Gold / 160cm / Table + 4 x Dining Chairs", price: 25054 }, { label: "Silver / 160cm / Table + 4 x Dining Chairs", price: 25054 }, { label: "Gold / 180cm / Table + 4 x Dining Chairs", price: 25922 }, { label: "Silver / 180cm / Table + 4 x Dining Chairs", price: 25922 }, { label: "Gold / 130cm / Table + 6 x Dining Chairs", price: 28956 }, { label: "Silver / 130cm / Table + 6 x Dining Chairs", price: 28956 }, { label: "Gold / 140cm / Table + 6 x Dining Chairs", price: 29478 }, { label: "Silver / 140cm / Table + 6 x Dining Chairs", price: 29478 }, { label: "Gold / 150cm / Table + 6 x Dining Chairs", price: 29919 }, { label: "Silver / 150cm / Table + 6 x Dining Chairs", price: 29919 }, { label: "Gold / 160cm / Table + 6 x Dining Chairs", price: 30609 }, { label: "Silver / 160cm / Table + 6 x Dining Chairs", price: 30609 }, { label: "Gold / 180cm / Table + 6 x Dining Chairs", price: 31478 }, { label: "Silver / 180cm / Table + 6 x Dining Chairs", price: 31478 }],
@@ -6278,7 +6278,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "40", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn032q", arriveDays: [28, 33], name: "Slate Dining Table (120cm to 150cm)", cat: "Dining", room: "Living Room", price: 12315, memberPrice: 11084, sku: "SH-10916", tag: "New", ph: "", img: "assets/products/dn032q.webp",
+  { id: "dn032q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (120cm to 150cm)", cat: "Dining", room: "Living Room", price: 12315, memberPrice: 11084, sku: "SH-10916", tag: "New", ph: "", img: "assets/products/dn032q.webp",
     imgs: ["assets/products/dn032q.webp", "assets/products/dn032q-2.webp", "assets/products/dn032q-3.webp", "assets/products/dn032q-4.webp"],
    
     sizes: [{ label: "120cm / 0 x Dining Chairs (table only)", price: 12315 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 12941 }, { label: "120cm / Table + 2 x Dining Chairs", price: 17870 }, { label: "150cm / Table + 2 x Dining Chairs", price: 18496 }, { label: "120cm / Table + 4 x Dining Chairs", price: 23426 }, { label: "150cm / Table + 4 x Dining Chairs", price: 24052 }, { label: "120cm / Table + 6 x Dining Chairs", price: 28981 }, { label: "150cm / Table + 6 x Dining Chairs", price: 29607 }],
@@ -6291,7 +6291,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "8", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn033q", arriveDays: [28, 33], name: "Slate Dining Table (90cm to 150cm)", cat: "Dining", room: "Living Room", price: 12467, memberPrice: 11220, sku: "SH-10917", tag: "New", ph: "", img: "assets/products/dn033q.webp",
+  { id: "dn033q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (90cm to 150cm)", cat: "Dining", room: "Living Room", price: 12467, memberPrice: 11220, sku: "SH-10917", tag: "New", ph: "", img: "assets/products/dn033q.webp",
     imgs: ["assets/products/dn033q.webp", "assets/products/dn033q-2.webp", "assets/products/dn033q-3.webp", "assets/products/dn033q-4.webp"],
    
     sizes: [{ label: "Tan / 90cm / 0 x Dining Chair (table only)", price: 12467 }, { label: "Dark Tan / 90cm / 0 x Dining Chair (table only)", price: 12467 }, { label: "Black / 90cm / 0 x Dining Chair (table only)", price: 12467 }, { label: "Tan / 100cm / 0 x Dining Chair (table only)", price: 13359 }, { label: "Dark Tan / 100cm / 0 x Dining Chair (table only)", price: 13359 }, { label: "Black / 100cm / 0 x Dining Chair (table only)", price: 13359 }, { label: "Tan / 110cm / 0 x Dining Chair (table only)", price: 13626 }, { label: "Dark Tan / 110cm / 0 x Dining Chair (table only)", price: 13626 }, { label: "Black / 110cm / 0 x Dining Chair (table only)", price: 13626 }, { label: "Tan / 120cm / 0 x Dining Chair (table only)", price: 14341 }, { label: "Dark Tan / 120cm / 0 x Dining Chair (table only)", price: 14341 }, { label: "Black / 120cm / 0 x Dining Chair (table only)", price: 14341 }, { label: "Tan / 130cm / 0 x Dining Chair (table only)", price: 15404 }, { label: "Dark Tan / 130cm / 0 x Dining Chair (table only)", price: 15404 }, { label: "Black / 130cm / 0 x Dining Chair (table only)", price: 15404 }, { label: "Tan / 150cm / 0 x Dining Chair (table only)", price: 16230 }, { label: "Dark Tan / 150cm / 0 x Dining Chair (table only)", price: 16230 }, { label: "Black / 150cm / 0 x Dining Chair (table only)", price: 16230 }, { label: "Tan / 90cm / Table + 2 x Dining Chairs", price: 17281 }, { label: "Dark Tan / 90cm / Table + 2 x Dining Chairs", price: 17281 }, { label: "Black / 90cm / Table + 2 x Dining Chairs", price: 17281 }, { label: "Tan / 100cm / Table + 2 x Dining Chairs", price: 18174 }, { label: "Dark Tan / 100cm / Table + 2 x Dining Chairs", price: 18174 }, { label: "Black / 100cm / Table + 2 x Dining Chairs", price: 18174 }, { label: "Tan / 110cm / Table + 2 x Dining Chairs", price: 18441 }, { label: "Dark Tan / 110cm / Table + 2 x Dining Chairs", price: 18441 }, { label: "Black / 110cm / Table + 2 x Dining Chairs", price: 18441 }, { label: "Tan / 120cm / Table + 2 x Dining Chairs", price: 19156 }, { label: "Dark Tan / 120cm / Table + 2 x Dining Chairs", price: 19156 }, { label: "Black / 120cm / Table + 2 x Dining Chairs", price: 19156 }, { label: "Tan / 130cm / Table + 2 x Dining Chairs", price: 20219 }, { label: "Dark Tan / 130cm / Table + 2 x Dining Chairs", price: 20219 }, { label: "Black / 130cm / Table + 2 x Dining Chairs", price: 20219 }, { label: "Tan / 150cm / Table + 2 x Dining Chairs", price: 21044 }, { label: "Dark Tan / 150cm / Table + 2 x Dining Chairs", price: 21044 }, { label: "Black / 150cm / Table + 2 x Dining Chairs", price: 21044 }, { label: "Tan / 90cm / Table + 4 x Dining Chairs", price: 22096 }, { label: "Dark Tan / 90cm / Table + 4 x Dining Chairs", price: 22096 }, { label: "Black / 90cm / Table + 4 x Dining Chairs", price: 22096 }, { label: "Tan / 100cm / Table + 4 x Dining Chairs", price: 22989 }, { label: "Dark Tan / 100cm / Table + 4 x Dining Chairs", price: 22989 }, { label: "Black / 100cm / Table + 4 x Dining Chairs", price: 22989 }, { label: "Tan / 110cm / Table + 4 x Dining Chairs", price: 23256 }, { label: "Dark Tan / 110cm / Table + 4 x Dining Chairs", price: 23256 }, { label: "Black / 110cm / Table + 4 x Dining Chairs", price: 23256 }, { label: "Tan / 120cm / Table + 4 x Dining Chairs", price: 23970 }, { label: "Dark Tan / 120cm / Table + 4 x Dining Chairs", price: 23970 }, { label: "Black / 120cm / Table + 4 x Dining Chairs", price: 23970 }, { label: "Tan / 130cm / Table + 4 x Dining Chairs", price: 25033 }, { label: "Dark Tan / 130cm / Table + 4 x Dining Chairs", price: 25033 }, { label: "Black / 130cm / Table + 4 x Dining Chairs", price: 25033 }, { label: "Tan / 150cm / Table + 4 x Dining Chairs", price: 25859 }, { label: "Dark Tan / 150cm / Table + 4 x Dining Chairs", price: 25859 }, { label: "Black / 150cm / Table + 4 x Dining Chairs", price: 25859 }, { label: "Tan / 90cm / Table + 6 x Dining Chairs", price: 26911 }, { label: "Dark Tan / 90cm / Table + 6 x Dining Chairs", price: 26911 }, { label: "Black / 90cm / Table + 6 x Dining Chairs", price: 26911 }, { label: "Tan / 100cm / Table + 6 x Dining Chairs", price: 27804 }, { label: "Dark Tan / 100cm / Table + 6 x Dining Chairs", price: 27804 }, { label: "Black / 100cm / Table + 6 x Dining Chairs", price: 27804 }, { label: "Tan / 110cm / Table + 6 x Dining Chairs", price: 28120 }, { label: "Dark Tan / 110cm / Table + 6 x Dining Chairs", price: 28120 }, { label: "Black / 110cm / Table + 6 x Dining Chairs", price: 28120 }, { label: "Tan / 120cm / Table + 6 x Dining Chairs", price: 28785 }, { label: "Dark Tan / 120cm / Table + 6 x Dining Chairs", price: 28785 }, { label: "Black / 120cm / Table + 6 x Dining Chairs", price: 28785 }, { label: "Tan / 130cm / Table + 6 x Dining Chairs", price: 29848 }, { label: "Dark Tan / 130cm / Table + 6 x Dining Chairs", price: 29848 }, { label: "Black / 130cm / Table + 6 x Dining Chairs", price: 29848 }, { label: "Tan / 150cm / Table + 6 x Dining Chairs", price: 30674 }, { label: "Dark Tan / 150cm / Table + 6 x Dining Chairs", price: 30674 }, { label: "Black / 150cm / Table + 6 x Dining Chairs", price: 30674 }],
@@ -6304,7 +6304,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "72", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn034q", arriveDays: [28, 33], name: "Slate Dining Table (20 options)", cat: "Dining", room: "Living Room", price: 12593, memberPrice: 11334, sku: "SH-10918", tag: "New", ph: "", img: "assets/products/dn034q.webp",
+  { id: "dn034q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Dining Table (20 options)", cat: "Dining", room: "Living Room", price: 12593, memberPrice: 11334, sku: "SH-10918", tag: "New", ph: "", img: "assets/products/dn034q.webp",
     imgs: ["assets/products/dn034q.webp", "assets/products/dn034q-2.webp", "assets/products/dn034q-3.webp", "assets/products/dn034q-4.webp"],
    
     sizes: [{ label: "140cm / 0 x Dining Chairs (table only)", price: 12593 }, { label: "150cm / 0 x Dining Chairs (table only)", price: 12907 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 14167 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 16459 }, { label: "140cm / Table + 2 x Dining Chairs", price: 17778 }, { label: "150cm / Table + 2 x Dining Chairs", price: 18093 }, { label: "160cm / Table + 2 x Dining Chairs", price: 19352 }, { label: "180cm / Table + 2 x Dining Chairs", price: 21644 }, { label: "140cm / Table + 4 x Dining Chairs", price: 22963 }, { label: "150cm / Table + 4 x Dining Chairs", price: 23281 }, { label: "160cm / Table + 4 x Dining Chairs", price: 24537 }, { label: "180cm / Table + 4 x Dining Chairs", price: 26830 }, { label: "140cm / Table + 6 x Dining Chairs", price: 28148 }, { label: "150cm / Table + 6 x Dining Chairs", price: 28463 }, { label: "160cm / Table + 6 x Dining Chairs", price: 29722 }, { label: "180cm / Table + 6 x Dining Chairs", price: 32015 }, { label: "140cm / Table + 8 x Dining Chairs", price: 33333 }, { label: "150cm / Table + 8 x Dining Chairs", price: 33648 }, { label: "160cm / Table + 8 x Dining Chairs", price: 34907 }, { label: "180cm / Table + 8 x Dining Chairs", price: 37200 }],
@@ -6317,7 +6317,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Slate", "Options": "20", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "dn035q", arriveDays: [28, 33], name: "Marble Dining Table (160cm to 240cm)", cat: "Dining", room: "Living Room", price: 14600, memberPrice: 13140, sku: "SH-10919", tag: "New", ph: "", img: "assets/products/dn035q.webp",
+  { id: "dn035q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (160cm to 240cm)", cat: "Dining", room: "Living Room", price: 14600, memberPrice: 13140, sku: "SH-10919", tag: "New", ph: "", img: "assets/products/dn035q.webp",
     imgs: ["assets/products/dn035q.webp", "assets/products/dn035q-2.webp", "assets/products/dn035q-3.webp", "assets/products/dn035q-4.webp"],
    
     sizes: [{ label: "160cm / 0 x Dining Chairs (table only)", price: 14600 }, { label: "160cm / Table + 2 x Dining Chairs", price: 15156 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 15356 }, { label: "200cm / 0 x Dining Chairs (table only)", price: 16722 }, { label: "220cm / 0 x Dining Chairs (table only)", price: 18287 }, { label: "240cm / 0 x Dining Chairs (table only)", price: 18889 }, { label: "180cm / Table + 2 x Dining Chairs", price: 20911 }, { label: "200cm / Table + 2 x Dining Chairs", price: 22278 }, { label: "220cm / Table + 2 x Dining Chairs", price: 23843 }, { label: "240cm / Table + 2 x Dining Chairs", price: 24444 }, { label: "160cm / Table + 4 x Dining Chairs", price: 25711 }, { label: "180cm / Table + 4 x Dining Chairs", price: 26467 }, { label: "200cm / Table + 4 x Dining Chairs", price: 27833 }, { label: "220cm / Table + 4 x Dining Chairs", price: 29398 }, { label: "240cm / Table + 4 x Dining Chairs", price: 30000 }, { label: "160cm / Table + 6 x Dining Chairs", price: 31267 }, { label: "180cm / Table + 6 x Dining Chairs", price: 32022 }, { label: "200cm / Table + 6 x Dining Chairs", price: 33389 }, { label: "220cm / Table + 6 x Dining Chairs", price: 34954 }, { label: "240cm / Table + 6 x Dining Chairs", price: 35556 }, { label: "160cm / Table + 8 x Dining Chairs", price: 36822 }, { label: "180cm / Table + 8 x Dining Chairs", price: 37578 }, { label: "200cm / Table + 8 x Dining Chairs", price: 38944 }, { label: "220cm / Table + 8 x Dining Chairs", price: 40509 }, { label: "240cm / Table + 8 x Dining Chairs", price: 41111 }],
@@ -6330,7 +6330,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "25", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "dn036q", arriveDays: [28, 33], name: "Timber Dining Table (140cm to 280cm)", cat: "Dining", room: "Living Room", price: 14628, memberPrice: 13165, sku: "SH-10920", tag: "New", ph: "", img: "assets/products/dn036q.webp",
+  { id: "dn036q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dining Table (140cm to 280cm)", cat: "Dining", room: "Living Room", price: 14628, memberPrice: 13165, sku: "SH-10920", tag: "New", ph: "", img: "assets/products/dn036q.webp",
     imgs: ["assets/products/dn036q.webp", "assets/products/dn036q-2.webp", "assets/products/dn036q-3.webp", "assets/products/dn036q-4.webp"],
    
     sizes: [{ label: "140cm / 0 x Dining Chairs (table only)", price: 14628 }, { label: "160cm / 0 x Dining Chairs (table only)", price: 16056 }, { label: "180cm / 0 x Dining Chairs (table only)", price: 18148 }, { label: "140cm / Table + 2 x Dining Chairs", price: 19072 }, { label: "200cm / 0 x Dining Chairs (table only)", price: 20143 }, { label: "160cm / Table + 2 x Dining Chairs", price: 20500 }, { label: "220cm / 0 x Dining Chairs (table only)", price: 20685 }, { label: "180cm / Table + 2 x Dining Chairs", price: 22593 }, { label: "240cm / 0 x Dining Chairs (table only)", price: 23435 }, { label: "140cm / Table + 4 x Dining Chairs", price: 23517 }, { label: "260cm / 0 x Dining Chairs (table only)", price: 23867 }, { label: "200cm / Table + 2 x Dining Chairs", price: 24587 }, { label: "280cm / 0 x Dining Chairs (table only)", price: 24907 }, { label: "160cm / Table + 4 x Dining Chairs", price: 24944 }, { label: "220cm / Table + 2 x Dining Chairs", price: 25130 }, { label: "180cm / Table + 4 x Dining Chairs", price: 27037 }, { label: "240cm / Table + 2 x Dining Chairs", price: 27880 }, { label: "140cm / Table + 6 x Dining Chairs", price: 27961 }, { label: "260cm / Table + 2 x Dining Chairs", price: 28311 }, { label: "200cm / Table + 4 x Dining Chairs", price: 29031 }, { label: "280cm / Table + 2 x Dining Chairs", price: 29352 }, { label: "160cm / Table + 6 x Dining Chairs", price: 29389 }, { label: "220cm / Table + 4 x Dining Chairs", price: 29574 }, { label: "180cm / Table + 6 x Dining Chairs", price: 31481 }, { label: "240cm / Table + 4 x Dining Chairs", price: 32324 }, { label: "140cm / Table + 8 x Dining Chairs", price: 32406 }, { label: "260cm / Table + 4 x Dining Chairs", price: 32756 }, { label: "200cm / Table + 6 x Dining Chairs", price: 33476 }, { label: "280cm / Table + 4 x Dining Chairs", price: 33796 }, { label: "160cm / Table + 8 x Dining Chairs", price: 33833 }, { label: "220cm / Table + 6 x Dining Chairs", price: 34019 }, { label: "180cm / Table + 8 x Dining Chairs", price: 35926 }, { label: "240cm / Table + 6 x Dining Chairs", price: 36769 }, { label: "260cm / Table + 6 x Dining Chairs", price: 37200 }, { label: "200cm / Table + 8 x Dining Chairs", price: 37920 }, { label: "280cm / Table + 6 x Dining Chairs", price: 38241 }, { label: "220cm / Table + 8 x Dining Chairs", price: 38463 }, { label: "240cm / Table + 8 x Dining Chairs", price: 41213 }, { label: "260cm / Table + 8 x Dining Chairs", price: 41644 }, { label: "280cm / Table + 8 x Dining Chairs", price: 42685 }],
@@ -6343,7 +6343,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Timber", "Options": "40", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "dn037q", arriveDays: [28, 33], name: "Marble Dining Table (3 options)", cat: "Dining", room: "Living Room", price: 14628, memberPrice: 13165, sku: "SH-10921", tag: "New", ph: "", img: "assets/products/dn037q.webp",
+  { id: "dn037q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble Dining Table (3 options)", cat: "Dining", room: "Living Room", price: 14628, memberPrice: 13165, sku: "SH-10921", tag: "New", ph: "", img: "assets/products/dn037q.webp",
     imgs: ["assets/products/dn037q.webp", "assets/products/dn037q-2.webp", "assets/products/dn037q-3.webp", "assets/products/dn037q-4.webp"],
    
     sizes: [{ label: "140cm", price: 14628 }, { label: "160cm", price: 16269 }, { label: "180cm", price: 19793 }],
@@ -6356,7 +6356,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining Table", "Material": "Marble", "Options": "3", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "tv001q", arriveDays: [28, 33], name: "TV Cabinet", cat: "Living Room", room: "Living Room", price: 3300, memberPrice: 2970, sku: "SH-10922", tag: "New", ph: "", img: "assets/products/tv001q.webp",
+  { id: "tv001q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet", cat: "Living Room", room: "Living Room", price: 3300, memberPrice: 2970, sku: "SH-10922", tag: "New", ph: "", img: "assets/products/tv001q.webp",
     imgs: ["assets/products/tv001q.webp", "assets/products/tv001q-2.webp", "assets/products/tv001q-3.webp", "assets/products/tv001q-4.webp"],
    
     sizes: [{ label: "Grey / 160cm", price: 3300 }, { label: "White / 160cm", price: 3300 }, { label: "Grey / 180cm", price: 3559 }, { label: "White / 180cm", price: 3559 }, { label: "Grey / 200cm", price: 3841 }, { label: "White / 200cm", price: 3841 }, { label: "Grey / 220cm", price: 4139 }, { label: "White / 220cm", price: 4139 }, { label: "Grey / 240cm", price: 4420 }, { label: "White / 240cm", price: 4420 }],
@@ -6369,7 +6369,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "10", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv002q", arriveDays: [28, 33], name: "TV Cabinet (120cm to 240cm)", cat: "Living Room", room: "Living Room", price: 3541, memberPrice: 3187, sku: "SH-10923", tag: "New", ph: "", img: "assets/products/tv002q.webp",
+  { id: "tv002q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (120cm to 240cm)", cat: "Living Room", room: "Living Room", price: 3541, memberPrice: 3187, sku: "SH-10923", tag: "New", ph: "", img: "assets/products/tv002q.webp",
     imgs: ["assets/products/tv002q.webp", "assets/products/tv002q-2.webp", "assets/products/tv002q-3.webp", "assets/products/tv002q-4.webp"],
    
     sizes: [{ label: "120cm / Natural Brown + White", price: 3541 }, { label: "140cm / Natural Brown + White", price: 4176 }, { label: "160cm / Natural Brown + White", price: 4796 }, { label: "180cm / Natural Brown + White", price: 5652 }, { label: "200cm / Natural Brown + White", price: 6217 }, { label: "220cm / Natural Brown + White", price: 6837 }, { label: "240cm / Natural Brown + White", price: 7593 }],
@@ -6382,7 +6382,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "7", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv003q", arriveDays: [28, 33], name: "Timber TV Cabinet", cat: "Living Room", room: "Living Room", price: 4176, memberPrice: 3758, sku: "SH-10924", tag: "New", ph: "", img: "assets/products/tv003q.webp",
+  { id: "tv003q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber TV Cabinet", cat: "Living Room", room: "Living Room", price: 4176, memberPrice: 3758, sku: "SH-10924", tag: "New", ph: "", img: "assets/products/tv003q.webp",
     imgs: ["assets/products/tv003q.webp", "assets/products/tv003q-2.webp", "assets/products/tv003q-3.webp"],
    
     sizes: [{ label: "Natural Brown / 120cm", price: 4176 }, { label: "Natural Brown / 150cm", price: 5093 }, { label: "Natural Brown / 180cm", price: 5806 }],
@@ -6395,7 +6395,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Timber", "Options": "3", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv004q", arriveDays: [28, 33], name: "TV Cabinet (160cm to 240cm)", cat: "Living Room", room: "Living Room", price: 4730, memberPrice: 4257, sku: "SH-10925", tag: "New", ph: "", img: "assets/products/tv004q.webp",
+  { id: "tv004q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (160cm to 240cm)", cat: "Living Room", room: "Living Room", price: 4730, memberPrice: 4257, sku: "SH-10925", tag: "New", ph: "", img: "assets/products/tv004q.webp",
     imgs: ["assets/products/tv004q.webp", "assets/products/tv004q-2.webp", "assets/products/tv004q-3.webp", "assets/products/tv004q-4.webp"],
    
     sizes: [{ label: "160cm / Off White", price: 4730 }, { label: "160cm / Grey", price: 4730 }, { label: "180cm / Off White", price: 5063 }, { label: "180cm / Grey", price: 5063 }, { label: "200cm / Off White", price: 5530 }, { label: "200cm / Grey", price: 5530 }, { label: "220cm / Off White", price: 6193 }, { label: "220cm / Grey", price: 6193 }, { label: "240cm / Off White", price: 6752 }, { label: "240cm / Grey", price: 6752 }],
@@ -6408,7 +6408,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "10", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv005q", arriveDays: [28, 33], name: "Timber TV Cabinet (160cm to 240cm)", cat: "Living Room", room: "Living Room", price: 5407, memberPrice: 4866, sku: "SH-10926", tag: "New", ph: "", img: "assets/products/tv005q.webp",
+  { id: "tv005q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber TV Cabinet (160cm to 240cm)", cat: "Living Room", room: "Living Room", price: 5407, memberPrice: 4866, sku: "SH-10926", tag: "New", ph: "", img: "assets/products/tv005q.webp",
     imgs: ["assets/products/tv005q.webp", "assets/products/tv005q-2.webp", "assets/products/tv005q-3.webp", "assets/products/tv005q-4.webp"],
    
     sizes: [{ label: "160cm", price: 5407 }, { label: "180cm", price: 5704 }, { label: "200cm", price: 6481 }, { label: "220cm", price: 6926 }, { label: "240cm", price: 7333 }],
@@ -6421,7 +6421,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Timber", "Options": "5", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv006q", arriveDays: [28, 33], name: "Timber TV Cabinet (140cm to 200cm)", cat: "Living Room", room: "Living Room", price: 5454, memberPrice: 4909, sku: "SH-10927", tag: "New", ph: "", img: "assets/products/tv006q.webp",
+  { id: "tv006q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber TV Cabinet (140cm to 200cm)", cat: "Living Room", room: "Living Room", price: 5454, memberPrice: 4909, sku: "SH-10927", tag: "New", ph: "", img: "assets/products/tv006q.webp",
     imgs: ["assets/products/tv006q.webp", "assets/products/tv006q-2.webp", "assets/products/tv006q-3.webp", "assets/products/tv006q-4.webp"],
    
     sizes: [{ label: "140cm", price: 5454 }, { label: "150cm", price: 6650 }, { label: "180cm", price: 7704 }, { label: "200cm", price: 8906 }],
@@ -6434,7 +6434,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Timber", "Options": "4", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv007q", arriveDays: [28, 33], name: "Timber TV Cabinet (180cm to 360cm)", cat: "Living Room", room: "Living Room", price: 5752, memberPrice: 5177, sku: "SH-10928", tag: "New", ph: "", img: "assets/products/tv007q.webp",
+  { id: "tv007q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber TV Cabinet (180cm to 360cm)", cat: "Living Room", room: "Living Room", price: 5752, memberPrice: 5177, sku: "SH-10928", tag: "New", ph: "", img: "assets/products/tv007q.webp",
     imgs: ["assets/products/tv007q.webp", "assets/products/tv007q-2.webp", "assets/products/tv007q-3.webp", "assets/products/tv007q-4.webp"],
    
     sizes: [{ label: "180cm", price: 5752 }, { label: "200cm", price: 6696 }, { label: "220cm", price: 7270 }, { label: "240cm", price: 7831 }, { label: "300cm", price: 9902 }, { label: "360cm", price: 10765 }],
@@ -6447,7 +6447,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Timber", "Options": "6", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv008q", arriveDays: [28, 33], name: "TV Cabinet (180cm to 300cm)", cat: "Living Room", room: "Living Room", price: 6637, memberPrice: 5973, sku: "SH-10929", tag: "New", ph: "", img: "assets/products/tv008q.webp",
+  { id: "tv008q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (180cm to 300cm)", cat: "Living Room", room: "Living Room", price: 6637, memberPrice: 5973, sku: "SH-10929", tag: "New", ph: "", img: "assets/products/tv008q.webp",
     imgs: ["assets/products/tv008q.webp", "assets/products/tv008q-2.webp", "assets/products/tv008q-3.webp", "assets/products/tv008q-4.webp"],
    
     sizes: [{ label: "180cm / Charcoal Grey", price: 6637 }, { label: "180cm / White", price: 6637 }, { label: "180cm / Brown + Black", price: 6637 }, { label: "180cm / Black", price: 6637 }, { label: "180cm / Brown + White", price: 6637 }, { label: "200cm / Charcoal Grey", price: 7830 }, { label: "200cm / White", price: 7830 }, { label: "200cm / Brown + Black", price: 7830 }, { label: "200cm / Black", price: 7830 }, { label: "200cm / Brown + White", price: 7830 }, { label: "240cm / Charcoal Grey", price: 8833 }, { label: "240cm / White", price: 8833 }, { label: "240cm / Brown + Black", price: 8833 }, { label: "240cm / Black", price: 8833 }, { label: "240cm / Brown + White", price: 8833 }, { label: "300cm / Charcoal Grey", price: 9778 }, { label: "300cm / White", price: 9778 }, { label: "300cm / Brown + Black", price: 9778 }, { label: "300cm / Black", price: 9778 }, { label: "300cm / Brown + White", price: 9778 }],
@@ -6460,7 +6460,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "20", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv009q", arriveDays: [28, 33], name: "Slate TV Cabinet", cat: "Living Room", room: "Living Room", price: 6694, memberPrice: 6025, sku: "SH-10930", tag: "New", ph: "", img: "assets/products/tv009q.webp",
+  { id: "tv009q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate TV Cabinet", cat: "Living Room", room: "Living Room", price: 6694, memberPrice: 6025, sku: "SH-10930", tag: "New", ph: "", img: "assets/products/tv009q.webp",
     imgs: ["assets/products/tv009q.webp", "assets/products/tv009q-2.webp", "assets/products/tv009q-3.webp", "assets/products/tv009q-4.webp"],
    
     sizes: [{ label: "180cm", price: 6694 }, { label: "240cm", price: 8537 }, { label: "300cm", price: 10137 }, { label: "360cm", price: 11615 }],
@@ -6473,7 +6473,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Slate", "Options": "4", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "tv010q", arriveDays: [28, 33], name: "TV Cabinet (180cm to 200cm)", cat: "Living Room", room: "Living Room", price: 6722, memberPrice: 6050, sku: "SH-10931", tag: "New", ph: "", img: "assets/products/tv010q.webp",
+  { id: "tv010q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (180cm to 200cm)", cat: "Living Room", room: "Living Room", price: 6722, memberPrice: 6050, sku: "SH-10931", tag: "New", ph: "", img: "assets/products/tv010q.webp",
     imgs: ["assets/products/tv010q.webp", "assets/products/tv010q-2.webp", "assets/products/tv010q-3.webp", "assets/products/tv010q-4.webp"],
    
     sizes: [{ label: "180cm", price: 6722 }, { label: "200cm", price: 8722 }],
@@ -6485,7 +6485,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv011q", arriveDays: [28, 33], name: "TV Cabinet (160cm to 300cm)", cat: "Living Room", room: "Living Room", price: 6830, memberPrice: 6147, sku: "SH-10932", tag: "New", ph: "", img: "assets/products/tv011q.webp",
+  { id: "tv011q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (160cm to 300cm)", cat: "Living Room", room: "Living Room", price: 6830, memberPrice: 6147, sku: "SH-10932", tag: "New", ph: "", img: "assets/products/tv011q.webp",
     imgs: ["assets/products/tv011q.webp", "assets/products/tv011q-2.webp", "assets/products/tv011q-3.webp", "assets/products/tv011q-4.webp"],
    
     sizes: [{ label: "160cm", price: 6830 }, { label: "180cm", price: 7593 }, { label: "200cm", price: 8044 }, { label: "220cm", price: 8804 }, { label: "240cm", price: 9396 }, { label: "260cm", price: 10556 }, { label: "280cm", price: 11959 }, { label: "300cm", price: 12552 }],
@@ -6497,7 +6497,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "8", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv012q", arriveDays: [28, 33], name: "TV Cabinet (Grey)", cat: "Living Room", room: "Living Room", price: 7019, memberPrice: 6317, sku: "SH-10933", tag: "New", ph: "", img: "assets/products/tv012q.webp",
+  { id: "tv012q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (Grey)", cat: "Living Room", room: "Living Room", price: 7019, memberPrice: 6317, sku: "SH-10933", tag: "New", ph: "", img: "assets/products/tv012q.webp",
     imgs: ["assets/products/tv012q.webp", "assets/products/tv012q-2.webp", "assets/products/tv012q-3.webp", "assets/products/tv012q-4.webp"],
    
     sizes: [{ label: "Grey", price: 7019 }],
@@ -6508,7 +6508,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "1", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv013q", arriveDays: [28, 33], name: "Slate TV Cabinet (180cm to 300cm)", cat: "Living Room", room: "Living Room", price: 7222, memberPrice: 6500, sku: "SH-10934", tag: "New", ph: "", img: "assets/products/tv013q.webp",
+  { id: "tv013q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate TV Cabinet (180cm to 300cm)", cat: "Living Room", room: "Living Room", price: 7222, memberPrice: 6500, sku: "SH-10934", tag: "New", ph: "", img: "assets/products/tv013q.webp",
     imgs: ["assets/products/tv013q.webp", "assets/products/tv013q-2.webp", "assets/products/tv013q-3.webp", "assets/products/tv013q-4.webp"],
    
     sizes: [{ label: "180cm", price: 7222 }, { label: "200cm", price: 7819 }, { label: "220cm", price: 8274 }, { label: "240cm", price: 8667 }, { label: "260cm", price: 9237 }, { label: "280cm", price: 10048 }, { label: "300cm", price: 10574 }],
@@ -6521,7 +6521,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Slate", "Options": "7", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "tv014q", arriveDays: [28, 33], name: "Walnut TV Cabinet", cat: "Living Room", room: "Living Room", price: 7333, memberPrice: 6600, sku: "SH-10935", tag: "New", ph: "", img: "assets/products/tv014q.webp",
+  { id: "tv014q", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut TV Cabinet", cat: "Living Room", room: "Living Room", price: 7333, memberPrice: 6600, sku: "SH-10935", tag: "New", ph: "", img: "assets/products/tv014q.webp",
     imgs: ["assets/products/tv014q.webp", "assets/products/tv014q-2.webp", "assets/products/tv014q-3.webp", "assets/products/tv014q-4.webp"],
    
     sizes: [{ label: "Walnut + White / 180cm", price: 7333 }, { label: "Walnut + Black / 180cm", price: 7333 }, { label: "Black + White / 180cm", price: 7333 }, { label: "Walnut + White / 200cm", price: 8204 }, { label: "Walnut + Black / 200cm", price: 8204 }, { label: "Black + White / 200cm", price: 8204 }, { label: "Walnut + White / 220cm", price: 9011 }, { label: "Walnut + Black / 220cm", price: 9011 }, { label: "Black + White / 220cm", price: 9011 }, { label: "Walnut + White / 240cm", price: 9772 }, { label: "Walnut + Black / 240cm", price: 9772 }, { label: "Black + White / 240cm", price: 9772 }],
@@ -6534,7 +6534,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Walnut", "Options": "12", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv015q", arriveDays: [28, 33], name: "Timber TV Cabinet (160cm to 260cm)", cat: "Living Room", room: "Living Room", price: 7370, memberPrice: 6633, sku: "SH-10936", tag: "New", ph: "", img: "assets/products/tv015q.webp",
+  { id: "tv015q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber TV Cabinet (160cm to 260cm)", cat: "Living Room", room: "Living Room", price: 7370, memberPrice: 6633, sku: "SH-10936", tag: "New", ph: "", img: "assets/products/tv015q.webp",
     imgs: ["assets/products/tv015q.webp", "assets/products/tv015q-2.webp", "assets/products/tv015q-3.webp", "assets/products/tv015q-4.webp"],
    
     sizes: [{ label: "Brown / 160cm", price: 7370 }, { label: "Black / 160cm", price: 7370 }, { label: "Brown / 180cm", price: 7843 }, { label: "Black / 180cm", price: 7843 }, { label: "Brown / 200cm", price: 9106 }, { label: "Black / 200cm", price: 9106 }, { label: "Brown / 220cm", price: 10056 }, { label: "Black / 220cm", price: 10056 }, { label: "Brown / 240cm", price: 10611 }, { label: "Black / 240cm", price: 10611 }, { label: "Brown / 260cm", price: 11665 }, { label: "Black / 260cm", price: 11665 }],
@@ -6547,7 +6547,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Timber", "Options": "12", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv016q", arriveDays: [28, 33], name: "Marble TV Cabinet", cat: "Living Room", room: "Living Room", price: 7404, memberPrice: 6664, sku: "SH-10937", tag: "New", ph: "", img: "assets/products/tv016q.webp",
+  { id: "tv016q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble TV Cabinet", cat: "Living Room", room: "Living Room", price: 7404, memberPrice: 6664, sku: "SH-10937", tag: "New", ph: "", img: "assets/products/tv016q.webp",
     imgs: ["assets/products/tv016q.webp", "assets/products/tv016q-2.webp", "assets/products/tv016q-3.webp"],
    
     sizes: [{ label: "200cm", price: 7404 }, { label: "260cm", price: 8444 }, { label: "300cm", price: 9235 }, { label: "360cm", price: 10122 }],
@@ -6560,7 +6560,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Marble", "Options": "4", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "tv017q", arriveDays: [28, 33], name: "Timber TV Cabinet (180cm to 210cm)", cat: "Living Room", room: "Living Room", price: 7589, memberPrice: 6830, sku: "SH-10938", tag: "New", ph: "", img: "assets/products/tv017q.webp",
+  { id: "tv017q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber TV Cabinet (180cm to 210cm)", cat: "Living Room", room: "Living Room", price: 7589, memberPrice: 6830, sku: "SH-10938", tag: "New", ph: "", img: "assets/products/tv017q.webp",
     imgs: ["assets/products/tv017q.webp", "assets/products/tv017q-2.webp", "assets/products/tv017q-3.webp", "assets/products/tv017q-4.webp"],
    
     sizes: [{ label: "180cm", price: 7589 }, { label: "210cm", price: 8781 }],
@@ -6573,7 +6573,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Timber", "Options": "2", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv018q", arriveDays: [28, 33], name: "TV Cabinet (180cm to 240cm)", cat: "Living Room", room: "Living Room", price: 7926, memberPrice: 7133, sku: "SH-10939", tag: "New", ph: "", img: "assets/products/tv018q.webp",
+  { id: "tv018q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (180cm to 240cm)", cat: "Living Room", room: "Living Room", price: 7926, memberPrice: 7133, sku: "SH-10939", tag: "New", ph: "", img: "assets/products/tv018q.webp",
     imgs: ["assets/products/tv018q.webp", "assets/products/tv018q-2.webp", "assets/products/tv018q-3.webp", "assets/products/tv018q-4.webp"],
    
     sizes: [{ label: "180cm / Black", price: 7926 }, { label: "180cm / White", price: 7926 }, { label: "180cm / Cream", price: 7926 }, { label: "180cm / Black + White", price: 7926 }, { label: "180cm / Grey", price: 7926 }, { label: "180cm / White + Tan", price: 7926 }, { label: "180cm / Black + Grey", price: 7926 }, { label: "200cm / Black", price: 8213 }, { label: "200cm / White", price: 8213 }, { label: "200cm / Cream", price: 8213 }, { label: "200cm / Black + White", price: 8213 }, { label: "200cm / Grey", price: 8213 }, { label: "200cm / White + Tan", price: 8213 }, { label: "200cm / Black + Grey", price: 8213 }, { label: "220cm / Black", price: 8620 }, { label: "220cm / White", price: 8620 }, { label: "220cm / Cream", price: 8620 }, { label: "220cm / Black + White", price: 8620 }, { label: "220cm / Grey", price: 8620 }, { label: "220cm / White + Tan", price: 8620 }, { label: "220cm / Black + Grey", price: 8620 }, { label: "240cm / Black", price: 9222 }, { label: "240cm / White", price: 9222 }, { label: "240cm / Cream", price: 9222 }, { label: "240cm / Black + White", price: 9222 }, { label: "240cm / Grey", price: 9222 }, { label: "240cm / White + Tan", price: 9222 }, { label: "240cm / Black + Grey", price: 9222 }],
@@ -6586,7 +6586,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "28", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv019q", arriveDays: [28, 33], name: "TV Cabinet (200cm to 240cm)", cat: "Living Room", room: "Living Room", price: 8352, memberPrice: 7517, sku: "SH-10940", tag: "New", ph: "", img: "assets/products/tv019q.webp",
+  { id: "tv019q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (200cm to 240cm)", cat: "Living Room", room: "Living Room", price: 8352, memberPrice: 7517, sku: "SH-10940", tag: "New", ph: "", img: "assets/products/tv019q.webp",
     imgs: ["assets/products/tv019q.webp", "assets/products/tv019q-2.webp", "assets/products/tv019q-3.webp", "assets/products/tv019q-4.webp"],
    
     sizes: [{ label: "200cm / Gold + Ivory", price: 8352 }, { label: "200cm / Ivory (Wall Mounted)", price: 8352 }, { label: "200cm / Silver + Ivory", price: 8352 }, { label: "220cm / Gold + Ivory", price: 8685 }, { label: "220cm / Ivory (Wall Mounted)", price: 8685 }, { label: "220cm / Silver + Ivory", price: 8685 }, { label: "240cm / Gold + Ivory", price: 9215 }, { label: "240cm / Silver + Ivory", price: 9215 }, { label: "240cm / Ivory (Wall Mounted)", price: 9215 }],
@@ -6599,7 +6599,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "9", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv020q", arriveDays: [28, 33], name: "Steel TV Cabinet", cat: "Living Room", room: "Living Room", price: 9237, memberPrice: 8313, sku: "SH-10941", tag: "New", ph: "", img: "assets/products/tv020q.webp",
+  { id: "tv020q", arriveDays: [28, 33], expressOpt: 7000, name: "Steel TV Cabinet", cat: "Living Room", room: "Living Room", price: 9237, memberPrice: 8313, sku: "SH-10941", tag: "New", ph: "", img: "assets/products/tv020q.webp",
     imgs: ["assets/products/tv020q.webp", "assets/products/tv020q-2.webp", "assets/products/tv020q-3.webp", "assets/products/tv020q-4.webp"],
    
     sizes: [{ label: "180 - 260cm", price: 9237 }],
@@ -6611,7 +6611,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Steel", "Options": "1", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "tv021q", arriveDays: [28, 33], name: "Timber TV Cabinet (150cm to 200cm)", cat: "Living Room", room: "Living Room", price: 9630, memberPrice: 8667, sku: "SH-10942", tag: "New", ph: "", img: "assets/products/tv021q.webp",
+  { id: "tv021q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber TV Cabinet (150cm to 200cm)", cat: "Living Room", room: "Living Room", price: 9630, memberPrice: 8667, sku: "SH-10942", tag: "New", ph: "", img: "assets/products/tv021q.webp",
     imgs: ["assets/products/tv021q.webp", "assets/products/tv021q-2.webp", "assets/products/tv021q-3.webp", "assets/products/tv021q-4.webp"],
    
     sizes: [{ label: "150cm / Light Brown", price: 9630 }, { label: "150cm / Brown", price: 9630 }, { label: "150cm / Chocolate", price: 9630 }, { label: "180cm / Light Brown", price: 10722 }, { label: "180cm / Brown", price: 10722 }, { label: "180cm / Chocolate", price: 10722 }, { label: "200cm / Light Brown", price: 11630 }, { label: "200cm / Brown", price: 11630 }, { label: "200cm / Chocolate", price: 11630 }],
@@ -6624,7 +6624,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Timber", "Options": "9", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv022q", arriveDays: [28, 33], name: "TV Cabinet (180cm to 220cm)", cat: "Living Room", room: "Living Room", price: 11606, memberPrice: 10445, sku: "SH-10943", tag: "New", ph: "", img: "assets/products/tv022q.webp",
+  { id: "tv022q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (180cm to 220cm)", cat: "Living Room", room: "Living Room", price: 11606, memberPrice: 10445, sku: "SH-10943", tag: "New", ph: "", img: "assets/products/tv022q.webp",
     imgs: ["assets/products/tv022q.webp", "assets/products/tv022q-2.webp", "assets/products/tv022q-3.webp", "assets/products/tv022q-4.webp"],
    
     sizes: [{ label: "180cm", price: 11606 }, { label: "200cm", price: 12111 }, { label: "200cm (without feet)", price: 12111 }, { label: "220cm", price: 12926 }, { label: "220cm (without feet)", price: 12926 }],
@@ -6636,7 +6636,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "5", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv023q", arriveDays: [28, 33], name: "TV Cabinet (3 options)", cat: "Living Room", room: "Living Room", price: 11641, memberPrice: 10477, sku: "SH-10944", tag: "New", ph: "", img: "assets/products/tv023q.webp",
+  { id: "tv023q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (3 options)", cat: "Living Room", room: "Living Room", price: 11641, memberPrice: 10477, sku: "SH-10944", tag: "New", ph: "", img: "assets/products/tv023q.webp",
     imgs: ["assets/products/tv023q.webp", "assets/products/tv023q-2.webp", "assets/products/tv023q-3.webp", "assets/products/tv023q-4.webp"],
    
     sizes: [{ label: "200cm", price: 11641 }, { label: "220cm", price: 12919 }, { label: "240cm", price: 13796 }],
@@ -6648,7 +6648,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "3", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv024q", arriveDays: [28, 33], name: "Marble TV Cabinet (200cm to 260cm)", cat: "Living Room", room: "Living Room", price: 11822, memberPrice: 10640, sku: "SH-10945", tag: "New", ph: "", img: "assets/products/tv024q.webp",
+  { id: "tv024q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble TV Cabinet (200cm to 260cm)", cat: "Living Room", room: "Living Room", price: 11822, memberPrice: 10640, sku: "SH-10945", tag: "New", ph: "", img: "assets/products/tv024q.webp",
     imgs: ["assets/products/tv024q.webp", "assets/products/tv024q-2.webp", "assets/products/tv024q-3.webp", "assets/products/tv024q-4.webp"],
    
     sizes: [{ label: "200cm", price: 11822 }, { label: "220cm", price: 12933 }, { label: "240cm", price: 14044 }, { label: "260cm", price: 15156 }],
@@ -6661,7 +6661,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Marble", "Options": "4", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "tv025q", arriveDays: [28, 33], name: "Marble TV Cabinet (180cm to 240cm)", cat: "Living Room", room: "Living Room", price: 12528, memberPrice: 11275, sku: "SH-10946", tag: "New", ph: "", img: "assets/products/tv025q.webp",
+  { id: "tv025q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble TV Cabinet (180cm to 240cm)", cat: "Living Room", room: "Living Room", price: 12528, memberPrice: 11275, sku: "SH-10946", tag: "New", ph: "", img: "assets/products/tv025q.webp",
     imgs: ["assets/products/tv025q.webp", "assets/products/tv025q-2.webp", "assets/products/tv025q-3.webp"],
    
     sizes: [{ label: "180cm", price: 12528 }, { label: "200cm", price: 13498 }, { label: "220cm", price: 14209 }, { label: "240cm", price: 14763 }],
@@ -6674,7 +6674,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Marble", "Options": "4", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "tv026q", arriveDays: [28, 33], name: "Marble TV Cabinet (200cm to 240cm)", cat: "Living Room", room: "Living Room", price: 12546, memberPrice: 11291, sku: "SH-10947", tag: "New", ph: "", img: "assets/products/tv026q.webp",
+  { id: "tv026q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble TV Cabinet (200cm to 240cm)", cat: "Living Room", room: "Living Room", price: 12546, memberPrice: 11291, sku: "SH-10947", tag: "New", ph: "", img: "assets/products/tv026q.webp",
     imgs: ["assets/products/tv026q.webp", "assets/products/tv026q-2.webp", "assets/products/tv026q-3.webp", "assets/products/tv026q-4.webp"],
    
     sizes: [{ label: "200cm", price: 12546 }, { label: "220cm", price: 13222 }, { label: "240cm", price: 13887 }],
@@ -6687,7 +6687,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Marble", "Options": "3", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "tv027q", arriveDays: [28, 33], name: "TV Cabinet (320cm)", cat: "Living Room", room: "Living Room", price: 13496, memberPrice: 12146, sku: "SH-10948", tag: "New", ph: "", img: "assets/products/tv027q.webp",
+  { id: "tv027q", arriveDays: [28, 33], expressOpt: 7000, name: "TV Cabinet (320cm)", cat: "Living Room", room: "Living Room", price: 13496, memberPrice: 12146, sku: "SH-10948", tag: "New", ph: "", img: "assets/products/tv027q.webp",
     imgs: ["assets/products/tv027q.webp", "assets/products/tv027q-2.webp", "assets/products/tv027q-3.webp", "assets/products/tv027q-4.webp"],
    
     sizes: [{ label: "240-320cm", price: 13496 }],
@@ -6698,7 +6698,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Mixed", "Options": "1", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "tv028q", arriveDays: [28, 33], name: "Marble TV Cabinet (5 options)", cat: "Living Room", room: "Living Room", price: 13857, memberPrice: 12471, sku: "SH-10949", tag: "New", ph: "", img: "assets/products/tv028q.webp",
+  { id: "tv028q", arriveDays: [28, 33], expressOpt: 7000, name: "Marble TV Cabinet (5 options)", cat: "Living Room", room: "Living Room", price: 13857, memberPrice: 12471, sku: "SH-10949", tag: "New", ph: "", img: "assets/products/tv028q.webp",
     imgs: ["assets/products/tv028q.webp", "assets/products/tv028q-2.webp", "assets/products/tv028q-3.webp", "assets/products/tv028q-4.webp"],
    
     sizes: [{ label: "A", price: 13857 }, { label: "B", price: 13857 }, { label: "C", price: 13857 }, { label: "D", price: 13857 }, { label: "E", price: 13857 }],
@@ -6710,7 +6710,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Marble", "Options": "5", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry. Marble is porous, so use coasters and clear spills quickly, especially wine, citrus and oil. Avoid acidic or abrasive cleaners." },
 
-  { id: "tv029q", arriveDays: [28, 33], name: "Oak TV Cabinet", cat: "Living Room", room: "Living Room", price: 13870, memberPrice: 12483, sku: "SH-10950", tag: "New", ph: "", img: "assets/products/tv029q.webp",
+  { id: "tv029q", arriveDays: [28, 33], expressOpt: 7000, name: "Oak TV Cabinet", cat: "Living Room", room: "Living Room", price: 13870, memberPrice: 12483, sku: "SH-10950", tag: "New", ph: "", img: "assets/products/tv029q.webp",
     imgs: ["assets/products/tv029q.webp", "assets/products/tv029q-2.webp", "assets/products/tv029q-3.webp", "assets/products/tv029q-4.webp"],
    
     sizes: [{ label: "160cm", price: 13870 }, { label: "180cm", price: 16352 }, { label: "200cm", price: 16667 }, { label: "220cm", price: 18204 }, { label: "240cm", price: 19907 }],
@@ -6723,7 +6723,7 @@ const PRODUCTS = [
     specs: { "Type": "TV Cabinet", "Material": "Oak", "Options": "5", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "bk001q", arriveDays: [28, 33], name: "Bookshelf", cat: "Living Room", room: "Living Room", price: 1130, memberPrice: 1017, sku: "SH-10951", tag: "New", ph: "", img: "assets/products/bk001q.webp",
+  { id: "bk001q", arriveDays: [28, 33], expressOpt: 7000, name: "Bookshelf", cat: "Living Room", room: "Living Room", price: 1130, memberPrice: 1017, sku: "SH-10951", tag: "New", ph: "", img: "assets/products/bk001q.webp",
     imgs: ["assets/products/bk001q.webp", "assets/products/bk001q-2.webp", "assets/products/bk001q-3.webp", "assets/products/bk001q-4.webp"],
    
     sizes: [{ label: "Black / 2 x Shelves", price: 1130 }, { label: "Gold / 2 x Shelves", price: 1130 }, { label: "Black / 3 x Shelves", price: 2011 }, { label: "Gold / 3 x Shelves", price: 2011 }, { label: "Black / 4 x Shelves", price: 2939 }, { label: "Gold / 4 x Shelves", price: 2939 }, { label: "Black / 5 x Shelves", price: 3678 }, { label: "Gold / 5 x Shelves", price: 3678 }],
@@ -6735,7 +6735,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Mixed", "Options": "8", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "bk002q", arriveDays: [28, 33], name: "Metal Bookshelf", cat: "Living Room", room: "Living Room", price: 2189, memberPrice: 1970, sku: "SH-10952", tag: "New", ph: "", img: "assets/products/bk002q.webp",
+  { id: "bk002q", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Bookshelf", cat: "Living Room", room: "Living Room", price: 2189, memberPrice: 1970, sku: "SH-10952", tag: "New", ph: "", img: "assets/products/bk002q.webp",
     imgs: ["assets/products/bk002q.webp", "assets/products/bk002q-2.webp", "assets/products/bk002q-3.webp", "assets/products/bk002q-4.webp"],
    
     sizes: [{ label: "White / 3 x Shelves", price: 2189 }, { label: "Gold / 3 x Shelves", price: 2189 }, { label: "Black / 3 x Shelves", price: 2189 }, { label: "White / 4 x Shelves", price: 2365 }, { label: "Gold / 4 x Shelves", price: 2365 }, { label: "Black / 4 x Shelves", price: 2365 }, { label: "White / 5 x Shelves", price: 2606 }, { label: "Gold / 5 x Shelves", price: 2606 }, { label: "Black / 5 x Shelves", price: 2606 }, { label: "White / 6 x Shelves", price: 2769 }, { label: "Gold / 6 x Shelves", price: 2769 }, { label: "Black / 6 x Shelves", price: 2769 }],
@@ -6748,7 +6748,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Metal", "Options": "12", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "bk003q", arriveDays: [28, 33], name: "Timber Bookshelf", cat: "Living Room", room: "Living Room", price: 3074, memberPrice: 2767, sku: "SH-10953", tag: "New", ph: "", img: "assets/products/bk003q.webp",
+  { id: "bk003q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Bookshelf", cat: "Living Room", room: "Living Room", price: 3074, memberPrice: 2767, sku: "SH-10953", tag: "New", ph: "", img: "assets/products/bk003q.webp",
     imgs: ["assets/products/bk003q.webp", "assets/products/bk003q-2.webp", "assets/products/bk003q-3.webp"],
    
     sizes: [{ label: "80cm / Black", price: 3074 }, { label: "80cm / Black + Brown", price: 3074 }, { label: "80cm / White + Brown", price: 3074 }, { label: "100cm / Black", price: 3230 }, { label: "100cm / Black + Brown", price: 3230 }, { label: "100cm / White + Brown", price: 3230 }, { label: "120cm / Black", price: 3815 }, { label: "120cm / Black + Brown", price: 3815 }, { label: "120cm / White + Brown", price: 3815 }, { label: "140cm / Black", price: 3981 }, { label: "140cm / Black + Brown", price: 3981 }, { label: "140cm / White + Brown", price: 3981 }, { label: "160cm / Black", price: 4163 }, { label: "160cm / Black + Brown", price: 4163 }, { label: "160cm / White + Brown", price: 4163 }],
@@ -6761,7 +6761,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Timber", "Options": "15", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "bk004q", arriveDays: [28, 33], name: "Bookshelf (Black / Gold)", cat: "Living Room", room: "Living Room", price: 4939, memberPrice: 4445, sku: "SH-10954", tag: "New", ph: "", img: "assets/products/bk004q.webp",
+  { id: "bk004q", arriveDays: [28, 33], expressOpt: 7000, name: "Bookshelf (Black / Gold)", cat: "Living Room", room: "Living Room", price: 4939, memberPrice: 4445, sku: "SH-10954", tag: "New", ph: "", img: "assets/products/bk004q.webp",
     imgs: ["assets/products/bk004q.webp", "assets/products/bk004q-2.webp", "assets/products/bk004q-3.webp", "assets/products/bk004q-4.webp"],
    
     sizes: [{ label: "Black / Rectangle", price: 4939 }, { label: "Gold / Rectangle", price: 4939 }, { label: "Black / Square", price: 5587 }, { label: "Gold / Square", price: 5587 }],
@@ -6773,7 +6773,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Mixed", "Options": "4", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "bk005q", arriveDays: [28, 33], name: "Steel Bookshelf", cat: "Living Room", room: "Living Room", price: 4991, memberPrice: 4492, sku: "SH-10955", tag: "New", ph: "", img: "assets/products/bk005q.webp",
+  { id: "bk005q", arriveDays: [28, 33], expressOpt: 7000, name: "Steel Bookshelf", cat: "Living Room", room: "Living Room", price: 4991, memberPrice: 4492, sku: "SH-10955", tag: "New", ph: "", img: "assets/products/bk005q.webp",
     imgs: ["assets/products/bk005q.webp", "assets/products/bk005q-2.webp", "assets/products/bk005q-3.webp", "assets/products/bk005q-4.webp"],
    
     sizes: [{ label: "Black + Gold", price: 4991 }],
@@ -6785,7 +6785,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Steel", "Options": "1", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "bk006q", arriveDays: [28, 33], name: "Timber Bookshelf (80cm to 120cm)", cat: "Living Room", room: "Living Room", price: 5637, memberPrice: 5073, sku: "SH-10956", tag: "New", ph: "", img: "assets/products/bk006q.webp",
+  { id: "bk006q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Bookshelf (80cm to 120cm)", cat: "Living Room", room: "Living Room", price: 5637, memberPrice: 5073, sku: "SH-10956", tag: "New", ph: "", img: "assets/products/bk006q.webp",
     imgs: ["assets/products/bk006q.webp", "assets/products/bk006q-2.webp", "assets/products/bk006q-3.webp", "assets/products/bk006q-4.webp"],
    
     sizes: [{ label: "80cm", price: 5637 }, { label: "90cm", price: 6204 }, { label: "100cm", price: 6585 }, { label: "110cm", price: 6937 }, { label: "120cm", price: 7293 }],
@@ -6798,7 +6798,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Timber", "Options": "5", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "bk007q", arriveDays: [28, 33], name: "Bookshelf (Gold)", cat: "Living Room", room: "Living Room", price: 8219, memberPrice: 7397, sku: "SH-10957", tag: "New", ph: "", img: "assets/products/bk007q.webp",
+  { id: "bk007q", arriveDays: [28, 33], expressOpt: 7000, name: "Bookshelf (Gold)", cat: "Living Room", room: "Living Room", price: 8219, memberPrice: 7397, sku: "SH-10957", tag: "New", ph: "", img: "assets/products/bk007q.webp",
     imgs: ["assets/products/bk007q.webp", "assets/products/bk007q-2.webp", "assets/products/bk007q-3.webp", "assets/products/bk007q-4.webp"],
    
     sizes: [{ label: "Gold", price: 8219 }],
@@ -6809,7 +6809,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Mixed", "Options": "1", "Room": "Living Room" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "bk008q", arriveDays: [28, 33], name: "Steel Bookshelf (210cm to 325cm)", cat: "Living Room", room: "Living Room", price: 8609, memberPrice: 7748, sku: "SH-10958", tag: "New", ph: "", img: "assets/products/bk008q.webp",
+  { id: "bk008q", arriveDays: [28, 33], expressOpt: 7000, name: "Steel Bookshelf (210cm to 325cm)", cat: "Living Room", room: "Living Room", price: 8609, memberPrice: 7748, sku: "SH-10958", tag: "New", ph: "", img: "assets/products/bk008q.webp",
     imgs: ["assets/products/bk008q.webp", "assets/products/bk008q-2.webp", "assets/products/bk008q-3.webp", "assets/products/bk008q-4.webp"],
    
     sizes: [{ label: "210cm", price: 8609 }, { label: "240cm", price: 9204 }, { label: "256cm", price: 9978 }, { label: "310cm", price: 10181 }, { label: "325cm", price: 10513 }],
@@ -6822,7 +6822,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Steel", "Options": "5", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "bk009q", arriveDays: [28, 33], name: "Steel Bookshelf (180cm to 300cm)", cat: "Living Room", room: "Living Room", price: 10370, memberPrice: 9333, sku: "SH-10959", tag: "New", ph: "", img: "assets/products/bk009q.webp",
+  { id: "bk009q", arriveDays: [28, 33], expressOpt: 7000, name: "Steel Bookshelf (180cm to 300cm)", cat: "Living Room", room: "Living Room", price: 10370, memberPrice: 9333, sku: "SH-10959", tag: "New", ph: "", img: "assets/products/bk009q.webp",
     imgs: ["assets/products/bk009q.webp", "assets/products/bk009q-2.webp", "assets/products/bk009q-3.webp", "assets/products/bk009q-4.webp"],
    
     sizes: [{ label: "180cm", price: 10370 }, { label: "200cm", price: 11352 }, { label: "240cm", price: 13252 }, { label: "300cm", price: 17259 }],
@@ -6835,7 +6835,7 @@ const PRODUCTS = [
     specs: { "Type": "Bookshelf", "Material": "Steel", "Options": "4", "Room": "Living Room" },
     care: "Wipe with a soft, damp cloth and dry to prevent water marks. Avoid abrasive pads, which scratch plated and brushed finishes." },
 
-  { id: "ow001q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Beige + Gold":"assets/products/ow001q.webp"}, name: "Office Chair", cat: "Office", room: "Office", price: 1643, memberPrice: 1479, sku: "SH-10960", tag: "New", ph: "", img: "assets/products/ow001q.webp",
+  { id: "ow001q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Beige + Gold":"assets/products/ow001q.webp"}, name: "Office Chair", cat: "Office", room: "Office", price: 1643, memberPrice: 1479, sku: "SH-10960", tag: "New", ph: "", img: "assets/products/ow001q.webp",
     imgs: ["assets/products/ow001q.webp", "assets/products/ow001q-2.webp", "assets/products/ow001q-3.webp", "assets/products/ow001q-4.webp"],
    
     sizes: [{ label: "Blue + Gold", price: 1643 }, { label: "Grey + Gold", price: 1643 }, { label: "Green + Gold", price: 1643 }, { label: "Beige + Gold", price: 1643 }, { label: "Pink + Gold", price: 1643 }],
@@ -6847,7 +6847,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Mixed", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow002q", arriveDays: [28, 33], name: "Slate Office Desk", cat: "Office", room: "Office", price: 4370, memberPrice: 3933, sku: "SH-10961", tag: "New", ph: "", img: "assets/products/ow002q.webp",
+  { id: "ow002q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Office Desk", cat: "Office", room: "Office", price: 4370, memberPrice: 3933, sku: "SH-10961", tag: "New", ph: "", img: "assets/products/ow002q.webp",
     imgs: ["assets/products/ow002q.webp", "assets/products/ow002q-2.webp", "assets/products/ow002q-3.webp", "assets/products/ow002q-4.webp"],
    
     sizes: [{ label: "80cm", price: 4370 }, { label: "100cm", price: 4930 }, { label: "120cm", price: 5759 }, { label: "140cm", price: 5937 }, { label: "160cm", price: 6767 }, { label: "180cm", price: 7593 }],
@@ -6860,7 +6860,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Slate", "Options": "6", "Room": "Office" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ow003q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/ow003q.webp","Brown + Beige":"assets/products/ow003q-2.webp","Brown":"assets/products/ow003q-4.webp"}, name: "Leather Office Chair", cat: "Office", room: "Office", price: 4593, memberPrice: 4134, sku: "SH-10962", tag: "New", ph: "", img: "assets/products/ow003q.webp",
+  { id: "ow003q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/ow003q.webp","Brown + Beige":"assets/products/ow003q-2.webp","Brown":"assets/products/ow003q-4.webp"}, name: "Leather Office Chair", cat: "Office", room: "Office", price: 4593, memberPrice: 4134, sku: "SH-10962", tag: "New", ph: "", img: "assets/products/ow003q.webp",
     imgs: ["assets/products/ow003q.webp", "assets/products/ow003q-2.webp", "assets/products/ow003q-3.webp", "assets/products/ow003q-4.webp"],
    
     sizes: [{ label: "Black", price: 4593 }, { label: "Brown + Beige", price: 4593 }, { label: "Brown", price: 4593 }, { label: "Dark Coffee + Brown", price: 4593 }, { label: "Purple", price: 4593 }],
@@ -6873,7 +6873,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow004q", arriveDays: [28, 33], name: "Leather Office Chair (0 options)", cat: "Office", room: "Office", price: 5259, memberPrice: 4733, sku: "SH-10963", tag: "New", ph: "", img: "assets/products/ow004q.webp",
+  { id: "ow004q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Office Chair (0 options)", cat: "Office", room: "Office", price: 5259, memberPrice: 4733, sku: "SH-10963", tag: "New", ph: "", img: "assets/products/ow004q.webp",
     imgs: ["assets/products/ow004q.webp", "assets/products/ow004q-2.webp", "assets/products/ow004q-3.webp", "assets/products/ow004q-4.webp"],
    
     desc: "Leather office chair, built for a full working day.",
@@ -6883,7 +6883,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "1", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow005q", arriveDays: [28, 33], name: "Leather Office Chair (Brown)", cat: "Office", room: "Office", price: 5309, memberPrice: 4778, sku: "SH-10964", tag: "New", ph: "", img: "assets/products/ow005q.webp",
+  { id: "ow005q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Office Chair (Brown)", cat: "Office", room: "Office", price: 5309, memberPrice: 4778, sku: "SH-10964", tag: "New", ph: "", img: "assets/products/ow005q.webp",
     imgs: ["assets/products/ow005q.webp", "assets/products/ow005q-2.webp", "assets/products/ow005q-3.webp", "assets/products/ow005q-4.webp"],
    
     sizes: [{ label: "Brown", price: 5309 }],
@@ -6895,7 +6895,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "1", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow006q", arriveDays: [28, 33], name: "Office Desk", cat: "Office", room: "Office", price: 5533, memberPrice: 4980, sku: "SH-10965", tag: "New", ph: "", img: "assets/products/ow006q.webp",
+  { id: "ow006q", arriveDays: [28, 33], expressOpt: 7000, name: "Office Desk", cat: "Office", room: "Office", price: 5533, memberPrice: 4980, sku: "SH-10965", tag: "New", ph: "", img: "assets/products/ow006q.webp",
     imgs: ["assets/products/ow006q.webp", "assets/products/ow006q-2.webp", "assets/products/ow006q-3.webp", "assets/products/ow006q-4.webp"],
    
     sizes: [{ label: "80cm", price: 5533 }, { label: "100cm", price: 5963 }, { label: "120cm", price: 6398 }, { label: "140cm", price: 6663 }, { label: "160cm", price: 7776 }],
@@ -6907,7 +6907,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Mixed", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow007q", arriveDays: [28, 33], name: "Office Desk (100cm to 180cm)", cat: "Office", room: "Office", price: 5535, memberPrice: 4982, sku: "SH-10966", tag: "New", ph: "", img: "assets/products/ow007q.webp",
+  { id: "ow007q", arriveDays: [28, 33], expressOpt: 7000, name: "Office Desk (100cm to 180cm)", cat: "Office", room: "Office", price: 5535, memberPrice: 4982, sku: "SH-10966", tag: "New", ph: "", img: "assets/products/ow007q.webp",
     imgs: ["assets/products/ow007q.webp", "assets/products/ow007q-2.webp", "assets/products/ow007q-3.webp", "assets/products/ow007q-4.webp"],
    
     sizes: [{ label: "100cm", price: 5535 }, { label: "120cm", price: 6593 }, { label: "140cm", price: 7878 }, { label: "160cm", price: 9030 }, { label: "180cm", price: 9906 }],
@@ -6919,7 +6919,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Mixed", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow008q", arriveDays: [28, 33], name: "Office Desk (120cm to 220cm)", cat: "Office", room: "Office", price: 5652, memberPrice: 5087, sku: "SH-10967", tag: "New", ph: "", img: "assets/products/ow008q.webp",
+  { id: "ow008q", arriveDays: [28, 33], expressOpt: 7000, name: "Office Desk (120cm to 220cm)", cat: "Office", room: "Office", price: 5652, memberPrice: 5087, sku: "SH-10967", tag: "New", ph: "", img: "assets/products/ow008q.webp",
     imgs: ["assets/products/ow008q.webp", "assets/products/ow008q-2.webp", "assets/products/ow008q-3.webp", "assets/products/ow008q-4.webp"],
    
     sizes: [{ label: "120cm / Black", price: 5652 }, { label: "120cm / Brown", price: 5652 }, { label: "180cm / Black", price: 6296 }, { label: "180cm / Brown", price: 6296 }, { label: "140cm / Black", price: 6407 }, { label: "140cm / Brown", price: 6407 }, { label: "150cm / Black", price: 6796 }, { label: "150cm / Brown", price: 6796 }, { label: "160cm / Black", price: 7193 }, { label: "160cm / Brown", price: 7193 }, { label: "200cm / Black", price: 7315 }, { label: "200cm / Brown", price: 7315 }, { label: "220cm / Black", price: 8257 }, { label: "220cm / Brown", price: 8257 }],
@@ -6932,7 +6932,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Mixed", "Options": "14", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow009q", arriveDays: [28, 33], name: "Office Desk (120cm to 180cm)", cat: "Office", room: "Office", price: 5907, memberPrice: 5316, sku: "SH-10968", tag: "New", ph: "", img: "assets/products/ow009q.webp",
+  { id: "ow009q", arriveDays: [28, 33], expressOpt: 7000, name: "Office Desk (120cm to 180cm)", cat: "Office", room: "Office", price: 5907, memberPrice: 5316, sku: "SH-10968", tag: "New", ph: "", img: "assets/products/ow009q.webp",
     imgs: ["assets/products/ow009q.webp", "assets/products/ow009q-2.webp", "assets/products/ow009q-3.webp", "assets/products/ow009q-4.webp"],
    
     sizes: [{ label: "120cm", price: 5907 }, { label: "130cm", price: 6641 }, { label: "140cm", price: 7385 }, { label: "160cm", price: 8019 }, { label: "180cm", price: 8789 }],
@@ -6944,7 +6944,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Mixed", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow010q", arriveDays: [28, 33], name: "Timber Office Desk", cat: "Office", room: "Office", price: 6052, memberPrice: 5447, sku: "SH-10969", tag: "New", ph: "", img: "assets/products/ow010q.webp",
+  { id: "ow010q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Office Desk", cat: "Office", room: "Office", price: 6052, memberPrice: 5447, sku: "SH-10969", tag: "New", ph: "", img: "assets/products/ow010q.webp",
     imgs: ["assets/products/ow010q.webp", "assets/products/ow010q-2.webp", "assets/products/ow010q-3.webp", "assets/products/ow010q-4.webp"],
    
     sizes: [{ label: "140cm", price: 6052 }, { label: "160cm", price: 6237 }, { label: "180cm", price: 6422 }],
@@ -6957,7 +6957,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Timber", "Options": "3", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow011q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Grey":"assets/products/ow011q-4.webp","Brown":"assets/products/ow011q-2.webp","Black":"assets/products/ow011q-3.webp"}, name: "Leather Office Chair (Black / Grey)", cat: "Office", room: "Office", price: 6278, memberPrice: 5650, sku: "SH-10970", tag: "New", ph: "", img: "assets/products/ow011q.webp",
+  { id: "ow011q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Grey":"assets/products/ow011q-4.webp","Brown":"assets/products/ow011q-2.webp","Black":"assets/products/ow011q-3.webp"}, name: "Leather Office Chair (Black / Grey)", cat: "Office", room: "Office", price: 6278, memberPrice: 5650, sku: "SH-10970", tag: "New", ph: "", img: "assets/products/ow011q.webp",
     imgs: ["assets/products/ow011q.webp", "assets/products/ow011q-2.webp", "assets/products/ow011q-3.webp", "assets/products/ow011q-4.webp"],
    
     sizes: [{ label: "Grey", price: 6278 }, { label: "Brown", price: 6278 }, { label: "Black", price: 6278 }],
@@ -6970,7 +6970,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "3", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow012q", arriveDays: [28, 33], name: "Timber Office Desk (140cm to 300cm)", cat: "Office", room: "Office", price: 6291, memberPrice: 5662, sku: "SH-10971", tag: "New", ph: "", img: "assets/products/ow012q.webp",
+  { id: "ow012q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Office Desk (140cm to 300cm)", cat: "Office", room: "Office", price: 6291, memberPrice: 5662, sku: "SH-10971", tag: "New", ph: "", img: "assets/products/ow012q.webp",
     imgs: ["assets/products/ow012q.webp", "assets/products/ow012q-2.webp", "assets/products/ow012q-3.webp", "assets/products/ow012q-4.webp"],
    
     sizes: [{ label: "140cm", price: 6291 }, { label: "160cm", price: 6776 }, { label: "180cm", price: 7776 }, { label: "200cm", price: 8180 }, { label: "220cm", price: 11217 }, { label: "240cm", price: 12754 }, { label: "260cm", price: 13517 }, { label: "280cm", price: 14569 }, { label: "300cm", price: 15369 }],
@@ -6983,7 +6983,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Timber", "Options": "9", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow013q", arriveDays: [28, 33], name: "Leather Office Chair (Tan)", cat: "Office", room: "Office", price: 6463, memberPrice: 5817, sku: "SH-10972", tag: "New", ph: "", img: "assets/products/ow013q.webp",
+  { id: "ow013q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Office Chair (Tan)", cat: "Office", room: "Office", price: 6463, memberPrice: 5817, sku: "SH-10972", tag: "New", ph: "", img: "assets/products/ow013q.webp",
     imgs: ["assets/products/ow013q.webp", "assets/products/ow013q-2.webp", "assets/products/ow013q-3.webp", "assets/products/ow013q-4.webp"],
    
     sizes: [{ label: "Tan", price: 6463 }],
@@ -6995,7 +6995,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "1", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow014q", arriveDays: [28, 33], name: "Leather Office Chair 2", cat: "Office", room: "Office", price: 6463, memberPrice: 5817, sku: "SH-10973", tag: "New", ph: "", img: "assets/products/ow014q.webp",
+  { id: "ow014q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Office Chair 2", cat: "Office", room: "Office", price: 6463, memberPrice: 5817, sku: "SH-10973", tag: "New", ph: "", img: "assets/products/ow014q.webp",
     imgs: ["assets/products/ow014q.webp", "assets/products/ow014q-2.webp", "assets/products/ow014q-3.webp", "assets/products/ow014q-4.webp"],
    
     desc: "Leather office chair, built for a full working day.",
@@ -7005,7 +7005,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "1", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow015q", arriveDays: [28, 33], name: "Office Desk (120cm to 160cm)", cat: "Office", room: "Office", price: 6615, memberPrice: 5954, sku: "SH-10974", tag: "New", ph: "", img: "assets/products/ow015q.webp",
+  { id: "ow015q", arriveDays: [28, 33], expressOpt: 7000, name: "Office Desk (120cm to 160cm)", cat: "Office", room: "Office", price: 6615, memberPrice: 5954, sku: "SH-10974", tag: "New", ph: "", img: "assets/products/ow015q.webp",
     imgs: ["assets/products/ow015q.webp", "assets/products/ow015q-2.webp", "assets/products/ow015q-3.webp", "assets/products/ow015q-4.webp"],
    
     sizes: [{ label: "120cm", price: 6615 }, { label: "140cm", price: 7378 }, { label: "160cm", price: 8144 }],
@@ -7017,7 +7017,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Mixed", "Options": "3", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow016q", arriveDays: [28, 33], name: "Leather Office Chair (Ivory)", cat: "Office", room: "Office", price: 6661, memberPrice: 5995, sku: "SH-10975", tag: "New", ph: "", img: "assets/products/ow016q.webp",
+  { id: "ow016q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Office Chair (Ivory)", cat: "Office", room: "Office", price: 6661, memberPrice: 5995, sku: "SH-10975", tag: "New", ph: "", img: "assets/products/ow016q.webp",
     imgs: ["assets/products/ow016q.webp", "assets/products/ow016q-2.webp", "assets/products/ow016q-3.webp", "assets/products/ow016q-4.webp"],
    
     sizes: [{ label: "Mahogany + Ivory", price: 6661 }],
@@ -7029,7 +7029,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "1", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow017q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Brown":"assets/products/ow017q.webp"}, name: "Leather Office Chair (White / Brown)", cat: "Office", room: "Office", price: 6759, memberPrice: 6083, sku: "SH-10976", tag: "New", ph: "", img: "assets/products/ow017q.webp",
+  { id: "ow017q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Brown":"assets/products/ow017q.webp"}, name: "Leather Office Chair (White / Brown)", cat: "Office", room: "Office", price: 6759, memberPrice: 6083, sku: "SH-10976", tag: "New", ph: "", img: "assets/products/ow017q.webp",
     imgs: ["assets/products/ow017q.webp", "assets/products/ow017q-2.webp", "assets/products/ow017q-3.webp", "assets/products/ow017q-4.webp"],
    
     sizes: [{ label: "Brown", price: 6759 }, { label: "White", price: 6759 }],
@@ -7042,7 +7042,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "2", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow018q", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Ivory/Beige":"assets/products/ow018q-3.webp"}, name: "Walnut Office Chair", cat: "Office", room: "Office", price: 7222, memberPrice: 6500, sku: "SH-10977", tag: "New", ph: "", img: "assets/products/ow018q.webp",
+  { id: "ow018q", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Ivory/Beige":"assets/products/ow018q-3.webp"}, name: "Walnut Office Chair", cat: "Office", room: "Office", price: 7222, memberPrice: 6500, sku: "SH-10977", tag: "New", ph: "", img: "assets/products/ow018q.webp",
     imgs: ["assets/products/ow018q.webp", "assets/products/ow018q-2.webp", "assets/products/ow018q-3.webp", "assets/products/ow018q-4.webp"],
    
     sizes: [{ label: "Ivory/Beige", price: 7222 }, { label: "Black", price: 7222 }],
@@ -7055,7 +7055,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Walnut", "Options": "2", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow019q", arriveDays: [28, 33], name: "Leather Office Chair (Black / White)", cat: "Office", room: "Office", price: 7383, memberPrice: 6645, sku: "SH-10978", tag: "New", ph: "", img: "assets/products/ow019q.webp",
+  { id: "ow019q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Office Chair (Black / White)", cat: "Office", room: "Office", price: 7383, memberPrice: 6645, sku: "SH-10978", tag: "New", ph: "", img: "assets/products/ow019q.webp",
     imgs: ["assets/products/ow019q.webp", "assets/products/ow019q-2.webp", "assets/products/ow019q-3.webp", "assets/products/ow019q-4.webp"],
    
     sizes: [{ label: "Black / -Ottoman", price: 7383 }, { label: "White / -Ottoman", price: 7383 }, { label: "Black / + Ottoman", price: 8804 }, { label: "White / + Ottoman", price: 8804 }],
@@ -7068,7 +7068,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "4", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow020q", arriveDays: [28, 33], name: "Walnut Office Desk", cat: "Office", room: "Office", price: 7476, memberPrice: 6728, sku: "SH-10979", tag: "New", ph: "", img: "assets/products/ow020q.webp",
+  { id: "ow020q", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Office Desk", cat: "Office", room: "Office", price: 7476, memberPrice: 6728, sku: "SH-10979", tag: "New", ph: "", img: "assets/products/ow020q.webp",
     imgs: ["assets/products/ow020q.webp", "assets/products/ow020q-2.webp", "assets/products/ow020q-3.webp", "assets/products/ow020q-4.webp"],
    
     sizes: [{ label: "100cm", price: 7476 }, { label: "120cm", price: 8461 }, { label: "150cm", price: 9691 }],
@@ -7081,7 +7081,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Walnut", "Options": "3", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow021q", arriveDays: [28, 33], name: "Walnut Office Desk (120cm to 160cm)", cat: "Office", room: "Office", price: 7569, memberPrice: 6812, sku: "SH-10980", tag: "New", ph: "", img: "assets/products/ow021q.webp",
+  { id: "ow021q", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Office Desk (120cm to 160cm)", cat: "Office", room: "Office", price: 7569, memberPrice: 6812, sku: "SH-10980", tag: "New", ph: "", img: "assets/products/ow021q.webp",
     imgs: ["assets/products/ow021q.webp", "assets/products/ow021q-2.webp", "assets/products/ow021q-3.webp", "assets/products/ow021q-4.webp"],
    
     sizes: [{ label: "Black / 120cm", price: 7569 }, { label: "Brown / 120cm", price: 7569 }, { label: "Black / 140cm", price: 8072 }, { label: "Brown / 140cm", price: 8072 }, { label: "Black / 160cm", price: 8620 }, { label: "Brown / 160cm", price: 8620 }],
@@ -7094,7 +7094,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Walnut", "Options": "6", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow022q", arriveDays: [28, 33], name: "Timber Office Desk (120cm to 180cm)", cat: "Office", room: "Office", price: 7722, memberPrice: 6950, sku: "SH-10981", tag: "New", ph: "", img: "assets/products/ow022q.webp",
+  { id: "ow022q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Office Desk (120cm to 180cm)", cat: "Office", room: "Office", price: 7722, memberPrice: 6950, sku: "SH-10981", tag: "New", ph: "", img: "assets/products/ow022q.webp",
     imgs: ["assets/products/ow022q.webp", "assets/products/ow022q-2.webp", "assets/products/ow022q-3.webp", "assets/products/ow022q-4.webp"],
    
     sizes: [{ label: "120cm", price: 7722 }, { label: "140cm", price: 8252 }, { label: "160cm", price: 8648 }, { label: "180cm", price: 10111 }],
@@ -7107,7 +7107,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Timber", "Options": "4", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow023q", arriveDays: [28, 33], name: "Leather Office Chair (White / Grey)", cat: "Office", room: "Office", price: 7759, memberPrice: 6983, sku: "SH-10982", tag: "New", ph: "", img: "assets/products/ow023q.webp",
+  { id: "ow023q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Office Chair (White / Grey)", cat: "Office", room: "Office", price: 7759, memberPrice: 6983, sku: "SH-10982", tag: "New", ph: "", img: "assets/products/ow023q.webp",
     imgs: ["assets/products/ow023q.webp", "assets/products/ow023q-2.webp", "assets/products/ow023q-3.webp", "assets/products/ow023q-4.webp"],
    
     sizes: [{ label: "Grey", price: 7759 }, { label: "Cocoa", price: 7759 }, { label: "Brown", price: 7759 }, { label: "White", price: 7759 }, { label: "Emerald Green", price: 7759 }],
@@ -7120,7 +7120,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Chair", "Material": "Leather", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow024q", arriveDays: [28, 33], name: "Walnut Office Desk (120cm to 200cm)", cat: "Office", room: "Office", price: 7917, memberPrice: 7125, sku: "SH-10983", tag: "New", ph: "", img: "assets/products/ow024q.webp",
+  { id: "ow024q", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Office Desk (120cm to 200cm)", cat: "Office", room: "Office", price: 7917, memberPrice: 7125, sku: "SH-10983", tag: "New", ph: "", img: "assets/products/ow024q.webp",
     imgs: ["assets/products/ow024q.webp", "assets/products/ow024q-2.webp", "assets/products/ow024q-3.webp", "assets/products/ow024q-4.webp"],
    
     sizes: [{ label: "120cm", price: 7917 }, { label: "140cm", price: 8235 }, { label: "160cm", price: 8702 }, { label: "180cm", price: 9235 }, { label: "200cm", price: 10065 }],
@@ -7133,7 +7133,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Walnut", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow025q", arriveDays: [28, 33], name: "Slate Office Desk (140cm to 200cm)", cat: "Office", room: "Office", price: 8196, memberPrice: 7376, sku: "SH-10984", tag: "New", ph: "", img: "assets/products/ow025q.webp",
+  { id: "ow025q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Office Desk (140cm to 200cm)", cat: "Office", room: "Office", price: 8196, memberPrice: 7376, sku: "SH-10984", tag: "New", ph: "", img: "assets/products/ow025q.webp",
     imgs: ["assets/products/ow025q.webp", "assets/products/ow025q-2.webp", "assets/products/ow025q-3.webp", "assets/products/ow025q-4.webp"],
    
     sizes: [{ label: "140cm", price: 8196 }, { label: "160cm", price: 9656 }, { label: "180cm", price: 10800 }, { label: "200cm", price: 12281 }],
@@ -7146,7 +7146,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Slate", "Options": "4", "Room": "Office" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ow026q", arriveDays: [28, 33], name: "Office Desk (120cm to 200cm)", cat: "Office", room: "Office", price: 8824, memberPrice: 7942, sku: "SH-10985", tag: "New", ph: "", img: "assets/products/ow026q.webp",
+  { id: "ow026q", arriveDays: [28, 33], expressOpt: 7000, name: "Office Desk (120cm to 200cm)", cat: "Office", room: "Office", price: 8824, memberPrice: 7942, sku: "SH-10985", tag: "New", ph: "", img: "assets/products/ow026q.webp",
     imgs: ["assets/products/ow026q.webp", "assets/products/ow026q-2.webp", "assets/products/ow026q-3.webp", "assets/products/ow026q-4.webp"],
    
     sizes: [{ label: "120cm", price: 8824 }, { label: "140cm", price: 9235 }, { label: "160cm", price: 10072 }, { label: "180cm", price: 10883 }, { label: "200cm", price: 11550 }],
@@ -7158,7 +7158,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Mixed", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow027q", arriveDays: [28, 33], name: "Timber Office Desk (140cm to 200cm)", cat: "Office", room: "Office", price: 8844, memberPrice: 7960, sku: "SH-10986", tag: "New", ph: "", img: "assets/products/ow027q.webp",
+  { id: "ow027q", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Office Desk (140cm to 200cm)", cat: "Office", room: "Office", price: 8844, memberPrice: 7960, sku: "SH-10986", tag: "New", ph: "", img: "assets/products/ow027q.webp",
     imgs: ["assets/products/ow027q.webp", "assets/products/ow027q-2.webp", "assets/products/ow027q-3.webp", "assets/products/ow027q-4.webp"],
    
     sizes: [{ label: "140cm", price: 8844 }, { label: "160cm", price: 9611 }, { label: "180cm", price: 10567 }, { label: "200cm", price: 11519 }],
@@ -7171,7 +7171,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Timber", "Options": "4", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow028q", arriveDays: [28, 33], name: "Slate Office Desk (120cm to 180cm)", cat: "Office", room: "Office", price: 9054, memberPrice: 8149, sku: "SH-10987", tag: "New", ph: "", img: "assets/products/ow028q.webp",
+  { id: "ow028q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Office Desk (120cm to 180cm)", cat: "Office", room: "Office", price: 9054, memberPrice: 8149, sku: "SH-10987", tag: "New", ph: "", img: "assets/products/ow028q.webp",
     imgs: ["assets/products/ow028q.webp", "assets/products/ow028q-2.webp", "assets/products/ow028q-3.webp", "assets/products/ow028q-4.webp"],
    
     sizes: [{ label: "120cm", price: 9054 }, { label: "140cm", price: 9702 }, { label: "160cm", price: 10676 }, { label: "180cm", price: 11109 }],
@@ -7184,7 +7184,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Slate", "Options": "4", "Room": "Office" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ow029q", arriveDays: [28, 33], name: "Slate Office Desk (120cm to 160cm)", cat: "Office", room: "Office", price: 9422, memberPrice: 8480, sku: "SH-10988", tag: "New", ph: "", img: "assets/products/ow029q.webp",
+  { id: "ow029q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Office Desk (120cm to 160cm)", cat: "Office", room: "Office", price: 9422, memberPrice: 8480, sku: "SH-10988", tag: "New", ph: "", img: "assets/products/ow029q.webp",
     imgs: ["assets/products/ow029q.webp", "assets/products/ow029q-2.webp", "assets/products/ow029q-3.webp", "assets/products/ow029q-4.webp"],
    
     sizes: [{ label: "120cm", price: 9422 }, { label: "140cm", price: 10656 }, { label: "160cm", price: 11894 }],
@@ -7197,7 +7197,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Slate", "Options": "3", "Room": "Office" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ow030q", arriveDays: [28, 33], name: "Slate Office Desk (145cm to 200cm)", cat: "Office", room: "Office", price: 9839, memberPrice: 8855, sku: "SH-10989", tag: "New", ph: "", img: "assets/products/ow030q.webp",
+  { id: "ow030q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Office Desk (145cm to 200cm)", cat: "Office", room: "Office", price: 9839, memberPrice: 8855, sku: "SH-10989", tag: "New", ph: "", img: "assets/products/ow030q.webp",
     imgs: ["assets/products/ow030q.webp", "assets/products/ow030q-2.webp", "assets/products/ow030q-3.webp", "assets/products/ow030q-4.webp"],
    
     sizes: [{ label: "145cm", price: 9839 }, { label: "165cm", price: 9987 }, { label: "185cm", price: 10087 }, { label: "200cm", price: 10180 }],
@@ -7210,7 +7210,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Slate", "Options": "4", "Room": "Office" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ow031q", arriveDays: [28, 33], name: "Slate Office Desk (140cm to 180cm)", cat: "Office", room: "Office", price: 9846, memberPrice: 8861, sku: "SH-10990", tag: "New", ph: "", img: "assets/products/ow031q.webp",
+  { id: "ow031q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Office Desk (140cm to 180cm)", cat: "Office", room: "Office", price: 9846, memberPrice: 8861, sku: "SH-10990", tag: "New", ph: "", img: "assets/products/ow031q.webp",
     imgs: ["assets/products/ow031q.webp", "assets/products/ow031q-2.webp", "assets/products/ow031q-3.webp", "assets/products/ow031q-4.webp"],
    
     sizes: [{ label: "140cm", price: 9846 }, { label: "160cm", price: 10487 }, { label: "180cm", price: 10831 }],
@@ -7223,7 +7223,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Slate", "Options": "3", "Room": "Office" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ow032q", arriveDays: [28, 33], name: "Slate Office Desk (120cm to 240cm)", cat: "Office", room: "Office", price: 10396, memberPrice: 9356, sku: "SH-10991", tag: "New", ph: "", img: "assets/products/ow032q.webp",
+  { id: "ow032q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Office Desk (120cm to 240cm)", cat: "Office", room: "Office", price: 10396, memberPrice: 9356, sku: "SH-10991", tag: "New", ph: "", img: "assets/products/ow032q.webp",
     imgs: ["assets/products/ow032q.webp", "assets/products/ow032q-2.webp", "assets/products/ow032q-3.webp", "assets/products/ow032q-4.webp"],
    
     sizes: [{ label: "120cm", price: 10396 }, { label: "140cm", price: 10863 }, { label: "160cm", price: 11315 }, { label: "180cm", price: 11893 }, { label: "200cm", price: 12389 }, { label: "220cm", price: 13130 }, { label: "240cm", price: 13870 }],
@@ -7236,7 +7236,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Slate", "Options": "7", "Room": "Office" },
     care: "Wipe with a soft, damp cloth. Use coasters under drinks and avoid acidic or abrasive cleaners, which dull a stone surface." },
 
-  { id: "ow033q", arriveDays: [28, 33], name: "Walnut Office Desk (120cm to 180cm)", cat: "Office", room: "Office", price: 10844, memberPrice: 9760, sku: "SH-10992", tag: "New", ph: "", img: "assets/products/ow033q.webp",
+  { id: "ow033q", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Office Desk (120cm to 180cm)", cat: "Office", room: "Office", price: 10844, memberPrice: 9760, sku: "SH-10992", tag: "New", ph: "", img: "assets/products/ow033q.webp",
     imgs: ["assets/products/ow033q.webp", "assets/products/ow033q-2.webp", "assets/products/ow033q-3.webp", "assets/products/ow033q-4.webp"],
    
     sizes: [{ label: "120cm", price: 10844 }, { label: "140cm", price: 11635 }, { label: "160cm", price: 12583 }, { label: "180cm", price: 13126 }],
@@ -7249,7 +7249,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Walnut", "Options": "4", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow034q", arriveDays: [28, 33], name: "Oak Office Desk", cat: "Office", room: "Office", price: 10907, memberPrice: 9816, sku: "SH-10993", tag: "New", ph: "", img: "assets/products/ow034q.webp",
+  { id: "ow034q", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Office Desk", cat: "Office", room: "Office", price: 10907, memberPrice: 9816, sku: "SH-10993", tag: "New", ph: "", img: "assets/products/ow034q.webp",
     imgs: ["assets/products/ow034q.webp", "assets/products/ow034q-2.webp", "assets/products/ow034q-3.webp", "assets/products/ow034q-4.webp"],
    
     sizes: [{ label: "Charcoal Grey", price: 10907 }],
@@ -7261,7 +7261,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Oak", "Options": "1", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow035q", arriveDays: [28, 33], name: "Oak Office Desk (160cm to 240cm)", cat: "Office", room: "Office", price: 11194, memberPrice: 10075, sku: "SH-10994", tag: "New", ph: "", img: "assets/products/ow035q.webp",
+  { id: "ow035q", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Office Desk (160cm to 240cm)", cat: "Office", room: "Office", price: 11194, memberPrice: 10075, sku: "SH-10994", tag: "New", ph: "", img: "assets/products/ow035q.webp",
     imgs: ["assets/products/ow035q.webp", "assets/products/ow035q-2.webp", "assets/products/ow035q-3.webp", "assets/products/ow035q-4.webp"],
    
     sizes: [{ label: "160cm", price: 11194 }, { label: "180cm", price: 12139 }, { label: "200cm", price: 13213 }, { label: "220cm", price: 16469 }, { label: "240cm", price: 17917 }],
@@ -7274,7 +7274,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Oak", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow036q", arriveDays: [28, 33], name: "Walnut Office Desk (140cm to 180cm)", cat: "Office", room: "Office", price: 11411, memberPrice: 10270, sku: "SH-10995", tag: "New", ph: "", img: "assets/products/ow036q.webp",
+  { id: "ow036q", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Office Desk (140cm to 180cm)", cat: "Office", room: "Office", price: 11411, memberPrice: 10270, sku: "SH-10995", tag: "New", ph: "", img: "assets/products/ow036q.webp",
     imgs: ["assets/products/ow036q.webp", "assets/products/ow036q-2.webp", "assets/products/ow036q-3.webp", "assets/products/ow036q-4.webp"],
    
     sizes: [{ label: "140cm", price: 11411 }, { label: "160cm", price: 11748 }, { label: "180cm", price: 12174 }],
@@ -7287,7 +7287,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Walnut", "Options": "3", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow037q", arriveDays: [28, 33], name: "Leather Office Desk", cat: "Office", room: "Office", price: 11522, memberPrice: 10370, sku: "SH-10996", tag: "New", ph: "", img: "assets/products/ow037q.webp",
+  { id: "ow037q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Office Desk", cat: "Office", room: "Office", price: 11522, memberPrice: 10370, sku: "SH-10996", tag: "New", ph: "", img: "assets/products/ow037q.webp",
     imgs: ["assets/products/ow037q.webp", "assets/products/ow037q-2.webp", "assets/products/ow037q-3.webp", "assets/products/ow037q-4.webp"],
    
     sizes: [{ label: "120cm", price: 11522 }, { label: "140cm", price: 12867 }, { label: "160cm", price: 14207 }, { label: "180cm", price: 15348 }],
@@ -7300,7 +7300,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Leather", "Options": "4", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow038q", arriveDays: [28, 33], name: "Walnut Office Desk (140cm to 220cm)", cat: "Office", room: "Office", price: 11956, memberPrice: 10760, sku: "SH-10997", tag: "New", ph: "", img: "assets/products/ow038q.webp",
+  { id: "ow038q", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Office Desk (140cm to 220cm)", cat: "Office", room: "Office", price: 11956, memberPrice: 10760, sku: "SH-10997", tag: "New", ph: "", img: "assets/products/ow038q.webp",
     imgs: ["assets/products/ow038q.webp", "assets/products/ow038q-2.webp", "assets/products/ow038q-3.webp", "assets/products/ow038q-4.webp"],
    
     sizes: [{ label: "140cm", price: 11956 }, { label: "160cm", price: 13111 }, { label: "180cm", price: 14259 }, { label: "200cm", price: 15144 }, { label: "220cm", price: 15500 }],
@@ -7313,7 +7313,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Walnut", "Options": "5", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow039q", arriveDays: [28, 33], name: "Oak Office Desk (140cm to 200cm)", cat: "Office", room: "Office", price: 12107, memberPrice: 10896, sku: "SH-10998", tag: "New", ph: "", img: "assets/products/ow039q.webp",
+  { id: "ow039q", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Office Desk (140cm to 200cm)", cat: "Office", room: "Office", price: 12107, memberPrice: 10896, sku: "SH-10998", tag: "New", ph: "", img: "assets/products/ow039q.webp",
     imgs: ["assets/products/ow039q.webp", "assets/products/ow039q-2.webp", "assets/products/ow039q-3.webp", "assets/products/ow039q-4.webp"],
    
     sizes: [{ label: "140cm", price: 12107 }, { label: "160cm", price: 13322 }, { label: "180cm", price: 14296 }, { label: "200cm", price: 16607 }],
@@ -7326,7 +7326,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Oak", "Options": "4", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow040q", arriveDays: [28, 33], name: "Oak Office Desk (160cm to 180cm)", cat: "Office", room: "Office", price: 13385, memberPrice: 12046, sku: "SH-10999", tag: "New", ph: "", img: "assets/products/ow040q.webp",
+  { id: "ow040q", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Office Desk (160cm to 180cm)", cat: "Office", room: "Office", price: 13385, memberPrice: 12046, sku: "SH-10999", tag: "New", ph: "", img: "assets/products/ow040q.webp",
     imgs: ["assets/products/ow040q.webp", "assets/products/ow040q-2.webp", "assets/products/ow040q-3.webp", "assets/products/ow040q-4.webp"],
    
     sizes: [{ label: "160cm", price: 13385 }, { label: "180cm", price: 15278 }],
@@ -7339,7 +7339,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Oak", "Options": "2", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters under anything hot or wet, and check the fixings occasionally." },
 
-  { id: "ow041q", arriveDays: [28, 33], name: "Leather Office Desk (170cm to 230cm)", cat: "Office", room: "Office", price: 14170, memberPrice: 12753, sku: "SH-11000", tag: "New", ph: "", img: "assets/products/ow041q.webp",
+  { id: "ow041q", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Office Desk (170cm to 230cm)", cat: "Office", room: "Office", price: 14170, memberPrice: 12753, sku: "SH-11000", tag: "New", ph: "", img: "assets/products/ow041q.webp",
     imgs: ["assets/products/ow041q.webp", "assets/products/ow041q-2.webp", "assets/products/ow041q-3.webp", "assets/products/ow041q-4.webp"],
    
     sizes: [{ label: "170cm / Beige Grey", price: 14170 }, { label: "170cm / Ivory", price: 14170 }, { label: "190cm / Beige Grey", price: 15096 }, { label: "190cm / Ivory", price: 15096 }, { label: "210cm / Beige Grey", price: 16096 }, { label: "210cm / Ivory", price: 16096 }, { label: "230cm / Beige Grey", price: 16665 }, { label: "230cm / Ivory", price: 16665 }],
@@ -7352,7 +7352,7 @@ const PRODUCTS = [
     specs: { "Type": "Office Desk", "Material": "Leather", "Options": "8", "Room": "Office" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, and condition once or twice a year." },
 
-  { id: "ow042q", arriveDays: [28, 33], name: "Slate Office Desk (3 options)", cat: "Office", room: "Office", price: 17426, memberPrice: 15683, sku: "SH-11001", tag: "New", ph: "", img: "assets/products/ow042q.webp",
+  { id: "ow042q", arriveDays: [28, 33], expressOpt: 7000, name: "Slate Office Desk (3 options)", cat: "Office", room: "Office", price: 17426, memberPrice: 15683, sku: "SH-11001", tag: "New", ph: "", img: "assets/products/ow042q.webp",
     imgs: ["assets/products/ow042q.webp", "assets/products/ow042q-2.webp", "assets/products/ow042q-3.webp", "assets/products/ow042q-4.webp"],
    
     sizes: [{ label: "140cm", price: 17426 }, { label: "160cm", price: 19111 }, { label: "180cm", price: 20578 }],
@@ -7415,7 +7415,7 @@ const PRODUCTS = [
     care: "Wipe with a soft, damp cloth and dry. Avoid abrasive pads on plated finishes." },
 
 
-  { id: "bd01z", arriveDays: [28, 33], name: "Timber Bed with Optional Bedside Tables", cat: "Bedroom", room: "Bedroom", price: 9228, memberPrice: 8305, sku: "SH-10680", tag: "New", ph: "", img: "assets/products/bd01z.webp",
+  { id: "bd01z", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Bed with Optional Bedside Tables", cat: "Bedroom", room: "Bedroom", price: 9228, memberPrice: 8305, sku: "SH-10680", tag: "New", ph: "", img: "assets/products/bd01z.webp",
     imgs: ["assets/products/bd01z.webp", "assets/products/bd01z-2.webp", "assets/products/bd01z-3.webp", "assets/products/bd01z-4.webp", "assets/products/bd01z-5.webp"],
    
     sizes: [{ label: "Queen / 0 x Bedside Tables (bed only)", price: 9228 }, { label: "King / 0 x Bedside Tables (bed only)", price: 11087 }, { label: "Queen / Bed + 2 x Bedside Tables", price: 16635 }, { label: "King / Bed + 2 x Bedside Tables", price: 18494 }],
@@ -7428,7 +7428,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Solid timber", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bd02z", arriveDays: [28, 33], name: "Velvet Upholstered Bed", cat: "Bedroom", room: "Bedroom", price: 10674, memberPrice: 9607, sku: "SH-10681", tag: "New", ph: "", img: "assets/products/bd02z.webp",
+  { id: "bd02z", arriveDays: [28, 33], expressOpt: 7000, name: "Velvet Upholstered Bed", cat: "Bedroom", room: "Bedroom", price: 10674, memberPrice: 9607, sku: "SH-10681", tag: "New", ph: "", img: "assets/products/bd02z.webp",
     imgs: ["assets/products/bd02z.webp", "assets/products/bd02z-2.webp", "assets/products/bd02z-3.webp", "assets/products/bd02z-4.webp", "assets/products/bd02z-5.webp"],
     sizes: [{ label: "Queen", price: 10674 }, { label: "King", price: 11481 }],
     desc: "Velvet over a timber frame, in queen or king. Velvet at bedhead scale is what makes a bedroom feel finished rather than furnished.",
@@ -7440,7 +7440,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Velvet", "Options": "2", "Room": "Bedroom" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "bd03z", arriveDays: [28, 33], name: "Upholstered Bed with Marble Detail", cat: "Bedroom", room: "Bedroom", price: 10726, memberPrice: 9653, sku: "SH-10682", tag: "New", ph: "", img: "assets/products/bd03z.webp",
+  { id: "bd03z", arriveDays: [28, 33], expressOpt: 7000, name: "Upholstered Bed with Marble Detail", cat: "Bedroom", room: "Bedroom", price: 10726, memberPrice: 9653, sku: "SH-10682", tag: "New", ph: "", img: "assets/products/bd03z.webp",
     imgs: ["assets/products/bd03z.webp", "assets/products/bd03z-2.webp", "assets/products/bd03z-3.webp", "assets/products/bd03z-4.webp", "assets/products/bd03z-5.webp"],
     sizes: [{ label: "Queen / 0 x Bedside Tables (bed only)", price: 10726 }, { label: "King / 0 x Bedside Tables (bed only)", price: 11652 }, { label: "Queen / Bed + 2 x Bedside Tables", price: 19615 }, { label: "King / Bed + 2 x Bedside Tables", price: 20541 }],
     desc: "An upholstered bed with marble detailing on a timber frame, with or without matching bedside tables.",
@@ -7452,7 +7452,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Upholstery fabric", "Options": "4", "Room": "Bedroom" },
     care: "Vacuum regularly and blot spills immediately. Rotate and plump cushions so they wear evenly." },
 
-  { id: "bd04z", arriveDays: [28, 33], name: "Ivory Leather Bed", cat: "Bedroom", room: "Bedroom", price: 12657, memberPrice: 11391, sku: "SH-10683", tag: "New", ph: "", img: "assets/products/bd04z.webp",
+  { id: "bd04z", arriveDays: [28, 33], expressOpt: 7000, name: "Ivory Leather Bed", cat: "Bedroom", room: "Bedroom", price: 12657, memberPrice: 11391, sku: "SH-10683", tag: "New", ph: "", img: "assets/products/bd04z.webp",
     imgs: ["assets/products/bd04z.webp", "assets/products/bd04z-2.webp", "assets/products/bd04z-3.webp", "assets/products/bd04z-4.webp", "assets/products/bd04z-5.webp"],
     sizes: [{ label: "Ivory / Queen / 0 x Bedside Tables (bed only)", price: 12657 }, { label: "Tan / Queen / 0 x Bedside Tables (bed only)", price: 12657 }, { label: "Mocha / Queen / 0 x Bedside Tables (bed only)", price: 12657 }, { label: "Black / Queen / 0 x Bedside Tables (bed only)", price: 12657 }, { label: "Ivory / King / 0 x Bedside Tables (bed only)", price: 13765 }, { label: "Tan / King / 0 x Bedside Tables (bed only)", price: 13765 }, { label: "Mocha / King / 0 x Bedside Tables (bed only)", price: 13765 }, { label: "Black / King / 0 x Bedside Tables (bed only)", price: 13765 }, { label: "Ivory / Queen / Bed + 2 x Bedside Tables", price: 21546 }, { label: "Tan / Queen / Bed + 2 x Bedside Tables", price: 21546 }, { label: "Mocha / Queen / Bed + 2 x Bedside Tables", price: 21546 }, { label: "Black / Queen / Bed + 2 x Bedside Tables", price: 21546 }, { label: "Ivory / King / Bed + 2 x Bedside Tables", price: 22654 }, { label: "Tan / King / Bed + 2 x Bedside Tables", price: 22654 }, { label: "Mocha / King / Bed + 2 x Bedside Tables", price: 22654 }, { label: "Black / King / Bed + 2 x Bedside Tables", price: 22654 }],
     desc: "Leather in ivory, queen or king, with the option of bedside tables to match.",
@@ -7464,7 +7464,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Leather", "Options": "16", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bd05z", arriveDays: [28, 33], name: "Charcoal Faux Fur Bed (King)", cat: "Bedroom", room: "Bedroom", price: 12944, memberPrice: 11650, sku: "SH-10684", tag: "New", ph: "", img: "assets/products/bd05z.webp",
+  { id: "bd05z", arriveDays: [28, 33], expressOpt: 7000, name: "Charcoal Faux Fur Bed (King)", cat: "Bedroom", room: "Bedroom", price: 12944, memberPrice: 11650, sku: "SH-10684", tag: "New", ph: "", img: "assets/products/bd05z.webp",
     imgs: ["assets/products/bd05z.webp", "assets/products/bd05z-2.webp", "assets/products/bd05z-3.webp", "assets/products/bd05z-4.webp", "assets/products/bd05z-5.webp"],
     sizes: [{ label: "Charcoal Grey", price: 12944 }],
     desc: "A king bed wrapped in charcoal faux fur. Unusual, warm to the touch, and not for a minimalist room.",
@@ -7476,7 +7476,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Faux fur", "Options": "1", "Room": "Bedroom" },
     care: "Shake it out rather than washing it. Spot clean with a barely damp cloth and let it air dry away from heat, then brush the pile back up." },
 
-  { id: "bd06z", arriveDays: [28, 33], name: "Charcoal Velvet & Leather Bed", cat: "Bedroom", room: "Bedroom", price: 12952, memberPrice: 11657, sku: "SH-10685", tag: "New", ph: "", img: "assets/products/bd06z.webp",
+  { id: "bd06z", arriveDays: [28, 33], expressOpt: 7000, name: "Charcoal Velvet & Leather Bed", cat: "Bedroom", room: "Bedroom", price: 12952, memberPrice: 11657, sku: "SH-10685", tag: "New", ph: "", img: "assets/products/bd06z.webp",
     imgs: ["assets/products/bd06z.webp", "assets/products/bd06z-2.webp", "assets/products/bd06z-3.webp", "assets/products/bd06z-4.webp", "assets/products/bd06z-5.webp"],
     sizes: [{ label: "Charcoal Grey / Queen / 0 x Bedside Tables (bed only)", price: 12952 }, { label: "Grey / Queen / 0 x Bedside Tables (bed only)", price: 12952 }, { label: "Light Grey / Queen / 0 x Bedside Tables (bed only)", price: 12952 }, { label: "Ivory / Queen / 0 x Bedside Tables (bed only)", price: 12952 }, { label: "Charcoal Grey / King / 0 x Bedside Tables (bed only)", price: 14626 }, { label: "Grey / King / 0 x Bedside Tables (bed only)", price: 14626 }, { label: "Light Grey / King / 0 x Bedside Tables (bed only)", price: 14626 }, { label: "Ivory / King / 0 x Bedside Tables (bed only)", price: 14626 }, { label: "Charcoal Grey / Queen / Bed + 2 x Bedside Tables", price: 21841 }, { label: "Grey / Queen / Bed + 2 x Bedside Tables", price: 21841 }, { label: "Light Grey / Queen / Bed + 2 x Bedside Tables", price: 21841 }, { label: "Ivory / Queen / Bed + 2 x Bedside Tables", price: 21841 }, { label: "Charcoal Grey / King / Bed + 2 x Bedside Tables", price: 23515 }, { label: "Grey / King / Bed + 2 x Bedside Tables", price: 23515 }, { label: "Light Grey / King / Bed + 2 x Bedside Tables", price: 23515 }, { label: "Ivory / King / Bed + 2 x Bedside Tables", price: 23515 }],
     desc: "Velvet with leather detail in charcoal grey, queen or king, on a timber frame.",
@@ -7488,7 +7488,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Velvet", "Options": "16", "Room": "Bedroom" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "bd07z", arriveDays: [28, 33], name: "Leather Storage Bed", cat: "Bedroom", room: "Bedroom", price: 13248, memberPrice: 11923, sku: "SH-10686", tag: "New", ph: "", img: "assets/products/bd07z.webp",
+  { id: "bd07z", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Storage Bed", cat: "Bedroom", room: "Bedroom", price: 13248, memberPrice: 11923, sku: "SH-10686", tag: "New", ph: "", img: "assets/products/bd07z.webp",
     imgs: ["assets/products/bd07z.webp", "assets/products/bd07z-2.webp", "assets/products/bd07z-3.webp", "assets/products/bd07z-4.webp", "assets/products/bd07z-5.webp"],
     sizes: [{ label: "Ivory/Beige / Queen / 0 x Bedside Tables (bed only)", price: 13248 }, { label: "Light Grey / Queen / 0 x Bedside Tables (bed only)", price: 13248 }, { label: "Dark Grey / Queen / 0 x Bedside Tables (bed only)", price: 13248 }, { label: "Ivory/Beige / King / 0 x Bedside Tables (bed only)", price: 15363 }, { label: "Light Grey / King / 0 x Bedside Tables (bed only)", price: 15363 }, { label: "Dark Grey / King / 0 x Bedside Tables (bed only)", price: 15363 }, { label: "Ivory/Beige / Queen / Bed + 2 x Bedside Tables", price: 22137 }, { label: "Light Grey / Queen / Bed + 2 x Bedside Tables", price: 22137 }, { label: "Dark Grey / Queen / Bed + 2 x Bedside Tables", price: 22137 }, { label: "Ivory/Beige / King / Bed + 2 x Bedside Tables", price: 24252 }, { label: "Light Grey / King / Bed + 2 x Bedside Tables", price: 24252 }, { label: "Dark Grey / King / Bed + 2 x Bedside Tables", price: 24252 }],
     desc: "Leather in ivory and beige with storage built into the base, queen or king. The storage is the reason to buy it.",
@@ -7500,7 +7500,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Leather", "Options": "12", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bd08z", arriveDays: [28, 33], name: "Upholstered Bed (Queen or King)", cat: "Bedroom", room: "Bedroom", price: 13333, memberPrice: 12000, sku: "SH-10687", tag: "New", ph: "", img: "assets/products/bd08z.webp",
+  { id: "bd08z", arriveDays: [28, 33], expressOpt: 7000, name: "Upholstered Bed (Queen or King)", cat: "Bedroom", room: "Bedroom", price: 13333, memberPrice: 12000, sku: "SH-10687", tag: "New", ph: "", img: "assets/products/bd08z.webp",
     imgs: ["assets/products/bd08z.webp", "assets/products/bd08z-2.webp", "assets/products/bd08z-3.webp", "assets/products/bd08z-4.webp", "assets/products/bd08z-5.webp"],
     sizes: [{ label: "Queen", price: 13333 }, { label: "King", price: 14793 }],
     desc: "A plainly upholstered bed in two sizes.",
@@ -7512,7 +7512,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Upholstery fabric", "Options": "2", "Room": "Bedroom" },
     care: "Vacuum regularly and blot spills immediately. Rotate and plump cushions so they wear evenly." },
 
-  { id: "bd09z", arriveDays: [28, 33], name: "White Upholstered Storage Bed", cat: "Bedroom", room: "Bedroom", price: 13439, memberPrice: 12095, sku: "SH-10688", tag: "New", ph: "", img: "assets/products/bd09z.webp",
+  { id: "bd09z", arriveDays: [28, 33], expressOpt: 7000, name: "White Upholstered Storage Bed", cat: "Bedroom", room: "Bedroom", price: 13439, memberPrice: 12095, sku: "SH-10688", tag: "New", ph: "", img: "assets/products/bd09z.webp",
     imgs: ["assets/products/bd09z.webp", "assets/products/bd09z-2.webp", "assets/products/bd09z-3.webp", "assets/products/bd09z-4.webp", "assets/products/bd09z-5.webp"],
     sizes: [{ label: "White / Queen / 0 x Bedside Tables (bed only)", price: 13439 }, { label: "Khaki / Queen / 0 x Bedside Tables (bed only)", price: 13439 }, { label: "White / King / 0 x Bedside Tables (bed only)", price: 14443 }, { label: "Khaki / King / 0 x Bedside Tables (bed only)", price: 14443 }, { label: "White / Queen / Bed + 2 x Bedside Tables", price: 20846 }, { label: "Khaki / Queen / Bed + 2 x Bedside Tables", price: 20846 }, { label: "White / King / Bed + 2 x Bedside Tables", price: 21850 }, { label: "Khaki / King / Bed + 2 x Bedside Tables", price: 21850 }],
     desc: "White upholstery with storage in the base, on a timber frame, with optional bedside tables.",
@@ -7524,7 +7524,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Upholstery fabric", "Options": "8", "Room": "Bedroom" },
     care: "Vacuum regularly and blot spills immediately. Rotate and plump cushions so they wear evenly." },
 
-  { id: "bd10z", arriveDays: [28, 33], name: "Black Leather Bed", cat: "Bedroom", room: "Bedroom", price: 13641, memberPrice: 12277, sku: "SH-10689", tag: "New", ph: "", img: "assets/products/bd10z.webp",
+  { id: "bd10z", arriveDays: [28, 33], expressOpt: 7000, name: "Black Leather Bed", cat: "Bedroom", room: "Bedroom", price: 13641, memberPrice: 12277, sku: "SH-10689", tag: "New", ph: "", img: "assets/products/bd10z.webp",
     imgs: ["assets/products/bd10z.webp", "assets/products/bd10z-2.webp", "assets/products/bd10z-3.webp", "assets/products/bd10z-4.webp", "assets/products/bd10z-5.webp"],
     sizes: [{ label: "Black / Queen", price: 13641 }, { label: "Black / King", price: 15048 }],
     desc: "Black leather, queen or king. Darker than most and better for it in a light room.",
@@ -7536,7 +7536,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Leather", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bd11z", arriveDays: [28, 33], name: "Bouclé & Leather Bed", cat: "Bedroom", room: "Bedroom", price: 13772, memberPrice: 12395, sku: "SH-10690", tag: "New", ph: "", img: "assets/products/bd11z.webp",
+  { id: "bd11z", arriveDays: [28, 33], expressOpt: 7000, name: "Bouclé & Leather Bed", cat: "Bedroom", room: "Bedroom", price: 13772, memberPrice: 12395, sku: "SH-10690", tag: "New", ph: "", img: "assets/products/bd11z.webp",
     imgs: ["assets/products/bd11z.webp", "assets/products/bd11z-2.webp", "assets/products/bd11z-3.webp", "assets/products/bd11z-4.webp", "assets/products/bd11z-5.webp"],
     sizes: [{ label: "Queen / 0 x Bedside Tables (bed only)", price: 13772 }, { label: "King / 0 x Bedside Tables (bed only)", price: 15778 }, { label: "Queen / Bed + 2 x Bedside Tables", price: 21180 }, { label: "King / Bed + 2 x Bedside Tables", price: 23185 }],
     desc: "Bouclé with leather detail on a timber frame, queen or king, with optional bedside tables.",
@@ -7548,7 +7548,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Bouclé", "Options": "4", "Room": "Bedroom" },
     care: "Vacuum gently with a brush head and blot spills. Trim a snagged loop rather than pulling it." },
 
-  { id: "bd12z", arriveDays: [28, 33], name: "Black Leather Storage Bed", cat: "Bedroom", room: "Bedroom", price: 14222, memberPrice: 12800, sku: "SH-10691", tag: "New", ph: "", img: "assets/products/bd12z.webp",
+  { id: "bd12z", arriveDays: [28, 33], expressOpt: 7000, name: "Black Leather Storage Bed", cat: "Bedroom", room: "Bedroom", price: 14222, memberPrice: 12800, sku: "SH-10691", tag: "New", ph: "", img: "assets/products/bd12z.webp",
     imgs: ["assets/products/bd12z.webp", "assets/products/bd12z-2.webp", "assets/products/bd12z-3.webp", "assets/products/bd12z-4.webp", "assets/products/bd12z-5.webp"],
     sizes: [{ label: "Black / Queen", price: 14222 }, { label: "Black / King", price: 15063 }],
     desc: "Black leather with storage in the base, queen or king.",
@@ -7560,7 +7560,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Leather", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bd13z", arriveDays: [28, 33], name: "Grey Upholstered Bed", cat: "Bedroom", room: "Bedroom", price: 16028, memberPrice: 14425, sku: "SH-10692", tag: "New", ph: "", img: "assets/products/bd13z.webp",
+  { id: "bd13z", arriveDays: [28, 33], expressOpt: 7000, name: "Grey Upholstered Bed", cat: "Bedroom", room: "Bedroom", price: 16028, memberPrice: 14425, sku: "SH-10692", tag: "New", ph: "", img: "assets/products/bd13z.webp",
     imgs: ["assets/products/bd13z.webp", "assets/products/bd13z-2.webp", "assets/products/bd13z-3.webp", "assets/products/bd13z-4.webp", "assets/products/bd13z-5.webp"],
     sizes: [{ label: "Grey / Queen", price: 16028 }, { label: "Grey / King", price: 16656 }],
     desc: "Grey upholstery, queen or king.",
@@ -7572,7 +7572,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Upholstery fabric", "Options": "2", "Room": "Bedroom" },
     care: "Vacuum regularly and blot spills immediately. Rotate and plump cushions so they wear evenly." },
 
-  { id: "bd14z", arriveDays: [28, 33], name: "Cotton Upholstered Bed", cat: "Bedroom", room: "Bedroom", price: 16070, memberPrice: 14463, sku: "SH-10693", tag: "New", ph: "", img: "assets/products/bd14z.webp",
+  { id: "bd14z", arriveDays: [28, 33], expressOpt: 7000, name: "Cotton Upholstered Bed", cat: "Bedroom", room: "Bedroom", price: 16070, memberPrice: 14463, sku: "SH-10693", tag: "New", ph: "", img: "assets/products/bd14z.webp",
     imgs: ["assets/products/bd14z.webp", "assets/products/bd14z-2.webp", "assets/products/bd14z-3.webp", "assets/products/bd14z-4.webp", "assets/products/bd14z-5.webp"],
     sizes: [{ label: "Beige / Queen", price: 16070 }, { label: "Grey / Queen", price: 16070 }, { label: "Beige / King", price: 17778 }, { label: "Grey / King", price: 17778 }],
     desc: "Cotton upholstery in beige or grey, queen or king. Cotton breathes better than synthetic against a bedhead you lean on.",
@@ -7584,7 +7584,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Upholstery fabric", "Options": "4", "Room": "Bedroom" },
     care: "Vacuum regularly and blot spills immediately. Rotate and plump cushions so they wear evenly." },
 
-  { id: "bd15z", arriveDays: [28, 33], name: "Upholstered Storage Bed", cat: "Bedroom", room: "Bedroom", price: 16152, memberPrice: 14537, sku: "SH-10694", tag: "New", ph: "", img: "assets/products/bd15z.webp",
+  { id: "bd15z", arriveDays: [28, 33], expressOpt: 7000, name: "Upholstered Storage Bed", cat: "Bedroom", room: "Bedroom", price: 16152, memberPrice: 14537, sku: "SH-10694", tag: "New", ph: "", img: "assets/products/bd15z.webp",
     imgs: ["assets/products/bd15z.webp", "assets/products/bd15z-2.webp", "assets/products/bd15z-3.webp", "assets/products/bd15z-4.webp", "assets/products/bd15z-5.webp"],
     sizes: [{ label: "Off White / Queen", price: 16152 }, { label: "Grey / Queen", price: 16152 }, { label: "Off White / King", price: 17635 }, { label: "Grey / King", price: 17635 }],
     desc: "Off white or grey with storage in the base, queen or king.",
@@ -7596,7 +7596,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Upholstery fabric", "Options": "4", "Room": "Bedroom" },
     care: "Vacuum regularly and blot spills immediately. Rotate and plump cushions so they wear evenly." },
 
-  { id: "bd16z", arriveDays: [28, 33], name: "Leather Storage Bed in Off White", cat: "Bedroom", room: "Bedroom", price: 16904, memberPrice: 15214, sku: "SH-10695", tag: "New", ph: "", img: "assets/products/bd16z.webp",
+  { id: "bd16z", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Storage Bed in Off White", cat: "Bedroom", room: "Bedroom", price: 16904, memberPrice: 15214, sku: "SH-10695", tag: "New", ph: "", img: "assets/products/bd16z.webp",
     imgs: ["assets/products/bd16z.webp", "assets/products/bd16z-2.webp", "assets/products/bd16z-3.webp", "assets/products/bd16z-4.webp", "assets/products/bd16z-5.webp"],
     sizes: [{ label: "Grey / Queen", price: 16904 }, { label: "Off White / Queen", price: 16904 }, { label: "Tan / Queen", price: 16904 }, { label: "Off White / King", price: 18289 }, { label: "Tan / King", price: 18289 }, { label: "Grey / King", price: 18289 }],
     desc: "Leather in off white or grey, with storage, queen or king.",
@@ -7608,7 +7608,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Leather", "Options": "6", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bd17z", arriveDays: [28, 33], name: "Wide Upholstered Bed", cat: "Bedroom", room: "Bedroom", price: 17093, memberPrice: 15384, sku: "SH-10696", tag: "New", ph: "", img: "assets/products/bd17z.webp",
+  { id: "bd17z", arriveDays: [28, 33], expressOpt: 7000, name: "Wide Upholstered Bed", cat: "Bedroom", room: "Bedroom", price: 17093, memberPrice: 15384, sku: "SH-10696", tag: "New", ph: "", img: "assets/products/bd17z.webp",
     imgs: ["assets/products/bd17z.webp", "assets/products/bd17z-2.webp", "assets/products/bd17z-3.webp", "assets/products/bd17z-4.webp", "assets/products/bd17z-5.webp"],
     sizes: [{ label: "Queen", price: 17093 }, { label: "King", price: 18148 }],
     desc: "A generously upholstered bed in queen or king, with a bedhead wide enough to sit bedside tables against.",
@@ -7620,7 +7620,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Upholstery fabric", "Options": "2", "Room": "Bedroom" },
     care: "Vacuum regularly and blot spills immediately. Rotate and plump cushions so they wear evenly." },
 
-  { id: "bd18z", arriveDays: [28, 33], name: "Ivory Upholstered Storage Bed", cat: "Bedroom", room: "Bedroom", price: 17185, memberPrice: 15466, sku: "SH-10697", tag: "New", ph: "", img: "assets/products/bd18z.webp",
+  { id: "bd18z", arriveDays: [28, 33], expressOpt: 7000, name: "Ivory Upholstered Storage Bed", cat: "Bedroom", room: "Bedroom", price: 17185, memberPrice: 15466, sku: "SH-10697", tag: "New", ph: "", img: "assets/products/bd18z.webp",
     imgs: ["assets/products/bd18z.webp", "assets/products/bd18z-2.webp", "assets/products/bd18z-3.webp", "assets/products/bd18z-4.webp", "assets/products/bd18z-5.webp"],
     sizes: [{ label: "Ivory / Queen / 0 x Bedside Tables (bed only)", price: 17185 }, { label: "Grey / Queen / 0 x Bedside Tables (bed only)", price: 17185 }, { label: "Green / Queen / 0 x Bedside Tables (bed only)", price: 17185 }, { label: "Ivory / King / 0 x Bedside Tables (bed only)", price: 18637 }, { label: "Grey / King / 0 x Bedside Tables (bed only)", price: 18637 }, { label: "Green / King / 0 x Bedside Tables (bed only)", price: 18637 }, { label: "Ivory / Queen / Bed + 2 x Bedside Tables", price: 24593 }, { label: "Grey / Queen / Bed + 2 x Bedside Tables", price: 24593 }, { label: "Green / Queen / Bed + 2 x Bedside Tables", price: 24593 }, { label: "Ivory / King / Bed + 2 x Bedside Tables", price: 26044 }, { label: "Grey / King / Bed + 2 x Bedside Tables", price: 26044 }, { label: "Green / King / Bed + 2 x Bedside Tables", price: 26044 }],
     desc: "Ivory upholstery over timber, with storage and optional bedside tables.",
@@ -7633,7 +7633,7 @@ const PRODUCTS = [
     care: "Vacuum regularly and blot spills immediately. Rotate and plump cushions so they wear evenly." },
 
 
-  { id: "bd19z", arriveDays: [28, 33], name: "Velvet Bed with Bedside Tables", cat: "Bedroom", room: "Bedroom", price: 17337, memberPrice: 15603, sku: "SH-10698", tag: "New", ph: "", img: "assets/products/bd19z.webp",
+  { id: "bd19z", arriveDays: [28, 33], expressOpt: 7000, name: "Velvet Bed with Bedside Tables", cat: "Bedroom", room: "Bedroom", price: 17337, memberPrice: 15603, sku: "SH-10698", tag: "New", ph: "", img: "assets/products/bd19z.webp",
     imgs: ["assets/products/bd19z.webp", "assets/products/bd19z-2.webp", "assets/products/bd19z-3.webp", "assets/products/bd19z-4.webp", "assets/products/bd19z-5.webp"],
    
     sizes: [{ label: "Queen / 0 x Bedside Tables", price: 17337 }, { label: "King / 0 x Bedside Tables", price: 18870 }, { label: "Queen / Bed + 2 x Bedside Tables", price: 24374 }, { label: "King / Bed + 2 x Bedside Tables", price: 25907 }],
@@ -7646,7 +7646,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Velvet", "Options": "4", "Room": "Bedroom" },
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
-  { id: "bd20z", arriveDays: [28, 33], name: "Leather Bed with Timber Frame", cat: "Bedroom", room: "Bedroom", price: 18630, memberPrice: 16767, sku: "SH-10699", tag: "New", ph: "", img: "assets/products/bd20z.webp",
+  { id: "bd20z", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Bed with Timber Frame", cat: "Bedroom", room: "Bedroom", price: 18630, memberPrice: 16767, sku: "SH-10699", tag: "New", ph: "", img: "assets/products/bd20z.webp",
     imgs: ["assets/products/bd20z.webp", "assets/products/bd20z-2.webp", "assets/products/bd20z-3.webp", "assets/products/bd20z-4.webp", "assets/products/bd20z-5.webp"],
     sizes: [{ label: "Queen / 0 x Bedside Tables (bed only)", price: 18630 }, { label: "King / 0 x Bedside Tables (bed only)", price: 20441 }, { label: "Queen / Bed + 2 x Bedside Tables", price: 27519 }, { label: "King / Bed + 2 x Bedside Tables", price: 29330 }],
     desc: "Leather over timber, queen or king, with optional matching tables.",
@@ -7658,7 +7658,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Leather", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bd21z", arriveDays: [28, 33], name: "Tan Leather Bed", cat: "Bedroom", room: "Bedroom", price: 19467, memberPrice: 17520, sku: "SH-10700", tag: "New", ph: "", img: "assets/products/bd21z.webp",
+  { id: "bd21z", arriveDays: [28, 33], expressOpt: 7000, name: "Tan Leather Bed", cat: "Bedroom", room: "Bedroom", price: 19467, memberPrice: 17520, sku: "SH-10700", tag: "New", ph: "", img: "assets/products/bd21z.webp",
     imgs: ["assets/products/bd21z.webp", "assets/products/bd21z-2.webp", "assets/products/bd21z-3.webp", "assets/products/bd21z-4.webp", "assets/products/bd21z-5.webp"],
     sizes: [{ label: "Tan / Queen", price: 19467 }, { label: "Tan / King", price: 20933 }],
     desc: "Tan leather, queen or king. Tan warms a room in a way black and grey never do.",
@@ -7670,7 +7670,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Leather", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bd22z", arriveDays: [28, 33], name: "Solid Timber Bed (King)", cat: "Bedroom", room: "Bedroom", price: 21222, memberPrice: 19100, sku: "SH-10701", tag: "New", ph: "", img: "assets/products/bd22z.webp",
+  { id: "bd22z", arriveDays: [28, 33], expressOpt: 7000, name: "Solid Timber Bed (King)", cat: "Bedroom", room: "Bedroom", price: 21222, memberPrice: 19100, sku: "SH-10701", tag: "New", ph: "", img: "assets/products/bd22z.webp",
     imgs: ["assets/products/bd22z.webp", "assets/products/bd22z-2.webp", "assets/products/bd22z-3.webp", "assets/products/bd22z-4.webp", "assets/products/bd22z-5.webp"],
     sizes: [{ label: "Queen / 0 x Bedside Tables", price: 21222 }, { label: "King / 0 x Bedside Tables", price: 22015 }, { label: "Queen / Bed + 2 x Bedside Tables", price: 30111 }, { label: "King / Bed + 2 x Bedside Tables", price: 30904 }],
     desc: "Solid timber in king, alone or with two bedside tables.",
@@ -7682,7 +7682,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Solid timber", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bd23z", arriveDays: [28, 33], name: "Leather & Timber Bed (King)", cat: "Bedroom", room: "Bedroom", price: 21467, memberPrice: 19320, sku: "SH-10702", tag: "New", ph: "", img: "assets/products/bd23z.webp",
+  { id: "bd23z", arriveDays: [28, 33], expressOpt: 7000, name: "Leather & Timber Bed (King)", cat: "Bedroom", room: "Bedroom", price: 21467, memberPrice: 19320, sku: "SH-10702", tag: "New", ph: "", img: "assets/products/bd23z.webp",
     imgs: ["assets/products/bd23z.webp", "assets/products/bd23z-2.webp", "assets/products/bd23z-3.webp", "assets/products/bd23z-4.webp", "assets/products/bd23z-5.webp"],
     sizes: [{ label: "Queen / 0 x Bedside Tables (bed only)", price: 21467 }, { label: "King / 0 x Bedside Tables (bed only)", price: 22950 }, { label: "Queen / Bed + 2 x Bedside Tables", price: 31356 }, { label: "King / Bed + 2 x Bedside Tables", price: 31839 }],
     desc: "Leather with a timber frame in king, with optional bedside tables.",
@@ -7694,7 +7694,7 @@ const PRODUCTS = [
     specs: { "Type": "Bed", "Material": "Leather", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bd24z", arriveDays: [28, 33], name: "Navy Velvet Bed (250 or 280cm)", cat: "Bedroom", room: "Bedroom", price: 21778, memberPrice: 19600, sku: "SH-10703", tag: "New", ph: "", img: "assets/products/bd24z.webp",
+  { id: "bd24z", arriveDays: [28, 33], expressOpt: 7000, name: "Navy Velvet Bed (250 or 280cm)", cat: "Bedroom", room: "Bedroom", price: 21778, memberPrice: 19600, sku: "SH-10703", tag: "New", ph: "", img: "assets/products/bd24z.webp",
     imgs: ["assets/products/bd24z.webp", "assets/products/bd24z-2.webp", "assets/products/bd24z-3.webp", "assets/products/bd24z-4.webp", "assets/products/bd24z-5.jpg"],
     sizes: [{ label: "Navy Blue / 280cm", price: 21778 }, { label: "Navy Blue / 250cm", price: 28000 }],
     desc: "Navy velvet at 250cm or 280cm across, which is wider than a standard king and is meant to be the whole wall.",
@@ -7707,7 +7707,7 @@ const PRODUCTS = [
     care: "Vacuum with a brush head to lift the pile and blot spills rather than rubbing, since rubbing crushes the nap. Keep out of strong direct sun." },
 
 
-  { id: "bd25z", arriveDays: [28, 33], name: "Leather Bed with Wide Bedhead", cat: "Bedroom", room: "Bedroom", price: 22185, memberPrice: 19966, sku: "SH-10704", tag: "New", ph: "", img: "assets/products/bd25z.webp",
+  { id: "bd25z", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Bed with Wide Bedhead", cat: "Bedroom", room: "Bedroom", price: 22185, memberPrice: 19966, sku: "SH-10704", tag: "New", ph: "", img: "assets/products/bd25z.webp",
     imgs: ["assets/products/bd25z.webp", "assets/products/bd25z-2.webp", "assets/products/bd25z-3.webp", "assets/products/bd25z-4.webp", "assets/products/bd25z-5.webp"],
    
     sizes: [{ label: "Queen / 0 x Bedside Tables (bed only)", price: 22185 }, { label: "King / 0 x Bedside Tables (bed only)", price: 23365 }, { label: "Queen / Bed + 2 x Bedside Tables", price: 26630 }, { label: "King / Bed + 2 x Bedside Tables", price: 27809 }],
@@ -8316,7 +8316,7 @@ const PRODUCTS = [
 
 
   // ── Outdoor ──
-  { id: "bs01z", arriveDays: [28, 33], name: "Timber Bedside Table with Drawer", cat: "Bedroom", room: "Bedroom", price: 1833, memberPrice: 1650, sku: "SH-10752", tag: "New", ph: "", img: "assets/products/bs01z.webp",
+  { id: "bs01z", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Bedside Table with Drawer", cat: "Bedroom", room: "Bedroom", price: 1833, memberPrice: 1650, sku: "SH-10752", tag: "New", ph: "", img: "assets/products/bs01z.webp",
     imgs: ["assets/products/bs01z.webp", "assets/products/bs01z-2.webp", "assets/products/bs01z-3.webp", "assets/products/bs01z-4.webp", "assets/products/bs01z-5.webp"],
    
     sizes: [{ label: "Olive / 40cm", price: 1833 }, { label: "Charcoal / 40cm", price: 1833 }, { label: "Cream / 40cm", price: 1833 }, { label: "Ivory / 40cm", price: 1833 }, { label: "Grey / 40cm", price: 1833 }, { label: "Shale Grey / 40cm", price: 1833 }, { label: "White / 40cm", price: 1833 }, { label: "White / 45cm", price: 1944 }, { label: "Olive / 45cm", price: 1944 }, { label: "Charcoal / 45cm", price: 1944 }, { label: "Cream / 45cm", price: 1944 }, { label: "Ivory / 45cm", price: 1944 }, { label: "Grey / 45cm", price: 1944 }, { label: "Shale Grey / 45cm", price: 1944 }, { label: "Olive / 50cm", price: 2346 }, { label: "Charcoal / 50cm", price: 2346 }, { label: "Cream / 50cm", price: 2346 }, { label: "Ivory / 50cm", price: 2346 }, { label: "Grey / 50cm", price: 2346 }, { label: "Shale Grey / 50cm", price: 2346 }, { label: "White / 50cm", price: 2346 }],
@@ -8329,7 +8329,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "21", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs02z", arriveDays: [28, 33], name: "Timber Bedside Table (Small or Large)", cat: "Bedroom", room: "Bedroom", price: 2087, memberPrice: 1878, sku: "SH-10753", tag: "New", ph: "", img: "assets/products/bs02z.webp",
+  { id: "bs02z", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Bedside Table (Small or Large)", cat: "Bedroom", room: "Bedroom", price: 2087, memberPrice: 1878, sku: "SH-10753", tag: "New", ph: "", img: "assets/products/bs02z.webp",
     imgs: ["assets/products/bs02z.webp", "assets/products/bs02z-2.webp", "assets/products/bs02z-3.webp", "assets/products/bs02z-4.webp", "assets/products/bs02z-5.webp"],
    
     sizes: [{ label: "Small", price: 2087 }, { label: "Large", price: 2494 }],
@@ -8342,7 +8342,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs03z", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"White":"assets/products/bs03z-3.webp","Black":"assets/products/bs03z-4.webp"}, name: "Bedside Table with Storage", cat: "Bedroom", room: "Bedroom", price: 2204, memberPrice: 1984, sku: "SH-10754", tag: "New", ph: "", img: "assets/products/bs03z.webp",
+  { id: "bs03z", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"White":"assets/products/bs03z-3.webp","Black":"assets/products/bs03z-4.webp"}, name: "Bedside Table with Storage", cat: "Bedroom", room: "Bedroom", price: 2204, memberPrice: 1984, sku: "SH-10754", tag: "New", ph: "", img: "assets/products/bs03z.webp",
     imgs: ["assets/products/bs03z.webp", "assets/products/bs03z-2.webp", "assets/products/bs03z-3.webp", "assets/products/bs03z-4.webp", "assets/products/bs03z-5.webp"],
    
     sizes: [{ label: "White", price: 2204 }, { label: "Black", price: 2204 }],
@@ -8355,7 +8355,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs04z", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Black":"assets/products/bs04z.webp"}, name: "Bedside Table in Natural or Black", cat: "Bedroom", room: "Bedroom", price: 2309, memberPrice: 2078, sku: "SH-10755", tag: "New", ph: "", img: "assets/products/bs04z.webp",
+  { id: "bs04z", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Black":"assets/products/bs04z.webp"}, name: "Bedside Table in Natural or Black", cat: "Bedroom", room: "Bedroom", price: 2309, memberPrice: 2078, sku: "SH-10755", tag: "New", ph: "", img: "assets/products/bs04z.webp",
     imgs: ["assets/products/bs04z.webp", "assets/products/bs04z-2.webp", "assets/products/bs04z-3.webp", "assets/products/bs04z-4.webp", "assets/products/bs04z-5.webp"],
    
     sizes: [{ label: "Natural Brown", price: 2309 }, { label: "Black", price: 2309 }],
@@ -8368,7 +8368,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs05z", arriveDays: [28, 33], name: "Oak & Leather Bedside Table", cat: "Bedroom", room: "Bedroom", price: 2444, memberPrice: 2200, sku: "SH-10756", tag: "New", ph: "", img: "assets/products/bs05z.webp",
+  { id: "bs05z", arriveDays: [28, 33], expressOpt: 7000, name: "Oak & Leather Bedside Table", cat: "Bedroom", room: "Bedroom", price: 2444, memberPrice: 2200, sku: "SH-10756", tag: "New", ph: "", img: "assets/products/bs05z.webp",
     imgs: ["assets/products/bs05z.webp", "assets/products/bs05z-2.webp", "assets/products/bs05z-3.webp", "assets/products/bs05z-4.webp", "assets/products/bs05z-5.webp"],
    
     sizes: [{ label: "Light Coffee / 40cm", price: 2444 }, { label: "Black / 40cm", price: 2444 }, { label: "White / 40cm", price: 2444 }, { label: "Grey / 40cm", price: 2444 }, { label: "Beige / 40cm", price: 2444 }, { label: "Chocolate / 40cm", price: 2444 }, { label: "Walnut / 40cm", price: 2444 }, { label: "Light Coffee / 50cm", price: 2757 }, { label: "Black / 50cm", price: 2757 }, { label: "White / 50cm", price: 2757 }, { label: "Grey / 50cm", price: 2757 }, { label: "Beige / 50cm", price: 2757 }, { label: "Chocolate / 50cm", price: 2757 }, { label: "Walnut / 50cm", price: 2757 }, { label: "Light Coffee / 60cm", price: 3054 }, { label: "Black / 60cm", price: 3054 }, { label: "White / 60cm", price: 3054 }, { label: "Grey / 60cm", price: 3054 }, { label: "Beige / 60cm", price: 3054 }, { label: "Chocolate / 60cm", price: 3054 }, { label: "Walnut / 60cm", price: 3054 }],
@@ -8381,7 +8381,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "21", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs06z", arriveDays: [28, 33], optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/bs06z-3.webp","Grey":"assets/products/bs06z.webp"}, name: "Leather Bedside Table", cat: "Bedroom", room: "Bedroom", price: 2574, memberPrice: 2317, sku: "SH-10757", tag: "New", ph: "", img: "assets/products/bs06z.webp",
+  { id: "bs06z", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", sizeImg: {"Ivory":"assets/products/bs06z-3.webp","Grey":"assets/products/bs06z.webp"}, name: "Leather Bedside Table", cat: "Bedroom", room: "Bedroom", price: 2574, memberPrice: 2317, sku: "SH-10757", tag: "New", ph: "", img: "assets/products/bs06z.webp",
     imgs: ["assets/products/bs06z.webp", "assets/products/bs06z-2.webp", "assets/products/bs06z-3.webp", "assets/products/bs06z-4.webp", "assets/products/bs06z-5.webp"],
    
     sizes: [{ label: "Ivory", price: 2574 }, { label: "Grey", price: 2574 }],
@@ -8394,7 +8394,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Leather", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bs07z", arriveDays: [28, 33], name: "Left or Right Hand Bedside Table", cat: "Bedroom", room: "Bedroom", price: 2683, memberPrice: 2415, sku: "SH-10758", tag: "New", ph: "", img: "assets/products/bs07z.webp",
+  { id: "bs07z", arriveDays: [28, 33], expressOpt: 7000, name: "Left or Right Hand Bedside Table", cat: "Bedroom", room: "Bedroom", price: 2683, memberPrice: 2415, sku: "SH-10758", tag: "New", ph: "", img: "assets/products/bs07z.webp",
     imgs: ["assets/products/bs07z.webp", "assets/products/bs07z-2.webp", "assets/products/bs07z-3.webp", "assets/products/bs07z-4.webp", "assets/products/bs07z-5.webp"],
    
     sizes: [{ label: "Left / Black", price: 2683 }, { label: "Left / White", price: 2683 }, { label: "Right / Black", price: 2683 }, { label: "Right / White", price: 2683 }],
@@ -8407,7 +8407,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Leather", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "bs08z", arriveDays: [28, 33], name: "Walnut Bedside Table with Storage", cat: "Bedroom", room: "Bedroom", price: 2776, memberPrice: 2498, sku: "SH-10759", tag: "New", ph: "", img: "assets/products/bs08z.webp",
+  { id: "bs08z", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Bedside Table with Storage", cat: "Bedroom", room: "Bedroom", price: 2776, memberPrice: 2498, sku: "SH-10759", tag: "New", ph: "", img: "assets/products/bs08z.webp",
     imgs: ["assets/products/bs08z.webp", "assets/products/bs08z-2.webp", "assets/products/bs08z-3.webp", "assets/products/bs08z-4.webp", "assets/products/bs08z-5.webp"],
    
     sizes: [{ label: "Chocolate / 40cm", price: 2776 }, { label: "Black / 40cm", price: 2776 }, { label: "Tan / 40cm", price: 2776 }, { label: "Chocolate / 50cm", price: 3109 }, { label: "Black / 50cm", price: 3109 }, { label: "Tan / 50cm", price: 3109 }],
@@ -8420,7 +8420,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "6", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs09z", arriveDays: [28, 33], optionLabel: "Colour", name: "Oak Bedside Table in Three Tones", cat: "Bedroom", room: "Bedroom", price: 2878, memberPrice: 2590, sku: "SH-10760", tag: "New", ph: "", img: "assets/products/bs09z.webp",
+  { id: "bs09z", arriveDays: [28, 33], expressOpt: 7000, optionLabel: "Colour", name: "Oak Bedside Table in Three Tones", cat: "Bedroom", room: "Bedroom", price: 2878, memberPrice: 2590, sku: "SH-10760", tag: "New", ph: "", img: "assets/products/bs09z.webp",
     imgs: ["assets/products/bs09z.webp", "assets/products/bs09z-2.webp", "assets/products/bs09z-3.webp", "assets/products/bs09z-4.webp", "assets/products/bs09z-5.webp"],
    
     sizes: [{ label: "Beige", price: 2878 }, { label: "Grey", price: 2878 }, { label: "Black", price: 2878 }],
@@ -8433,7 +8433,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "3", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs10z", arriveDays: [28, 33], name: "Walnut Bedside Table (45 or 50cm)", cat: "Bedroom", room: "Bedroom", price: 2902, memberPrice: 2612, sku: "SH-10761", tag: "New", ph: "", img: "assets/products/bs10z.webp",
+  { id: "bs10z", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Bedside Table (45 or 50cm)", cat: "Bedroom", room: "Bedroom", price: 2902, memberPrice: 2612, sku: "SH-10761", tag: "New", ph: "", img: "assets/products/bs10z.webp",
     imgs: ["assets/products/bs10z.webp", "assets/products/bs10z-2.webp", "assets/products/bs10z-3.webp", "assets/products/bs10z-4.webp", "assets/products/bs10z-5.webp"],
    
     sizes: [{ label: "Black / 45cm", price: 2902 }, { label: "Walnut / 45cm", price: 2902 }, { label: "Black / 50cm", price: 3111 }, { label: "Walnut / 50cm", price: 3111 }],
@@ -8446,7 +8446,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "bs11z", arriveDays: [28, 33], name: "Timber Bedside Table", cat: "Bedroom", room: "Bedroom", price: 3013, memberPrice: 2712, sku: "SH-10762", tag: "New", ph: "", img: "assets/products/bs11z.webp",
+  { id: "bs11z", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Bedside Table", cat: "Bedroom", room: "Bedroom", price: 3013, memberPrice: 2712, sku: "SH-10762", tag: "New", ph: "", img: "assets/products/bs11z.webp",
     imgs: ["assets/products/bs11z.webp", "assets/products/bs11z-2.webp", "assets/products/bs11z-3.webp", "assets/products/bs11z-4.webp", "assets/products/bs11z-5.webp"],
    
     desc: "One timber bedside table, one finish, nothing to decide.",
@@ -8458,7 +8458,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedside table", "Material": "Solid timber", "Options": "1", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt01z", arriveDays: [28, 33], name: "Dressing Table with Storage", cat: "Bedroom", room: "Bedroom", price: 5481, memberPrice: 4933, sku: "SH-10763", tag: "New", ph: "", img: "assets/products/dt01z.webp",
+  { id: "dt01z", arriveDays: [28, 33], expressOpt: 7000, name: "Dressing Table with Storage", cat: "Bedroom", room: "Bedroom", price: 5481, memberPrice: 4933, sku: "SH-10763", tag: "New", ph: "", img: "assets/products/dt01z.webp",
     imgs: ["assets/products/dt01z.webp", "assets/products/dt01z-2.webp", "assets/products/dt01z-3.webp", "assets/products/dt01z-4.webp", "assets/products/dt01z-5.webp"],
    
     sizes: [{ label: "80cm A", price: 5481 }, { label: "80cm B", price: 6578 }, { label: "120cm", price: 6781 }],
@@ -8471,7 +8471,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "3", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt02z", arriveDays: [28, 33], name: "Dressing Table with Mirror, Left or Right Drawer", cat: "Bedroom", room: "Bedroom", price: 6804, memberPrice: 6124, sku: "SH-10764", tag: "New", ph: "", img: "assets/products/dt02z.webp",
+  { id: "dt02z", arriveDays: [28, 33], expressOpt: 7000, name: "Dressing Table with Mirror, Left or Right Drawer", cat: "Bedroom", room: "Bedroom", price: 6804, memberPrice: 6124, sku: "SH-10764", tag: "New", ph: "", img: "assets/products/dt02z.webp",
     imgs: ["assets/products/dt02z.webp", "assets/products/dt02z-2.webp", "assets/products/dt02z-3.webp", "assets/products/dt02z-4.webp", "assets/products/dt02z-5.webp"],
    
     sizes: [{ label: "Left Hand Drawer", price: 6804 }, { label: "Right Hand Drawer", price: 6804 }],
@@ -8484,7 +8484,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt03z", arriveDays: [28, 33], name: "Timber Dressing Table (80cm)", cat: "Bedroom", room: "Bedroom", price: 7261, memberPrice: 6535, sku: "SH-10765", tag: "New", ph: "", img: "assets/products/dt03z.webp",
+  { id: "dt03z", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dressing Table (80cm)", cat: "Bedroom", room: "Bedroom", price: 7261, memberPrice: 6535, sku: "SH-10765", tag: "New", ph: "", img: "assets/products/dt03z.webp",
     imgs: ["assets/products/dt03z.webp", "assets/products/dt03z-2.webp", "assets/products/dt03z-3.webp", "assets/products/dt03z-4.webp", "assets/products/dt03z-5.webp"],
    
     sizes: [{ label: "Tan / 80cm", price: 7261 }, { label: "Black / 80cm", price: 7261 }, { label: "White / 80cm", price: 7261 }, { label: "Grey / 80cm", price: 7261 }, { label: "Beige / 80cm", price: 7261 }, { label: "Tan / 100cm", price: 7622 }, { label: "Black / 100cm", price: 7622 }, { label: "White / 100cm", price: 7622 }, { label: "Grey / 100cm", price: 7622 }, { label: "Beige / 100cm", price: 7622 }, { label: "Tan / 120cm", price: 8594 }, { label: "Black / 120cm", price: 8594 }, { label: "White / 120cm", price: 8594 }, { label: "Grey / 120cm", price: 8594 }, { label: "Beige / 120cm", price: 8594 }],
@@ -8497,7 +8497,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "15", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt04z", arriveDays: [28, 33], name: "Dressing Table with Drawers", cat: "Bedroom", room: "Bedroom", price: 7593, memberPrice: 6834, sku: "SH-10766", tag: "New", ph: "", img: "assets/products/dt04z.webp",
+  { id: "dt04z", arriveDays: [28, 33], expressOpt: 7000, name: "Dressing Table with Drawers", cat: "Bedroom", room: "Bedroom", price: 7593, memberPrice: 6834, sku: "SH-10766", tag: "New", ph: "", img: "assets/products/dt04z.webp",
     imgs: ["assets/products/dt04z.webp", "assets/products/dt04z-2.webp", "assets/products/dt04z-3.webp", "assets/products/dt04z-4.webp", "assets/products/dt04z-5.webp"],
    
     sizes: [{ label: "100cm", price: 7593 }, { label: "120cm", price: 8067 }, { label: "140cm", price: 8515 }],
@@ -8510,7 +8510,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "3", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt05z", arriveDays: [28, 33], name: "Dressing Table with Oval Mirror", cat: "Bedroom", room: "Bedroom", price: 7957, memberPrice: 7161, sku: "SH-10767", tag: "New", ph: "", img: "assets/products/dt05z.webp",
+  { id: "dt05z", arriveDays: [28, 33], expressOpt: 7000, name: "Dressing Table with Oval Mirror", cat: "Bedroom", room: "Bedroom", price: 7957, memberPrice: 7161, sku: "SH-10767", tag: "New", ph: "", img: "assets/products/dt05z.webp",
     imgs: ["assets/products/dt05z.webp", "assets/products/dt05z-2.webp", "assets/products/dt05z-3.webp", "assets/products/dt05z-4.webp", "assets/products/dt05z-5.webp"],
    
     sizes: [{ label: "80cm (oval mirror)", price: 7957 }, { label: "80cm (semi circle mirror)", price: 7957 }, { label: "95cm (oval mirror)", price: 8509 }, { label: "95cm (semi circle mirror)", price: 8509 }],
@@ -8523,7 +8523,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt06z", arriveDays: [28, 33], name: "Dressing Table in Dark Grey", cat: "Bedroom", room: "Bedroom", price: 8330, memberPrice: 7497, sku: "SH-10768", tag: "New", ph: "", img: "assets/products/dt06z.webp",
+  { id: "dt06z", arriveDays: [28, 33], expressOpt: 7000, name: "Dressing Table in Dark Grey", cat: "Bedroom", room: "Bedroom", price: 8330, memberPrice: 7497, sku: "SH-10768", tag: "New", ph: "", img: "assets/products/dt06z.webp",
     imgs: ["assets/products/dt06z.webp", "assets/products/dt06z-2.webp", "assets/products/dt06z-3.webp", "assets/products/dt06z-4.webp", "assets/products/dt06z-5.webp"],
    
     sizes: [{ label: "Dark Grey / 80cm", price: 8330 }, { label: "Light Grey / 80cm", price: 8330 }, { label: "Ivory / 80cm", price: 8330 }, { label: "Beige / 80cm", price: 8330 }, { label: "Dark Grey / 100cm", price: 9239 }, { label: "Light Grey / 100cm", price: 9239 }, { label: "Ivory / 100cm", price: 9239 }, { label: "Beige / 100cm", price: 9239 }, { label: "Dark Grey / 120cm", price: 10126 }, { label: "Light Grey / 120cm", price: 10126 }, { label: "Ivory / 120cm", price: 10126 }, { label: "Beige / 120cm", price: 10126 }],
@@ -8536,7 +8536,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "12", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt07z", arriveDays: [28, 33], name: "Marble & Leather Dressing Table", cat: "Bedroom", room: "Bedroom", price: 9720, memberPrice: 8748, sku: "SH-10769", tag: "New", ph: "", img: "assets/products/dt07z.webp",
+  { id: "dt07z", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Leather Dressing Table", cat: "Bedroom", room: "Bedroom", price: 9720, memberPrice: 8748, sku: "SH-10769", tag: "New", ph: "", img: "assets/products/dt07z.webp",
     imgs: ["assets/products/dt07z.webp", "assets/products/dt07z-2.webp", "assets/products/dt07z-3.webp", "assets/products/dt07z-4.webp", "assets/products/dt07z-5.webp"],
    
     sizes: [{ label: "80cm", price: 9720 }, { label: "100cm", price: 11093 }],
@@ -8549,7 +8549,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt08z", arriveDays: [28, 33], name: "Dressing Table with Drawers (80 or 100cm)", cat: "Bedroom", room: "Bedroom", price: 9906, memberPrice: 8915, sku: "SH-10770", tag: "New", ph: "", img: "assets/products/dt08z.webp",
+  { id: "dt08z", arriveDays: [28, 33], expressOpt: 7000, name: "Dressing Table with Drawers (80 or 100cm)", cat: "Bedroom", room: "Bedroom", price: 9906, memberPrice: 8915, sku: "SH-10770", tag: "New", ph: "", img: "assets/products/dt08z.webp",
     imgs: ["assets/products/dt08z.webp", "assets/products/dt08z-2.webp", "assets/products/dt08z-3.webp", "assets/products/dt08z-4.webp", "assets/products/dt08z-5.webp"],
    
     sizes: [{ label: "80cm", price: 9906 }, { label: "100cm", price: 11000 }],
@@ -8562,7 +8562,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt09z", arriveDays: [28, 33], name: "Walnut & Marble Dressing Table", cat: "Bedroom", room: "Bedroom", price: 10037, memberPrice: 9033, sku: "SH-10771", tag: "New", ph: "", img: "assets/products/dt09z.webp",
+  { id: "dt09z", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut & Marble Dressing Table", cat: "Bedroom", room: "Bedroom", price: 10037, memberPrice: 9033, sku: "SH-10771", tag: "New", ph: "", img: "assets/products/dt09z.webp",
     imgs: ["assets/products/dt09z.webp", "assets/products/dt09z-2.webp", "assets/products/dt09z-3.webp", "assets/products/dt09z-4.webp", "assets/products/dt09z-5.webp"],
    
     sizes: [{ label: "100cm", price: 10037 }, { label: "130cm", price: 11643 }],
@@ -8575,7 +8575,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt10z", arriveDays: [28, 33], name: "Long Dressing Table with Mirror (230cm)", cat: "Bedroom", room: "Bedroom", price: 10180, memberPrice: 9162, sku: "SH-10772", tag: "New", ph: "", img: "assets/products/dt10z.webp",
+  { id: "dt10z", arriveDays: [28, 33], expressOpt: 7000, name: "Long Dressing Table with Mirror (230cm)", cat: "Bedroom", room: "Bedroom", price: 10180, memberPrice: 9162, sku: "SH-10772", tag: "New", ph: "", img: "assets/products/dt10z.webp",
     imgs: ["assets/products/dt10z.webp", "assets/products/dt10z-2.webp", "assets/products/dt10z-3.webp", "assets/products/dt10z-4.webp", "assets/products/dt10z-5.webp"],
    
     sizes: [{ label: "230cm", price: 10180 }],
@@ -8588,7 +8588,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "1", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt11z", arriveDays: [28, 33], name: "Timber Dressing Table (Three Widths)", cat: "Bedroom", room: "Bedroom", price: 10457, memberPrice: 9411, sku: "SH-10773", tag: "New", ph: "", img: "assets/products/dt11z.webp",
+  { id: "dt11z", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Dressing Table (Three Widths)", cat: "Bedroom", room: "Bedroom", price: 10457, memberPrice: 9411, sku: "SH-10773", tag: "New", ph: "", img: "assets/products/dt11z.webp",
     imgs: ["assets/products/dt11z.webp", "assets/products/dt11z-2.webp", "assets/products/dt11z-3.webp", "assets/products/dt11z-4.webp", "assets/products/dt11z-5.webp"],
    
     sizes: [{ label: "100cm", price: 10457 }, { label: "120cm", price: 11093 }, { label: "140cm", price: 11843 }],
@@ -8601,7 +8601,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "3", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt12z", arriveDays: [28, 33], name: "Leather & Timber Dressing Table", cat: "Bedroom", room: "Bedroom", price: 10887, memberPrice: 9798, sku: "SH-10774", tag: "New", ph: "", img: "assets/products/dt12z.webp",
+  { id: "dt12z", arriveDays: [28, 33], expressOpt: 7000, name: "Leather & Timber Dressing Table", cat: "Bedroom", room: "Bedroom", price: 10887, memberPrice: 9798, sku: "SH-10774", tag: "New", ph: "", img: "assets/products/dt12z.webp",
     imgs: ["assets/products/dt12z.webp", "assets/products/dt12z-2.webp", "assets/products/dt12z-3.webp", "assets/products/dt12z-4.webp", "assets/products/dt12z-5.webp"],
    
     sizes: [{ label: "90cm", price: 10887 }, { label: "110cm", price: 12944 }, { label: "130cm", price: 14624 }, { label: "150cm", price: 16665 }],
@@ -8614,7 +8614,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt13z", arriveDays: [28, 33], name: "Walnut & Leather Dressing Table", cat: "Bedroom", room: "Bedroom", price: 10926, memberPrice: 9833, sku: "SH-10775", tag: "New", ph: "", img: "assets/products/dt13z.webp",
+  { id: "dt13z", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut & Leather Dressing Table", cat: "Bedroom", room: "Bedroom", price: 10926, memberPrice: 9833, sku: "SH-10775", tag: "New", ph: "", img: "assets/products/dt13z.webp",
     imgs: ["assets/products/dt13z.webp", "assets/products/dt13z-2.webp", "assets/products/dt13z-3.webp", "assets/products/dt13z-4.webp", "assets/products/dt13z-5.webp"],
    
     sizes: [{ label: "80cm", price: 10926 }, { label: "100cm", price: 12517 }, { label: "120cm", price: 13333 }],
@@ -8627,7 +8627,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "3", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt14z", arriveDays: [28, 33], name: "Dresser with Storage", cat: "Bedroom", room: "Bedroom", price: 11000, memberPrice: 9900, sku: "SH-10776", tag: "New", ph: "", img: "assets/products/dt14z.webp",
+  { id: "dt14z", arriveDays: [28, 33], expressOpt: 7000, name: "Dresser with Storage", cat: "Bedroom", room: "Bedroom", price: 11000, memberPrice: 9900, sku: "SH-10776", tag: "New", ph: "", img: "assets/products/dt14z.webp",
     imgs: ["assets/products/dt14z.webp", "assets/products/dt14z-2.webp", "assets/products/dt14z-3.webp", "assets/products/dt14z-4.webp", "assets/products/dt14z-5.webp"],
    
     desc: "A dresser rather than a dressing table: drawers, no mirror, one size.",
@@ -8639,7 +8639,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "1", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt15z", arriveDays: [28, 33], name: "Dressing Table Set with Mirror", cat: "Bedroom", room: "Bedroom", price: 11106, memberPrice: 9995, sku: "SH-10777", tag: "New", ph: "", img: "assets/products/dt15z.webp",
+  { id: "dt15z", arriveDays: [28, 33], expressOpt: 7000, name: "Dressing Table Set with Mirror", cat: "Bedroom", room: "Bedroom", price: 11106, memberPrice: 9995, sku: "SH-10777", tag: "New", ph: "", img: "assets/products/dt15z.webp",
     imgs: ["assets/products/dt15z.webp", "assets/products/dt15z-2.webp", "assets/products/dt15z-3.webp", "assets/products/dt15z-4.webp", "assets/products/dt15z-5.webp"],
    
     sizes: [{ label: "80cm", price: 11106 }, { label: "100cm", price: 11961 }],
@@ -8652,7 +8652,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt16z", arriveDays: [28, 33], name: "Leather Dresser in Khaki & Off White", cat: "Bedroom", room: "Bedroom", price: 11770, memberPrice: 10593, sku: "SH-10778", tag: "New", ph: "", img: "assets/products/dt16z.webp",
+  { id: "dt16z", arriveDays: [28, 33], expressOpt: 7000, name: "Leather Dresser in Khaki & Off White", cat: "Bedroom", room: "Bedroom", price: 11770, memberPrice: 10593, sku: "SH-10778", tag: "New", ph: "", img: "assets/products/dt16z.webp",
     imgs: ["assets/products/dt16z.webp", "assets/products/dt16z-2.webp", "assets/products/dt16z-3.webp", "assets/products/dt16z-4.webp", "assets/products/dt16z-5.webp"],
    
     sizes: [{ label: "Khaki + Off White / 120cm", price: 11770 }, { label: "Khaki + Off White / 140cm", price: 11956 }, { label: "Khaki + Off White / 150cm", price: 12326 }, { label: "Khaki + Off White / 160cm", price: 12459 }],
@@ -8665,7 +8665,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Leather", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dt17z", arriveDays: [28, 33], name: "Oak & Leather Dressing Table", cat: "Bedroom", room: "Bedroom", price: 11902, memberPrice: 10712, sku: "SH-10779", tag: "New", ph: "", img: "assets/products/dt17z.webp",
+  { id: "dt17z", arriveDays: [28, 33], expressOpt: 7000, name: "Oak & Leather Dressing Table", cat: "Bedroom", room: "Bedroom", price: 11902, memberPrice: 10712, sku: "SH-10779", tag: "New", ph: "", img: "assets/products/dt17z.webp",
     imgs: ["assets/products/dt17z.webp", "assets/products/dt17z-2.webp", "assets/products/dt17z-3.webp", "assets/products/dt17z-4.webp", "assets/products/dt17z-5.webp"],
    
     sizes: [{ label: "100cm", price: 11902 }, { label: "120cm", price: 12778 }, { label: "140cm", price: 13500 }, { label: "160cm", price: 13772 }],
@@ -8678,7 +8678,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "4", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt18z", arriveDays: [28, 33], name: "Dressing Table with Mirror (100 or 120cm)", cat: "Bedroom", room: "Bedroom", price: 12111, memberPrice: 10900, sku: "SH-10780", tag: "New", ph: "", img: "assets/products/dt18z.webp",
+  { id: "dt18z", arriveDays: [28, 33], expressOpt: 7000, name: "Dressing Table with Mirror (100 or 120cm)", cat: "Bedroom", room: "Bedroom", price: 12111, memberPrice: 10900, sku: "SH-10780", tag: "New", ph: "", img: "assets/products/dt18z.webp",
     imgs: ["assets/products/dt18z.webp", "assets/products/dt18z-2.webp", "assets/products/dt18z-3.webp", "assets/products/dt18z-4.webp", "assets/products/dt18z-5.webp"],
    
     sizes: [{ label: "100cm", price: 12111 }, { label: "120cm", price: 13485 }],
@@ -8691,7 +8691,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Solid timber", "Options": "2", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills promptly. Keep out of direct sun, use coasters, and check the fixings occasionally." },
 
-  { id: "dt19z", arriveDays: [28, 33], name: "Ivory Leather & Oak Dresser", cat: "Bedroom", room: "Bedroom", price: 14561, memberPrice: 13105, sku: "SH-10781", tag: "New", ph: "", img: "assets/products/dt19z.webp",
+  { id: "dt19z", arriveDays: [28, 33], expressOpt: 7000, name: "Ivory Leather & Oak Dresser", cat: "Bedroom", room: "Bedroom", price: 14561, memberPrice: 13105, sku: "SH-10781", tag: "New", ph: "", img: "assets/products/dt19z.webp",
     imgs: ["assets/products/dt19z.webp", "assets/products/dt19z-2.webp", "assets/products/dt19z-3.webp", "assets/products/dt19z-4.webp", "assets/products/dt19z-5.webp"],
    
     sizes: [{ label: "Ivory", price: 14561 }],
@@ -8704,7 +8704,7 @@ const PRODUCTS = [
     specs: { "Type": "Dressing table", "Material": "Leather", "Options": "1", "Room": "Bedroom" },
     care: "Dust with a dry cloth and wipe spills at once with a barely damp one. Keep out of direct sun and away from heaters, which dry and crack hide. Condition once or twice a year." },
 
-  { id: "dt20z", arriveDays: [28, 33], name: "Carved Dressing Table with Mirror (100cm)", cat: "Bedroom", room: "Bedroom", price: 18126, memberPrice: 16313, sku: "SH-10782", tag: "New", ph: "", img: "assets/products/dt20z.webp",
+  { id: "dt20z", arriveDays: [28, 33], expressOpt: 7000, name: "Carved Dressing Table with Mirror (100cm)", cat: "Bedroom", room: "Bedroom", price: 18126, memberPrice: 16313, sku: "SH-10782", tag: "New", ph: "", img: "assets/products/dt20z.webp",
     imgs: ["assets/products/dt20z.webp", "assets/products/dt20z-2.webp", "assets/products/dt20z-3.webp", "assets/products/dt20z-4.webp", "assets/products/dt20z-5.webp"],
    
     sizes: [{ label: "100cm", price: 18126 }],
@@ -8750,7 +8750,7 @@ const PRODUCTS = [
     care: "Wipe the solar panel on the lid clear of dust and leaves now and then, since a dirty panel is the usual reason a solar light dims. Clean the frame with a damp cloth. In a long run of grey days, move it somewhere brighter to charge." },
 
 
-  { id: "od03", arriveDays: [28, 33], name: "Rattan Outdoor Lounge Chair, Ottoman & Side Table", cat: "Outdoor", room: "Outdoor", price: 1050, memberPrice: 945, sku: "SH-10118", tag: "New", ph: "", img: "assets/products/od03.jpg",
+  { id: "od03", arriveDays: [28, 33], expressOpt: 7000, name: "Rattan Outdoor Lounge Chair, Ottoman & Side Table", cat: "Outdoor", room: "Outdoor", price: 1050, memberPrice: 945, sku: "SH-10118", tag: "New", ph: "", img: "assets/products/od03.jpg",
     imgs: ["assets/products/od03.jpg", "assets/products/od03-2.jpg", "assets/products/od03-3.jpg", "assets/products/od03-4.jpg", "assets/products/od03-5.webp", "assets/products/od03-6.webp", "assets/products/od03-7.webp"],
    
     sizes: [{ label: "Ottoman", price: 1050 }, { label: "Chair", price: 2752 }, { label: "Side table", price: 3072 }],
@@ -8766,7 +8766,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor lounge chair, ottoman and table", "Weave": "Weather-resistant rattan", "Frame": "Steel", "Sold as": "Individual pieces", "Use": "Outdoor, covered or open" },
     care: "Hose the weave down and let it dry in the air. Wipe spills before they dry into the rattan. Under long sun or heavy rain, a cover or a spot under the eaves will add years to it. Cushions, where used, should come inside when wet." },
 
-  { id: "od04", arriveDays: [28, 33], name: "Teak & Metal Outdoor Dining Collection", cat: "Outdoor", room: "Outdoor", price: 1333, memberPrice: 1200, sku: "SH-10119", tag: "New", ph: "", img: "assets/products/od04.jpg",
+  { id: "od04", arriveDays: [28, 33], expressOpt: 7000, name: "Teak & Metal Outdoor Dining Collection", cat: "Outdoor", room: "Outdoor", price: 1333, memberPrice: 1200, sku: "SH-10119", tag: "New", ph: "", img: "assets/products/od04.jpg",
     imgs: ["assets/products/od04.jpg", "assets/products/od04-2.jpg", "assets/products/od04-3.jpg", "assets/products/od04-4.jpg", "assets/products/od04-5.webp", "assets/products/od04-6.webp", "assets/products/od04-7.webp", "assets/products/od04-8.webp"],
     sizes: [{ label: "Chair", price: 1333 }, { label: "Round table", price: 5778 }, { label: "Square table", price: 5778 }, { label: "Dining table 160cm", price: 9565 }, { label: "Dining table 220cm", price: 10500 }, { label: "Dining table 260cm", price: 11074 }],
     desc: "Solid teak over a steel base, which is the combination that survives summers outside and still looks good doing it. The timber is warm and open-grained, the kind that silvers gracefully if you let it, and the metal base keeps the whole table steady on decking or pavers. Choose the shape your space wants: a round or square table for four, or a long dining table at 160, 220 or 260cm for the gatherings that run past dark. Chairs are priced individually, so you buy exactly the number you seat.",
@@ -8781,7 +8781,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor dining collection", "Top": "Solid teak timber", "Base": "Metal", "Table sizes": "Round / Square / 160cm / 220cm / 260cm", "Chairs": "Sold individually", "Use": "Outdoor" },
     care: "Left alone, teak fades to a silver-grey, which is natural and does no harm. To keep the honey colour, clean it and apply teak oil once or twice a year. Wipe spills promptly, especially oil and wine, and use a cover through the worst of winter." },
 
-  { id: "od05", arriveDays: [28, 33], name: "Weatherproof Rattan Outdoor Lounge Collection", cat: "Outdoor", room: "Outdoor", price: 1313, memberPrice: 1182, sku: "SH-10120", tag: "New", ph: "", img: "assets/products/od05.jpg",
+  { id: "od05", arriveDays: [28, 33], expressOpt: 7000, name: "Weatherproof Rattan Outdoor Lounge Collection", cat: "Outdoor", room: "Outdoor", price: 1313, memberPrice: 1182, sku: "SH-10120", tag: "New", ph: "", img: "assets/products/od05.jpg",
     imgs: ["assets/products/od05.jpg", "assets/products/od05-2.jpg", "assets/products/od05-3.jpg", "assets/products/od05-4.jpg", "assets/products/od05-5.jpg", "assets/products/od05-6.webp", "assets/products/od05-7.jpg", "assets/products/od05-8.webp"],
     colours: [{ name: "Chocolate", hex: "#4b3a2c" }, { name: "Beige", hex: "#cdbfa6" }],
     sizes: [{ label: "Footstool", price: 1313 }, { label: "Chair", price: 1846 }, { label: "Sofa chair", price: 4172 }, { label: "Sun lounge", price: 7613 }, { label: "Two seater", price: 12485 }],
@@ -8805,7 +8805,7 @@ const PRODUCTS = [
 
 
 
-  { id: "od06", arriveDays: [28, 33], name: "Curved Sun Lounge with Sculptural Base", cat: "Outdoor", room: "Outdoor", price: 1961, memberPrice: 1765, sku: "SH-10121", tag: "New", ph: "", img: "assets/products/od06.jpg",
+  { id: "od06", arriveDays: [28, 33], expressOpt: 7000, name: "Curved Sun Lounge with Sculptural Base", cat: "Outdoor", room: "Outdoor", price: 1961, memberPrice: 1765, sku: "SH-10121", tag: "New", ph: "", img: "assets/products/od06.jpg",
     imgs: ["assets/products/od06.jpg", "assets/products/od06-2.jpg", "assets/products/od06-3.jpg", "assets/products/od06-4.jpg", "assets/products/od06-5.webp"],
    
     sizes: [{ label: "Champagne Table", price: 1961 }, { label: "White Table", price: 1961 }, { label: "Champagne Lounge", price: 5500 }, { label: "White Lounge", price: 5500 }],
@@ -8851,7 +8851,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "10" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od09", arriveDays: [28, 33], name: "Cushioned Outdoor Lounge Chair & Footstool", cat: "Outdoor", room: "Outdoor", price: 2217, memberPrice: 1995, sku: "SH-10124", tag: "New", ph: "", img: "assets/products/od09.jpg",
+  { id: "od09", arriveDays: [28, 33], expressOpt: 7000, name: "Cushioned Outdoor Lounge Chair & Footstool", cat: "Outdoor", room: "Outdoor", price: 2217, memberPrice: 1995, sku: "SH-10124", tag: "New", ph: "", img: "assets/products/od09.jpg",
     imgs: ["assets/products/od09.jpg", "assets/products/od09-2.jpg", "assets/products/od09-3.jpg", "assets/products/od09-4.jpg", "assets/products/od09-5.webp", "assets/products/od09-6.webp"],
    
     sizes: [{ label: "Khaki Chair", price: 2217 }, { label: "Black Chair", price: 2217 }, { label: "Black Set", price: 3269 }, { label: "Khaki Set", price: 3269 }],
@@ -8866,7 +8866,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "4" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od10", arriveDays: [28, 33], name: "Leaf-Shaped Sun Lounge", cat: "Outdoor", room: "Outdoor", price: 4146, memberPrice: 3731, sku: "SH-10125", tag: "New", ph: "", img: "assets/products/od10.jpg",
+  { id: "od10", arriveDays: [28, 33], expressOpt: 7000, name: "Leaf-Shaped Sun Lounge", cat: "Outdoor", room: "Outdoor", price: 4146, memberPrice: 3731, sku: "SH-10125", tag: "New", ph: "", img: "assets/products/od10.jpg",
     imgs: ["assets/products/od10.jpg", "assets/products/od10-2.jpg", "assets/products/od10-3.jpg", "assets/products/od10-4.webp", "assets/products/od10-5.jpg"],
    
     sizes: [{ label: "Coffee / Small", price: 4146 }, { label: "Beige / Small", price: 4146 }, { label: "Coffee / Large", price: 4443 }, { label: "Beige / Large", price: 4443 }],
@@ -8881,7 +8881,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "4" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od11", arriveDays: [28, 33], name: "Streamlined Outdoor Coffee Table", cat: "Outdoor", room: "Outdoor", price: 3102, memberPrice: 2792, sku: "SH-10126", tag: "New", ph: "", img: "assets/products/od11.jpg",
+  { id: "od11", arriveDays: [28, 33], expressOpt: 7000, name: "Streamlined Outdoor Coffee Table", cat: "Outdoor", room: "Outdoor", price: 3102, memberPrice: 2792, sku: "SH-10126", tag: "New", ph: "", img: "assets/products/od11.jpg",
     imgs: ["assets/products/od11.jpg", "assets/products/od11-2.jpg", "assets/products/od11-3.jpg", "assets/products/od11-4.jpg", "assets/products/od11-5.webp", "assets/products/od11-6.webp"],
    
     colours: [{ name: "White", hex: "#f0ece4" }, { name: "Grey", hex: "#9a9892" }],
@@ -8896,7 +8896,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Fibre cement / weather-resistant composite", "Use": "Outdoor" },
     care: "Wipe with a soft, damp cloth. Keep it away from acidic cleaners. Stand drinks on coasters, since cement and stone surfaces can mark, and cover it through the worst of winter." },
 
-  { id: "od12", arriveDays: [28, 33], name: "Handwoven Rattan Resort Chair", cat: "Outdoor", room: "Outdoor", price: 2352, memberPrice: 2117, sku: "SH-10127", tag: "New", ph: "", img: "assets/products/od12.jpg",
+  { id: "od12", arriveDays: [28, 33], expressOpt: 7000, name: "Handwoven Rattan Resort Chair", cat: "Outdoor", room: "Outdoor", price: 2352, memberPrice: 2117, sku: "SH-10127", tag: "New", ph: "", img: "assets/products/od12.jpg",
     imgs: ["assets/products/od12.jpg", "assets/products/od12-2.jpg", "assets/products/od12-3.jpg", "assets/products/od12-4.jpg", "assets/products/od12-5.jpg"],
    
     colours: [{ name: "Black", hex: "#20201e" }, { name: "Black + Tan", hex: "#5a4634" }, { name: "Tan", hex: "#b08b5e" }],
@@ -8911,7 +8911,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od13", arriveDays: [28, 33], name: "Patterned Handwoven Outdoor Chair", cat: "Outdoor", room: "Outdoor", price: 2963, memberPrice: 2667, sku: "SH-10128", tag: "New", ph: "", img: "assets/products/od13.jpg",
+  { id: "od13", arriveDays: [28, 33], expressOpt: 7000, name: "Patterned Handwoven Outdoor Chair", cat: "Outdoor", room: "Outdoor", price: 2963, memberPrice: 2667, sku: "SH-10128", tag: "New", ph: "", img: "assets/products/od13.jpg",
     imgs: ["assets/products/od13.jpg", "assets/products/od13-2.jpg", "assets/products/od13-3.jpg", "assets/products/od13-4.jpg", "assets/products/od13-5.jpg"],
    
     colours: [{ name: "Khaki", hex: "#8d8365" }, { name: "Black", hex: "#20201e" }],
@@ -8926,7 +8926,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od14", arriveDays: [28, 33], name: "Shaded Two-in-One Outdoor Lounge", cat: "Outdoor", room: "Outdoor", price: 2759, memberPrice: 2483, sku: "SH-10129", tag: "New", ph: "", img: "assets/products/od14.jpg",
+  { id: "od14", arriveDays: [28, 33], expressOpt: 7000, name: "Shaded Two-in-One Outdoor Lounge", cat: "Outdoor", room: "Outdoor", price: 2759, memberPrice: 2483, sku: "SH-10129", tag: "New", ph: "", img: "assets/products/od14.jpg",
     imgs: ["assets/products/od14.jpg", "assets/products/od14-2.jpg", "assets/products/od14-3.jpg", "assets/products/od14-4.jpg", "assets/products/od14-5.webp", "assets/products/od14-6.jpg"],
     sizes: [{ label: "Coffee Table", price: 2759 }, { label: "Sofa Set", price: 12444 }],
     desc: "A two-in-one lounge with its own overhead shade: sit under it through the middle of the day, fold it back when you want the sun. A generous piece for a poolside or a lawn, with a matching coffee table if you want the full setting.",
@@ -8945,7 +8945,7 @@ const PRODUCTS = [
 
 
 
-  { id: "od15", arriveDays: [28, 33], name: "Oval-Base Lounge Chair & Coffee Table Set", cat: "Outdoor", room: "Outdoor", price: 3456, memberPrice: 3110, sku: "SH-10130", tag: "New", ph: "", img: "assets/products/od15.jpg",
+  { id: "od15", arriveDays: [28, 33], expressOpt: 7000, name: "Oval-Base Lounge Chair & Coffee Table Set", cat: "Outdoor", room: "Outdoor", price: 3456, memberPrice: 3110, sku: "SH-10130", tag: "New", ph: "", img: "assets/products/od15.jpg",
     imgs: ["assets/products/od15.jpg", "assets/products/od15-2.jpg", "assets/products/od15-3.jpg", "assets/products/od15-4.jpg", "assets/products/od15-5.jpg", "assets/products/od15-6.jpg"],
    
     sizes: [{ label: "1 x Chair", price: 3456 }, { label: "1 x Chair + Coffee Table", price: 4381 }, { label: "2 x Chairs + Coffee Table", price: 7348 }],
@@ -8974,7 +8974,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Solid teak timber", "Use": "Outdoor" },
     care: "Teak left to itself fades to a soft silver-grey, which is natural and harms nothing. To hold the honey tone, wash it down and oil it once or twice a year. Wipe spills, especially oil and wine, before they soak in." },
 
-  { id: "od17", arriveDays: [28, 33], name: "Rattan Hanging Swing Chair", cat: "Outdoor", room: "Outdoor", price: 5630, memberPrice: 5067, sku: "SH-10132", tag: "New", ph: "", img: "assets/products/od17.jpg",
+  { id: "od17", arriveDays: [28, 33], expressOpt: 7000, name: "Rattan Hanging Swing Chair", cat: "Outdoor", room: "Outdoor", price: 5630, memberPrice: 5067, sku: "SH-10132", tag: "New", ph: "", img: "assets/products/od17.jpg",
     imgs: ["assets/products/od17.jpg", "assets/products/od17-2.jpg", "assets/products/od17-3.jpg", "assets/products/od17-4.jpg", "assets/products/od17-5.jpg", "assets/products/od17-6.jpg"],
    
     desc: "A rattan swing chair with a soft cotton cushion, hung for gentle movement rather than theatrics. Put it on a covered deck or in a corner of the garden and it will be the seat everyone reaches for first.",
@@ -8988,7 +8988,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od18", arriveDays: [28, 33], name: "Woven String Sculptural Outdoor Chair", cat: "Outdoor", room: "Outdoor", price: 4711, memberPrice: 4240, sku: "SH-10133", tag: "New", ph: "", img: "assets/products/od18.jpg",
+  { id: "od18", arriveDays: [28, 33], expressOpt: 7000, name: "Woven String Sculptural Outdoor Chair", cat: "Outdoor", room: "Outdoor", price: 4711, memberPrice: 4240, sku: "SH-10133", tag: "New", ph: "", img: "assets/products/od18.jpg",
     imgs: ["assets/products/od18.jpg", "assets/products/od18-2.jpg", "assets/products/od18-3.jpg", "assets/products/od18-4.webp", "assets/products/od18-5.webp", "assets/products/od18-6.jpg"],
    
     colours: [{ name: "Ivory + Tan", hex: "#cbb79a" }],
@@ -9003,7 +9003,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od19", arriveDays: [28, 33], name: "Fibre Rattan Hanging Chair with Alloy Frame", cat: "Outdoor", room: "Outdoor", price: 4531, memberPrice: 4078, sku: "SH-10134", tag: "New", ph: "", img: "assets/products/od19.jpg",
+  { id: "od19", arriveDays: [28, 33], expressOpt: 7000, name: "Fibre Rattan Hanging Chair with Alloy Frame", cat: "Outdoor", room: "Outdoor", price: 4531, memberPrice: 4078, sku: "SH-10134", tag: "New", ph: "", img: "assets/products/od19.jpg",
     imgs: ["assets/products/od19.jpg", "assets/products/od19-2.jpg", "assets/products/od19-3.jpg", "assets/products/od19-4.jpg", "assets/products/od19-5.webp", "assets/products/od19-6.webp"],
    
     desc: "Fibre rattan over an aluminium alloy frame, which means it's light to move, strong to sit in, and happy indoors or out. A hanging chair for a reading corner, a balcony or a shaded part of the garden.",
@@ -9017,7 +9017,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od20", arriveDays: [28, 33], name: "Handcrafted Teak Outdoor Dining Collection", cat: "Outdoor", room: "Outdoor", price: 2911, memberPrice: 2620, sku: "SH-10135", tag: "New", ph: "", img: "assets/products/od20.jpg",
+  { id: "od20", arriveDays: [28, 33], expressOpt: 7000, name: "Handcrafted Teak Outdoor Dining Collection", cat: "Outdoor", room: "Outdoor", price: 2911, memberPrice: 2620, sku: "SH-10135", tag: "New", ph: "", img: "assets/products/od20.jpg",
     imgs: ["assets/products/od20.jpg", "assets/products/od20-2.jpg", "assets/products/od20-3.jpg", "assets/products/od20-4.jpg", "assets/products/od20-5.webp", "assets/products/od20-6.webp"],
     sizes: [{ label: "Armless Chair", price: 2911 }, { label: "Dining Chair", price: 3146 }, { label: "Coffee Table", price: 5531 }, { label: "180cm Table", price: 8143 }, { label: "240cm Table", price: 14559 }, { label: "300cm Table", price: 17726 }],
     desc: "Handcrafted teak dining, from a coffee table up to a 300cm table that seats a proper gathering. The timber is warm and open-grained, the chairs are made to match, and the whole collection ages into that soft silver teak colour if you let it.",
@@ -9036,7 +9036,7 @@ const PRODUCTS = [
 
 
 
-  { id: "od21", arriveDays: [28, 33], name: "Premium Teak Outdoor Dining Table & Chairs", cat: "Outdoor", room: "Outdoor", price: 3517, memberPrice: 3165, sku: "SH-10136", tag: "New", ph: "", img: "assets/products/od21.jpg",
+  { id: "od21", arriveDays: [28, 33], expressOpt: 7000, name: "Premium Teak Outdoor Dining Table & Chairs", cat: "Outdoor", room: "Outdoor", price: 3517, memberPrice: 3165, sku: "SH-10136", tag: "New", ph: "", img: "assets/products/od21.jpg",
     imgs: ["assets/products/od21.jpg", "assets/products/od21-2.jpg", "assets/products/od21-3.jpg", "assets/products/od21-4.webp", "assets/products/od21-5.webp", "assets/products/od21-6.webp"],
    
     sizes: [{ label: "Chair", price: 3517 }, { label: "Table", price: 9852 }],
@@ -9111,7 +9111,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "4" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od26", arriveDays: [28, 33], name: "Rattan & Reinforced Metal Outdoor Collection", cat: "Outdoor", room: "Outdoor", price: 2481, memberPrice: 2233, sku: "SH-10141", tag: "New", ph: "", img: "assets/products/od26.jpg",
+  { id: "od26", arriveDays: [28, 33], expressOpt: 7000, name: "Rattan & Reinforced Metal Outdoor Collection", cat: "Outdoor", room: "Outdoor", price: 2481, memberPrice: 2233, sku: "SH-10141", tag: "New", ph: "", img: "assets/products/od26.jpg",
     imgs: ["assets/products/od26.jpg", "assets/products/od26-2.jpg", "assets/products/od26-3.jpg", "assets/products/od26-4.webp", "assets/products/od26-5.webp", "assets/products/od26-6.webp"],
     sizes: [{ label: "Table", price: 2481 }, { label: "Single Seater", price: 2491 }, { label: "Double Seater", price: 11889 }, { label: "Three-Seater", price: 14283 }],
     desc: "Rattan over a reinforced metal frame, which is the combination that survives being left out all summer. Single, double and three seaters with a matching table, in a classic weave that suits almost any garden.",
@@ -9126,7 +9126,7 @@ const PRODUCTS = [
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
 
-  { id: "od27", arriveDays: [28, 33], name: "Powder-Coated Iron Outdoor Table & Chairs", cat: "Outdoor", room: "Outdoor", price: 1833, memberPrice: 1650, sku: "SH-10142", tag: "New", ph: "", img: "assets/products/od27.jpg",
+  { id: "od27", arriveDays: [28, 33], expressOpt: 7000, name: "Powder-Coated Iron Outdoor Table & Chairs", cat: "Outdoor", room: "Outdoor", price: 1833, memberPrice: 1650, sku: "SH-10142", tag: "New", ph: "", img: "assets/products/od27.jpg",
     imgs: ["assets/products/od27.jpg", "assets/products/od27-2.jpg", "assets/products/od27-3.jpg", "assets/products/od27-4.jpg", "assets/products/od27-5.jpg", "assets/products/od27-6.webp"],
    
     sizes: [{ label: "Black / Single Chair", price: 1833 }, { label: "Green / Single Chair", price: 1833 }, { label: "White / Single Chair", price: 1833 }, { label: "Black / 3-Person Chair", price: 4963 }, { label: "Green / 3-Person Chair", price: 4963 }, { label: "White / 3-Person Chair", price: 4963 }, { label: "Black / Short Table", price: 6037 }, { label: "Green / Short Table", price: 6037 }, { label: "White / Short Table", price: 6037 }, { label: "Black / Long Table", price: 7704 }, { label: "Green / Long Table", price: 7704 }, { label: "White / Long Table", price: 7704 }],
@@ -9141,7 +9141,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Powder-coated iron", "Use": "Outdoor", "Pieces": "12" },
     care: "Wipe the frame with a damp cloth and dry it. Check the powder coat now and then for chips, and touch them up so moisture can't get underneath. Cover or shelter it through long wet spells." },
 
-  { id: "od28", arriveDays: [28, 33], name: "Minimalist Teak Outdoor Dining Set", cat: "Outdoor", room: "Outdoor", price: 2944, memberPrice: 2650, sku: "SH-10143", tag: "New", ph: "", img: "assets/products/od28.jpg",
+  { id: "od28", arriveDays: [28, 33], expressOpt: 7000, name: "Minimalist Teak Outdoor Dining Set", cat: "Outdoor", room: "Outdoor", price: 2944, memberPrice: 2650, sku: "SH-10143", tag: "New", ph: "", img: "assets/products/od28.jpg",
     imgs: ["assets/products/od28.jpg", "assets/products/od28-2.jpg", "assets/products/od28-3.jpg", "assets/products/od28-4.webp", "assets/products/od28-5.webp", "assets/products/od28-6.webp"],
     sizes: [{ label: "Chair", price: 2944 }, { label: "Table", price: 9239 }],
     desc: "Minimalist teak dining: clean lines, a natural finish and nothing extra. The table has real presence without ornament, and the chairs are cut to the same quiet logic.",
@@ -9156,7 +9156,7 @@ const PRODUCTS = [
     care: "Teak left to itself fades to a soft silver-grey, which is natural and harms nothing. To hold the honey tone, wash it down and oil it once or twice a year. Wipe spills, especially oil and wine, before they soak in." },
 
 
-  { id: "od29", arriveDays: [28, 33], name: "Weather-Resistant Outdoor Side & Coffee Tables", cat: "Outdoor", room: "Outdoor", price: 4974, memberPrice: 4477, sku: "SH-10144", tag: "New", ph: "", img: "assets/products/od29.jpg",
+  { id: "od29", arriveDays: [28, 33], expressOpt: 7000, name: "Weather-Resistant Outdoor Side & Coffee Tables", cat: "Outdoor", room: "Outdoor", price: 4974, memberPrice: 4477, sku: "SH-10144", tag: "New", ph: "", img: "assets/products/od29.jpg",
     imgs: ["assets/products/od29.jpg", "assets/products/od29-2.webp", "assets/products/od29-3.jpg", "assets/products/od29-4.webp", "assets/products/od29-5.webp", "assets/products/od29-6.webp"],
    
     sizes: [{ label: "Grey / Side Table", price: 4974 }, { label: "Grey / Coffee Table", price: 6398 }],
@@ -9171,7 +9171,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Fibre cement / weather-resistant composite", "Use": "Outdoor", "Pieces": "2" },
     care: "Wipe with a soft, damp cloth. Keep it away from acidic cleaners. Stand drinks on coasters, since cement and stone surfaces can mark, and cover it through the worst of winter." },
 
-  { id: "od30", arriveDays: [28, 33], name: "Beige Teak Outdoor Lounge & Dining Collection", cat: "Outdoor", room: "Outdoor", price: 3661, memberPrice: 3295, sku: "SH-10145", tag: "New", ph: "", img: "assets/products/od30.jpg",
+  { id: "od30", arriveDays: [28, 33], expressOpt: 7000, name: "Beige Teak Outdoor Lounge & Dining Collection", cat: "Outdoor", room: "Outdoor", price: 3661, memberPrice: 3295, sku: "SH-10145", tag: "New", ph: "", img: "assets/products/od30.jpg",
     imgs: ["assets/products/od30.jpg", "assets/products/od30-2.jpg", "assets/products/od30-3.webp", "assets/products/od30-4.jpg", "assets/products/od30-5.jpg", "assets/products/od30-6.jpg"],
     colours: [{ name: "Beige", hex: "#d3c6ae" }],
     sizes: [{ label: "Dining Chair", price: 3661 }, { label: "Coffee Table", price: 4500 }, { label: "Lounge Chair", price: 4796 }, { label: "Sun Bed", price: 5533 }, { label: "Two Seater Sofa", price: 7778 }, { label: "Three Seater Sofa", price: 9235 }],
@@ -9203,7 +9203,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "4" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od32", arriveDays: [28, 33], name: "Modular Aluminium Outdoor Collection in Black & White", cat: "Outdoor", room: "Outdoor", price: 4581, memberPrice: 4123, sku: "SH-10147", tag: "New", ph: "", img: "assets/products/od32.jpg",
+  { id: "od32", arriveDays: [28, 33], expressOpt: 7000, name: "Modular Aluminium Outdoor Collection in Black & White", cat: "Outdoor", room: "Outdoor", price: 4581, memberPrice: 4123, sku: "SH-10147", tag: "New", ph: "", img: "assets/products/od32.jpg",
     imgs: ["assets/products/od32.jpg", "assets/products/od32-2.jpg", "assets/products/od32-3.jpg", "assets/products/od32-4.webp", "assets/products/od32-5.jpg", "assets/products/od32-6.jpg"],
     sizes: [{ label: "Black / Rectangle Coffee Table", price: 4581 }, { label: "White / Rectangle Coffee Table", price: 4581 }, { label: "Black / Square Coffee Table", price: 5315 }, { label: "White / Square Coffee Table", price: 5315 }, { label: "Black / Foot Stool", price: 5496 }, { label: "White / Foot Stool", price: 5496 }, { label: "Black / Middle Seat", price: 6107 }, { label: "White / Middle Seat", price: 6107 }, { label: "Black / Corner Seat", price: 6719 }, { label: "White / Corner Seat", price: 6719 }, { label: "Black / Sun Bed", price: 11107 }, { label: "White / Sun Bed", price: 11107 }],
     desc: "Black and white against premium aluminium, in a modular layout: corner seats, middle seats, a sun bed, two coffee table shapes and a footstool. Lay it out along a wall, wrap it round a corner, or spread it across a deck.",
@@ -9234,7 +9234,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Aluminium frame", "Use": "Outdoor", "Pieces": "4" },
     care: "Wash the frame with mild soapy water and rinse, then dry. Rinse more often near salt air. Wipe spills from the weave promptly, and store cushions dry." },
 
-  { id: "od34", arriveDays: [28, 33], name: "Round Woven Occasional Chair", cat: "Outdoor", room: "Outdoor", price: 7148, memberPrice: 6433, sku: "SH-10149", tag: "New", ph: "", img: "assets/products/od34.jpg",
+  { id: "od34", arriveDays: [28, 33], expressOpt: 7000, name: "Round Woven Occasional Chair", cat: "Outdoor", room: "Outdoor", price: 7148, memberPrice: 6433, sku: "SH-10149", tag: "New", ph: "", img: "assets/products/od34.jpg",
     imgs: ["assets/products/od34.jpg", "assets/products/od34-2.webp", "assets/products/od34-3.webp", "assets/products/od34-4.webp", "assets/products/od34-5.jpg", "assets/products/od34-6.webp"],
    
     colours: [{ name: "Natural Tan", hex: "#c49a6c" }, { name: "Chocolate", hex: "#4b3a2c" }],
@@ -9249,7 +9249,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od35", arriveDays: [28, 33], name: "Light Teak Outdoor Dining & Bar Collection", cat: "Outdoor", room: "Outdoor", price: 3630, memberPrice: 3267, sku: "SH-10150", tag: "New", ph: "", img: "assets/products/od35.jpg",
+  { id: "od35", arriveDays: [28, 33], expressOpt: 7000, name: "Light Teak Outdoor Dining & Bar Collection", cat: "Outdoor", room: "Outdoor", price: 3630, memberPrice: 3267, sku: "SH-10150", tag: "New", ph: "", img: "assets/products/od35.jpg",
     imgs: ["assets/products/od35.jpg", "assets/products/od35-2.webp", "assets/products/od35-3.webp", "assets/products/od35-4.webp", "assets/products/od35-5.webp", "assets/products/od35-6.webp"],
     sizes: [{ label: "High Chair", price: 3630 }, { label: "Chair", price: 3630 }, { label: "Bars Stool", price: 3630 }, { label: "Bar Table", price: 4344 }, { label: "Square Table", price: 5444 }, { label: "Coffee Table", price: 6463 }],
     desc: "Light tan teak across a full set of pieces, including bar stools and a bar table, which almost nobody makes well for outdoors. Square and coffee tables, high chairs and dining chairs complete it.",
@@ -9265,7 +9265,7 @@ const PRODUCTS = [
 
 
 
-  { id: "od36", arriveDays: [28, 33], name: "Fibre Cement Outdoor Coffee & Side Table", cat: "Outdoor", room: "Outdoor", price: 1656, memberPrice: 1490, sku: "SH-10151", tag: "New", ph: "", img: "assets/products/od36.jpg",
+  { id: "od36", arriveDays: [28, 33], expressOpt: 7000, name: "Fibre Cement Outdoor Coffee & Side Table", cat: "Outdoor", room: "Outdoor", price: 1656, memberPrice: 1490, sku: "SH-10151", tag: "New", ph: "", img: "assets/products/od36.jpg",
     imgs: ["assets/products/od36.jpg", "assets/products/od36-2.jpg", "assets/products/od36-3.jpg", "assets/products/od36-4.jpg", "assets/products/od36-5.jpg", "assets/products/od36-6.jpg"],
    
     sizes: [{ label: "Side Table", price: 1656 }, { label: "Coffee Table", price: 2767 }],
@@ -9295,7 +9295,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "4" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od38", arriveDays: [28, 33], name: "Complete Rattan Dining, Bar & Lounge Collection", cat: "Outdoor", room: "Outdoor", price: 1993, memberPrice: 1794, sku: "SH-10153", tag: "New", ph: "", img: "assets/products/od38.jpg",
+  { id: "od38", arriveDays: [28, 33], expressOpt: 7000, name: "Complete Rattan Dining, Bar & Lounge Collection", cat: "Outdoor", room: "Outdoor", price: 1993, memberPrice: 1794, sku: "SH-10153", tag: "New", ph: "", img: "assets/products/od38.jpg",
     imgs: ["assets/products/od38.jpg", "assets/products/od38-2.jpg", "assets/products/od38-3.jpg", "assets/products/od38-4.jpg", "assets/products/od38-5.jpg", "assets/products/od38-6.jpg"],
     sizes: [{ label: "Foot Petal", price: 1993 }, { label: "Chair", price: 2111 }, { label: "Bar Stool", price: 2204 }, { label: "Coffee Table", price: 2900 }, { label: "Sofa Chair", price: 4322 }, { label: "Bar Table", price: 4444 }, { label: "Table", price: 4833 }, { label: "Three Seat Sofa", price: 10556 }],
     desc: "The most versatile collection we carry: chair, sofa chair, footstool, table, bar table, bar stool, coffee table and a three seat sofa. Durable rattan throughout, so dining, lounging and the bar corner can all match.",
@@ -9325,7 +9325,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "4" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od40", arriveDays: [28, 33], name: "Everyday Rattan Outdoor Lounge Collection", cat: "Outdoor", room: "Outdoor", price: 5252, memberPrice: 4727, sku: "SH-10155", tag: "New", ph: "", img: "assets/products/od40.jpg",
+  { id: "od40", arriveDays: [28, 33], expressOpt: 7000, name: "Everyday Rattan Outdoor Lounge Collection", cat: "Outdoor", room: "Outdoor", price: 5252, memberPrice: 4727, sku: "SH-10155", tag: "New", ph: "", img: "assets/products/od40.jpg",
     imgs: ["assets/products/od40.jpg", "assets/products/od40-2.jpg", "assets/products/od40-3.webp", "assets/products/od40-4.webp", "assets/products/od40-5.webp"],
     sizes: [{ label: "Coffee Table", price: 5252 }, { label: "Single Seater", price: 7378 }, { label: "Double Seater", price: 12276 }],
     desc: "Durable rattan in a modern shape, made for everyday lounging rather than occasional use. Single and double seaters with a coffee table, equally at home on a balcony or a patio.",
@@ -9372,7 +9372,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "4" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od43", arriveDays: [28, 33], name: "Compact Outdoor Table & Chairs Set", cat: "Outdoor", room: "Outdoor", price: 1661, memberPrice: 1495, sku: "SH-10158", tag: "New", ph: "", img: "assets/products/od43.jpg",
+  { id: "od43", arriveDays: [28, 33], expressOpt: 7000, name: "Compact Outdoor Table & Chairs Set", cat: "Outdoor", room: "Outdoor", price: 1661, memberPrice: 1495, sku: "SH-10158", tag: "New", ph: "", img: "assets/products/od43.jpg",
     imgs: ["assets/products/od43.jpg", "assets/products/od43-2.jpg", "assets/products/od43-3.jpg", "assets/products/od43-4.jpg", "assets/products/od43-5.jpg", "assets/products/od43-6.webp"],
    
     sizes: [{ label: "1 x Chair", price: 1661 }, { label: "Set - Table + 2 x Chairs", price: 5007 }],
@@ -9387,7 +9387,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "2" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od44", arriveDays: [28, 33], name: "Low & High Back Woven Rattan Collection", cat: "Outdoor", room: "Outdoor", price: 1643, memberPrice: 1479, sku: "SH-10159", tag: "New", ph: "", img: "assets/products/od44.jpg",
+  { id: "od44", arriveDays: [28, 33], expressOpt: 7000, name: "Low & High Back Woven Rattan Collection", cat: "Outdoor", room: "Outdoor", price: 1643, memberPrice: 1479, sku: "SH-10159", tag: "New", ph: "", img: "assets/products/od44.jpg",
     imgs: ["assets/products/od44.jpg", "assets/products/od44-2.jpg", "assets/products/od44-3.jpg", "assets/products/od44-4.jpg", "assets/products/od44-5.jpg", "assets/products/od44-6.jpg"],
     sizes: [{ label: "Wooden Round Coffee Table", price: 1643 }, { label: "Wooden Square Table", price: 3304 }, { label: "High Back Chair", price: 3685 }, { label: "Single Seater - Low back", price: 5281 }, { label: "Wooden Rectangle Table", price: 5828 }, { label: "Sun Bed", price: 6185 }, { label: "Single Seater - High Back", price: 7352 }, { label: "Wooden Oval Table", price: 7641 }, { label: "Three Seater - Low back Sofa", price: 9694 }, { label: "Three Seater - High Back Sofa", price: 13330 }],
     desc: "Woven rattan in both low-back and high-back shapes, so you can choose between a relaxed lounge line and something more upright and supportive. Singles, three seaters and a sun bed.",
@@ -9401,7 +9401,7 @@ const PRODUCTS = [
     specs: { "Type": "Outdoor furniture", "Material": "Weather-resistant rattan", "Use": "Outdoor", "Pieces": "10" },
     care: "Rinse the weave with fresh water and let it dry in the air, particularly near the sea. Wipe spills before they dry into the fibre. Bring cushions inside when it rains, and cover or shelter the pieces through long wet spells." },
 
-  { id: "od45", arriveDays: [28, 33], name: "Square & Round Woven Outdoor Seating Range", cat: "Outdoor", room: "Outdoor", price: 2587, memberPrice: 2328, sku: "SH-10160", tag: "New", ph: "", img: "assets/products/od45.jpg",
+  { id: "od45", arriveDays: [28, 33], expressOpt: 7000, name: "Square & Round Woven Outdoor Seating Range", cat: "Outdoor", room: "Outdoor", price: 2587, memberPrice: 2328, sku: "SH-10160", tag: "New", ph: "", img: "assets/products/od45.jpg",
     imgs: ["assets/products/od45.jpg", "assets/products/od45-2.jpg", "assets/products/od45-3.jpg", "assets/products/od45-4.jpg", "assets/products/od45-5.jpg", "assets/products/od45-6.jpg"],
     sizes: [{ label: "Glass Table", price: 2587 }, { label: "Round - Single Seater", price: 4433 }, { label: "Square - Single Seater", price: 4622 }, { label: "Double Seater", price: 10511 }],
     desc: "Square or round single seaters, a double seater, and a glass-topped table to finish the group. A softer, more decorative shape than most outdoor seating, and lovely in a garden setting.",
@@ -13131,7 +13131,7 @@ const PRODUCTS = [
     boxContents: ["1 x plush blanket"],
     care: "Machine wash cold on a gentle cycle in a laundry bag, or hand wash. Do not bleach. Tumble dry low or line dry in the shade, then shake out to fluff the pile." },
   // ── Tables: coffee, side & console ──
-  { id: "cc001", arriveDays: [28, 33], name: "Travertine-Look Round Coffee Table 70cm, Beige", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11063", tag: "New", ph: "", img: "assets/products/cc001-1.webp",
+  { id: "cc001", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Round Coffee Table 70cm, Beige", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11063", tag: "New", ph: "", img: "assets/products/cc001-1.webp",
     imgs: ["assets/products/cc001-1.webp", "assets/products/cc001-2.webp", "assets/products/cc001-3.webp", "assets/products/cc001-4.webp", "assets/products/cc001-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 70cm wide, 70cm deep and 36.5cm high. MgO with a travertine effect in hydrographic transfer printing. Circular design with a travertine-effect finish for a natural stone look. The kind of piece that quietly holds a room together.",
@@ -13146,7 +13146,7 @@ const PRODUCTS = [
     boxContents: ["1x Coffee Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc002", arriveDays: [28, 33], name: "Bamboo Coffee Tables, Set of 2 · Natural", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11064", tag: "New", ph: "", img: "assets/products/cc002-1.webp",
+  { id: "cc002", arriveDays: [28, 33], expressOpt: 7000, name: "Bamboo Coffee Tables, Set of 2 · Natural", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11064", tag: "New", ph: "", img: "assets/products/cc002-1.webp",
     imgs: ["assets/products/cc002-1.webp", "assets/products/cc002-2.webp", "assets/products/cc002-3.webp", "assets/products/cc002-4.webp", "assets/products/cc002-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 47cm wide, 47cm deep and 33cm high. Bamboo. Handcrafted and fully assembled. Leave it bare, or give it one good object and nothing else.",
@@ -13162,7 +13162,7 @@ const PRODUCTS = [
     boxContents: ["2x Assorted Coffee Tables"],
     care: "Please note that Bamboo is a natural material, and this is a handmade product, therefore, small variations or imperfections in colour, texture, shape, size and finish may occur from piece to piece. Avoid direct sunlight and rainwater to prevent the aging of the natural materials. Avoid leaving it in a damp place for a long time to avoid mould and insects. If there is mould, you can brush it and ri" },
 
-  { id: "cc003", arriveDays: [28, 33], name: "Travertine-Look Rectangular Coffee Table 90cm, Beige", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11065", tag: "New", ph: "", img: "assets/products/cc003-1.webp",
+  { id: "cc003", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Rectangular Coffee Table 90cm, Beige", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11065", tag: "New", ph: "", img: "assets/products/cc003-1.webp",
     imgs: ["assets/products/cc003-1.webp", "assets/products/cc003-2.webp", "assets/products/cc003-3.webp", "assets/products/cc003-4.webp", "assets/products/cc003-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 60cm across. MgO with a travertine effect in hydrographic transfer printing. Rectangular design with a travertine-effect finish for a natural stone look. Leave it bare, or give it one good object and nothing else.",
@@ -13176,7 +13176,7 @@ const PRODUCTS = [
     boxContents: ["1x Coffee Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc004", arriveDays: [28, 33], name: "Glass Round Coffee Table 90cm, Oak", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11066", tag: "New", ph: "", img: "assets/products/cc004-1.webp",
+  { id: "cc004", arriveDays: [28, 33], expressOpt: 7000, name: "Glass Round Coffee Table 90cm, Oak", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11066", tag: "New", ph: "", img: "assets/products/cc004-1.webp",
     imgs: ["assets/products/cc004-1.webp", "assets/products/cc004-2.webp", "assets/products/cc004-3.webp", "assets/products/cc004-4.webp", "assets/products/cc004-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 90cm wide, 90cm deep and 27cm high. Honeycomb board with melamine finish; fibreglass legs with decorative foil look. Rounded tabletop with soft, curved edges. The kind of piece that quietly holds a room together.",
@@ -13189,7 +13189,7 @@ const PRODUCTS = [
     dims: { w: 90, d: 90, h: 27, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc005", arriveDays: [28, 33], name: "Drum Round Coffee Table 100cm, Walnut", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11067", tag: "New", ph: "", img: "assets/products/cc005-1.webp",
+  { id: "cc005", arriveDays: [28, 33], expressOpt: 7000, name: "Drum Round Coffee Table 100cm, Walnut", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11067", tag: "New", ph: "", img: "assets/products/cc005-1.webp",
     imgs: ["assets/products/cc005-1.webp", "assets/products/cc005-2.webp", "assets/products/cc005-3.webp", "assets/products/cc005-4.webp", "assets/products/cc005-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 100cm wide, 70cm deep and 33cm high. MDF with laminated finish. Rounded corner tabletop offers a softer profile than traditional shapes. Works as well against a wall as it does floating in a room.",
@@ -13203,7 +13203,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 70, h: 33, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc006", arriveDays: [28, 33], name: "Coffee Table 110cm, Walnut", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11068", tag: "New", ph: "", img: "assets/products/cc006-1.webp",
+  { id: "cc006", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee Table 110cm, Walnut", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11068", tag: "New", ph: "", img: "assets/products/cc006-1.webp",
     imgs: ["assets/products/cc006-1.webp", "assets/products/cc006-2.webp", "assets/products/cc006-3.webp", "assets/products/cc006-4.webp", "assets/products/cc006-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 55cm wide, 110cm deep and 40cm high. Sustainably sourced MDF with a melamine finish. Plenty of surface space for all your living room essentials. The kind of piece that quietly holds a room together.",
@@ -13217,7 +13217,7 @@ const PRODUCTS = [
     dims: { w: 55, d: 110, h: 40, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc007", arriveDays: [28, 33], name: "Metal Round Coffee Table 76cm, Natural", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11069", tag: "New", ph: "", img: "assets/products/cc007-1.webp",
+  { id: "cc007", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Round Coffee Table 76cm, Natural", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11069", tag: "New", ph: "", img: "assets/products/cc007-1.webp",
     imgs: ["assets/products/cc007-1.webp", "assets/products/cc007-2.webp", "assets/products/cc007-3.webp", "assets/products/cc007-4.webp", "assets/products/cc007-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 76cm wide, 76cm deep and 41cm high. MDF with a melamine finish. 76cm round tabletop provides plenty of surface space. The kind of piece that quietly holds a room together.",
@@ -13232,7 +13232,7 @@ const PRODUCTS = [
     dims: { w: 76, d: 76, h: 41, unit: "cm", printed: true },
     care: "Wipe clean with a dry cloth. Avoid strong chemical cleaners." },
 
-  { id: "cc008", arriveDays: [28, 33], name: "Oak Coffee Table 110cm, Light Oak", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11070", tag: "New", ph: "", img: "assets/products/cc008-1.webp",
+  { id: "cc008", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Coffee Table 110cm, Light Oak", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11070", tag: "New", ph: "", img: "assets/products/cc008-1.webp",
     imgs: ["assets/products/cc008-1.webp", "assets/products/cc008-2.webp", "assets/products/cc008-3.webp", "assets/products/cc008-4.webp", "assets/products/cc008-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 55cm wide, 110cm deep and 40cm high. Sustainably sourced MDF with laminate finish. Plenty of surface space for all your living room essentials. Works as well against a wall as it does floating in a room.",
@@ -13246,7 +13246,7 @@ const PRODUCTS = [
     dims: { w: 55, d: 110, h: 40, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc009", arriveDays: [28, 33], name: "Sliding-Door Coffee Table 120cm, Natural", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11071", tag: "New", ph: "", img: "assets/products/cc009-1.webp",
+  { id: "cc009", arriveDays: [28, 33], expressOpt: 7000, name: "Sliding-Door Coffee Table 120cm, Natural", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11071", tag: "New", ph: "", img: "assets/products/cc009-1.webp",
     imgs: ["assets/products/cc009-1.webp", "assets/products/cc009-2.webp", "assets/products/cc009-3.webp", "assets/products/cc009-4.webp", "assets/products/cc009-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 120cm wide, 60cm deep and 41cm high. MDF with a laminated paper finish. 120cm wide tabletop provides plenty of space for decor, books, or drinks. Leave it bare, or give it one good object and nothing else.",
@@ -13259,7 +13259,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 60, h: 41, unit: "cm", printed: true },
     care: "Wipe down with a damp cloth. Avoid cleaning with strong chemicals." },
 
-  { id: "cc010", arriveDays: [28, 33], name: "Glass Round Coffee Table 90cm, Walnut", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11072", tag: "New", ph: "", img: "assets/products/cc010-1.webp",
+  { id: "cc010", arriveDays: [28, 33], expressOpt: 7000, name: "Glass Round Coffee Table 90cm, Walnut", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11072", tag: "New", ph: "", img: "assets/products/cc010-1.webp",
     imgs: ["assets/products/cc010-1.webp", "assets/products/cc010-2.webp", "assets/products/cc010-3.webp", "assets/products/cc010-4.webp", "assets/products/cc010-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 90cm wide, 90cm deep and 27cm high. Honeycomb board with melamine finish. Rounded tabletop with soft, curved edges. Works as well against a wall as it does floating in a room.",
@@ -13272,7 +13272,7 @@ const PRODUCTS = [
     dims: { w: 90, d: 90, h: 27, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc011", arriveDays: [28, 33], name: "Round Coffee Table 80cm, Black", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11073", tag: "New", ph: "", img: "assets/products/cc011-1.webp",
+  { id: "cc011", arriveDays: [28, 33], expressOpt: 7000, name: "Round Coffee Table 80cm, Black", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11073", tag: "New", ph: "", img: "assets/products/cc011-1.webp",
     imgs: ["assets/products/cc011-1.webp", "assets/products/cc011-2.webp", "assets/products/cc011-3.webp", "assets/products/cc011-4.webp", "assets/products/cc011-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 80cm wide, 80cm deep and 40cm high. MDF. Ribbed detailing for added texture and design appeal. The kind of piece that quietly holds a room together.",
@@ -13286,7 +13286,7 @@ const PRODUCTS = [
     dims: { w: 80, d: 80, h: 40, unit: "cm", printed: true },
     care: "Wipe down with a damp cloth. Avoid cleaning with strong chemicals." },
 
-  { id: "cc012", arriveDays: [28, 33], name: "Nesting Travertine-Look Round Coffee Tables, Set of 2", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11074", tag: "New", ph: "", img: "assets/products/cc012-1.webp",
+  { id: "cc012", arriveDays: [28, 33], expressOpt: 7000, name: "Nesting Travertine-Look Round Coffee Tables, Set of 2", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11074", tag: "New", ph: "", img: "assets/products/cc012-1.webp",
     imgs: ["assets/products/cc012-1.webp", "assets/products/cc012-2.webp", "assets/products/cc012-3.webp", "assets/products/cc012-4.webp", "assets/products/cc012-5.webp"],
    
     desc: "The piece the whole room arranges itself around. MDF with melamine finish. Nesting design offers versatility and space-saving convenience. Works as well against a wall as it does floating in a room.",
@@ -13298,7 +13298,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee Table", "Colour": "Travertine-look", "Material": "MDF with melamine finish, metal frame" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc013", arriveDays: [28, 33], name: "Metal Round Coffee Table 120cm, Mocha", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11075", tag: "New", ph: "", img: "assets/products/cc013-1.webp",
+  { id: "cc013", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Round Coffee Table 120cm, Mocha", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11075", tag: "New", ph: "", img: "assets/products/cc013-1.webp",
     imgs: ["assets/products/cc013-1.webp", "assets/products/cc013-2.webp", "assets/products/cc013-3.webp", "assets/products/cc013-4.webp", "assets/products/cc013-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 120cm wide, 50cm deep and 35cm high. Powder-coated iron top and legs. Rectangular top with softly rounded corners. Works as well against a wall as it does floating in a room.",
@@ -13311,7 +13311,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 50, h: 35, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc014", arriveDays: [28, 33], name: "Round Coffee Table 80cm, Natural", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11076", tag: "New", ph: "", img: "assets/products/cc014-1.webp",
+  { id: "cc014", arriveDays: [28, 33], expressOpt: 7000, name: "Round Coffee Table 80cm, Natural", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11076", tag: "New", ph: "", img: "assets/products/cc014-1.webp",
     imgs: ["assets/products/cc014-1.webp", "assets/products/cc014-2.webp", "assets/products/cc014-3.webp", "assets/products/cc014-4.webp", "assets/products/cc014-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 80cm wide, 80cm deep and 40cm high. MDF. Ribbed detailing for added texture and design appeal. Leave it bare, or give it one good object and nothing else.",
@@ -13325,7 +13325,7 @@ const PRODUCTS = [
     dims: { w: 80, d: 80, h: 40, unit: "cm", printed: true },
     care: "Wipe down with a damp cloth. Avoid cleaning with strong chemicals." },
 
-  { id: "cc015", arriveDays: [28, 33], name: "Glass Round Coffee Table 90cm, Black", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11077", tag: "New", ph: "", img: "assets/products/cc015-1.webp",
+  { id: "cc015", arriveDays: [28, 33], expressOpt: 7000, name: "Glass Round Coffee Table 90cm, Black", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11077", tag: "New", ph: "", img: "assets/products/cc015-1.webp",
     imgs: ["assets/products/cc015-1.webp", "assets/products/cc015-2.webp", "assets/products/cc015-3.webp", "assets/products/cc015-4.webp", "assets/products/cc015-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 90cm wide, 90cm deep and 27cm high. Honeycomb board with melamine finish; fibreglass legs with decorative foil look. Rounded tabletop with soft, curved edges. Leave it bare, or give it one good object and nothing else.",
@@ -13338,7 +13338,7 @@ const PRODUCTS = [
     dims: { w: 90, d: 90, h: 27, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc016", arriveDays: [28, 33], name: "Nesting Metal Round Coffee Tables, Set of 2 · Black", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11078", tag: "New", ph: "", img: "assets/products/cc016-1.webp",
+  { id: "cc016", arriveDays: [28, 33], expressOpt: 7000, name: "Nesting Metal Round Coffee Tables, Set of 2 · Black", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11078", tag: "New", ph: "", img: "assets/products/cc016-1.webp",
     imgs: ["assets/products/cc016-1.webp", "assets/products/cc016-2.webp", "assets/products/cc016-3.webp", "assets/products/cc016-4.webp", "assets/products/cc016-5.webp"],
    
     desc: "The piece the whole room arranges itself around. MDF with a wood veneer finish. Tabletops made from melamine oak. Style it with a stack of books and something with height.",
@@ -13350,7 +13350,7 @@ const PRODUCTS = [
     boxContents: ["1x Coffee table set", "1x Assembly Instructions"],
     care: "Wipe clean with a damp cloth. Large table max load: 40kg; small table max load: 20kg." },
 
-  { id: "cc017", arriveDays: [28, 33], name: "Marble-Look Rectangular Coffee Table, Green", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11079", tag: "New", ph: "", img: "assets/products/cc017-1.webp",
+  { id: "cc017", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Rectangular Coffee Table, Green", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11079", tag: "New", ph: "", img: "assets/products/cc017-1.webp",
     imgs: ["assets/products/cc017-1.webp", "assets/products/cc017-2.webp", "assets/products/cc017-3.webp", "assets/products/cc017-4.webp", "assets/products/cc017-5.webp"],
    
     desc: "The piece the whole room arranges itself around. Rectangular shape with a green marble-effect surface for a natural stone appearance. Style it with a stack of books and something with height.",
@@ -13362,7 +13362,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc018", arriveDays: [28, 33], name: "Travertine-Look Round Coffee Table 106cm", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11080", tag: "New", ph: "", img: "assets/products/cc018-1.webp",
+  { id: "cc018", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Round Coffee Table 106cm", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11080", tag: "New", ph: "", img: "assets/products/cc018-1.webp",
     imgs: ["assets/products/cc018-1.webp", "assets/products/cc018-2.webp", "assets/products/cc018-3.webp", "assets/products/cc018-4.webp", "assets/products/cc018-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 106cm wide, 106cm deep and 35cm high. MDF with travertine laminated paper finish. Round tabletop design for central placement. Style it with a stack of books and something with height.",
@@ -13377,7 +13377,7 @@ const PRODUCTS = [
     dims: { w: 106, d: 106, h: 35, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc019", arriveDays: [28, 33], name: "Birch Round Coffee Table 120cm, White", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11081", tag: "New", ph: "", img: "assets/products/cc019-1.webp",
+  { id: "cc019", arriveDays: [28, 33], expressOpt: 7000, name: "Birch Round Coffee Table 120cm, White", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11081", tag: "New", ph: "", img: "assets/products/cc019-1.webp",
     imgs: ["assets/products/cc019-1.webp", "assets/products/cc019-2.webp", "assets/products/cc019-3.webp", "assets/products/cc019-4.webp", "assets/products/cc019-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 120cm wide, 50cm deep and 35cm high. Powder-coated iron top and legs. Rectangular top with softly rounded corners. Works as well against a wall as it does floating in a room.",
@@ -13390,7 +13390,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 50, h: 35, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc020", arriveDays: [28, 33], name: "Metal Rectangular Coffee Table 110cm, Black", cat: "Living Room", room: "Living Room", price: 272, memberPrice: 244, sku: "SH-11082", tag: "New", ph: "", img: "assets/products/cc020-1.webp",
+  { id: "cc020", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Rectangular Coffee Table 110cm, Black", cat: "Living Room", room: "Living Room", price: 272, memberPrice: 244, sku: "SH-11082", tag: "New", ph: "", img: "assets/products/cc020-1.webp",
     imgs: ["assets/products/cc020-1.webp", "assets/products/cc020-2.webp", "assets/products/cc020-3.webp", "assets/products/cc020-4.webp", "assets/products/cc020-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 110cm wide, 60cm deep and 41cm high. MDF with a Melamine finish. 4mm paper rope accents for a unique, coastal touch. Style it with a stack of books and something with height.",
@@ -13405,7 +13405,7 @@ const PRODUCTS = [
     boxContents: ["1x Coffee Table", "1x Assembly Instructions"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc021", arriveDays: [28, 33], name: "Round Coffee Table 80cm, Oak", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11083", tag: "New", ph: "", img: "assets/products/cc021-1.webp",
+  { id: "cc021", arriveDays: [28, 33], expressOpt: 7000, name: "Round Coffee Table 80cm, Oak", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11083", tag: "New", ph: "", img: "assets/products/cc021-1.webp",
     imgs: ["assets/products/cc021-1.webp", "assets/products/cc021-2.webp", "assets/products/cc021-3.webp", "assets/products/cc021-4.webp", "assets/products/cc021-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 80cm wide, 80cm deep and 45cm high. Particle board. Unique scalloped base adds sculptural charm. Leave it bare, or give it one good object and nothing else.",
@@ -13419,7 +13419,7 @@ const PRODUCTS = [
     dims: { w: 80, d: 80, h: 45, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc022", arriveDays: [28, 33], name: "Sliding-Door Coffee Table 120cm, Black", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11084", tag: "New", ph: "", img: "assets/products/cc022-1.webp",
+  { id: "cc022", arriveDays: [28, 33], expressOpt: 7000, name: "Sliding-Door Coffee Table 120cm, Black", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11084", tag: "New", ph: "", img: "assets/products/cc022-1.webp",
     imgs: ["assets/products/cc022-1.webp", "assets/products/cc022-2.webp", "assets/products/cc022-3.webp", "assets/products/cc022-4.webp", "assets/products/cc022-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 120cm wide, 60cm deep and 41cm high. MDF with a laminated paper finish. 120cm wide tabletop provides plenty of space for decor, books, or drinks. The kind of piece that quietly holds a room together.",
@@ -13432,7 +13432,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 60, h: 41, unit: "cm", printed: true },
     care: "Wipe down with a damp cloth. Avoid cleaning with strong chemicals." },
 
-  { id: "cc023", arriveDays: [28, 33], name: "Marble-Look Round Coffee Table, Green", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11085", tag: "New", ph: "", img: "assets/products/cc023-1.webp",
+  { id: "cc023", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Round Coffee Table, Green", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11085", tag: "New", ph: "", img: "assets/products/cc023-1.webp",
     imgs: ["assets/products/cc023-1.webp", "assets/products/cc023-2.webp", "assets/products/cc023-3.webp", "assets/products/cc023-4.webp", "assets/products/cc023-5.webp"],
    
     desc: "The piece the whole room arranges itself around. Circular shape with a green marble-effect finish for a natural stone look. Works as well against a wall as it does floating in a room.",
@@ -13443,7 +13443,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc024", arriveDays: [28, 33], name: "Nesting Oval Coffee Tables, Set of 2 · Oak", cat: "Living Room", room: "Living Room", price: 803, memberPrice: 722, sku: "SH-11086", tag: "New", ph: "", img: "assets/products/cc024-1.webp",
+  { id: "cc024", arriveDays: [28, 33], expressOpt: 7000, name: "Nesting Oval Coffee Tables, Set of 2 · Oak", cat: "Living Room", room: "Living Room", price: 803, memberPrice: 722, sku: "SH-11086", tag: "New", ph: "", img: "assets/products/cc024-1.webp",
     imgs: ["assets/products/cc024-1.webp", "assets/products/cc024-2.webp", "assets/products/cc024-3.webp", "assets/products/cc024-4.webp", "assets/products/cc024-5.webp"],
    
     desc: "The piece the whole room arranges itself around. MDF with oak veneer. Set of two nesting tables for flexible arrangement and storage. The kind of piece that quietly holds a room together.",
@@ -13454,7 +13454,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee Table", "Colour": "Oak", "Material": "MDF with oak veneer" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc025", arriveDays: [28, 33], name: "Metal Rectangular Coffee Table 110cm, Natural", cat: "Living Room", room: "Living Room", price: 272, memberPrice: 244, sku: "SH-11087", tag: "New", ph: "", img: "assets/products/cc025-1.webp",
+  { id: "cc025", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Rectangular Coffee Table 110cm, Natural", cat: "Living Room", room: "Living Room", price: 272, memberPrice: 244, sku: "SH-11087", tag: "New", ph: "", img: "assets/products/cc025-1.webp",
     imgs: ["assets/products/cc025-1.webp", "assets/products/cc025-2.webp", "assets/products/cc025-3.webp", "assets/products/cc025-4.webp", "assets/products/cc025-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 110cm wide, 60cm deep and 41cm high. MDF with a Melamine finish. 4mm paper rope accents for a unique, coastal touch. Works as well against a wall as it does floating in a room.",
@@ -13469,7 +13469,7 @@ const PRODUCTS = [
     boxContents: ["1x Coffee Table", "1x Assembly Instructions"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc026", arriveDays: [28, 33], name: "Metal Round Coffee Table 76cm, Black", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11088", tag: "New", ph: "", img: "assets/products/cc026-1.webp",
+  { id: "cc026", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Round Coffee Table 76cm, Black", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11088", tag: "New", ph: "", img: "assets/products/cc026-1.webp",
     imgs: ["assets/products/cc026-1.webp", "assets/products/cc026-2.webp", "assets/products/cc026-3.webp", "assets/products/cc026-4.webp", "assets/products/cc026-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 76cm wide, 76cm deep and 41cm high. MDF with a melamine finish. 76cm round tabletop provides plenty of surface space. Leave it bare, or give it one good object and nothing else.",
@@ -13484,7 +13484,7 @@ const PRODUCTS = [
     dims: { w: 76, d: 76, h: 41, unit: "cm", printed: true },
     care: "Wipe clean with a dry cloth. Avoid strong chemical cleaners." },
 
-  { id: "cc027", arriveDays: [28, 33], name: "Round Coffee Table 80cm, Cream", cat: "Living Room", room: "Living Room", price: 333, memberPrice: 299, sku: "SH-11089", tag: "New", ph: "", img: "assets/products/cc027-1.webp",
+  { id: "cc027", arriveDays: [28, 33], expressOpt: 7000, name: "Round Coffee Table 80cm, Cream", cat: "Living Room", room: "Living Room", price: 333, memberPrice: 299, sku: "SH-11089", tag: "New", ph: "", img: "assets/products/cc027-1.webp",
     imgs: ["assets/products/cc027-1.webp", "assets/products/cc027-2.webp", "assets/products/cc027-3.webp", "assets/products/cc027-4.webp", "assets/products/cc027-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 80cm wide, 80cm deep and 40cm high. MDF with lacquer finish. Round top surface for drinks, books, or display items. The kind of piece that quietly holds a room together.",
@@ -13498,7 +13498,7 @@ const PRODUCTS = [
     dims: { w: 80, d: 80, h: 40, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc028", arriveDays: [28, 33], name: "Metal Square Coffee Table 70cm, Black", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11090", tag: "New", ph: "", img: "assets/products/cc028-1.webp",
+  { id: "cc028", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Square Coffee Table 70cm, Black", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11090", tag: "New", ph: "", img: "assets/products/cc028-1.webp",
     imgs: ["assets/products/cc028-1.webp", "assets/products/cc028-2.webp", "assets/products/cc028-3.webp", "assets/products/cc028-4.webp", "assets/products/cc028-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 70cm wide, 70cm deep and 40.5cm high. MDF with a Melamine finish. 4mm paper rope accents for a unique, rustic touch. Works as well against a wall as it does floating in a room.",
@@ -13515,7 +13515,7 @@ const PRODUCTS = [
     boxContents: ["1x Coffee Table", "1x Assembly Instructions"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc029", arriveDays: [28, 33], name: "Coffee Table 60cm, Off-White", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11091", tag: "New", ph: "", img: "assets/products/cc029-1.webp",
+  { id: "cc029", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee Table 60cm, Off-White", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11091", tag: "New", ph: "", img: "assets/products/cc029-1.webp",
     imgs: ["assets/products/cc029-1.webp", "assets/products/cc029-2.webp", "assets/products/cc029-3.webp", "assets/products/cc029-4.webp", "assets/products/cc029-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 60cm wide, 60cm deep and 40cm high. MDF with lacquer finish. Cylindrical base offers balance and visual weight. Leave it bare, or give it one good object and nothing else.",
@@ -13527,7 +13527,7 @@ const PRODUCTS = [
     dims: { w: 60, d: 60, h: 40, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc030", arriveDays: [28, 33], name: "Round Coffee Table 80cm", cat: "Living Room", room: "Living Room", price: 333, memberPrice: 299, sku: "SH-11092", tag: "New", ph: "", img: "assets/products/cc030-1.webp",
+  { id: "cc030", arriveDays: [28, 33], expressOpt: 7000, name: "Round Coffee Table 80cm", cat: "Living Room", room: "Living Room", price: 333, memberPrice: 299, sku: "SH-11092", tag: "New", ph: "", img: "assets/products/cc030-1.webp",
     imgs: ["assets/products/cc030-1.webp", "assets/products/cc030-2.webp", "assets/products/cc030-3.webp", "assets/products/cc030-4.webp", "assets/products/cc030-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 80cm wide, 80cm deep and 40cm high. MDF with lacquer finish. Cylindrical legs create a balanced and playful look. The kind of piece that quietly holds a room together.",
@@ -13541,7 +13541,7 @@ const PRODUCTS = [
     dims: { w: 80, d: 80, h: 40, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc031", arriveDays: [28, 33], name: "Coffee Table 110cm, Natural", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11093", tag: "New", ph: "", img: "assets/products/cc031-1.webp",
+  { id: "cc031", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee Table 110cm, Natural", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11093", tag: "New", ph: "", img: "assets/products/cc031-1.webp",
     imgs: ["assets/products/cc031-1.webp", "assets/products/cc031-2.webp", "assets/products/cc031-3.webp", "assets/products/cc031-4.webp", "assets/products/cc031-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 110cm wide, 55cm deep and 40cm high. Sustainably sourced rubberwood with a melamine finish. Sliding ribbed door for concealed storage. Style it with a stack of books and something with height.",
@@ -13554,7 +13554,7 @@ const PRODUCTS = [
     dims: { w: 110, d: 55, h: 40, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc032", arriveDays: [28, 33], name: "Marble-Look Coffee Table 100cm, Red", cat: "Living Room", room: "Living Room", price: 864, memberPrice: 777, sku: "SH-11094", tag: "New", ph: "", img: "assets/products/cc032-1.webp",
+  { id: "cc032", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Coffee Table 100cm, Red", cat: "Living Room", room: "Living Room", price: 864, memberPrice: 777, sku: "SH-11094", tag: "New", ph: "", img: "assets/products/cc032-1.webp",
     imgs: ["assets/products/cc032-1.webp", "assets/products/cc032-2.webp", "assets/products/cc032-3.webp", "assets/products/cc032-4.webp", "assets/products/cc032-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 100cm wide, 74cm deep and 38cm high. MGO with red marble-effect hydrographic transfer finish. Wide, low-profile block form with fluted surface detailing. Style it with a stack of books and something with height.",
@@ -13569,7 +13569,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 74, h: 38, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc033", arriveDays: [28, 33], name: "Curved Coffee Tables, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11095", tag: "New", ph: "", img: "assets/products/cc033-1.webp",
+  { id: "cc033", arriveDays: [28, 33], expressOpt: 7000, name: "Curved Coffee Tables, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11095", tag: "New", ph: "", img: "assets/products/cc033-1.webp",
     imgs: ["assets/products/cc033-1.webp", "assets/products/cc033-2.webp", "assets/products/cc033-3.webp", "assets/products/cc033-4.webp", "assets/products/cc033-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 60cm wide, 60cm deep and 34cm high. MDF with Wood Veneer. Set of two coffee tables for flexible arrangement. The kind of piece that quietly holds a room together.",
@@ -13583,7 +13583,7 @@ const PRODUCTS = [
     dims: { w: 60, d: 60, h: 34, unit: "cm", printed: true },
     care: "Wipe with a damp cloth for easy cleaning and maintenance." },
 
-  { id: "cc034", arriveDays: [28, 33], name: "Coffee Table 120cm, Birch", cat: "Living Room", room: "Living Room", price: 432, memberPrice: 388, sku: "SH-11096", tag: "New", ph: "", img: "assets/products/cc034-1.webp",
+  { id: "cc034", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee Table 120cm, Birch", cat: "Living Room", room: "Living Room", price: 432, memberPrice: 388, sku: "SH-11096", tag: "New", ph: "", img: "assets/products/cc034-1.webp",
     imgs: ["assets/products/cc034-1.webp", "assets/products/cc034-2.webp", "assets/products/cc034-3.webp", "assets/products/cc034-4.webp", "assets/products/cc034-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 120cm wide, 60cm deep and 41cm high. MDF with lacquer finish. Organic tabletop shape adds a natural, sculptural touch. Works as well against a wall as it does floating in a room.",
@@ -13596,7 +13596,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 60, h: 41, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc035", arriveDays: [28, 33], name: "Nesting Metal Round Coffee Tables, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11097", tag: "New", ph: "", img: "assets/products/cc035-1.webp",
+  { id: "cc035", arriveDays: [28, 33], expressOpt: 7000, name: "Nesting Metal Round Coffee Tables, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11097", tag: "New", ph: "", img: "assets/products/cc035-1.webp",
     imgs: ["assets/products/cc035-1.webp", "assets/products/cc035-2.webp", "assets/products/cc035-3.webp", "assets/products/cc035-4.webp", "assets/products/cc035-5.webp"],
    
     desc: "The piece the whole room arranges itself around. MDF with a wood veneer finish. Tabletops made from melamine oak. Style it with a stack of books and something with height.",
@@ -13608,7 +13608,7 @@ const PRODUCTS = [
     boxContents: ["1x Coffee table set", "1x Assembly Instructions"],
     care: "Wipe clean with a damp cloth. Large table max load: 40kg; small table max load: 20kg." },
 
-  { id: "cc036", arriveDays: [28, 33], name: "Coffee Table 100cm, Natural", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11098", tag: "New", ph: "", img: "assets/products/cc036-1.webp",
+  { id: "cc036", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee Table 100cm, Natural", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11098", tag: "New", ph: "", img: "assets/products/cc036-1.webp",
     imgs: ["assets/products/cc036-1.webp", "assets/products/cc036-2.webp", "assets/products/cc036-3.webp", "assets/products/cc036-4.webp", "assets/products/cc036-5.webp"],
    
     desc: "The piece the whole room arranges itself around. Natural wood finish for a warm, inviting look. Style it with a stack of books and something with height.",
@@ -13622,7 +13622,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee Table", "Colour": "Natural" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc037", arriveDays: [28, 33], name: "Coffee Table 102cm, Black", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11099", tag: "New", ph: "", img: "assets/products/cc037-1.webp",
+  { id: "cc037", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee Table 102cm, Black", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11099", tag: "New", ph: "", img: "assets/products/cc037-1.webp",
     imgs: ["assets/products/cc037-1.webp", "assets/products/cc037-2.webp", "assets/products/cc037-3.webp", "assets/products/cc037-4.webp", "assets/products/cc037-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 102cm wide, 60cm deep and 46cm high. Spacious surface for decor and beverages. Works as well against a wall as it does floating in a room.",
@@ -13637,7 +13637,7 @@ const PRODUCTS = [
     dims: { w: 102, d: 60, h: 46, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc038", arriveDays: [28, 33], name: "Rattan Storage Coffee Table 97cm, Natural", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11100", tag: "New", ph: "", img: "assets/products/cc038-1.webp",
+  { id: "cc038", arriveDays: [28, 33], expressOpt: 7000, name: "Rattan Storage Coffee Table 97cm, Natural", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11100", tag: "New", ph: "", img: "assets/products/cc038-1.webp",
     imgs: ["assets/products/cc038-1.webp", "assets/products/cc038-2.webp", "assets/products/cc038-3.webp", "assets/products/cc038-4.webp", "assets/products/cc038-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 97cm wide, 71cm deep and 41cm high. Plywood and Rattan. Unique wave-inspired design for a standout, organic look. Works as well against a wall as it does floating in a room.",
@@ -13652,7 +13652,7 @@ const PRODUCTS = [
     dims: { w: 97, d: 71, h: 41, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc039", arriveDays: [28, 33], name: "Burl-Look Round Coffee Table 70cm", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11101", tag: "New", ph: "", img: "assets/products/cc039-1.webp",
+  { id: "cc039", arriveDays: [28, 33], expressOpt: 7000, name: "Burl-Look Round Coffee Table 70cm", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11101", tag: "New", ph: "", img: "assets/products/cc039-1.webp",
     imgs: ["assets/products/cc039-1.webp", "assets/products/cc039-2.webp", "assets/products/cc039-3.webp", "assets/products/cc039-4.webp", "assets/products/cc039-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 70cm wide, 70cm deep and 36.5cm high. MgO (Magnesium Oxide) with burl-effect hydrographic transfer. Circular design with a burl-effect finish. Leave it bare, or give it one good object and nothing else.",
@@ -13665,7 +13665,7 @@ const PRODUCTS = [
     dims: { w: 70, d: 70, h: 36.5, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc040", arriveDays: [28, 33], name: "Round Coffee Table 77cm, Black", cat: "Living Room", room: "Living Room", price: 296, memberPrice: 266, sku: "SH-11102", tag: "New", ph: "", img: "assets/products/cc040-1.webp",
+  { id: "cc040", arriveDays: [28, 33], expressOpt: 7000, name: "Round Coffee Table 77cm, Black", cat: "Living Room", room: "Living Room", price: 296, memberPrice: 266, sku: "SH-11102", tag: "New", ph: "", img: "assets/products/cc040-1.webp",
     imgs: ["assets/products/cc040-1.webp", "assets/products/cc040-2.webp", "assets/products/cc040-3.webp", "assets/products/cc040-4.webp", "assets/products/cc040-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 77cm wide, 77cm deep and 43.5cm high. Solid black metal legs. The kind of piece that quietly holds a room together.",
@@ -13680,7 +13680,7 @@ const PRODUCTS = [
     boxContents: ["1x Coffee table"],
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc041", arriveDays: [28, 33], name: "Marble-Look Rectangular Coffee Table, Red", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11103", tag: "New", ph: "", img: "assets/products/cc041-1.webp",
+  { id: "cc041", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Rectangular Coffee Table, Red", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11103", tag: "New", ph: "", img: "assets/products/cc041-1.webp",
     imgs: ["assets/products/cc041-1.webp", "assets/products/cc041-2.webp", "assets/products/cc041-3.webp", "assets/products/cc041-4.webp", "assets/products/cc041-5.webp"],
    
     desc: "The piece the whole room arranges itself around. Rectangular shape with a red marble-effect surface for a natural stone appearance. Works as well against a wall as it does floating in a room.",
@@ -13692,7 +13692,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc042", arriveDays: [28, 33], name: "Arched Coffee Table 70cm, Grey", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11104", tag: "New", ph: "", img: "assets/products/cc042-1.webp",
+  { id: "cc042", arriveDays: [28, 33], expressOpt: 7000, name: "Arched Coffee Table 70cm, Grey", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11104", tag: "New", ph: "", img: "assets/products/cc042-1.webp",
     imgs: ["assets/products/cc042-1.webp", "assets/products/cc042-2.webp", "assets/products/cc042-3.webp", "assets/products/cc042-4.webp", "assets/products/cc042-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 70cm wide, 70cm deep and 36cm high. MDF with rolling veneer. Hexagonal shape delivers a standout architectural look. The kind of piece that quietly holds a room together.",
@@ -13707,7 +13707,7 @@ const PRODUCTS = [
     dims: { w: 70, d: 70, h: 36, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc043", arriveDays: [28, 33], name: "Ash Round Coffee Table 90cm, Natural", cat: "Living Room", room: "Living Room", price: 678, memberPrice: 610, sku: "SH-11105", tag: "New", ph: "", img: "assets/products/cc043-1.webp",
+  { id: "cc043", arriveDays: [28, 33], expressOpt: 7000, name: "Ash Round Coffee Table 90cm, Natural", cat: "Living Room", room: "Living Room", price: 678, memberPrice: 610, sku: "SH-11105", tag: "New", ph: "", img: "assets/products/cc043-1.webp",
     imgs: ["assets/products/cc043-1.webp", "assets/products/cc043-2.webp", "assets/products/cc043-3.webp", "assets/products/cc043-4.webp", "assets/products/cc043-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 90cm wide, 90cm deep and 35cm high. MDF with Ash veneer. Round tabletop with softly rounded edges. Leave it bare, or give it one good object and nothing else.",
@@ -13720,7 +13720,7 @@ const PRODUCTS = [
     dims: { w: 90, d: 90, h: 35, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc044", arriveDays: [28, 33], name: "Burl-Look Rectangular Coffee Table 70cm", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11106", tag: "New", ph: "", img: "assets/products/cc044-1.webp",
+  { id: "cc044", arriveDays: [28, 33], expressOpt: 7000, name: "Burl-Look Rectangular Coffee Table 70cm", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11106", tag: "New", ph: "", img: "assets/products/cc044-1.webp",
     imgs: ["assets/products/cc044-1.webp", "assets/products/cc044-2.webp", "assets/products/cc044-3.webp", "assets/products/cc044-4.webp", "assets/products/cc044-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 90.5cm wide, 60cm deep and 31cm high. MgO (Magnesium Oxide) with burl-effect hydrographic transfer. Rectangular design with a Burl-effect finish. The kind of piece that quietly holds a room together.",
@@ -13733,7 +13733,7 @@ const PRODUCTS = [
     dims: { w: 90.5, d: 60, h: 31, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc045", arriveDays: [28, 33], name: "Coffee Tables 90cm, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11107", tag: "New", ph: "", img: "assets/products/cc045-1.webp",
+  { id: "cc045", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee Tables 90cm, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11107", tag: "New", ph: "", img: "assets/products/cc045-1.webp",
     imgs: ["assets/products/cc045-1.webp", "assets/products/cc045-2.webp", "assets/products/cc045-3.webp", "assets/products/cc045-4.webp", "assets/products/cc045-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 60cm wide, 60cm deep and 34cm high. MDF with Wood Veneer. Stylish and contemporary design. Leave it bare, or give it one good object and nothing else.",
@@ -13748,7 +13748,7 @@ const PRODUCTS = [
     dims: { w: 60, d: 60, h: 34, unit: "cm", printed: true },
     care: "Wipe with a damp cloth for easy cleaning and maintenance." },
 
-  { id: "cc046", arriveDays: [28, 33], name: "Coffee Table 110cm, Black", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11108", tag: "New", ph: "", img: "assets/products/cc046-1.webp",
+  { id: "cc046", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee Table 110cm, Black", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11108", tag: "New", ph: "", img: "assets/products/cc046-1.webp",
     imgs: ["assets/products/cc046-1.webp", "assets/products/cc046-2.webp", "assets/products/cc046-3.webp", "assets/products/cc046-4.webp", "assets/products/cc046-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 110cm wide, 55cm deep and 40cm high. Sustainably sourced rubberwood with a melamine finish. Sliding ribbed door for concealed storage. Works as well against a wall as it does floating in a room.",
@@ -13761,7 +13761,7 @@ const PRODUCTS = [
     dims: { w: 110, d: 55, h: 40, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc047", arriveDays: [28, 33], name: "Rectangular Coffee Table 120cm, Natural", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11109", tag: "New", ph: "", img: "assets/products/cc047-1.webp",
+  { id: "cc047", arriveDays: [28, 33], expressOpt: 7000, name: "Rectangular Coffee Table 120cm, Natural", cat: "Living Room", room: "Living Room", price: 555, memberPrice: 499, sku: "SH-11109", tag: "New", ph: "", img: "assets/products/cc047-1.webp",
     imgs: ["assets/products/cc047-1.webp", "assets/products/cc047-2.webp", "assets/products/cc047-3.webp", "assets/products/cc047-4.webp", "assets/products/cc047-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 120cm wide, 60cm deep and 60.5cm high. MDF. Stylish and functional coffee table with four drawers for convenient storage. Style it with a stack of books and something with height.",
@@ -13776,7 +13776,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 60, h: 60.5, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth once assembled." },
 
-  { id: "cc048", arriveDays: [28, 33], name: "Marble & Metal Round Coffee Table 80cm, Green", cat: "Living Room", room: "Living Room", price: 740, memberPrice: 666, sku: "SH-11110", tag: "New", ph: "", img: "assets/products/cc048-1.webp",
+  { id: "cc048", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Metal Round Coffee Table 80cm, Green", cat: "Living Room", room: "Living Room", price: 740, memberPrice: 666, sku: "SH-11110", tag: "New", ph: "", img: "assets/products/cc048-1.webp",
     imgs: ["assets/products/cc048-1.webp", "assets/products/cc048-2.webp", "assets/products/cc048-3.webp", "assets/products/cc048-4.webp", "assets/products/cc048-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 80cm wide, 80cm deep and 42cm high. Marble top. Round coffee table with a low-profile form. Works as well against a wall as it does floating in a room.",
@@ -13790,7 +13790,7 @@ const PRODUCTS = [
     dims: { w: 80, d: 80, h: 42, unit: "cm", printed: true },
     care: "Natural marble veining and colour variation will occur between pieces." },
 
-  { id: "cc049", arriveDays: [28, 33], name: "Round Coffee Table 110cm, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11111", tag: "New", ph: "", img: "assets/products/cc049-1.webp",
+  { id: "cc049", arriveDays: [28, 33], expressOpt: 7000, name: "Round Coffee Table 110cm, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11111", tag: "New", ph: "", img: "assets/products/cc049-1.webp",
     imgs: ["assets/products/cc049-1.webp", "assets/products/cc049-2.webp", "assets/products/cc049-3.webp", "assets/products/cc049-4.webp", "assets/products/cc049-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 110cm wide, 61cm deep and 40cm high. MDF with oak veneer. Asymmetrical tabletop. Works as well against a wall as it does floating in a room.",
@@ -13804,7 +13804,7 @@ const PRODUCTS = [
     dims: { w: 110, d: 61, h: 40, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc050", arriveDays: [28, 33], name: "Round Coffee Table 100cm, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11112", tag: "New", ph: "", img: "assets/products/cc050-1.webp",
+  { id: "cc050", arriveDays: [28, 33], expressOpt: 7000, name: "Round Coffee Table 100cm, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11112", tag: "New", ph: "", img: "assets/products/cc050-1.webp",
     imgs: ["assets/products/cc050-1.webp", "assets/products/cc050-2.webp", "assets/products/cc050-3.webp", "assets/products/cc050-4.webp", "assets/products/cc050-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 100cm wide, 100cm deep and 41cm high. MDF with oak veneer finish. Lower shelf adds extra surface space for styling or storage. Works as well against a wall as it does floating in a room.",
@@ -13818,7 +13818,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 100, h: 41, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc051", arriveDays: [28, 33], name: "Marble-Look Round Coffee Table, Red", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11113", tag: "New", ph: "", img: "assets/products/cc051-1.webp",
+  { id: "cc051", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Round Coffee Table, Red", cat: "Living Room", room: "Living Room", price: 617, memberPrice: 555, sku: "SH-11113", tag: "New", ph: "", img: "assets/products/cc051-1.webp",
     imgs: ["assets/products/cc051-1.webp", "assets/products/cc051-2.webp", "assets/products/cc051-3.webp", "assets/products/cc051-4.webp", "assets/products/cc051-5.webp"],
    
     desc: "The piece the whole room arranges itself around. Circular shape with a red marble-effect finish for a natural stone look. Style it with a stack of books and something with height.",
@@ -13829,7 +13829,7 @@ const PRODUCTS = [
     specs: { "Type": "Coffee Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc052", arriveDays: [28, 33], name: "Coffee Table 120cm, Green", cat: "Living Room", room: "Living Room", price: 432, memberPrice: 388, sku: "SH-11114", tag: "New", ph: "", img: "assets/products/cc052-1.webp",
+  { id: "cc052", arriveDays: [28, 33], expressOpt: 7000, name: "Coffee Table 120cm, Green", cat: "Living Room", room: "Living Room", price: 432, memberPrice: 388, sku: "SH-11114", tag: "New", ph: "", img: "assets/products/cc052-1.webp",
     imgs: ["assets/products/cc052-1.webp", "assets/products/cc052-2.webp", "assets/products/cc052-3.webp", "assets/products/cc052-4.webp", "assets/products/cc052-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 120cm wide, 60cm deep and 41cm high. MDF with lacquer finish. Organic tabletop shape introduces a natural, sculptural element. Works as well against a wall as it does floating in a room.",
@@ -13842,7 +13842,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 60, h: 41, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc053", arriveDays: [28, 33], name: "Bamboo Coffee Table 100cm, Black", cat: "Living Room", room: "Living Room", price: 273, memberPrice: 245, sku: "SH-11115", tag: "New", ph: "", img: "assets/products/cc053-1.webp",
+  { id: "cc053", arriveDays: [28, 33], expressOpt: 7000, name: "Bamboo Coffee Table 100cm, Black", cat: "Living Room", room: "Living Room", price: 273, memberPrice: 245, sku: "SH-11115", tag: "New", ph: "", img: "assets/products/cc053-1.webp",
     imgs: ["assets/products/cc053-1.webp", "assets/products/cc053-2.webp", "assets/products/cc053-3.webp", "assets/products/cc053-4.webp", "assets/products/cc053-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 100cm wide, 50cm deep and 40.5cm high. Bamboo. Leave it bare, or give it one good object and nothing else.",
@@ -13855,7 +13855,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 50, h: 40.5, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc054", arriveDays: [28, 33], name: "Curved Round Coffee Table 100cm, Walnut", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11116", tag: "New", ph: "", img: "assets/products/cc054-1.webp",
+  { id: "cc054", arriveDays: [28, 33], expressOpt: 7000, name: "Curved Round Coffee Table 100cm, Walnut", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11116", tag: "New", ph: "", img: "assets/products/cc054-1.webp",
     imgs: ["assets/products/cc054-1.webp", "assets/products/cc054-2.webp", "assets/products/cc054-3.webp", "assets/products/cc054-4.webp", "assets/products/cc054-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 100cm wide, 100cm deep and 41cm high. MDF with walnut veneer finish. Lower shelf adds extra surface space for styling or storage. Style it with a stack of books and something with height.",
@@ -13869,7 +13869,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 100, h: 41, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc055", arriveDays: [28, 33], name: "Bamboo Coffee Table 100cm, Natural", cat: "Living Room", room: "Living Room", price: 248, memberPrice: 223, sku: "SH-11117", tag: "New", ph: "", img: "assets/products/cc055-1.webp",
+  { id: "cc055", arriveDays: [28, 33], expressOpt: 7000, name: "Bamboo Coffee Table 100cm, Natural", cat: "Living Room", room: "Living Room", price: 248, memberPrice: 223, sku: "SH-11117", tag: "New", ph: "", img: "assets/products/cc055-1.webp",
     imgs: ["assets/products/cc055-1.webp", "assets/products/cc055-2.webp", "assets/products/cc055-3.webp", "assets/products/cc055-4.webp", "assets/products/cc055-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 100cm wide, 50cm deep and 40.5cm high. Bamboo. The kind of piece that quietly holds a room together.",
@@ -13882,7 +13882,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 50, h: 40.5, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc056", arriveDays: [28, 33], name: "Burl-Look Round Coffee Table 60cm", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11118", tag: "New", ph: "", img: "assets/products/cc056-1.webp",
+  { id: "cc056", arriveDays: [28, 33], expressOpt: 7000, name: "Burl-Look Round Coffee Table 60cm", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11118", tag: "New", ph: "", img: "assets/products/cc056-1.webp",
     imgs: ["assets/products/cc056-1.webp", "assets/products/cc056-2.webp", "assets/products/cc056-3.webp", "assets/products/cc056-4.webp", "assets/products/cc056-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 60cm wide, 60cm deep and 40cm high. MDF with burl wood-look laminated finish. Round tabletop with compact proportions for smaller spaces. Leave it bare, or give it one good object and nothing else.",
@@ -13896,7 +13896,7 @@ const PRODUCTS = [
     dims: { w: 60, d: 60, h: 40, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc057", arriveDays: [28, 33], name: "Round Coffee Table 50cm, Natural", cat: "Living Room", room: "Living Room", price: 377, memberPrice: 339, sku: "SH-11119", tag: "New", ph: "", img: "assets/products/cc057-1.webp",
+  { id: "cc057", arriveDays: [28, 33], expressOpt: 7000, name: "Round Coffee Table 50cm, Natural", cat: "Living Room", room: "Living Room", price: 377, memberPrice: 339, sku: "SH-11119", tag: "New", ph: "", img: "assets/products/cc057-1.webp",
     imgs: ["assets/products/cc057-1.webp", "assets/products/cc057-2.webp", "assets/products/cc057-3.webp", "assets/products/cc057-4.webp", "assets/products/cc057-5.webp"],
    
     desc: "The piece the whole room arranges itself around. 50cm wide, 50cm deep and 36cm high. Particleboard with melamine finish. Matching scalloped base design provides visual consistency across the set. Leave it bare, or give it one good object and nothing else.",
@@ -13910,7 +13910,7 @@ const PRODUCTS = [
     dims: { w: 50, d: 50, h: 36, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc058", arriveDays: [28, 33], name: "Travertine-Look Round Side Table 46cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11120", tag: "New", ph: "", img: "assets/products/cc058-1.webp",
+  { id: "cc058", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Round Side Table 46cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11120", tag: "New", ph: "", img: "assets/products/cc058-1.webp",
     imgs: ["assets/products/cc058-1.webp", "assets/products/cc058-2.webp", "assets/products/cc058-3.webp", "assets/products/cc058-4.webp", "assets/products/cc058-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 36cm wide, 36cm deep and 46cm high. Magnesium Oxide (MGO). Sturdy, easy to move around. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -13926,7 +13926,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc059", arriveDays: [28, 33], name: "Travertine-Look Plinth Round Side Table 70cm, Beige", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11121", tag: "New", ph: "", img: "assets/products/cc059-1.webp",
+  { id: "cc059", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Plinth Round Side Table 70cm, Beige", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11121", tag: "New", ph: "", img: "assets/products/cc059-1.webp",
     imgs: ["assets/products/cc059-1.webp", "assets/products/cc059-2.webp", "assets/products/cc059-3.webp", "assets/products/cc059-4.webp", "assets/products/cc059-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 36cm wide, 36cm deep and 70.5cm high. MgO with a travertine effect in hydrographic transfer printing. Circular shape with travertine-effect finish. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -13941,7 +13941,7 @@ const PRODUCTS = [
     boxContents: ["1x Plinth"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight. WARNING:." },
 
-  { id: "cc060", arriveDays: [28, 33], name: "Ash Round Side Table 40cm, Walnut", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11122", tag: "New", ph: "", img: "assets/products/cc060-1.webp",
+  { id: "cc060", arriveDays: [28, 33], expressOpt: 7000, name: "Ash Round Side Table 40cm, Walnut", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11122", tag: "New", ph: "", img: "assets/products/cc060-1.webp",
     imgs: ["assets/products/cc060-1.webp", "assets/products/cc060-2.webp", "assets/products/cc060-3.webp", "assets/products/cc060-4.webp", "assets/products/cc060-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 48cm high. MDF with ash-coloured laminate; metal frame. Fluted cylindrical base adds visual texture and shape. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -13955,7 +13955,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 48, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc061", arriveDays: [28, 33], name: "Oak Round Side Table 48cm, Light Oak", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11123", tag: "New", ph: "", img: "assets/products/cc061-1.webp",
+  { id: "cc061", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Round Side Table 48cm, Light Oak", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11123", tag: "New", ph: "", img: "assets/products/cc061-1.webp",
     imgs: ["assets/products/cc061-1.webp", "assets/products/cc061-2.webp", "assets/products/cc061-3.webp", "assets/products/cc061-4.webp", "assets/products/cc061-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 24cm wide, 48cm deep and 48.5cm high. Sustainably sourced MDF with laminate finish. Semi-circular shape that fits neatly against walls or furniture. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -13968,7 +13968,7 @@ const PRODUCTS = [
     dims: { w: 24, d: 48, h: 48.5, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc062", arriveDays: [28, 33], name: "Side Table 40cm, Natural", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11124", tag: "New", ph: "", img: "assets/products/cc062-1.webp",
+  { id: "cc062", arriveDays: [28, 33], expressOpt: 7000, name: "Side Table 40cm, Natural", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11124", tag: "New", ph: "", img: "assets/products/cc062-1.webp",
     imgs: ["assets/products/cc062-1.webp", "assets/products/cc062-2.webp", "assets/products/cc062-3.webp", "assets/products/cc062-4.webp", "assets/products/cc062-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 48cm high. MDF with a laminated paper finish. Constructed from MDF with a laminated paper finish. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -13980,7 +13980,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 48, unit: "cm", printed: true },
     care: "Wipe with a damp cloth. Avoid harsh chemicals." },
 
-  { id: "cc063", arriveDays: [28, 33], name: "Travertine-Look Round Side Table 45cm, Beige", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11125", tag: "New", ph: "", img: "assets/products/cc063-1.webp",
+  { id: "cc063", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Round Side Table 45cm, Beige", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11125", tag: "New", ph: "", img: "assets/products/cc063-1.webp",
     imgs: ["assets/products/cc063-1.webp", "assets/products/cc063-2.webp", "assets/products/cc063-3.webp", "assets/products/cc063-4.webp", "assets/products/cc063-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 45cm deep and 50.5cm high. MgO with a travertine effect in hydrographic transfer printing. Sturdy, easy to move around. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -13996,7 +13996,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc064", arriveDays: [28, 33], name: "Round Side Table 48cm, Walnut", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11126", tag: "New", ph: "", img: "assets/products/cc064-1.webp",
+  { id: "cc064", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 48cm, Walnut", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11126", tag: "New", ph: "", img: "assets/products/cc064-1.webp",
     imgs: ["assets/products/cc064-1.webp", "assets/products/cc064-2.webp", "assets/products/cc064-3.webp", "assets/products/cc064-4.webp", "assets/products/cc064-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 24cm wide, 48cm deep and 48.5cm high. Sustainably sourced MDF with a melamine finish. Semi-circular shape that fits neatly against walls or furniture. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14009,7 +14009,7 @@ const PRODUCTS = [
     dims: { w: 24, d: 48, h: 48.5, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc065", arriveDays: [28, 33], name: "Travertine-Look Round Side Table 40cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11127", tag: "New", ph: "", img: "assets/products/cc065-1.webp",
+  { id: "cc065", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Round Side Table 40cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11127", tag: "New", ph: "", img: "assets/products/cc065-1.webp",
     imgs: ["assets/products/cc065-1.webp", "assets/products/cc065-2.webp", "assets/products/cc065-3.webp", "assets/products/cc065-4.webp", "assets/products/cc065-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 45cm high. Magnesium Oxide (MgO). Sturdy, easy to move around. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14025,7 +14025,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull." },
 
-  { id: "cc066", arriveDays: [28, 33], name: "Travertine-Look Side Table 37cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11128", tag: "New", ph: "", img: "assets/products/cc066-1.webp",
+  { id: "cc066", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Side Table 37cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11128", tag: "New", ph: "", img: "assets/products/cc066-1.webp",
     imgs: ["assets/products/cc066-1.webp", "assets/products/cc066-2.webp", "assets/products/cc066-3.webp", "assets/products/cc066-4.webp", "assets/products/cc066-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 37cm wide, 37cm deep and 45.5cm high. Magnesium Oxide (MgO). Sturdy design. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14041,7 +14041,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc067", arriveDays: [28, 33], name: "Timber Side Table 33cm, Birch", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11129", tag: "New", ph: "", img: "assets/products/cc067-1.webp",
+  { id: "cc067", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Side Table 33cm, Birch", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11129", tag: "New", ph: "", img: "assets/products/cc067-1.webp",
     imgs: ["assets/products/cc067-1.webp", "assets/products/cc067-2.webp", "assets/products/cc067-3.webp", "assets/products/cc067-4.webp", "assets/products/cc067-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 33cm wide, 33cm deep and 45cm high. MDF with lacquer finish. Two-ball stem design creates a sculptural and playful silhouette. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14054,7 +14054,7 @@ const PRODUCTS = [
     dims: { w: 33, d: 33, h: 45, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc068", arriveDays: [28, 33], name: "Marble-Look Round Side Table 46cm, Green", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11130", tag: "New", ph: "", img: "assets/products/cc068-1.webp",
+  { id: "cc068", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Round Side Table 46cm, Green", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11130", tag: "New", ph: "", img: "assets/products/cc068-1.webp",
     imgs: ["assets/products/cc068-1.webp", "assets/products/cc068-2.webp", "assets/products/cc068-3.webp", "assets/products/cc068-4.webp", "assets/products/cc068-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 36cm wide, 36cm deep and 46cm high. Magnesium Oxide (MGO). Marble look finish that emulates real stone. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14068,7 +14068,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc069", arriveDays: [28, 33], name: "Timber Round Side Table 33cm, Blue", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11131", tag: "New", ph: "", img: "assets/products/cc069-1.webp",
+  { id: "cc069", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Round Side Table 33cm, Blue", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11131", tag: "New", ph: "", img: "assets/products/cc069-1.webp",
     imgs: ["assets/products/cc069-1.webp", "assets/products/cc069-2.webp", "assets/products/cc069-3.webp", "assets/products/cc069-4.webp", "assets/products/cc069-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 33cm wide, 33cm deep and 45cm high. MDF with lacquer finish. Two-ball stem base adds a sculptural and eye-catching element. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14081,7 +14081,7 @@ const PRODUCTS = [
     dims: { w: 33, d: 33, h: 45, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc070", arriveDays: [28, 33], name: "Round Side Table 55cm, Walnut", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11132", tag: "New", ph: "", img: "assets/products/cc070-1.webp",
+  { id: "cc070", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 55cm, Walnut", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11132", tag: "New", ph: "", img: "assets/products/cc070-1.webp",
     imgs: ["assets/products/cc070-1.webp", "assets/products/cc070-2.webp", "assets/products/cc070-3.webp", "assets/products/cc070-4.webp", "assets/products/cc070-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 55cm wide, 55cm deep and 50cm high. MDF with laminated finish. Rounded square tabletop for a softer, modern profile. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14094,7 +14094,7 @@ const PRODUCTS = [
     dims: { w: 55, d: 55, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc071", arriveDays: [28, 33], name: "Metal Side Tables, Set of 2 · Black", cat: "Living Room", room: "Living Room", price: 223, memberPrice: 200, sku: "SH-11133", tag: "New", ph: "", img: "assets/products/cc071-1.webp",
+  { id: "cc071", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Side Tables, Set of 2 · Black", cat: "Living Room", room: "Living Room", price: 223, memberPrice: 200, sku: "SH-11133", tag: "New", ph: "", img: "assets/products/cc071-1.webp",
     imgs: ["assets/products/cc071-1.webp", "assets/products/cc071-2.webp", "assets/products/cc071-3.webp", "assets/products/cc071-4.webp", "assets/products/cc071-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 35cm wide, 35cm deep and 35cm high. MDF with a melamine finish. Set of two nesting tables for flexible arrangement. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14108,7 +14108,7 @@ const PRODUCTS = [
     boxContents: ["1x Side table set", "1x Assembly Instructions"],
     care: "Wipe clean with a damp cloth. Large table max load: 40kg; small table max load: 20kg." },
 
-  { id: "cc072", arriveDays: [28, 33], name: "Terrazzo Stool Round Side Table 42cm, White", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11134", tag: "New", ph: "", img: "assets/products/cc072-1.webp",
+  { id: "cc072", arriveDays: [28, 33], expressOpt: 7000, name: "Terrazzo Stool Round Side Table 42cm, White", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11134", tag: "New", ph: "", img: "assets/products/cc072-1.webp",
     imgs: ["assets/products/cc072-1.webp", "assets/products/cc072-2.webp", "assets/products/cc072-3.webp", "assets/products/cc072-4.webp", "assets/products/cc072-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 39cm wide, 39cm deep and 42cm high. Terrazzo. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14122,7 +14122,7 @@ const PRODUCTS = [
     boxContents: ["1x Terrazzo side table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc073", arriveDays: [28, 33], name: "Travertine-Look Plinth Side Table 70cm, Beige", cat: "Living Room", room: "Living Room", price: 432, memberPrice: 388, sku: "SH-11135", tag: "New", ph: "", img: "assets/products/cc073-1.webp",
+  { id: "cc073", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Plinth Side Table 70cm, Beige", cat: "Living Room", room: "Living Room", price: 432, memberPrice: 388, sku: "SH-11135", tag: "New", ph: "", img: "assets/products/cc073-1.webp",
     imgs: ["assets/products/cc073-1.webp", "assets/products/cc073-2.webp", "assets/products/cc073-3.webp", "assets/products/cc073-4.webp", "assets/products/cc073-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 45cm deep and 70.5cm high. MgO with a travertine effect in hydrographic transfer printing. Travertine-effect finish for a natural stone look. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14137,7 +14137,7 @@ const PRODUCTS = [
     boxContents: ["1x Plinth"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight. WARNING:." },
 
-  { id: "cc074", arriveDays: [28, 33], name: "Round Side Table 40cm, Coffee", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11136", tag: "New", ph: "", img: "assets/products/cc074-1.webp",
+  { id: "cc074", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 40cm, Coffee", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11136", tag: "New", ph: "", img: "assets/products/cc074-1.webp",
     imgs: ["assets/products/cc074-1.webp", "assets/products/cc074-2.webp", "assets/products/cc074-3.webp", "assets/products/cc074-4.webp", "assets/products/cc074-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 48cm high. MDF with lacquer finish. Round top with a clean, simple silhouette. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14150,7 +14150,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 48, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc075", arriveDays: [28, 33], name: "Rattan Side Table 42cm, Natural", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11137", tag: "New", ph: "", img: "assets/products/cc075-1.webp",
+  { id: "cc075", arriveDays: [28, 33], expressOpt: 7000, name: "Rattan Side Table 42cm, Natural", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11137", tag: "New", ph: "", img: "assets/products/cc075-1.webp",
     imgs: ["assets/products/cc075-1.webp", "assets/products/cc075-2.webp", "assets/products/cc075-3.webp", "assets/products/cc075-4.webp", "assets/products/cc075-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 41.5cm wide, 41.5cm deep and 53cm high. Rattan. Structurally solid but also aesthetically pleasing. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14163,7 +14163,7 @@ const PRODUCTS = [
     dims: { w: 41.5, d: 41.5, h: 53, unit: "cm", printed: true },
     care: "1 x Wipe with damp cloth." },
 
-  { id: "cc076", arriveDays: [28, 33], name: "Terrazzo Round Side Table 48cm, Natural", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11138", tag: "New", ph: "", img: "assets/products/cc076-1.webp",
+  { id: "cc076", arriveDays: [28, 33], expressOpt: 7000, name: "Terrazzo Round Side Table 48cm, Natural", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11138", tag: "New", ph: "", img: "assets/products/cc076-1.webp",
     imgs: ["assets/products/cc076-1.webp", "assets/products/cc076-2.webp", "assets/products/cc076-3.webp", "assets/products/cc076-4.webp", "assets/products/cc076-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 49cm wide, 49cm deep and 47cm high. Terrazzo; Oak. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14177,7 +14177,7 @@ const PRODUCTS = [
     boxContents: ["1x Terrazzo side table"],
     care: "Wipe with damp cloth." },
 
-  { id: "cc077", arriveDays: [28, 33], name: "Marble-Look Round Side Table 46cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11139", tag: "New", ph: "", img: "assets/products/cc077-1.webp",
+  { id: "cc077", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Round Side Table 46cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11139", tag: "New", ph: "", img: "assets/products/cc077-1.webp",
     imgs: ["assets/products/cc077-1.webp", "assets/products/cc077-2.webp", "assets/products/cc077-3.webp", "assets/products/cc077-4.webp", "assets/products/cc077-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 36cm wide, 36cm deep and 46cm high. Magnesium Oxide (MGO). Marble look finish that emulates real stone. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14191,7 +14191,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc078", arriveDays: [28, 33], name: "Metal Round Side Table 45 × 45 × 45 × 45 × 45cm 45cm high, Birch", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11140", tag: "New", ph: "", img: "assets/products/cc078-1.webp",
+  { id: "cc078", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Round Side Table 45 × 45 × 45 × 45 × 45cm 45cm high, Birch", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11140", tag: "New", ph: "", img: "assets/products/cc078-1.webp",
     imgs: ["assets/products/cc078-1.webp", "assets/products/cc078-2.webp", "assets/products/cc078-3.webp", "assets/products/cc078-4.webp", "assets/products/cc078-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 45cm deep and 45cm high. Powder-coated iron top and base. Neutral finish adds warmth and contrast to your space. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14204,7 +14204,7 @@ const PRODUCTS = [
     dims: { w: 45, d: 45, h: 45, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc079", arriveDays: [28, 33], name: "Marble-Look Round Side Table 40cm, Green", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11141", tag: "New", ph: "", img: "assets/products/cc079-1.webp",
+  { id: "cc079", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Round Side Table 40cm, Green", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11141", tag: "New", ph: "", img: "assets/products/cc079-1.webp",
     imgs: ["assets/products/cc079-1.webp", "assets/products/cc079-2.webp", "assets/products/cc079-3.webp", "assets/products/cc079-4.webp", "assets/products/cc079-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 45cm high. Magnesium Oxide (MgO). Sturdy, easy to move around. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14219,7 +14219,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull." },
 
-  { id: "cc080", arriveDays: [28, 33], name: "Round Side Table 40cm, Cream", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11142", tag: "New", ph: "", img: "assets/products/cc080-1.webp",
+  { id: "cc080", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 40cm, Cream", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11142", tag: "New", ph: "", img: "assets/products/cc080-1.webp",
     imgs: ["assets/products/cc080-1.webp", "assets/products/cc080-2.webp", "assets/products/cc080-3.webp", "assets/products/cc080-4.webp", "assets/products/cc080-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 48cm high. MDF with lacquer finish. Round top with a clean, minimal profile. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14233,7 +14233,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 48, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc081", arriveDays: [28, 33], name: "Marble-Look Side Table 37cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11143", tag: "New", ph: "", img: "assets/products/cc081-1.webp",
+  { id: "cc081", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Side Table 37cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11143", tag: "New", ph: "", img: "assets/products/cc081-1.webp",
     imgs: ["assets/products/cc081-1.webp", "assets/products/cc081-2.webp", "assets/products/cc081-3.webp", "assets/products/cc081-4.webp", "assets/products/cc081-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 37cm wide, 37cm deep and 46cm high. Magnesium Oxide (MgO). Sturdy design. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14249,7 +14249,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc082", arriveDays: [28, 33], name: "Marble-Look Round Side Table 40cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11144", tag: "New", ph: "", img: "assets/products/cc082-1.webp",
+  { id: "cc082", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Round Side Table 40cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11144", tag: "New", ph: "", img: "assets/products/cc082-1.webp",
     imgs: ["assets/products/cc082-1.webp", "assets/products/cc082-2.webp", "assets/products/cc082-3.webp", "assets/products/cc082-4.webp", "assets/products/cc082-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 45cm high. Magnesium Oxide (MgO). Sturdy, easy to move around. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14264,7 +14264,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull." },
 
-  { id: "cc083", arriveDays: [28, 33], name: "Marble & Metal Side Table 45cm, Grey", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11145", tag: "New", ph: "", img: "assets/products/cc083-1.webp",
+  { id: "cc083", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Metal Side Table 45cm, Grey", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11145", tag: "New", ph: "", img: "assets/products/cc083-1.webp",
     imgs: ["assets/products/cc083-1.webp", "assets/products/cc083-2.webp", "assets/products/cc083-3.webp", "assets/products/cc083-4.webp", "assets/products/cc083-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 43.4cm wide, 42.7cm deep and 51cm high. Natural marble top. Natural marble top with unique veining. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14277,7 +14277,7 @@ const PRODUCTS = [
     dims: { w: 43.4, d: 42.7, h: 51, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc084", arriveDays: [28, 33], name: "Round Side Table 45cm, Cream", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11146", tag: "New", ph: "", img: "assets/products/cc084-1.webp",
+  { id: "cc084", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 45cm, Cream", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11146", tag: "New", ph: "", img: "assets/products/cc084-1.webp",
     imgs: ["assets/products/cc084-1.webp", "assets/products/cc084-2.webp", "assets/products/cc084-3.webp", "assets/products/cc084-4.webp", "assets/products/cc084-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 38cm deep and 50cm high. MDF with lacquer finish. Round top with generous surface space for everyday use. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14290,7 +14290,7 @@ const PRODUCTS = [
     dims: { w: 45, d: 38, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc085", arriveDays: [28, 33], name: "Round Side Table, Blue", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11147", tag: "New", ph: "", img: "assets/products/cc085-1.webp",
+  { id: "cc085", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table, Blue", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11147", tag: "New", ph: "", img: "assets/products/cc085-1.webp",
     imgs: ["assets/products/cc085-1.webp", "assets/products/cc085-2.webp", "assets/products/cc085-3.webp", "assets/products/cc085-4.webp", "assets/products/cc085-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. Contemporary round side table design. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14303,7 +14303,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc086", arriveDays: [28, 33], name: "Round Side Table 50cm", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11148", tag: "New", ph: "", img: "assets/products/cc086-1.webp",
+  { id: "cc086", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 50cm", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11148", tag: "New", ph: "", img: "assets/products/cc086-1.webp",
     imgs: ["assets/products/cc086-1.webp", "assets/products/cc086-2.webp", "assets/products/cc086-3.webp", "assets/products/cc086-4.webp", "assets/products/cc086-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. Scalloped base design adds visual interest and charm. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14316,7 +14316,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc087", arriveDays: [28, 33], name: "Metal Side Table 50cm, Black", cat: "Living Room", room: "Living Room", price: 98, memberPrice: 88, sku: "SH-11149", tag: "New", ph: "", img: "assets/products/cc087-1.webp",
+  { id: "cc087", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Side Table 50cm, Black", cat: "Living Room", room: "Living Room", price: 98, memberPrice: 88, sku: "SH-11149", tag: "New", ph: "", img: "assets/products/cc087-1.webp",
     imgs: ["assets/products/cc087-1.webp", "assets/products/cc087-2.webp", "assets/products/cc087-3.webp", "assets/products/cc087-4.webp", "assets/products/cc087-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 50cm wide, 35cm deep and 70cm high. MDF. Natural wood finish for a rustic and warm appearance. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14330,7 +14330,7 @@ const PRODUCTS = [
     dims: { w: 50, d: 35, h: 70, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc088", arriveDays: [28, 33], name: "Round Side Table, Cream", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11150", tag: "New", ph: "", img: "assets/products/cc088-1.webp",
+  { id: "cc088", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table, Cream", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11150", tag: "New", ph: "", img: "assets/products/cc088-1.webp",
     imgs: ["assets/products/cc088-1.webp", "assets/products/cc088-2.webp", "assets/products/cc088-3.webp", "assets/products/cc088-4.webp", "assets/products/cc088-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. Contemporary round side table design. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14343,7 +14343,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc089", arriveDays: [28, 33], name: "Metal Arched Side Table 86cm, Black", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11151", tag: "New", ph: "", img: "assets/products/cc089-1.webp",
+  { id: "cc089", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Arched Side Table 86cm, Black", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11151", tag: "New", ph: "", img: "assets/products/cc089-1.webp",
     imgs: ["assets/products/cc089-1.webp", "assets/products/cc089-2.webp", "assets/products/cc089-3.webp", "assets/products/cc089-4.webp", "assets/products/cc089-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 50cm across. Metal. Black metal frame with ribbed glass doors for a contemporary, sophisticated look. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14355,7 +14355,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table", "Colour": "Black", "Material": "Metal" },
     care: "Wipe with damp cloth once assembled. WARNING:. Children have died from furniture tipover. ALWAYS secure this furniture with an anchor device." },
 
-  { id: "cc090", arriveDays: [28, 33], name: "Travertine-Look Round Side Tables, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11152", tag: "New", ph: "", img: "assets/products/cc090-1.webp",
+  { id: "cc090", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Round Side Tables, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11152", tag: "New", ph: "", img: "assets/products/cc090-1.webp",
     imgs: ["assets/products/cc090-1.webp", "assets/products/cc090-2.webp", "assets/products/cc090-3.webp", "assets/products/cc090-4.webp", "assets/products/cc090-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. MDF with melamine finish. Nesting design makes it easy to store or separate as needed. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14367,7 +14367,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table", "Colour": "Travertine-look tops with white base", "Material": "MDF with melamine finish, metal frame" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc091", arriveDays: [28, 33], name: "Stone-Look Side Table 45cm, White", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11153", tag: "New", ph: "", img: "assets/products/cc091-1.webp",
+  { id: "cc091", arriveDays: [28, 33], expressOpt: 7000, name: "Stone-Look Side Table 45cm, White", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11153", tag: "New", ph: "", img: "assets/products/cc091-1.webp",
     imgs: ["assets/products/cc091-1.webp", "assets/products/cc091-2.webp", "assets/products/cc091-3.webp", "assets/products/cc091-4.webp", "assets/products/cc091-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 45cm deep and 57.5cm high. MgO (Magnesium Oxide). This stylish versatile piece features a cylindrical appearance with a unique internal storage space. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14382,7 +14382,7 @@ const PRODUCTS = [
     dims: { w: 45, d: 45, h: 57.5, unit: "cm", printed: true },
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight. Max recommended weight 100kg." },
 
-  { id: "cc092", arriveDays: [28, 33], name: "Stone-Look Arched Side Table 40cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11154", tag: "New", ph: "", img: "assets/products/cc092-1.webp",
+  { id: "cc092", arriveDays: [28, 33], expressOpt: 7000, name: "Stone-Look Arched Side Table 40cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11154", tag: "New", ph: "", img: "assets/products/cc092-1.webp",
     imgs: ["assets/products/cc092-1.webp", "assets/products/cc092-2.webp", "assets/products/cc092-3.webp", "assets/products/cc092-4.webp", "assets/products/cc092-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 47cm high. MgO (Magnesium Oxide). This stylish versatile piece features an arch cut through the middle offering a unique and modern aesthetic. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14396,7 +14396,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 47, unit: "cm", printed: true },
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight. Max recommended weight 100kg." },
 
-  { id: "cc093", arriveDays: [28, 33], name: "Stone-Look Side Table 37cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11155", tag: "New", ph: "", img: "assets/products/cc093-1.webp",
+  { id: "cc093", arriveDays: [28, 33], expressOpt: 7000, name: "Stone-Look Side Table 37cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11155", tag: "New", ph: "", img: "assets/products/cc093-1.webp",
     imgs: ["assets/products/cc093-1.webp", "assets/products/cc093-2.webp", "assets/products/cc093-3.webp", "assets/products/cc093-4.webp", "assets/products/cc093-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 37cm wide, 37cm deep and 43cm high. MgO (Magnesium Oxide). Crafted from high-quality MgO, the Castello Side Table offers both aesthetic beauty and long-lasting durability. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14409,7 +14409,7 @@ const PRODUCTS = [
     dims: { w: 37, d: 37, h: 43, unit: "cm", printed: true },
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight. Max recommended weight 100kg." },
 
-  { id: "cc094", arriveDays: [28, 33], name: "Side Table 40cm, Off-White", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11156", tag: "New", ph: "", img: "assets/products/cc094-1.webp",
+  { id: "cc094", arriveDays: [28, 33], expressOpt: 7000, name: "Side Table 40cm, Off-White", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11156", tag: "New", ph: "", img: "assets/products/cc094-1.webp",
     imgs: ["assets/products/cc094-1.webp", "assets/products/cc094-2.webp", "assets/products/cc094-3.webp", "assets/products/cc094-4.webp", "assets/products/cc094-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 50cm high. MDF with lacquer finish. Cylindrical base adds a clean, structural shape. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14422,7 +14422,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc095", arriveDays: [28, 33], name: "Metal Round Side Table 45cm, Mocha", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11157", tag: "New", ph: "", img: "assets/products/cc095-1.webp",
+  { id: "cc095", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Round Side Table 45cm, Mocha", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11157", tag: "New", ph: "", img: "assets/products/cc095-1.webp",
     imgs: ["assets/products/cc095-1.webp", "assets/products/cc095-2.webp", "assets/products/cc095-3.webp", "assets/products/cc095-4.webp", "assets/products/cc095-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 45cm deep and 45cm high. Powder-coated iron top and base. Mocha finish adds warmth and contrast to your space. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14435,7 +14435,7 @@ const PRODUCTS = [
     dims: { w: 45, d: 45, h: 45, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc096", arriveDays: [28, 33], name: "Marble-Look Side Table 30cm, White", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11158", tag: "New", ph: "", img: "assets/products/cc096-1.webp",
+  { id: "cc096", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Side Table 30cm, White", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11158", tag: "New", ph: "", img: "assets/products/cc096-1.webp",
     imgs: ["assets/products/cc096-1.webp", "assets/products/cc096-2.webp", "assets/products/cc096-3.webp", "assets/products/cc096-4.webp", "assets/products/cc096-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 30cm wide, 30cm deep and 61cm high. MGO with marble-effect hydrographic transfer finish. Tall cylindrical shape with fluted surface detailing. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14449,7 +14449,7 @@ const PRODUCTS = [
     dims: { w: 30, d: 30, h: 61, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc097", arriveDays: [28, 33], name: "Round Side Table, Green", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11159", tag: "New", ph: "", img: "assets/products/cc097-1.webp",
+  { id: "cc097", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table, Green", cat: "Living Room", room: "Living Room", price: 123, memberPrice: 110, sku: "SH-11159", tag: "New", ph: "", img: "assets/products/cc097-1.webp",
     imgs: ["assets/products/cc097-1.webp", "assets/products/cc097-2.webp", "assets/products/cc097-3.webp", "assets/products/cc097-4.webp", "assets/products/cc097-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. Round side table design. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14461,7 +14461,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc098", arriveDays: [28, 33], name: "Round Side Table 40cm, Green", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11160", tag: "New", ph: "", img: "assets/products/cc098-1.webp",
+  { id: "cc098", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 40cm, Green", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11160", tag: "New", ph: "", img: "assets/products/cc098-1.webp",
     imgs: ["assets/products/cc098-1.webp", "assets/products/cc098-2.webp", "assets/products/cc098-3.webp", "assets/products/cc098-4.webp", "assets/products/cc098-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 48cm high. MDF with lacquer finish. Round top with a soft, minimalist silhouette. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14475,7 +14475,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 48, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc099", arriveDays: [28, 33], name: "Metal Side Table 50cm, White", cat: "Living Room", room: "Living Room", price: 98, memberPrice: 88, sku: "SH-11161", tag: "New", ph: "", img: "assets/products/cc099-1.webp",
+  { id: "cc099", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Side Table 50cm, White", cat: "Living Room", room: "Living Room", price: 98, memberPrice: 88, sku: "SH-11161", tag: "New", ph: "", img: "assets/products/cc099-1.webp",
     imgs: ["assets/products/cc099-1.webp", "assets/products/cc099-2.webp", "assets/products/cc099-3.webp", "assets/products/cc099-4.webp", "assets/products/cc099-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 50cm wide, 35cm deep and 70cm high. MDF. Natural wood finish for a rustic and warm appearance. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14489,7 +14489,7 @@ const PRODUCTS = [
     dims: { w: 50, d: 35, h: 70, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc100", arriveDays: [28, 33], name: "Square Side Table 40cm, Natural", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11162", tag: "New", ph: "", img: "assets/products/cc100-1.webp",
+  { id: "cc100", arriveDays: [28, 33], expressOpt: 7000, name: "Square Side Table 40cm, Natural", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11162", tag: "New", ph: "", img: "assets/products/cc100-1.webp",
     imgs: ["assets/products/cc100-1.webp", "assets/products/cc100-2.webp", "assets/products/cc100-3.webp", "assets/products/cc100-4.webp", "assets/products/cc100-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 50cm high. MDF with a wood veneer finish. 40cm square tabletop provides space for books, drinks, or décor. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14503,7 +14503,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc101", arriveDays: [28, 33], name: "Round Side Table 45cm", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11163", tag: "New", ph: "", img: "assets/products/cc101-1.webp",
+  { id: "cc101", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 45cm", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11163", tag: "New", ph: "", img: "assets/products/cc101-1.webp",
     imgs: ["assets/products/cc101-1.webp", "assets/products/cc101-2.webp", "assets/products/cc101-3.webp", "assets/products/cc101-4.webp", "assets/products/cc101-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 38cm deep and 50cm high. MDF with lacquer finish. Round top surface for placing drinks, books, or decor. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14517,7 +14517,7 @@ const PRODUCTS = [
     dims: { w: 45, d: 38, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc102", arriveDays: [28, 33], name: "Metal Side Table 65cm, Black", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11164", tag: "New", ph: "", img: "assets/products/cc102-1.webp",
+  { id: "cc102", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Side Table 65cm, Black", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11164", tag: "New", ph: "", img: "assets/products/cc102-1.webp",
     imgs: ["assets/products/cc102-1.webp", "assets/products/cc102-2.webp", "assets/products/cc102-3.webp", "assets/products/cc102-4.webp", "assets/products/cc102-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40.5cm wide, 40.5cm deep and 65cm high. Metal and MDF. The table top is made of veneer wrapped MDF. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14531,7 +14531,7 @@ const PRODUCTS = [
     dims: { w: 40.5, d: 40.5, h: 65, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc103", arriveDays: [28, 33], name: "Travertine-Look Round Side Table 50cm, Oak", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11165", tag: "New", ph: "", img: "assets/products/cc103-1.webp",
+  { id: "cc103", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Round Side Table 50cm, Oak", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11165", tag: "New", ph: "", img: "assets/products/cc103-1.webp",
     imgs: ["assets/products/cc103-1.webp", "assets/products/cc103-2.webp", "assets/products/cc103-3.webp", "assets/products/cc103-4.webp", "assets/products/cc103-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 50cm wide, 50cm deep and 47cm high. MDF with oak melamine veneer. Round travertine-look top adds visual texture and contrast. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14543,7 +14543,7 @@ const PRODUCTS = [
     dims: { w: 50, d: 50, h: 47, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc104", arriveDays: [28, 33], name: "Marble-Look Side Table 37cm, Green", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11166", tag: "New", ph: "", img: "assets/products/cc104-1.webp",
+  { id: "cc104", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Side Table 37cm, Green", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11166", tag: "New", ph: "", img: "assets/products/cc104-1.webp",
     imgs: ["assets/products/cc104-1.webp", "assets/products/cc104-2.webp", "assets/products/cc104-3.webp", "assets/products/cc104-4.webp", "assets/products/cc104-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 37cm wide, 37cm deep and 46cm high. Magnesium Oxide (MgO). Sturdy design. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14559,7 +14559,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc105", arriveDays: [28, 33], name: "Travertine-Look Stool Round Side Table 38cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11167", tag: "New", ph: "", img: "assets/products/cc105-1.webp",
+  { id: "cc105", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Stool Round Side Table 38cm", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11167", tag: "New", ph: "", img: "assets/products/cc105-1.webp",
     imgs: ["assets/products/cc105-1.webp", "assets/products/cc105-2.webp", "assets/products/cc105-3.webp", "assets/products/cc105-4.webp", "assets/products/cc105-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 38cm wide, 38cm deep and 45cm high. MgO with hydrographics transfer printing. Rounded cylindrical shape with a softly curved top for a sculptural look. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14576,7 +14576,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc106", arriveDays: [28, 33], name: "Terrazzo Stool Round Side Table 46cm, White", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11168", tag: "New", ph: "", img: "assets/products/cc106-1.webp",
+  { id: "cc106", arriveDays: [28, 33], expressOpt: 7000, name: "Terrazzo Stool Round Side Table 46cm, White", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11168", tag: "New", ph: "", img: "assets/products/cc106-1.webp",
     imgs: ["assets/products/cc106-1.webp", "assets/products/cc106-2.webp", "assets/products/cc106-3.webp", "assets/products/cc106-4.webp", "assets/products/cc106-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 31cm wide, 31cm deep and 45cm high. Terrazzo. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14590,7 +14590,7 @@ const PRODUCTS = [
     boxContents: ["1x Terrazzo side table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc107", arriveDays: [28, 33], name: "Marble-Look Plinth Round Side Table 30cm, Red", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11169", tag: "New", ph: "", img: "assets/products/cc107-1.webp",
+  { id: "cc107", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Plinth Round Side Table 30cm, Red", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11169", tag: "New", ph: "", img: "assets/products/cc107-1.webp",
     imgs: ["assets/products/cc107-1.webp", "assets/products/cc107-2.webp", "assets/products/cc107-3.webp", "assets/products/cc107-4.webp", "assets/products/cc107-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 30cm wide, 30cm deep and 46cm high. MgO with water transfer marble-look print finish. Stacked, rounded design creates a sculptural focal point. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14602,7 +14602,7 @@ const PRODUCTS = [
     dims: { w: 30, d: 30, h: 46, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc108", arriveDays: [28, 33], name: "Marble & Metal Side Table 45cm, White", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11170", tag: "New", ph: "", img: "assets/products/cc108-1.webp",
+  { id: "cc108", arriveDays: [28, 33], expressOpt: 7000, name: "Marble & Metal Side Table 45cm, White", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11170", tag: "New", ph: "", img: "assets/products/cc108-1.webp",
     imgs: ["assets/products/cc108-1.webp", "assets/products/cc108-2.webp", "assets/products/cc108-3.webp", "assets/products/cc108-4.webp", "assets/products/cc108-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 43.4cm wide, 42.7cm deep and 51cm high. Natural marble top. Natural marble top with unique veining. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14615,7 +14615,7 @@ const PRODUCTS = [
     dims: { w: 43.4, d: 42.7, h: 51, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc109", arriveDays: [28, 33], name: "Timber Side Table 40cm, Clay", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11171", tag: "New", ph: "", img: "assets/products/cc109-1.webp",
+  { id: "cc109", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Side Table 40cm, Clay", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11171", tag: "New", ph: "", img: "assets/products/cc109-1.webp",
     imgs: ["assets/products/cc109-1.webp", "assets/products/cc109-2.webp", "assets/products/cc109-3.webp", "assets/products/cc109-4.webp", "assets/products/cc109-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 45cm high. MDF with gloss finish. Curved, sculptural silhouette with wide-profile legs. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14628,7 +14628,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 45, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc110", arriveDays: [28, 33], name: "Travertine-Look Side Table 38cm, Grey", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11172", tag: "New", ph: "", img: "assets/products/cc110-1.webp",
+  { id: "cc110", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Side Table 38cm, Grey", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11172", tag: "New", ph: "", img: "assets/products/cc110-1.webp",
     imgs: ["assets/products/cc110-1.webp", "assets/products/cc110-2.webp", "assets/products/cc110-3.webp", "assets/products/cc110-4.webp", "assets/products/cc110-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 38cm wide, 38cm deep and 50cm high. MGO with travertine-effect hydrographic transfer finish. Sculptural fluted column form with a wider top surface. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14641,7 +14641,7 @@ const PRODUCTS = [
     dims: { w: 38, d: 38, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc111", arriveDays: [28, 33], name: "Burl-Look Plinth Round Side Table 70cm", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11173", tag: "New", ph: "", img: "assets/products/cc111-1.webp",
+  { id: "cc111", arriveDays: [28, 33], expressOpt: 7000, name: "Burl-Look Plinth Round Side Table 70cm", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11173", tag: "New", ph: "", img: "assets/products/cc111-1.webp",
     imgs: ["assets/products/cc111-1.webp", "assets/products/cc111-2.webp", "assets/products/cc111-3.webp", "assets/products/cc111-4.webp", "assets/products/cc111-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 36cm wide, 36cm deep and 70.5cm high. MgO (Magnesium Oxide) with burl-effect hydrographic transfer. Burl-look, rounded shape. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14655,7 +14655,7 @@ const PRODUCTS = [
     dims: { w: 36, d: 36, h: 70.5, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc112", arriveDays: [28, 33], name: "Metal Arched Side Table 52cm, Black", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11174", tag: "New", ph: "", img: "assets/products/cc112-1.webp",
+  { id: "cc112", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Arched Side Table 52cm, Black", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11174", tag: "New", ph: "", img: "assets/products/cc112-1.webp",
     imgs: ["assets/products/cc112-1.webp", "assets/products/cc112-2.webp", "assets/products/cc112-3.webp", "assets/products/cc112-4.webp", "assets/products/cc112-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. Open-front design with subtle arch detailing. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14668,7 +14668,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc113", arriveDays: [28, 33], name: "Marble-Look Side Table 46cm, Red", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11175", tag: "New", ph: "", img: "assets/products/cc113-1.webp",
+  { id: "cc113", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Side Table 46cm, Red", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11175", tag: "New", ph: "", img: "assets/products/cc113-1.webp",
     imgs: ["assets/products/cc113-1.webp", "assets/products/cc113-2.webp", "assets/products/cc113-3.webp", "assets/products/cc113-4.webp", "assets/products/cc113-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 46cm wide, 46cm deep and 48cm high. MGO with marble-effect hydrographic transfer finish. Wide block form with fluted surface detailing and a flat top. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14683,7 +14683,7 @@ const PRODUCTS = [
     dims: { w: 46, d: 46, h: 48, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc114", arriveDays: [28, 33], name: "Timber Side Table 40cm, Cream", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11176", tag: "New", ph: "", img: "assets/products/cc114-1.webp",
+  { id: "cc114", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Side Table 40cm, Cream", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11176", tag: "New", ph: "", img: "assets/products/cc114-1.webp",
     imgs: ["assets/products/cc114-1.webp", "assets/products/cc114-2.webp", "assets/products/cc114-3.webp", "assets/products/cc114-4.webp", "assets/products/cc114-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 45cm high. MDF with gloss finish. Curved, sculptural silhouette with wide-profile legs. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14696,7 +14696,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 45, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc115", arriveDays: [28, 33], name: "Metal Side Tables, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 223, memberPrice: 200, sku: "SH-11177", tag: "New", ph: "", img: "assets/products/cc115-1.webp",
+  { id: "cc115", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Side Tables, Set of 2 · White", cat: "Living Room", room: "Living Room", price: 223, memberPrice: 200, sku: "SH-11177", tag: "New", ph: "", img: "assets/products/cc115-1.webp",
     imgs: ["assets/products/cc115-1.webp", "assets/products/cc115-2.webp", "assets/products/cc115-3.webp", "assets/products/cc115-4.webp", "assets/products/cc115-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 35cm wide, 35cm deep and 35cm high. MDF with a melamine finish. Set of two nesting tables for flexible arrangement. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14710,7 +14710,7 @@ const PRODUCTS = [
     boxContents: ["1x Side table set", "1x Assembly Instructions"],
     care: "Wipe clean with a damp cloth. Large table max load: 40kg; small table max load: 20kg." },
 
-  { id: "cc116", arriveDays: [28, 33], name: "Marble-Look Side Table 35cm, Brown", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11178", tag: "New", ph: "", img: "assets/products/cc116-1.webp",
+  { id: "cc116", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Side Table 35cm, Brown", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11178", tag: "New", ph: "", img: "assets/products/cc116-1.webp",
     imgs: ["assets/products/cc116-1.webp", "assets/products/cc116-2.webp", "assets/products/cc116-3.webp", "assets/products/cc116-4.webp", "assets/products/cc116-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 35cm wide, 35cm deep and 40cm high. MgO with water transfer marble-look print finish. Cylindrical shape introduces a sculptural accent to any room. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14723,7 +14723,7 @@ const PRODUCTS = [
     dims: { w: 35, d: 35, h: 40, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc117", arriveDays: [28, 33], name: "Metal Side Table 57cm, Black", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11179", tag: "New", ph: "", img: "assets/products/cc117-1.webp",
+  { id: "cc117", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Side Table 57cm, Black", cat: "Living Room", room: "Living Room", price: 110, memberPrice: 99, sku: "SH-11179", tag: "New", ph: "", img: "assets/products/cc117-1.webp",
     imgs: ["assets/products/cc117-1.webp", "assets/products/cc117-2.webp", "assets/products/cc117-3.webp", "assets/products/cc117-4.webp", "assets/products/cc117-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 39.5cm wide, 28.5cm deep and 57cm high. Metal and MDF. The table top is made of veneer wrapped MDF. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14737,7 +14737,7 @@ const PRODUCTS = [
     dims: { w: 39.5, d: 28.5, h: 57, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc118", arriveDays: [28, 33], name: "Marble-Look Stool Round Side Table 38cm, Green", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11180", tag: "New", ph: "", img: "assets/products/cc118-1.webp",
+  { id: "cc118", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Stool Round Side Table 38cm, Green", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11180", tag: "New", ph: "", img: "assets/products/cc118-1.webp",
     imgs: ["assets/products/cc118-1.webp", "assets/products/cc118-2.webp", "assets/products/cc118-3.webp", "assets/products/cc118-4.webp", "assets/products/cc118-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 38cm wide, 38cm deep and 45cm high. MgO with hydrographics transfer printing. Rounded cylindrical shape with a softly curved top for a sculptural look. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14753,7 +14753,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc119", arriveDays: [28, 33], name: "Round Side Table 35cm", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11181", tag: "New", ph: "", img: "assets/products/cc119-1.webp",
+  { id: "cc119", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 35cm", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11181", tag: "New", ph: "", img: "assets/products/cc119-1.webp",
     imgs: ["assets/products/cc119-1.webp", "assets/products/cc119-2.webp", "assets/products/cc119-3.webp", "assets/products/cc119-4.webp", "assets/products/cc119-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 35cm wide, 35cm deep and 50cm high. MDF with rolling veneer. Hexagonal shape adds visual interest and modern structure. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14768,7 +14768,7 @@ const PRODUCTS = [
     dims: { w: 35, d: 35, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc120", arriveDays: [28, 33], name: "Metal Round Side Table 40cm, Black", cat: "Living Room", room: "Living Room", price: 148, memberPrice: 133, sku: "SH-11182", tag: "New", ph: "", img: "assets/products/cc120-1.webp",
+  { id: "cc120", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Round Side Table 40cm, Black", cat: "Living Room", room: "Living Room", price: 148, memberPrice: 133, sku: "SH-11182", tag: "New", ph: "", img: "assets/products/cc120-1.webp",
     imgs: ["assets/products/cc120-1.webp", "assets/products/cc120-2.webp", "assets/products/cc120-3.webp", "assets/products/cc120-4.webp", "assets/products/cc120-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 65cm high. MDF with a melamine finish. 40cm round tabletop provides space for essentials. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14783,7 +14783,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 65, unit: "cm", printed: true },
     care: "Wipe clean with a dry cloth. Avoid strong chemical cleaners." },
 
-  { id: "cc121", arriveDays: [28, 33], name: "Bamboo Round Side Table 45cm, Black", cat: "Living Room", room: "Living Room", price: 149, memberPrice: 134, sku: "SH-11183", tag: "New", ph: "", img: "assets/products/cc121-1.webp",
+  { id: "cc121", arriveDays: [28, 33], expressOpt: 7000, name: "Bamboo Round Side Table 45cm, Black", cat: "Living Room", room: "Living Room", price: 149, memberPrice: 134, sku: "SH-11183", tag: "New", ph: "", img: "assets/products/cc121-1.webp",
     imgs: ["assets/products/cc121-1.webp", "assets/products/cc121-2.webp", "assets/products/cc121-3.webp", "assets/products/cc121-4.webp", "assets/products/cc121-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 45cm deep and 50cm high. Bamboo. Surrounding the table are bamboo panels with unique gaps in them, adding a touch of elegance to the design. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14795,7 +14795,7 @@ const PRODUCTS = [
     dims: { w: 45, d: 45, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc122", arriveDays: [28, 33], name: "Timber Side Table 40cm, Green", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11184", tag: "New", ph: "", img: "assets/products/cc122-1.webp",
+  { id: "cc122", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Side Table 40cm, Green", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11184", tag: "New", ph: "", img: "assets/products/cc122-1.webp",
     imgs: ["assets/products/cc122-1.webp", "assets/products/cc122-2.webp", "assets/products/cc122-3.webp", "assets/products/cc122-4.webp", "assets/products/cc122-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 45cm high. MDF with gloss finish. Curved, sculptural silhouette with wide-profile legs. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -14808,7 +14808,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 45, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc123", arriveDays: [28, 33], name: "Rattan Storage Side Table 60cm, Natural", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11185", tag: "New", ph: "", img: "assets/products/cc123-1.webp",
+  { id: "cc123", arriveDays: [28, 33], expressOpt: 7000, name: "Rattan Storage Side Table 60cm, Natural", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11185", tag: "New", ph: "", img: "assets/products/cc123-1.webp",
     imgs: ["assets/products/cc123-1.webp", "assets/products/cc123-2.webp", "assets/products/cc123-3.webp", "assets/products/cc123-4.webp", "assets/products/cc123-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 60cm wide, 37cm deep and 45cm high. Plywood and Rattan. Wave-inspired shape for a modern and organic look. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14823,7 +14823,7 @@ const PRODUCTS = [
     dims: { w: 60, d: 37, h: 45, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc124", arriveDays: [28, 33], name: "Marble-Look Side Table 38cm, Red", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11186", tag: "New", ph: "", img: "assets/products/cc124-1.webp",
+  { id: "cc124", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Side Table 38cm, Red", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11186", tag: "New", ph: "", img: "assets/products/cc124-1.webp",
     imgs: ["assets/products/cc124-1.webp", "assets/products/cc124-2.webp", "assets/products/cc124-3.webp", "assets/products/cc124-4.webp", "assets/products/cc124-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 38cm wide, 38cm deep and 50cm high. MGO. Sculptural fluted column form with a wider top surface. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14836,7 +14836,7 @@ const PRODUCTS = [
     dims: { w: 38, d: 38, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc125", arriveDays: [28, 33], name: "Round Side Table 57cm, White", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11187", tag: "New", ph: "", img: "assets/products/cc125-1.webp",
+  { id: "cc125", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 57cm, White", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11187", tag: "New", ph: "", img: "assets/products/cc125-1.webp",
     imgs: ["assets/products/cc125-1.webp", "assets/products/cc125-2.webp", "assets/products/cc125-3.webp", "assets/products/cc125-4.webp", "assets/products/cc125-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. Scalloped apron adds a soft, playful detail to the design. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14851,7 +14851,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc126", arriveDays: [28, 33], name: "Metal Arched Side Table 75cm, White", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11188", tag: "New", ph: "", img: "assets/products/cc126-1.webp",
+  { id: "cc126", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Arched Side Table 75cm, White", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11188", tag: "New", ph: "", img: "assets/products/cc126-1.webp",
     imgs: ["assets/products/cc126-1.webp", "assets/products/cc126-2.webp", "assets/products/cc126-3.webp", "assets/products/cc126-4.webp", "assets/products/cc126-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 80.5cm across. Metal. White metal frame with ribbed glass doors for a contemporary, sophisticated look. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14863,7 +14863,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table", "Colour": "White", "Material": "Metal" },
     care: "Wipe with damp cloth once assembled. WARNING:. Children have died from furniture tipover. ALWAYS secure this furniture with an anchor device." },
 
-  { id: "cc127", arriveDays: [28, 33], name: "Metal Round Side Table 45cm, Black", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11189", tag: "New", ph: "", img: "assets/products/cc127-1.webp",
+  { id: "cc127", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Round Side Table 45cm, Black", cat: "Living Room", room: "Living Room", price: 197, memberPrice: 177, sku: "SH-11189", tag: "New", ph: "", img: "assets/products/cc127-1.webp",
     imgs: ["assets/products/cc127-1.webp", "assets/products/cc127-2.webp", "assets/products/cc127-3.webp", "assets/products/cc127-4.webp", "assets/products/cc127-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 42cm wide, 42cm deep and 51cm high. Metal Frame. 45cm round tabletop provides space for essentials like books, drinks, or decor. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14876,7 +14876,7 @@ const PRODUCTS = [
     dims: { w: 42, d: 42, h: 51, unit: "cm", printed: true },
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull." },
 
-  { id: "cc128", arriveDays: [28, 33], name: "Stone-Look Round Side Table 35cm, Grey", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11190", tag: "New", ph: "", img: "assets/products/cc128-1.webp",
+  { id: "cc128", arriveDays: [28, 33], expressOpt: 7000, name: "Stone-Look Round Side Table 35cm, Grey", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11190", tag: "New", ph: "", img: "assets/products/cc128-1.webp",
     imgs: ["assets/products/cc128-1.webp", "assets/products/cc128-2.webp", "assets/products/cc128-3.webp", "assets/products/cc128-4.webp", "assets/products/cc128-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 35cm wide, 35cm deep and 45cm high. Magnesium Oxide (MgO). Circular shape with intricate line detailing for a sophisticated look. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14891,7 +14891,7 @@ const PRODUCTS = [
     boxContents: ["1x Stool"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc129", arriveDays: [28, 33], name: "Metal Round Side Table 45 × 45 × 45 × 45 × 45cm 48cm high, Birch", cat: "Living Room", room: "Living Room", price: 209, memberPrice: 188, sku: "SH-11191", tag: "New", ph: "", img: "assets/products/cc129-1.webp",
+  { id: "cc129", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Round Side Table 45 × 45 × 45 × 45 × 45cm 48cm high, Birch", cat: "Living Room", room: "Living Room", price: 209, memberPrice: 188, sku: "SH-11191", tag: "New", ph: "", img: "assets/products/cc129-1.webp",
     imgs: ["assets/products/cc129-1.webp", "assets/products/cc129-2.webp", "assets/products/cc129-3.webp", "assets/products/cc129-4.webp", "assets/products/cc129-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 45cm deep and 48cm high. Powder-coated iron top and legs. Square tabletop with rounded corners for a softer look. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14903,7 +14903,7 @@ const PRODUCTS = [
     dims: { w: 45, d: 45, h: 48, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc130", arriveDays: [28, 33], name: "Ash Round Side Table 40cm, Natural", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11192", tag: "New", ph: "", img: "assets/products/cc130-1.webp",
+  { id: "cc130", arriveDays: [28, 33], expressOpt: 7000, name: "Ash Round Side Table 40cm, Natural", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11192", tag: "New", ph: "", img: "assets/products/cc130-1.webp",
     imgs: ["assets/products/cc130-1.webp", "assets/products/cc130-2.webp", "assets/products/cc130-3.webp", "assets/products/cc130-4.webp", "assets/products/cc130-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 45cm high. MDF with Ash veneer. Round tabletop with soft, rounded edges. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14916,7 +14916,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 45, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc131", arriveDays: [28, 33], name: "Nesting Side Tables, Set of 3 · Oak", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11193", tag: "New", ph: "", img: "assets/products/cc131-1.webp",
+  { id: "cc131", arriveDays: [28, 33], expressOpt: 7000, name: "Nesting Side Tables, Set of 3 · Oak", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11193", tag: "New", ph: "", img: "assets/products/cc131-1.webp",
     imgs: ["assets/products/cc131-1.webp", "assets/products/cc131-2.webp", "assets/products/cc131-3.webp", "assets/products/cc131-4.webp", "assets/products/cc131-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. MDF with oak laminated paper finish. Set of three tables designed to nest together when not in use. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14930,7 +14930,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table", "Colour": "Oak", "Material": "MDF with oak laminated paper finish" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc132", arriveDays: [28, 33], name: "Round Side Table 42cm, Black", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11194", tag: "New", ph: "", img: "assets/products/cc132-1.webp",
+  { id: "cc132", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 42cm, Black", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11194", tag: "New", ph: "", img: "assets/products/cc132-1.webp",
     imgs: ["assets/products/cc132-1.webp", "assets/products/cc132-2.webp", "assets/products/cc132-3.webp", "assets/products/cc132-4.webp", "assets/products/cc132-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 42cm wide, 42cm deep and 50cm high. MDF with black laminated paper finish. Round tabletop suitable for decor, books, or everyday items. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -14944,7 +14944,7 @@ const PRODUCTS = [
     dims: { w: 42, d: 42, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc133", arriveDays: [28, 33], name: "Stone-Look Stool Side Table 38cm, White", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11195", tag: "New", ph: "", img: "assets/products/cc133-1.webp",
+  { id: "cc133", arriveDays: [28, 33], expressOpt: 7000, name: "Stone-Look Stool Side Table 38cm, White", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11195", tag: "New", ph: "", img: "assets/products/cc133-1.webp",
     imgs: ["assets/products/cc133-1.webp", "assets/products/cc133-2.webp", "assets/products/cc133-3.webp", "assets/products/cc133-4.webp", "assets/products/cc133-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 38cm wide, 38cm deep and 45cm high. MgO with a white textured finish. Cylindrical shape with a softly curved top for a sculptural, modern aesthetic. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14960,7 +14960,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc134", arriveDays: [28, 33], name: "Terrazzo Stool Round Side Table 56cm, White", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11196", tag: "New", ph: "", img: "assets/products/cc134-1.webp",
+  { id: "cc134", arriveDays: [28, 33], expressOpt: 7000, name: "Terrazzo Stool Round Side Table 56cm, White", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11196", tag: "New", ph: "", img: "assets/products/cc134-1.webp",
     imgs: ["assets/products/cc134-1.webp", "assets/products/cc134-2.webp", "assets/products/cc134-3.webp", "assets/products/cc134-4.webp", "assets/products/cc134-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 42cm wide, 42cm deep and 56cm high. Terrazzo. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -14974,7 +14974,7 @@ const PRODUCTS = [
     boxContents: ["1x Terrazzo side table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc135", arriveDays: [28, 33], name: "Burl-Look Round Side Table 40cm", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11197", tag: "New", ph: "", img: "assets/products/cc135-1.webp",
+  { id: "cc135", arriveDays: [28, 33], expressOpt: 7000, name: "Burl-Look Round Side Table 40cm", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11197", tag: "New", ph: "", img: "assets/products/cc135-1.webp",
     imgs: ["assets/products/cc135-1.webp", "assets/products/cc135-2.webp", "assets/products/cc135-3.webp", "assets/products/cc135-4.webp", "assets/products/cc135-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 51cm high. MDF with burl wood-look laminated finish. Circular tabletop creates a balanced and minimal profile. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -14987,7 +14987,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 51, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc136", arriveDays: [28, 33], name: "Marble-Look Side Table 35cm, Green", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11198", tag: "New", ph: "", img: "assets/products/cc136-1.webp",
+  { id: "cc136", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Side Table 35cm, Green", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11198", tag: "New", ph: "", img: "assets/products/cc136-1.webp",
     imgs: ["assets/products/cc136-1.webp", "assets/products/cc136-2.webp", "assets/products/cc136-3.webp", "assets/products/cc136-4.webp", "assets/products/cc136-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 35cm wide, 35cm deep and 50cm high. Natural marble. Cylindrical side table design with a solid, block form. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -15000,7 +15000,7 @@ const PRODUCTS = [
     dims: { w: 35, d: 35, h: 50, unit: "cm", printed: true },
     care: "Natural marble veining and colour variation will occur between pieces." },
 
-  { id: "cc137", arriveDays: [28, 33], name: "Arched Side Table 35cm, Grey", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11199", tag: "New", ph: "", img: "assets/products/cc137-1.webp",
+  { id: "cc137", arriveDays: [28, 33], expressOpt: 7000, name: "Arched Side Table 35cm, Grey", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11199", tag: "New", ph: "", img: "assets/products/cc137-1.webp",
     imgs: ["assets/products/cc137-1.webp", "assets/products/cc137-2.webp", "assets/products/cc137-3.webp", "assets/products/cc137-4.webp", "assets/products/cc137-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 35cm wide, 35cm deep and 50cm high. MDF with rolling veneer. Hexagonal shape adds a unique, architectural feel. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -15015,7 +15015,7 @@ const PRODUCTS = [
     dims: { w: 35, d: 35, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc138", arriveDays: [28, 33], name: "Terrazzo Side Table 48cm, Black", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11200", tag: "New", ph: "", img: "assets/products/cc138-1.webp",
+  { id: "cc138", arriveDays: [28, 33], expressOpt: 7000, name: "Terrazzo Side Table 48cm, Black", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11200", tag: "New", ph: "", img: "assets/products/cc138-1.webp",
     imgs: ["assets/products/cc138-1.webp", "assets/products/cc138-2.webp", "assets/products/cc138-3.webp", "assets/products/cc138-4.webp", "assets/products/cc138-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 49cm wide, 49cm deep and 47cm high. Terrazzo. A versatile and stylish piece that functions as a side table, plant stand, or decorative accent. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -15027,7 +15027,7 @@ const PRODUCTS = [
     boxContents: ["1x Terrazzo side table", "1x Assembly Instructions"],
     care: "Wipe with damp cloth." },
 
-  { id: "cc139", arriveDays: [28, 33], name: "Metal Round Side Table 45cm", cat: "Living Room", room: "Living Room", price: 209, memberPrice: 188, sku: "SH-11201", tag: "New", ph: "", img: "assets/products/cc139-1.webp",
+  { id: "cc139", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Round Side Table 45cm", cat: "Living Room", room: "Living Room", price: 209, memberPrice: 188, sku: "SH-11201", tag: "New", ph: "", img: "assets/products/cc139-1.webp",
     imgs: ["assets/products/cc139-1.webp", "assets/products/cc139-2.webp", "assets/products/cc139-3.webp", "assets/products/cc139-4.webp", "assets/products/cc139-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 45cm deep and 48cm high. Powder-coated iron top and legs. Square tabletop with rounded corners for a softer look. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -15039,7 +15039,7 @@ const PRODUCTS = [
     dims: { w: 45, d: 45, h: 48, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc140", arriveDays: [28, 33], name: "Side Table 50cm, Birch", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11202", tag: "New", ph: "", img: "assets/products/cc140-1.webp",
+  { id: "cc140", arriveDays: [28, 33], expressOpt: 7000, name: "Side Table 50cm, Birch", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11202", tag: "New", ph: "", img: "assets/products/cc140-1.webp",
     imgs: ["assets/products/cc140-1.webp", "assets/products/cc140-2.webp", "assets/products/cc140-3.webp", "assets/products/cc140-4.webp", "assets/products/cc140-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 50cm wide, 50cm deep and 46cm high. MDF with painted finish. Softly shaped tabletop adds a subtle, organic form. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -15052,7 +15052,7 @@ const PRODUCTS = [
     dims: { w: 50, d: 50, h: 46, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc141", arriveDays: [28, 33], name: "Metal Arched Side Table 52cm, White", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11203", tag: "New", ph: "", img: "assets/products/cc141-1.webp",
+  { id: "cc141", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Arched Side Table 52cm, White", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11203", tag: "New", ph: "", img: "assets/products/cc141-1.webp",
     imgs: ["assets/products/cc141-1.webp", "assets/products/cc141-2.webp", "assets/products/cc141-3.webp", "assets/products/cc141-4.webp", "assets/products/cc141-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. Open-front design with subtle arch detailing. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -15065,7 +15065,7 @@ const PRODUCTS = [
     specs: { "Type": "Side Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc142", arriveDays: [28, 33], name: "Square Side Table 40cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11204", tag: "New", ph: "", img: "assets/products/cc142-1.webp",
+  { id: "cc142", arriveDays: [28, 33], expressOpt: 7000, name: "Square Side Table 40cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11204", tag: "New", ph: "", img: "assets/products/cc142-1.webp",
     imgs: ["assets/products/cc142-1.webp", "assets/products/cc142-2.webp", "assets/products/cc142-3.webp", "assets/products/cc142-4.webp", "assets/products/cc142-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 50cm high. MDF with a wood veneer finish. 40cm square tabletop provides space for books, drinks, or décor. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -15079,7 +15079,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc143", arriveDays: [28, 33], name: "Bamboo Round Side Table 45cm, Natural", cat: "Living Room", room: "Living Room", price: 125, memberPrice: 112, sku: "SH-11205", tag: "New", ph: "", img: "assets/products/cc143-1.webp",
+  { id: "cc143", arriveDays: [28, 33], expressOpt: 7000, name: "Bamboo Round Side Table 45cm, Natural", cat: "Living Room", room: "Living Room", price: 125, memberPrice: 112, sku: "SH-11205", tag: "New", ph: "", img: "assets/products/cc143-1.webp",
     imgs: ["assets/products/cc143-1.webp", "assets/products/cc143-2.webp", "assets/products/cc143-3.webp", "assets/products/cc143-4.webp", "assets/products/cc143-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 45cm wide, 45cm deep and 50cm high. Bamboo. Surrounding the table are bamboo panels with unique gaps in them, adding a touch of natural elegance to the design. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -15091,7 +15091,7 @@ const PRODUCTS = [
     dims: { w: 45, d: 45, h: 50, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc144", arriveDays: [28, 33], name: "Stone-Look Arched Side Table 36cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11206", tag: "New", ph: "", img: "assets/products/cc144-1.webp",
+  { id: "cc144", arriveDays: [28, 33], expressOpt: 7000, name: "Stone-Look Arched Side Table 36cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11206", tag: "New", ph: "", img: "assets/products/cc144-1.webp",
     imgs: ["assets/products/cc144-1.webp", "assets/products/cc144-2.webp", "assets/products/cc144-3.webp", "assets/products/cc144-4.webp", "assets/products/cc144-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 35.5cm wide, 37.5cm deep and 46cm high. MgO (Magnesium Oxide). This stylish versatile piece features two opposite-facing arches cut through the middle offering a unique style and potential storage space. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -15105,7 +15105,7 @@ const PRODUCTS = [
     dims: { w: 35.5, d: 37.5, h: 46, unit: "cm", printed: true },
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight. Max recommended weight 100kg." },
 
-  { id: "cc145", arriveDays: [28, 33], name: "Round Side Table 48cm, Oak", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11207", tag: "New", ph: "", img: "assets/products/cc145-1.webp",
+  { id: "cc145", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 48cm, Oak", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11207", tag: "New", ph: "", img: "assets/products/cc145-1.webp",
     imgs: ["assets/products/cc145-1.webp", "assets/products/cc145-2.webp", "assets/products/cc145-3.webp", "assets/products/cc145-4.webp", "assets/products/cc145-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 48cm wide, 48cm deep and 55cm high. MDF with laminated paper finish. Round tabletop with integrated drawer for concealed storage. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -15119,7 +15119,7 @@ const PRODUCTS = [
     dims: { w: 48, d: 48, h: 55, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc146", arriveDays: [28, 33], name: "Rattan Storage Side Table 50cm, Natural", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11208", tag: "New", ph: "", img: "assets/products/cc146-1.webp",
+  { id: "cc146", arriveDays: [28, 33], expressOpt: 7000, name: "Rattan Storage Side Table 50cm, Natural", cat: "Living Room", room: "Living Room", price: 185, memberPrice: 166, sku: "SH-11208", tag: "New", ph: "", img: "assets/products/cc146-1.webp",
     imgs: ["assets/products/cc146-1.webp", "assets/products/cc146-2.webp", "assets/products/cc146-3.webp", "assets/products/cc146-4.webp", "assets/products/cc146-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 50cm wide, 34cm deep and 39cm high. Plywood and rattan. Wave-inspired shape for a unique, organic aesthetic. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -15134,7 +15134,7 @@ const PRODUCTS = [
     dims: { w: 50, d: 34, h: 39, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc147", arriveDays: [28, 33], name: "Round Side Table 48cm, White", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11209", tag: "New", ph: "", img: "assets/products/cc147-1.webp",
+  { id: "cc147", arriveDays: [28, 33], expressOpt: 7000, name: "Round Side Table 48cm, White", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11209", tag: "New", ph: "", img: "assets/products/cc147-1.webp",
     imgs: ["assets/products/cc147-1.webp", "assets/products/cc147-2.webp", "assets/products/cc147-3.webp", "assets/products/cc147-4.webp", "assets/products/cc147-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 48cm wide, 48cm deep and 55cm high. MDF with laminated paper finish. Round tabletop with integrated drawer for concealed storage. Low enough to sit beside a sofa or a bed without crowding it. Leave it bare, or give it one good object and nothing else.",
@@ -15148,7 +15148,7 @@ const PRODUCTS = [
     dims: { w: 48, d: 48, h: 55, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc148", arriveDays: [28, 33], name: "Side Table 50cm, Green", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11210", tag: "New", ph: "", img: "assets/products/cc148-1.webp",
+  { id: "cc148", arriveDays: [28, 33], expressOpt: 7000, name: "Side Table 50cm, Green", cat: "Living Room", room: "Living Room", price: 222, memberPrice: 199, sku: "SH-11210", tag: "New", ph: "", img: "assets/products/cc148-1.webp",
     imgs: ["assets/products/cc148-1.webp", "assets/products/cc148-2.webp", "assets/products/cc148-3.webp", "assets/products/cc148-4.webp", "assets/products/cc148-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 50cm wide, 50cm deep and 46cm high. MDF with painted finish. Organic tabletop shape adds a soft, balanced profile. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -15160,7 +15160,7 @@ const PRODUCTS = [
     dims: { w: 50, d: 50, h: 46, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc149", arriveDays: [28, 33], name: "Burl-Look Plinth Side Table 40cm", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11211", tag: "New", ph: "", img: "assets/products/cc149-1.webp",
+  { id: "cc149", arriveDays: [28, 33], expressOpt: 7000, name: "Burl-Look Plinth Side Table 40cm", cat: "Living Room", room: "Living Room", price: 160, memberPrice: 144, sku: "SH-11211", tag: "New", ph: "", img: "assets/products/cc149-1.webp",
     imgs: ["assets/products/cc149-1.webp", "assets/products/cc149-2.webp", "assets/products/cc149-3.webp", "assets/products/cc149-4.webp", "assets/products/cc149-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 40cm wide, 40cm deep and 48cm high. MDF with burl wood-look laminated finish. Cylindrical shape adds height and visual balance. Low enough to sit beside a sofa or a bed without crowding it. Style it with a stack of books and something with height.",
@@ -15173,7 +15173,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 40, h: 48, unit: "cm", printed: true },
     care: "Indoor use only." },
 
-  { id: "cc150", arriveDays: [28, 33], name: "Marble-Look Stool Round Side Table 38cm", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11212", tag: "New", ph: "", img: "assets/products/cc150-1.webp",
+  { id: "cc150", arriveDays: [28, 33], expressOpt: 7000, name: "Marble-Look Stool Round Side Table 38cm", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11212", tag: "New", ph: "", img: "assets/products/cc150-1.webp",
     imgs: ["assets/products/cc150-1.webp", "assets/products/cc150-2.webp", "assets/products/cc150-3.webp", "assets/products/cc150-4.webp", "assets/products/cc150-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 38cm wide, 38cm deep and 45cm high. MgO with hydrographics transfer printing. Rounded cylindrical shape with a softly curved top for a sculptural look. Low enough to sit beside a sofa or a bed without crowding it. The kind of piece that quietly holds a room together.",
@@ -15189,7 +15189,7 @@ const PRODUCTS = [
     boxContents: ["1x Side Table"],
     care: "Clean gently with a soft cloth. Lift when moving it, do not pull. Do not overexpose to direct sunlight." },
 
-  { id: "cc151", arriveDays: [28, 33], name: "Walnut Storage Side Table 80cm, White", cat: "Living Room", room: "Living Room", price: 309, memberPrice: 278, sku: "SH-11213", tag: "New", ph: "", img: "assets/products/cc151-1.webp",
+  { id: "cc151", arriveDays: [28, 33], expressOpt: 7000, name: "Walnut Storage Side Table 80cm, White", cat: "Living Room", room: "Living Room", price: 309, memberPrice: 278, sku: "SH-11213", tag: "New", ph: "", img: "assets/products/cc151-1.webp",
     imgs: ["assets/products/cc151-1.webp", "assets/products/cc151-2.webp", "assets/products/cc151-3.webp", "assets/products/cc151-4.webp", "assets/products/cc151-5.webp"],
    
     desc: "For the lamp, the book and the cup of tea. 80cm wide, 80cm deep and 60cm high. Rubber wood. Four-separate storage shelves. Low enough to sit beside a sofa or a bed without crowding it. Works as well against a wall as it does floating in a room.",
@@ -15203,7 +15203,7 @@ const PRODUCTS = [
     dims: { w: 80, d: 80, h: 60, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc152", arriveDays: [28, 33], name: "Console Table 140cm, Walnut", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11214", tag: "New", ph: "", img: "assets/products/cc152-1.webp",
+  { id: "cc152", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 140cm, Walnut", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11214", tag: "New", ph: "", img: "assets/products/cc152-1.webp",
     imgs: ["assets/products/cc152-1.webp", "assets/products/cc152-2.webp", "assets/products/cc152-3.webp", "assets/products/cc152-4.webp", "assets/products/cc152-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 40cm wide, 140cm deep and 75cm high. FSC sustainably sourced MDF with a melamine finish. Adds a layer of elegance and richness to your space. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15214,7 +15214,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 140, h: 75, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc153", arriveDays: [28, 33], name: "Oak Console Table 140cm, Light Oak", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11215", tag: "New", ph: "", img: "assets/products/cc153-1.webp",
+  { id: "cc153", arriveDays: [28, 33], expressOpt: 7000, name: "Oak Console Table 140cm, Light Oak", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11215", tag: "New", ph: "", img: "assets/products/cc153-1.webp",
     imgs: ["assets/products/cc153-1.webp", "assets/products/cc153-2.webp", "assets/products/cc153-3.webp", "assets/products/cc153-4.webp", "assets/products/cc153-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 40cm wide, 140cm deep and 75cm high. FSC sustainably sourced MDF with a melamine finish. Adds a layer of elegance and richness to your space. Narrow enough for a hallway, long enough to be useful in one. The kind of piece that quietly holds a room together.",
@@ -15225,7 +15225,7 @@ const PRODUCTS = [
     dims: { w: 40, d: 140, h: 75, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc154", arriveDays: [28, 33], name: "Console Table 120cm 35cm, Natural", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11216", tag: "New", ph: "", img: "assets/products/cc154-1.webp",
+  { id: "cc154", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 120cm 35cm, Natural", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11216", tag: "New", ph: "", img: "assets/products/cc154-1.webp",
     imgs: ["assets/products/cc154-1.webp", "assets/products/cc154-2.webp", "assets/products/cc154-3.webp", "assets/products/cc154-4.webp", "assets/products/cc154-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 35cm across. MDF with a wood veneer finish. Elegant Natural wood finish that enhances the look of your space. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15239,7 +15239,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Colour": "Natural", "Material": "MDF with a wood veneer finish" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc155", arriveDays: [28, 33], name: "Timber Round Console Table 110cm, Cream", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11217", tag: "New", ph: "", img: "assets/products/cc155-1.webp",
+  { id: "cc155", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Round Console Table 110cm, Cream", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11217", tag: "New", ph: "", img: "assets/products/cc155-1.webp",
     imgs: ["assets/products/cc155-1.webp", "assets/products/cc155-2.webp", "assets/products/cc155-3.webp", "assets/products/cc155-4.webp", "assets/products/cc155-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 110cm wide, 35cm deep and 75cm high. MDF with gloss finish. Curved-edge rectangular top. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15252,7 +15252,7 @@ const PRODUCTS = [
     dims: { w: 110, d: 35, h: 75, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc156", arriveDays: [28, 33], name: "Console Table 120 × 50cm, Natural", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11218", tag: "New", ph: "", img: "assets/products/cc156-1.webp",
+  { id: "cc156", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 120 × 50cm, Natural", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11218", tag: "New", ph: "", img: "assets/products/cc156-1.webp",
     imgs: ["assets/products/cc156-1.webp", "assets/products/cc156-2.webp", "assets/products/cc156-3.webp", "assets/products/cc156-4.webp", "assets/products/cc156-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 50cm deep and 78cm high. FSC Sustainably sourced rubber-wood with a melamine finish. Two drawers with a unique vertical panel pattern offer practical storage space while contributing to the table’s elegant design. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15264,7 +15264,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 50, h: 78, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc157", arriveDays: [28, 33], name: "Oval Console Table 120 × 40cm, Black", cat: "Living Room", room: "Living Room", price: 464, memberPrice: 417, sku: "SH-11219", tag: "New", ph: "", img: "assets/products/cc157-1.webp",
+  { id: "cc157", arriveDays: [28, 33], expressOpt: 7000, name: "Oval Console Table 120 × 40cm, Black", cat: "Living Room", room: "Living Room", price: 464, memberPrice: 417, sku: "SH-11219", tag: "New", ph: "", img: "assets/products/cc157-1.webp",
     imgs: ["assets/products/cc157-1.webp", "assets/products/cc157-2.webp", "assets/products/cc157-3.webp", "assets/products/cc157-4.webp", "assets/products/cc157-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 40cm deep and 75cm high. MDF. Ribbed detailing for added texture and design appeal. Narrow enough for a hallway, long enough to be useful in one. Leave it bare, or give it one good object and nothing else.",
@@ -15278,7 +15278,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 40, h: 75, unit: "cm", printed: true },
     care: "Wipe down with a damp cloth. Avoid cleaning with strong chemicals. WARNING:. Children have died from furniture tipover." },
 
-  { id: "cc158", arriveDays: [28, 33], name: "Metal Console Table 110cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11220", tag: "New", ph: "", img: "assets/products/cc158-1.webp",
+  { id: "cc158", arriveDays: [28, 33], expressOpt: 7000, name: "Metal Console Table 110cm, White", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11220", tag: "New", ph: "", img: "assets/products/cc158-1.webp",
     imgs: ["assets/products/cc158-1.webp", "assets/products/cc158-2.webp", "assets/products/cc158-3.webp", "assets/products/cc158-4.webp", "assets/products/cc158-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 110cm wide, 30cm deep and 80cm high. MDF with a Melamine finish. Natural wood colour for a rustic charm. Narrow enough for a hallway, long enough to be useful in one. Leave it bare, or give it one good object and nothing else.",
@@ -15291,7 +15291,7 @@ const PRODUCTS = [
     dims: { w: 110, d: 30, h: 80, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc159", arriveDays: [28, 33], name: "Sliding-Door Console Table 100cm, Natural", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11221", tag: "New", ph: "", img: "assets/products/cc159-1.webp",
+  { id: "cc159", arriveDays: [28, 33], expressOpt: 7000, name: "Sliding-Door Console Table 100cm, Natural", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11221", tag: "New", ph: "", img: "assets/products/cc159-1.webp",
     imgs: ["assets/products/cc159-1.webp", "assets/products/cc159-2.webp", "assets/products/cc159-3.webp", "assets/products/cc159-4.webp", "assets/products/cc159-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 100cm wide, 35cm deep and 80.5cm high. MDF. MDF with a laminated paper finish. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15303,7 +15303,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 35, h: 80.5, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth. Avoid using strong chemical cleaners. WARNING:. Children have died from furniture tipover." },
 
-  { id: "cc160", arriveDays: [28, 33], name: "Travertine-Look Console Table 120 × 120 × 120 × 120 × 35cm 78cm high, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11222", tag: "New", ph: "", img: "assets/products/cc160-1.webp",
+  { id: "cc160", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Console Table 120 × 120 × 120 × 120 × 35cm 78cm high, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11222", tag: "New", ph: "", img: "assets/products/cc160-1.webp",
     imgs: ["assets/products/cc160-1.webp", "assets/products/cc160-2.webp", "assets/products/cc160-3.webp", "assets/products/cc160-4.webp", "assets/products/cc160-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 35cm deep and 78cm high. Particleboard with travertine melamine finish. Travertine-look top adds texture and visual interest. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15317,7 +15317,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 35, h: 78, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc161", arriveDays: [28, 33], name: "Timber Console Table 113cm, Off-White", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11223", tag: "New", ph: "", img: "assets/products/cc161-1.webp",
+  { id: "cc161", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Console Table 113cm, Off-White", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11223", tag: "New", ph: "", img: "assets/products/cc161-1.webp",
     imgs: ["assets/products/cc161-1.webp", "assets/products/cc161-2.webp", "assets/products/cc161-3.webp", "assets/products/cc161-4.webp", "assets/products/cc161-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 113cm wide, 36cm deep and 75cm high. MDF with lacquer finish. Large fluted design with chamfered edges. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15330,7 +15330,7 @@ const PRODUCTS = [
     dims: { w: 113, d: 36, h: 75, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc162", arriveDays: [28, 33], name: "Oval Console Table 120cm, Natural", cat: "Living Room", room: "Living Room", price: 464, memberPrice: 417, sku: "SH-11224", tag: "New", ph: "", img: "assets/products/cc162-1.webp",
+  { id: "cc162", arriveDays: [28, 33], expressOpt: 7000, name: "Oval Console Table 120cm, Natural", cat: "Living Room", room: "Living Room", price: 464, memberPrice: 417, sku: "SH-11224", tag: "New", ph: "", img: "assets/products/cc162-1.webp",
     imgs: ["assets/products/cc162-1.webp", "assets/products/cc162-2.webp", "assets/products/cc162-3.webp", "assets/products/cc162-4.webp", "assets/products/cc162-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 40cm deep and 75cm high. MDF. Ribbed detailing for added texture and design appeal. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15344,7 +15344,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 40, h: 75, unit: "cm", printed: true },
     care: "Wipe down with a damp cloth. Avoid cleaning with strong chemicals. WARNING:. Children have died from furniture tipover." },
 
-  { id: "cc163", arriveDays: [28, 33], name: "Console Table 120 × 50cm, Black", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11225", tag: "New", ph: "", img: "assets/products/cc163-1.webp",
+  { id: "cc163", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 120 × 50cm, Black", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11225", tag: "New", ph: "", img: "assets/products/cc163-1.webp",
     imgs: ["assets/products/cc163-1.webp", "assets/products/cc163-2.webp", "assets/products/cc163-3.webp", "assets/products/cc163-4.webp", "assets/products/cc163-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 50cm deep and 78cm high. FSC Sustainably sourced rubber-wood with a melamine finish. Two drawers with a unique vertical panel pattern offer practical storage space while contributing to the table’s elegant design. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15356,7 +15356,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 50, h: 78, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc164", arriveDays: [28, 33], name: "Sliding-Door Console Table 100cm, Black", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11226", tag: "New", ph: "", img: "assets/products/cc164-1.webp",
+  { id: "cc164", arriveDays: [28, 33], expressOpt: 7000, name: "Sliding-Door Console Table 100cm, Black", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11226", tag: "New", ph: "", img: "assets/products/cc164-1.webp",
     imgs: ["assets/products/cc164-1.webp", "assets/products/cc164-2.webp", "assets/products/cc164-3.webp", "assets/products/cc164-4.webp", "assets/products/cc164-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 100cm wide, 35cm deep and 80.5cm high. MDF. MDF with a laminated paper finish. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15367,7 +15367,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 35, h: 80.5, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth. Avoid using strong chemical cleaners. WARNING:. Children have died from furniture tipover." },
 
-  { id: "cc165", arriveDays: [28, 33], name: "Round Console Table 110cm, Green", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11227", tag: "New", ph: "", img: "assets/products/cc165-1.webp",
+  { id: "cc165", arriveDays: [28, 33], expressOpt: 7000, name: "Round Console Table 110cm, Green", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11227", tag: "New", ph: "", img: "assets/products/cc165-1.webp",
     imgs: ["assets/products/cc165-1.webp", "assets/products/cc165-2.webp", "assets/products/cc165-3.webp", "assets/products/cc165-4.webp", "assets/products/cc165-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. Modern console table design with three open shelves. Narrow enough for a hallway, long enough to be useful in one. Leave it bare, or give it one good object and nothing else.",
@@ -15380,7 +15380,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc166", arriveDays: [28, 33], name: "Timber Console Table 100cm, Black", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11228", tag: "New", ph: "", img: "assets/products/cc166-1.webp",
+  { id: "cc166", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Console Table 100cm, Black", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11228", tag: "New", ph: "", img: "assets/products/cc166-1.webp",
     imgs: ["assets/products/cc166-1.webp", "assets/products/cc166-2.webp", "assets/products/cc166-3.webp", "assets/products/cc166-4.webp", "assets/products/cc166-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 100cm across. MDF. Features an eye-catching design. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15393,7 +15393,7 @@ const PRODUCTS = [
     boxContents: ["1x Console table", "1x Assembly Instructions"],
     care: "Clean with a damp cloth. Lift when moving it, do not pull. WARNING:. Children have died from furniture tipover." },
 
-  { id: "cc167", arriveDays: [28, 33], name: "Console Table 120cm 35cm, Black", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11229", tag: "New", ph: "", img: "assets/products/cc167-1.webp",
+  { id: "cc167", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 120cm 35cm, Black", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11229", tag: "New", ph: "", img: "assets/products/cc167-1.webp",
     imgs: ["assets/products/cc167-1.webp", "assets/products/cc167-2.webp", "assets/products/cc167-3.webp", "assets/products/cc167-4.webp", "assets/products/cc167-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 35cm across. MDF with a wood veneer finish. Elegant Black wood finish that enhances the look of your space. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15407,7 +15407,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Colour": "Black", "Material": "MDF with a wood veneer finish" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc168", arriveDays: [28, 33], name: "Console Table 120cm, White", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11230", tag: "New", ph: "", img: "assets/products/cc168-1.webp",
+  { id: "cc168", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 120cm, White", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11230", tag: "New", ph: "", img: "assets/products/cc168-1.webp",
     imgs: ["assets/products/cc168-1.webp", "assets/products/cc168-2.webp", "assets/products/cc168-3.webp", "assets/products/cc168-4.webp", "assets/products/cc168-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 35cm across. MDF with a wood veneer finish. Elegant White wood finish that enhances the look of your space. Narrow enough for a hallway, long enough to be useful in one. The kind of piece that quietly holds a room together.",
@@ -15421,7 +15421,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Colour": "White", "Material": "MDF with a wood veneer finish" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc169", arriveDays: [28, 33], name: "Round Console Table 110cm, Cream", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11231", tag: "New", ph: "", img: "assets/products/cc169-1.webp",
+  { id: "cc169", arriveDays: [28, 33], expressOpt: 7000, name: "Round Console Table 110cm, Cream", cat: "Living Room", room: "Living Room", price: 284, memberPrice: 255, sku: "SH-11231", tag: "New", ph: "", img: "assets/products/cc169-1.webp",
     imgs: ["assets/products/cc169-1.webp", "assets/products/cc169-2.webp", "assets/products/cc169-3.webp", "assets/products/cc169-4.webp", "assets/products/cc169-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. Modern console table design with three open shelves. Narrow enough for a hallway, long enough to be useful in one. Leave it bare, or give it one good object and nothing else.",
@@ -15434,7 +15434,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc170", arriveDays: [28, 33], name: "Ash Sliding-Door Console Table 100cm, Walnut", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11232", tag: "New", ph: "", img: "assets/products/cc170-1.webp",
+  { id: "cc170", arriveDays: [28, 33], expressOpt: 7000, name: "Ash Sliding-Door Console Table 100cm, Walnut", cat: "Living Room", room: "Living Room", price: 308, memberPrice: 277, sku: "SH-11232", tag: "New", ph: "", img: "assets/products/cc170-1.webp",
     imgs: ["assets/products/cc170-1.webp", "assets/products/cc170-2.webp", "assets/products/cc170-3.webp", "assets/products/cc170-4.webp", "assets/products/cc170-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 100cm wide, 35cm deep and 80.5cm high. MDF with ash-coloured laminate; metal frame. Sliding ribbed doors for hidden storage. Narrow enough for a hallway, long enough to be useful in one. Leave it bare, or give it one good object and nothing else.",
@@ -15448,7 +15448,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 35, h: 80.5, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc171", arriveDays: [28, 33], name: "Sculptural Oval Console Table 120cm, Black", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11233", tag: "New", ph: "", img: "assets/products/cc171-1.webp",
+  { id: "cc171", arriveDays: [28, 33], expressOpt: 7000, name: "Sculptural Oval Console Table 120cm, Black", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11233", tag: "New", ph: "", img: "assets/products/cc171-1.webp",
     imgs: ["assets/products/cc171-1.webp", "assets/products/cc171-2.webp", "assets/products/cc171-3.webp", "assets/products/cc171-4.webp", "assets/products/cc171-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 35cm deep and 76cm high. MDF with black laminated paper finish. Oval tabletop provides space for decor or everyday items. Narrow enough for a hallway, long enough to be useful in one. The kind of piece that quietly holds a room together.",
@@ -15462,7 +15462,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 35, h: 76, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc172", arriveDays: [28, 33], name: "Travertine-Look Console Table 120 × 120 × 120 × 120 × 35cm 77cm high, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11234", tag: "New", ph: "", img: "assets/products/cc172-1.webp",
+  { id: "cc172", arriveDays: [28, 33], expressOpt: 7000, name: "Travertine-Look Console Table 120 × 120 × 120 × 120 × 35cm 77cm high, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11234", tag: "New", ph: "", img: "assets/products/cc172-1.webp",
     imgs: ["assets/products/cc172-1.webp", "assets/products/cc172-2.webp", "assets/products/cc172-3.webp", "assets/products/cc172-4.webp", "assets/products/cc172-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 35cm deep and 77cm high. MDF with oak melamine veneer. Travertine-look top adds visual contrast and a refined surface finish. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15475,7 +15475,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 35, h: 77, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc173", arriveDays: [28, 33], name: "Console Table 120cm, Walnut", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11235", tag: "New", ph: "", img: "assets/products/cc173-1.webp",
+  { id: "cc173", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 120cm, Walnut", cat: "Living Room", room: "Living Room", price: 495, memberPrice: 445, sku: "SH-11235", tag: "New", ph: "", img: "assets/products/cc173-1.webp",
     imgs: ["assets/products/cc173-1.webp", "assets/products/cc173-2.webp", "assets/products/cc173-3.webp", "assets/products/cc173-4.webp", "assets/products/cc173-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 35cm across. MDF with a wood veneer finish. Warm Walnut wood finish that enhances the look of your space. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15489,7 +15489,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table", "Colour": "Walnut", "Material": "MDF with a wood veneer finish" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc174", arriveDays: [28, 33], name: "Bamboo Console Table 110cm, Natural", cat: "Living Room", room: "Living Room", price: 248, memberPrice: 223, sku: "SH-11236", tag: "New", ph: "", img: "assets/products/cc174-1.webp",
+  { id: "cc174", arriveDays: [28, 33], expressOpt: 7000, name: "Bamboo Console Table 110cm, Natural", cat: "Living Room", room: "Living Room", price: 248, memberPrice: 223, sku: "SH-11236", tag: "New", ph: "", img: "assets/products/cc174-1.webp",
     imgs: ["assets/products/cc174-1.webp", "assets/products/cc174-2.webp", "assets/products/cc174-3.webp", "assets/products/cc174-4.webp", "assets/products/cc174-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 110cm wide, 35cm deep and 80cm high. Bamboo. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15502,7 +15502,7 @@ const PRODUCTS = [
     dims: { w: 110, d: 35, h: 80, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc175", arriveDays: [28, 33], name: "Console Table 120 × 120 × 120 × 120 × 35cm 74cm high, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11237", tag: "New", ph: "", img: "assets/products/cc175-1.webp",
+  { id: "cc175", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 120 × 120 × 120 × 120 × 35cm 74cm high, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11237", tag: "New", ph: "", img: "assets/products/cc175-1.webp",
     imgs: ["assets/products/cc175-1.webp", "assets/products/cc175-2.webp", "assets/products/cc175-3.webp", "assets/products/cc175-4.webp", "assets/products/cc175-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 35cm deep and 74cm high. MDF with laminated paper finish. Two drawers with rail sliders for smooth operation. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15516,7 +15516,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 35, h: 74, unit: "cm", printed: true },
     care: "Indoor use only. WARNING:. Children have died from furniture tip-over. Always secure this furniture to the wall using the provided anchor device." },
 
-  { id: "cc176", arriveDays: [28, 33], name: "Console Table 120 × 35cm, Black", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11238", tag: "New", ph: "", img: "assets/products/cc176-1.webp",
+  { id: "cc176", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 120 × 35cm, Black", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11238", tag: "New", ph: "", img: "assets/products/cc176-1.webp",
     imgs: ["assets/products/cc176-1.webp", "assets/products/cc176-2.webp", "assets/products/cc176-3.webp", "assets/products/cc176-4.webp", "assets/products/cc176-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 35cm deep and 74cm high. MDF with laminated paper finish. Two drawers with rail sliders for smooth operation. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15530,7 +15530,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 35, h: 74, unit: "cm", printed: true },
     care: "Indoor use only. WARNING:. Children have died from furniture tip-over. Always secure this furniture to the wall using the provided anchor device." },
 
-  { id: "cc177", arriveDays: [28, 33], name: "Console Table 120 × 120 × 120 × 120 × 35cm 76cm high, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11239", tag: "New", ph: "", img: "assets/products/cc177-1.webp",
+  { id: "cc177", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 120 × 120 × 120 × 120 × 35cm 76cm high, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11239", tag: "New", ph: "", img: "assets/products/cc177-1.webp",
     imgs: ["assets/products/cc177-1.webp", "assets/products/cc177-2.webp", "assets/products/cc177-3.webp", "assets/products/cc177-4.webp", "assets/products/cc177-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 35cm deep and 76cm high. Particleboard with laminated paper finish. Solid oak finish runs across the top and base for a cohesive look. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15543,7 +15543,7 @@ const PRODUCTS = [
     dims: { w: 120, d: 35, h: 76, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc178", arriveDays: [28, 33], name: "Console Table 100cm, White", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11240", tag: "New", ph: "", img: "assets/products/cc178-1.webp",
+  { id: "cc178", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 100cm, White", cat: "Living Room", room: "Living Room", price: 234, memberPrice: 210, sku: "SH-11240", tag: "New", ph: "", img: "assets/products/cc178-1.webp",
     imgs: ["assets/products/cc178-1.webp", "assets/products/cc178-2.webp", "assets/products/cc178-3.webp", "assets/products/cc178-4.webp", "assets/products/cc178-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. Elegant scalloped detailing for a decorative finish. Narrow enough for a hallway, long enough to be useful in one. The kind of piece that quietly holds a room together.",
@@ -15554,7 +15554,7 @@ const PRODUCTS = [
     specs: { "Type": "Console Table" },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc179", arriveDays: [28, 33], name: "Bamboo Console Table 110cm, Black", cat: "Living Room", room: "Living Room", price: 273, memberPrice: 245, sku: "SH-11241", tag: "New", ph: "", img: "assets/products/cc179-1.webp",
+  { id: "cc179", arriveDays: [28, 33], expressOpt: 7000, name: "Bamboo Console Table 110cm, Black", cat: "Living Room", room: "Living Room", price: 273, memberPrice: 245, sku: "SH-11241", tag: "New", ph: "", img: "assets/products/cc179-1.webp",
     imgs: ["assets/products/cc179-1.webp", "assets/products/cc179-2.webp", "assets/products/cc179-3.webp", "assets/products/cc179-4.webp", "assets/products/cc179-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 110cm wide, 35cm deep and 80cm high. Bamboo. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15567,7 +15567,7 @@ const PRODUCTS = [
     dims: { w: 110, d: 35, h: 80, unit: "cm", printed: true },
     care: "Wipe clean with a damp cloth." },
 
-  { id: "cc180", arriveDays: [28, 33], name: "Burl-Look Round Console Table 100cm", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11242", tag: "New", ph: "", img: "assets/products/cc180-1.webp",
+  { id: "cc180", arriveDays: [28, 33], expressOpt: 7000, name: "Burl-Look Round Console Table 100cm", cat: "Living Room", room: "Living Room", price: 345, memberPrice: 310, sku: "SH-11242", tag: "New", ph: "", img: "assets/products/cc180-1.webp",
     imgs: ["assets/products/cc180-1.webp", "assets/products/cc180-2.webp", "assets/products/cc180-3.webp", "assets/products/cc180-4.webp", "assets/products/cc180-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 100cm wide, 30cm deep and 77cm high. MDF with burl wood-look laminated finish. Rounded rectangular top for a softened silhouette. Narrow enough for a hallway, long enough to be useful in one. The kind of piece that quietly holds a room together.",
@@ -15581,7 +15581,7 @@ const PRODUCTS = [
     dims: { w: 100, d: 30, h: 77, unit: "cm", printed: true },
     care: "Indoor use only. WARNING. Children have died from furniture tipover. ALWAYS secure this furniture with an anchor device." },
 
-  { id: "cc181", arriveDays: [28, 33], name: "Console Table 95cm, Oak", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11243", tag: "New", ph: "", img: "assets/products/cc181-1.webp",
+  { id: "cc181", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 95cm, Oak", cat: "Living Room", room: "Living Room", price: 247, memberPrice: 222, sku: "SH-11243", tag: "New", ph: "", img: "assets/products/cc181-1.webp",
     imgs: ["assets/products/cc181-1.webp", "assets/products/cc181-2.webp", "assets/products/cc181-3.webp", "assets/products/cc181-4.webp", "assets/products/cc181-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 105cm wide, 38cm deep and 14cm high. MDF with a laminated paper finish. Wall-mounted console table with a slim, floating installation. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15596,7 +15596,7 @@ const PRODUCTS = [
     dims: { w: 105, d: 38, h: 14, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc182", arriveDays: [28, 33], name: "Round Console Table 110cm, Oak", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11244", tag: "New", ph: "", img: "assets/products/cc182-1.webp",
+  { id: "cc182", arriveDays: [28, 33], expressOpt: 7000, name: "Round Console Table 110cm, Oak", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11244", tag: "New", ph: "", img: "assets/products/cc182-1.webp",
     imgs: ["assets/products/cc182-1.webp", "assets/products/cc182-2.webp", "assets/products/cc182-3.webp", "assets/products/cc182-4.webp", "assets/products/cc182-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 110cm wide, 40cm deep and 78cm high. MDF with oak veneer finish. Rounded tabletop with soft curved edges for a contemporary look. Narrow enough for a hallway, long enough to be useful in one. The kind of piece that quietly holds a room together.",
@@ -15611,7 +15611,7 @@ const PRODUCTS = [
     dims: { w: 110, d: 40, h: 78, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc183", arriveDays: [28, 33], name: "Console Table 160cm, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11245", tag: "New", ph: "", img: "assets/products/cc183-1.webp",
+  { id: "cc183", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 160cm, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11245", tag: "New", ph: "", img: "assets/products/cc183-1.webp",
     imgs: ["assets/products/cc183-1.webp", "assets/products/cc183-2.webp", "assets/products/cc183-3.webp", "assets/products/cc183-4.webp", "assets/products/cc183-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 160cm wide, 40cm deep and 78cm high. MDF with oak veneer finish. Soft curved edges soften the look and suit a range of entryway and living spaces. Narrow enough for a hallway, long enough to be useful in one. Leave it bare, or give it one good object and nothing else.",
@@ -15625,7 +15625,7 @@ const PRODUCTS = [
     dims: { w: 160, d: 40, h: 78, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc184", arriveDays: [28, 33], name: "Round Console Table 110cm, Walnut", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11246", tag: "New", ph: "", img: "assets/products/cc184-1.webp",
+  { id: "cc184", arriveDays: [28, 33], expressOpt: 7000, name: "Round Console Table 110cm, Walnut", cat: "Living Room", room: "Living Room", price: 370, memberPrice: 333, sku: "SH-11246", tag: "New", ph: "", img: "assets/products/cc184-1.webp",
     imgs: ["assets/products/cc184-1.webp", "assets/products/cc184-2.webp", "assets/products/cc184-3.webp", "assets/products/cc184-4.webp", "assets/products/cc184-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 110cm wide, 40cm deep and 78cm high. MDF with walnut veneer finish. Rounded tabletop with soft curved edges for a contemporary look. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",
@@ -15640,7 +15640,7 @@ const PRODUCTS = [
     dims: { w: 110, d: 40, h: 78, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc185", arriveDays: [28, 33], name: "Console Table 160cm, Walnut", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11247", tag: "New", ph: "", img: "assets/products/cc185-1.webp",
+  { id: "cc185", arriveDays: [28, 33], expressOpt: 7000, name: "Console Table 160cm, Walnut", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11247", tag: "New", ph: "", img: "assets/products/cc185-1.webp",
     imgs: ["assets/products/cc185-1.webp", "assets/products/cc185-2.webp", "assets/products/cc185-3.webp", "assets/products/cc185-4.webp", "assets/products/cc185-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 160cm wide, 40cm deep and 78cm high. MDF with walnut veneer finish. Soft curved edges soften the look and suit a range of entryway and living spaces. Narrow enough for a hallway, long enough to be useful in one. Style it with a stack of books and something with height.",
@@ -15654,7 +15654,7 @@ const PRODUCTS = [
     dims: { w: 160, d: 40, h: 78, unit: "cm", printed: true },
     care: "Wipe clean with a soft, dry or barely damp cloth and dry straight away. Use coasters and felt pads, lift rather than drag when moving it, and keep it out of direct sun." },
 
-  { id: "cc186", arriveDays: [28, 33], name: "Timber Round Console Table 120cm, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11248", tag: "New", ph: "", img: "assets/products/cc186-1.webp",
+  { id: "cc186", arriveDays: [28, 33], expressOpt: 7000, name: "Timber Round Console Table 120cm, Oak", cat: "Living Room", room: "Living Room", price: 494, memberPrice: 444, sku: "SH-11248", tag: "New", ph: "", img: "assets/products/cc186-1.webp",
     imgs: ["assets/products/cc186-1.webp", "assets/products/cc186-2.webp", "assets/products/cc186-3.webp", "assets/products/cc186-4.webp", "assets/products/cc186-5.webp"],
    
     desc: "The narrow table that makes a hallway look finished. 120cm wide, 35cm deep and 80cm high. MDF with oak laminated paper finish. Two drawers provide concealed storage for small items and essentials. Narrow enough for a hallway, long enough to be useful in one. Works as well against a wall as it does floating in a room.",

@@ -305,7 +305,9 @@ function isFurniture(p) {
   const n = p.name || "";
   return FURNITURE_RE.test(n) && !NOT_FURNITURE_RE.test(n.replace(/\b(bedside|side|coffee|dining|console) tables?\b/ig, "table"));
 }
+const ARRIVE_EXPRESS = [4, 15];   // optional Express on furniture with expressOpt
 function arriveWindow(p) {
+  if (p && p.expressOpt && typeof window !== "undefined" && window._fulfil === "express") return ARRIVE_EXPRESS;
   if (p && Array.isArray(p.arriveDays) && p.arriveDays.length === 2) return p.arriveDays;
   return isFurniture(p) ? ARRIVE_FURNITURE : ARRIVE_DECOR;
 }

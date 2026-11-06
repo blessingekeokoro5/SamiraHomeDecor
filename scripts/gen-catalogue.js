@@ -77,6 +77,7 @@ PRODUCTS.forEach((p) => {
     sizes,
     sizesMember,
     expressShip: num(p.expressShip),             // express-only delivery fee per item (sofas)
+    expressOpt: num(p.expressOpt),               // optional express upgrade fee per item
   };
 });
 

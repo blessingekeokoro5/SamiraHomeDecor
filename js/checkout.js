@@ -130,6 +130,15 @@ function expressShipFee() {
   });
   return fee;
 }
+/* Optional Express on furniture (expressOpt): per-item fee when Express is chosen. */
+function expressOptFee() {
+  let fee = 0;
+  getCart().forEach(function (i) {
+    const p = (!i.giftCard && !i.hamper && typeof findProduct === "function") ? findProduct(i.id) : null;
+    if (p && p.expressOpt) fee += p.expressOpt * (i.qty || 1);
+  });
+  return fee;
+}
 function shipQuote(afterDisc) {
   const z = SHIP_ZONES[shipCountry()] || SHIP_ZONES["Australia"];
   const weight = cartWeight();
@@ -138,6 +147,8 @@ function shipQuote(afterDisc) {
   let fee = hasRest ? Math.round((z.base + z.perKg * weight) * 100) / 100 : 0;
   if (hasRest && z.freeOver && afterDisc >= z.freeOver) fee = 0;
   fee += xfee;
+  const ofee = (window._fulfil === "express" && !isGiftOrder(getCart())) ? expressOptFee() : 0;
+  fee += ofee;
   return { fee: fee, weight: weight, days: z.days, freeOver: z.freeOver, express: xfee > 0 };
 }
 
@@ -152,7 +163,7 @@ function checkoutTotals() {
   const afterVoucher = afterDisc - voucher;
   const q = shipQuote(afterDisc);
   let shipping = sub <= 0 ? 0 : q.fee;
-  if (window._fulfil === "express" && sub > 0) shipping += EXPRESS_EXTRA;   // gift orders only
+  if (window._fulfil === "express" && sub > 0 && isGiftOrder(getCart())) shipping += EXPRESS_EXTRA;   // gift orders only
   const preGift = afterVoucher + shipping;
   const gc = window._giftCard || null;
   // A gift card can be used online only when it covers the whole order.
@@ -245,7 +256,10 @@ function renderCheckout() {
         ${giftOrder ? `
         <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Standard<br><small>5 to 10 business days</small></span></button>
         <button type="button" class="fulfil-opt" data-mode="express" onclick="setFulfil('express')"><span class="fic">⚡</span><span>Express<br><small>3 to 5 business days · +$150</small></span></button>` : `
-        <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Delivery</span></button>`}
+        ${expressOptFee() > 0 ? `
+        <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Standard<br><small>About 4 weeks</small></span></button>
+        <button type="button" class="fulfil-opt" data-mode="express" onclick="setFulfil('express')"><span class="fic">⚡</span><span>Express<br><small>+$${expressOptFee().toLocaleString("en-AU")}</small></span></button>` : `
+        <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Delivery</span></button>`}`}
       </div>
       <div class="fulfil-note" id="fulfilNote"></div>
     </div>
@@ -312,7 +326,7 @@ function renderCheckout() {
   document.getElementById("checkoutForm").addEventListener("submit", startPayment);
   const cc = document.getElementById("coCountry");
   if (cc) cc.addEventListener("change", updateTotalsUI);
-  if (typeof window._fulfil === "undefined" || !giftOrder) window._fulfil = "delivery";
+  if (typeof window._fulfil === "undefined" || (!giftOrder && !(expressOptFee() > 0))) window._fulfil = "delivery";
   setFulfil(window._fulfil);
 }
 
@@ -333,8 +347,16 @@ function setFulfil(mode) {
   document.querySelectorAll("#fulfilGrid .fulfil-opt").forEach((b) => b.classList.toggle("active", b.dataset.mode === mode));
   const note = document.getElementById("fulfilNote");
   const gift = isGiftOrder(getCart());
-  if (note) note.innerHTML = !gift ? "🚚 Delivered to your door. Your arrival dates are shown below."
+  const opt = !gift && expressOptFee() > 0;
+  if (note && opt) note.innerHTML = mode === "express"
+    ? "⚡ <strong>Express</strong>arrives " + fmtArriveRange(ARRIVE_EXPRESS) + ". Adds $" + expressOptFee().toLocaleString("en-AU") + " to shipping ($7,000 per furniture item)."
+    : "🚚 <strong>Standard</strong>about 4 weeks. Your arrival dates are shown below.";
+  else if (note) note.innerHTML = !gift ? "🚚 Delivered to your door. Your arrival dates are shown below."
     : (mode === "express" ? "⚡ <strong>Express</strong>arrives in 3 to 5 business days. Adds $150 to shipping." : "🚚 <strong>Standard</strong>arrives in 5 to 10 business days.");
+  document.querySelectorAll(".co-eta[data-gift='0']").forEach((el) => {
+    const it = getCart()[+el.dataset.idx]; const pr = it && (typeof findProduct === "function") ? findProduct(it.id) : null;
+    if (it) el.textContent = "🚚 Arrives " + arriveRange(pr || it);
+  });
   document.querySelectorAll(".co-eta[data-gift='1']").forEach((el) => {
     const it = getCart()[+el.dataset.idx]; if (it) el.textContent = "🚚 Arrives " + fmtBizRange(giftWindow(it, mode === "express"));
   });

@@ -229,6 +229,7 @@ function resolveLine(raw, member) {
     qty,
     weight: p.weight != null ? p.weight : DEFAULT_ITEM_KG,
     expressShip: p.expressShip != null ? p.expressShip : null,
+    expressOpt: p.expressOpt != null ? p.expressOpt : null,
   };
 }
 
@@ -245,7 +246,9 @@ function shippingFor(country, fulfil, lines, afterDiscount) {
     amount = round2(zone.base + zone.perKg * kg);
     if (zone.freeOver && afterDiscount >= zone.freeOver) amount = 0;
   }
-  if (expressFee > 0) return { amount: round2(amount + expressFee), label: "Express delivery", days: [4, 14] };
+  // Optional Express on furniture (expressOpt): a per-item fee on top of shipping.
+  const optFee = fulfil === "fexpress" ? round2(lines.reduce((n, l) => n + (l.expressOpt ? l.expressOpt * l.qty : 0), 0)) : 0;
+  if (expressFee > 0 || optFee > 0) return { amount: round2(amount + expressFee + optFee), label: "Express delivery", days: [4, 15] };
   if (fulfil === "express") return { amount: round2(amount + EXPRESS_EXTRA), label: "Express shipping", days: [3, 5] };
   if (fulfil === "gift") return { amount, label: amount === 0 ? "Free standard shipping" : "Standard shipping", days: [5, 10] };
   return { amount, label: amount === 0 ? "Free standard shipping" : "Standard shipping", days: zone.days };
@@ -306,11 +309,14 @@ exports.handler = async (event) => {
     const itemId = (i) => String((i && i.id) || "");
     const giftOrder = items.some((i) => itemId(i).startsWith("hamper-")) &&
       items.every((i) => itemId(i).startsWith("hamper-") || itemId(i).startsWith("giftcard-"));
-    fulfil = !giftOrder ? "ship" : (fulfil === "express" ? "express" : "gift");
+    const wantsExpress = fulfil === "express";
+    fulfil = !giftOrder ? "ship" : (wantsExpress ? "express" : "gift");
 
     // 1. Trusted prices, from the catalogue only.
     const isMemberBuyer = verifyMember(body.member);
     const lines = items.map((i) => resolveLine(i, isMemberBuyer));
+    // Furniture with an Express option (expressOpt) can be sent express for a per-item fee.
+    if (!giftOrder && wantsExpress && lines.some((l) => l.expressOpt)) fulfil = "fexpress";
 
     // Australia Post International Standard tops out at 20 kg per parcel, so
     // bulky furniture can only ship within Australia.
