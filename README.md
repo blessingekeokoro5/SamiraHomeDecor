@@ -5,7 +5,7 @@ A warm, refined home-décor + lifestyle website for **Samira Home Decor** (Adela
 ## 🎨 Brand
 - **Colours:** blush-cream background, dusty **rose/blush pink** primary, **emerald/forest green** secondary, espresso darks.
 - **Type:** Playfair Display (headings) + Jost (UI/body).
-- Business: Klemzig, Adelaide SA · 0451 609 398 · Decormuseofficial@outlook.com · ABN 41 991 812 955 · est. 2026.
+- Business: Klemzig, Adelaide SA · 0451 609 398 · Decormuseofficial@outlook.com · est. 2026.
 
 ## 📄 Pages
 | File | Purpose |

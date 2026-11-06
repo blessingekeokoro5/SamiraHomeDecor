@@ -10,7 +10,6 @@ const SAMIRA = {
   email: "hello@samirahomedecor.com.au",
   location: "Australia",
   flag: "🇦🇺",
-  abn: "41 991 812 955",
   est: "2026",
   currency: "$",
   // Site-wide sale campaign. Set percent:0 (or endsAt in the past) to turn OFF.
