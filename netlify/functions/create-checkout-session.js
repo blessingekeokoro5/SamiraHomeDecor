@@ -483,6 +483,14 @@ exports.handler = async (event) => {
       line_items,
       shipping_options,
       phone_number_collection: { enabled: true },
+      // Optional note from the customer, shown in the new-order email.
+      custom_fields: [{
+        key: "delivery_note",
+        label: { type: "custom", custom: "Delivery notes (optional)" },
+        type: "text",
+        optional: true,
+        text: { maximum_length: 255 },
+      }],
       ...(shipCountry !== "Australia"
         ? { custom_text: { submit: { message: "International orders may incur import duties or taxes, payable by the recipient." } } }
         : {}),

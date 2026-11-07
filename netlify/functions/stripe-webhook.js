@@ -28,54 +28,140 @@ function money(cents, cur) {
   return `${(cents / 100).toFixed(2)} ${(cur || "aud").toUpperCase()}`;
 }
 
-async function emailOrder(session, lineItems) {
-  const key = process.env.WEB3FORMS_KEY;
-  if (!key) return; // silently skip if not configured
+/* ---- "You have a new order" email to the shop -----------------------
+   A branded summary with every customer and order detail, so each order
+   is on record in your inbox. Sent with Brevo (BREVO_API_KEY); falls back
+   to a plain-text Web3Forms email if Brevo isn't set up. */
+const escH = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const aud = (n) => "$" + Number(n || 0).toFixed(2);
 
-  const to = process.env.ORDER_EMAIL || "hello@samirahomedecor.com.au";
-  const ship = session.shipping_details || {};
+function orderFacts(session, lineItems) {
+  const ship = (session.collected_information && session.collected_information.shipping_details) || session.shipping_details || {};
   const addr = ship.address || {};
-  const lines = (lineItems || [])
-    .map((li) => `  • ${li.quantity} × ${li.description} — ${money(li.amount_total, li.currency)}`)
-    .join("\n");
+  const cd = session.customer_details || {};
+  const m = session.metadata || {};
+  const noteField = (session.custom_fields || []).find((f) => f.key === "delivery_note");
+  const placed = new Date((session.created || Date.now() / 1000) * 1000);
+  let when;
+  try { when = placed.toLocaleString("en-AU", { timeZone: "Australia/Adelaide", weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "numeric", minute: "2-digit" }) + " (Adelaide time)"; }
+  catch (e) { when = placed.toISOString(); }
+  return {
+    orderNo: m.order_no || session.client_reference_id || "(no number)",
+    when,
+    name: ship.name || cd.name || "",
+    email: cd.email || session.customer_email || "",
+    phone: cd.phone || "",
+    address: [addr.line1, addr.line2].filter(Boolean).join(", "),
+    cityLine: [addr.city, addr.state, addr.postal_code].filter(Boolean).join(" "),
+    country: addr.country || "",
+    note: (noteField && noteField.text && noteField.text.value) || "",
+    items: (lineItems || []).map((li) => ({ name: li.description || "Item", qty: li.quantity || 1, total: (li.amount_total || 0) / 100 })),
+    subtotal: m.subtotal ? Number(m.subtotal) : null,
+    discount: Number(m.discount || 0), discountPct: Number(m.discount_pct || 0),
+    voucher: Number(m.voucher || 0), code: m.voucher_code || "",
+    shipping: (session.shipping_cost ? session.shipping_cost.amount_total : (session.total_details ? session.total_details.amount_shipping : 0)) / 100,
+    total: (session.amount_total || 0) / 100,
+    paymentIntent: typeof session.payment_intent === "string" ? session.payment_intent : (session.payment_intent && session.payment_intent.id) || "",
+  };
+}
 
-  const body =
-    `New paid order via Samira Home Decor 🎉\n\n` +
-    `Order: ${(session.metadata && session.metadata.order_no) || session.client_reference_id || "(no number)"}\n` +
-    `Stripe session: ${session.id}\n` +
-    `Payment status: ${session.payment_status}\n` +
-    `Total: ${money(session.amount_total, session.currency)}\n` +
-    (session.total_details && session.total_details.amount_shipping != null
-      ? `Shipping: ${money(session.total_details.amount_shipping, session.currency)}\n`
-      : "") +
-    (session.total_details && session.total_details.amount_discount
-      ? `Discount: -${money(session.total_details.amount_discount, session.currency)}\n`
-      : "") +
-    `\nItems:\n${lines}\n\n` +
-    `Customer: ${session.customer_details ? session.customer_details.name || "" : ""}\n` +
-    `Email: ${session.customer_details ? session.customer_details.email || "" : ""}\n` +
-    `Phone: ${session.customer_details ? session.customer_details.phone || "" : ""}\n\n` +
-    `Ship to:\n` +
-    `  ${ship.name || ""}\n` +
-    `  ${addr.line1 || ""} ${addr.line2 || ""}\n` +
-    `  ${addr.city || ""} ${addr.state || ""} ${addr.postal_code || ""}\n` +
-    `  ${addr.country || ""}\n`;
+// Line prices from Stripe already have the discount built in; show them at
+// their pre-discount value so they add up to the subtotal line.
+function listPrices(f) {
+  const sum = f.items.reduce((n, it) => n + it.total, 0);
+  if (f.subtotal == null || !sum || Math.abs(sum - f.subtotal) < 0.01) return f.items;
+  const k = f.subtotal / sum;
+  return f.items.map((it) => Object.assign({}, it, { total: Math.round(it.total * k * 100) / 100 }));
+}
 
+function orderHtml(f) {
+  f = Object.assign({}, f, { items: listPrices(f) });
+  const row = (k, v) => v ? `<tr><td style="padding:6px 0;color:#8a7f77;width:120px;vertical-align:top">${k}</td><td style="padding:6px 0;color:#0B1F3A;font-weight:600">${v}</td></tr>` : "";
+  const items = f.items.map((it) => `<tr><td style="padding:9px 0;border-bottom:1px solid #E8DCC8">${escH(it.name)}${it.qty > 1 ? ` <span style="color:#8a7f77">× ${it.qty}</span>` : ""}</td><td style="padding:9px 0;border-bottom:1px solid #E8DCC8;text-align:right;white-space:nowrap">${aud(it.total)}</td></tr>`).join("");
+  const money = (k, v, green) => `<tr><td style="padding:4px 0;color:${green ? "#2E7D4F" : "#5a5049"}">${k}</td><td style="padding:4px 0;text-align:right;color:${green ? "#2E7D4F" : "#5a5049"}">${v}</td></tr>`;
+  const dash = f.paymentIntent ? `https://dashboard.stripe.com/payments/${f.paymentIntent}` : "https://dashboard.stripe.com/payments";
+  return `
+  <div style="font-family:Arial,Helvetica,sans-serif;max-width:600px;margin:0 auto;color:#0B1F3A;padding:8px">
+    <div style="background:#14365F;border-radius:14px;padding:24px 26px;text-align:center;border-bottom:4px solid #C6A15B">
+      <div style="font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#C6A15B">Samira Home Decor</div>
+      <div style="font-size:26px;font-family:Georgia,serif;color:#fff;margin-top:6px">🎉 You have a new order!</div>
+      <div style="font-size:22px;font-weight:bold;color:#fff;margin-top:12px">${escH(f.orderNo)}</div>
+      <div style="font-size:13px;color:#E0C992;margin-top:4px">${escH(f.when)}</div>
+      <div style="display:inline-block;margin-top:14px;background:#C6A15B;color:#fff;border-radius:30px;padding:8px 20px;font-size:18px;font-weight:bold">${aud(f.total)} paid</div>
+    </div>
+
+    <h3 style="margin:24px 0 8px;font-family:Georgia,serif;font-size:18px">Customer details</h3>
+    <table role="presentation" width="100%" style="border-collapse:collapse;font-size:14px;background:#F7F3EC;border-radius:12px">
+      <tr><td style="padding:14px 16px"><table role="presentation" width="100%" style="border-collapse:collapse">
+        ${row("Full name", escH(f.name))}
+        ${row("Email", f.email ? `<a href="mailto:${escH(f.email)}" style="color:#14365F">${escH(f.email)}</a>` : "")}
+        ${row("Phone", f.phone ? `<a href="tel:${escH(f.phone)}" style="color:#14365F">${escH(f.phone)}</a>` : "")}
+        ${row("Deliver to", [escH(f.address), escH(f.cityLine), escH(f.country)].filter(Boolean).join("<br>"))}
+      </table></td></tr>
+    </table>
+    ${f.note ? `<div style="margin-top:12px;background:#FFF6E0;border-left:4px solid #C6A15B;border-radius:8px;padding:12px 14px;font-size:14px"><strong>📝 Customer note:</strong><br>${escH(f.note)}</div>` : `<div style="margin-top:10px;font-size:13px;color:#8a7f77">No note left by the customer.</div>`}
+
+    <h3 style="margin:24px 0 8px;font-family:Georgia,serif;font-size:18px">Order details</h3>
+    <table role="presentation" width="100%" style="border-collapse:collapse;font-size:14px">
+      ${items}
+      ${f.subtotal != null ? money("Subtotal", aud(f.subtotal)) : ""}
+      ${f.discount > 0 ? money(`${f.discountPct ? f.discountPct + "% off" : "Discount"}${f.code && !f.voucher ? " (" + escH(f.code) + ")" : ""}`, "−" + aud(f.discount), true) : ""}
+      ${f.voucher > 0 ? money(`Voucher${f.code ? " (" + escH(f.code) + ")" : ""}`, "−" + aud(f.voucher), true) : ""}
+      ${money("Shipping", f.shipping ? aud(f.shipping) : "Free")}
+      <tr><td style="padding:10px 0 0;font-family:Georgia,serif;font-size:18px;font-weight:bold">Total paid</td><td style="padding:10px 0 0;text-align:right;font-family:Georgia,serif;font-size:18px;font-weight:bold">${aud(f.total)}</td></tr>
+    </table>
+
+    <div style="margin:24px 0 8px;text-align:center">
+      <a href="${dash}" style="display:inline-block;background:#14365F;color:#fff;text-decoration:none;padding:12px 22px;border-radius:30px;font-weight:bold;margin:4px">View payment in Stripe</a>
+      <a href="${process.env.SITE_URL || "https://samirahomedecor.com.au"}/admin.html" style="display:inline-block;background:#C6A15B;color:#fff;text-decoration:none;padding:12px 22px;border-radius:30px;font-weight:bold;margin:4px">Update delivery stage</a>
+    </div>
+    <p style="font-size:12px;color:#8a7f77;text-align:center">Reply to this email to write to the customer directly.</p>
+  </div>`;
+}
+
+function orderText(f) {
+  f = Object.assign({}, f, { items: listPrices(f) });
+  return `🎉 You have a new order!\n\nOrder: ${f.orderNo}\nDate: ${f.when}\nTotal paid: ${aud(f.total)}\n\n` +
+    `CUSTOMER\nName: ${f.name}\nEmail: ${f.email}\nPhone: ${f.phone}\nDeliver to: ${[f.address, f.cityLine, f.country].filter(Boolean).join(", ")}\nNote: ${f.note || "(none)"}\n\n` +
+    `ITEMS\n${f.items.map((it) => `  • ${it.qty} × ${it.name} — ${aud(it.total)}`).join("\n")}\n\n` +
+    (f.subtotal != null ? `Subtotal: ${aud(f.subtotal)}\n` : "") +
+    (f.discount > 0 ? `Discount: -${aud(f.discount)}${f.code ? " (" + f.code + ")" : ""}\n` : "") +
+    (f.voucher > 0 ? `Voucher: -${aud(f.voucher)}\n` : "") +
+    `Shipping: ${aud(f.shipping)}\nTotal: ${aud(f.total)}\n`;
+}
+
+async function emailOrder(session, lineItems) {
+  const f = orderFacts(session, lineItems);
+  const to = process.env.ORDER_EMAIL || process.env.BUSINESS_EMAIL || "hello@samirahomedecor.com.au";
+  const subject = `🛍️ New order ${f.orderNo} — ${aud(f.total)} — ${f.name || "customer"}`;
+  const brevo = process.env.BREVO_API_KEY;
+  if (brevo) {
+    try {
+      const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: { "api-key": brevo, "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          sender: { email: process.env.SENDER_EMAIL || "hello@samirahomedecor.com.au", name: "Samira Home Decor Orders" },
+          to: [{ email: to }],
+          ...(f.email ? { replyTo: { email: f.email, name: f.name || undefined } } : {}),
+          subject,
+          htmlContent: orderHtml(f),
+          textContent: orderText(f),
+        }),
+      });
+      if (res.ok) return;
+      console.error("Brevo order email failed:", res.status, await res.text());
+    } catch (err) { console.error("Brevo order email failed:", err.message); }
+  }
+  const key = process.env.WEB3FORMS_KEY;
+  if (!key) return;
   try {
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        access_key: key,
-        subject: `Samira Home Decor — new paid order ${(session.metadata && session.metadata.order_no) || ""} (${money(session.amount_total, session.currency)})`,
-        from_name: "Samira Home Decor",
-        email: to,
-        message: body,
-      }),
+      body: JSON.stringify({ access_key: key, subject, from_name: "Samira Home Decor", email: to, message: orderText(f) }),
     });
-  } catch (err) {
-    console.error("Order email failed:", err.message);
-  }
+  } catch (err) { console.error("Order email failed:", err.message); }
 }
 
 exports.handler = async (event) => {
