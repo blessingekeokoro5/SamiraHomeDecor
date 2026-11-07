@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://samirahomedecor.com.au/inspire.html">
-  <title>Get Inspired, Samira Home Decor</title>
-  <meta name="description" content="Weekly styling tips, this week's edit of décor and furniture, and the pieces shoppers pick most. Fresh home inspiration from Samira Home Decor, renewed every Monday.">
+  <title>Home Décor Ideas &amp; Inspiration, Samira Home Decor</title>
+  <meta name="description" content="Home décor ideas and inspiration for every room: weekly styling tips, this week's edit of décor and furniture, and the pieces shoppers pick most. Fresh home inspiration from Samira Home Decor, renewed every Monday.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Samira Home Decor">
   <meta property="og:image" content="https://samirahomedecor.com.au/assets/hero.jpg">
@@ -35,6 +35,15 @@
     .tip h3 { margin: 2px 0 6px; font-size: 1.3rem; }
     .tip p { margin: 0; color: var(--body); line-height: 1.6; }
     .tip .tip-shop { display: inline-block; margin-top: 8px; font-size: .84rem; color: #A9843C; }
+    .idea-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .idea { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; color: inherit; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+    .idea:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(11,31,58,.08); }
+    .idea-img { aspect-ratio: 4 / 3; background: #F7F3EC center / cover no-repeat; }
+    .idea-body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .idea-room { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #A9843C; }
+    .idea h3 { margin: 0; font-size: 1.15rem; }
+    .idea p { margin: 0; color: var(--body); line-height: 1.55; font-size: .93rem; }
+    .idea-go { margin-top: auto; padding-top: 8px; font-size: .84rem; color: #14365F; font-weight: 600; }
     .insp-cta { margin-top: 60px; text-align: center; background: #14365F; color: #fff; border-radius: 18px; padding: 38px 24px; }
     .insp-cta h2 { color: #fff; margin: 0 0 8px; }
     .insp-cta p { color: #E0C992; margin: 0 auto 18px; max-width: 520px; }
@@ -49,7 +58,7 @@
     <div class="container">
       <div class="breadcrumb"><a href="index.html">Home</a> / Get inspired</div>
       <span class="eyebrow">✦ Get inspired</span>
-      <h1>Fresh ideas for a beautiful home</h1>
+      <h1>Home décor ideas &amp; inspiration</h1>
       <p>Styling tips from our team, this week's edit of pieces we love, and what other shoppers are choosing. New ideas every Monday.</p>
       <span class="insp-week" id="inspWeek"></span>
     </div>
@@ -58,11 +67,19 @@
   <section class="section" style="padding-top:28px">
     <div class="container">
       <nav class="insp-nav" aria-label="On this page">
+        <a href="#ideas">Ideas by room</a>
         <a href="#tips">Styling tips</a>
         <a href="#edit">This week's edit</a>
         <a href="#picks" id="navPicks" hidden>Most picked</a>
         <a href="#new" id="navNew" hidden>Just landed</a>
       </nav>
+
+      <div class="insp-sec" id="ideas">
+        <span class="eyebrow">Home décor ideas</span>
+        <h2>Inspiration for every room</h2>
+        <p class="insp-sub">A fresh idea for each part of your home this week, to spark your next refresh.</p>
+        <div class="idea-grid" id="ideaGrid"></div>
+      </div>
 
       <div class="insp-sec" id="tips">
         <span class="eyebrow">This week's styling tips</span>
@@ -131,6 +148,41 @@
     var POOL = PRODUCTS.filter(function (p) { return p && !p.comingSoon && p.price != null && p.img && p.cat !== "Packaging"; });
     function match(re, cats) { return POOL.filter(function (p) { return (!cats || cats.indexOf(p.cat) !== -1) && (!re || re.test(p.name || "")); }); }
     function cards(list) { return list.map(productCard).join(""); }
+
+    /* ---- Home décor ideas: one idea per room, rotating weekly ---- */
+    var ROOMS = [
+      { room: "Living room", cats: ["Living Room"], link: "living-room.html", ideas: [
+        ["Create a cosy conversation corner", "Angle two chairs towards each other with a small side table between them. Add a lamp and a throw for a spot made for slow mornings."],
+        ["Ground the room with a rug", "Choose a rug large enough for the front legs of every seat to sit on it. It pulls the furniture together and makes the space feel bigger."],
+        ["Go tonal for a calm feel", "Pick one colour family, such as warm whites or soft greys, and repeat it in different shades and textures across the room."] ] },
+      { room: "Bedroom", cats: ["Bedroom"], link: "bedroom.html", ideas: [
+        ["Make the bed the hero", "A statement bedhead with layered cushions and a folded throw at the end instantly makes a bedroom feel styled."],
+        ["Balance with pairs", "Matching bedside tables and lamps on each side create symmetry, which makes a bedroom feel restful and well put together."],
+        ["Add a reading nook", "Tuck an accent chair and a floor lamp into a corner for a quiet place to unwind before bed."] ] },
+      { room: "Dining", cats: ["Dining", "Kitchenware"], link: "dining.html", ideas: [
+        ["Mix chairs and benches", "Pair a bench on one side with upholstered chairs on the other for a relaxed, modern dining look that seats more people."],
+        ["Hang a pendant low", "A pendant light about 75cm above the table defines the dining zone and adds warmth to evening meals."],
+        ["Style a sideboard", "Use a sideboard as a display: a lamp at one end, a tall vase at the other and a tray of everyday pieces between."] ] },
+      { room: "Home décor", cats: ["Home Décor", "Lifestyle"], link: "home-decor.html", ideas: [
+        ["Curate a gallery shelf", "Mix books, small objects and a plant on open shelves. Leave a little empty space on each shelf so the display can breathe."],
+        ["Use vases as sculpture", "A large vase, even without flowers, adds height and shape to an empty corner or console."],
+        ["Swap décor with the seasons", "Change cushions, candles and small accents a few times a year to keep your home feeling fresh without redecorating."] ] },
+      { room: "Outdoor", cats: ["Outdoor"], link: "outdoor.html", ideas: [
+        ["Zone your outdoor space", "Separate dining and lounging areas with a rug or planters so your patio works like two rooms."],
+        ["Plan for evenings", "Soft outdoor lighting and a fire pit let you enjoy your outdoor setting long after sunset."],
+        ["Choose weather-ready pieces", "Aluminium, teak and all-weather wicker look good year-round and stand up to the Australian sun."] ] },
+      { room: "Bathroom & office", cats: ["Bathroom", "Office"], link: "bathroom.html", ideas: [
+        ["Coordinate your finishes", "Keep tapware, accessories and hooks in one finish, such as brushed gold or matte black, for a polished look."],
+        ["Bring calm to your workspace", "A tidy desk, a comfortable chair and one decorative piece you love make long workdays feel better."],
+        ["Add soft touches", "Plush towels, a scented candle and a small plant turn a functional room into a retreat."] ] }
+    ];
+    document.getElementById("ideaGrid").innerHTML = ROOMS.map(function (r, i) {
+      var idea = r.ideas[(SEED + i) % r.ideas.length];
+      var pics = shuffle(POOL.filter(function (p) { return r.cats.indexOf(p.cat) !== -1; }), SEED + 50 + i);
+      var img = pics.length ? pics[0].img : "";
+      return '<a class="idea" href="' + r.link + '"><div class="idea-img"' + (img ? ' style="background-image:url(\'' + img + '\')"' : "") + ' role="img" aria-label="' + r.room + ' inspiration"></div>' +
+        '<div class="idea-body"><span class="idea-room">' + r.room + '</span><h3>' + idea[0] + '</h3><p>' + idea[1] + '</p><span class="idea-go">Explore ' + r.room.toLowerCase() + ' →</span></div></a>';
+    }).join("");
 
     /* ---- Styling tips: 12 in rotation, 3 shown each week ---- */
     var TIPS = [
