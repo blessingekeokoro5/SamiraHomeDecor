@@ -153,3 +153,10 @@
   to = "/cleaning-documents/Samira-Home-Decor-Cleaning-Quote.pdf"
   status = 301
 
+
+# A copied admin link sometimes picks up the full stop after it.
+[[redirects]]
+  from = "/admin.html."
+  to = "/admin.html"
+  status = 301
+  force = true
