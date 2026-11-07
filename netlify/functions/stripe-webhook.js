@@ -22,6 +22,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const { issueGiftCard } = require("./_giftcards");
 const { recordReferral } = require("./_referrals");
 const { emailShop } = require("./_notify");
+const { orderPdf } = require("./_orderpdf");
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 
 function money(cents, cur) {
@@ -135,6 +136,10 @@ async function emailOrder(session, lineItems) {
   const to = process.env.ORDER_EMAIL || process.env.BUSINESS_EMAIL || "hello@samirahomedecor.com.au";
   const subject = `🛍️ New order ${f.orderNo} — ${aud(f.total)} — ${f.name || "customer"}`;
   const brevo = process.env.BREVO_API_KEY;
+  // PDF copy of the customer and order details, for your records.
+  let pdfB64 = "";
+  try { pdfB64 = orderPdf(Object.assign({}, f, { items: listPrices(f) })).toString("base64"); }
+  catch (e) { console.error("Order PDF failed:", e.message); }
   if (brevo) {
     try {
       const res = await fetch("https://api.brevo.com/v3/smtp/email", {
@@ -147,6 +152,7 @@ async function emailOrder(session, lineItems) {
           subject,
           htmlContent: orderHtml(f),
           textContent: orderText(f),
+          ...(pdfB64 ? { attachment: [{ name: `${f.orderNo}-order-details.pdf`, content: pdfB64 }] } : {}),
         }),
       });
       if (res.ok) return;
