@@ -173,7 +173,7 @@
 
       <!-- Settings -->
       <div id="tabSettings" hidden>
-        <div class="admin-note">Change your admin password on this device. To change it across all devices permanently, update <b>ADMIN_DEFAULT</b> in <b>admin.html</b> and redeploy.</div>
+        <div class="admin-note">Change your admin password on this device. The main sign-in password is set in Netlify as <b>ADMIN_PASSWORD</b>.</div>
         <div class="admin-formcard" style="max-width:420px">
           <h3>Change admin password</h3>
           <div class="field"><label>New password</label><input id="newPw" type="password"></div>
@@ -187,16 +187,17 @@
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=76"></script>
-  <script src="js/components.js?v=91"></script>
+  <script src="js/components.js?v=92"></script>
   <script src="js/cart.js?v=32"></script>
   <script src="js/main.js?v=17"></script>
   <script src="js/forms.js"></script>
   <script src="js/admin.js"></script>
   <script>
     /* ===== Admin gate ===== */
-    // Default password, CHANGE THIS, then redeploy, to lock the admin area permanently.
-    const ADMIN_DEFAULT = "ZaraHosini@30";
-    function adminStoredHash() { return localStorage.getItem("dm_admin_pin") || dmHash(ADMIN_DEFAULT); }
+    // Fallback on-page password (stored only as a hash, never as plain text).
+    // The real lock is the server sign-in (netlify/edge-functions/admin-guard.js).
+    const ADMIN_DEFAULT_HASH = "90c7ff80";
+    function adminStoredHash() { return localStorage.getItem("dm_admin_pin") || ADMIN_DEFAULT_HASH; }
     function isAuthed() { try { return sessionStorage.getItem("dm_admin_ok") === "1"; } catch (e) { return false; } }
 
     function showAdmin() {

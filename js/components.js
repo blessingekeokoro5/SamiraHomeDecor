@@ -513,7 +513,7 @@ function buildFooter() {
           <a href="policy.html?doc=terms">Terms</a> ·
           <a href="index.html#why-us">Why shop with us</a>
         </span>
-        <a class="ft-admin" href="admin.html" title="Admin sign-in">🔒 Admin dashboard</a>
+
       </div>
     </div>
   </footer>`;
