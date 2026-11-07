@@ -274,7 +274,21 @@ function resolveLine(raw, member) {
     shipFee: p.shipFee != null ? p.shipFee : null,
     arriveBy: p.arriveBy || null,
     auOnly: !!p.auOnly,
+    preorder: !!p.preorder,
+    expected: p.preorder ? expectedText(p) : "",
   };
+}
+
+// "by Monday 11 January 2027" or "5 Dec – 10 Dec 2026" (Adelaide dates)
+function adlDate(d, opts) {
+  try { return d.toLocaleDateString("en-AU", Object.assign({ timeZone: "Australia/Adelaide" }, opts)); }
+  catch (e) { return d.toISOString().slice(0, 10); }
+}
+function expectedText(p) {
+  if (p.arriveBy) return "by " + adlDate(new Date(p.arriveBy + "T12:00:00+10:30"), { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  const w = Array.isArray(p.arriveDays) ? p.arriveDays : [28, 33];
+  const a = new Date(Date.now() + w[0] * 864e5), b = new Date(Date.now() + w[1] * 864e5);
+  return adlDate(a, { day: "numeric", month: "short" }) + " – " + adlDate(b, { day: "numeric", month: "short", year: "numeric" });
 }
 
 // Business days from today until a YYYY-MM-DD date (Adelaide), at least 1.
@@ -508,7 +522,7 @@ exports.handler = async (event) => {
         currency: "aud",
         product_data: {
           name: l.name,
-          ...(discountLabel ? { description: `Includes ${discountLabel}` } : {}),
+          ...((discountLabel || l.preorder) ? { description: [l.preorder ? `Pre-order · expected ${l.expected}` : "", discountLabel ? `Includes ${discountLabel}` : ""].filter(Boolean).join(" · ") } : {}),
           ...(l.sku ? { metadata: { sku: l.sku } } : {}),
         },
         unit_amount: Math.round(l.unitPrice * factor * 100), // GST-inclusive AUD, in cents
@@ -578,6 +592,8 @@ exports.handler = async (event) => {
         voucher: String(voucher),
         voucher_code: String(body.voucherCode || ""),
         member: isMemberBuyer ? "yes" : "no",
+        // Pre-order items and their expected arrival, read back by the order emails.
+        ...(lines.some((l) => l.preorder) ? { preorder: lines.filter((l) => l.preorder).map((l) => `${l.qty} × ${l.name} — expected ${l.expected}`).join(" | ").slice(0, 500) } : {}),
         ...(/^[A-Z0-9]{8}$/.test(body.ref || "") ? { ref: body.ref } : {}),
         shipping: String(ship.amount),
         // Read back by the webhook to issue the cards once payment succeeds.

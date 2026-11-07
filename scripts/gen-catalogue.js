@@ -58,6 +58,29 @@ function num(v) {
 // Every price a line may legitimately be sold at: the base price, the member
 // price, and any per-size price. The server accepts the lowest of these that
 // the client asks for and nothing else.
+// Pre-order: furniture taking 3+ weeks to arrive. Same rule as isPreorder()
+// in js/cart.js — keep the word lists and numbers in step.
+const PREORDER_MIN_DAYS = 21;
+const FURNITURE_RE = /\b(sofas?|couch|lounge suite|modular|daybed|armchairs?|chairs?|stools?|barstools?|bench|ottoman|tables?|desks?|bed frame|bed base|bedhead|headboard|beds?|dressers?|wardrobes?|robes? island|cabinets?|sideboards?|buffets?|console|bookcases?|bookshel(f|ves)|shelving unit|tallboy|chest of drawers|tv unit|entertainment unit|dining set|outdoor set|lounge set|hall ?stand)\b/i;
+const NOT_FURNITURE_RE = /\b(cushion|pillow|cover|throw|blanket|lamp|pendant|chandelier|sconce|blender|kettle|toaster|mixer|runner|sheet|quilt|duvet|mat|rug|vase|candle|diffuser|tray|placemat|napkin|cloth)\b/i;
+function isFurniture(p) {
+  if (p.lead) return true;
+  const n = p.name || "";
+  return FURNITURE_RE.test(n) && !NOT_FURNITURE_RE.test(n.replace(/\b(bedside|side|coffee|dining|console) tables?\b/ig, "table"));
+}
+function arriveDays(p) {
+  if (Array.isArray(p.arriveDays) && p.arriveDays.length === 2) return p.arriveDays.map(Number);
+  return isFurniture(p) ? [28, 33] : [8, 13];
+}
+function isPreorder(p) {
+  if (p.price == null || p.cat === "Packaging" || p.comingSoon) return false;
+  if (p.preorder === true) return true;
+  if (p.preorder === false) return false;
+  if (p.arriveBy) return true;   // the arrive-by range is weeks away while it's set
+  if (!(p.lead || isFurniture(p))) return false;
+  return arriveDays(p)[1] >= PREORDER_MIN_DAYS;
+}
+
 const products = {};
 PRODUCTS.forEach((p) => {
   if (!p || !p.id) return;
@@ -80,7 +103,9 @@ PRODUCTS.forEach((p) => {
     expressOpt: num(p.expressOpt),
     shipFee: num(p.shipFee),                     // fixed delivery fee per item
     arriveBy: p.arriveBy || null,                // all-items arrive-by date (YYYY-MM-DD)
-    auOnly: !!p.auOnly,                          // delivers within Australia only               // optional express upgrade fee per item
+    auOnly: !!p.auOnly,                          // delivers within Australia only
+    preorder: isPreorder(p),                     // sold as a pre-order (shown in order emails)
+    arriveDays: p.arriveBy ? null : arriveDays(p), // standard arrival window in days
   };
 });
 

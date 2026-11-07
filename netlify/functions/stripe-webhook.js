@@ -62,6 +62,7 @@ function orderFacts(session, lineItems) {
     voucher: Number(m.voucher || 0), code: m.voucher_code || "",
     shipping: (session.shipping_cost ? session.shipping_cost.amount_total : (session.total_details ? session.total_details.amount_shipping : 0)) / 100,
     total: (session.amount_total || 0) / 100,
+    preorder: m.preorder ? String(m.preorder).split(" | ").filter(Boolean) : [],
     paymentIntent: typeof session.payment_intent === "string" ? session.payment_intent : (session.payment_intent && session.payment_intent.id) || "",
   };
 }
@@ -102,6 +103,8 @@ function orderHtml(f) {
     </table>
     ${f.note ? `<div style="margin-top:12px;background:#FFF6E0;border-left:4px solid #C6A15B;border-radius:8px;padding:12px 14px;font-size:14px"><strong>📝 Customer note:</strong><br>${escH(f.note)}</div>` : `<div style="margin-top:10px;font-size:13px;color:#8a7f77">No note left by the customer.</div>`}
 
+    ${f.preorder && f.preorder.length ? `<div style="margin-top:18px;background:#FFF6E0;border-left:4px solid #C6A15B;border-radius:8px;padding:12px 14px;font-size:14px"><strong>⏳ PRE-ORDER — tell the customer if these dates change:</strong><ul style="margin:6px 0 0;padding-left:18px">${f.preorder.map((x) => `<li>${escH(x)}</li>`).join("")}</ul></div>` : ""}
+
     <h3 style="margin:24px 0 8px;font-family:Georgia,serif;font-size:18px">Order details</h3>
     <table role="presentation" width="100%" style="border-collapse:collapse;font-size:14px">
       ${items}
@@ -125,6 +128,7 @@ function orderText(f) {
   return `🎉 You have a new order!\n\nOrder: ${f.orderNo}\nDate: ${f.when}\nTotal paid: ${aud(f.total)}\n\n` +
     `CUSTOMER\nName: ${f.name}\nEmail: ${f.email}\nPhone: ${f.phone}\nDeliver to: ${[f.address, f.cityLine, f.country].filter(Boolean).join(", ")}\nNote: ${f.note || "(none)"}\n\n` +
     `ITEMS\n${f.items.map((it) => `  • ${it.qty} × ${it.name} — ${aud(it.total)}`).join("\n")}\n\n` +
+    (f.preorder && f.preorder.length ? `PRE-ORDER (tell the customer if these dates change)\n${f.preorder.map((x) => `  • ${x}`).join("\n")}\n\n` : "") +
     (f.subtotal != null ? `Subtotal: ${aud(f.subtotal)}\n` : "") +
     (f.discount > 0 ? `Discount: -${aud(f.discount)}${f.code ? " (" + f.code + ")" : ""}\n` : "") +
     (f.voucher > 0 ? `Voucher: -${aud(f.voucher)}\n` : "") +
@@ -134,7 +138,7 @@ function orderText(f) {
 async function emailOrder(session, lineItems) {
   const f = orderFacts(session, lineItems);
   const to = process.env.ORDER_EMAIL || process.env.BUSINESS_EMAIL || "hello@samirahomedecor.com.au";
-  const subject = `🛍️ New order ${f.orderNo} — ${aud(f.total)} — ${f.name || "customer"}`;
+  const subject = `🛍️ New ${f.preorder && f.preorder.length ? "PRE-ORDER" : "order"} ${f.orderNo} — ${aud(f.total)} — ${f.name || "customer"}`;
   const brevo = process.env.BREVO_API_KEY;
   // PDF copy of the customer and order details, for your records.
   let pdfB64 = "";

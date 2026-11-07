@@ -63,6 +63,7 @@ async function stripeTotals(sessionId) {
       voucher: Number(m.voucher || 0),
       shipping: (s.shipping_cost ? s.shipping_cost.amount_total : 0) / 100,
       total: (s.amount_total || 0) / 100,
+      preorder: m.preorder ? String(m.preorder).split(" | ").filter(Boolean) : [],
     };
   } catch (e) {
     console.error("Stripe lookup failed:", e.message);
@@ -141,6 +142,14 @@ exports.handler = async (event) => {
         <tr><td style="padding:8px 0;font-family:Georgia,serif;font-size:18px;font-weight:bold">Total</td><td style="padding:8px 0;text-align:right;font-family:Georgia,serif;font-size:18px;font-weight:bold">${money(total)}</td></tr>
       </table>` : ""}
 
+      ${(st && st.preorder.length) ? `
+      <div style="background:#FFF6E0;border-left:4px solid #C6A15B;border-radius:12px;padding:16px 18px;margin-top:20px;font-size:13px;color:#5a5049;line-height:1.6">
+        <div style="font-size:15px;font-weight:bold;color:#0B1F3A;margin-bottom:6px">⏳ Your pre-order</div>
+        ${st.preorder.length === 1 && items.length <= 1 ? "Your order is a pre-order." : "Your order includes pre-order items:"}
+        <ul style="margin:8px 0 10px;padding-left:18px;color:#0B1F3A">${st.preorder.map((x) => `<li style="margin:3px 0">${esc(x)}</li>`).join("")}</ul>
+        These dates are estimates based on our suppliers' production schedules and expected shipping times. Because our pieces are sourced from overseas, production changes, shipping hold-ups, busy ports, customs clearance or bad weather can occasionally affect when an order arrives. If your expected arrival time changes significantly, our team will do our best to let you know as soon as possible.
+      </div>` : ""}
+
       <div style="background:#F6EEE8;border-radius:12px;padding:16px 18px;margin-top:20px;font-size:13px;color:#5a5049;line-height:1.6">
         📦 <strong>What's next?</strong> We'll pick, pack and dispatch your order — you can watch it live in <a href="${SITE_URL}/account.html" style="color:#A9843C">your account → Orders → Track order</a>, with an estimated arrival time.
       </div>
@@ -165,7 +174,7 @@ exports.handler = async (event) => {
       sender: { name: SENDER_NAME, email: SENDER_EMAIL },
       to: [{ email: o.email, name: o.name || undefined }],
       bcc: [{ email: BUSINESS_EMAIL }],
-      subject: `Your Samira Home Decor order ${o.orderNo || ""} is confirmed 🌿`,
+      subject: `Your Samira Home Decor ${(st && st.preorder.length) ? "pre-order" : "order"} ${o.orderNo || ""} is confirmed 🌿`,
       htmlContent: html,
     };
 
