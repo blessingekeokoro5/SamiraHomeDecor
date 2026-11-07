@@ -357,6 +357,71 @@ function fmtArriveBy(ymd, short) {
   try { return d.toLocaleDateString("en-AU", short ? { day: "numeric", month: "short" } : { weekday: "long", day: "numeric", month: "long", year: "numeric" }); }
   catch (e) { return ymd; }
 }
+
+/* ---- Pre-order ----
+   Furniture that takes 3 weeks or more to arrive is sold as a PRE-ORDER:
+   the button says "Pre-order", the expected arrival date is shown, and a
+   "Pre-Order Terms & Conditions" link opens the note below.
+   Override one product with preorder: true / preorder: false in js/data.js. */
+const PREORDER_MIN_DAYS = 21;
+function standardArriveWindow(p) {          // ignores the optional Express upgrade
+  if (p && p.arriveBy) {
+    const days = Math.max(1, Math.floor((new Date(p.arriveBy + "T23:59:59+10:30") - Date.now()) / 86400000));
+    return [Math.max(1, days - 7), days];
+  }
+  if (p && Array.isArray(p.arriveDays) && p.arriveDays.length === 2) return p.arriveDays;
+  return isFurniture(p) ? ARRIVE_FURNITURE : ARRIVE_DECOR;
+}
+function isPreorder(p) {
+  if (!p || p.price == null || p.cat === "Packaging" || p.comingSoon || p.giftCard || p.hamper || /^(hamper|giftcard)-/.test(String(p.id || ""))) return false;
+  if (p.preorder === true) return true;
+  if (p.preorder === false) return false;
+  if (!(p.arriveBy || p.lead || isFurniture(p))) return false;
+  return standardArriveWindow(p)[1] >= PREORDER_MIN_DAYS;
+}
+/* "Monday 11 January 2027" or "Dec 5–10" */
+function preorderExpected(p, short) {
+  return p.arriveBy ? fmtArriveBy(p.arriveBy, short) : fmtArriveRange(standardArriveWindow(p));
+}
+function preorderTermsLink(label) {
+  return `<a href="#" class="preorder-terms-link" onclick="openPreorderTerms();return false;" style="color:inherit;text-decoration:underline;text-underline-offset:3px">${label || "Pre-Order Terms &amp; Conditions"}</a>`;
+}
+function openPreorderTerms() {
+  let m = document.getElementById("preorderTerms");
+  if (!m) {
+    m = document.createElement("div");
+    m.id = "preorderTerms";
+    m.setAttribute("role", "dialog"); m.setAttribute("aria-modal", "true"); m.setAttribute("aria-labelledby", "preorderTermsTitle");
+    m.style.cssText = "position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(11,31,58,.55)";
+    m.innerHTML = `
+      <div style="position:relative;background:#fff;max-width:560px;width:100%;max-height:88vh;overflow:auto;border-radius:14px;padding:30px 26px 26px;box-shadow:0 20px 60px rgba(0,0,0,.25);color:#4B4540;line-height:1.6;font-size:.95rem">
+        <button type="button" aria-label="Close" onclick="closePreorderTerms()" style="position:absolute;top:10px;right:12px;background:none;border:0;font-size:1.6rem;line-height:1;cursor:pointer;color:#0B1F3A">&times;</button>
+        <h2 id="preorderTermsTitle" style="font-family:Georgia,serif;color:#0B1F3A;margin:0 0 12px;font-size:1.55rem;line-height:1.25">Pre-Order Information &amp; Delivery Times</h2>
+        <p>Pre-order pieces are made or shipped to order by our suppliers. The expected arrival date we show is based on our suppliers' production and shipping schedules. We work hard to keep it accurate, but it is an estimate, not a guarantee.</p>
+        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">Why might the date change?</h3>
+        <p style="margin:0">Many of our pieces are sourced from overseas, so production changes, freight and shipping delays, port congestion, customs checks or bad weather can sometimes push the arrival date back.</p>
+        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">What we do to avoid delays</h3>
+        <p style="margin:0">We stay in close contact with our suppliers and freight partners, track each order as it moves, and act early if something looks like it may run late.</p>
+        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">We'll keep you updated</h3>
+        <p style="margin:0">If your expected arrival date changes in a meaningful way, we'll email you as soon as we know. If the new date doesn't suit you, or your piece becomes unavailable, we'll offer a close substitute or a full refund. It's your choice.</p>
+        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">Payment</h3>
+        <p style="margin:0">Pre-orders are paid in full at checkout. Your rights under Australian Consumer Law are not affected.</p>
+        <p style="margin:18px 0 0;font-size:.85rem">Questions? <a href="contact.html" style="color:#0B1F3A">Contact our team</a>.</p>
+      </div>`;
+    m.addEventListener("click", function (e) { if (e.target === m) closePreorderTerms(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closePreorderTerms(); });
+    document.body.appendChild(m);
+  }
+  m.style.display = "flex";
+  document.documentElement.style.overflow = "hidden";
+  const c = m.querySelector("button"); if (c) c.focus();
+}
+function closePreorderTerms() {
+  const m = document.getElementById("preorderTerms");
+  if (m) m.style.display = "none";
+  document.documentElement.style.overflow = "";
+}
+
 /* Show a "Get it by" line for ready-to-ship furniture */
 function arrivalLine(p) {
   if (p.lead || !p.fastShip) return "";
@@ -403,7 +468,9 @@ function productCard(p) {
         ${p.dontPay ? `<div class="dont-pay"><span class="dp-tag">Don't Pay</span> <s>${money(p.dontPay)}</s><button class="dp-info" type="button" aria-label="Why?" onclick="showDontPayInfo(event)">ⓘ</button></div>` : ""}
         ${p.memberPrice ? `<div class="member-price">✦ Members ${money(p.memberPrice)}</div>` : ""}
         ${p.freeship ? `<div class="freeship-tag">🚚 Free shipping</div>` : ""}
-        ${p.arriveBy
+        ${isPreorder(p)
+          ? `<div style="display:inline-block;font-size:.7rem;font-weight:700;color:#0B1F3A;background:#F4EFE6;padding:3px 9px;border-radius:20px;margin-top:6px" title="Pre-order: expected arrival">⏳ Pre-order · ${p.arriveBy ? "arrives by " : "arrives "}${preorderExpected(p, true)}</div>`
+          : p.arriveBy
           ? `<div style="display:inline-block;font-size:.7rem;font-weight:700;color:#0B1F3A;background:#F4EFE6;padding:3px 9px;border-radius:20px;margin-top:6px" title="Delivered by our supplier">🚚 Arrives by ${fmtArriveBy(p.arriveBy, true)}</div>`
           : p.lead
           ? `<div style="display:inline-block;font-size:.7rem;font-weight:600;color:#8a7f77;background:#F4EFE6;padding:3px 9px;border-radius:20px;margin-top:6px" title="Made to order">⏳ Made to order · ${p.lead}</div>`
@@ -420,7 +487,7 @@ function productCard(p) {
           ${(typeof realReviews === "function" && realReviews(p.id).length) ? `<span class="stars">${"★".repeat(Math.round(realReviews(p.id).reduce((t, r) => t + r.rating, 0) / realReviews(p.id).length))}</span>` : "<span></span>"}
           ${p.cat === "Packaging"
             ? `<a class="btn btn--primary btn--sm" href="product.html?id=${p.id}">View details</a>`
-            : `<button class="btn btn--primary btn--sm" onclick="addToCart('${p.id}')">Add to cart</button>`}
+            : `<button class="btn btn--primary btn--sm" onclick="addToCart('${p.id}')">${isPreorder(p) ? "Pre-order" : "Add to cart"}</button>`}
         </div>
       </div>
     </article>`;
