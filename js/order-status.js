@@ -33,7 +33,7 @@
     var at = loc ? " " + loc : "";
     return [
       { key: "placed",    title: "Order placed",                  done: "We received your order and payment." },
-      { key: "picking",   title: "Currently picking",             done: "We're picking your items. If an item is out of stock, someone from our team will reach out within 2 business days." },
+      { key: "picking",   title: "Currently picking",             done: "We're picking your items. If an item is out of stock, we'll email you within 2 business days, usually with a close substitute for you to approve." },
       { key: "packed",    title: "Packed with care & dispatched", done: "Your pieces are packed and on their way to the courier." },
       { key: "shipped",   title: "Shipped",                       done: "Handed to the courier." },
       { key: "transit",   title: "In transit" + (loc ? " to " + loc : ""), done: "On its way to your location." },
@@ -87,10 +87,13 @@
       o.items.map(function (it) { return esc(it.name) + (it.qty > 1 ? " × " + it.qty : ""); }).join(" · ") + '</p>' : "";
     var note = st.note ? '<div style="background:#F7F3EC;border-left:3px solid #E0C992;padding:10px 12px;border-radius:6px;margin:10px 0;font-size:.9rem">' + esc(st.note) + '</div>' : "";
 
+    var mailNote = delivered ? "" : '<div style="display:flex;gap:10px;align-items:flex-start;background:#EEF3F9;border-left:3px solid #14365F;padding:12px 14px;border-radius:8px;margin:12px 0;font-size:.9rem;line-height:1.5;color:#0B1F3A">' +
+      '<span style="font-size:1.2rem">📧</span><span><strong>Please keep an eye on your email.</strong> We send all order updates by email, including if an item is out of stock and we\u2019ve found a close substitute for you to approve. Check your spam or junk folder too, and add hello@samirahomedecor.com.au to your contacts.</span></div>';
+
     el.innerHTML = (opts.compact ? "" :
         '<span class="eyebrow">' + (delivered ? "Delivered ✓" : "In progress") + '</span>' +
         '<h2 style="font-size:1.8rem;margin-bottom:4px">Order ' + esc(o.orderNo) + '</h2>') +
-      items + stats + note + tl;
+      items + stats + mailNote + note + tl;
   };
 
   // Account page: a signed-in customer's order, looked up with their email.
