@@ -304,12 +304,24 @@
     let _ordRows = [];
     async function loadOrders() {
       const wrap = document.getElementById("ordWrap"), count = document.getElementById("ordCount");
-      if (!bookToken()) { wrap.innerHTML = "<p class='admin-note'>Unlock the <b>Cleaning bookings</b> tab with your access key first, then come back here.</p>"; count.textContent = ""; return; }
+      if (!bookToken()) {
+        count.textContent = "";
+        wrap.innerHTML = `<div class="admin-formcard" style="max-width:480px">
+          <h3>Unlock orders</h3>
+          <p class="admin-note" style="margin-top:0">Paste your admin access key (the <b>BOOKING_ADMIN_TOKEN</b> value in Netlify → Site configuration → Environment variables). You only need to do this once on each device.</p>
+          <div class="field"><label>Access key</label><input id="ordKeyInput" type="password" autocomplete="off" onkeydown="if(event.key==='Enter')unlockOrders()"></div>
+          <button class="btn btn--dark btn--sm" onclick="unlockOrders()">Unlock</button>
+          <div id="ordKeyMsg" style="font-size:.86rem;margin-top:10px"></div>
+        </div>`;
+        return;
+      }
       wrap.innerHTML = "<p class='admin-note'>Loading orders…</p>";
       let j;
       try {
         const res = await fetch(ORD_FN, { headers: { "x-admin-token": bookToken() } });
         j = await res.json();
+        if (res.status === 401) { try { localStorage.removeItem("shd_book_token"); } catch (e) {} loadOrders(); setTimeout(() => { const m = document.getElementById("ordKeyMsg"); if (m) { m.style.color = "var(--rose-deep)"; m.textContent = "That key didn't match. Check the BOOKING_ADMIN_TOKEN value in Netlify and try again."; } }, 0); return; }
+        if (j.error === "not_configured") throw new Error("The admin key isn't set up yet. In Netlify, add an environment variable named BOOKING_ADMIN_TOKEN (any long password), redeploy, then unlock here with the same value.");
         if (!res.ok || !j.ok) throw new Error(j.error || "Couldn't load orders");
       } catch (e) { wrap.innerHTML = "<p class='admin-note' style='color:var(--rose-deep)'>" + esc(e.message) + "</p>"; return; }
       _ordRows = j.orders || [];
@@ -429,6 +441,14 @@
         document.getElementById("ordOffers" + i).innerHTML = offersHtml(o.offers);
         document.getElementById("ordOfferForm" + i).hidden = true;
       } catch (e) { out.style.color = "var(--rose-deep)"; out.textContent = e.message; }
+    }
+
+    function unlockOrders() {
+      const v = (document.getElementById("ordKeyInput").value || "").trim();
+      const m = document.getElementById("ordKeyMsg");
+      if (!v) { m.style.color = "var(--rose-deep)"; m.textContent = "Paste your access key first."; return; }
+      try { localStorage.setItem("shd_book_token", v); } catch (e) {}
+      loadOrders();
     }
 
     async function saveOrder(i) {
