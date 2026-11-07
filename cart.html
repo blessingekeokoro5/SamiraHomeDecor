@@ -218,7 +218,10 @@
 
     function applyCoupon() {
       const val = (document.getElementById("couponInput").value || "").trim().toUpperCase();
-      if (val === "WELCOME10") { setVoucher(WELCOME_VOUCHER); showToast("10% off your first order applied 🎉"); }
+      if (val === "WELCOME10") {
+        if (typeof isMember === "function" && isMember()) { setVoucher(WELCOME_VOUCHER); showToast("10% off your first order applied 🎉"); }
+        else { showToast("WELCOME10 is for members. Sign in or join free to use it on your first order"); setTimeout(function () { location.href = "account.html"; }, 1800); }
+      }
       else if (val) { showToast("Sorry, that code isn't valid"); }
       renderCartPage();
     }

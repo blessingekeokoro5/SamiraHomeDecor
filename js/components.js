@@ -892,7 +892,7 @@ function buildNewsletterPopup() {
         <div class="nl-thanks" id="nlThanks" hidden>
           <h2>Thank you for subscribing</h2>
           <div class="nl-rule"></div>
-          <p>An email is on its way with your <strong>10% off</strong> code — we've also applied it to your cart automatically.</p>
+          <p>An email is on its way with your <strong>10% off</strong> code. Sign in or join free as a member to use it on your first order.</p>
           <p class="nl-happy">Happy shopping!</p>
           <button type="button" class="nl-shop" onclick="location.href='shop.html'">Start shopping</button>
         </div>
@@ -926,8 +926,6 @@ function initNewsletterPopup() {
     const email = (new FormData(form).get("email") || "").toString().trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { st.className = "nl-status err"; st.textContent = "Please enter a valid email address."; return; }
     st.className = "nl-status"; st.textContent = "Sending your code…";
-    // Apply the 10% off your first order to their cart
-    if (typeof setVoucher === "function" && typeof WELCOME_VOUCHER !== "undefined") setVoucher(WELCOME_VOUCHER);
     try { localStorage.setItem("shd_news", "subscribed"); localStorage.setItem("shd_sub_email", email); } catch (e2) {}
     try {
       await fetch("/.netlify/functions/send-submission", {

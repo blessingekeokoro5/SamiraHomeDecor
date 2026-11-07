@@ -120,7 +120,7 @@ function welcomeHtml(name, code, discountLabel) {
       <div style="display:inline-block;background:${IVORY};border:2px dashed ${GOLD};border-radius:12px;padding:16px 34px;font:bold 26px/1 Georgia,serif;letter-spacing:4px;color:${NAVY}">${esc(code)}</div>
     </div>
     <div style="text-align:center;margin:18px 0">${gBtn(S + "/shop.html", "Claim your discount now")}</div>
-    <p style="color:${TAUPE};font-size:12px;text-align:center;line-height:1.6">Enter <strong>${esc(code)}</strong> in your cart to apply it to your order. Applies to your items (excludes shipping). One use per customer · T&amp;Cs apply.</p>
+    <p style="color:${TAUPE};font-size:12px;text-align:center;line-height:1.6">Sign in or <a href="${S}/account.html" style="color:${NAVY}">join free as a member</a>, then enter <strong>${esc(code)}</strong> in your cart. Members only, first order only. Applies to your items (excludes shipping) · T&amp;Cs apply.</p>
     <!-- subscriber perks -->
     <div style="background:${IVORY};border-radius:14px;padding:18px 22px;margin:22px 0">
       <div style="font:bold 17px Georgia,serif;color:${NAVY};text-align:center;margin-bottom:10px">As a subscriber, you'll also enjoy</div>

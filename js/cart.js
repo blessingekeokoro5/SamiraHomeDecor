@@ -88,7 +88,7 @@ function orderDiscount(sub) {
   try { const c = getCampaign(); if (c.active) { campaignPct = c.percent; campaignLabel = c.label; } } catch (e) {}
   // First-order 10% off (welcome offer); the best single discount applies, they don't stack
   let welcomePct = 0;
-  try { const v = getVoucher(); if (v && v.pct) welcomePct = v.pct; } catch (e) {}
+  try { const v = getVoucher(); if (v && v.pct && isMember()) welcomePct = v.pct; } catch (e) {}  // members only (checked again at payment)
   const pct = Math.max(flashPct, campaignPct, welcomePct);
   let label = "";
   if (pct > 0) {

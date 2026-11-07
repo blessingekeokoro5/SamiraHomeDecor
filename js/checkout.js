@@ -491,6 +491,7 @@ async function startPayment(e) {
         await window.Stripe(cfg.publishableKey).redirectToCheckout({ sessionId: data.id });
         return;
       }
+      if (data.code === "welcome_not_eligible" && typeof setVoucher === "function") { setVoucher(null); renderCheckout(); }
       throw new Error(data.error || "No session returned");
     } catch (err) {
       btn.disabled = false; btn.textContent = `Pay ${(typeof DM_CUR!=="undefined"&&DM_CUR!=="AUD")?moneyAud(t.total)+" (AUD)":money(t.total)} securely →`;

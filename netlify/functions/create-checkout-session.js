@@ -58,18 +58,59 @@ const DEFAULT_ITEM_KG = 0.75;
 const EXPRESS_EXTRA = 150;   // extra charge for Express on gift orders (AUD), keep in step with js/cart.js
 
 /* ---- Discount ceiling ---------------------------------------
-   The largest discount any legitimate shopper can reach: the 20%
-   member rate, the weekly flash sale (10/15/20%), or a live sale
-   campaign. We can't verify membership or the shopper's local
-   flash-sale window from here, so we accept the percentage they
-   ask for but clamp it to this ceiling. */
-function maxDiscountPct() {
-  let pct = 20; // member rate + flash-sale maximum
+   An order gets ONE percentage discount (the best of these):
+     - the weekly flash sale (10/15/20%, a 3-hour window)
+     - a live sale campaign
+     - WELCOME10: 10% off a signed-in member's FIRST order only.
+   The flash sale runs on the shopper's local clock, so we allow it if
+   the window is open anywhere in the world right now. The welcome 10%
+   is only allowed after the member login AND the "no earlier paid
+   order for this email" checks below. */
+const WELCOME_CODE = "WELCOME10";
+const WELCOME_PCT = 10;
+
+// Same deterministic weekly schedule as getFlashSale() in js/components.js.
+function isoWeekKey(d) {
+  const dt = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const dayNum = (dt.getUTCDay() + 6) % 7;
+  dt.setUTCDate(dt.getUTCDate() - dayNum + 3);
+  const firstThu = new Date(Date.UTC(dt.getUTCFullYear(), 0, 4));
+  const week = 1 + Math.round(((dt - firstThu) / 86400000 - 3 + ((firstThu.getUTCDay() + 6) % 7)) / 7);
+  return dt.getUTCFullYear() * 100 + week;
+}
+function hashInt(n) { n = (n ^ 61) ^ (n >>> 16); n = n + (n << 3); n = n ^ (n >>> 4); n = Math.imul(n, 0x27d4eb2d); n = n ^ (n >>> 15); return Math.abs(n); }
+function flashForDate(d) {
+  const h = hashInt(isoWeekKey(d));
+  return { day: h % 7, startHour: 10 + (h % 7), percent: [10, 15, 20][h % 3] };
+}
+// Largest flash-sale % live in any time zone (UTC-12 to UTC+14) right now.
+function flashPctNow(nowMs) {
+  let best = 0;
+  for (let offMin = -12 * 60; offMin <= 14 * 60; offMin += 15) {
+    const local = new Date(nowMs + offMin * 60000); // read with getUTC* = shopper's wall clock
+    const f = flashForDate(local);
+    const hour = local.getUTCHours() + local.getUTCMinutes() / 60;
+    if (local.getUTCDay() === f.day && hour >= f.startHour && hour < f.startHour + 3) best = Math.max(best, f.percent);
+  }
+  return best;
+}
+// Best discount available to ANY shopper right now, without the welcome offer.
+function saleDiscountPct() {
+  let pct = flashPctNow(Date.now());
   const c = CATALOGUE.campaign;
   if (c && c.percent && c.endsAt && Date.now() < new Date(c.endsAt).getTime()) {
     pct = Math.max(pct, Number(c.percent) || 0);
   }
-  return pct;
+  return Math.min(pct, 90);
+}
+
+// Has this email already paid for an order? (Checks Stripe, so it covers
+// guest and member orders alike.) Throws if Stripe can't be reached.
+async function hasPaidOrder(email) {
+  const e = String(email || "").trim().toLowerCase();
+  if (!e) return false;
+  const list = await getStripe().checkout.sessions.list({ customer_details: { email: e }, limit: 100 });
+  return list.data.some((s) => s.payment_status === "paid");
 }
 /* Rewards vouchers live in the shopper's browser, so we can't verify one
    exists — the cap IS the control. Rewards issue $10 and $20 vouchers, so
@@ -368,8 +409,30 @@ exports.handler = async (event) => {
     if (subtotal <= 0) return jsonResponse(400, { error: "Your cart total is empty." });
 
     // 2. Discount: take what was asked for, clamped to what's reachable.
-    const askedPct = Number(body.discountPct) || 0;
-    const pct = Math.min(Math.max(askedPct, 0), maxDiscountPct());
+    //    The welcome 10% only counts for a signed-in member with no earlier paid order.
+    const askedPct = Math.max(Number(body.discountPct) || 0, 0);
+    const salePct = saleDiscountPct();
+    const memberEmail = isMemberBuyer ? String(body.member.email).trim().toLowerCase() : "";
+    const wantsWelcome = String(body.voucherCode || "").toUpperCase() === WELCOME_CODE && askedPct > salePct;
+    let welcomeOk = false;
+    if (wantsWelcome) {
+      if (!isMemberBuyer) {
+        return jsonResponse(400, { code: "welcome_not_eligible", error: "The 10% first-order offer is for members. Please sign in or join free (it takes a minute), then check out again. We've taken it off your order for now." });
+      }
+      let ordered;
+      try {
+        ordered = await hasPaidOrder(memberEmail) ||
+          (customer.email && String(customer.email).trim().toLowerCase() !== memberEmail ? await hasPaidOrder(customer.email) : false);
+      } catch (e) {
+        console.error("Welcome offer order check failed:", e.message);
+        return jsonResponse(503, { error: "We couldn't check your first-order offer just now. Please try again in a moment." });
+      }
+      if (ordered) {
+        return jsonResponse(400, { code: "welcome_not_eligible", error: "The 10% welcome offer is for your first order only, and we can see you've ordered with us before. We've taken it off your order. Thank you for shopping with us again!" });
+      }
+      welcomeOk = true;
+    }
+    const pct = Math.min(askedPct, Math.max(salePct, welcomeOk ? WELCOME_PCT : 0));
     const discount = round2((subtotal * pct) / 100);
 
     // 3. Rewards voucher: clamped, and never more than the order is worth.
@@ -514,6 +577,7 @@ exports.handler = async (event) => {
         discount: String(discount),
         voucher: String(voucher),
         voucher_code: String(body.voucherCode || ""),
+        member: isMemberBuyer ? "yes" : "no",
         ...(/^[A-Z0-9]{8}$/.test(body.ref || "") ? { ref: body.ref } : {}),
         shipping: String(ship.amount),
         // Read back by the webhook to issue the cards once payment succeeds.

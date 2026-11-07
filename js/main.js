@@ -173,9 +173,8 @@ function initForms() {
         localStorage.setItem("shd_sub_email", email);
         localStorage.setItem("shd_news", "subscribed");
       } catch (e2) {}
-      if (typeof setVoucher === "function" && typeof WELCOME_VOUCHER !== "undefined") setVoucher(WELCOME_VOUCHER);
       form.reset();
-      showToast("You're on the list ✦ Your 10% off code is on its way");
+      showToast("You're on the list ✦ Your 10% off code is on its way (for members, first order)");
       try {
         await fetch("/.netlify/functions/send-submission", {
           method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
