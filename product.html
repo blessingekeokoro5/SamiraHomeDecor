@@ -259,7 +259,7 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=74"></script>
+  <script src="js/data.js?v=75"></script>
   <script src="js/ai-overviews.js?v=4"></script>
   <script src="js/components.js?v=88"></script>
   <script src="js/cart.js?v=32"></script>
@@ -732,6 +732,9 @@
                 : p.lead
                 ? `<span style="display:inline-block;font-size:.78rem;font-weight:600;color:#8a7f77;background:#F4EFE6;padding:5px 12px;border-radius:20px">⏳ Made to order</span> <span style="color:var(--body)">Ships in <strong style="color:var(--ink)">${p.lead}</strong></span>`
                 : `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">✓ Ready to ship</span> <span style="color:var(--body)">Dispatched in <strong style="color:var(--ink)">${p.dispatch || "1 to 2 business days"}</strong>${p.deliveryTime ? `, delivered in <strong style="color:var(--ink)">${p.deliveryTime}</strong>` : ""}</span>`}
+              ${p.price == null || p.cat === "Packaging" ? "" : (p.auOnly
+                ? `<div style="margin-top:8px;font-size:.88rem;color:var(--body)">🇦🇺 <strong style="color:var(--ink)">Ships within Australia only.</strong> Large pieces aren't available for overseas delivery.</div>`
+                : `<div style="margin-top:8px;font-size:.88rem;color:var(--body)">🌏 Also ships to <strong style="color:var(--ink)">New Zealand</strong>, the UK, USA, Canada, Switzerland and Germany. Import duties or taxes may apply.</div>`)}
               ${(!p.lead && p.fastShip) ? `<div style="margin-top:8px;font-size:0.95rem;color:var(--body)">🚚 Get it by <strong style="color:var(--ink)">${(typeof estArrival === "function" ? estArrival(6) : "")}</strong></div>` : ""}
             </div>`}
             ${p.price == null ? "" : `<p class="pdp-stock-note" style="margin:0 0 14px;font-size:.84rem;line-height:1.5;color:var(--body);background:#F7F3EC;border-left:3px solid #E0C992;padding:10px 12px;border-radius:6px"><strong style="color:var(--ink)">Please note:</strong> our pieces sell out quickly and supplier delivery times can change. If an item you order is out of stock or can't arrive by the date shown, a customer representative will contact you to discuss a close substitute or a new delivery date. If you're happy with it, we'll go ahead with your order; if not, you'll receive a full refund.</p>`}

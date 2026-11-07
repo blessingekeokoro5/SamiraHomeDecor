@@ -186,7 +186,7 @@ function checkoutTotals() {
 function updateTotalsUI() {
   const ih = document.getElementById("intlHelp");
   if (ih) ih.innerHTML = shipCountry() !== "Australia"
-    ? `<a href="https://wa.me/61451609398" onclick="openCheckoutWA();return false;" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 14px;border-radius:10px;background:#E9F7EF;color:#0B1F3A;text-decoration:none;font-size:.92rem;line-height:1.4"><span style="font-size:1.4rem">💬</span><span><strong>Priority help for overseas customers.</strong> Chat with us directly on WhatsApp for quick assistance with your order.</span></a>`
+    ? `<div style="margin-top:12px;padding:10px 14px;border-radius:10px;background:#F7F3EC;border-left:3px solid #E0C992;font-size:.9rem;color:#0B1F3A;line-height:1.45">🌏 <strong>International orders may incur import duties or taxes, payable by the recipient.</strong> These aren't included in our prices or shipping.</div><a href="https://wa.me/61451609398" onclick="openCheckoutWA();return false;" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 14px;border-radius:10px;background:#E9F7EF;color:#0B1F3A;text-decoration:none;font-size:.92rem;line-height:1.4"><span style="font-size:1.4rem">💬</span><span><strong>Priority help for overseas customers.</strong> Chat with us directly on WhatsApp for quick assistance with your order.</span></a>`
     : "";
   const t = checkoutTotals();
   const shipTxt = t.shipping === 0 ? "Free" : money(t.shipping);
@@ -195,7 +195,7 @@ function updateTotalsUI() {
   const bulky = (t.country !== "Australia") ? bulkyIntlItem() : null;
   window._intlBlocked = !!bulky;
   if (line && bulky) {
-    line.innerHTML = `<span style="color:var(--rose-deep)">⚠️ <strong>${bulky.name}</strong> ${(function(){ const bp = (typeof findProduct === "function") ? findProduct(bulky.id) : null; return (bp && bp.auOnly) ? `can't be shipped to ${t.country}.` : `is too large to ship to ${t.country} (over ${INTL_MAX_KG}kg).`; })()} It can only be delivered within Australia — please remove it for an international order, or <a href="contact.html">contact us</a> for a freight quote.</span>`;
+    line.innerHTML = `<span style="color:var(--rose-deep)">⚠️ <strong>${bulky.name}</strong> ${(function(){ const bp = (typeof findProduct === "function") ? findProduct(bulky.id) : null; return (bp && bp.auOnly) ? `ships within Australia only, so it can't be sent to ${t.country}.` : `is too large to ship to ${t.country} (over ${INTL_MAX_KG}kg).`; })()} It can only be delivered within Australia — please remove it for an international order, or <a href="contact.html">contact us</a> for a freight quote.</span>`;
   } else if (line) line.innerHTML = `<strong>${(window._fulfil === "express" || expressShipFee() > 0) ? "Express" : "Standard"}</strong> · ${shipTxt} · to ${t.country} · calculated for ~${t.weight}kg · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
   const s = document.getElementById("sumShip"); if (s) s.textContent = shipTxt;
   const gr = document.getElementById("sumGiftRow"); if (gr) gr.style.display = t.giftCard ? "flex" : "none";

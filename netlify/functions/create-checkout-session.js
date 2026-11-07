@@ -483,6 +483,9 @@ exports.handler = async (event) => {
       line_items,
       shipping_options,
       phone_number_collection: { enabled: true },
+      ...(shipCountry !== "Australia"
+        ? { custom_text: { submit: { message: "International orders may incur import duties or taxes, payable by the recipient." } } }
+        : {}),
       customer_email: customer.email || undefined,
       shipping_address_collection: { allowed_countries: SHIP_COUNTRIES },
       billing_address_collection: "auto",

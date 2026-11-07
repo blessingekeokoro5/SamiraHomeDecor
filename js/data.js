@@ -16627,6 +16627,30 @@ var DELIVERED_RANGE = { arriveBy: "2027-01-11", perItem: 69 };
   });
 })();
 
+/* Furniture ships within Australia only: overseas freight, duties and
+   returns on large pieces cost more than the sale. Small décor and gifts
+   still ship to every country we serve. (Same furniture test as
+   isFurniture() in js/cart.js — keep the word lists in step.) */
+function isFurnitureProduct(p) {
+  if (!p) return false;
+  if (p.lead) return true;
+  var FURN = /\b(sofas?|couch|lounge suite|modular|daybed|armchairs?|chairs?|stools?|barstools?|bench|ottoman|tables?|desks?|bed frame|bed base|bedhead|headboard|beds?|dressers?|wardrobes?|robes? island|cabinets?|sideboards?|buffets?|console|bookcases?|bookshel(f|ves)|shelving unit|tallboy|chest of drawers|tv unit|entertainment unit|dining set|outdoor set|lounge set|hall ?stand)\b/i;
+  var NOT = /\b(cushion|pillow|cover|throw|blanket|lamp|pendant|chandelier|sconce|blender|kettle|toaster|mixer|runner|sheet|quilt|duvet|mat|rug|vase|candle|diffuser|tray|placemat|napkin|cloth)\b/i;
+  // The last matching word is the item itself: "Cushion Chair" is a chair,
+  // "Chair Cushion" and "Table Lamp" are not furniture.
+  var n = (p.name || "").replace(/\b(bedside|side|coffee|dining|console) tables?\b/ig, "table");
+  var words = n.split(/[^A-Za-z]+/), last = null;
+  for (var i = 0; i < words.length; i++) {
+    var w = words[i]; if (!w) continue;
+    if (NOT.test(w)) last = "not";
+    else if (FURN.test(w) || FURN.test(words.slice(i, i + 2).join(" ")) || FURN.test(words.slice(i, i + 3).join(" "))) last = "furn";
+  }
+  return last === "furn";
+}
+(typeof PRODUCTS !== "undefined" ? PRODUCTS : []).forEach(function (p) {
+  if (p && p.cat !== "Packaging" && isFurnitureProduct(p)) p.auOnly = true;
+});
+
 function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
 
 (function applyBlackFriday() {

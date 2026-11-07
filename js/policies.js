@@ -22,7 +22,7 @@ const FAQ_ITEMS = [
   { q: "Where do you ship from and how long does it take?",
     a: "Your pieces are dispatched directly from our partner warehouses across Australia, straight to your door. Each product page shows its estimated arrival date, and you can follow every step on our Track my order page. Orders are usually processed within 1 to 2 business days. Standard delivery within Australia typically takes 3 to 8 business days depending on your location; larger furniture items may take longer and are quoted at checkout." },
   { q: "Do you ship internationally?",
-    a: "Yes. As well as Australia, we ship to New Zealand, the United Kingdom, Canada, the USA, Switzerland and Germany. International delivery times and costs vary by destination and are calculated at checkout. Any import duties or taxes are the responsibility of the customer." },
+    a: "Yes, for décor, homewares and gifts. As well as Australia, we ship to New Zealand, the United Kingdom, Canada, the USA, Switzerland and Germany. Furniture ships within Australia only. International delivery times and costs vary by destination and are calculated at checkout. Any import duties or taxes are the responsibility of the customer." },
   { q: "How do I track my order?",
     a: "Use our <a href='track.html'>Track Your Order</a> page and enter your order number, email or phone used at checkout. You'll also receive a tracking link by email once your order ships." },
   { q: "What payment methods do you accept?",
@@ -75,7 +75,7 @@ const POLICIES = {
       </ul>
 
       <h3>4. International delivery</h3>
-      <p>As well as Australia, we ship to New Zealand, the United Kingdom, Canada, the USA, Switzerland and Germany. Delivery times and costs are calculated at checkout. <strong>Any customs duties, import taxes or fees are the responsibility of the customer</strong> and are not included in our prices or shipping charges.</p>
+      <p>As well as Australia, we ship décor, homewares and gifts to New Zealand, the United Kingdom, Canada, the USA, Switzerland and Germany. <strong>Furniture ships within Australia only.</strong> Delivery times and costs are calculated at checkout. <strong>Any customs duties, import taxes or fees are the responsibility of the customer</strong> and are not included in our prices or shipping charges.</p>
 
       <h3>5. Gift hamper delivery</h3>
       <p>Gift hampers are delivered Australia-wide by courier. At checkout you can choose <strong>Standard</strong> delivery (5 to 10 business days) or <strong>Express</strong> delivery (3 to 5 business days, an extra $150), and your estimated arrival dates are shown before you pay. Hampers with made-to-order signature packaging need an extra 14 working days. We don't currently offer same-day delivery, pick up or lay-by.</p>
