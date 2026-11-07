@@ -10,8 +10,12 @@
    Optional: SENDER_EMAIL, SENDER_NAME, BUSINESS_EMAIL, SITE_URL
 
    Frontend POSTs:
-     { orderNo, email, name, total, shipping, date,
+     { orderNo, email, name, total, shipping, date, sessionId,
        items:[{ name, qty, price }] }
+
+   When sessionId (the Stripe Checkout session) is sent, the totals,
+   discounts and shipping are read from Stripe itself, so the email
+   always matches exactly what the customer was charged.
    ============================================================ */
 
 const BREVO_API_KEY  = process.env.BREVO_API_KEY || "";
@@ -39,6 +43,33 @@ const esc = (s) => String(s == null ? "" : s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const money = (n) => "$" + Number(n || 0).toFixed(2);
 
+// Read the real charged amounts back from Stripe (never trust browser totals).
+async function stripeTotals(sessionId) {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key || !/^cs_(live|test)_[A-Za-z0-9]+$/.test(sessionId || "")) return null;
+  try {
+    const stripe = require("stripe")(key);
+    const s = await stripe.checkout.sessions.retrieve(sessionId);
+    if (!s || s.payment_status !== "paid") return null;
+    const m = s.metadata || {};
+    return {
+      orderNo: m.order_no || s.client_reference_id || "",
+      email: (s.customer_details && s.customer_details.email) || s.customer_email || "",
+      name: (s.customer_details && s.customer_details.name) || "",
+      subtotal: m.subtotal != null && m.subtotal !== "" ? Number(m.subtotal) : null,
+      discount: Number(m.discount || 0),
+      discountPct: Number(m.discount_pct || 0),
+      discountCode: m.voucher_code || "",
+      voucher: Number(m.voucher || 0),
+      shipping: (s.shipping_cost ? s.shipping_cost.amount_total : 0) / 100,
+      total: (s.amount_total || 0) / 100,
+    };
+  } catch (e) {
+    console.error("Stripe lookup failed:", e.message);
+    return null;
+  }
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod === "OPTIONS") return jsonResponse(200, {});
   if (event.httpMethod !== "POST") return jsonResponse(405, { error: "Method Not Allowed" });
@@ -50,9 +81,35 @@ exports.handler = async (event) => {
       return jsonResponse(400, { error: "A valid email is required." });
     }
     const items = Array.isArray(o.items) ? o.items : [];
-    const shipping = Number(o.shipping || 0);
-    const total = Number(o.total || 0);
-    const sub = items.reduce((s, it) => s + (Number(it.price) || 0) * (Number(it.qty) || 1), 0);
+    const itemsSub = items.reduce((s, it) => s + (Number(it.price) || 0) * (Number(it.qty) || 1), 0);
+    const st = await stripeTotals(o.sessionId);
+    if (st && st.orderNo && o.orderNo && st.orderNo !== o.orderNo) {
+      return jsonResponse(400, { error: "Order does not match payment." });
+    }
+    if (st && !o.name && st.name) o.name = st.name.split(" ")[0];
+
+    const shipping = st ? st.shipping : Number(o.shipping || 0);
+    const total = st ? st.total : Number(o.total || 0);
+    const sub = (st && st.subtotal != null) ? st.subtotal : itemsSub;
+
+    // Discount lines: from Stripe when we have it, otherwise whatever makes
+    // subtotal + shipping add up to the total the customer was shown.
+    const discounts = [];
+    if (st) {
+      if (st.discount > 0) {
+        const label = st.discountPct ? `${st.discountPct}% off` : "Discount";
+        const code = st.discountCode && !st.voucher ? ` (${esc(st.discountCode)})` : "";
+        discounts.push([label + code, st.discount]);
+      }
+      if (st.voucher > 0) discounts.push([`Voucher${st.discountCode ? ` (${esc(st.discountCode)})` : ""}`, st.voucher]);
+      const rest = Math.round((sub + shipping - st.discount - st.voucher - total) * 100) / 100;
+      if (rest >= 0.05) discounts.push(["Gift card / credit", rest]);
+    } else {
+      const diff = Math.round((sub + shipping - total) * 100) / 100;
+      if (diff >= 0.05) discounts.push(["Discounts & savings", diff]);
+    }
+    const discountRows = discounts.map(([label, amt]) => `
+        <tr><td style="padding:4px 0;color:#2E7D4F">${label}</td><td style="padding:4px 0;text-align:right;color:#2E7D4F">−${money(amt)}</td></tr>`).join("");
 
     const rows = items.map((it) => `
       <tr>
@@ -79,9 +136,9 @@ exports.handler = async (event) => {
         <tr><td style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7f77;padding-bottom:6px">Your items</td><td></td></tr>
         ${rows}
         <tr><td style="padding:12px 0 0;color:#5a5049">Subtotal</td><td style="padding:12px 0 0;text-align:right;color:#5a5049">${money(sub)}</td></tr>
+        ${discountRows}
         <tr><td style="padding:4px 0;color:#5a5049">Shipping</td><td style="padding:4px 0;text-align:right;color:#5a5049">${shipping === 0 ? "Free" : money(shipping)}</td></tr>
         <tr><td style="padding:8px 0;font-family:Georgia,serif;font-size:18px;font-weight:bold">Total</td><td style="padding:8px 0;text-align:right;font-family:Georgia,serif;font-size:18px;font-weight:bold">${money(total)}</td></tr>
-        <tr><td colspan="2" style="font-size:11px;color:#8a7f77">Incl. GST ${money(total / 11)}</td></tr>
       </table>` : ""}
 
       <div style="background:#F6EEE8;border-radius:12px;padding:16px 18px;margin-top:20px;font-size:13px;color:#5a5049;line-height:1.6">

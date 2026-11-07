@@ -128,7 +128,8 @@
           orderNo: o.orderNo, email: o.email, name: (acc && acc.name) || "",
           total: (rec && rec.total != null) ? rec.total : o.total,
           shipping: (rec && rec.shipping) || 0,
-          date: rec && rec.date, items: (rec && rec.items) || []
+          date: rec && rec.date, items: (rec && rec.items) || [],
+          sessionId: new URLSearchParams(location.search).get("session_id") || ""
         };
         const endpoint = ((typeof SAMIRA !== "undefined" && SAMIRA.orderEmailEndpoint) || "/.netlify/functions/send-order-confirmation");
         const res = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(payload) });
