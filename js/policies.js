@@ -8,7 +8,7 @@
    Australian legal professional before relying on them.
    ============================================================ */
 
-const POLICY_UPDATED = "14 July 2026";
+const POLICY_UPDATED = "8 November 2026";
 
 const POLICY_ORDER = [
   { slug: "faq",      label: "FAQ" },
@@ -28,7 +28,7 @@ const FAQ_ITEMS = [
   { q: "What payment methods do you accept?",
     a: "We accept Visa, Mastercard, American Express, PayPal, Apple Pay, Google Pay, Afterpay, Klarna and Zip. All prices are in Australian Dollars (AUD) and include GST where applicable." },
   { q: "Can I return an item?",
-    a: "Yes. Your rights under the Australian Consumer Law always apply, and we also offer a 30-day change-of-mind window on eligible items. See our <a href='policy.html?doc=returns'>Returns &amp; Refund Policy</a> for full details." },
+    a: "Yes. Your rights under the Australian Consumer Law always apply, and we also offer change-of-mind returns on eligible items within 30 days of delivery (a 20% restocking fee applies). See our <a href='policy.html?doc=returns'>Returns &amp; Refund Policy</a> for full details." },
   { q: "How long do gift hampers take to arrive?",
     a: "Gift hampers ship Australia-wide. Choose Standard delivery (5 to 10 business days) or Express (3 to 5 business days, an extra $150) at checkout, where you'll also see your estimated arrival dates. Browse our <a href='hampers.html'>Gift Hampers</a>." },
   { q: "How does the Gift Hamper Maker work?",
@@ -93,45 +93,70 @@ const POLICIES = {
 
   returns: {
     title: "Returns & Refund Policy",
-    intro: "Samira Home Decor is committed to your satisfaction and to meeting our obligations under the Australian Consumer Law (ACL).",
+    intro: "We want you to love every Samira Home Decor piece. This policy explains your rights under the Australian Consumer Law (ACL), our optional change-of-mind returns, and how to lodge a return.",
     body: `
       <h3>1. Your rights under the Australian Consumer Law</h3>
-      <p>Our goods and services come with guarantees that cannot be excluded under the Australian Consumer Law. For a <strong>major failure</strong> you are entitled to a replacement or refund, and to compensation for any other reasonably foreseeable loss or damage. For a failure that does not amount to a major failure, you are entitled to have the goods repaired or replaced if the failure can be remedied. These rights are in addition to any change-of-mind policy below.</p>
+      <p>Our products come with guarantees that cannot be excluded under the Australian Consumer Law. You are entitled to a <strong>refund, replacement or repair</strong> if an item has a <strong>major fault</strong>, is significantly different from its description, is unsafe, or has a problem that can't be fixed within a reasonable time. If the fault is <strong>minor</strong>, we may choose to repair or replace the item. Nothing in this policy limits these rights.</p>
 
-      <h3>2. Change of mind</h3>
-      <p>We gladly accept change-of-mind returns on eligible items within <strong>30 days</strong> of delivery, provided the item is:</p>
+      <h3>2. What isn't covered</h3>
+      <p>Our ACL obligations don't extend to problems caused by:</p>
       <ul>
-        <li>unused, in its original condition and original packaging;</li>
-        <li>not an excluded item (see section 4); and</li>
-        <li>accompanied by proof of purchase.</li>
+        <li>normal wear and tear;</li>
+        <li>misuse, accidents, or not following the care instructions;</li>
+        <li>damage that happens after delivery, including when an item is moved to a new location after it was delivered;</li>
+        <li>storing items in places that aren't weatherproof, such as a garage, shed or outdoor area (unless the piece is designed for outdoor use).</li>
       </ul>
-      <p>Change-of-mind return shipping is at the customer's expense, and the original shipping charge is non-refundable. A store credit or refund of the item price is issued once the item is received and inspected.</p>
-      <p><strong>Extended holiday returns:</strong> orders placed between <strong>25 December and 5 January</strong> may be returned within <strong>60 days</strong> of delivery, giving you extra time over the festive season.</p>
-      <p><strong>Exchanges:</strong> instead of a refund, you may exchange an eligible change-of-mind item for a <strong>close substitute</strong> — a product of similar type and value. When you request a return, choose <em>Exchange</em> and tell us which substitute you'd like (our team can suggest comparable pieces). Any difference in price is paid or refunded accordingly.</p>
+      <p>Returns sent back without the original packaging may not be accepted unless the item has a major fault.</p>
 
-      <h3>3. Faulty, damaged or incorrect items</h3>
-      <p>If your item is faulty, damaged on arrival, or not what you ordered, please contact us within 7 days with your order number and photos. We will arrange a repair, replacement or refund in line with the ACL, and we'll cover reasonable return postage for verified faults.</p>
+      <h3>3. Change-of-mind returns</h3>
+      <p>Change-of-mind returns aren't required under the Australian Consumer Law, but we're happy to offer them on eligible items within <strong>30 days of delivery</strong>, on these conditions:</p>
+      <ul>
+        <li><strong>Restocking fee:</strong> a <strong>20% restocking fee</strong> applies to every change-of-mind return, wherever you are in Australia. It's taken off your refund.</li>
+        <li><strong>Condition:</strong> the item must be in as-new condition, with no scratches, marks, stains, damage or changes, and returned with all parts and accessories.</li>
+        <li><strong>Packaging:</strong> the item must be in its original packaging and able to be resealed as new. We can't accept change-of-mind returns without the original packaging or with damaged packaging.</li>
+        <li><strong>Proof of purchase:</strong> please include your order number or receipt.</li>
+        <li><strong>Return shipping:</strong> you arrange and pay for the return delivery. We recommend insuring it in case it's damaged on the way back.</li>
+      </ul>
+      <p><strong>Extended holiday returns:</strong> orders placed between <strong>25 December and 5 January</strong> may be returned for change of mind within <strong>60 days</strong> of delivery (the conditions above still apply).</p>
 
       <h3>4. Items we can't accept for change of mind</h3>
       <ul>
-        <li>Perishable or consumable goods (e.g. food items within hampers);</li>
-        <li>Custom or personalised items, including custom-built gift hampers and personalised cards;</li>
-        <li>Gift cards and vouchers;</li>
-        <li>Items marked final sale or clearance.</li>
+        <li>items marked <strong>Clearance</strong> or <strong>Final Sale</strong>;</li>
+        <li><strong>ex-display</strong> or <strong>seconds</strong> items;</li>
+        <li>items that are <strong>customised, customisable, made to order or special order</strong>;</li>
+        <li><strong>natural stone</strong> pieces (such as marble, travertine and granite);</li>
+        <li>perishable or consumable goods (for example, food in gift hampers);</li>
+        <li>custom-built gift hampers, personalised gifts and cards;</li>
+        <li>gift cards and vouchers.</li>
       </ul>
-      <p>This does not exclude your ACL rights where such an item is faulty.</p>
+      <p>Your rights under the Australian Consumer Law still apply to these items if they are faulty.</p>
 
-      <h3>5. How to request a return</h3>
-      <p>Email <a href="mailto:hello@samirahomedecor.com.au">hello@samirahomedecor.com.au</a>, or chat with us live, with your order number and reason for return. We'll provide return instructions. Please do not send items back before contacting us.</p>
+      <h3>5. Check your order when it arrives</h3>
+      <p>Please check your items carefully as soon as they're delivered. If anything is damaged, faulty or not what you ordered, let us know within <strong>7 days</strong> of delivery, with photos, so we can sort it out quickly.</p>
 
-      <h3>6. Refunds</h3>
-      <p>Approved refunds are made to your original payment method within <strong>5 to 10 business days</strong> of us receiving and inspecting the returned item. Payment processing times may vary by provider.</p>
+      <h3>6. How to lodge a return</h3>
+      <ol>
+        <li><strong>Tell us:</strong> fill in our <a href="returns.html">returns form</a> with your order number, photos and a short description of the issue.</li>
+        <li><strong>We review it:</strong> our team looks at your request and may ask for more details.</li>
+        <li><strong>Return approved:</strong> if your return is approved, you'll receive a <strong>return reference number</strong> and instructions on how and where to send the item.</li>
+        <li><strong>Send it back:</strong> pack the item securely and send it to us. You pay the return shipping unless the item has a major fault.</li>
+      </ol>
+      <p>Please don't send anything back before your return is approved. Items returned without a return reference number can't be accepted.</p>
 
-      <h3>7. Cancellations</h3>
-      <p>If you need to cancel an order, contact us as soon as possible. We can usually cancel before dispatch. Once dispatched, our standard returns process applies.</p>
+      <h3>7. Refunds</h3>
+      <p>Once we've received and checked your return, approved refunds are paid to your original payment method within <strong>10 business days</strong> (less the restocking fee for change-of-mind returns). If you prefer, you can choose a Samira Home Decor gift card instead, with a 5% bonus. Shipping charges aren't refundable unless the return is because of a major fault.</p>
 
-      <h3>8. Custom &amp; personalised gifts</h3>
-      <p>Custom hampers, personalised gifts and gift cards are made to order. Please choose carefully, as change-of-mind returns may not apply to personalised items, though your rights for faulty items under the Australian Consumer Law always apply.</p>
+      <h3>8. Exchanges</h3>
+      <p>You can exchange an eligible item for another piece of the same value (shipping costs not included). If you'd like a close substitute of a different price, we'll let you know the difference to pay or refund.</p>
+
+      <h3>9. Delivery and transit</h3>
+      <p>If you collect your order yourself, or arrange your own courier to collect it, we're not responsible for any loss or damage after it has been collected. This doesn't affect your rights under the Australian Consumer Law.</p>
+
+      <h3>10. Cancellations</h3>
+      <p>If you need to cancel an order, contact us as soon as possible. We can usually cancel before dispatch. Once an order has been dispatched, our returns process applies.</p>
+
+      <h3>11. Contact us</h3>
+      <p>Questions about a return? Email <a href="mailto:hello@samirahomedecor.com.au">hello@samirahomedecor.com.au</a>, call <a href="tel:+61451609398">0451 609 398</a>, or chat with us live.</p>
     `
   },
 
