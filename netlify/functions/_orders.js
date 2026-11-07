@@ -9,6 +9,20 @@
    ============================================================ */
 
 const { getStore } = require("@netlify/blobs");
+const crypto = require("crypto");
+
+// Product names and photos (built from js/data.js on every deploy).
+let PRODUCT_INDEX = {};
+try { PRODUCT_INDEX = require("../../share-index.json"); } catch (e) { /* not bundled */ }
+const SITE_URL = process.env.SITE_URL || "https://samirahomedecor.com.au";
+function productInfo(id) {
+  const p = PRODUCT_INDEX[id];
+  if (!p) return null;
+  // Emails get a JPG through Netlify's image CDN, since some mail apps can't show WebP.
+  const img = p.i ? (/^https?:/.test(p.i) ? p.i : SITE_URL + "/.netlify/images?url=/" + encodeURIComponent(String(p.i).replace(/^\//, "").split("?")[0]).replace(/%2F/g, "/") + "&fm=jpg&w=600") : "";
+  return { id, name: p.n || id, img, price: p.p != null ? Number(p.p) : null };
+}
+const newToken = () => crypto.randomBytes(18).toString("hex");
 
 // Delivery stages, in order. Customer wording lives in js/order-status.js.
 const STAGES = ["placed", "picking", "packed", "shipped", "transit", "arrived", "out", "delivered"];
@@ -91,8 +105,13 @@ async function findOrder(orderNo) {
 
 async function itemsFor(sessionId) {
   try {
-    const li = await stripe().checkout.sessions.listLineItems(sessionId, { limit: 50 });
-    return (li.data || []).map((x) => ({ name: x.price && x.price.product && x.price.product.name ? x.price.product.name : (x.description || "Item"), qty: x.quantity || 1 }));
+    const li = await stripe().checkout.sessions.listLineItems(sessionId, { limit: 50, expand: ["data.price.product"] });
+    return (li.data || []).map((x) => {
+      const prod = x.price && x.price.product && typeof x.price.product === "object" ? x.price.product : null;
+      const sku = (prod && prod.metadata && prod.metadata.sku) || "";
+      const info = sku ? productInfo(sku) : null;
+      return { name: (prod && prod.name) || x.description || "Item", qty: x.quantity || 1, sku, img: info ? info.img : "" };
+    });
   } catch (e) { return []; }
 }
 
@@ -116,4 +135,4 @@ function publicStatus(order, rec) {
   };
 }
 
-module.exports = { STAGES, AU_STATES, openStore, stripe, validOrderNo, stateFromPostcode, fromSession, findOrder, itemsFor, loadStatus, publicStatus };
+module.exports = { productInfo, newToken, SITE_URL, STAGES, AU_STATES, openStore, stripe, validOrderNo, stateFromPostcode, fromSession, findOrder, itemsFor, loadStatus, publicStatus };

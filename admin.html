@@ -337,9 +337,100 @@
             <button class="btn btn--dark btn--sm" onclick="saveOrder(${i})">Save</button>
             <span id="ordMsg${i}" style="font-size:.86rem"></span>
           </div>
+          <div style="border-top:1px solid var(--line);margin-top:14px;padding-top:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+              <strong style="font-size:.92rem">Customer choices</strong>
+              <button class="btn btn--outline btn--sm" onclick="toggleOfferForm(${i})">Email a substitute or delay</button>
+            </div>
+            <div id="ordOffers${i}">${offersHtml(o.offers)}</div>
+            <div id="ordOfferForm${i}" hidden></div>
+          </div>
         </div>`;
       }).join("");
     }
+    /* ---- Customer choice emails (substitute / delay) ---- */
+    function todayYmd() { try { return new Date().toLocaleDateString("en-CA", { timeZone: "Australia/Adelaide" }); } catch (e) { return new Date().toISOString().slice(0, 10); } }
+    function addDays(ymd, n) { const d = new Date(ymd + "T12:00:00"); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); }
+    function niceDate(ymd) { if (!ymd) return ""; try { return new Date(ymd + "T12:00:00").toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short", year: "numeric" }); } catch (e) { return ymd; } }
+    function offersHtml(list) {
+      list = list || [];
+      if (!list.length) return "<p class='admin-note' style='margin:6px 0 0'>No substitute or delay emails sent for this order.</p>";
+      return list.slice().reverse().map(f => {
+        const yes = f.type === "substitute" ? "Send the substitute" : "Happy to wait";
+        const no = f.type === "substitute" ? "Refund this item" : "Cancel and refund";
+        let badge;
+        if (f.status === "accepted") badge = `<span style="color:#1f7a3d;font-weight:700">✓ Customer chose: ${yes}</span>`;
+        else if (f.status === "declined") badge = `<span style="color:#b03a2e;font-weight:700">↩ Customer chose: ${no} (refund in Stripe)</span>`;
+        else if (f.replyBy && todayYmd() > f.replyBy) badge = `<span style="color:#b03a2e;font-weight:700">No reply by ${niceDate(f.replyBy)}: refund due</span>`;
+        else badge = `<span style="color:#b06a00;font-weight:700">Waiting for reply (by ${niceDate(f.replyBy)})</span>`;
+        const what = f.type === "substitute"
+          ? `Substitute: <b>${esc(f.sub && f.sub.name)}</b>${f.sub && f.sub.qty > 1 ? " × " + f.sub.qty : ""} instead of ${esc(f.item && f.item.name)}`
+          : `Delay: <b>${esc(f.item && f.item.name)}</b> now arrives by ${niceDate(f.newDate)}`;
+        return `<div style="background:#F7F3EC;border-radius:8px;padding:9px 12px;margin-top:8px;font-size:.86rem;line-height:1.5">${what}<br>${badge}<br><span class="admin-note" style="margin:0">Sent ${new Date(f.sentAt || f.createdAt).toLocaleString("en-AU")}</span></div>`;
+      }).join("");
+    }
+    async function toggleOfferForm(i) {
+      const o = _ordRows[i], box = document.getElementById("ordOfferForm" + i);
+      if (!box.hidden) { box.hidden = true; return; }
+      box.hidden = false; box.innerHTML = "<p class='admin-note'>Loading the order's items…</p>";
+      let j;
+      try {
+        const res = await fetch(ORD_FN + "?items=" + encodeURIComponent(o.orderNo), { headers: { "x-admin-token": bookToken() } });
+        j = await res.json(); if (!res.ok || !j.ok) throw new Error(j.error || "Couldn't load items");
+      } catch (e) { box.innerHTML = "<p class='admin-note' style='color:var(--rose-deep)'>" + esc(e.message) + "</p>"; return; }
+      o._items = j.items || [];
+      const itemOpts = o._items.map((it, k) => `<option value="${k}">${esc(it.name)}${it.qty > 1 ? " × " + it.qty : ""}</option>`).join("");
+      const prodOpts = (typeof PRODUCTS !== "undefined" ? PRODUCTS : []).filter(p => p && p.price != null && !p.comingSoon && p.cat !== "Packaging")
+        .map(p => `<option value="${esc(p.name)} [${p.id}]"></option>`).join("");
+      const t = todayYmd();
+      box.innerHTML = `<div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:10px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px">
+          <div class="field" style="margin:0"><label>Email type</label><select id="ofType${i}" onchange="offerTypeChanged(${i})"><option value="substitute">Substitute (item sold out)</option><option value="delay">Delivery delay</option></select></div>
+          <div class="field" style="margin:0"><label>Item</label><select id="ofItem${i}">${itemOpts}</select></div>
+          <div class="field" style="margin:0" id="ofSubWrap${i}"><label>Substitute product</label><input id="ofSub${i}" list="ofSubList${i}" placeholder="Start typing a product name"><datalist id="ofSubList${i}">${prodOpts}</datalist></div>
+          <div class="field" style="margin:0" id="ofQtyWrap${i}"><label>Substitute quantity</label><input id="ofQty${i}" type="number" min="1" value="${(o._items[0] && o._items[0].qty) || 1}"></div>
+          <div class="field" style="margin:0"><label id="ofDateLbl${i}">Arrives by (optional)</label><input id="ofDate${i}" type="date" min="${t}"></div>
+          <div class="field" style="margin:0"><label>Customer must reply by</label><input id="ofReply${i}" type="date" min="${t}" value="${addDays(t, 3)}"></div>
+        </div>
+        <div class="field" style="margin:10px 0 0"><label>Extra message (optional)</label><input id="ofMsg${i}" placeholder="e.g. It's the same size and very similar colour."></div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <button class="btn btn--dark btn--sm" onclick="sendOffer(${i})">Send email to customer</button>
+          <span id="ofMsgOut${i}" style="font-size:.86rem"></span>
+        </div>
+      </div>`;
+    }
+    function offerTypeChanged(i) {
+      const sub = document.getElementById("ofType" + i).value === "substitute";
+      document.getElementById("ofSubWrap" + i).hidden = !sub;
+      document.getElementById("ofQtyWrap" + i).hidden = !sub;
+      document.getElementById("ofDateLbl" + i).textContent = sub ? "Arrives by (optional)" : "New delivery date";
+    }
+    async function sendOffer(i) {
+      const o = _ordRows[i], out = document.getElementById("ofMsgOut" + i);
+      const type = document.getElementById("ofType" + i).value;
+      const subTxt = (document.getElementById("ofSub" + i).value || "");
+      const m = subTxt.match(/\[([^\]]+)\]\s*$/);
+      const body = {
+        action: "offer", orderNo: o.orderNo, type,
+        itemIndex: Number(document.getElementById("ofItem" + i).value),
+        subId: m ? m[1] : "", subQty: Number(document.getElementById("ofQty" + i).value) || 1,
+        newDate: document.getElementById("ofDate" + i).value,
+        replyBy: document.getElementById("ofReply" + i).value,
+        message: document.getElementById("ofMsg" + i).value
+      };
+      if (type === "substitute" && !body.subId) { out.style.color = "var(--rose-deep)"; out.textContent = "Pick the substitute from the suggestions list."; return; }
+      if (type === "delay" && !body.newDate) { out.style.color = "var(--rose-deep)"; out.textContent = "Choose the new delivery date."; return; }
+      if (!confirm("Email " + o.email + " now?")) return;
+      out.style.color = ""; out.textContent = "Sending…";
+      try {
+        const res = await fetch(ORD_FN, { method: "POST", headers: { "Content-Type": "application/json", "x-admin-token": bookToken() }, body: JSON.stringify(body) });
+        const j = await res.json(); if (!res.ok || !j.ok) throw new Error(j.error || "Send failed");
+        o.offers = (o.offers || []).concat(j.offer);
+        document.getElementById("ordOffers" + i).innerHTML = offersHtml(o.offers);
+        document.getElementById("ordOfferForm" + i).hidden = true;
+      } catch (e) { out.style.color = "var(--rose-deep)"; out.textContent = e.message; }
+    }
+
     async function saveOrder(i) {
       const o = _ordRows[i]; if (!o) return;
       const msg = document.getElementById("ordMsg" + i);

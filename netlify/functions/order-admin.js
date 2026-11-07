@@ -12,9 +12,15 @@
         Saves the stage the customer sees on the tracking page.
         Moving an order to "out" (Out for delivery) emails the
         customer once.
+
+   GET  ?items=SHD-123456   → { ok, items:[{name, qty, sku, img}], offers:[...] }
+   POST { action:"offer", orderNo, type:"substitute"|"delay", itemIndex,
+          subId?, subQty?, newDate?, oldDate?, replyBy, message?, noExtraCost? }
+        Emails the customer a one-click choice and records it on the order.
    ============================================================ */
 
-const { STAGES, AU_STATES, openStore, stripe, fromSession, findOrder, loadStatus, publicStatus, validOrderNo } = require("./_orders");
+const { STAGES, AU_STATES, openStore, stripe, fromSession, findOrder, itemsFor, loadStatus, publicStatus, validOrderNo, productInfo, newToken } = require("./_orders");
+const { sendCustomerOffer } = require("./_offers");
 
 const TOKEN = process.env.BOOKING_ADMIN_TOKEN || "";
 const BREVO_API_KEY = process.env.BREVO_API_KEY || "";
@@ -80,6 +86,16 @@ exports.handler = async (event) => {
   let store;
   try { store = openStore(); } catch (e) { return json(500, { error: "storage_unavailable" }); }
 
+  // ---- One order's items + customer-choice emails ----
+  const q = event.queryStringParameters || {};
+  if (event.httpMethod === "GET" && q.items) {
+    const orderNo = String(q.items).toUpperCase();
+    const order = await findOrder(orderNo);
+    if (!order) return json(404, { error: "order_not_found" });
+    const rec = (await loadStatus(store, orderNo)) || {};
+    return json(200, { ok: true, items: await itemsFor(order.sessionId), offers: rec.offers || [] });
+  }
+
   // ---- List recent paid website orders with their stage ----
   if (event.httpMethod === "GET") {
     try {
@@ -89,7 +105,9 @@ exports.handler = async (event) => {
       for (const s of paid) {
         const o = fromSession(s);
         if (!validOrderNo(o.orderNo)) continue;
-        o.status = publicStatus(o, await loadStatus(store, o.orderNo));
+        const rec = await loadStatus(store, o.orderNo);
+        o.status = publicStatus(o, rec);
+        o.offers = (rec && Array.isArray(rec.offers)) ? rec.offers : [];
         orders.push(o);
       }
       return json(200, { ok: true, orders, stages: STAGES, states: AU_STATES });
@@ -103,6 +121,7 @@ exports.handler = async (event) => {
 
   let body = {};
   try { body = JSON.parse(event.body || "{}"); } catch (e) {}
+  if (body.action === "offer") return sendOffer(store, body);
   const orderNo = String(body.orderNo || "").trim().toUpperCase();
   const stage = String(body.stage || "");
   if (!validOrderNo(orderNo)) return json(400, { error: "bad_order" });
@@ -121,6 +140,7 @@ exports.handler = async (event) => {
     note: clean(body.note != null ? body.note : prev.note, 300),
     history: Array.isArray(prev.history) ? prev.history.slice(-40) : [],
     notifiedOut: !!prev.notifiedOut,
+    offers: Array.isArray(prev.offers) ? prev.offers : [],
     updatedAt: now,
   };
   if (prev.stage !== stage) rec.history.push({ stage, at: now, location: rec.location });
@@ -134,3 +154,45 @@ exports.handler = async (event) => {
   await store.setJSON(orderNo, rec);
   return json(200, { ok: true, status: publicStatus(order, rec), emailed });
 };
+
+// ---- Send a substitute / delay choice email and record it ----
+const isDate = (v) => /^\d{4}-\d{2}-\d{2}$/.test(String(v || ""));
+async function sendOffer(store, body) {
+  const orderNo = String(body.orderNo || "").trim().toUpperCase();
+  const type = body.type === "substitute" ? "substitute" : body.type === "delay" ? "delay" : "";
+  if (!validOrderNo(orderNo) || !type) return json(400, { error: "bad_request" });
+  if (!isDate(body.replyBy)) return json(400, { error: "Choose a reply-by date." });
+  if (type === "delay" && !isDate(body.newDate)) return json(400, { error: "Choose the new delivery date." });
+  const order = await findOrder(orderNo);
+  if (!order) return json(404, { error: "order_not_found" });
+  if (!order.email) return json(400, { error: "This order has no customer email." });
+  const items = await itemsFor(order.sessionId);
+  const item = items[Number(body.itemIndex) || 0];
+  if (!item) return json(400, { error: "Choose the item." });
+
+  const offer = {
+    id: newToken(), type, status: "pending", createdAt: Date.now(),
+    item: { name: item.name, qty: item.qty, sku: item.sku, img: item.img },
+    replyBy: body.replyBy,
+    newDate: isDate(body.newDate) ? body.newDate : "",
+    oldDate: isDate(body.oldDate) ? body.oldDate : "",
+    message: clean(body.message, 400),
+    noExtraCost: body.noExtraCost !== false,
+  };
+  if (type === "substitute") {
+    const sub = productInfo(String(body.subId || ""));
+    if (!sub) return json(400, { error: "Choose the substitute product from the list." });
+    offer.sub = { id: sub.id, name: sub.name, img: sub.img, qty: Math.max(1, Math.min(99, parseInt(body.subQty, 10) || item.qty)) };
+  }
+
+  let sent = false;
+  try { sent = await sendCustomerOffer(order, offer); } catch (e) { console.error("offer email:", e.message); }
+  if (!sent) return json(502, { error: "The email couldn't be sent. Check the email service (Brevo) and try again." });
+  offer.sentAt = Date.now();
+
+  const rec = (await loadStatus(store, orderNo)) || { stage: "picking", history: [] };
+  rec.offers = (Array.isArray(rec.offers) ? rec.offers : []).concat(offer).slice(-20);
+  rec.updatedAt = Date.now();
+  await store.setJSON(orderNo, rec);
+  return json(200, { ok: true, offer });
+}
