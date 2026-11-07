@@ -75,6 +75,7 @@
 
       <div class="admin-tabs" id="adminTabs">
         <button class="active" data-tab="base">Customer base</button>
+        <button data-tab="orders">Orders</button>
         <button data-tab="bookings">Cleaning bookings</button>
         <button data-tab="referrals">Referrals</button>
         <button data-tab="forms">Client forms</button>
@@ -94,6 +95,16 @@
           <button class="btn btn--outline btn--sm" onclick="clearDB()" style="color:var(--rose-deep)">Clear all</button>
         </div>
         <div id="dbTableWrap"></div>
+      </div>
+
+      <!-- Orders: delivery stage customers see on Track my order -->
+      <div id="tabOrders" hidden>
+        <div class="admin-note">Paid website orders. The stage you set here is exactly what the customer sees on <b>Track my order</b> and in their account. New orders start at <b>Currently picking</b>. Moving an order to <b>Out for delivery</b> emails the customer once. Uses the same access key as Cleaning bookings.</div>
+        <div class="admin-toolbar">
+          <span class="admin-count" id="ordCount"></span>
+          <button class="btn btn--outline btn--sm" onclick="loadOrders()">Refresh</button>
+        </div>
+        <div id="ordWrap"></div>
       </div>
 
       <!-- Cleaning bookings -->
@@ -271,6 +282,7 @@
       const tab = btn.dataset.tab;
       document.getElementById("tabBase").hidden = tab !== "base";
       document.getElementById("tabBookings").hidden = tab !== "bookings";
+      document.getElementById("tabOrders").hidden = tab !== "orders";
       document.getElementById("tabReferrals").hidden = tab !== "referrals";
       document.getElementById("tabForms").hidden = tab !== "forms";
       document.getElementById("tabEmpforms").hidden = tab !== "empforms";
@@ -278,7 +290,76 @@
       document.getElementById("tabSettings").hidden = tab !== "settings";
       if (tab === "bookings") initBookings();
       if (tab === "referrals") loadReferrals();
+      if (tab === "orders") loadOrders();
     });
+
+    /* ===== Orders (delivery stages) ===== */
+    const ORD_FN = "/.netlify/functions/order-admin";
+    const ORD_STAGES = [
+      ["placed", "Order placed"], ["picking", "Currently picking"], ["packed", "Packed with care & dispatched"],
+      ["shipped", "Shipped (handed to courier)"], ["transit", "In transit to customer's state"],
+      ["arrived", "Arrived at customer's state terminal"], ["out", "Out for delivery (emails customer)"], ["delivered", "Delivered"]
+    ];
+    const ORD_STATES = ["ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"];
+    let _ordRows = [];
+    async function loadOrders() {
+      const wrap = document.getElementById("ordWrap"), count = document.getElementById("ordCount");
+      if (!bookToken()) { wrap.innerHTML = "<p class='admin-note'>Unlock the <b>Cleaning bookings</b> tab with your access key first, then come back here.</p>"; count.textContent = ""; return; }
+      wrap.innerHTML = "<p class='admin-note'>Loading orders…</p>";
+      let j;
+      try {
+        const res = await fetch(ORD_FN, { headers: { "x-admin-token": bookToken() } });
+        j = await res.json();
+        if (!res.ok || !j.ok) throw new Error(j.error || "Couldn't load orders");
+      } catch (e) { wrap.innerHTML = "<p class='admin-note' style='color:var(--rose-deep)'>" + esc(e.message) + "</p>"; return; }
+      _ordRows = j.orders || [];
+      count.textContent = _ordRows.length + (_ordRows.length === 1 ? " order" : " orders");
+      if (!_ordRows.length) { wrap.innerHTML = "<p class='admin-note'>No paid website orders yet.</p>"; return; }
+      wrap.innerHTML = _ordRows.map((o, i) => {
+        const st = o.status || {};
+        const stageOpts = ORD_STAGES.map(([k, t]) => `<option value="${k}" ${st.stage === k ? "selected" : ""}>${t}</option>`).join("");
+        const loc = st.location || o.state || "";
+        const locOpts = ORD_STATES.map(x => `<option ${loc === x ? "selected" : ""}>${x}</option>`).join("");
+        return `<div class="admin-formcard" style="margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+            <div><strong>${esc(o.orderNo)}</strong> · ${esc(o.name)} · $${Number(o.total).toFixed(2)}<br>
+              <span class="admin-note" style="margin:0">${esc(o.suburb)} ${esc(o.state)} ${esc(o.postcode)} · ${esc(o.email)} · ${new Date(o.placedAt).toLocaleDateString("en-AU")}</span></div>
+            <a class="btn btn--outline btn--sm" href="track.html?order=${encodeURIComponent(o.orderNo)}" target="_blank" rel="noopener">View as customer</a>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:10px">
+            <div class="field" style="margin:0"><label>Stage</label><select id="ordStage${i}">${stageOpts}</select></div>
+            <div class="field" style="margin:0"><label>Customer location</label><select id="ordLoc${i}">${locOpts}</select></div>
+            <div class="field" style="margin:0"><label>Courier (optional)</label><input id="ordCourier${i}" value="${esc(st.courier)}" placeholder="e.g. Aramex"></div>
+            <div class="field" style="margin:0"><label>Tracking # (optional)</label><input id="ordTrack${i}" value="${esc(st.trackingNo)}"></div>
+          </div>
+          <div class="field" style="margin:10px 0 0"><label>Note to customer (optional)</label><input id="ordNote${i}" value="${esc(st.note)}" placeholder="Shown on their tracking page"></div>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+            <button class="btn btn--dark btn--sm" onclick="saveOrder(${i})">Save</button>
+            <span id="ordMsg${i}" style="font-size:.86rem"></span>
+          </div>
+        </div>`;
+      }).join("");
+    }
+    async function saveOrder(i) {
+      const o = _ordRows[i]; if (!o) return;
+      const msg = document.getElementById("ordMsg" + i);
+      const stage = document.getElementById("ordStage" + i).value;
+      if (stage === "out" && !(o.status && o.status.stage === "out") && !confirm("This emails " + o.email + " to say their order is out for delivery. Continue?")) return;
+      msg.style.color = ""; msg.textContent = "Saving…";
+      try {
+        const res = await fetch(ORD_FN, { method: "POST", headers: { "Content-Type": "application/json", "x-admin-token": bookToken() }, body: JSON.stringify({
+          orderNo: o.orderNo, stage,
+          location: document.getElementById("ordLoc" + i).value,
+          courier: document.getElementById("ordCourier" + i).value,
+          trackingNo: document.getElementById("ordTrack" + i).value,
+          note: document.getElementById("ordNote" + i).value
+        }) });
+        const j = await res.json();
+        if (!res.ok || !j.ok) throw new Error(j.error || "Save failed");
+        o.status = j.status;
+        msg.style.color = "#1f7a3d"; msg.textContent = "Saved" + (j.emailed ? " · customer emailed" : "");
+      } catch (e) { msg.style.color = "var(--rose-deep)"; msg.textContent = e.message; }
+    }
 
     /* ===== Cleaning bookings ===== */
     const BOOK_FN = "/.netlify/functions/booking-admin";

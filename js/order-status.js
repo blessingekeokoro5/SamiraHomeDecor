@@ -1,108 +1,109 @@
 /* ============================================================
-   Samira Home Decor, Live order tracker (picking + shipping history)
+   Samira Home Decor — order tracking display
    ------------------------------------------------------------
-   renderOrderStatus(order, el) draws:
-     • an Estimated-arrival banner
-     • a live "being picked" checklist (green tick when found,
-       moving cart while searching) for the first minutes
-     • a full shipping history timeline with timestamps:
-       placed → picked → packed → left warehouse → in transit →
-       arrived at facility → customs clearance → out for delivery
-       → delivered.
-   Progression is timed from when the order was placed, no
-   backend needed. Only shown to logged-in customers (the account
-   page gates it).
+   Shows the REAL delivery stage of an order, as set by the team
+   in the admin page (Orders tab). Nothing here moves on a timer.
+
+     renderTracking(data, el)       draw a result from order-track
+     fetchTracking(orderNo, contact) → Promise<data>
+     renderOrderStatus(order, el)   account page: looks the order up
+                                    with the signed-in customer's email
    ============================================================ */
 (function () {
-  var MIN = 60 * 1000, HOUR = 60 * MIN, DAY = 24 * HOUR;
-  var PER_ITEM = 25 * 1000, PACK_DELAY = 30 * 1000;
+  var FN = "/.netlify/functions/order-track";
 
-  function placedAt(o) {
-    if (o.placedAt) return o.placedAt;
-    if (o.date) { var t = Date.parse(o.date + "T09:00:00"); if (!isNaN(t)) return t; }
-    return Date.now();
-  }
-  function fmtDate(d) { return d.toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short" }); }
-  function fmtTime(d) { return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }); }
+  // Timeline styles, added once so every page that shows tracking matches.
+  (function addStyles() {
+    if (typeof document === "undefined" || document.getElementById("trackStyles")) return;
+    var css = ".tl{list-style:none;padding:0;margin:22px 0 0}.tl li{position:relative;padding:0 0 26px 40px}" +
+      ".tl li::before{content:'';position:absolute;left:11px;top:22px;bottom:-4px;width:2px;background:var(--line,#E8DCC8)}.tl li:last-child::before{display:none}" +
+      ".tl .dot{position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;background:#fff;border:2px solid var(--line,#E8DCC8);display:grid;place-items:center;font-size:.8rem;color:var(--muted,#8a7f77)}" +
+      ".tl li.done .dot{background:var(--forest,#2E5E4E);border-color:var(--forest,#2E5E4E);color:#fff}" +
+      ".tl li.current .dot{background:#C6A15B;border-color:#C6A15B;color:#fff;box-shadow:0 0 0 4px rgba(198,161,91,.22)}" +
+      ".tl h4{margin:0 0 3px;font-size:1rem;color:var(--muted,#8a7f77);font-weight:600}.tl li.done h4,.tl li.current h4{color:var(--ink,#0B1F3A)}" +
+      ".tl small{color:var(--muted,#8a7f77);font-size:.86rem;line-height:1.5;display:block}" +
+      ".track-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:4px 0 8px}" +
+      ".track-stat{background:var(--cream,#F7F3EC);border:1px solid var(--line,#E8DCC8);border-radius:10px;padding:12px 14px}" +
+      ".track-stat .l{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#8a7f77)}.track-stat .v{font-weight:600;color:var(--ink,#0B1F3A);margin-top:3px}";
+    var tag = document.createElement("style"); tag.id = "trackStyles"; tag.textContent = css;
+    (document.head || document.documentElement).appendChild(tag);
+  })();
 
-  function timeline(o) {
-    var start = placedAt(o);
-    var itemCount = (o.items || []).filter(Boolean).length || 1;
-    var packedOff = itemCount * PER_ITEM + PACK_DELAY;
+  function steps(loc) {
+    var at = loc ? " " + loc : "";
     return [
-      { label: "Order placed",               detail: "We've received your order.",                off: 0 },
-      { label: "Being picked",               detail: "Our team is collecting your items.",        off: 20 * 1000 },
-      { label: "Packed & ready to ship",     detail: "Carefully packed and labelled.",            off: packedOff },
-      { label: "Left the warehouse",         detail: "Handed to the courier for dispatch.",       off: 1 * DAY },
-      { label: "In transit",                 detail: "On the move toward your city.",             off: 1 * DAY + 8 * HOUR },
-      { label: "Arrived at delivery facility", detail: "Scanned in at the local sorting hub.",    off: 2 * DAY },
-      { label: "Customs clearance",          detail: "Processing through customs.",               off: 2 * DAY + 12 * HOUR },
-      { label: "Out for delivery",           detail: "With your driver today.",                   off: 3 * DAY + 2 * HOUR },
-      { label: "Delivered",                  detail: "Left at your delivery address.",            off: 4 * DAY }
-    ].map(function (e) { return { label: e.label, detail: e.detail, time: new Date(start + e.off) }; });
+      { key: "placed",    title: "Order placed",                  done: "We received your order and payment." },
+      { key: "picking",   title: "Currently picking",             done: "We're picking your items. If an item is out of stock, someone from our team will reach out within 2 business days." },
+      { key: "packed",    title: "Packed with care & dispatched", done: "Your pieces are packed and on their way to the courier." },
+      { key: "shipped",   title: "Shipped",                       done: "Handed to the courier." },
+      { key: "transit",   title: "In transit" + (loc ? " to " + loc : ""), done: "On its way to your location." },
+      { key: "arrived",   title: "Arrived" + (loc ? " in " + loc : ""),    done: "At the" + at + " terminal and handed to a local dispatcher." },
+      { key: "out",       title: "Out for delivery",              done: "With your local driver. We've sent you a message.", pending: "We'll send you a message once it's out for delivery." },
+      { key: "delivered", title: "Delivered",                     done: "Dropped off at your address. Enjoy!" }
+    ];
   }
 
-  var TICK = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
-  var CART = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.4 12.4a1.5 1.5 0 0 0 1.5 1.2h8.2a1.5 1.5 0 0 0 1.5-1.2L22 7H6"/></svg>';
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function fmt(ts) {
+    var d = new Date(ts);
+    try { return d.toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short" }) + " · " + d.toLocaleTimeString("en-AU", { hour: "numeric", minute: "2-digit" }); }
+    catch (e) { return d.toDateString(); }
+  }
 
-  window.renderOrderStatus = function (order, el) {
+  window.fetchTracking = function (orderNo, contact) {
+    return fetch(FN, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ orderNo: orderNo, contact: contact }) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok || !j.ok) throw new Error(j.error || "Tracking isn't available right now."); return j; }); });
+  };
+
+  window.renderTracking = function (data, el, opts) {
     if (!el) return;
-    if (el._otimer) { clearInterval(el._otimer); el._otimer = null; }
-    var now = Date.now();
-    var events = timeline(order);
-    var packedTime = events[2].time.getTime();
-    var deliveredTime = events[8].time.getTime();
-    var outForDelivery = events[7].time;
+    opts = opts || {};
+    var st = data.status || {}, o = data.order || {};
+    var loc = st.location || o.state || "";
+    var list = steps(loc);
+    var cur = Math.max(0, list.findIndex(function (s) { return s.key === st.stage; }));
+    var delivered = st.stage === "delivered";
+    var when = {};
+    (st.history || []).forEach(function (h) { when[h.stage] = h.at; });
+    when.placed = when.placed || o.placedAt;
 
-    // current step = last event whose time has passed
-    var current = 0;
-    events.forEach(function (e, i) { if (now >= e.time.getTime()) current = i; });
-    var delivered = now >= deliveredTime;
-    var picking = now < packedTime;
+    var where = loc ? (o.suburb ? esc(o.suburb) + ", " : "") + esc(loc) + ", Australia" : "Australia";
+    var stats = '<div class="track-summary">' +
+      '<div class="track-stat"><div class="l">Status</div><div class="v">' + esc(list[cur].title) + '</div></div>' +
+      '<div class="track-stat"><div class="l">Delivering to</div><div class="v">' + where + '</div></div>' +
+      (st.courier ? '<div class="track-stat"><div class="l">Courier</div><div class="v">' + esc(st.courier) + '</div></div>' : "") +
+      (st.trackingNo ? '<div class="track-stat"><div class="l">Tracking #</div><div class="v">' + esc(st.trackingNo) + '</div></div>' : "") +
+      '</div>';
 
-    // ---- Estimated arrival banner ----
-    var eta;
-    if (delivered) eta = "Delivered on " + fmtDate(events[8].time);
-    else if (now >= outForDelivery.getTime()) eta = "Estimated arrival today, from " + fmtTime(outForDelivery);
-    else eta = "Estimated arrival " + fmtDate(events[8].time) + ", from " + fmtTime(outForDelivery);
-    var etaBanner = '<div class="ostat-eta">📍 <span>' + eta + '</span></div>';
+    var tl = '<ul class="tl">' + list.map(function (s, i) {
+      var cls = i < cur || delivered ? "done" : (i === cur ? "current" : "");
+      var mark = (i < cur || delivered) ? "✓" : (i === cur ? "●" : (i + 1));
+      var text = i <= cur ? s.done : (s.pending || "Pending");
+      var t = (i <= cur && when[s.key]) ? '<div style="font-size:.78rem;color:var(--muted);margin-top:2px">' + fmt(when[s.key]) + '</div>' : "";
+      return '<li class="' + cls + '"><span class="dot">' + mark + '</span><h4>' + esc(s.title) + '</h4><small>' + esc(text) + '</small>' + t + '</li>';
+    }).join("") + '</ul>';
 
-    // ---- Live picking checklist (only while still picking) ----
-    var pickingHtml = "";
-    if (picking) {
-      var items = (order.items || []).filter(Boolean);
-      var states = items.map(function (it, i) { return { it: it, found: now >= (placedAt(order) + (i + 1) * PER_ITEM) }; });
-      var found = states.filter(function (s) { return s.found; }).length;
-      if (items.length) {
-        pickingHtml = '<div class="ostat-picking"><div class="ostat-picking-h">🛒 Picking your order' + found + ' of ' + items.length + ' found</div><ul class="ostat-items">' +
-          states.map(function (s) {
-            var qty = (s.it.qty && s.it.qty > 1) ? ' <span class="oi-qty">× ' + s.it.qty + '</span>' : "";
-            var icon = s.found ? '<span class="ostat-ic ostat-tick">' + TICK + '</span>' : '<span class="ostat-ic ostat-cart">' + CART + '</span>';
-            var word = s.found ? '<span class="oi-found">Found</span>' : '<span class="oi-search">Searching…</span>';
-            return '<li class="ostat-item ' + (s.found ? "is-found" : "") + '"><span class="oi-name">' + (s.it.name || s.it.id || "Item") + qty + '</span><span class="oi-st">' + icon + word + '</span></li>';
-          }).join("") + '</ul></div>';
-      }
-    }
+    var items = (o.items || []).length ? '<p style="color:var(--muted);margin:0 0 14px;font-size:.92rem">' +
+      o.items.map(function (it) { return esc(it.name) + (it.qty > 1 ? " × " + it.qty : ""); }).join(" · ") + '</p>' : "";
+    var note = st.note ? '<div style="background:#F7F3EC;border-left:3px solid #E0C992;padding:10px 12px;border-radius:6px;margin:10px 0;font-size:.9rem">' + esc(st.note) + '</div>' : "";
 
-    // ---- Shipping history timeline ----
-    var tl = '<ol class="ostat-timeline">' + events.map(function (e, i) {
-      var done = now >= e.time.getTime();
-      var isCurrent = i === current && !delivered;
-      var cls = done ? (isCurrent ? "done current" : "done") : "upcoming";
-      var when = done ? (fmtDate(e.time) + " · " + fmtTime(e.time)) : ("Est. " + fmtDate(e.time) + " · " + fmtTime(e.time));
-      return '<li class="ostat-ev ' + cls + '">' +
-        '<span class="ostat-ev-dot">' + (done ? TICK : "") + '</span>' +
-        '<div class="ostat-ev-body"><div class="ostat-ev-top"><strong>' + e.label + '</strong><span class="ostat-ev-time">' + when + '</span></div>' +
-        '<p class="ostat-ev-detail">' + e.detail + '</p></div></li>';
-    }).join("") + '</ol>';
+    el.innerHTML = (opts.compact ? "" :
+        '<span class="eyebrow">' + (delivered ? "Delivered ✓" : "In progress") + '</span>' +
+        '<h2 style="font-size:1.8rem;margin-bottom:4px">Order ' + esc(o.orderNo) + '</h2>') +
+      items + stats + note + tl;
+  };
 
-    el.innerHTML = '<div class="ostat">' + etaBanner + pickingHtml + tl + '</div>';
-
-    if (picking) {
-      el._otimer = setInterval(function () {
-        if (!document.body.contains(el)) { clearInterval(el._otimer); return; }
-        window.renderOrderStatus(order, el);
-      }, 3000);
-    }
+  // Account page: a signed-in customer's order, looked up with their email.
+  window.renderOrderStatus = function (order, el) {
+    if (!el || !order || !order.orderNo) return;
+    var acc = (typeof getAccount === "function") ? getAccount() : null;
+    var contact = (acc && acc.email) || order.email || "";
+    if (!contact) { el.innerHTML = '<p class="form-note">Sign in to see your order’s progress, or use <a href="track.html?order=' + encodeURIComponent(order.orderNo) + '">Track my order</a>.</p>'; return; }
+    el.innerHTML = '<p class="form-note">Loading your order’s progress…</p>';
+    window.fetchTracking(order.orderNo, contact)
+      .then(function (data) { window.renderTracking(data, el, { compact: true }); })
+      .catch(function (e) {
+        el.innerHTML = '<p class="form-note">' + esc(e.message) + ' You can also use <a href="track.html?order=' + encodeURIComponent(order.orderNo) + '">Track my order</a>.</p>';
+      });
   };
 })();
