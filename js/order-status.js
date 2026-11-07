@@ -33,6 +33,7 @@
     var at = loc ? " " + loc : "";
     return [
       { key: "placed",    title: "Order placed",                  done: "We received your order and payment." },
+      { key: "confirmed", title: "Order confirmed",               done: "Your order is confirmed and has been passed to our team." },
       { key: "picking",   title: "Currently picking",             done: "We're picking your items. If an item is out of stock, we'll email you within 2 business days, usually with a close substitute for you to approve." },
       { key: "packed",    title: "Packed with care & dispatched", done: "Your pieces are packed and on their way to the courier." },
       { key: "shipped",   title: "Shipped",                       done: "Handed to the courier." },
@@ -66,6 +67,7 @@
     var when = {};
     (st.history || []).forEach(function (h) { when[h.stage] = h.at; });
     when.placed = when.placed || o.placedAt;
+    when.confirmed = when.confirmed || when.placed;
 
     var where = loc ? (o.suburb ? esc(o.suburb) + ", " : "") + esc(loc) + ", Australia" : "Australia";
     var stats = '<div class="track-summary">' +

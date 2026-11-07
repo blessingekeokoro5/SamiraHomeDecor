@@ -297,7 +297,7 @@
     /* ===== Orders (delivery stages) ===== */
     const ORD_FN = "/.netlify/functions/order-admin";
     const ORD_STAGES = [
-      ["placed", "Order placed"], ["picking", "Currently picking"], ["packed", "Packed with care & dispatched"],
+      ["placed", "Order placed"], ["confirmed", "Order confirmed"], ["picking", "Currently picking"], ["packed", "Packed with care & dispatched"],
       ["shipped", "Shipped (handed to courier)"], ["transit", "In transit to customer's state"],
       ["arrived", "Arrived at customer's state terminal"], ["out", "Out for delivery (emails customer)"], ["delivered", "Delivered"]
     ];
