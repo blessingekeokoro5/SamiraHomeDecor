@@ -20,7 +20,7 @@ const POLICY_ORDER = [
 
 const FAQ_ITEMS = [
   { q: "Where do you ship from and how long does it take?",
-    a: "All home-décor products are dispatched from our Sydney warehouse. Orders are usually processed within 1 to 2 business days. Standard delivery within Australia typically takes 3 to 8 business days depending on your location; larger furniture items may take longer and are quoted at checkout." },
+    a: "Your pieces are dispatched directly from our partner warehouses across Australia, straight to your door. Each product page shows its estimated arrival date, and you can follow every step on our Track my order page. Orders are usually processed within 1 to 2 business days. Standard delivery within Australia typically takes 3 to 8 business days depending on your location; larger furniture items may take longer and are quoted at checkout." },
   { q: "Do you ship internationally?",
     a: "Yes. As well as Australia, we ship to New Zealand, the United Kingdom, Canada, the USA, Switzerland and Germany. International delivery times and costs vary by destination and are calculated at checkout. Any import duties or taxes are the responsibility of the customer." },
   { q: "How do I track my order?",
@@ -51,10 +51,11 @@ const POLICIES = {
     intro: "This policy explains how we ship, fulfil, deliver and track Samira Home Decor orders. It should be read together with our Terms & Conditions and Returns & Refund Policy.",
     body: `
       <h3>1. Dispatch &amp; processing</h3>
-      <p>All Samira Home Decor home-décor products are shipped from our <strong>Sydney warehouse</strong>. Orders are generally processed and dispatched within <strong>1 to 2 business days</strong> of payment being received and cleared. During sale periods and holidays, processing may take a little longer.</p>
+      <p><strong>Where your order ships from:</strong> Your pieces are dispatched directly from our partner warehouses across Australia, straight to your door. Each product page shows its estimated arrival date, and you can follow every step on our <a href="track.html">Track my order</a> page.</p>
+      <p>Orders are generally processed and dispatched within <strong>1 to 2 business days</strong> of payment being received and cleared. During sale periods and holidays, processing may take a little longer.</p>
 
       <h3>2. Shipping &amp; fulfilment</h3>
-      <p>Once your order is placed, our team picks, packs and fulfils it from our Sydney warehouse with care. Our shipping &amp; fulfilment standards:</p>
+      <p>Once your order is placed, our team and partner warehouses pick, pack and fulfil it with care. Our shipping &amp; fulfilment standards:</p>
       <ul>
         <li><strong>Handling time:</strong> most orders are packed and handed to the carrier within 1 to 2 business days; made-to-order and bulky furniture items may take longer and are noted at checkout.</li>
         <li><strong>Carriers:</strong> we dispatch via trusted carriers including Australia Post and Aramex, and specialist couriers for large or fragile furniture.</li>
