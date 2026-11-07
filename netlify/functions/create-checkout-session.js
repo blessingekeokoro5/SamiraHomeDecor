@@ -246,7 +246,7 @@ function bizDaysUntil(ymd) {
 
 function shippingFor(country, fulfil, lines, afterDiscount) {
   const res = shippingBase(country, fulfil, lines, afterDiscount);
-  // Fixed per-item delivery (Luxo Living): never free, added on top.
+  // Fixed per-item delivery: never free, added on top.
   const fixed = round2(lines.reduce((n, l) => n + (l.shipFee && !l.expressShip ? l.shipFee * l.qty : 0), 0));
   if (fixed > 0) {
     res.amount = round2(res.amount + fixed);

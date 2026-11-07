@@ -139,7 +139,7 @@ function expressOptFee() {
   });
   return fee;
 }
-/* Fixed per-item delivery (Luxo Living), never free. Must match shippingFor() on the server. */
+/* Fixed per-item delivery, never free. Must match shippingFor() on the server. */
 function fixedShipFee() {
   let fee = 0;
   getCart().forEach(function (i) {
