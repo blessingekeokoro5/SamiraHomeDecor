@@ -343,7 +343,7 @@ function buildHeader() {
       </a>
       <form class="header-search" id="headerSearch" role="search">
         <button type="button" class="hs-tag" onclick="location.href='inspire.html'">Get inspired</button>
-        <button type="button" class="hs-tag" onclick="location.href='shop.html'">🎁 Promotions</button>
+        <button type="button" class="hs-tag" onclick="location.href='promotions.html'">🎁 Promotions</button>
         <input type="search" id="headerSearchInput" placeholder="What are you looking for?" aria-label="Search products" autocomplete="off">
         <button type="button" class="hs-icon" id="hsVoice" aria-label="Search by voice" title="Search by voice">${IC.mic}</button>
         <button type="button" class="hs-icon" id="hsCamera" aria-label="Search by photo" title="Search by photo">${IC.camera}</button>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://samirahomedecor.com.au/promotions.html">
+  <title>Promotions &amp; Offers, Samira Home Decor</title>
+  <meta name="description" content="Current home décor and furniture offers at Samira Home Decor: sofa sale days, seasonal sales, member savings, Christmas vouchers and free shipping over $3,500 in Australia.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samira Home Decor">
+  <meta property="og:image" content="https://samirahomedecor.com.au/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://samirahomedecor.com.au/assets/hero.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon-sys.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-sys-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
+  <link rel="stylesheet" href="css/styles.css?v=68">
+  <style>
+    .promo-sec { margin-top: 54px; scroll-margin-top: 120px; }
+    .promo-sec > .eyebrow { display: block; text-align: center; }
+    .promo-sec > h2 { text-align: center; margin: 4px 0 6px; }
+    .promo-sec > .promo-sub { text-align: center; color: var(--muted); max-width: 620px; margin: 0 auto 24px; }
+    .promo-live { background: #14365F; color: #fff; border-radius: 18px; padding: 28px 24px; margin-bottom: 22px; border-bottom: 4px solid #C6A15B; }
+    .promo-live .tag { display: inline-block; background: #C6A15B; color: #fff; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; }
+    .promo-live h3 { color: #fff; font-size: 1.6rem; margin: 10px 0 6px; }
+    .promo-live p { color: #E0C992; margin: 0; }
+    .promo-count { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    .promo-count span { background: rgba(255,255,255,.1); border-radius: 10px; padding: 8px 12px; min-width: 64px; text-align: center; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: #E0C992; }
+    .promo-count b { display: block; color: #fff; font-size: 1.3rem; letter-spacing: 0; }
+    .promo-next { background: #fff; border: 1px dashed #C6A15B; border-radius: 16px; padding: 20px 22px; margin-bottom: 14px; }
+    .promo-next h3 { margin: 0 0 4px; font-size: 1.15rem; }
+    .promo-next p { margin: 0; color: var(--body); }
+    .offer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
+    .offer { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px 22px; display: flex; flex-direction: column; gap: 8px; }
+    .offer .ic { font-size: 1.8rem; }
+    .offer h3 { margin: 0; font-size: 1.2rem; }
+    .offer p { margin: 0; color: var(--body); line-height: 1.55; font-size: .94rem; }
+    .offer .btn { margin-top: auto; align-self: flex-start; }
+    .room-tabs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
+    .room-tabs button { padding: 9px 16px; border: 1px solid var(--line); background: #fff; border-radius: 30px; font: inherit; font-size: .86rem; color: var(--ink); cursor: pointer; }
+    .room-tabs button.active { background: #14365F; color: #fff; border-color: #14365F; }
+    @media (max-width: 640px) { .promo-live { padding: 22px 18px; } .promo-live h3 { font-size: 1.3rem; } }
+  </style>
+</head>
+<body data-page="promotions.html">
+  <div id="site-header"></div>
+
+  <section class="page-banner">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Promotions</div>
+      <span class="eyebrow">🎁 Promotions</span>
+      <h1>Offers to style your home for less</h1>
+      <p>Every sale, member saving and reward running at Samira Home Decor, in one place. Prices update automatically while each offer is on.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:28px">
+    <div class="container">
+
+      <div class="promo-sec" id="now" style="margin-top:0">
+        <span class="eyebrow">On now</span>
+        <h2 id="nowTitle">Today's offers</h2>
+        <p class="promo-sub" id="nowSub"></p>
+        <div id="liveList"></div>
+        <div id="nextList"></div>
+      </div>
+
+      <div class="promo-sec" id="rooms" hidden>
+        <span class="eyebrow">Room deals</span>
+        <h2>On sale now, by room</h2>
+        <p class="promo-sub">Every piece currently reduced, grouped by room.</p>
+        <div class="room-tabs" id="roomTabs"></div>
+        <div class="grid grid-4" id="roomGrid"></div>
+      </div>
+
+      <div class="promo-sec" id="always">
+        <span class="eyebrow">Always on</span>
+        <h2>Savings and rewards all year</h2>
+        <p class="promo-sub">Ways to save every time you shop with us.</p>
+        <div class="offer-grid">
+          <div class="offer"><span class="ic">💝</span><h3>10% off your first order</h3><p>Join free as a member and take 10% off your first order, applied automatically at checkout.</p><a class="btn btn--primary btn--sm" href="account.html">Join free</a></div>
+          <div class="offer"><span class="ic">✦</span><h3>Member prices</h3><p>Members pay the lower member price shown on every piece, charged automatically when signed in.</p><a class="btn btn--outline btn--sm" href="account.html">Sign in or join</a></div>
+          <div class="offer"><span class="ic">🎄</span><h3>Christmas vouchers</h3><p>Shop with us 3 times in a year and earn a $50 Christmas voucher, or a $300 voucher when those 3 orders total $3,500 or more.</p><a class="btn btn--outline btn--sm" href="christmas-vouchers.html">How it works</a></div>
+          <div class="offer"><span class="ic">🚚</span><h3>Free shipping over $3,500</h3><p>Free standard shipping Australia-wide on orders over $3,500. Furniture with a set delivery fee is charged separately.</p><a class="btn btn--outline btn--sm" href="shop.html">Start shopping</a></div>
+          <div class="offer"><span class="ic">🎁</span><h3>Gift hampers</h3><p>Build your own luxury hamper for birthdays, thank-yous and corporate gifting.</p><a class="btn btn--outline btn--sm" href="hampers.html">Build a hamper</a></div>
+          <div class="offer"><span class="ic">🛋️</span><h3>Help styling your space</h3><p>Not sure what goes together? Ask Samira Stylera for instant ideas, or book a consult with our stylists.</p><a class="btn btn--outline btn--sm" href="staging.html#book">Book a consult</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js?v=76"></script>
+  <script src="js/components.js?v=91"></script>
+  <script src="js/cart.js?v=32"></script>
+  <script src="js/main.js?v=17"></script>
+  <script>
+  /* Only offers already built into the site appear here, and each one
+     switches on and off by the same dates the checkout uses. */
+  (function () {
+    function adl(d) { try { return new Date((d || new Date()).toLocaleString("en-US", { timeZone: "Australia/Adelaide" })); } catch (e) { return d || new Date(); } }
+    var now = adl();
+    function endOfDay(d) { var x = new Date(d); x.setHours(23, 59, 59, 0); return x; }
+    function fmtDay(d) { return d.toLocaleDateString("en-AU", { weekday: "long", day: "numeric", month: "long" }); }
+    function countdown(end, id) {
+      function tick() {
+        var el = document.getElementById(id); if (!el) return;
+        var ms = Math.max(0, end - adl()), d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
+        el.innerHTML = (d ? "<span><b>" + d + "</b>days</span>" : "") + "<span><b>" + h + "</b>hrs</span><span><b>" + m + "</b>mins</span><span><b>" + s + "</b>secs</span>";
+      }
+      tick(); setInterval(tick, 1000);
+    }
+    var onSale = PRODUCTS.filter(function (p) { return p && !p.comingSoon && p.was && Number(p.was) > Number(p.price) && p.img; });
+    var live = [], next = [];
+
+    var hw = typeof halloweenOn === "function" && halloweenOn();
+    var bf = typeof blackFridayOn === "function" && blackFridayOn();
+    var sofa = typeof saleOnToday === "function" && saleOnToday() && !hw;
+
+    if (hw) live.push({ tag: "Halloween sale", title: "15% off storewide", text: "Ends " + (typeof halloweenEndLabel === "function" ? halloweenEndLabel() : "soon") + ". The discount is already in every price.", end: endOfDay(new Date(now.getFullYear(), HALLOWEEN.endMonth, HALLOWEEN.endDay)), link: "shop.html" });
+    if (bf) { var r = blackFridayRange(now.getFullYear()); live.push({ tag: "Black Friday → Cyber Monday", title: BLACK_FRIDAY.pct + "% off selected furniture", text: "Through Cyber Monday. The discount is already in the marked prices.", end: r.end, link: "shop.html" }); }
+    if (sofa) live.push({ tag: SALE.label, title: SALE.pct + "% off every sofa today", text: "Today only, ends at midnight (Adelaide time).", end: endOfDay(now), link: "living-room.html" });
+
+    // Coming up: next sofa sale day and this year's Black Friday
+    if (!sofa && SALE.days.length) {
+      var d = new Date(now); for (var i = 1; i <= 7; i++) { d.setDate(d.getDate() + 1); if (SALE.days.indexOf(d.getDay()) !== -1) break; }
+      next.push({ title: "🛋️ Next " + SALE.label + ": " + fmtDay(d), text: SALE.pct + "% off every sofa, every Tuesday, Thursday and Saturday." });
+    }
+    if (!bf && typeof blackFridayRange === "function") {
+      var y = now.getFullYear(), rr = blackFridayRange(y); if (rr.end < now) rr = blackFridayRange(y + 1);
+      next.push({ title: "🛍️ Black Friday: " + fmtDay(rr.start) + " to " + fmtDay(rr.end), text: BLACK_FRIDAY.pct + "% off selected furniture, Black Friday through Cyber Monday." });
+    }
+
+    document.getElementById("nowSub").textContent = live.length ? "These offers are running right now. The savings are already in the prices." : "No limited-time sale is running today. Here's what's coming up, plus the savings available every day.";
+    if (!live.length) document.getElementById("nowTitle").textContent = "Coming up";
+    document.getElementById("liveList").innerHTML = live.map(function (o, i) {
+      return '<div class="promo-live"><span class="tag">' + o.tag + '</span><h3>' + o.title + '</h3><p>' + o.text + '</p><div class="promo-count" id="cd' + i + '"></div>' +
+        '<a class="btn btn--primary btn--sm" style="margin-top:16px" href="' + o.link + '">Shop the sale</a></div>';
+    }).join("");
+    live.forEach(function (o, i) { countdown(o.end, "cd" + i); });
+    document.getElementById("nextList").innerHTML = (live.length && next.length ? '<h3 style="text-align:center;margin:26px 0 12px">Coming up</h3>' : "") +
+      next.map(function (o) { return '<div class="promo-next"><h3>' + o.title + '</h3><p>' + o.text + '</p></div>'; }).join("");
+
+    // Room deals: products reduced right now, grouped by room
+    if (onSale.length) {
+      var rooms = {}; onSale.forEach(function (p) { (rooms[p.cat] = rooms[p.cat] || []).push(p); });
+      var names = Object.keys(rooms).sort(function (a, b) { return rooms[b].length - rooms[a].length; });
+      var tabs = document.getElementById("roomTabs");
+      function show(name) {
+        [].forEach.call(tabs.children, function (b) { b.classList.toggle("active", b.dataset.room === name); });
+        var list = name === "All" ? onSale : rooms[name];
+        document.getElementById("roomGrid").innerHTML = list.slice(0, 24).map(productCard).join("");
+        if (typeof initReveal === "function") initReveal();
+      }
+      tabs.innerHTML = ["All"].concat(names).map(function (n) { return '<button type="button" data-room="' + n + '">' + n + (n === "All" ? "" : " (" + rooms[n].length + ")") + '</button>'; }).join("");
+      tabs.addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) show(b.dataset.room); });
+      show("All");
+      document.getElementById("rooms").hidden = false;
+    }
+    if (typeof initReveal === "function") initReveal();
+  })();
+  </script>
+</body>
+</html>
