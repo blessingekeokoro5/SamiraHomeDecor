@@ -396,17 +396,14 @@ function openPreorderTerms() {
     m.innerHTML = `
       <div style="position:relative;background:#fff;max-width:560px;width:100%;max-height:88vh;overflow:auto;border-radius:14px;padding:30px 26px 26px;box-shadow:0 20px 60px rgba(0,0,0,.25);color:#4B4540;line-height:1.6;font-size:.95rem">
         <button type="button" aria-label="Close" onclick="closePreorderTerms()" style="position:absolute;top:10px;right:12px;background:none;border:0;font-size:1.6rem;line-height:1;cursor:pointer;color:#0B1F3A">&times;</button>
-        <h2 id="preorderTermsTitle" style="font-family:Georgia,serif;color:#0B1F3A;margin:0 0 12px;font-size:1.55rem;line-height:1.25">Pre-Order Information &amp; Delivery Times</h2>
-        <p>Pre-order pieces are made or shipped to order by our suppliers. The expected arrival date we show is based on our suppliers' production and shipping schedules. We work hard to keep it accurate, but it is an estimate, not a guarantee.</p>
-        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">Why might the date change?</h3>
-        <p style="margin:0">Many of our pieces are sourced from overseas, so production changes, freight and shipping delays, port congestion, customs checks or bad weather can sometimes push the arrival date back.</p>
-        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">What we do to avoid delays</h3>
-        <p style="margin:0">We stay in close contact with our suppliers and freight partners, track each order as it moves, and act early if something looks like it may run late.</p>
-        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">We'll keep you updated</h3>
-        <p style="margin:0">If your expected arrival date changes in a meaningful way, we'll email you as soon as we know. If the new date doesn't suit you, or your piece becomes unavailable, we'll offer a close substitute or a full refund. It's your choice.</p>
-        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">Payment</h3>
-        <p style="margin:0">Pre-orders are paid in full at checkout. Your rights under Australian Consumer Law are not affected.</p>
-        <p style="margin:18px 0 0;font-size:.85rem">Questions? <a href="contact.html" style="color:#0B1F3A">Contact our team</a>.</p>
+        <h2 id="preorderTermsTitle" style="font-family:Georgia,serif;color:#0B1F3A;margin:0 0 12px;font-size:1.55rem;line-height:1.25">Pre-Order Information &amp; Delivery Timeframes</h2>
+        <p style="margin:0">The arrival dates shown on our website are estimates, based on our suppliers' production schedules and expected shipping times. We do our best to keep them accurate, but international freight and logistics can sometimes run into delays we don't see coming.</p>
+        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">Why might a pre-order date change?</h3>
+        <p style="margin:0">Because our pieces are sourced from overseas, things like changes in production, shipping hold-ups, busy ports, customs clearance and bad weather can occasionally affect when an order arrives.</p>
+        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">How we keep delays to a minimum</h3>
+        <p style="margin:0">We stay in regular contact with our suppliers and freight partners to track each order through production and shipping, spot possible delays early, and keep incoming orders on schedule wherever we can.</p>
+        <h3 style="color:#0B1F3A;font-size:1rem;margin:16px 0 4px">We'll keep you in the loop</h3>
+        <p style="margin:0">We know how exciting it is to wait for new furniture. If your expected arrival time changes significantly, our team will do our best to let you know as soon as possible.</p>
       </div>`;
     m.addEventListener("click", function (e) { if (e.target === m) closePreorderTerms(); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") closePreorderTerms(); });
