@@ -1808,8 +1808,8 @@ function rotateAnnouncements() {
     setTimeout(() => {
       track.innerHTML = ANNOUNCEMENTS[i];
       track.classList.remove("out");
-    }, 400);
-  }, 3800);
+    }, 500);
+  }, 4500);
 }
 
 /* ---- Nav behaviour: mega-menu + mobile toggle ---- */

@@ -16443,12 +16443,11 @@ const CURATED_HAMPERS = [
 
 
 /* ---- Rotating announcement bar ---- */
-const ANNOUNCE_STEADY = true;
-const ANNOUNCE_DESKTOP = "✦ Free shipping over $3,500, Australia-wide &nbsp;·&nbsp; 🌏 We ship to AU, NZ, UK, USA, Canada, Switzerland &amp; Germany &nbsp;·&nbsp; 🌸 New décor added weekly";
+const ANNOUNCE_STEADY = false;   // false = messages fade in and out one at a time
+const ANNOUNCE_DESKTOP = "✦ Free shipping over $3,500, Australia-wide &nbsp;·&nbsp; 🌸 New décor added weekly";
 const ANNOUNCE_MOBILE = "✦ Free shipping over $3,500 · New décor weekly";
 const ANNOUNCEMENTS = [
   "✦ Free shipping over $3,500, Australia-wide",
-  "🌏 We ship to AU, NZ, UK, USA, Canada, Switzerland &amp; Germany",
   "🌸 New décor finds added weekly",
   "🚚 See your delivery dates at checkout",
   "💝 Join free & get a 10% off your first order",
