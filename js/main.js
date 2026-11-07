@@ -531,7 +531,7 @@ function applyShopFilters(list) {
   // Availability is read LIVE from the dropdown (not persisted) so it never "sticks" and hides a category.
   const stockEl = document.getElementById("shopStock");
   const stock = stockEl ? stockEl.value : "all";
-  if (stock === "ready") out = out.filter(p => !p.lead && p.cat !== "Packaging");
+  if (stock === "ready") out = out.filter(p => !p.lead && !p.arriveBy && p.cat !== "Packaging");
   else if (stock === "made") out = out.filter(p => !!p.lead);
   updateDeliveryNote(out);
   if (v.sort === "price-asc") out.sort((a, b) => (a.price || 0) - (b.price || 0));

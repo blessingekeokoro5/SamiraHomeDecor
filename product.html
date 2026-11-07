@@ -259,11 +259,11 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=71"></script>
+  <script src="js/data.js?v=72"></script>
   <script src="js/ai-overviews.js?v=4"></script>
   <script src="js/components.js?v=88"></script>
-  <script src="js/cart.js?v=31"></script>
-  <script src="js/main.js?v=16"></script>
+  <script src="js/cart.js?v=32"></script>
+  <script src="js/main.js?v=17"></script>
   <script>
     // Category → breadcrumb path (differs per category). Final crumb = the product's type.
     const CAT_TREE = {
@@ -715,6 +715,17 @@
                   <div style="margin-top:8px">Estimated delivery cost: about <strong style="color:var(--ink)">$${Number(p.expressShip).toLocaleString("en-AU")}</strong> per item, added at checkout.</div>
                   <div style="margin-top:6px;font-size:.84rem">Delivery times can't be guaranteed if there are delays beyond our control, but we'll always keep you updated on your delivery's progress.</div>
                   <a class="btn btn--outline" style="margin-top:10px" href="contact.html?subject=${encodeURIComponent("Delivery enquiry: " + p.name)}" onclick="if(typeof openLiveChat==='function'){openLiveChat(this.dataset.msg);return false;}" data-msg="${("Hi Samira Home Decor, I'd like to confirm the final delivery cost and timing for: " + p.name).replace(/"/g, "&quot;")}">💬 Enquire to confirm delivery</a>`
+                : p.shipFee
+                ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">🚚 Delivered to your door</span> <span style="color:var(--body)">${p.arriveBy ? `Arrives by <strong style="color:var(--ink)">${fmtArriveBy(p.arriveBy)}</strong>` : `About 4 weeks, arrives <strong style="color:var(--ink)">${typeof arriveRange === "function" ? arriveRange(p) : ""}</strong>`}</span>
+                  <div class="pdp-delcalc" style="margin-top:12px;padding:12px 14px;border:1px solid #E8DCC8;border-radius:10px;background:#fff">
+                    <div style="font-weight:700;color:var(--ink)">Delivery calculator</div>
+                    <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+                      <input id="dcPost" type="text" inputmode="numeric" maxlength="4" placeholder="Your postcode" aria-label="Postcode" style="flex:1;min-width:120px;padding:10px 12px;border:1px solid #D9CBB3;border-radius:8px;font:inherit" onkeydown="if(event.key==='Enter'){calcDelivery('${p.id}');}">
+                      <button type="button" class="btn btn--outline" onclick="calcDelivery('${p.id}')">Calculate</button>
+                    </div>
+                    <div id="dcOut" style="margin-top:8px;font-size:.92rem;color:var(--body)" aria-live="polite"></div>
+                    <div style="margin-top:6px;font-size:.8rem;color:#8a7f77">$${Number(p.shipFee).toLocaleString("en-AU")} delivery per item, so each extra piece adds $${Number(p.shipFee).toLocaleString("en-AU")}. Delivered within Australia only.</div>
+                  </div>`
                 : p.expressOpt
                 ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">🚚 Standard delivery</span> <span style="color:var(--body)">About 4 weeks, arrives <strong style="color:var(--ink)">${typeof fmtArriveRange === "function" ? fmtArriveRange(p.arriveDays || [28, 33]) : ""}</strong></span>
                   <div style="margin-top:8px">⚡ <strong style="color:var(--ink)">Express available:</strong> arrives <strong style="color:var(--ink)">${typeof fmtArriveRange === "function" ? fmtArriveRange([4, 15]) : ""}</strong> for an extra <strong style="color:var(--ink)">$${Number(p.expressOpt).toLocaleString("en-AU")}</strong> per item. Choose it at checkout.</div>`
@@ -803,7 +814,32 @@
     }
     function scrollRel(dir){ const t = document.getElementById("relatedGrid"); if (t) t.scrollBy({ left: dir * 280, behavior: "smooth" }); }
     function scrollTrack(gid, dir){ const t = document.getElementById(gid); if (t) t.scrollBy({ left: dir * 280, behavior: "smooth" }); }
-    function setPdpQty(d){ pdpQty = Math.max(1, pdpQty + d); document.getElementById("pdpQty").textContent = pdpQty; }
+    function setPdpQty(d){ pdpQty = Math.max(1, pdpQty + d); document.getElementById("pdpQty").textContent = pdpQty; var o = document.getElementById("dcOut"); if (o && o.dataset.id) calcDelivery(o.dataset.id); }
+    /* Delivery calculator (items with a fixed per-item delivery fee) */
+    function auState(pc) {
+      var n = parseInt(pc, 10);
+      if ((n >= 200 && n <= 299) || (n >= 2600 && n <= 2618) || (n >= 2900 && n <= 2920)) return "ACT";
+      if (n >= 800 && n <= 999) return "NT";
+      if (n >= 1000 && n <= 2999) return "NSW";
+      if ((n >= 3000 && n <= 3999) || (n >= 8000 && n <= 8999)) return "VIC";
+      if ((n >= 4000 && n <= 4999) || (n >= 9000 && n <= 9999)) return "QLD";
+      if (n >= 5000 && n <= 5999) return "SA";
+      if (n >= 6000 && n <= 6999) return "WA";
+      if (n >= 7000 && n <= 7999) return "TAS";
+      return null;
+    }
+    function calcDelivery(id) {
+      var p = (typeof findProduct === "function") ? findProduct(id) : null;
+      var out = document.getElementById("dcOut"), inp = document.getElementById("dcPost");
+      if (!p || !out || !inp) return;
+      var pc = (inp.value || "").replace(/\D/g, "");
+      var st = /^\d{4}$/.test(pc) ? auState(pc) : null;
+      if (!st) { out.dataset.id = ""; out.innerHTML = "Please enter a valid 4-digit Australian postcode."; return; }
+      out.dataset.id = id;
+      var fee = p.shipFee * pdpQty;
+      var when = p.arriveBy ? "arrives by <strong style=\"color:var(--ink)\">" + fmtArriveBy(p.arriveBy) + "</strong>" : "arrives " + arriveRange(p);
+      out.innerHTML = "Delivery to " + st + " " + pc + ": <strong style=\"color:var(--ink)\">$" + fee.toLocaleString("en-AU", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "</strong> for " + pdpQty + (pdpQty === 1 ? " item" : " items") + " · " + when;
+    }
 
     /* ============ Furniture viewer tools ============ */
     function findProd(id){ return (typeof PRODUCTS !== "undefined") && PRODUCTS.find(x => x.id === id); }

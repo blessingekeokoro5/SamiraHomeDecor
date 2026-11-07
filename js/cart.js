@@ -308,6 +308,10 @@ function isFurniture(p) {
 const ARRIVE_EXPRESS = [4, 15];   // optional Express on furniture with expressOpt
 function arriveWindow(p) {
   if (p && p.expressOpt && typeof window !== "undefined" && window._fulfil === "express") return ARRIVE_EXPRESS;
+  if (p && p.arriveBy) {
+    const days = Math.max(1, Math.floor((new Date(p.arriveBy + "T23:59:59+10:30") - Date.now()) / 86400000));
+    return [Math.max(1, days - 7), days];
+  }
   if (p && Array.isArray(p.arriveDays) && p.arriveDays.length === 2) return p.arriveDays;
   return isFurniture(p) ? ARRIVE_FURNITURE : ARRIVE_DECOR;
 }
@@ -346,6 +350,12 @@ function cartArriveWindow() {
     if (!w || x[1] > w[1]) w = x;
   });
   return w;
+}
+/* "Saturday 10 January" (long) or "10 Jan" (short) for an arrive-by date */
+function fmtArriveBy(ymd, short) {
+  const d = new Date(ymd + "T12:00:00+10:30");
+  try { return d.toLocaleDateString("en-AU", short ? { day: "numeric", month: "short" } : { weekday: "long", day: "numeric", month: "long", year: "numeric" }); }
+  catch (e) { return ymd; }
 }
 /* Show a "Get it by" line for ready-to-ship furniture */
 function arrivalLine(p) {
@@ -393,7 +403,9 @@ function productCard(p) {
         ${p.dontPay ? `<div class="dont-pay"><span class="dp-tag">Don't Pay</span> <s>${money(p.dontPay)}</s><button class="dp-info" type="button" aria-label="Why?" onclick="showDontPayInfo(event)">ⓘ</button></div>` : ""}
         ${p.memberPrice ? `<div class="member-price">✦ Members ${money(p.memberPrice)}</div>` : ""}
         ${p.freeship ? `<div class="freeship-tag">🚚 Free shipping</div>` : ""}
-        ${p.lead
+        ${p.arriveBy
+          ? `<div style="display:inline-block;font-size:.7rem;font-weight:700;color:#0B1F3A;background:#F4EFE6;padding:3px 9px;border-radius:20px;margin-top:6px" title="Delivered by our supplier">🚚 Arrives by ${fmtArriveBy(p.arriveBy, true)}</div>`
+          : p.lead
           ? `<div style="display:inline-block;font-size:.7rem;font-weight:600;color:#8a7f77;background:#F4EFE6;padding:3px 9px;border-radius:20px;margin-top:6px" title="Made to order">⏳ Made to order · ${p.lead}</div>`
           : `<div style="display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.2px;color:#0B1F3A;background:#E0C992;padding:3px 9px;border-radius:20px;margin-top:6px" title="In stock, ready to ship">✓ Ready to ship · a few days</div>`}
         ${arrivalLine(p)}`}

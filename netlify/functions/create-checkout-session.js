@@ -230,16 +230,41 @@ function resolveLine(raw, member) {
     weight: p.weight != null ? p.weight : DEFAULT_ITEM_KG,
     expressShip: p.expressShip != null ? p.expressShip : null,
     expressOpt: p.expressOpt != null ? p.expressOpt : null,
+    shipFee: p.shipFee != null ? p.shipFee : null,
+    arriveBy: p.arriveBy || null,
+    auOnly: !!p.auOnly,
   };
 }
 
+// Business days from today until a YYYY-MM-DD date (Adelaide), at least 1.
+function bizDaysUntil(ymd) {
+  const end = new Date(ymd + "T23:59:59+10:30");
+  const d = new Date(); let n = 0;
+  while (d < end) { d.setDate(d.getDate() + 1); const g = d.getDay(); if (g !== 0 && g !== 6 && d <= end) n++; }
+  return Math.max(1, n);
+}
+
 function shippingFor(country, fulfil, lines, afterDiscount) {
+  const res = shippingBase(country, fulfil, lines, afterDiscount);
+  // Fixed per-item delivery (Luxo Living): never free, added on top.
+  const fixed = round2(lines.reduce((n, l) => n + (l.shipFee && !l.expressShip ? l.shipFee * l.qty : 0), 0));
+  if (fixed > 0) {
+    res.amount = round2(res.amount + fixed);
+    if (/Free/.test(res.label)) res.label = "Standard delivery";
+  }
+  // The slowest arrive-by date decides when the whole order arrives.
+  const latest = lines.reduce((m, l) => (l.arriveBy ? Math.max(m, bizDaysUntil(l.arriveBy)) : m), 0);
+  if (latest && (!res.days || latest > res.days[1])) res.days = [Math.max(1, latest - 5), latest];
+  return res;
+}
+
+function shippingBase(country, fulfil, lines, afterDiscount) {
 
   const zone = SHIP_ZONES[country] || SHIP_ZONES["Australia"];
   // Express-only items (sofas) carry their own delivery fee per item and
   // are left out of the weight-based quote. Keep in step with js/checkout.js.
   const expressFee = round2(lines.reduce((n, l) => n + (l.expressShip ? l.expressShip * l.qty : 0), 0));
-  const rest = lines.filter((l) => !l.expressShip);
+  const rest = lines.filter((l) => !l.expressShip && !l.shipFee);
   let amount = 0;
   if (rest.length) {
     const kg = round2(Math.max(rest.reduce((n, l) => n + l.weight * l.qty, 0), 0.1));
@@ -323,6 +348,10 @@ exports.handler = async (event) => {
     const INTL_MAX_KG = 20;
     const shipCountry = String(customer.country || "Australia");
     if (shipCountry !== "Australia") {
+      const auOnly = lines.find((l) => l.auOnly);
+      if (auOnly) {
+        return jsonResponse(400, { error: `"${auOnly.name}" can only be delivered within Australia. Please remove it for international orders.` });
+      }
       const tooHeavy = lines.find((l) => l.weight > INTL_MAX_KG);
       if (tooHeavy) {
         return jsonResponse(400, { error: `"${tooHeavy.name}" is too large to ship outside Australia (over ${INTL_MAX_KG}kg). Please remove it for international orders, or contact us for a freight quote.` });
@@ -432,10 +461,16 @@ exports.handler = async (event) => {
           display_name: ship.label,
           ...(ship.days
             ? {
-                delivery_estimate: {
-                  minimum: { unit: "business_day", value: Math.max(1, ship.days[0]) },
-                  maximum: { unit: "business_day", value: ship.days[1] },
-                },
+                // Long waits (e.g. an arrive-by date weeks away) read better in weeks.
+                delivery_estimate: ship.days[1] > 20
+                  ? {
+                      minimum: { unit: "week", value: Math.max(1, Math.floor(ship.days[0] / 5)) },
+                      maximum: { unit: "week", value: Math.ceil(ship.days[1] / 5) },
+                    }
+                  : {
+                      minimum: { unit: "business_day", value: Math.max(1, ship.days[0]) },
+                      maximum: { unit: "business_day", value: ship.days[1] },
+                    },
               }
             : {}),
         },

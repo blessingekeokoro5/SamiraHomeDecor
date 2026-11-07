@@ -16609,6 +16609,24 @@ function blackFridayOn() {
   var r = blackFridayRange(now.getFullYear());
   return now >= r.start && now <= r.end;
 }
+/* Luxo Living range (lxNN): delivered by the supplier, within Australia only.
+   Every piece arrives by the same date and carries a delivery fee per item
+   ($69 each, so more pieces cost more to deliver). Change these two values
+   to update the whole range. After the arrive-by date passes, pieces fall
+   back to the standard furniture estimate (about 4 weeks). */
+var LUXO = { arriveBy: "2027-01-10", perItem: 69 };
+(function applyLuxo() {
+  var until = new Date(LUXO.arriveBy + "T23:59:59+10:30").getTime();
+  (typeof PRODUCTS !== "undefined" ? PRODUCTS : []).forEach(function (p) {
+    if (!p || !/^lx\d+$/.test(p.id || "")) return;
+    p.shipFee = LUXO.perItem;      // fixed delivery fee per item
+    p.auOnly = true;               // supplier delivers within Australia only
+    p.fastShip = false;            // not "ready to ship"
+    delete p.arriveDays;
+    if (Date.now() < until) p.arriveBy = LUXO.arriveBy;
+  });
+})();
+
 function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
 
 (function applyBlackFriday() {

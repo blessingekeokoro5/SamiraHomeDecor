@@ -77,7 +77,10 @@ PRODUCTS.forEach((p) => {
     sizes,
     sizesMember,
     expressShip: num(p.expressShip),             // express-only delivery fee per item (sofas)
-    expressOpt: num(p.expressOpt),               // optional express upgrade fee per item
+    expressOpt: num(p.expressOpt),
+    shipFee: num(p.shipFee),                     // fixed delivery fee per item (Luxo Living)
+    arriveBy: p.arriveBy || null,                // all-items arrive-by date (YYYY-MM-DD)
+    auOnly: !!p.auOnly,                          // delivers within Australia only               // optional express upgrade fee per item
   };
 });
 
