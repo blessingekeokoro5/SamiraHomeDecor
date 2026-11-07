@@ -16614,7 +16614,7 @@ function blackFridayOn() {
    ($69 each, so more pieces cost more to deliver). Change these two values
    to update the whole range. After the arrive-by date passes, pieces fall
    back to the standard furniture estimate (about 4 weeks). */
-var DELIVERED_RANGE = { arriveBy: "2027-01-10", perItem: 69 };
+var DELIVERED_RANGE = { arriveBy: "2027-01-11", perItem: 69 };
 (function applyDeliveredRange() {
   var until = new Date(DELIVERED_RANGE.arriveBy + "T23:59:59+10:30").getTime();
   (typeof PRODUCTS !== "undefined" ? PRODUCTS : []).forEach(function (p) {
