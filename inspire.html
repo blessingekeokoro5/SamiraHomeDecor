@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://samirahomedecor.com.au/inspire.html">
+  <title>Get Inspired, Samira Home Decor</title>
+  <meta name="description" content="Weekly styling tips, this week's edit of décor and furniture, and the pieces shoppers pick most. Fresh home inspiration from Samira Home Decor, renewed every Monday.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samira Home Decor">
+  <meta property="og:image" content="https://samirahomedecor.com.au/assets/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://samirahomedecor.com.au/assets/hero.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon-sys.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-sys-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
+  <link rel="stylesheet" href="css/styles.css?v=68">
+  <style>
+    .insp-week { display: inline-block; margin-top: 14px; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .insp-nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 0 0 8px; }
+    .insp-nav a { padding: 9px 16px; border: 1px solid var(--line); border-radius: 30px; background: #fff; color: var(--ink); font-size: .84rem; text-decoration: none; }
+    .insp-nav a:hover { border-color: #C6A15B; }
+    .insp-sec { margin-top: 56px; scroll-margin-top: 120px; }
+    .insp-sec > h2 { text-align: center; margin: 4px 0 6px; }
+    .insp-sec > .insp-sub { text-align: center; color: var(--muted); max-width: 620px; margin: 0 auto 26px; }
+    .insp-sec > .eyebrow { display: block; text-align: center; }
+    .tip { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 26px 24px; margin-bottom: 26px; }
+    .tip-head { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
+    .tip-num { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; background: #14365F; color: #E0C992; display: grid; place-items: center; font-family: var(--font-display, Georgia, serif); font-size: 1.1rem; }
+    .tip h3 { margin: 2px 0 6px; font-size: 1.3rem; }
+    .tip p { margin: 0; color: var(--body); line-height: 1.6; }
+    .tip .tip-shop { display: inline-block; margin-top: 8px; font-size: .84rem; color: #A9843C; }
+    .insp-cta { margin-top: 60px; text-align: center; background: #14365F; color: #fff; border-radius: 18px; padding: 38px 24px; }
+    .insp-cta h2 { color: #fff; margin: 0 0 8px; }
+    .insp-cta p { color: #E0C992; margin: 0 auto 18px; max-width: 520px; }
+    .insp-cta .btn-row { justify-content: center; }
+    @media (max-width: 640px) { .tip { padding: 20px 16px; } .insp-sec { margin-top: 42px; } }
+  </style>
+</head>
+<body data-page="inspire.html">
+  <div id="site-header"></div>
+
+  <section class="page-banner">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Get inspired</div>
+      <span class="eyebrow">✦ Get inspired</span>
+      <h1>Fresh ideas for a beautiful home</h1>
+      <p>Styling tips from our team, this week's edit of pieces we love, and what other shoppers are choosing. New ideas every Monday.</p>
+      <span class="insp-week" id="inspWeek"></span>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:28px">
+    <div class="container">
+      <nav class="insp-nav" aria-label="On this page">
+        <a href="#tips">Styling tips</a>
+        <a href="#edit">This week's edit</a>
+        <a href="#picks" id="navPicks" hidden>Most picked</a>
+        <a href="#new" id="navNew" hidden>Just landed</a>
+      </nav>
+
+      <div class="insp-sec" id="tips">
+        <span class="eyebrow">This week's styling tips</span>
+        <h2>Three easy ways to refresh your space</h2>
+        <p class="insp-sub">Simple ideas you can try this weekend, with pieces from our range to pull each look together.</p>
+        <div id="tipList"></div>
+      </div>
+
+      <div class="insp-sec" id="edit">
+        <span class="eyebrow">This week's edit</span>
+        <h2>Pieces we're loving right now</h2>
+        <p class="insp-sub">A fresh mix from across the store, hand-picked for the week. Check back Monday for a new edit.</p>
+        <div class="grid grid-4" id="editGrid"></div>
+      </div>
+
+      <div class="insp-sec" id="picks" hidden>
+        <span class="eyebrow">Most picked by shoppers</span>
+        <h2>What other shoppers are choosing</h2>
+        <p class="insp-sub">Based on real orders from the last 90 days, updated weekly.</p>
+        <div class="grid grid-4" id="picksGrid"></div>
+      </div>
+
+      <div class="insp-sec" id="new" hidden>
+        <span class="eyebrow">Just landed</span>
+        <h2>New to the store</h2>
+        <p class="insp-sub">The latest pieces added to our range.</p>
+        <div class="grid grid-4" id="newGrid"></div>
+      </div>
+
+      <div class="insp-cta">
+        <h2>Want ideas for your own space?</h2>
+        <p>Ask Samira Stylera for instant suggestions, or book a consult with our stylists.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="stylist.html">✦ Ask Samira Stylera</a>
+          <a class="btn btn--outline" style="color:#fff;border-color:#E0C992" href="staging.html#book">Book a consult</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js?v=76"></script>
+  <script src="js/components.js?v=90"></script>
+  <script src="js/cart.js?v=32"></script>
+  <script src="js/main.js?v=17"></script>
+  <script>
+  /* Everything on this page renews each Monday (Adelaide time): the week
+     number seeds a fixed shuffle, so every shopper sees the same picks
+     all week, and a new set appears the next Monday. */
+  (function () {
+    function adlNow() { try { return new Date(new Date().toLocaleString("en-US", { timeZone: "Australia/Adelaide" })); } catch (e) { return new Date(); } }
+    function isoWeek(d) {
+      var x = new Date(d); x.setHours(0, 0, 0, 0); x.setDate(x.getDate() + 3 - ((x.getDay() + 6) % 7));
+      var w1 = new Date(x.getFullYear(), 0, 4);
+      return { year: x.getFullYear(), week: 1 + Math.round(((x - w1) / 86400000 - 3 + ((w1.getDay() + 6) % 7)) / 7) };
+    }
+    var now = adlNow(), wk = isoWeek(now), SEED = wk.year * 100 + wk.week;
+    // Small seeded random generator (same results for the whole week)
+    function rng(seed) { var s = seed >>> 0; return function () { s = (s + 0x6D2B79F5) >>> 0; var t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+    function shuffle(arr, seed) { var a = arr.slice(), r = rng(seed); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(r() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+    var monday = new Date(now); monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
+    document.getElementById("inspWeek").textContent = "Week of " + monday.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
+
+    var POOL = PRODUCTS.filter(function (p) { return p && !p.comingSoon && p.price != null && p.img && p.cat !== "Packaging"; });
+    function match(re, cats) { return POOL.filter(function (p) { return (!cats || cats.indexOf(p.cat) !== -1) && (!re || re.test(p.name || "")); }); }
+    function cards(list) { return list.map(productCard).join(""); }
+
+    /* ---- Styling tips: 12 in rotation, 3 shown each week ---- */
+    var TIPS = [
+      { t: "Layer three textures", d: "Pair a smooth surface, a soft fabric and something natural, like velvet, linen and timber. Mixing textures makes a room feel finished without adding colour.", re: /velvet|boucl|linen|rattan|timber|jute/i, link: "shop.html" },
+      { t: "Style your coffee table in threes", d: "Group objects in odd numbers at different heights: a tray to anchor, a vase for height and a candle or book stack. Leave space so it never looks cluttered.", re: /tray|vase|candle|bowl|sculpture/i, cats: ["Home Décor"], link: "home-decor.html" },
+      { t: "Warm up with layered lighting", d: "Use a mix of ceiling, table and floor lights at different heights. Soft, low pools of light make evenings feel calm and inviting.", re: /lamp|pendant|light|chandelier/i, link: "home-decor.html" },
+      { t: "Let one statement piece lead", d: "Choose one hero, such as a sculptural chair or a bold coffee table, and keep everything around it quieter so it has room to shine.", re: /coffee table|armchair|accent chair|occasional chair|swivel/i, link: "living-room.html" },
+      { t: "Make the dining table an occasion", d: "Comfortable upholstered chairs and a simple centrepiece turn everyday meals into something special. Keep centrepieces low so guests can see each other.", cats: ["Dining", "Kitchenware"], link: "dining.html" },
+      { t: "Create a hotel-style bedroom", d: "Start with a calm, neutral base, then layer bedside lamps, a soft throw and matching bedside tables for that balanced, restful feel.", cats: ["Bedroom"], link: "bedroom.html" },
+      { t: "Bring the outdoors in", d: "Natural materials like rattan, timber and stone, plus a few green touches, add life and warmth to any corner.", re: /rattan|timber|oak|stone|travertine|planter|wicker/i, link: "shop.html" },
+      { t: "Mirror the light", d: "Hang a mirror across from or beside a window to bounce daylight around the room. It makes small spaces feel bigger and brighter.", re: /mirror/i, link: "home-decor.html" },
+      { t: "Turn your bathroom into a spa", d: "Matching accessories in one finish, soft towels and a scented candle create a calm, everyday retreat.", cats: ["Bathroom"], link: "bathroom.html" },
+      { t: "Set up an outdoor living room", d: "Treat your patio like an extra room: a comfortable lounge setting, a side table within reach and soft lighting for warm evenings.", cats: ["Outdoor"], link: "outdoor.html" },
+      { t: "Work from a space you love", d: "A good desk, a supportive chair and one or two decorative pieces make a home office somewhere you actually want to be.", cats: ["Office"], link: "office.html" },
+      { t: "Finish with scent", d: "A candle or diffuser is the last layer of styling. Choose one signature scent per room for a home that feels considered from the moment you walk in.", re: /candle|diffuser|fragrance|incense/i, link: "shop.html" }
+    ];
+    var weekTips = shuffle(TIPS, SEED).slice(0, 3);
+    document.getElementById("tipList").innerHTML = weekTips.map(function (tip, i) {
+      var items = shuffle(match(tip.re, tip.cats), SEED + i + 1).slice(0, 4);
+      return '<div class="tip"><div class="tip-head"><span class="tip-num">' + (i + 1) + '</span><div><h3>' + tip.t + '</h3><p>' + tip.d + '</p>' +
+        '<a class="tip-shop" href="' + tip.link + '">Shop the look →</a></div></div>' +
+        (items.length ? '<div class="grid grid-4">' + cards(items) + '</div>' : "") + '</div>';
+    }).join("");
+
+    /* ---- This week's edit: 8 pieces, a mix of rooms ---- */
+    var byCat = {};
+    shuffle(POOL, SEED + 99).forEach(function (p) { (byCat[p.cat] = byCat[p.cat] || []).push(p); });
+    var catOrder = shuffle(Object.keys(byCat), SEED + 7), edit = [], round = 0;
+    while (edit.length < 8 && round < 10) { catOrder.forEach(function (c) { if (edit.length < 8 && byCat[c][round]) edit.push(byCat[c][round]); }); round++; }
+    document.getElementById("editGrid").innerHTML = cards(edit);
+
+    /* ---- Just landed: newest additions (last 30 days) ---- */
+    var cutoff = new Date(now); cutoff.setDate(cutoff.getDate() - 30);
+    var fresh = POOL.filter(function (p) { return p.added && new Date(p.added + "T00:00:00") >= cutoff; })
+      .sort(function (a, b) { return a.added < b.added ? 1 : -1; }).slice(0, 8);
+    if (fresh.length >= 4) {
+      document.getElementById("newGrid").innerHTML = cards(fresh);
+      document.getElementById("new").hidden = false; document.getElementById("navNew").hidden = false;
+    }
+
+    /* ---- Most picked: real orders only; shown once there are at least 4 ---- */
+    fetch("/.netlify/functions/popular-picks").then(function (r) { return r.json(); }).then(function (j) {
+      var list = ((j && j.picks) || []).map(function (x) { return typeof findProduct === "function" ? findProduct(x.id) : null; })
+        .filter(function (p) { return p && !p.comingSoon && p.price != null; }).slice(0, 8);
+      if (list.length >= 4) {
+        document.getElementById("picksGrid").innerHTML = cards(list);
+        document.getElementById("picks").hidden = false; document.getElementById("navPicks").hidden = false;
+        if (typeof initReveal === "function") initReveal();
+      }
+    }).catch(function () {});
+
+    if (typeof initReveal === "function") initReveal();
+  })();
+  </script>
+</body>
+</html>

@@ -342,7 +342,7 @@ function buildHeader() {
         <span class="brand-tagline">Beautiful Spaces, Brighter Lives</span>
       </a>
       <form class="header-search" id="headerSearch" role="search">
-        <button type="button" class="hs-tag" onclick="location.href='stylist.html'">Get inspired</button>
+        <button type="button" class="hs-tag" onclick="location.href='inspire.html'">Get inspired</button>
         <button type="button" class="hs-tag" onclick="location.href='shop.html'">🎁 Promotions</button>
         <input type="search" id="headerSearchInput" placeholder="What are you looking for?" aria-label="Search products" autocomplete="off">
         <button type="button" class="hs-icon" id="hsVoice" aria-label="Search by voice" title="Search by voice">${IC.mic}</button>
