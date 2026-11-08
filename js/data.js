@@ -3392,47 +3392,8 @@ const PRODUCTS = [
   {"id":"kl30","deliveryTime":"6 to 12 business days","name":"Beige Travertine Lidded Box, 17.5cm","cat":"Home Décor","room":"Home Décor","price":199,"memberPrice":179,"sku":"SH-11363","tag":"New","ph":"","img":"assets/products/kl30.webp","imgs":["assets/products/kl30.webp","assets/products/kl30-2.webp","assets/products/kl30-3.webp","assets/products/kl30-4.webp","assets/products/kl30-5.webp","assets/products/kl30-6.webp","assets/products/kl30-7.webp","assets/products/kl30-8.webp"],"arriveDays":[9,17],"preorder":false,"desc":"A 17.5cm lidded box in natural beige travertine with soft banding and a round stone knob. Use it for cotton pads, hair ties or small keepsakes.","features":["17.5cm natural travertine","Lid with round stone knob","Each piece varies"],"specs":{"Type":"Home Décor > Decor","Colour":"Beige"}},
 
   /* ===== Ready to ship — batch 7: bedroom, kids, storage, dining, outdoor ===== */
-  { id: "lx75", added: "2026-11-08", name: "Jenna Hollywood Makeup Vanity Table with LED Mirror in White", cat: "Bedroom", room: "Bedroom", price: 824, memberPrice: 742, sku: "SH-11364", tag: "New", ph: "", img: "assets/products/lx75.webp",
-    imgs: ["assets/products/lx75.webp", "assets/products/lx75-2.webp", "assets/products/lx75-3.webp", "assets/products/lx75-4.webp", "assets/products/lx75-5.webp"],
-    fastShip: true, weight: "76.2 kg",
-    desc: "Get ready like you're backstage. The Jenna vanity pairs a generous 100 x 80cm Hollywood mirror ringed with 13 LED bulbs with a white dressing table built for serious storage. Touch the controls to switch between natural, warm and cool light, so your makeup looks right whether you're heading to the office or out for the night. Thirteen drawers keep skincare, brushes and palettes sorted, and the wide tabletop leaves room for your everyday essentials.",
-    features: [
-      "100 x 80cm Hollywood-style mirror with 13 LED bulbs",
-      "Three light settings: natural, warm and cool",
-      "Touch-control brightness",
-      "13 drawers for makeup, skincare and beauty tools",
-      "Generous tabletop surface",
-      "Clean white finish"
-    ],
-    specs: { "Type": "Bedroom > Dressing tables", "Mirror": "100 x 80cm with 13 LED bulbs", "Lighting": "Natural, warm and cool, touch control", "Storage": "13 drawers", "Colour": "White", "Use": "Bedroom or dressing room" } },
 
-  { id: "lx76", added: "2026-11-08", name: "Cornelia Solid Wood Triple Bunk Bed with Storage in White", cat: "Bedroom", room: "Bedroom", price: 1468, memberPrice: 1321, sku: "SH-11365", tag: "New", ph: "", img: "assets/products/lx76.webp",
-    imgs: ["assets/products/lx76.webp", "assets/products/lx76-2.webp", "assets/products/lx76-3.webp", "assets/products/lx76-4.webp"],
-    fastShip: true, weight: "90.5 kg",
-    desc: "Three sleepers, one footprint and plenty of storage. The Cornelia puts a single bunk above a double, built from solid New Zealand pine in a fresh white finish. Full-length guard rails run along the top bunk and a sturdy timber ladder makes climbing up easy, while three large drawers underneath swallow clothes, bedding and toys. The non-toxic, BV-certified coating and compliance with AS/NZS 4220:2010 give you peace of mind in a kids' room.",
-    features: [
-      "Single top bunk over a double bottom bunk, sleeps three",
-      "Solid New Zealand pine frame",
-      "Three large under-bed storage drawers",
-      "Full-length guard rails and solid timber ladder",
-      "BV-certified non-toxic finish",
-      "Meets AS/NZS 4220:2010 bunk bed safety standard",
-      "Fits standard Australian single (15cm) and double (20cm) mattresses"
-    ],
-    specs: { "Type": "Bedroom > Kids beds & bunks > Bunk Beds", "Configuration": "Single over double", "Material": "Solid New Zealand pine", "Storage": "3 under-bed drawers", "Colour": "White", "Standard": "AS/NZS 4220:2010", "Mattress": "Not included" } },
 
-  { id: "lx77", added: "2026-11-08", name: "Antonia Solid Pine Wood Triple Bunk Bed in White", cat: "Bedroom", room: "Bedroom", price: 610, memberPrice: 549, sku: "SH-11366", tag: "New", ph: "", img: "assets/products/lx77.webp",
-    imgs: ["assets/products/lx77.webp", "assets/products/lx77-3.webp", "assets/products/lx77-4.webp", "assets/products/lx77-5.webp"],
-    fastShip: true, weight: "51 kg",
-    desc: "Sleep three in the space of one bed. The Antonia has a double-size bottom bunk and a single-size top bunk on a solid pine frame, finished in crisp white that brightens any kids' room or guest room. Secure guard rails surround the top bunk, and the ladder is reversible so you can set it up on whichever side suits the room.",
-    features: [
-      "Sleeps three: double bottom bunk, single top bunk",
-      "Solid natural pine frame with engineered timber slats",
-      "Safety guard rails on the top bunk",
-      "Reversible ladder for flexible layouts",
-      "Fresh white finish"
-    ],
-    specs: { "Type": "Bedroom > Kids beds & bunks > Bunk Beds", "Configuration": "Single over double", "Material": "Solid pine, engineered timber slats", "Colour": "White", "Mattress": "Not included" } },
 
   { id: "lx78", added: "2026-11-08", name: "Ginnie Double Curved Boucle Cloud Bed Frame in Cream White", cat: "Bedroom", room: "Bedroom", price: 584, memberPrice: 526, sku: "SH-11367", tag: "New", ph: "", img: "assets/products/lx78.webp",
     imgs: ["assets/products/lx78.webp", "assets/products/lx78-2.webp", "assets/products/lx78-3.webp", "assets/products/lx78-4.webp", "assets/products/lx78-5.webp"],
@@ -3447,18 +3408,6 @@ const PRODUCTS = [
     ],
     specs: { "Type": "Bedroom > Bed frames > Double", "Size": "Double", "Upholstery": "Bouclé fabric", "Frame": "Solid timber", "Headboard": "13cm thick, curved", "Colour": "Cream white", "Mattress": "Not included" } },
 
-  { id: "lx79", added: "2026-11-08", name: "Gianna Hollywood LED Mirror Dressing Table in White", cat: "Bedroom", room: "Bedroom", price: 532, memberPrice: 479, sku: "SH-11368", tag: "New", ph: "", img: "assets/products/lx79.webp",
-    imgs: ["assets/products/lx79.webp", "assets/products/lx79-2.webp", "assets/products/lx79-3.webp", "assets/products/lx79-4.webp", "assets/products/lx79-5.webp"],
-    fastShip: true, weight: "59.2 kg",
-    desc: "Everyday glamour in a compact footprint. The Gianna sets a 100 x 80cm Hollywood mirror with 15 dimmable LED bulbs above a matte white dressing table with a tempered glass top. Switch between cool and warm light for flawless makeup, and keep beauty essentials tidy in two roomy drawers.",
-    features: [
-      "100 x 80cm Hollywood mirror with 15 dimmable LED bulbs",
-      "Cool and warm light tones",
-      "Two spacious drawers",
-      "Tempered glass top",
-      "Matte white finish"
-    ],
-    specs: { "Type": "Bedroom > Dressing tables > Makeup Vanity Ottomans", "Mirror": "100 x 80cm with 15 LED bulbs", "Lighting": "Cool and warm, dimmable", "Storage": "2 drawers", "Top": "Tempered glass", "Colour": "Matte white" } },
 
   { id: "lx80", added: "2026-11-08", name: "Lunia Queen Boucle Gas Lift Storage Bed Frame in Cream White", cat: "Bedroom", room: "Bedroom", price: 778, memberPrice: 700, sku: "SH-11369", tag: "New", ph: "", img: "assets/products/lx80.webp",
     imgs: ["assets/products/lx80.webp", "assets/products/lx80-2.webp", "assets/products/lx80-3.webp", "assets/products/lx80-4.webp", "assets/products/lx80-5.webp"],
@@ -3475,32 +3424,7 @@ const PRODUCTS = [
     specs: { "Type": "Bedroom > Bed frames > Queen", "Size": "Queen", "Upholstery": "Polyester bouclé", "Frame": "Engineered wood, wooden legs", "Storage": "Gas lift, 24cm deep", "Weight capacity": "300kg", "Colour": "Cream white", "Mattress": "Not included" },
     dimensions: "216cm L x 165cm W x 110cm H" },
 
-  { id: "lx81", added: "2026-11-08", name: "Dante 2-in-1 Solid Pine Twin Single Bunk Bed in White", cat: "Bedroom", room: "Bedroom", price: 636, memberPrice: 572, sku: "SH-11370", tag: "New", ph: "", img: "assets/products/lx81.webp",
-    imgs: ["assets/products/lx81.webp", "assets/products/lx81-2.webp", "assets/products/lx81-3.webp", "assets/products/lx81-4.webp", "assets/products/lx81-5.webp"],
-    fastShip: true, weight: "50 kg",
-    desc: "A bunk bed now, two single beds later. The Dante splits into two separate singles whenever the kids want their own space, so it keeps working as they grow. Solid pine in a clean white finish, 14 timber slats per bed and a built-in ladder make it a sturdy, child-friendly choice that's certified to Australian bunk bed standards.",
-    features: [
-      "Converts from a bunk bed into two single beds",
-      "Solid pine frame in white",
-      "14 timber slats per bed, 150kg capacity per bunk",
-      "Built-in ladder and child-safe edges",
-      "Certified to AS/NZS 4220:2010",
-      "Fits standard Australian single mattresses (190 x 91cm)"
-    ],
-    specs: { "Type": "Bedroom > Kids beds & bunks > Bunk Beds", "Configuration": "Single over single, converts to two singles", "Material": "Solid pine", "Weight capacity": "150kg per bunk", "Colour": "White", "Standard": "AS/NZS 4220:2010", "Mattress": "Not included" } },
 
-  { id: "lx82", added: "2026-11-08", name: "Zane Kids Single Solid Wood Bed Frame with Rail in Natural", cat: "Bedroom", room: "Bedroom", price: 532, memberPrice: 479, sku: "SH-11371", tag: "New", ph: "", img: "assets/products/lx82.webp",
-    imgs: ["assets/products/lx82.webp", "assets/products/lx82-2.webp", "assets/products/lx82-3.webp", "assets/products/lx82-4.webp", "assets/products/lx82-5.webp"],
-    fastShip: true, weight: "41 kg",
-    desc: "The perfect next step up from a cot. The Zane is a solid pine single bed in a warm natural finish, with a tall guard rail to help prevent falls and a large pull-out drawer underneath for toys, clothes or spare bedding. It doubles as a day bed for reading and play.",
-    features: [
-      "Solid pine frame in a natural finish",
-      "Tall safety guard rail",
-      "Large pull-out storage drawer",
-      "Works as a single bed or day bed",
-      "Easy two-person assembly"
-    ],
-    specs: { "Type": "Bedroom > Kids beds & bunks > Kids Beds", "Size": "Single", "Material": "Solid pine", "Storage": "Pull-out drawer", "Colour": "Natural", "Mattress": "Not included" } },
 
   { id: "lx83", added: "2026-11-08", name: "Manuel 2 Drawer Bedside Table in Black", cat: "Bedroom", room: "Bedroom", price: 117, memberPrice: 105, sku: "SH-11372", tag: "New", ph: "", img: "assets/products/lx83.webp",
     imgs: ["assets/products/lx83.webp", "assets/products/lx83-2.webp", "assets/products/lx83-3.webp", "assets/products/lx83-4.webp", "assets/products/lx83-5.webp"],
@@ -3624,18 +3548,6 @@ const PRODUCTS = [
     ],
     specs: { "Type": "Outdoor > Outdoor furniture > Outdoor Egg Chairs", "Weave": "UV-protected PU wicker", "Frame": "Powder-coated steel", "Includes": "Stand, cushions and pillows", "Colour": "Black", "Use": "Indoor or covered outdoor" } },
 
-  { id: "lx92", added: "2026-11-08", name: "Sphero 40cm Floating Waterproof Outdoor LED Ball Lights", cat: "Outdoor", room: "Outdoor", price: 181, memberPrice: 163, sku: "SH-11381", tag: "New", ph: "", img: "assets/products/lx92.webp",
-    imgs: ["assets/products/lx92.webp", "assets/products/lx92-2.webp", "assets/products/lx92-3.webp", "assets/products/lx92-4.webp", "assets/products/lx92-5.webp"],
-    fastShip: true, weight: "2.5 kg",
-    desc: "A glowing orb that floats. The Sphero 40cm LED ball is waterproof, so it can drift across a pool or sit in the garden, and it's rechargeable, running for 10+ hours on a full charge. Choose from 16 colours with the wireless remote. It's great for summer parties, weddings and everyday ambience.",
-    features: [
-      "40cm waterproof LED ball",
-      "Floats on water",
-      "Rechargeable, 10+ hours per charge",
-      "16 colour options",
-      "Wireless remote control"
-    ],
-    specs: { "Type": "Outdoor > Decor > Outdoor LED Lights", "Diameter": "40cm", "Power": "Rechargeable battery", "Run time": "Up to 10+ hours", "Colours": "16", "Use": "Pool, garden, events" } },
 
   { id: "lx93", added: "2026-11-08", name: "Utah Boucle Curved 3 Legged Accent Chair in Cream", cat: "Living Room", room: "Living Room", price: 337, memberPrice: 303, sku: "SH-11382", tag: "New", ph: "", img: "assets/products/lx93.webp",
     imgs: ["assets/products/lx93.webp", "assets/products/lx93-2.webp", "assets/products/lx93-3.webp", "assets/products/lx93-4.webp", "assets/products/lx93-5.webp"],
