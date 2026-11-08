@@ -107,7 +107,8 @@ function orderDiscount(sub) {
 function getVoucher() { try { return JSON.parse(localStorage.getItem("dm_voucher") || "null"); } catch (e) { return null; } }
 function setVoucher(v) {
   // Welcome vouchers are now 10% off the first order
-  if (v && (v.code === "WELCOME10" || /welcome/i.test(v.label || ""))) v = { code: v.code, pct: 10, label: "First order 10% off (one piece)" };
+  // Always sent to the payment server as WELCOME10 (an account's SHD-V… welcome code is the same offer)
+  if (v && (v.code === "WELCOME10" || /welcome/i.test(v.label || ""))) v = { code: "WELCOME10", pct: 10, label: "First order 10% off (one piece)" };
   try { v ? localStorage.setItem("dm_voucher", JSON.stringify(v)) : localStorage.removeItem("dm_voucher"); } catch (e) {} }
 const WELCOME_VOUCHER = { code: "WELCOME10", pct: 10, label: "First order 10% off (one piece)" };
 /* Welcome offer: 10% off the first order. Older $10 welcome vouchers already in a cart become the 10% offer. */

@@ -214,9 +214,9 @@ function updateTotalsUI() {
   }
 }
 
-function applyGiftCardCheckout() {
+function applyGiftCardCheckout(code) {
   const msg = document.getElementById("coGiftMsg");
-  const code = (document.getElementById("coGiftInput").value || "").trim().toUpperCase();
+  code = String(code || "").trim().toUpperCase();
   const acc = getAccount();
   if (!acc || !acc.email) { msg.style.color = "var(--rose-deep)"; msg.textContent = "Please log in to use your gift card / refund credit."; return; }
   const gc = (acc.giftCards || []).find(g => (g.code || "").toUpperCase() === code && g.balance > 0);
@@ -237,6 +237,9 @@ function applyGiftCardCheckout() {
 function renderCheckout() {
   const wrap = document.getElementById("checkoutWrap");
   const cart = getCart();
+  // Keep what the shopper has typed when the page redraws (quantity change, code applied)
+  const kept = {};
+  wrap.querySelectorAll("input[id], select[id]").forEach((el) => { kept[el.id] = el.type === "checkbox" ? el.checked : el.value; });
   if (!cart.length) {
     wrap.innerHTML = `
       <div class="empty-state">
@@ -249,100 +252,190 @@ function renderCheckout() {
   }
   const t = checkoutTotals();
   const acc = getAccount() || {};
+  const member = typeof isMember === "function" && isMember();
   const giftOrder = isGiftOrder(cart);
   if (!giftOrder) window._fulfil = "delivery";
-  gaEvent("begin_checkout", { currency: "AUD", value: t.total, items: cart.map(i => gaItem(i, i.qty, i.price)) });
-  const lines = cart.map(i => {
+  if (!window._coBeganCheckout) { window._coBeganCheckout = true; gaEvent("begin_checkout", { currency: "AUD", value: t.total, items: cart.map(i => gaItem(i, i.qty, i.price)) }); }
+  const units = cart.reduce((n, i) => n + i.qty, 0);
+  const lines = cart.map((i, idx) => {
     const prod = (typeof findProduct === "function") ? findProduct(i.id) : null;
     const src = i.img || (prod && (prod.img || (prod.imgs && prod.imgs[0]))) || ("assets/products/" + i.id + ".jpg");
+    const key = String(i.key || i.id).replace(/'/g, "\\'");
+    const fixed = i.giftCard || i.hamper || String(i.id).startsWith("hamper-");
     return `
-    <div class="co-line">
-      <span class="co-thumb"><span class="ph ${i.ph}" data-label="${i.name}"><img class="ph-img" src="${src}" alt="${i.name}" onerror="this.remove()"></span><span class="co-qty">${i.qty}</span></span>
-      <span class="co-name">${i.name}${(i.colour || i.size) ? ` · ${[i.colour, i.size].filter(Boolean).join(" · ")}` : ""}${i.contents ? `<small>${i.contents}</small>` : ""}${(prod && typeof isPreorder === "function" && isPreorder(prod)) ? `<small class="co-preorder">⏳ Pre-order · ${preorderTermsLink("Pre-Order Terms")}</small>` : ""}${i.giftCard ? "" : `<small class="co-eta" data-gift="${(i.hamper || String(i.id).startsWith("hamper-")) ? 1 : 0}" data-idx="${cart.indexOf(i)}">🚚 Arrives ${(i.hamper || String(i.id).startsWith("hamper-")) ? fmtBizRange(giftWindow(i, window._fulfil === "express")) : arriveRange(prod || i)}</small>`}</span>
-      <span class="co-price">${linePrice(i) < i.price ? `<s style="opacity:.5;font-weight:400">${money(i.price * i.qty)}</s> ` : ""}${money(linePrice(i) * i.qty)}</span>
+    <div class="cx-item">
+      <a class="cx-img" href="${prod ? "product.html?id=" + i.id : "#"}"><img src="${src}" alt="${i.name}" onerror="this.remove()"></a>
+      <div class="cx-info">
+        <div class="cx-top">
+          <span class="cx-name">${i.name}${(i.colour || i.size) ? `<small>${[i.colour, i.size].filter(Boolean).join(" · ")}</small>` : ""}${i.contents ? `<small>${i.contents}</small>` : ""}</span>
+          <span class="cx-acts">${prod ? `<button type="button" class="cx-heart${(typeof isWishlisted === "function" && isWishlisted(i.id)) ? " on" : ""}" aria-label="Save to wishlist" onclick="toggleWishlist('${i.id}', this);this.classList.toggle('on')">♡</button>` : ""}<button type="button" class="cx-del" aria-label="Remove ${i.name}" onclick="coRemove('${key}')">🗑</button></span>
+        </div>
+        ${(prod && typeof isPreorder === "function" && isPreorder(prod)) ? `<small class="co-preorder">⏳ Pre-order · ${preorderTermsLink("Pre-Order Terms")}</small>` : ""}
+        ${i.giftCard ? "" : `<small class="co-eta" data-gift="${(i.hamper || String(i.id).startsWith("hamper-")) ? 1 : 0}" data-idx="${idx}">🚚 Arrives ${(i.hamper || String(i.id).startsWith("hamper-")) ? fmtBizRange(giftWindow(i, window._fulfil === "express")) : arriveRange(prod || i)}</small>`}
+        <div class="cx-bottom">
+          <span class="cx-price">${linePrice(i) < i.price ? `<s>${money(i.price * i.qty)}</s> ` : ""}<strong>${money(linePrice(i) * i.qty)}</strong>${linePrice(i) < i.price ? `<em>Member price</em>` : ""}</span>
+          ${fixed ? `<span class="cx-qtyfix">Qty ${i.qty}</span>` : `<span class="cx-qty"><button type="button" aria-label="One less" onclick="coQty('${key}', ${i.qty - 1})">−</button><span>${i.qty}</span><button type="button" aria-label="One more" onclick="coQty('${key}', ${i.qty + 1})">+</button></span>`}
+        </div>
+      </div>
     </div>`;
   }).join("");
+  const STATES = ["SA", "NSW", "VIC", "QLD", "WA", "TAS", "ACT", "NT"];
+  const vou = (typeof getVoucher === "function") ? getVoucher() : null;
 
   wrap.innerHTML = `
-    <div class="fulfil">
-      <h3 class="fulfil-title">${giftOrder ? "Choose your delivery speed" : "How you'll get your items"}</h3>
-      <div class="fulfil-grid" id="fulfilGrid">
-        ${giftOrder ? `
-        <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Standard<br><small>5 to 10 business days</small></span></button>
-        <button type="button" class="fulfil-opt" data-mode="express" onclick="setFulfil('express')"><span class="fic">⚡</span><span>Express<br><small>3 to 5 business days · +$150</small></span></button>` : `
-        ${expressOptFee() > 0 ? `
-        <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Standard<br><small>About 4 weeks</small></span></button>
-        <button type="button" class="fulfil-opt" data-mode="express" onclick="setFulfil('express')"><span class="fic">⚡</span><span>Express<br><small>+$${expressOptFee().toLocaleString("en-AU")}</small></span></button>` : `
-        <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Delivery</span></button>`}`}
-      </div>
-      <div class="fulfil-note" id="fulfilNote"></div>
-      <div id="intlHelp"></div>
+    <div class="cx-steps">
+      <a href="#cxCart" class="cx-step"><span class="cx-ic">🛍️</span>Cart (${units} ${units === 1 ? "item" : "items"})</a>
+      <a href="#cxDelivery" class="cx-step"><span class="cx-ic">🚚</span>Delivery</a>
+      <a href="#cxPay" class="cx-step"><span class="cx-ic">💳</span>Payment</a>
     </div>
-    <div class="co-grid">
-      <div>
-        <form id="checkoutForm" class="form-card">
-          <div class="co-section">Contact</div>
-          ${!(acc && acc.email) ? `<p class="form-note" style="margin:0 0 10px">Checking out as a guest. <a href="account.html">Log in</a> to save this order to your account (optional).</p>` : ""}
-          <div class="field"><label>Email</label><input id="coEmail" type="email" value="${acc.email || ""}" required></div>
+    <form id="checkoutForm" class="cx-grid" novalidate>
+      <section class="cx-col" id="cxCart">
+        <h3 class="cx-h">Your cart</h3>
+        <div class="cx-items">${lines}</div>
+        <a href="cart.html" class="cx-link">← Edit cart</a>
+        ${member ? "" : `<div class="cx-member">
+          <h4>Save more as a member</h4>
+          <p>Members pay member prices on every piece and get <strong>10% off one item in their first order</strong>. Joining is free.</p>
+          <a class="btn btn--outline btn--block btn--sm" href="account.html">Log in or join free</a>
+        </div>`}
+      </section>
 
-          <div class="co-section" id="shipTitle">Delivery address</div>
-          <div class="field-row">
-            <div class="field"><label>First name</label><input id="coFirst" required></div>
-            <div class="field"><label>Last name</label><input id="coLast" required></div>
+      <section class="cx-col" id="cxDelivery">
+        <h3 class="cx-h">${giftOrder ? "Delivery speed" : "Delivery to"}</h3>
+        <div class="fulfil" ${!giftOrder && !(expressOptFee() > 0) ? 'style="display:none"' : ""}>
+          <div class="fulfil-grid" id="fulfilGrid">
+            ${giftOrder ? `
+            <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Standard<br><small>5 to 10 business days</small></span></button>
+            <button type="button" class="fulfil-opt" data-mode="express" onclick="setFulfil('express')"><span class="fic">⚡</span><span>Express<br><small>3 to 5 business days · +$150</small></span></button>` : `
+            ${expressOptFee() > 0 ? `
+            <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Standard<br><small>About 4 weeks</small></span></button>
+            <button type="button" class="fulfil-opt" data-mode="express" onclick="setFulfil('express')"><span class="fic">⚡</span><span>Express<br><small>+$${expressOptFee().toLocaleString("en-AU")}</small></span></button>` : `
+            <button type="button" class="fulfil-opt active" data-mode="delivery" onclick="setFulfil('delivery')"><span class="fic">🚚</span><span>Delivery</span></button>`}`}
           </div>
-          <div class="field ship-addr"><label>Address</label><input id="coAddr" required></div>
-          <div class="field-row ship-addr">
-            <div class="field"><label>Suburb</label><input id="coSuburb" required></div>
-            <div class="field"><label>State / Postcode</label><input id="coPost" placeholder="SA 5000" required></div>
-          </div>
-          <div class="field-row">
-            <div class="field ship-addr"><label>Country</label>
-              <select id="coCountry" onchange="updateTotalsUI()"><option>Australia</option><option>New Zealand</option><option>United Kingdom</option><option>United States</option><option>Canada</option><option>Switzerland</option><option>Germany</option></select></div>
-            <div class="field"><label>Phone</label><input id="coPhone" type="tel"></div>
-          </div>
-
-          <div class="co-section" id="deliverySection">Delivery</div>
-          <label class="co-radio" id="shipRadio"><input type="radio" name="ship" checked> <span id="coShipLine"><strong>Standard</strong> · ${t.shipping === 0 ? "Free" : money(t.shipping)} · 3 to 8 business days</span></label>
-
-          <div class="co-section">Payment</div>
-          <div class="co-pay">
-            <div class="co-pay-brands">💳 Card · Apple Pay · Google Pay, secured by <strong>Stripe</strong></div>
-            <p class="form-note">You'll enter your card details on Stripe's secure checkout. We never see or store your card number.</p>
-          </div>
-
-          <button type="submit" class="btn btn--primary btn--block" id="payBtn" style="margin-top:12px">Pay ${(typeof DM_CUR!=="undefined"&&DM_CUR!=="AUD")?moneyAud(t.total)+" (AUD)":money(t.total)} securely →</button>
-          <p class="form-note" style="text-align:center;margin-top:10px">🔒 Encrypted checkout</p>
-        </form>
-      </div>
-
-      <aside class="summary">
-        <h3>Order summary</h3>
-        <div class="co-lines">${lines}</div>
-        <div class="summary-row"><span>Subtotal</span><span>${money(t.sub)}</span></div>
-        ${t.discount ? `<div class="summary-row" style="color:var(--forest)"><span>${t.discLabel}</span><span>−${money(t.discount)}</span></div>` : ""}
-        ${t.voucher ? `<div class="summary-row" style="color:var(--forest)"><span>Rewards voucher (${t.voucherCode})</span><span>−${money(t.voucher)}</span></div>` : ""}
-        <div class="summary-row"><span>Shipping</span><span id="sumShip">${t.shipping === 0 ? "Free" : money(t.shipping)}</span></div>
-        <div class="summary-row" id="sumGiftRow" style="color:var(--forest);${t.giftCard ? "display:flex" : "display:none"}"><span>Gift card</span><span id="sumGift">−${money(t.giftCard)}</span></div>
-        <div class="summary-row total"><span>Total</span><span id="sumTotal">${money(t.total)}</span></div>
-        ${(typeof DM_CUR !== "undefined" && DM_CUR !== "AUD") ? `<div style="font-size:0.8rem;color:var(--muted);margin-top:2px">≈ shown in ${DM_CUR} · you'll be charged <strong>${moneyAud(t.total)}</strong> (AUD)</div>` : ""}
-        
-        <div style="margin-top:14px">
-          <label style="font-size:0.82rem;color:var(--muted);display:block;margin-bottom:6px">🎁 Gift card / refund credit (log in to use)</label>
-          <div style="display:flex;gap:8px">
-            <input id="coGiftInput" placeholder="SYSGC-…" style="flex:1;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;font-family:var(--font-body)">
-            <button type="button" class="btn btn--outline btn--sm" onclick="applyGiftCardCheckout()">Apply</button>
-          </div>
-          <div id="coGiftMsg" style="font-size:0.8rem;margin-top:6px"></div>
         </div>
-        <a href="cart.html" class="link-arrow" style="margin-top:16px;display:inline-flex">← Back to cart</a>
-      </aside>
-    </div>`;
+        <div class="fulfil-note" id="fulfilNote"></div>
+        ${!(acc && acc.email) ? `<p class="form-note" style="margin:0 0 12px">Checking out as a guest. <a href="account.html">Log in</a> to save this order to your account (optional).</p>` : ""}
+        <div class="field-row">
+          <div class="field"><label>First name *</label><input id="coFirst" autocomplete="given-name" required></div>
+          <div class="field"><label>Last name *</label><input id="coLast" autocomplete="family-name" required></div>
+        </div>
+        <div class="field"><label>Business name (optional)</label><input id="coBiz" autocomplete="organization"></div>
+        <div class="field"><label>Email *</label><input id="coEmail" type="email" autocomplete="email" value="${acc.email || ""}" required></div>
+        <div class="field"><label>Mobile number *</label><input id="coPhone" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label>Street address *</label><input id="coAddr" autocomplete="street-address" required></div>
+        <div class="field-row">
+          <div class="field"><label>Suburb *</label><input id="coSuburb" autocomplete="address-level2" required></div>
+          <div class="field"><label>Postcode *</label><input id="coPost" autocomplete="postal-code" inputmode="numeric" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field" id="coStateField"><label>State *</label><select id="coState"><option value="">Select state</option>${STATES.map(s => `<option>${s}</option>`).join("")}</select></div>
+          <div class="field"><label>Country</label>
+            <select id="coCountry"><option>Australia</option><option>New Zealand</option><option>United Kingdom</option><option>United States</option><option>Canada</option><option>Switzerland</option><option>Germany</option></select></div>
+        </div>
+        <div id="intlHelp"></div>
+        <h3 class="cx-h" style="margin-top:22px">Delivery method</h3>
+        <div class="cx-box">
+          <strong>${cart.some(i => { const p = findProduct(i.id); return p && typeof isPreorder === "function" && isPreorder(p); }) ? "Your order" : "In-stock items"}</strong>
+          <p>Each item's estimated arrival is shown in your cart. We'll email you the tracking details once your order is on its way.</p>
+        </div>
+        <h3 class="cx-h" style="margin-top:22px">Delivery service</h3>
+        <div class="cx-box cx-service" id="shipRadio"><span class="cx-tick">✓</span><span id="coShipLine"><strong>Standard</strong> · ${t.shipping === 0 ? "Free" : money(t.shipping)} · 3 to 8 business days</span></div>
+        <h3 class="cx-h" style="margin-top:22px">The best of Samira Home Decor, delivered</h3>
+        <div class="cx-box cx-opt">
+          <label><input type="checkbox" id="coOptEmail"> Send me offers, inspiration and updates by email.</label>
+          <label><input type="checkbox" id="coOptSms"> Send me offers, inspiration and updates by SMS.</label>
+        </div>
+      </section>
 
-  document.getElementById("checkoutForm").addEventListener("submit", startPayment);
-  const cc = document.getElementById("coCountry");
-  if (cc) cc.addEventListener("change", updateTotalsUI);
+      <section class="cx-col" id="cxPay">
+        <h3 class="cx-h">Voucher or discount code</h3>
+        <div class="cx-code">
+          <input id="coCode" placeholder="Enter code" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();coApplyCode()}">
+          <button type="button" onclick="coApplyCode()">Apply</button>
+        </div>
+        <div id="coGiftMsg" class="cx-msg"></div>
+        ${vou ? `<div class="cx-applied">✓ ${vou.label || vou.code} applied <button type="button" onclick="coRemoveVoucher()">Remove</button></div>` : ""}
+
+        <div class="cx-summary">
+          <h4>Your order summary</h4>
+          <div class="summary-row"><span>${units} ${units === 1 ? "item" : "items"}</span><span>${money(t.sub)}</span></div>
+          ${t.discount ? `<div class="summary-row cx-save"><span>${t.discLabel}</span><span>−${money(t.discount)}</span></div>` : ""}
+          ${t.voucher ? `<div class="summary-row cx-save"><span>Rewards voucher (${t.voucherCode})</span><span>−${money(t.voucher)}</span></div>` : ""}
+          <div class="summary-row"><span>Delivery</span><span id="sumShip">${t.shipping === 0 ? "Free" : money(t.shipping)}</span></div>
+          <div class="summary-row cx-save" id="sumGiftRow" style="${t.giftCard ? "display:flex" : "display:none"}"><span>Gift card</span><span id="sumGift">−${money(t.giftCard)}</span></div>
+          <div class="summary-row total"><span>Order total</span><span id="sumTotal">${money(t.total)}</span></div>
+          ${(typeof DM_CUR !== "undefined" && DM_CUR !== "AUD") ? `<div style="font-size:0.8rem;color:var(--muted);margin-top:2px">≈ shown in ${DM_CUR} · you'll be charged <strong>${moneyAud(t.total)}</strong> (AUD)</div>` : ""}
+        </div>
+
+        <h3 class="cx-h" style="margin-top:22px">Pay by</h3>
+        <div class="cx-paybox">
+          <p class="cx-need" id="coNeed">Fill in all fields marked * to continue.</p>
+          <button type="submit" class="btn btn--primary btn--block" id="payBtn">Pay ${(typeof DM_CUR!=="undefined"&&DM_CUR!=="AUD")?moneyAud(t.total)+" (AUD)":money(t.total)} securely →</button>
+          <div class="co-pay-brands" style="margin-top:12px;text-align:center">💳 Card · Apple Pay · Google Pay, secured by <strong>Stripe</strong></div>
+          <p class="form-note" style="text-align:center;margin:6px 0 0">You'll enter your card details on Stripe's secure page. We never see or store your card number.</p>
+        </div>
+        <p class="cx-terms">By placing your order you agree to our <a href="policy.html?doc=terms">Terms and Conditions</a>, <a href="policy.html?doc=privacy">Privacy Policy</a>, <a href="policy.html?doc=delivery">Delivery Policy</a> and <a href="policy.html?doc=returns">Returns Policy</a>.</p>
+      </section>
+    </form>`;
+
+  Object.keys(kept).forEach((id) => { const el = document.getElementById(id); if (el && id !== "coCode") { if (el.type === "checkbox") el.checked = kept[id]; else el.value = kept[id]; }  });
+  const form = document.getElementById("checkoutForm");
+  form.addEventListener("submit", startPayment);
+  form.addEventListener("input", coCheckReady);
+  form.addEventListener("change", coCheckReady);
+  document.getElementById("coCountry").addEventListener("change", updateTotalsUI);
   if (typeof window._fulfil === "undefined" || (!giftOrder && !(expressOptFee() > 0))) window._fulfil = "delivery";
   setFulfil(window._fulfil);
+  coCheckReady();
+}
+
+/* Cart edits on the checkout page */
+function coQty(key, qty) {
+  if (qty < 1) return coRemove(key);
+  setQty(key, qty); renderCheckout();
+}
+function coRemove(key) { removeFromCart(key); renderCheckout(); }
+function coRemoveVoucher() { setVoucher(null); window._giftCard = null; renderCheckout(); }
+
+/* One box for every code: WELCOME10, a member's voucher code (SHD-V…), or a gift card (SYSGC-…) */
+function coApplyCode() {
+  const code = (document.getElementById("coCode").value || "").trim().toUpperCase();
+  const msg = document.getElementById("coGiftMsg");
+  if (!code) return;
+  if (/^SYSGC-/.test(code)) { applyGiftCardCheckout(code); return; }
+  const member = typeof isMember === "function" && isMember();
+  const acc = getAccount() || {};
+  const mine = (acc.vouchers || []).find((v) => (v.code || "").toUpperCase() === code && !v.used);
+  if (code === "WELCOME10" || (mine && /welcome/i.test(mine.label || ""))) {
+    if (!member) { msg.style.color = "var(--rose-deep)"; msg.innerHTML = `This code is for members. <a href="account.html">Log in or join free</a>, then come back to use it on your first order.`; return; }
+    setVoucher(WELCOME_VOUCHER); renderCheckout(); showToast("10% off one item in your first order applied 🎉"); return;
+  }
+  if (mine && mine.amount) { setVoucher({ code: mine.code, amount: mine.amount, label: mine.label }); renderCheckout(); showToast("Voucher applied ✦"); return; }
+  msg.style.color = "var(--rose-deep)"; msg.textContent = "Sorry, that code isn't valid.";
+}
+
+/* Pay button stays usable, but tells the shopper what's still missing */
+function coCheckReady() {
+  const need = document.getElementById("coNeed");
+  if (!need) return;
+  const st = document.getElementById("coStateField");
+  const au = shipCountry() === "Australia";
+  if (st) st.style.display = au ? "" : "none";
+  const ids = ["coFirst", "coLast", "coEmail", "coPhone", "coAddr", "coSuburb", "coPost"].concat(au ? ["coState"] : []);
+  const missing = ids.filter((id) => { const el = document.getElementById(id); return el && !String(el.value || "").trim(); });
+  need.style.display = missing.length ? "" : "none";
+  // Green tick on every field that's filled in
+  document.querySelectorAll("#cxDelivery .field").forEach((f) => {
+    const el = f.querySelector("input, select");
+    const ok = el && String(el.value || "").trim() && (el.type !== "email" || /^[^@s]+@[^@s]+.[^@s]+$/.test(el.value));
+    f.classList.toggle("ok", !!ok);
+  });
+}
+
+/* State + postcode as one line ("SA 5000"), the way orders and emails show it */
+function coPostLine() {
+  const g = (id) => { const el = document.getElementById(id); return el ? String(el.value || "").trim() : ""; };
+  return [shipCountry() === "Australia" ? g("coState") : "", g("coPost")].filter(Boolean).join(" ");
 }
 
 /* Express shipping is offered on gift orders only: a cart of custom
@@ -380,6 +473,17 @@ function setFulfil(mode) {
 
 async function startPayment(e) {
   e.preventDefault();
+  // Every field marked * must be filled in (State only for Australian addresses)
+  const au = shipCountry() === "Australia";
+  const missing = ["coFirst", "coLast", "coEmail", "coPhone", "coAddr", "coSuburb", "coPost"].concat(au ? ["coState"] : [])
+    .map((id) => document.getElementById(id)).find((el) => el && !String(el.value || "").trim());
+  const em = document.getElementById("coEmail");
+  if (missing || (em && !/^[^@s]+@[^@s]+.[^@s]+$/.test(em.value.trim()))) {
+    const el = missing || em;
+    showToast(missing ? "Please fill in all fields marked *" : "Please check your email address");
+    el.focus(); el.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
   // Block checkout if an oversized item can't ship to the chosen country.
   if (window._intlBlocked) {
     const b = bulkyIntlItem();
@@ -411,7 +515,7 @@ async function startPayment(e) {
     const data = [
       ["Request", "Lay-by"],
       ["Name", name], ["Email", email], ["Phone", document.getElementById("coPhone").value],
-      ["Delivery address", [document.getElementById("coAddr").value, document.getElementById("coSuburb").value, document.getElementById("coPost").value, document.getElementById("coCountry").value].filter(Boolean).join(", ")],
+      ["Delivery address", [document.getElementById("coAddr").value, document.getElementById("coSuburb").value, coPostLine(), document.getElementById("coCountry").value].filter(Boolean).join(", ")],
       ["Order total", money(t.total)], ["Deposit (20%)", money(deposit)],
       ["Items", cart.map((i) => `${i.qty}× ${i.name}`).join("; ")]
     ];
@@ -435,9 +539,11 @@ async function startPayment(e) {
     name: document.getElementById("coFirst").value + " " + document.getElementById("coLast").value,
     address: document.getElementById("coAddr").value,
     suburb: document.getElementById("coSuburb").value,
-    postcode: document.getElementById("coPost").value,
+    postcode: coPostLine(),
     country: document.getElementById("coCountry").value,
-    phone: document.getElementById("coPhone").value
+    phone: document.getElementById("coPhone").value,
+    business: (document.getElementById("coBiz") || {}).value || undefined,
+    marketing: [(document.getElementById("coOptEmail") || {}).checked ? "email" : "", (document.getElementById("coOptSms") || {}).checked ? "SMS" : ""].filter(Boolean).join(" + ") || undefined
   };
 
   const payingByGiftCard = t.giftCard > 0 && t.total <= 0;
@@ -527,7 +633,7 @@ function openCheckoutWA() {
     name: (g("coFirst") + " " + g("coLast")).trim(),
     phone: g("coPhone"),
     email: g("coEmail"),
-    location: [g("coSuburb"), g("coPost"), shipCountry()].filter((x) => x && x.trim()).join(", "),
+    location: [g("coSuburb"), coPostLine(), shipCountry()].filter((x) => x && x.trim()).join(", "),
     enquiry: "My order" + (names ? " (" + names + ")" : ""),
     links: links
   });

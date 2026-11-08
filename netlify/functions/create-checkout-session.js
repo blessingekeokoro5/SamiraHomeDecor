@@ -598,6 +598,8 @@ exports.handler = async (event) => {
         voucher: String(voucher),
         voucher_code: String(body.voucherCode || ""),
         member: isMemberBuyer ? "yes" : "no",
+        ...(customer.business ? { business: String(customer.business).slice(0, 200) } : {}),
+        ...(customer.marketing ? { marketing_opt_in: String(customer.marketing).slice(0, 40) } : {}),
         // Pre-order items and their expected arrival, read back by the order emails.
         ...(lines.some((l) => l.preorder) ? { preorder: lines.filter((l) => l.preorder).map((l) => `${l.qty} × ${l.name} — expected ${l.expected}`).join(" | ").slice(0, 500) } : {}),
         ...(/^[A-Z0-9]{8}$/.test(body.ref || "") ? { ref: body.ref } : {}),

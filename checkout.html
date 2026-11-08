@@ -27,20 +27,76 @@
     .fulfil-note { margin-top: 14px; font-size: 0.88rem; color: var(--body); background: var(--cream-2); border-radius: 10px; padding: 13px 16px; line-height: 1.55; }
     .fulfil-note:empty { display: none; }
     @media (max-width: 520px){ .fulfil-opt { padding: 16px 6px; font-size: 0.82rem; } .fulfil-opt .fic { font-size: 1.35rem; } }
+    /* One-page checkout: Cart · Delivery · Payment side by side */
+    .cx-steps { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0 0 30px; }
+    .cx-step { display: flex; flex-direction: column; align-items: center; gap: 10px; color: var(--body); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; }
+    .cx-ic { width: 44px; height: 44px; border-radius: 50%; background: var(--cream-2); display: grid; place-items: center; font-size: 1.15rem; }
+    .cx-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; align-items: start; }
+    .cx-h { font-family: var(--font-body); font-size: 1.02rem; font-weight: 600; color: var(--ink); margin: 0 0 14px; }
+    .cx-item { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 0 0 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+    .cx-img { width: 92px; height: 92px; border-radius: 8px; overflow: hidden; background: var(--cream-2); display: block; }
+    .cx-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cx-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .cx-top { display: flex; justify-content: space-between; gap: 8px; }
+    .cx-name { font-size: 0.88rem; color: var(--ink); line-height: 1.35; }
+    .cx-name small { display: block; color: var(--muted); font-size: 0.76rem; }
+    .cx-info > small { color: var(--muted); font-size: 0.74rem; }
+    .cx-acts { display: flex; gap: 4px; flex: none; }
+    .cx-acts button { border: 0; background: none; cursor: pointer; font-size: 1rem; padding: 2px 4px; color: var(--ink); line-height: 1; }
+    .cx-heart.on { color: #c0392b; }
+    .cx-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 8px; margin-top: auto; }
+    .cx-price { font-size: 0.88rem; line-height: 1.3; }
+    .cx-price s { color: var(--muted); }
+    .cx-price strong { color: var(--forest); font-weight: 600; }
+    .cx-price em { display: block; font-style: normal; font-size: 0.72rem; color: var(--forest); }
+    .cx-qty { display: inline-flex; border: 1px solid var(--line); border-radius: 4px; background: #fff; }
+    .cx-qty button { width: 28px; height: 28px; border: 0; background: none; cursor: pointer; font-size: 1rem; color: var(--ink); }
+    .cx-qty span { min-width: 30px; display: grid; place-items: center; font-size: 0.85rem; border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+    .cx-qtyfix { font-size: 0.8rem; color: var(--muted); }
+    .cx-link { font-size: 0.85rem; color: var(--body); }
+    .cx-member { margin-top: 20px; background: var(--cream-2); border-radius: 10px; padding: 22px 20px; text-align: center; }
+    .cx-member h4 { margin: 0 0 8px; font-size: 1.15rem; }
+    .cx-member p { font-size: 0.9rem; color: var(--body); margin: 0 0 14px; }
+    #cxDelivery .field { position: relative; }
+    #cxDelivery .field.ok::after { content: "✓"; position: absolute; right: 12px; bottom: 11px; color: #2e8b57; font-weight: 700; pointer-events: none; }
+    #cxDelivery .field.ok:has(select)::after { right: 34px; }
+    #cxDelivery .field.ok input { background: #eef4fb; padding-right: 32px; }
+    .cx-box { border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: 16px; font-size: 0.88rem; color: var(--body); }
+    .cx-box strong { color: var(--ink); }
+    .cx-box p { margin: 4px 0 0; }
+    .cx-service { display: flex; gap: 10px; align-items: flex-start; }
+    .cx-tick { width: 18px; height: 18px; flex: none; border-radius: 3px; background: var(--ink); color: #fff; font-size: 0.72rem; display: grid; place-items: center; margin-top: 1px; }
+    .cx-opt label { display: flex; gap: 10px; align-items: center; margin: 4px 0; cursor: pointer; }
+    .cx-opt input { width: 18px; height: 18px; accent-color: var(--ink); }
+    .cx-code { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fff; }
+    .cx-code input { flex: 1; border: 0; padding: 12px 14px; font: inherit; min-width: 0; text-transform: uppercase; }
+    .cx-code button { border: 0; background: var(--cream-2); padding: 0 24px; font: inherit; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; color: var(--ink); }
+    .cx-msg { font-size: 0.82rem; margin-top: 6px; }
+    .cx-applied { font-size: 0.84rem; color: var(--forest); margin-top: 8px; }
+    .cx-applied button { border: 0; background: none; color: var(--rose-deep); text-decoration: underline; cursor: pointer; font: inherit; font-size: 0.8rem; }
+    .cx-summary { margin-top: 22px; background: var(--cream-2); border-radius: 8px; padding: 22px 22px 16px; }
+    .cx-summary h4 { margin: 0 0 10px; font-family: var(--font-body); font-size: 1.05rem; }
+    .cx-summary .summary-row { font-size: 0.86rem; padding: 5px 0; }
+    .cx-summary .summary-row.total { font-family: var(--font-body); font-size: 1rem; font-weight: 700; margin-top: 8px; padding-top: 10px; }
+    .cx-save { color: var(--forest) !important; }
+    .cx-paybox { background: var(--cream-2); border-radius: 8px; padding: 18px; }
+    .cx-paybox #payBtn { background: var(--ink); border-color: var(--ink); padding: 15px; }
+    .cx-need { color: #c0392b; font-size: 0.86rem; margin: 0 0 10px; }
+    .cx-terms { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 12px; line-height: 1.6; }
+    .cx-terms a { color: var(--body); }
+    #cxDelivery .fulfil { margin-bottom: 14px; }
+    @media (max-width: 1080px){ .cx-grid { grid-template-columns: 1fr 1fr; } #cxPay { grid-column: 1 / -1; } }
+    @media (max-width: 760px){ .cx-grid { grid-template-columns: 1fr; gap: 26px; } .cx-steps { margin-bottom: 20px; } .cx-step { font-size: 0.68rem; } }
   </style>
 </head>
 <body data-page="checkout.html">
   <div id="site-header"></div>
 
-  <section class="page-banner" style="padding-bottom:40px">
-    <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</div>
-      <span class="eyebrow">🔒 Secure checkout</span>
-      <h1>Checkout</h1>
+  <section class="section" style="padding-top:34px">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;font-size:.85rem">
+      <a href="shop.html" style="color:var(--ink);text-decoration:none;letter-spacing:.06em;text-transform:uppercase">‹ Continue shopping</a>
+      <span style="color:var(--muted)">🔒 Secure checkout</span>
     </div>
-  </section>
-
-  <section class="section" style="padding-top:40px">
     <div class="container">
       <div id="checkoutWrap"></div>
     </div>
@@ -55,8 +111,8 @@
     }
   </script>
   <script src="js/components.js?v=95"></script>
-  <script src="js/cart.js?v=37"></script>
+  <script src="js/cart.js?v=38"></script>
   <script src="js/main.js?v=18"></script>
-  <script src="js/checkout.js?v=28"></script>
+  <script src="js/checkout.js?v=29"></script>
 </body>
 </html>
