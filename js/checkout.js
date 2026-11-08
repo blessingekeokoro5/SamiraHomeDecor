@@ -431,7 +431,7 @@ function coCheckReady() {
   // Green tick on every field that's filled in
   document.querySelectorAll("#cxDelivery .field").forEach((f) => {
     const el = f.querySelector("input, select");
-    const ok = el && String(el.value || "").trim() && (el.type !== "email" || /^[^@s]+@[^@s]+.[^@s]+$/.test(el.value));
+    const ok = el && String(el.value || "").trim() && (el.type !== "email" || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value));
     f.classList.toggle("ok", !!ok);
   });
 }
@@ -482,7 +482,7 @@ async function startPayment(e) {
   const missing = ["coFirst", "coLast", "coEmail", "coPhone", "coAddr", "coSuburb", "coPost"].concat(au ? ["coState"] : [])
     .map((id) => document.getElementById(id)).find((el) => el && !String(el.value || "").trim());
   const em = document.getElementById("coEmail");
-  if (missing || (em && !/^[^@s]+@[^@s]+.[^@s]+$/.test(em.value.trim()))) {
+  if (missing || (em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value.trim()))) {
     const el = missing || em;
     showToast(missing ? "Please fill in all fields marked *" : "Please check your email address");
     el.focus(); el.scrollIntoView({ behavior: "smooth", block: "center" });
