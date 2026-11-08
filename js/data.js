@@ -3919,7 +3919,7 @@ const ANNOUNCEMENTS = [
   "✦ Free shipping over $3,500, Australia-wide",
   "🌸 New décor finds added weekly",
   "🚚 See your delivery dates at checkout",
-  "💝 Join free & get a 10% off your first order",
+  "💝 Join free & get a 10% off one item in your first order",
   "🎁 Build your own luxury hamper",
   "♡ Tap the heart to save pieces for later",
   "💬 Questions? Live chat with our team"

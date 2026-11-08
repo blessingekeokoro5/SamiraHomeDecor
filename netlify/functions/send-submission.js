@@ -282,7 +282,7 @@ exports.handler = async (event) => {
           to: [{ email: replyto, name: name || undefined }],
           replyTo: { email: BUSINESS_EMAIL, name: SENDER_NAME },
           subject: data.customerSubject || ((data.discountLabel || "Your welcome") + " — Samira Home Decor"),
-          htmlContent: welcomeHtml(name, data.welcomeCode, data.discountLabel || "10% off your first order"),
+          htmlContent: welcomeHtml(name, data.welcomeCode, data.discountLabel || "10% off one item in your first order"),
         });
       } catch (e) { /* best effort */ }
     } else if (isEmail(replyto)) {

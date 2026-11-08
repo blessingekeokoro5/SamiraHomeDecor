@@ -86,26 +86,30 @@ function orderDiscount(sub) {
   try { const f = getFlashSale(); if (f.active) flashPct = f.percent; } catch (e) {}
   let campaignPct = 0, campaignLabel = "";
   try { const c = getCampaign(); if (c.active) { campaignPct = c.percent; campaignLabel = c.label; } } catch (e) {}
-  // First-order 10% off (welcome offer); the best single discount applies, they don't stack
-  let welcomePct = 0;
+  const salePct = Math.max(flashPct, campaignPct);
+  const saleAmt = Math.round(sub * salePct / 100);
+  // First-order 10% off (welcome offer) covers ONE piece: one unit of the dearest item
+  // (one set, for a "Set of 2"), not every unit in the cart. Gift cards don't count.
+  // The best single discount applies, they don't stack.
+  let welcomePct = 0, welcomeAmt = 0;
   try { const v = getVoucher(); if (v && v.pct && isMember()) welcomePct = v.pct; } catch (e) {}  // members only (checked again at payment)
-  const pct = Math.max(flashPct, campaignPct, welcomePct);
-  let label = "";
-  if (pct > 0) {
-    if (campaignPct === pct) label = `${campaignLabel} (${pct}% off)`;
-    else if (flashPct === pct) label = `Flash sale (${pct}% off)`;
-    else label = `First order ${pct}% off`;
+  if (welcomePct) {
+    const unit = getCart().filter(i => !i.giftCard && !/^giftcard-/.test(String(i.id))).reduce((m, i) => Math.max(m, linePrice(i)), 0);
+    welcomeAmt = Math.round(unit * welcomePct) / 100;
   }
-  return { pct, amount: Math.round(sub * pct / 100), label };
+  if (welcomeAmt > saleAmt) return { pct: welcomePct, amount: welcomeAmt, label: `First order ${welcomePct}% off (one piece)` };
+  let label = "";
+  if (salePct > 0) label = campaignPct === salePct ? `${campaignLabel} (${salePct}% off)` : `Flash sale (${salePct}% off)`;
+  return { pct: salePct, amount: saleAmt, label };
 }
 
 /* Rewards / gift dollar-voucher applied to the next order (separate from % coupons) */
 function getVoucher() { try { return JSON.parse(localStorage.getItem("dm_voucher") || "null"); } catch (e) { return null; } }
 function setVoucher(v) {
   // Welcome vouchers are now 10% off the first order
-  if (v && (v.code === "WELCOME10" || /welcome/i.test(v.label || ""))) v = { code: v.code, pct: 10, label: "First order 10% off" };
+  if (v && (v.code === "WELCOME10" || /welcome/i.test(v.label || ""))) v = { code: v.code, pct: 10, label: "First order 10% off (one piece)" };
   try { v ? localStorage.setItem("dm_voucher", JSON.stringify(v)) : localStorage.removeItem("dm_voucher"); } catch (e) {} }
-const WELCOME_VOUCHER = { code: "WELCOME10", pct: 10, label: "First order 10% off" };
+const WELCOME_VOUCHER = { code: "WELCOME10", pct: 10, label: "First order 10% off (one piece)" };
 /* Welcome offer: 10% off the first order. Older $10 welcome vouchers already in a cart become the 10% offer. */
 (function () {
   try {

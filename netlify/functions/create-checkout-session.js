@@ -446,8 +446,14 @@ exports.handler = async (event) => {
       }
       welcomeOk = true;
     }
-    const pct = Math.min(askedPct, Math.max(salePct, welcomeOk ? WELCOME_PCT : 0));
-    const discount = round2((subtotal * pct) / 100);
+    // The welcome 10% covers ONE piece only: one unit of the dearest line (one set for a
+    // "Set of 2"), never every unit. Gift cards being bought don't count. A sale % (whole
+    // order) is used instead if it's worth more; they never stack.
+    const saleDiscount = round2((subtotal * Math.min(askedPct, salePct)) / 100);
+    const welcomeUnit = lines.reduce((m, l, k) => (itemId(items[k]).startsWith("giftcard-") ? m : Math.max(m, l.unitPrice)), 0);
+    const welcomeDiscount = welcomeOk ? round2((welcomeUnit * WELCOME_PCT) / 100) : 0;
+    const discount = Math.max(saleDiscount, welcomeDiscount);
+    const pct = welcomeDiscount > saleDiscount ? WELCOME_PCT : Math.min(askedPct, salePct);
 
     // 3. Rewards voucher: clamped, and never more than the order is worth.
     const askedVoucher = Number(body.voucher) || 0;
@@ -513,7 +519,7 @@ exports.handler = async (event) => {
     // the discounted total the shopper saw on site, line by line.
     const factor = subtotal > 0 ? Math.max(0, 1 - (discount + voucher) / subtotal) : 1;
     const discountLabel = [
-      pct > 0 ? `${pct}% off` : "",
+      welcomeDiscount > saleDiscount ? `first order ${pct}% off one piece ($${discount.toFixed(2)})` : pct > 0 ? `${pct}% off` : "",
       voucher > 0 ? `rewards voucher $${voucher}` : "",
     ].filter(Boolean).join(" + ");
 

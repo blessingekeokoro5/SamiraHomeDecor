@@ -179,11 +179,11 @@ function initForms() {
         await fetch("/.netlify/functions/send-submission", {
           method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
-            subject: "New newsletter subscriber — 10% off your first order",
+            subject: "New newsletter subscriber — 10% off one item in your first order",
             fields: [["Email", email], ["Source", "Footer sign-up"], ["Code issued", "WELCOME10 (10% off first order)"]],
             replyto: email, name: "",
-            welcomeCode: "WELCOME10", discountLabel: "10% off your first order",
-            customerSubject: "Your 10% off your first order — Samira Home Decor",
+            welcomeCode: "WELCOME10", discountLabel: "10% off one item in your first order",
+            customerSubject: "Your 10% off one item in your first order — Samira Home Decor",
           }),
         });
       } catch (e3) { /* code still works on-site even if the email send hiccups */ }
