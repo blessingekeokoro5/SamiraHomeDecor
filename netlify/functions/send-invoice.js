@@ -107,9 +107,8 @@ exports.handler = async (event) => {
         </tr></table>
         ${g("Description") ? `<div style="margin:20px 0 6px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#A9843C">Details</div><div style="font-size:14px;color:#0B1F3A;line-height:1.6;white-space:pre-wrap">${esc(g("Description"))}</div>` : ""}
         <table role="presentation" width="100%" style="margin-top:16px;border-collapse:collapse;font-size:14px">
-          ${amtRow("Amount (ex GST)", g("Amount"))}
-          ${amtRow("GST", g("GST"))}
-          ${amtRow("Total (incl GST)", g("Total"), true)}
+          ${amtRow("Amount", g("Amount"))}
+          ${amtRow("Total", g("Total"), true)}
           ${amtRow("Amount paid", g("Amount paid"))}
           ${amtRow("Balance due", g("Balance due"), true)}
         </table>

@@ -115,7 +115,7 @@
         { consent: "I do NOT consent to Samira Home Decor using photos of my project for portfolio / marketing.", name: "Opt out of marketing photos" },
         { consent: "I have read and agree to the Samira Home Decor Service Agreement terms.", name: "Agrees to terms", required: true }
       ],
-      terms: "<h4>1. Scope</h4><p>Samira Home Decor provides the agreed service. Work beyond the agreed scope may be quoted separately.</p><h4>2. Fees & GST</h4><p>Fees are per the agreed quote, in AUD, GST-inclusive where applicable. Product & third-party costs are additional unless stated.</p><h4>3. Deposit</h4><p>A 50% deposit secures your booking and dates; the balance is due on/before completion.</p><h4>4. Hire items</h4><p>For staging, hired furniture & décor remain Samira Home Decor property for the hire period; the client is responsible for reasonable care.</p><h4>5. Cancellations</h4><p>Please give 48 hours' notice to reschedule. Deposits are non-refundable within 7 days of a scheduled service.</p><h4>6. Liability</h4><p>Nothing in these terms limits your rights under the Australian Consumer Law.</p>"
+      terms: "<h4>1. Scope</h4><p>Samira Home Decor provides the agreed service. Work beyond the agreed scope may be quoted separately.</p><h4>2. Fees</h4><p>Fees are per the agreed quote, in AUD. Product & third-party costs are additional unless stated.</p><h4>3. Deposit</h4><p>A 50% deposit secures your booking and dates; the balance is due on/before completion.</p><h4>4. Hire items</h4><p>For staging, hired furniture & décor remain Samira Home Decor property for the hire period; the client is responsible for reasonable care.</p><h4>5. Cancellations</h4><p>Please give 48 hours' notice to reschedule. Deposits are non-refundable within 7 days of a scheduled service.</p><h4>6. Liability</h4><p>Nothing in these terms limits your rights under the Australian Consumer Law.</p>"
     },
     "scope-of-work": {
       title: "Scope of Work Form", cat: "client",
@@ -257,8 +257,8 @@
         { name: "Status", label: "Payment status", type: "select", options: ["Unpaid", "Paid", "Partially paid", "Overdue"], half: true },
         { sec: "Items & amounts" },
         { name: "Description", label: "Description of services / items", type: "textarea" },
-        { name: "Amount", label: "Amount (ex GST)", type: "number", half: true }, { name: "GST", label: "GST", type: "number", half: true },
-        { name: "Total", label: "Total (incl GST)", type: "number", half: true }, { name: "Amount paid", label: "Amount paid", type: "number", half: true },
+        { name: "Amount", label: "Amount", type: "number", half: true },
+        { name: "Total", label: "Total", type: "number", half: true }, { name: "Amount paid", label: "Amount paid", type: "number", half: true },
         { name: "Balance due", label: "Balance due", type: "number", half: true },
         { sec: "Payment" },
         { name: "Payment terms", label: "Payment terms", ph: "e.g. Due in 7 days", half: true },

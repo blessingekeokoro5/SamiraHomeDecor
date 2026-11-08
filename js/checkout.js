@@ -311,7 +311,7 @@ function renderCheckout() {
           </div>
 
           <button type="submit" class="btn btn--primary btn--block" id="payBtn" style="margin-top:12px">Pay ${(typeof DM_CUR!=="undefined"&&DM_CUR!=="AUD")?moneyAud(t.total)+" (AUD)":money(t.total)} securely →</button>
-          <p class="form-note" style="text-align:center;margin-top:10px">🔒 Encrypted checkout · GST included where applicable</p>
+          <p class="form-note" style="text-align:center;margin-top:10px">🔒 Encrypted checkout</p>
         </form>
       </div>
 
@@ -325,7 +325,7 @@ function renderCheckout() {
         <div class="summary-row" id="sumGiftRow" style="color:var(--forest);${t.giftCard ? "display:flex" : "display:none"}"><span>Gift card</span><span id="sumGift">−${money(t.giftCard)}</span></div>
         <div class="summary-row total"><span>Total</span><span id="sumTotal">${money(t.total)}</span></div>
         ${(typeof DM_CUR !== "undefined" && DM_CUR !== "AUD") ? `<div style="font-size:0.8rem;color:var(--muted);margin-top:2px">≈ shown in ${DM_CUR} · you'll be charged <strong>${moneyAud(t.total)}</strong> (AUD)</div>` : ""}
-        <div style="font-size:0.8rem;color:var(--muted);margin-top:4px">Includes GST <span id="sumGst">${money(t.gst)}</span></div>
+        
         <div style="margin-top:14px">
           <label style="font-size:0.82rem;color:var(--muted);display:block;margin-bottom:6px">🎁 Gift card / refund credit (log in to use)</label>
           <div style="display:flex;gap:8px">

@@ -95,7 +95,7 @@
       y += 33 + bl.length * 13 + 28;
       if (g("Description")) { doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.setTextColor(165, 88, 106); doc.text("DETAILS", M, y); y += 15; doc.setFont("helvetica", "normal"); doc.setFontSize(10); doc.setTextColor(44, 38, 35); doc.splitTextToSize(g("Description"), PW - 2 * M).forEach(function (ln) { doc.text(ln, M, y); y += 14; }); y += 8; }
       function amt(label, v, bold) { if (!v) return; doc.setFont("helvetica", bold ? "bold" : "normal"); doc.setFontSize(bold ? 12 : 10.5); doc.setTextColor(44, 38, 35); doc.text(label, M, y); doc.text(money(v), PW - M, y, { align: "right" }); doc.setDrawColor(228); doc.setLineWidth(0.7); doc.line(M, y + 7, PW - M, y + 7); y += 23; }
-      amt("Amount (ex GST)", g("Amount")); amt("GST", g("GST")); amt("Total (incl GST)", g("Total"), true); amt("Amount paid", g("Amount paid")); amt("Balance due", g("Balance due"), true);
+      amt("Amount", g("Amount")); amt("Total", g("Total"), true); amt("Amount paid", g("Amount paid")); amt("Balance due", g("Balance due"), true);
       if (g("Payment details")) {
         y += 10;
         var pd = doc.splitTextToSize(g("Payment details") + (g("Payment terms") ? "\nTerms: " + g("Payment terms") : ""), PW - 2 * M - 28);

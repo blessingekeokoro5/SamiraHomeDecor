@@ -147,9 +147,9 @@
 
   <div id="site-footer"></div>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="js/data.js?v=76"></script>
-  <script src="js/components.js?v=92"></script>
-  <script src="js/cart.js?v=34"></script>
+  <script src="js/data.js?v=77"></script>
+  <script src="js/components.js?v=93"></script>
+  <script src="js/cart.js?v=35"></script>
   <script src="js/main.js?v=17"></script>
   <script src="js/order-status.js?v=3"></script>
   <script>
@@ -600,7 +600,7 @@
         <div class="meta"><strong>Order ${o.orderNo}</strong><br>${o.date || ""}<br>${acc.name || ""} · ${acc.email}<br>Member No. ${acc.memberNo || ""}</div>
         <table>${rows}
           ${o.shipping ? `<tr><td>Shipping</td><td style="text-align:right">${money(o.shipping)}</td></tr>` : `<tr><td>Shipping</td><td style="text-align:right">Free</td></tr>`}
-          <tr class="tot"><td>Total (incl. GST)</td><td style="text-align:right">${money(o.total || 0)}</td></tr>
+          <tr class="tot"><td>Total</td><td style="text-align:right">${money(o.total || 0)}</td></tr>
         </table>
         <div class="meta">samirahomedecor.com.au</div>
         <div class="thanks">Thank you for shopping with Samira Home Decor ✦</div>

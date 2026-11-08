@@ -26,7 +26,7 @@ const FAQ_ITEMS = [
   { q: "How do I track my order?",
     a: "Use our <a href='track.html'>Track Your Order</a> page and enter your order number, email or phone used at checkout. You'll also receive a tracking link by email once your order ships." },
   { q: "What payment methods do you accept?",
-    a: "We accept Visa, Mastercard, American Express, PayPal, Apple Pay, Google Pay, Afterpay, Klarna and Zip. All prices are in Australian Dollars (AUD) and include GST where applicable." },
+    a: "We accept Visa, Mastercard, American Express, PayPal, Apple Pay, Google Pay, Afterpay, Klarna and Zip. All prices are in Australian Dollars (AUD)." },
   { q: "Can I return an item?",
     a: "Yes. Your rights under the Australian Consumer Law always apply, and we also offer change-of-mind returns on eligible items within 30 days of delivery (a 20% restocking fee applies). See our <a href='policy.html?doc=returns'>Returns &amp; Refund Policy</a> for full details." },
   { q: "How long do gift hampers take to arrive?",
@@ -206,8 +206,8 @@ const POLICIES = {
       <h3>1. About us</h3>
       <p>This website is operated by Samira Home Decor, an Australian home and lifestyle business and a registered business name. In these terms, "we", "us" and "our" refer to Samira Home Decor.</p>
 
-      <h3>2. Pricing &amp; GST</h3>
-      <p>All prices are in Australian Dollars (AUD) and include GST where applicable, unless stated otherwise. We may update prices, products and promotions at any time. Sale discounts (such as Spend &amp; Save) apply per their stated terms.</p>
+      <h3>2. Pricing</h3>
+      <p>All prices are in Australian Dollars (AUD), unless stated otherwise. We may update prices, products and promotions at any time. Sale discounts (such as Spend &amp; Save) apply per their stated terms.</p>
 
       <h3>3. Orders &amp; acceptance</h3>
       <p>Your order is an offer to purchase. We may accept or decline any order, including where an item is out of stock, mispriced, or where we suspect fraud. A contract forms when we confirm dispatch. We'll contact you if we cannot fulfil an order and arrange a refund.</p>
