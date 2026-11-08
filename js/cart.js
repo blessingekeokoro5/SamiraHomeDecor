@@ -161,7 +161,14 @@ function updateWishCount() {
    Account (localStorage demo)
    ============================================================ */
 const ACCOUNT_KEY = "decomuse_account";
-function getAccount() { try { return JSON.parse(localStorage.getItem(ACCOUNT_KEY)); } catch { return null; } }
+function getAccount() {
+  try {
+    const a = JSON.parse(localStorage.getItem(ACCOUNT_KEY));
+    // Voucher codes made before the rebrand start "DM-"; show them as Samira Home Decor "SHD-" codes
+    if (a && Array.isArray(a.vouchers)) a.vouchers.forEach(v => { if (v && /^DM-/.test(v.code || "")) v.code = v.code.replace(/^DM-/, "SHD-"); });
+    return a;
+  } catch { return null; }
+}
 function saveAccount(a) { localStorage.setItem(ACCOUNT_KEY, JSON.stringify(a)); }
 function logoutAccount() { localStorage.removeItem(ACCOUNT_KEY); }
 function todayAU() { return new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" }); }
