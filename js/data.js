@@ -3390,6 +3390,332 @@ const PRODUCTS = [
   {"id":"kl28","deliveryTime":"6 to 12 business days","name":"Dark Ash Ridged Wooden Mirror, 140 x 110cm","cat":"Home Décor","room":"Home Décor","price":549,"memberPrice":494,"sku":"SH-11361","tag":"New","ph":"","img":"assets/products/kl28.webp","imgs":["assets/products/kl28.webp","assets/products/kl28-2.webp","assets/products/kl28-3.webp","assets/products/kl28-4.webp","assets/products/kl28-5.webp","assets/products/kl28-6.webp","assets/products/kl28-7.webp","assets/products/kl28-8.webp"],"arriveDays":[9,17],"preorder":false,"desc":"A 140 x 110cm landscape mirror with rounded corners, framed in dark ash timber with carved parallel ridges. It suits the wall above a sideboard or dresser.","features":["140 x 110cm","Dark ash timber frame with ridges","Rounded corners"],"specs":{"Type":"Home Décor > Mirrors","Colour":"Brown"}},
   {"id":"kl29","deliveryTime":"6 to 12 business days","name":"Beige Travertine Bookend, 14cm","cat":"Home Décor","room":"Home Décor","price":189,"memberPrice":170,"sku":"SH-11362","tag":"New","ph":"","img":"assets/products/kl29.webp","imgs":["assets/products/kl29.webp","assets/products/kl29-2.webp","assets/products/kl29-3.webp","assets/products/kl29-4.webp","assets/products/kl29-5.webp","assets/products/kl29-6.webp","assets/products/kl29-7.webp","assets/products/kl29-8.webp"],"arriveDays":[9,17],"preorder":false,"desc":"A 14cm block of natural beige travertine with soft banding and an open-pored surface, heavy enough to keep books upright.","features":["14cm natural travertine","Heavy enough to hold books","Each piece varies"],"specs":{"Type":"Home Décor > Decor","Colour":"Beige"}},
   {"id":"kl30","deliveryTime":"6 to 12 business days","name":"Beige Travertine Lidded Box, 17.5cm","cat":"Home Décor","room":"Home Décor","price":199,"memberPrice":179,"sku":"SH-11363","tag":"New","ph":"","img":"assets/products/kl30.webp","imgs":["assets/products/kl30.webp","assets/products/kl30-2.webp","assets/products/kl30-3.webp","assets/products/kl30-4.webp","assets/products/kl30-5.webp","assets/products/kl30-6.webp","assets/products/kl30-7.webp","assets/products/kl30-8.webp"],"arriveDays":[9,17],"preorder":false,"desc":"A 17.5cm lidded box in natural beige travertine with soft banding and a round stone knob. Use it for cotton pads, hair ties or small keepsakes.","features":["17.5cm natural travertine","Lid with round stone knob","Each piece varies"],"specs":{"Type":"Home Décor > Decor","Colour":"Beige"}},
+
+  /* ===== Ready to ship — batch 7: bedroom, kids, storage, dining, outdoor ===== */
+  { id: "lx75", added: "2026-11-08", name: "Jenna Hollywood Makeup Vanity Table with LED Mirror in White", cat: "Bedroom", room: "Bedroom", price: 824, memberPrice: 742, sku: "SH-11364", tag: "New", ph: "", img: "assets/products/lx75.webp",
+    imgs: ["assets/products/lx75.webp", "assets/products/lx75-2.webp", "assets/products/lx75-3.webp", "assets/products/lx75-4.webp", "assets/products/lx75-5.webp"],
+    fastShip: true, weight: "76.2 kg",
+    desc: "Get ready like you're backstage. The Jenna vanity pairs a generous 100 x 80cm Hollywood mirror ringed with 13 LED bulbs with a white dressing table built for serious storage. Touch the controls to switch between natural, warm and cool light, so your makeup looks right whether you're heading to the office or out for the night. Thirteen drawers keep skincare, brushes and palettes sorted, and the wide tabletop leaves room for your everyday essentials.",
+    features: [
+      "100 x 80cm Hollywood-style mirror with 13 LED bulbs",
+      "Three light settings: natural, warm and cool",
+      "Touch-control brightness",
+      "13 drawers for makeup, skincare and beauty tools",
+      "Generous tabletop surface",
+      "Clean white finish"
+    ],
+    specs: { "Type": "Bedroom > Dressing tables", "Mirror": "100 x 80cm with 13 LED bulbs", "Lighting": "Natural, warm and cool, touch control", "Storage": "13 drawers", "Colour": "White", "Use": "Bedroom or dressing room" } },
+
+  { id: "lx76", added: "2026-11-08", name: "Cornelia Solid Wood Triple Bunk Bed with Storage in White", cat: "Bedroom", room: "Bedroom", price: 1468, memberPrice: 1321, sku: "SH-11365", tag: "New", ph: "", img: "assets/products/lx76.webp",
+    imgs: ["assets/products/lx76.webp", "assets/products/lx76-2.webp", "assets/products/lx76-3.webp", "assets/products/lx76-4.webp"],
+    fastShip: true, weight: "90.5 kg",
+    desc: "Three sleepers, one footprint and plenty of storage. The Cornelia puts a single bunk above a double, built from solid New Zealand pine in a fresh white finish. Full-length guard rails run along the top bunk and a sturdy timber ladder makes climbing up easy, while three large drawers underneath swallow clothes, bedding and toys. The non-toxic, BV-certified coating and compliance with AS/NZS 4220:2010 give you peace of mind in a kids' room.",
+    features: [
+      "Single top bunk over a double bottom bunk, sleeps three",
+      "Solid New Zealand pine frame",
+      "Three large under-bed storage drawers",
+      "Full-length guard rails and solid timber ladder",
+      "BV-certified non-toxic finish",
+      "Meets AS/NZS 4220:2010 bunk bed safety standard",
+      "Fits standard Australian single (15cm) and double (20cm) mattresses"
+    ],
+    specs: { "Type": "Bedroom > Kids beds & bunks > Bunk Beds", "Configuration": "Single over double", "Material": "Solid New Zealand pine", "Storage": "3 under-bed drawers", "Colour": "White", "Standard": "AS/NZS 4220:2010", "Mattress": "Not included" } },
+
+  { id: "lx77", added: "2026-11-08", name: "Antonia Solid Pine Wood Triple Bunk Bed in White", cat: "Bedroom", room: "Bedroom", price: 610, memberPrice: 549, sku: "SH-11366", tag: "New", ph: "", img: "assets/products/lx77.webp",
+    imgs: ["assets/products/lx77.webp", "assets/products/lx77-3.webp", "assets/products/lx77-4.webp", "assets/products/lx77-5.webp"],
+    fastShip: true, weight: "51 kg",
+    desc: "Sleep three in the space of one bed. The Antonia has a double-size bottom bunk and a single-size top bunk on a solid pine frame, finished in crisp white that brightens any kids' room or guest room. Secure guard rails surround the top bunk, and the ladder is reversible so you can set it up on whichever side suits the room.",
+    features: [
+      "Sleeps three: double bottom bunk, single top bunk",
+      "Solid natural pine frame with engineered timber slats",
+      "Safety guard rails on the top bunk",
+      "Reversible ladder for flexible layouts",
+      "Fresh white finish"
+    ],
+    specs: { "Type": "Bedroom > Kids beds & bunks > Bunk Beds", "Configuration": "Single over double", "Material": "Solid pine, engineered timber slats", "Colour": "White", "Mattress": "Not included" } },
+
+  { id: "lx78", added: "2026-11-08", name: "Ginnie Double Curved Boucle Cloud Bed Frame in Cream White", cat: "Bedroom", room: "Bedroom", price: 584, memberPrice: 526, sku: "SH-11367", tag: "New", ph: "", img: "assets/products/lx78.webp",
+    imgs: ["assets/products/lx78.webp", "assets/products/lx78-2.webp", "assets/products/lx78-3.webp", "assets/products/lx78-4.webp", "assets/products/lx78-5.webp"],
+    fastShip: true, weight: "42.5 kg",
+    desc: "A bed that feels like sinking into a cloud. The Ginnie wraps a solid timber frame in soft cream bouclé, with a plush 13cm-thick curved headboard that's made for sitting up with a book or a show. Its double size suits apartments, guest rooms and smaller bedrooms, and the timber legs keep the look light and modern.",
+    features: [
+      "Plush 13cm-thick curved headboard",
+      "Soft, textured bouclé upholstery in cream white",
+      "Solid timber frame with timber legs",
+      "Double size, ideal for smaller bedrooms",
+      "Easy assembly"
+    ],
+    specs: { "Type": "Bedroom > Bed frames > Double", "Size": "Double", "Upholstery": "Bouclé fabric", "Frame": "Solid timber", "Headboard": "13cm thick, curved", "Colour": "Cream white", "Mattress": "Not included" } },
+
+  { id: "lx79", added: "2026-11-08", name: "Gianna Hollywood LED Mirror Dressing Table in White", cat: "Bedroom", room: "Bedroom", price: 532, memberPrice: 479, sku: "SH-11368", tag: "New", ph: "", img: "assets/products/lx79.webp",
+    imgs: ["assets/products/lx79.webp", "assets/products/lx79-2.webp", "assets/products/lx79-3.webp", "assets/products/lx79-4.webp", "assets/products/lx79-5.webp"],
+    fastShip: true, weight: "59.2 kg",
+    desc: "Everyday glamour in a compact footprint. The Gianna sets a 100 x 80cm Hollywood mirror with 15 dimmable LED bulbs above a matte white dressing table with a tempered glass top. Switch between cool and warm light for flawless makeup, and keep beauty essentials tidy in two roomy drawers.",
+    features: [
+      "100 x 80cm Hollywood mirror with 15 dimmable LED bulbs",
+      "Cool and warm light tones",
+      "Two spacious drawers",
+      "Tempered glass top",
+      "Matte white finish"
+    ],
+    specs: { "Type": "Bedroom > Dressing tables > Makeup Vanity Ottomans", "Mirror": "100 x 80cm with 15 LED bulbs", "Lighting": "Cool and warm, dimmable", "Storage": "2 drawers", "Top": "Tempered glass", "Colour": "Matte white" } },
+
+  { id: "lx80", added: "2026-11-08", name: "Lunia Queen Boucle Gas Lift Storage Bed Frame in Cream White", cat: "Bedroom", room: "Bedroom", price: 778, memberPrice: 700, sku: "SH-11369", tag: "New", ph: "", img: "assets/products/lx80.webp",
+    imgs: ["assets/products/lx80.webp", "assets/products/lx80-2.webp", "assets/products/lx80-3.webp", "assets/products/lx80-4.webp", "assets/products/lx80-5.webp"],
+    fastShip: true, weight: "50.7 kg",
+    desc: "Hide a whole linen cupboard under your bed. The Lunia lifts on smooth hydraulic gas struts to reveal 24cm-deep storage for blankets, pillows and off-season clothes, all beneath a soft cream-white bouclé frame. It's a calm, modern centrepiece for the main bedroom with a 300kg weight capacity.",
+    features: [
+      "Hydraulic gas lift with under-bed storage",
+      "24cm storage depth",
+      "Plush polyester bouclé in cream white",
+      "Engineered wood frame, wooden legs and metal fittings",
+      "300kg weight capacity",
+      "Basic assembly required"
+    ],
+    specs: { "Type": "Bedroom > Bed frames > Queen", "Size": "Queen", "Upholstery": "Polyester bouclé", "Frame": "Engineered wood, wooden legs", "Storage": "Gas lift, 24cm deep", "Weight capacity": "300kg", "Colour": "Cream white", "Mattress": "Not included" },
+    dimensions: "216cm L x 165cm W x 110cm H" },
+
+  { id: "lx81", added: "2026-11-08", name: "Dante 2-in-1 Solid Pine Twin Single Bunk Bed in White", cat: "Bedroom", room: "Bedroom", price: 636, memberPrice: 572, sku: "SH-11370", tag: "New", ph: "", img: "assets/products/lx81.webp",
+    imgs: ["assets/products/lx81.webp", "assets/products/lx81-2.webp", "assets/products/lx81-3.webp", "assets/products/lx81-4.webp", "assets/products/lx81-5.webp"],
+    fastShip: true, weight: "50 kg",
+    desc: "A bunk bed now, two single beds later. The Dante splits into two separate singles whenever the kids want their own space, so it keeps working as they grow. Solid pine in a clean white finish, 14 timber slats per bed and a built-in ladder make it a sturdy, child-friendly choice that's certified to Australian bunk bed standards.",
+    features: [
+      "Converts from a bunk bed into two single beds",
+      "Solid pine frame in white",
+      "14 timber slats per bed, 150kg capacity per bunk",
+      "Built-in ladder and child-safe edges",
+      "Certified to AS/NZS 4220:2010",
+      "Fits standard Australian single mattresses (190 x 91cm)"
+    ],
+    specs: { "Type": "Bedroom > Kids beds & bunks > Bunk Beds", "Configuration": "Single over single, converts to two singles", "Material": "Solid pine", "Weight capacity": "150kg per bunk", "Colour": "White", "Standard": "AS/NZS 4220:2010", "Mattress": "Not included" } },
+
+  { id: "lx82", added: "2026-11-08", name: "Zane Kids Single Solid Wood Bed Frame with Rail in Natural", cat: "Bedroom", room: "Bedroom", price: 532, memberPrice: 479, sku: "SH-11371", tag: "New", ph: "", img: "assets/products/lx82.webp",
+    imgs: ["assets/products/lx82.webp", "assets/products/lx82-2.webp", "assets/products/lx82-3.webp", "assets/products/lx82-4.webp", "assets/products/lx82-5.webp"],
+    fastShip: true, weight: "41 kg",
+    desc: "The perfect next step up from a cot. The Zane is a solid pine single bed in a warm natural finish, with a tall guard rail to help prevent falls and a large pull-out drawer underneath for toys, clothes or spare bedding. It doubles as a day bed for reading and play.",
+    features: [
+      "Solid pine frame in a natural finish",
+      "Tall safety guard rail",
+      "Large pull-out storage drawer",
+      "Works as a single bed or day bed",
+      "Easy two-person assembly"
+    ],
+    specs: { "Type": "Bedroom > Kids beds & bunks > Kids Beds", "Size": "Single", "Material": "Solid pine", "Storage": "Pull-out drawer", "Colour": "Natural", "Mattress": "Not included" } },
+
+  { id: "lx83", added: "2026-11-08", name: "Manuel 2 Drawer Bedside Table in Black", cat: "Bedroom", room: "Bedroom", price: 117, memberPrice: 105, sku: "SH-11372", tag: "New", ph: "", img: "assets/products/lx83.webp",
+    imgs: ["assets/products/lx83.webp", "assets/products/lx83-2.webp", "assets/products/lx83-3.webp", "assets/products/lx83-4.webp", "assets/products/lx83-5.webp"],
+    fastShip: true, weight: "21 kg",
+    desc: "A neat, modern bedside with a touch of gold. The Manuel has two deep drawers for books, chargers and glasses, finished in smooth black with gold handles that add a luxe detail. At 60cm wide it suits big and small bedrooms alike, and anti-slip pads keep it steady and protect your floors.",
+    features: [
+      "Two large drawers",
+      "Smooth black finish with gold handles",
+      "Engineered wood construction",
+      "Anti-slip floor pads",
+      "Holds up to 25kg on top",
+      "Also works beside a sofa"
+    ],
+    specs: { "Type": "Bedroom > Bedside tables", "Material": "Engineered wood", "Drawers": "2", "Colour": "Black with gold handles", "Weight capacity": "25kg" },
+    dimensions: "60cm W x 40cm D x 55cm H" },
+
+  { id: "lx84", added: "2026-11-08", name: "Hamish 140cm 4 Door Fluted Storage Buffet in White", cat: "Living Room", room: "Living Room", price: 454, memberPrice: 409, sku: "SH-11373", tag: "New", ph: "", img: "assets/products/lx84.webp",
+    imgs: ["assets/products/lx84.webp", "assets/products/lx84-2.webp", "assets/products/lx84-3.webp", "assets/products/lx84-4.webp", "assets/products/lx84-5.webp"],
+    fastShip: true, weight: "55 kg",
+    desc: "Soft waves, clean lines and plenty of room inside. The Hamish 140cm buffet fronts two cabinets with four handle-free fluted doors that open with a gentle push, each hiding two adjustable shelves. The wide top is ready for lamps, plants and serveware, so it works just as well in the dining room, living room or hallway.",
+    features: [
+      "140cm wide with a fluted wave front",
+      "Four handle-free push-to-open doors",
+      "Two cabinets, each with two adjustable shelves",
+      "Scratch-resistant, easy-clean surface",
+      "Large top for display"
+    ],
+    specs: { "Type": "Dining & kitchen > Dining > Storage Buffets", "Width": "140cm", "Material": "Engineered and composite wood, surface veneer", "Doors": "4, push to open", "Shelves": "Adjustable", "Colour": "White" } },
+
+  { id: "lx85", added: "2026-11-08", name: "Vernon 6 Seater Wicker Outdoor Lounge Set in Cream White", cat: "Outdoor", room: "Outdoor", price: 2668, memberPrice: 2401, sku: "SH-11374", tag: "New", ph: "", img: "assets/products/lx85.webp",
+    imgs: ["assets/products/lx85.webp", "assets/products/lx85-2.webp", "assets/products/lx85-3.webp", "assets/products/lx85-4.webp", "assets/products/lx85-5.webp"],
+    fastShip: true, weight: "69 kg",
+    desc: "Resort-style lounging for your patio. The Vernon set brings two generous wicker sofas and a matching coffee table together on a rust-resistant, powder-coated aluminium frame, with 10cm-thick cream cushions for proper comfort. It arrives ready to use, with no assembly, so you can set it out and sit straight down.",
+    features: [
+      "Seats six across two sofas, plus a coffee table",
+      "Rust-resistant powder-coated aluminium frame",
+      "All-weather wicker",
+      "10cm-thick cushions",
+      "No assembly required"
+    ],
+    specs: { "Type": "Outdoor > Outdoor furniture > Outdoor Sofas & Lounges", "Pieces": "4 (2 sofas, coffee table, cushions)", "Frame": "Powder-coated aluminium", "Weave": "Wicker", "Seat depth": "52cm", "Seat height": "44cm", "Weight capacity": "120kg per sofa, 75kg coffee table", "Colour": "Cream white" },
+    dimensions: "Left sofa 196 x 70 x 72cm; right sofa 186 x 70 x 72cm; coffee table 120 x 57 x 41cm" },
+
+  { id: "lx86", added: "2026-11-08", name: "Nikias Queen Boucle Fabric Bed Frame in Cream White", cat: "Bedroom", room: "Bedroom", price: 884, memberPrice: 796, sku: "SH-11375", tag: "New", ph: "", img: "assets/products/lx86.webp",
+    imgs: ["assets/products/lx86.webp", "assets/products/lx86-2.webp", "assets/products/lx86-3.webp", "assets/products/lx86-4.webp", "assets/products/lx86-5.webp"],
+    fastShip: true, weight: "50.5 kg",
+    desc: "Texture you can feel. The Nikias queen bed frame wraps a solid wood base in plush cream bouclé, with a cushioned headboard finished in eye-catching checkered tufting. Lean back to read or unwind; it's as comfortable as it is good-looking.",
+    features: [
+      "Checkered tufted, cushioned headboard",
+      "Soft bouclé upholstery in cream white",
+      "Solid wood frame",
+      "Queen size"
+    ],
+    specs: { "Type": "Bedroom > Bed frames > Queen", "Size": "Queen", "Upholstery": "Bouclé fabric", "Frame": "Solid wood", "Colour": "Cream white", "Mattress": "Not included" } },
+
+  { id: "lx87", added: "2026-11-08", name: "Hamish 200cm Fluted TV Storage Entertainment Unit in White", cat: "Living Room", room: "Living Room", price: 428, memberPrice: 385, sku: "SH-11376", tag: "New", ph: "", img: "assets/products/lx87.webp",
+    imgs: ["assets/products/lx87.webp", "assets/products/lx87-2.webp", "assets/products/lx87-3.webp", "assets/products/lx87-4.webp", "assets/products/lx87-5.webp"],
+    fastShip: true, weight: "44 kg",
+    desc: "A long, low TV unit with a gentle wave. The Hamish 200cm has four handle-free drawers that open and close softly, and two cable holes at the back to keep wires out of sight. Mount it on the wall for a floating look or stand it on the floor; either way the wide top holds the TV, speakers and décor.",
+    features: [
+      "200cm wide with a fluted wave front",
+      "Four handle-free soft-rebound drawers",
+      "Two rear cable holes",
+      "Wall-mount or floor-standing",
+      "Easy-clean surface",
+      "Two-person assembly"
+    ],
+    specs: { "Type": "Living Room > Storage > TV Units & Entertainment Units", "Width": "200cm", "Material": "Engineered and composite wood", "Drawers": "4, push to open", "Colour": "White" } },
+
+  { id: "lx88", added: "2026-11-08", name: "Erick 160cm 4-Door Storage Buffet Sideboard in Black", cat: "Living Room", room: "Living Room", price: 454, memberPrice: 409, sku: "SH-11377", tag: "New", ph: "", img: "assets/products/lx88.webp",
+    imgs: ["assets/products/lx88.webp", "assets/products/lx88-2.webp", "assets/products/lx88-3.webp", "assets/products/lx88-4.webp", "assets/products/lx88-5.webp"],
+    fastShip: true, weight: "52 kg",
+    desc: "Bold black with a touch of gold. The Erick 160cm sideboard hides plenty of storage behind four doors with adjustable shelving, finished with brass-look half-moon handles and raised on a sturdy black metal frame. The deep black finish anchors a neutral room and gives you a wide top for lamps, art and serveware.",
+    features: [
+      "160cm wide with four doors",
+      "Adjustable shelves",
+      "Melamine-coated engineered wood",
+      "Brass-look half-moon handles and a black metal frame base",
+      "Wide top for display"
+    ],
+    specs: { "Type": "Dining & kitchen > Dining > Storage Buffets", "Width": "160cm", "Material": "Melamine-coated engineered wood, metal frame", "Doors": "4", "Colour": "Black" },
+    dimensions: "160cm W x 40cm D x 75cm H" },
+
+  { id: "lx89", added: "2026-11-08", name: "Enyo Double 26cm Euro Top Pocket Spring Foam Mattress in Medium Firm", cat: "Bedroom", room: "Bedroom", price: 480, memberPrice: 432, sku: "SH-11378", tag: "New", ph: "", img: "assets/products/lx89.webp",
+    imgs: ["assets/products/lx89.webp", "assets/products/lx89-2.webp", "assets/products/lx89-3.webp", "assets/products/lx89-4.webp", "assets/products/lx89-5.webp"],
+    fastShip: true, weight: "29.8 kg",
+    desc: "Springs for support, foam for comfort. The Enyo double combines an 18cm pocket spring core with high-density and memory foams and a plush quilted Euro top, for a medium-firm feel that suits most sleepers. Reinforced edges mean you can sit on the side without it sagging. It arrives ready to unpack, with no assembly.",
+    features: [
+      "26cm thick with a quilted Euro top",
+      "18cm pocket spring core",
+      "High-density and memory foam layers",
+      "Reinforced edge support",
+      "Knitted fabric cover",
+      "Medium firm"
+    ],
+    specs: { "Type": "Bedroom > Mattersses > Double", "Size": "Double", "Thickness": "26cm", "Firmness": "Medium firm", "Core": "18cm pocket springs", "Comfort layers": "High-density and memory foam" } },
+
+  { id: "lx90", added: "2026-11-08", name: "Stoten 120cm 4 Seater Round Dining Table in Concrete", cat: "Kitchenware", room: "Kitchenware", price: 311, memberPrice: 280, sku: "SH-11379", tag: "New", ph: "", img: "assets/products/lx90.webp",
+    imgs: ["assets/products/lx90.webp", "assets/products/lx90-2.webp", "assets/products/lx90-3.webp", "assets/products/lx90-4.webp", "assets/products/lx90-5.webp"],
+    fastShip: true, weight: "32 kg",
+    desc: "Post-modern style for four. The Stoten pairs a 120cm round top in a concrete-look finish with black powder-coated legs that cross and taper from the centre for a sturdy, balanced stance. Adjustable feet steady it on uneven floors, and rubber pads protect your floorboards.",
+    features: [
+      "120cm round top seats four",
+      "Concrete-look veneer tabletop",
+      "Black powder-coated crossed metal legs",
+      "Adjustable feet for uneven floors",
+      "Non-slip rubber feet pads"
+    ],
+    specs: { "Type": "Dining & kitchen > Dining > Dining Tables", "Seats": "4", "Top": "Engineered wood with concrete-look paper veneer", "Legs": "Black powder-coated metal", "Diameter": "120cm" } },
+
+  { id: "lx91", added: "2026-11-08", name: "Deanna Outdoor Hanging Egg Chair with Cushion in Black", cat: "Outdoor", room: "Outdoor", price: 584, memberPrice: 526, sku: "SH-11380", tag: "New", ph: "", img: "assets/products/lx91.webp",
+    imgs: ["assets/products/lx91.webp", "assets/products/lx91-2.webp", "assets/products/lx91-3.webp", "assets/products/lx91-4.webp", "assets/products/lx91-5.webp"],
+    fastShip: true, weight: "26.5 kg",
+    desc: "Your own private nook, indoors or out. The Deanna egg chair hangs from its own sturdy steel stand, so there's no ceiling hook needed. UV-protected black wicker and a rust-resistant frame suit balconies and covered patios, while high-density cushions and pillows make it easy to curl up for hours.",
+    features: [
+      "Freestanding with its own steel stand",
+      "UV-protected black PU wicker",
+      "Rust-resistant powder-coated steel frame",
+      "High-density foam cushions and pillows",
+      "For indoor or covered outdoor use"
+    ],
+    specs: { "Type": "Outdoor > Outdoor furniture > Outdoor Egg Chairs", "Weave": "UV-protected PU wicker", "Frame": "Powder-coated steel", "Includes": "Stand, cushions and pillows", "Colour": "Black", "Use": "Indoor or covered outdoor" } },
+
+  { id: "lx92", added: "2026-11-08", name: "Sphero 40cm Floating Waterproof Outdoor LED Ball Lights", cat: "Outdoor", room: "Outdoor", price: 181, memberPrice: 163, sku: "SH-11381", tag: "New", ph: "", img: "assets/products/lx92.webp",
+    imgs: ["assets/products/lx92.webp", "assets/products/lx92-2.webp", "assets/products/lx92-3.webp", "assets/products/lx92-4.webp", "assets/products/lx92-5.webp"],
+    fastShip: true, weight: "2.5 kg",
+    desc: "A glowing orb that floats. The Sphero 40cm LED ball is waterproof, so it can drift across a pool or sit in the garden, and it's rechargeable, running for 10+ hours on a full charge. Choose from 16 colours with the wireless remote. It's great for summer parties, weddings and everyday ambience.",
+    features: [
+      "40cm waterproof LED ball",
+      "Floats on water",
+      "Rechargeable, 10+ hours per charge",
+      "16 colour options",
+      "Wireless remote control"
+    ],
+    specs: { "Type": "Outdoor > Decor > Outdoor LED Lights", "Diameter": "40cm", "Power": "Rechargeable battery", "Run time": "Up to 10+ hours", "Colours": "16", "Use": "Pool, garden, events" } },
+
+  { id: "lx93", added: "2026-11-08", name: "Utah Boucle Curved 3 Legged Accent Chair in Cream", cat: "Living Room", room: "Living Room", price: 337, memberPrice: 303, sku: "SH-11382", tag: "New", ph: "", img: "assets/products/lx93.webp",
+    imgs: ["assets/products/lx93.webp", "assets/products/lx93-2.webp", "assets/products/lx93-3.webp", "assets/products/lx93-4.webp", "assets/products/lx93-5.webp"],
+    fastShip: true, weight: "12 kg",
+    desc: "A sculptural chair that's ready the moment it arrives. The Utah's three-legged base and curved U-shaped back make it a striking focal point, upholstered in soft cream bouclé over a solid wood frame. High arms give real support for reading or a coffee break, and it comes fully assembled.",
+    features: [
+      "Unique three-legged design",
+      "Curved U-shaped backrest and high arms",
+      "Soft bouclé upholstery in cream",
+      "Solid wood frame",
+      "Arrives fully assembled"
+    ],
+    specs: { "Type": "Accent chair", "Upholstery": "Bouclé fabric", "Frame": "Solid wood", "Colour": "Cream", "Assembly": "None required" } },
+
+  { id: "lx94", added: "2026-11-08", name: "Krokom 200x300cm Modern Abstract Indoor Floor Rug", cat: "Living Room", room: "Living Room", price: 207, memberPrice: 186, sku: "SH-11383", tag: "New", ph: "", img: "assets/products/lx94.webp",
+    imgs: ["assets/products/lx94.webp", "assets/products/lx94-2.webp", "assets/products/lx94-3.webp", "assets/products/lx94-5.webp"],
+    fastShip: true, weight: "5.8 kg",
+    desc: "Soft, subtle art for your floor. The Krokom rug carries a gentle printed abstract pattern that sits easily with modern and contemporary furniture. It's 100% polyester, which resists stains and doesn't soak up spills quickly, and an anti-slip backing keeps it in place. At 200 x 300cm it's sized to anchor a full living room.",
+    features: [
+      "Subtle modern abstract print",
+      "100% polyester, stain resistant and easy to clean",
+      "Anti-slip backing",
+      "Large 200 x 300cm size"
+    ],
+    specs: { "Type": "Living Room > Decor > Rugs", "Size": "200 x 300cm", "Material": "100% polyester", "Backing": "Anti-slip", "Use": "Indoor" } },
+
+  { id: "lx95", added: "2026-11-08", name: "Peyton Boucle Fabric Bar Stool Set of 2 in Cream", cat: "Kitchenware", room: "Kitchenware", price: 467, memberPrice: 420, sku: "SH-11384", tag: "New", ph: "", img: "assets/products/lx95.webp",
+    imgs: ["assets/products/lx95.webp", "assets/products/lx95-3.webp", "assets/products/lx95-4.webp", "assets/products/lx95-5.webp"],
+    fastShip: true, weight: "12.49 kg",
+    desc: "Comfortable enough to linger at the bench. The Peyton stools have a soft, scooped seat in cream bouclé with a low curved back, a footrest ring and black powder-coated metal legs. Sold as a pair, they bring a cosy, minimalist look to a kitchen island or bar.",
+    features: [
+      "Set of two bar stools",
+      "Soft cream bouclé upholstery",
+      "Low curved back and footrest ring",
+      "Black powder-coated metal legs",
+      "Engineered wood frame"
+    ],
+    specs: { "Type": "Dining & kitchen > Dining > Bar Stools", "Quantity": "2", "Upholstery": "Bouclé fabric", "Legs": "Black powder-coated metal", "Colour": "Cream" },
+    dimensions: "51cm W x 42.5cm D x 74cm H (each)" },
+
+  { id: "lx96", added: "2026-11-08", name: "Halsa Classic Velvet Dining Chairs Set of 4 in Black", cat: "Kitchenware", room: "Kitchenware", price: 324, memberPrice: 292, sku: "SH-11385", tag: "New", ph: "", img: "assets/products/lx96.webp",
+    imgs: ["assets/products/lx96.webp", "assets/products/lx96-2.webp", "assets/products/lx96-3.webp", "assets/products/lx96-4.webp", "assets/products/lx96-5.webp"],
+    fastShip: true, weight: "20 kg",
+    desc: "Classic shape, plush comfort. The Halsa chairs wrap a cushioned seat and a supportive 45cm backrest in soft black velvet, on sleek metal legs with anti-slip pads. The set of four suits both modern and traditional dining tables; buy two sets for an eight-seater.",
+    features: [
+      "Set of four dining chairs",
+      "Soft velvet upholstery in black",
+      "Cushioned seat with 45cm-high backrest",
+      "Sturdy metal legs with anti-slip pads"
+    ],
+    specs: { "Type": "Dining & kitchen > Dining > Dining Chairs", "Quantity": "4", "Upholstery": "Velvet", "Legs": "Metal", "Back height": "45cm", "Colour": "Black" } },
+
+  { id: "lx97", added: "2026-11-08", name: "Seneca Queen Channel Tufted Velvet Fabric Bed Frame in Sandy White", cat: "Bedroom", room: "Bedroom", price: 623, memberPrice: 561, sku: "SH-11386", tag: "New", ph: "", img: "assets/products/lx97.webp",
+    imgs: ["assets/products/lx97.webp", "assets/products/lx97-2.webp", "assets/products/lx97-3.webp", "assets/products/lx97-4.webp", "assets/products/lx97-5.webp"],
+    fastShip: true, weight: "36.6 kg",
+    desc: "A soft, sculpted statement. The Seneca queen bed frame features a gently curved, channel-tufted headboard in sandy white velvet, padded with firm sponge and silk wadding for comfort. A solid wood frame and engineered wood legs support up to 230kg.",
+    features: [
+      "Curved, channel-tufted headboard",
+      "Velvet upholstery in sandy white",
+      "Padded with firm sponge and silk wadding",
+      "Solid wood frame, engineered wood legs",
+      "230kg weight capacity",
+      "Basic assembly required"
+    ],
+    specs: { "Type": "Bedroom > Bed frames > Queen", "Size": "Queen", "Upholstery": "Velvet", "Frame": "Solid wood, engineered wood legs", "Weight capacity": "230kg", "Colour": "Sandy white", "Mattress": "Not included" },
+    dimensions: "220cm L x 163cm W x 115cm H" },
+
+  { id: "lx98", added: "2026-11-08", name: "Gamila Boucle Rocking Chair with Ottoman in Cream White", cat: "Living Room", room: "Living Room", price: 454, memberPrice: 409, sku: "SH-11387", tag: "New", ph: "", img: "assets/products/lx98.webp",
+    imgs: ["assets/products/lx98.webp", "assets/products/lx98-2.webp", "assets/products/lx98-3.webp", "assets/products/lx98-4.webp", "assets/products/lx98-5.webp"],
+    fastShip: true, weight: "28.3 kg",
+    desc: "Rock, relax and put your feet up. The Gamila rocking chair is upholstered in soft cream bouclé over a solid timber frame, with a high-density foam seat that stays supportive for long sits. The matching ottoman and removable pillow make it a favourite for nurseries, reading corners and slow Sunday mornings.",
+    features: [
+      "Smooth rocking motion",
+      "Soft bouclé upholstery in cream white",
+      "Solid timber frame and legs",
+      "High-density foam seat",
+      "Includes matching ottoman and removable pillow",
+      "Curved backrest and armrests"
+    ],
+    specs: { "Type": "Rocking chair with ottoman", "Upholstery": "Bouclé fabric", "Frame": "Solid timber", "Includes": "Ottoman and pillow", "Colour": "Cream white" } },
 ];
 
 /* ---- Coming-soon placeholders ---------------------------------
