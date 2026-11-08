@@ -19,7 +19,7 @@
    ============================================================ */
 
 const BREVO_API_KEY  = process.env.BREVO_API_KEY || "";
-const IG_URL = process.env.INSTAGRAM_URL || "https://www.instagram.com/samirahomedecor";
+const IG_URL = process.env.INSTAGRAM_URL || "https://www.instagram.com/sys_samira1";
 const TT_URL = process.env.TIKTOK_URL || "https://www.tiktok.com/@sys_samira";
 const YT_URL = process.env.YOUTUBE_URL || "https://www.youtube.com/@sys_samira";
 const SENDER_EMAIL   = process.env.SENDER_EMAIL || "hello@samirahomedecor.com.au";
