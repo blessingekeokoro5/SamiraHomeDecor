@@ -135,6 +135,31 @@ function orderText(f) {
     `Shipping: ${aud(f.shipping)}\nTotal: ${aud(f.total)}\n`;
 }
 
+/* Checkout marketing opt-in → Brevo contact. Australian mobiles become +614… for SMS. */
+async function addMarketingContact(cd, email, sms) {
+  const key = process.env.BREVO_API_KEY;
+  if (!key || !cd.email) return;
+  const listId = parseInt(process.env.BREVO_LIST_ID || "0", 10);
+  const parts = String(cd.name || "").trim().split(/\s+/);
+  const attributes = { FIRSTNAME: parts[0] || "", LASTNAME: parts.slice(1).join(" ") };
+  if (sms && cd.phone) {
+    let ph = String(cd.phone).replace(/[^\d+]/g, "");
+    if (/^04\d{8}$/.test(ph)) ph = "+61" + ph.slice(1);
+    if (/^\+\d{8,15}$/.test(ph)) attributes.SMS = ph;
+  }
+  const body = { email: cd.email, attributes, updateEnabled: true };
+  if (email && listId) body.listIds = [listId];
+  const post = () => fetch("https://api.brevo.com/v3/contacts", {
+    method: "POST",
+    headers: { "api-key": key, "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify(body),
+  });
+  let r = await post();
+  // A mobile already on another contact is rejected; keep the email sign-up anyway
+  if (!r.ok && attributes.SMS) { delete attributes.SMS; r = await post(); }
+  if (!r.ok) console.error("Brevo contact", r.status, (await r.text()).slice(0, 200));
+}
+
 async function emailOrder(session, lineItems) {
   const f = orderFacts(session, lineItems);
   const to = process.env.ORDER_EMAIL || process.env.BUSINESS_EMAIL || "hello@samirahomedecor.com.au";
@@ -211,6 +236,14 @@ exports.handler = async (event) => {
             "Samira Home Decor — referred order, 30% reward to send",
             `Order: ${(session.metadata && session.metadata.order_no) || ""}\nStripe session: ${session.id}\nCustomer: ${buyer}\nOrder total: ${money(session.amount_total, session.currency)}\n\nReferred by: ${note}\n\nSend the referrer their 30% reward, then mark it done in Admin > Referrals.`
           );
+        }
+
+        // Ticked "send me offers" at checkout: add them to Brevo (email → the newsletter
+        // list; SMS → their mobile on the contact). Only ever on an opt-in.
+        const optIn = String((session.metadata && session.metadata.marketing_opt_in) || "");
+        if (optIn) {
+          try { await addMarketingContact(session.customer_details || {}, /email/i.test(optIn), /sms/i.test(optIn)); }
+          catch (e) { console.error("Brevo opt-in failed:", e.message); }
         }
 
         // Gift cards become spendable only now, having actually been paid for.
