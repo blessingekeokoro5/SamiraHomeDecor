@@ -55,6 +55,7 @@ const SHIP_ZONES = {
   "Germany":        { base: 21.30, perKg: 28.60, days: [10, 24] },
 };
 const DEFAULT_ITEM_KG = 0.75;
+const HEAVY_KG = 50, HEAVY_MIN_FEE = 150;  // keep in step with js/checkout.js
 const EXPRESS_EXTRA = 150;   // extra charge for Express on gift orders (AUD), keep in step with js/cart.js
 
 /* ---- Discount ceiling ---------------------------------------
@@ -324,6 +325,7 @@ function shippingBase(country, fulfil, lines, afterDiscount) {
   if (rest.length) {
     const kg = round2(Math.max(rest.reduce((n, l) => n + l.weight * l.qty, 0), 0.1));
     amount = round2(zone.base + zone.perKg * kg);
+    if (kg > HEAVY_KG) amount = Math.max(amount, HEAVY_MIN_FEE);  // over 50kg: at least $150
     if (zone.freeOver && afterDiscount >= zone.freeOver) amount = 0;
   }
   // Optional Express on furniture (expressOpt): a per-item fee on top of shipping.

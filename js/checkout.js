@@ -23,6 +23,7 @@ const SHIP_ZONES = {
 };
 const DEFAULT_ITEM_KG = 0.75; // used when a product has no weight set
 const INTL_MAX_KG = 20;       // Australia Post International Standard parcel limit
+const HEAVY_KG = 50, HEAVY_MIN_FEE = 150;  // over 50kg: delivery is at least $150
 
 /* Browser copy of scripts/estimate-weight.js — keep in sync. Estimates a
    product's shipping weight (kg) from a real weight, else type/material/size. */
@@ -154,6 +155,8 @@ function shipQuote(afterDisc) {
   const xfee = expressShipFee();
   const hasRest = getCart().some(function (i) { const p = (!i.giftCard && !i.hamper && typeof findProduct === "function") ? findProduct(i.id) : null; return !i.giftCard && !(p && (p.expressShip || p.shipFee)); });
   let fee = hasRest ? Math.round((z.base + z.perKg * weight) * 100) / 100 : 0;
+  // Heavy orders (over 50kg) are never less than $150 to deliver. Keep in step with shippingBase() on the server.
+  if (hasRest && weight > HEAVY_KG) fee = Math.max(fee, HEAVY_MIN_FEE);
   if (hasRest && z.freeOver && afterDisc >= z.freeOver) fee = 0;
   fee += xfee;
   fee += fixedShipFee();
