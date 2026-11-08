@@ -337,7 +337,27 @@
         t.classList.toggle("active", !!img && img.getAttribute("src") === src);
       });
     }
-    let pdpSize = null, pdpSizePrice = null;
+    let pdpSize = null, pdpSizePrice = null, pdpMemberUnit = null;
+    /* Sets (e.g. "Set of 2" chairs): the price is per set, so the shown price follows the quantity
+       (3 sets of 2 = 3 x the set price, 6 chairs). */
+    function pdpIsSet(p){ return !!p && p.price != null && /\bset\b/i.test(p.name); }
+    function pdpSetTotals(){
+      const p = findProd(new URLSearchParams(location.search).get("id"));
+      if (!pdpIsSet(p)) return;
+      const unit = pdpSizePrice != null ? pdpSizePrice : p.price, q = pdpQty;
+      const pe = document.getElementById("pdpPrice");
+      if (pe) pe.innerHTML = money(unit * q) + (p.was && pdpSizePrice == null ? `<small>${money(p.was * q)}</small>` : "");
+      const mu = pdpMemberUnit || p.memberPrice;
+      if (mu) {
+        const me = document.getElementById("pdpMemberPrice"); if (me) me.textContent = money(mu * q);
+        const ms = document.getElementById("pdpMemberSave"); if (ms) ms.textContent = money((unit - mu) * q);
+      }
+      const n = (p.name.match(/set of (\d+)/i) || [])[1];
+      const noun = (p.name.match(/\b(chair|stool|barstool|cushion cover)s?\b/i) || [])[1];
+      const pieces = n ? ` · ${q * n} ${noun ? noun.toLowerCase() + "s" : "pieces"} in total` : "";
+      const se = document.getElementById("pdpSetNote");
+      if (se) se.textContent = `${money(unit)} per set · ${q} ${q === 1 ? "set" : "sets"}${pieces}`;
+    }
     function pdpSetSize(label, price, btn) {
       pdpSize = label; pdpSizePrice = price;
       const nm = document.getElementById("pdpSizeName"); if (nm) nm.textContent = label;
@@ -350,10 +370,12 @@
         const sz = pp && Array.isArray(pp.sizes) && pp.sizes.find((z) => z.label === label);
         const mp = (sz && sz.memberPrice) ? sz.memberPrice : (pp && pp.memberPrice ? Math.round(price * pp.memberPrice / (pp.was || pp.price)) : null);
         if (mp) {
+          pdpMemberUnit = mp;
           const me = document.getElementById("pdpMemberPrice"); if (me) me.textContent = money(mp);
           const ms = document.getElementById("pdpMemberSave"); if (ms) ms.textContent = money(price - mp);
         }
       } catch (e) {}
+      pdpSetTotals();
       document.querySelectorAll(".pdp-size").forEach((s) => s.classList.remove("active"));
       if (btn) btn.classList.add("active");
       // A 360cm sofa and a single armchair are not the same object. If the
@@ -699,6 +721,7 @@
             ${rev ? `<div class="stars" style="margin-bottom:10px">${stars(rev.avg)} <span style="color:var(--muted);font-size:0.85rem">${rev.avg.toFixed(1)} · ${rev.total} review${rev.total === 1 ? "" : "s"}</span></div>` : ""}
             ${p.cat === "Packaging" ? `<div class="price" id="pdpPrice" style="font-size:1.15rem;color:var(--rose-deep)">Retail &amp; wholesale · price on enquiry</div>` : `
             <div class="price" id="pdpPrice">${money((p.sizes && p.sizes.length) ? p.sizes[0].price : p.price)}${was}</div>
+            ${pdpIsSet(p) ? `<div id="pdpSetNote" style="margin-top:4px;font-size:.88rem;color:var(--body)"></div>` : ""}
             ${p.dontPay ? `<div class="dont-pay" style="margin-top:8px"><span class="dp-tag">Don't Pay</span> <s>${money(p.dontPay)}</s><button class="dp-info" type="button" aria-label="Why should I not pay more?" onclick="showDontPayInfo(event)">ⓘ</button></div>` : ""}`}
             ${(p.memberPrice && p.cat !== "Packaging") ? `<div class="member-price" style="margin-top:6px">✦ Members price <span id="pdpMemberPrice">${money((p.sizes && p.sizes.length && p.sizes[0].memberPrice) ? p.sizes[0].memberPrice : p.memberPrice)}</span> <a href="#" onclick="if(typeof openMemberModal==='function')openMemberModal();return false;" style="font-size:0.82rem">Join free →</a></div>` : ""}
             ${(p.memberPrice && p.cat !== "Packaging") ? `<div class="member-save">
@@ -808,6 +831,8 @@
             <a class="pdp-trade" href="trade.html">🧳 <span><strong>Shopping for a business?</strong> Join our Trade &amp; Commercial Program for exclusive trade pricing →</span></a>
           </div>
         </div>`;
+      pdpMemberUnit = (p.sizes && p.sizes.length && p.sizes[0].memberPrice) ? p.sizes[0].memberPrice : null;
+      pdpSetTotals();
 
       let related = PRODUCTS.filter(x => x.cat === p.cat && x.id !== p.id);
       related = related.concat(PRODUCTS.filter(x => x.cat !== p.cat && x.id !== p.id));
@@ -850,7 +875,7 @@
     }
     function scrollRel(dir){ const t = document.getElementById("relatedGrid"); if (t) t.scrollBy({ left: dir * 280, behavior: "smooth" }); }
     function scrollTrack(gid, dir){ const t = document.getElementById(gid); if (t) t.scrollBy({ left: dir * 280, behavior: "smooth" }); }
-    function setPdpQty(d){ pdpQty = Math.max(1, pdpQty + d); document.getElementById("pdpQty").textContent = pdpQty; var o = document.getElementById("dcOut"); if (o && o.dataset.id) calcDelivery(o.dataset.id); }
+    function setPdpQty(d){ pdpQty = Math.max(1, pdpQty + d); document.getElementById("pdpQty").textContent = pdpQty; pdpSetTotals();var o = document.getElementById("dcOut"); if (o && o.dataset.id) calcDelivery(o.dataset.id); }
     /* Delivery calculator (items with a fixed per-item delivery fee) */
     function auState(pc) {
       var n = parseInt(pc, 10);
