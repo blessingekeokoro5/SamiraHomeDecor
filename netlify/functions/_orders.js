@@ -25,7 +25,7 @@ function productInfo(id) {
 const newToken = () => crypto.randomBytes(18).toString("hex");
 
 // Delivery stages, in order. Customer wording lives in js/order-status.js.
-const STAGES = ["placed", "confirmed", "picking", "packed", "shipped", "transit", "arrived", "out", "delivered"];
+const STAGES = ["placed", "confirmed", "picking", "packed", "shipped", "transit", "arrived", "out", "delivered", "cancelled"];
 const AU_STATES = ["ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"];
 
 function openStore() {
@@ -136,7 +136,7 @@ function holdFor(rec) {
 function publicStatus(order, rec) {
   const stage = rec && STAGES.includes(rec.stage) ? rec.stage : "picking";
   return {
-    hold: stage === "delivered" ? null : holdFor(rec),
+    hold: (stage === "delivered" || stage === "cancelled") ? null : holdFor(rec),
     stage,
     location: (rec && rec.location) || order.state || "",
     courier: (rec && rec.courier) || "",

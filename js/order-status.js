@@ -60,6 +60,18 @@
     if (!el) return;
     opts = opts || {};
     var st = data.status || {}, o = data.order || {};
+    if (st.stage === "cancelled") {
+      var its = (o.items || []).length ? '<p style="color:var(--muted);margin:0 0 14px;font-size:.92rem">' +
+        o.items.map(function (it) { return esc(it.name) + (it.qty > 1 ? " × " + it.qty : ""); }).join(" · ") + '</p>' : "";
+      el.innerHTML = (opts.compact ? "" :
+          '<span class="eyebrow" style="color:#8a7f77">Cancelled</span>' +
+          '<h2 style="font-size:1.8rem;margin-bottom:4px">Order ' + esc(o.orderNo) + '</h2>') + its +
+        '<div class="track-summary"><div class="track-stat"><div class="l">Status</div><div class="v">Cancelled &ndash; refunded</div></div></div>' +
+        '<div style="background:#F7F3EC;border-left:3px solid #8a7f77;padding:12px 14px;border-radius:8px;margin:12px 0;font-size:.92rem;line-height:1.55;color:#0B1F3A">' +
+        'This order has been cancelled and a full refund has been issued to your original payment method. Refunds usually appear within 5&ndash;10 business days, depending on your bank. Questions? Contact hello@samirahomedecor.com.au.</div>' +
+        (st.note ? '<div style="background:#F7F3EC;border-left:3px solid #E0C992;padding:10px 12px;border-radius:6px;margin:10px 0;font-size:.9rem">' + esc(st.note) + '</div>' : "");
+      return;
+    }
     var loc = st.location || o.state || "";
     var list = steps(loc);
     var cur = Math.max(0, list.findIndex(function (s) { return s.key === st.stage; }));

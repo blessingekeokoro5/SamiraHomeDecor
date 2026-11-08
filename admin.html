@@ -299,7 +299,7 @@
     const ORD_STAGES = [
       ["placed", "Order placed"], ["confirmed", "Order confirmed"], ["picking", "Currently picking"], ["packed", "Packed with care & dispatched"],
       ["shipped", "Shipped (handed to courier)"], ["transit", "In transit to customer's state"],
-      ["arrived", "Arrived at customer's state terminal"], ["out", "Out for delivery (emails customer)"], ["delivered", "Delivered"]
+      ["arrived", "Arrived at customer's state terminal"], ["out", "Out for delivery (emails customer)"], ["delivered", "Delivered"], ["cancelled", "Cancelled \u2013 refunded"]
     ];
     const ORD_STATES = ["ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"];
     let _ordRows = [];
@@ -460,6 +460,8 @@
       const msg = document.getElementById("ordMsg" + i);
       const stage = document.getElementById("ordStage" + i).value;
       if (stage === "out" && !(o.status && o.status.stage === "out") && !confirm("This emails " + o.email + " to say their order is out for delivery. Continue?")) return;
+      if (stage === "cancelled" && !(o.status && o.status.stage === "cancelled") && !confirm("Mark " + o.orderNo + " as cancelled and refunded? Make sure you've refunded the payment in Stripe first. (This does not email the customer.)")) return;
+      if (stage === "cancelled") document.getElementById("ordHold" + i).value = "";
       msg.style.color = ""; msg.textContent = "Saving…";
       try {
         const res = await fetch(ORD_FN, { method: "POST", headers: { "Content-Type": "application/json", "x-admin-token": bookToken() }, body: JSON.stringify({
