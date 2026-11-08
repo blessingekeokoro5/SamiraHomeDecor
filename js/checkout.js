@@ -375,7 +375,7 @@ function renderCheckout() {
         <div class="cx-paybox">
           <p class="cx-need" id="coNeed">Fill in all fields marked * to continue.</p>
           <button type="submit" class="btn btn--primary btn--block" id="payBtn">Pay ${(typeof DM_CUR!=="undefined"&&DM_CUR!=="AUD")?moneyAud(t.total)+" (AUD)":money(t.total)} securely →</button>
-          <div class="co-pay-brands" style="margin-top:12px;text-align:center">💳 Card · Apple Pay · Google Pay, secured by <strong>Stripe</strong></div>
+          <div class="co-pay-brands" style="margin-top:12px;text-align:center">💳 Card · Apple Pay · Google Pay · Afterpay · Zip · Klarna, secured by <strong>Stripe</strong></div>
           <p class="form-note" style="text-align:center;margin:6px 0 0">You'll enter your card details on Stripe's secure page. We never see or store your card number.</p>
         </div>
         <p class="cx-terms">By placing your order you agree to our <a href="policy.html?doc=terms">Terms and Conditions</a>, <a href="policy.html?doc=privacy">Privacy Policy</a>, <a href="policy.html?doc=delivery">Delivery Policy</a> and <a href="policy.html?doc=returns">Returns Policy</a>.</p>

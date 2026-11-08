@@ -481,6 +481,7 @@ function buildFooter() {
             <span class="pay-badge pay-mc"><span class="mc-c1"></span><span class="mc-c2"></span></span>
             <span class="pay-badge pay-afterpay">afterpay</span>
             <span class="pay-badge pay-zip">zip</span>
+            <span class="pay-badge pay-klarna">Klarna.</span>
             <span class="pay-badge pay-amex">AMEX</span>
           </div>
 

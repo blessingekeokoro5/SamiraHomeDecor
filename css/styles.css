@@ -1912,7 +1912,7 @@ a.bk-type-link:hover { border-color: var(--rose); background: var(--blush); }
 .cb-badge { font-weight: 700; font-size: .72rem; padding: 4px 8px; border-radius: 5px; white-space: nowrap; }
 .cb-afterpay { background: #b2fce4; color: #000; }
 .cb-zip { background: #1a0b2e; color: #fff; }
-.cb-paypal { background: #ffc439; color: #003087; }
+.cb-klarna { background: #ffb3c7; color: #0a0a0a; }
 
 @media (max-width: 900px){
   .cart-layout { grid-template-columns: 1fr; }

@@ -283,7 +283,7 @@ function sellingFast(p) {
   return (h % 10) < 4; // ~a third to a half of products
 }
 
-/* ---- "Pay in 4" badge (Afterpay + Zip) ---- */
+/* ---- "Pay in 4" badge (Afterpay + Zip + Klarna) ---- */
 function bnplBadge(price) {
   const p = Number(price);
   if (!isFinite(p) || p < 1) return "";
