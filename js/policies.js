@@ -26,7 +26,7 @@ const FAQ_ITEMS = [
   { q: "How do I track my order?",
     a: "Use our <a href='track.html'>Track Your Order</a> page and enter your order number, email or phone used at checkout. You'll also receive a tracking link by email once your order ships." },
   { q: "What payment methods do you accept?",
-    a: "We accept Visa, Mastercard, American Express, PayPal, Apple Pay, Google Pay, Afterpay, Klarna and Zip. All prices are in Australian Dollars (AUD)." },
+    a: "We accept Visa, Mastercard, American Express, Apple Pay, Google Pay, Afterpay, Klarna and Zip. All prices are in Australian Dollars (AUD)." },
   { q: "Can I return an item?",
     a: "Yes. Your rights under the Australian Consumer Law always apply, and we also offer change-of-mind returns on eligible items within 30 days of delivery (a 20% restocking fee applies). See our <a href='policy.html?doc=returns'>Returns &amp; Refund Policy</a> for full details." },
   { q: "How long do gift hampers take to arrive?",

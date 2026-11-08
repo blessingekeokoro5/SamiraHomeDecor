@@ -479,7 +479,6 @@ function buildFooter() {
           <div class="pay-row">
             <span class="pay-badge pay-visa">VISA</span>
             <span class="pay-badge pay-mc"><span class="mc-c1"></span><span class="mc-c2"></span></span>
-            <span class="pay-badge pay-paypal"><span class="p1">Pay</span><span class="p2">Pal</span></span>
             <span class="pay-badge pay-afterpay">afterpay</span>
             <span class="pay-badge pay-zip">zip</span>
             <span class="pay-badge pay-amex">AMEX</span>
@@ -1605,7 +1604,7 @@ function chatReply(text) {
     html = `Our most-loved pieces right now: the <strong>Arched Rattan Floor Mirror</strong>, <strong>Bouclé Accent Armchair</strong> and <strong>Wattle Soy Candle Trio</strong>, all in the ${link("shop.html", "Shop")} 🛍️. Want me to point you to a specific room?`;
 
   else if (has(/\b(afterpay|klarna|zip|instal|instalment|payment plan|pay later|pay in)\b/))
-    html = `Yes, shop now, pay later! 💳 We offer <strong>Afterpay, Klarna and Zip</strong> at checkout, alongside Visa, Mastercard, Amex, PayPal and Apple/Google Pay.`;
+    html = `Yes, shop now, pay later! 💳 We offer <strong>Afterpay, Klarna and Zip</strong> at checkout, alongside Visa, Mastercard, Amex and Apple/Google Pay.`;
 
   else if (has(/\b(member|membership|join|sign up|loyalty|rewards)\b/))
     html = `Join free and get <strong>10% off one item in your first order</strong> 🎉, plus a 30% referral reward, Christmas vouchers of up to $300 and early access to new arrivals. Look for the "Become a member" banner, or I can pop it open for you!`;
@@ -1620,7 +1619,7 @@ function chatReply(text) {
     html = `No worries! ↩️ Your rights under the Australian Consumer Law always apply, and we also offer <strong>30-day change-of-mind returns</strong> on eligible items. If something arrived faulty or damaged, tell me and we'll make it right. Full details in our ${link("policy.html?doc=returns", "Returns & Refund Policy")}.`;
 
   else if (has(/\b(cart|checkout|pay|buy|purchase|place.*order)\b/))
-    html = `Easy, add pieces to your ${link("cart.html", "cart")} and checkout whenever you're ready 🛒. We accept Visa, Mastercard, Amex, PayPal, Apple/Google Pay, Afterpay, Klarna & Zip, and orders over $3,500 ship free.`;
+    html = `Easy, add pieces to your ${link("cart.html", "cart")} and checkout whenever you're ready 🛒. We accept Visa, Mastercard, Amex, Apple/Google Pay, Afterpay, Klarna & Zip, and orders over $3,500 ship free.`;
 
   else if (has(/\b(size|dimension|measure|measurement|assembly|assemble|weight|fit)\b/))
     html = `Good thinking, measure your space first! 📐 Each product page lists dimensions and assembly notes. If you tell me the item, I'll help you check it fits, or our team can confirm on ${link("contact.html", "Contact")}.`;
