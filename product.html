@@ -259,7 +259,7 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=77"></script>
+  <script src="js/data.js?v=79"></script>
   <script src="js/ai-overviews.js?v=4"></script>
   <script src="js/components.js?v=93"></script>
   <script src="js/cart.js?v=35"></script>
@@ -646,7 +646,7 @@
       // Furniture viewer tools (below the image): dimensions · 3D in-room · 360°
       // Set SHOW_AR to true once real 3D models (assets/models/<id>.glb/.usdz) exist to bring back the "In your room" icon.
       const SHOW_AR = false;
-      const ROOMY = ["Furniture", "Living Room", "Bedroom", "Office", "Outdoor", "Kitchenware", "Home Décor", "Bathroom"];
+      const ROOMY = ["Furniture", "Living Room", "Dining", "Bedroom", "Office", "Outdoor", "Kitchenware", "Home Décor", "Bathroom"];
       const showTools = ROOMY.includes(p.cat) || ROOMY.includes(p.room) || !!p.dims || !!p.spin360 || !!p.model3d;
       const RULER_IC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="8" rx="1.5"/><path d="M6.5 8v3M10 8v4M13.5 8v3M17 8v4"/></svg>';
       const CUBE_IC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 2.5v9m0 0l8-4.5m-8 4.5L4 7"/></svg>';
@@ -655,7 +655,7 @@
       const toolsHtml = showTools ? `
         <div class="pdp-tools">
           <div class="pdp-tool-wrap"><button class="pdp-tool" type="button" aria-label="360 degree view" onclick="openSpin('${p.id}')">${SPIN_IC}</button><span class="pdp-tool-label">360° view</span></div>
-          <div class="pdp-tool-wrap"><button class="pdp-tool" type="button" aria-label="Scan to view on a phone" onclick="openScan('${p.id}')">${QR_IC}</button><span class="pdp-tool-label">Scan</span></div>
+          <div class="pdp-tool-wrap"><button class="pdp-tool" type="button" aria-label="Scan to view on a phone" onclick="openScan('${p.id}')">${QR_IC}</button><span class="pdp-tool-label">${p.arLink ? "View in your space" : "Scan"}</span></div>
         </div>` : "";
       let galleryHtml;
       if (gimgs.length) {
@@ -980,6 +980,17 @@
     /* ---- 4. Scan QR → open this product's details on a phone (no AR) ---- */
     function openScan(id){
       const p = findProd(id); if (!p) return;
+      // Furniture with a 3D model: the code opens it in augmented reality, so the shopper can place it in their room
+      if (p.arLink) {
+        const qrAr = "https://api.qrserver.com/v1/create-qr-code/?size=360x360&margin=10&data=" + encodeURIComponent(p.arLink);
+        openTool(`<div class="ar-body">
+        <h3>Scan to view in your space</h3>
+        <p class="th-sub">Point your phone camera at the code to see <strong>${p.name}</strong> in your own room.</p>
+        <img class="ar-qr" src="${qrAr}" alt="Scan to view ${p.name} in your space" onerror="this.style.display=none">
+        <p class="ar-fine">The 3D model may vary slightly from the actual product. On a phone? <a href="${p.arLink}" target="_blank" rel="noopener">Open it here</a>.</p>
+      </div>`);
+        return;
+      }
       const url = location.origin + "/product.html?id=" + p.id;
       const qr = "https://api.qrserver.com/v1/create-qr-code/?size=360x360&margin=10&data=" + encodeURIComponent(url);
       openTool(`<div class="ar-body">
