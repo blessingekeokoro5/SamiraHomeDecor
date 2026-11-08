@@ -326,7 +326,8 @@ function shippingBase(country, fulfil, lines, afterDiscount) {
     const kg = round2(Math.max(rest.reduce((n, l) => n + l.weight * l.qty, 0), 0.1));
     amount = round2(zone.base + zone.perKg * kg);
     if (kg > HEAVY_KG) amount = Math.max(amount, HEAVY_MIN_FEE);  // over 50kg: at least $150
-    if (zone.freeOver && afterDiscount >= zone.freeOver) amount = 0;
+    // Free over $3,500, except heavy orders (over 50kg), which pay a flat $150
+    if (zone.freeOver && afterDiscount >= zone.freeOver) amount = kg > HEAVY_KG ? HEAVY_MIN_FEE : 0;
   }
   // Optional Express on furniture (expressOpt): a per-item fee on top of shipping.
   const optFee = fulfil === "fexpress" ? round2(lines.reduce((n, l) => n + (l.expressOpt ? l.expressOpt * l.qty : 0), 0)) : 0;

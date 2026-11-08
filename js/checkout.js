@@ -157,7 +157,8 @@ function shipQuote(afterDisc) {
   let fee = hasRest ? Math.round((z.base + z.perKg * weight) * 100) / 100 : 0;
   // Heavy orders (over 50kg) are never less than $150 to deliver. Keep in step with shippingBase() on the server.
   if (hasRest && weight > HEAVY_KG) fee = Math.max(fee, HEAVY_MIN_FEE);
-  if (hasRest && z.freeOver && afterDisc >= z.freeOver) fee = 0;
+  // Free delivery over $3,500, except heavy orders, which pay a flat $150 instead
+  if (hasRest && z.freeOver && afterDisc >= z.freeOver) fee = weight > HEAVY_KG ? HEAVY_MIN_FEE : 0;
   fee += xfee;
   fee += fixedShipFee();
   const ofee = (window._fulfil === "express" && !isGiftOrder(getCart())) ? expressOptFee() : 0;
