@@ -64,6 +64,12 @@
     var list = steps(loc);
     var cur = Math.max(0, list.findIndex(function (s) { return s.key === st.stage; }));
     var delivered = st.stage === "delivered";
+    var hold = !delivered && st.hold ? st.hold : null;
+    var replyBy = "";
+    if (hold && hold.replyBy) {
+      try { replyBy = new Date(hold.replyBy + "T12:00:00").toLocaleDateString("en-AU", { weekday: "long", day: "numeric", month: "long" }); }
+      catch (e) { replyBy = hold.replyBy; }
+    }
     var when = {};
     (st.history || []).forEach(function (h) { when[h.stage] = h.at; });
     when.placed = when.placed || o.placedAt;
@@ -71,7 +77,7 @@
 
     var where = loc ? (o.suburb ? esc(o.suburb) + ", " : "") + esc(loc) + ", Australia" : "Australia";
     var stats = '<div class="track-summary">' +
-      '<div class="track-stat"><div class="l">Status</div><div class="v">' + esc(list[cur].title) + '</div></div>' +
+      '<div class="track-stat"' + (hold ? ' style="background:#FFF4E0;border-color:#E0B25B"' : '') + '><div class="l">Status</div><div class="v"' + (hold ? ' style="color:#9A5B00"' : '') + '>' + (hold ? "On hold &ndash; awaiting your reply" : esc(list[cur].title)) + '</div></div>' +
       '<div class="track-stat"><div class="l">Delivering to</div><div class="v">' + where + '</div></div>' +
       (st.courier ? '<div class="track-stat"><div class="l">Courier</div><div class="v">' + esc(st.courier) + '</div></div>' : "") +
       (st.trackingNo ? '<div class="track-stat"><div class="l">Tracking #</div><div class="v">' + esc(st.trackingNo) + '</div></div>' : "") +
@@ -89,11 +95,14 @@
       o.items.map(function (it) { return esc(it.name) + (it.qty > 1 ? " × " + it.qty : ""); }).join(" · ") + '</p>' : "";
     var note = st.note ? '<div style="background:#F7F3EC;border-left:3px solid #E0C992;padding:10px 12px;border-radius:6px;margin:10px 0;font-size:.9rem">' + esc(st.note) + '</div>' : "";
 
-    var mailNote = delivered ? "" : '<div style="display:flex;gap:10px;align-items:flex-start;background:#EEF3F9;border-left:3px solid #14365F;padding:12px 14px;border-radius:8px;margin:12px 0;font-size:.9rem;line-height:1.5;color:#0B1F3A">' +
+    var mailNote = delivered ? "" : hold ?
+      '<div style="display:flex;gap:10px;align-items:flex-start;background:#FFF4E0;border-left:4px solid #C98A1B;padding:14px 16px;border-radius:8px;margin:12px 0;font-size:.95rem;line-height:1.55;color:#0B1F3A">' +
+      '<span style="font-size:1.3rem">\u26A0\uFE0F</span><span><strong style="color:#9A5B00">Action needed: your order is on hold.</strong> We\u2019ve sent you an email about your order and need your response' +
+      (replyBy ? ' by <strong>' + esc(replyBy) + '</strong>' : '') + '. Please check your inbox (and your spam or junk folder) for an email from hello@samirahomedecor.com.au, then tap one of the options in it.</span></div>' : '<div style="display:flex;gap:10px;align-items:flex-start;background:#EEF3F9;border-left:3px solid #14365F;padding:12px 14px;border-radius:8px;margin:12px 0;font-size:.9rem;line-height:1.5;color:#0B1F3A">' +
       '<span style="font-size:1.2rem">📧</span><span><strong>Please keep an eye on your email.</strong> We send all order updates by email, including if an item is out of stock and we\u2019ve found a close substitute for you to approve. Check your spam or junk folder too, and add hello@samirahomedecor.com.au to your contacts.</span></div>';
 
     el.innerHTML = (opts.compact ? "" :
-        '<span class="eyebrow">' + (delivered ? "Delivered ✓" : "In progress") + '</span>' +
+        '<span class="eyebrow"' + (hold ? ' style="color:#9A5B00"' : '') + '>' + (delivered ? "Delivered ✓" : hold ? "Action needed" : "In progress") + '</span>' +
         '<h2 style="font-size:1.8rem;margin-bottom:4px">Order ' + esc(o.orderNo) + '</h2>') +
       items + stats + mailNote + note + tl;
   };

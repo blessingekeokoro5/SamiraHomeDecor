@@ -8,7 +8,9 @@
         → { ok:true, orders:[ { orderNo, name, email, state, suburb, postcode, total, placedAt, status:{...} } ] }
 
    POST /.netlify/functions/order-admin
-        Body: { orderNo, stage, location, courier, trackingNo, note }
+        Body: { orderNo, stage, location, courier, trackingNo, note, holdReplyBy }
+        holdReplyBy ("YYYY-MM-DD", or "" to clear) shows the order as
+        "On hold – action needed" on the tracking page until cleared.
         Saves the stage the customer sees on the tracking page.
         Moving an order to "out" (Out for delivery) emails the
         customer once.
@@ -108,6 +110,7 @@ exports.handler = async (event) => {
         const rec = await loadStatus(store, o.orderNo);
         o.status = publicStatus(o, rec);
         o.offers = (rec && Array.isArray(rec.offers)) ? rec.offers : [];
+        o.holdReplyBy = (rec && rec.holdReplyBy) || "";
         orders.push(o);
       }
       return json(200, { ok: true, orders, stages: STAGES, states: AU_STATES });
@@ -141,6 +144,7 @@ exports.handler = async (event) => {
     history: Array.isArray(prev.history) ? prev.history.slice(-40) : [],
     notifiedOut: !!prev.notifiedOut,
     offers: Array.isArray(prev.offers) ? prev.offers : [],
+    holdReplyBy: body.holdReplyBy === undefined ? (prev.holdReplyBy || "") : (isDate(body.holdReplyBy) ? body.holdReplyBy : ""),
     updatedAt: now,
   };
   if (prev.stage !== stage) rec.history.push({ stage, at: now, location: rec.location });

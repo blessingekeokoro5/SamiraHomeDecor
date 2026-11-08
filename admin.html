@@ -346,6 +346,9 @@
             <div class="field" style="margin:0"><label>Tracking # (optional)</label><input id="ordTrack${i}" value="${esc(st.trackingNo)}"></div>
           </div>
           <div class="field" style="margin:10px 0 0"><label>Note to customer (optional)</label><input id="ordNote${i}" value="${esc(st.note)}" placeholder="Shown on their tracking page"></div>
+          <div class="field" style="margin:10px 0 0"><label>On hold &ndash; customer must reply by (optional)</label>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><input id="ordHold${i}" type="date" value="${esc(o.holdReplyBy || "")}" style="max-width:200px"><button type="button" class="btn btn--outline btn--sm" onclick="document.getElementById('ordHold${i}').value=''">Clear</button></div>
+            <span class="admin-note" style="margin:4px 0 0;display:block">Shows "On hold &ndash; action needed: please check your email and reply by &hellip;" on their tracking page. Clear it once they've replied, then press Save.</span></div>
           <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
             <button class="btn btn--dark btn--sm" onclick="saveOrder(${i})">Save</button>
             <span id="ordMsg${i}" style="font-size:.86rem"></span>
@@ -464,11 +467,13 @@
           location: document.getElementById("ordLoc" + i).value,
           courier: document.getElementById("ordCourier" + i).value,
           trackingNo: document.getElementById("ordTrack" + i).value,
-          note: document.getElementById("ordNote" + i).value
+          note: document.getElementById("ordNote" + i).value,
+          holdReplyBy: document.getElementById("ordHold" + i).value
         }) });
         const j = await res.json();
         if (!res.ok || !j.ok) throw new Error(j.error || "Save failed");
         o.status = j.status;
+        o.holdReplyBy = document.getElementById("ordHold" + i).value;
         msg.style.color = "#1f7a3d"; msg.textContent = "Saved" + (j.emailed ? " · customer emailed" : "");
       } catch (e) { msg.style.color = "var(--rose-deep)"; msg.textContent = e.message; }
     }

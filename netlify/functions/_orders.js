@@ -122,9 +122,21 @@ async function loadStatus(store, orderNo) {
 }
 
 // The status a customer sees: saved stage, or "picking" for a new paid order.
+// An order is "on hold" while we wait for the customer to answer an email:
+// set by hand in the admin page (holdReplyBy), or while a substitute/delay
+// choice email is still unanswered.
+function holdFor(rec) {
+  if (!rec) return null;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(rec.holdReplyBy || "")) return { replyBy: rec.holdReplyBy };
+  const pending = (Array.isArray(rec.offers) ? rec.offers : []).filter((f) => f && f.status === "pending" && f.replyBy);
+  if (!pending.length) return null;
+  return { replyBy: pending.map((f) => f.replyBy).sort().pop() };
+}
+
 function publicStatus(order, rec) {
   const stage = rec && STAGES.includes(rec.stage) ? rec.stage : "picking";
   return {
+    hold: stage === "delivered" ? null : holdFor(rec),
     stage,
     location: (rec && rec.location) || order.state || "",
     courier: (rec && rec.courier) || "",
