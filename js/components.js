@@ -276,6 +276,7 @@ function buildHeader() {
     <ul class="m-list">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#ranges">Our Ranges</a></li>
+      <li><a href="shop.html?avail=ready">✓ Ready to Ship</a></li>
       ${MEGA_MENU.map(cat => {
         const shopHref = CAT_PAGES[cat.key] || ("shop.html?cat=" + encodeURIComponent(cat.label));
         const links = cat.columns.reduce((a, c) => a.concat(c.links.map(l => ({ l, href: linkHref(cat, c, l) }))), []).filter(x => !/^shop all/i.test(x.l)).slice(0, 8);
@@ -383,6 +384,7 @@ function buildHeader() {
       <div class="container">
         <ul class="nav-cats" id="navCats">
           <li><a href="index.html#ranges">Our Ranges</a></li>
+          <li><a class="nav-ready" href="shop.html?avail=ready">✓ Ready to Ship</a></li>
           ${catTabs}
           <li data-cat="services"><a href="staging.html">Services ${IC.caret}</a></li>
         </ul>

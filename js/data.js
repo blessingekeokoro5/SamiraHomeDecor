@@ -3795,7 +3795,7 @@ function isSaleItem(p) { return !!p && /^sf\d+$/.test(p.id || ""); }
   if (typeof document === "undefined") return;          // browser only — build scripts (no document) skip
   try {
     // During Halloween sofas are already 15% off, so the 10% sofa message would mislead.
-    if (SALE.days.length && typeof ANNOUNCEMENTS !== "undefined" && Array.isArray(ANNOUNCEMENTS) && !halloweenOn()) {
+    if (SALE.days.length && (typeof PRODUCTS !== "undefined" && PRODUCTS.some(isSaleItem)) && typeof ANNOUNCEMENTS !== "undefined" && Array.isArray(ANNOUNCEMENTS) && !halloweenOn()) {
       ANNOUNCEMENTS.unshift(saleOnToday()
         ? "🛋️ SOFA SALE ON NOW — 10% off every sofa today, ends midnight ✦"
         : "🛋️ SOFA SALE every Tuesday, Thursday &amp; Saturday — 10% off all sofas");

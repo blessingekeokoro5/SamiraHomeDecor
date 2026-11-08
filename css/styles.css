@@ -2276,3 +2276,6 @@ a.svc-display-tile:hover img { transform: scale(1.03); }
 /* Photo labels sit bottom-right so they don't cover the books or the cloth */
 .svc-display-tile span { left: auto; right: 12px; }
 @media (max-width: 760px) { .svc-display-tile span { left: auto; right: 8px; } }
+
+/* Ready to Ship shortcut in the main navigation */
+.nav-cats .nav-ready{color:var(--gold-deep,#9c7a3a);font-weight:600}
