@@ -86,6 +86,23 @@
     .ar-steps { text-align: left; max-width: 380px; margin: 8px auto 0; color: var(--body); font-size: 0.9rem; line-height: 1.7; }
     .ar-fine { color: var(--muted); font-size: 0.78rem; margin-top: 16px; }
     model-viewer { width: 100%; height: 340px; background: var(--cream-2); border-radius: 12px; }
+    /* Free "View in your room": the product photo placed on the shopper's own room photo (on-device, no AI cost) */
+    .vr-pick { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; box-sizing: border-box; padding: 26px 16px; border: 1.5px dashed var(--gold, #C6A15B); border-radius: 12px; background: var(--cream-2, #f6eee8); cursor: pointer; font: inherit; color: var(--ink); }
+    .vr-pick strong { font-size: 1rem; }
+    .vr-pick small { color: var(--muted); font-size: 0.8rem; }
+    .vr-canvas { position: relative; border-radius: 12px; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; background: #eee; }
+    .vr-canvas > img { display: block; width: 100%; height: auto; }
+    .vr-item { position: absolute; cursor: grab; touch-action: none; outline: 2px dashed var(--gold, #C6A15B); outline-offset: 2px; }
+    .vr-item img { display: block; width: 100%; height: auto; pointer-events: none; }
+    .vr-canvas.blend .vr-item img { mix-blend-mode: multiply; }
+    .vr-item.flip img { transform: scaleX(-1); }
+    .vr-handle { position: absolute; bottom: -12px; right: -12px; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: 2px solid var(--gold, #C6A15B); box-shadow: 0 1px 6px rgba(0,0,0,.3); cursor: nwse-resize; }
+    .vr-bar { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; justify-content: center; }
+    .vr-bar button, .vr-bar label { border: 1.5px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 12px; font: inherit; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
+    .vr-photos { display: flex; gap: 8px; overflow-x: auto; padding: 10px 2px 4px; }
+    .vr-photos button { flex: 0 0 58px; height: 58px; border: 1.5px solid var(--line); border-radius: 10px; background: #fff; padding: 3px; cursor: pointer; }
+    .vr-photos button.on { border-color: var(--gold, #C6A15B); }
+    .vr-photos img { width: 100%; height: 100%; object-fit: contain; }
     /* AI "See it in your room" */
     .roomai h3 { margin-bottom: 4px; }
     .rai-drop { display: flex; align-items: center; gap: 14px; width: 100%; box-sizing: border-box; padding: 18px; margin: 10px 0 6px; border: 1.5px dashed var(--gold, #C6A15B); border-radius: 12px; background: var(--cream-2, #f6eee8); cursor: pointer; text-align: left; }
@@ -652,10 +669,12 @@
       const CUBE_IC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 2.5v9m0 0l8-4.5m-8 4.5L4 7"/></svg>';
       const SPIN_IC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h4V4"/><path d="M21 16h-4v4"/><path d="M6.5 8.5a7 7 0 0 1 11.9 2"/><path d="M17.5 15.5a7 7 0 0 1-11.9-2"/></svg>';
       const QR_IC = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm-2 8h8v8H3v-8zm2 2v4h4v-4H5zM13 3h8v8h-8V3zm2 2v4h4V5h-4zM13 13h2v2h-2v-2zm4 0h2v2h2v2h-2v2h-2v-2h-2v-2h2v-2zm2 6h2v2h-2v-2zm-6 0h2v2h-2v-2z"/></svg>';
+      const ROOM_IC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5V21H3z"/><path d="M7 17v-3.5a1.5 1.5 0 0 1 1.5-1.5h7a1.5 1.5 0 0 1 1.5 1.5V17M6 17h12"/></svg>';
       const toolsHtml = showTools ? `
         <div class="pdp-tools">
           <div class="pdp-tool-wrap"><button class="pdp-tool" type="button" aria-label="360 degree view" onclick="openSpin('${p.id}')">${SPIN_IC}</button><span class="pdp-tool-label">360° view</span></div>
           <div class="pdp-tool-wrap"><button class="pdp-tool" type="button" aria-label="Scan to view on a phone" onclick="openScan('${p.id}')">${QR_IC}</button><span class="pdp-tool-label">${p.arLink ? "View in your space" : "Scan"}</span></div>
+          ${!p.arLink && FURN_CATS.includes(p.cat) ? `<div class="pdp-tool-wrap"><button class="pdp-tool" type="button" aria-label="View in your room" onclick="openRoomView('${p.id}')">${ROOM_IC}</button><span class="pdp-tool-label">View in your room</span></div>` : ""}
         </div>` : "";
       let galleryHtml;
       if (gimgs.length) {
@@ -1001,6 +1020,96 @@
         <img class="ar-qr" src="${qr}" alt="Scan to view ${p.name}" onerror="this.style.display='none'">
         <p class="ar-fine">Opens the product page, no app needed.</p>
       </div>`);
+    }
+
+    /* ---- 5. View in your room: place the product photo on the shopper's own room photo ----
+       Furniture without a supplier 3D model. Everything stays on the device (no upload, no AI cost).
+       Position and size are kept in % of the photo; white photo backgrounds are hidden with multiply. */
+    const FURN_CATS = ["Furniture", "Living Room", "Dining", "Bedroom", "Office", "Outdoor"];
+    let vrProd = null, vrSrc = "";
+    function openRoomView(id){
+      vrProd = findProd(id); if (!vrProd) return;
+      const pics = [...new Set((vrProd.imgs && vrProd.imgs.length) ? vrProd.imgs : [vrProd.img])].filter(Boolean);
+      vrSrc = pics[0] || "";
+      openTool(`<div id="vrBody">
+        <h3>View in your room</h3>
+        <p class="th-sub">Take or choose a photo of your room, then drag <strong>${vrProd.name}</strong> into place and resize it.</p>
+        <button type="button" class="vr-pick" onclick="document.getElementById('vrFile').click()">
+          <span style="font-size:1.8rem">📷</span><strong>Take or choose a room photo</strong><small>Your photo stays on your device. Nothing is uploaded.</small>
+        </button>
+        <input type="file" id="vrFile" accept="image/*" hidden onchange="vrLoad(this)">
+        ${pics.length > 1 ? `<p class="ar-fine" style="margin-top:14px">Product photo to place (plain backgrounds work best):</p>
+        <div class="vr-photos">${pics.map((s, i) => `<button type="button" class="${i ? "" : "on"}" onclick="vrUse(this, '${s}')"><img src="${s}" alt=""></button>`).join("")}</div>` : ""}
+      </div>`);
+    }
+    function vrUse(btn, src){
+      vrSrc = src;
+      document.querySelectorAll(".vr-photos button").forEach(b => b.classList.toggle("on", b === btn));
+      const img = document.querySelector("#vrItem img"); if (img) img.src = src;
+    }
+    function vrLoad(input){
+      const f = input.files && input.files[0]; if (!f) return;
+      const r = new FileReader();
+      r.onload = () => {
+        const photos = document.querySelector(".vr-photos");
+        document.getElementById("vrBody").innerHTML = `
+          <h3>View in your room</h3>
+          <p class="th-sub">Drag to move it. Drag the round corner to resize. It's a guide, so sizes are approximate.</p>
+          <div class="vr-canvas blend" id="vrCanvas"><img src="${r.result}" alt="Your room" id="vrRoom" draggable="false">
+            <div class="vr-item" id="vrItem" style="left:30%;top:40%;width:40%"><img src="${vrSrc}" alt="${vrProd.name.replace(/"/g, "&quot;")}" draggable="false"><span class="vr-handle" aria-hidden="true"></span></div>
+          </div>
+          ${photos ? photos.outerHTML : ""}
+          <div class="vr-bar">
+            <button type="button" onclick="vrScale(0.85)">－ Smaller</button>
+            <button type="button" onclick="vrScale(1.18)">＋ Bigger</button>
+            <button type="button" onclick="document.getElementById('vrItem').classList.toggle('flip')">⇋ Flip</button>
+            <label><input type="checkbox" checked onchange="document.getElementById('vrCanvas').classList.toggle('blend', this.checked)"> Blend white background</label>
+            <button type="button" onclick="openRoomView(vrProd.id)">↻ New photo</button>
+            <button type="button" onclick="vrSave()">⤓ Save</button>
+          </div>`;
+        vrBind(document.getElementById("vrItem"));
+      };
+      r.readAsDataURL(f);
+    }
+    function vrScale(k){ const el = document.getElementById("vrItem"); if (el) el.style.width = Math.max(8, Math.min(95, parseFloat(el.style.width) * k)) + "%"; }
+    function vrBind(el){
+      const canvas = document.getElementById("vrCanvas");
+      el.addEventListener("pointerdown", (e) => {
+        e.preventDefault();
+        const resizing = e.target.classList.contains("vr-handle");
+        const cr = canvas.getBoundingClientRect();
+        const s = { x: e.clientX, y: e.clientY, left: parseFloat(el.style.left), top: parseFloat(el.style.top), width: parseFloat(el.style.width) };
+        el.setPointerCapture(e.pointerId);
+        const move = (ev) => {
+          const dx = (ev.clientX - s.x) / cr.width * 100, dy = (ev.clientY - s.y) / cr.height * 100;
+          if (resizing) el.style.width = Math.max(8, Math.min(95, s.width + dx)) + "%";
+          else { el.style.left = Math.max(-20, Math.min(100, s.left + dx)) + "%"; el.style.top = Math.max(-20, Math.min(100, s.top + dy)) + "%"; }
+        };
+        const up = () => { el.removeEventListener("pointermove", move); el.removeEventListener("pointerup", up); el.removeEventListener("pointercancel", up); };
+        el.addEventListener("pointermove", move);
+        el.addEventListener("pointerup", up);
+        el.addEventListener("pointercancel", up);
+      });
+    }
+    /* Flatten the room photo + product into a JPG the shopper can keep */
+    function vrSave(){
+      const room = document.getElementById("vrRoom"), canvas = document.getElementById("vrCanvas"), el = document.getElementById("vrItem");
+      const img = el && el.querySelector("img");
+      if (!room || !img || !img.naturalWidth) return;
+      const W = room.naturalWidth, H = room.naturalHeight, k = W / canvas.clientWidth;
+      const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+      const ctx = cv.getContext("2d");
+      ctx.drawImage(room, 0, 0, W, H);
+      const x = el.offsetLeft * k, y = el.offsetTop * k, w = img.offsetWidth * k, h = img.offsetHeight * k;
+      ctx.globalCompositeOperation = canvas.classList.contains("blend") ? "multiply" : "source-over";
+      if (el.classList.contains("flip")) { ctx.translate(x + w, y); ctx.scale(-1, 1); ctx.drawImage(img, 0, 0, w, h); }
+      else ctx.drawImage(img, x, y, w, h);
+      try {
+        const a = document.createElement("a");
+        a.href = cv.toDataURL("image/jpeg", 0.9);
+        a.download = "my-room-samira-home-decor.jpg";
+        document.body.appendChild(a); a.click(); a.remove();
+      } catch (e) {}
     }
 
     render();
