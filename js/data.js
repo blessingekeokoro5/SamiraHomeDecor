@@ -3954,6 +3954,8 @@ const REVIEWS = [
      lx72: [ { rating: 5, title: "Love it", body: "...", who: "Jane D.", date: "2026-11-20" } ],
 */
 const PRODUCT_REVIEWS = {
+  lf32: [ { rating: 5, title: "Chunky Plush Blanket (Fruit Green/Pink)", body: "I am absolutely in love with this blanket! The chunky bubble-knit design gives it such a luxurious and unique look, and it instantly elevated the style of my living room. It is incredibly soft, fluffy, and cosy without feeling heavy. The quality exceeded my expectations, and the colour is exactly as pictured. Perfect for curling up on the couch during chilly evenings. I've already received so many compliments from guests!", who: "Verified buyer" } ],
+  lx71: [ { rating: 5, title: "Modern Round Coffee Table Set (Black Brown)", body: "This coffee table set is stunning and looks far more expensive than it is. The combination of the matte black finish and smoked glass side table creates a sleek, modern aesthetic that fits beautifully into my space. The tables feel sturdy and well-made, and the nesting design is both practical and stylish. It was easy to set up and instantly became the focal point of my lounge room. Highly recommend for anyone looking to create a premium, contemporary look at home.", who: "Verified buyer" } ],
 };
 function realReviews(id) {
   try { return (typeof PRODUCT_REVIEWS !== "undefined" && PRODUCT_REVIEWS[id]) || []; } catch (e) { return []; }
