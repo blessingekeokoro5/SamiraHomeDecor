@@ -350,8 +350,11 @@ function subKeywords(sub) {
     "trays & bowls": ["tray", "bowl", "dish"],
     "cushions & throws": ["cushion", "throw", "pillow"],
     "wall art": ["wall art", "artwork", "framed print", "canvas print", "wall print"],
-    "bed linen": ["linen", "sheet", "bedding", "pillowcase", "quilt"],
-    "quilt covers": ["quilt", "duvet", "cover"],
+    // Only words that mean bedding. A bare "linen" put a Linen Bar Stool here,
+    // and a bare "cover" put cushion covers under Quilt Covers.
+    "bed linen": ["bed linen", "sheet", "sheet set", "bedding", "pillowcase", "pillow case", "quilt cover", "duvet cover", "doona cover", "coverlet", "comforter", "valance"],
+    "bedside tables": ["bedside table", "bedside", "nightstand", "night stand"],
+    "quilt covers": ["quilt cover", "duvet cover", "doona cover", "quilt cover set"],
     "sheets": ["sheet", "sheet set", "fitted sheet", "flat sheet"],
     "pillowcases": ["pillowcase", "pillow case", "pillowslip", "pillow slip"],
     "comforters": ["comforter"],
@@ -400,6 +403,8 @@ const SUB_EXCLUDE = {
   "vases": /\b(table|cabinet|shelf)\b/i,
   "mirrors": /\b(dressing table|table|dresser|cabinet|desk|vanity unit)\b/i,
   // A quilt cover is bed linen, not a quilt; a pillowcase or cushion is not a pillow.
+  "bedside tables": /\b(queen|king|double|single) bed\b|\bbed (frame|base)\b|\bcoffee table|\bdining table/i,
+  "bed linen": /\b(stools?|chairs?|sofas?|tables?|bench|ottoman|bed frame|bed base|headboard|cushion|curtains?)\b/i,
   "quilts": /\b(quilt covers?|covers?|throw)\b/i,
   "pillows": /\b(pillow ?cases?|pillow ?slips?|protectors?|cushions?|covers?)\b/i
 };
