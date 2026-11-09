@@ -279,7 +279,7 @@ function buildHeader() {
       <li><a href="shop.html?avail=ready">✓ Ready to Ship</a></li>
       ${MEGA_MENU.map(cat => {
         const shopHref = CAT_PAGES[cat.key] || ("shop.html?cat=" + encodeURIComponent(cat.label));
-        const links = cat.columns.reduce((a, c) => a.concat(c.links.map(l => ({ l, href: linkHref(cat, c, l) }))), []).filter(x => !/^shop all/i.test(x.l)).slice(0, 8);
+        const links = cat.columns.reduce((a, c) => a.concat(c.links.map(l => ({ l, href: linkHref(cat, c, l) }))), []).filter(x => !/^shop all/i.test(x.l)).slice(0, cat.mobileMax || 8);
         return `<li class="m-acc">
           <div class="m-acc-head"><a href="${shopHref}">${cat.label}</a><button type="button" class="m-chev" aria-label="Expand ${cat.label}" onclick="mNavToggle(this)">${IC.caret}</button></div>
           <ul class="m-acc-body"><li><a href="${shopHref}">Shop all ${cat.label}</a></li>${links.map(x => `<li><a href="${x.href}">${x.l}</a></li>`).join("")}</ul>
@@ -1874,7 +1874,7 @@ function pruneEmptyMenuLinks() {
     if (!(sub in cache)) cache[sub] = live.some(p => productMatchesSub(p, sub));
     return cache[sub];
   };
-  document.querySelectorAll('.mega-col a[href*="sub="]').forEach(a => {
+  document.querySelectorAll('.mega-col a[href*="sub="], .m-acc-body a[href*="sub="]').forEach(a => {
     let sub = "";
     try { sub = new URLSearchParams(a.getAttribute("href").split("?")[1] || "").get("sub") || ""; } catch (e) {}
     if (sub && !has(sub)) { const li = a.closest("li"); if (li) li.remove(); }

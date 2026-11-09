@@ -57,10 +57,11 @@ const MEGA_MENU = [
     ]
   },
   {
-    key: "bedroom", label: "Bedroom",
+    key: "bedroom", label: "Bedroom", mobileMax: 20,
     columns: [
       { title: "Shop", links: ["Shop All Bedroom", "New Arrivals", "Bestsellers", "On Sale"] },
-      { title: "Bedding", links: ["Bed Linen", "Quilt Covers", "Blankets"] },
+      { title: "Bed Linen", links: ["Bed Linen", "Sheets", "Pillowcases", "Quilt Covers", "Comforters", "Coverlets"] },
+      { title: "Bedding", links: ["Quilts", "Pillows", "Blankets", "Mattress Protectors", "Mattress Toppers"] },
       { title: "Furniture", links: ["Bedside Tables", "Dressers"] },
       { title: "Lighting & Décor", links: ["Lamps", "Mirrors"] }
     ]

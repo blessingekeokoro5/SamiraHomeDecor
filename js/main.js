@@ -352,6 +352,14 @@ function subKeywords(sub) {
     "wall art": ["wall art", "artwork", "framed print", "canvas print", "wall print"],
     "bed linen": ["linen", "sheet", "bedding", "pillowcase", "quilt"],
     "quilt covers": ["quilt", "duvet", "cover"],
+    "sheets": ["sheet", "sheet set", "fitted sheet", "flat sheet"],
+    "pillowcases": ["pillowcase", "pillow case", "pillowslip", "pillow slip"],
+    "comforters": ["comforter"],
+    "coverlets": ["coverlet", "bed cover", "bedspread", "bed spread"],
+    "quilts": ["quilt", "doona"],
+    "pillows": ["pillow"],
+    "mattress protectors": ["mattress protector", "pillow protector"],
+    "mattress toppers": ["mattress topper", "topper", "overlay", "underblanket"],
     "wellness kits & essentials": ["wellness", "kit", "spa", "soak", "mist"],
     "fragrance gift sets": ["fragrance", "scent", "candle"],
     "essential oils": ["essential oil", "oil", "blend"],
@@ -390,7 +398,10 @@ const SUB_EXCLUDE = {
   "throws": /\b(sofa|settee|couch|armchair|chair|stool|bench|lounge|rug)\b/i,
   "rugs": /\b(sofa|chair|throw)\b/i,
   "vases": /\b(table|cabinet|shelf)\b/i,
-  "mirrors": /\b(dressing table|table|dresser|cabinet|desk|vanity unit)\b/i
+  "mirrors": /\b(dressing table|table|dresser|cabinet|desk|vanity unit)\b/i,
+  // A quilt cover is bed linen, not a quilt; a pillowcase or cushion is not a pillow.
+  "quilts": /\b(quilt covers?|covers?|throw)\b/i,
+  "pillows": /\b(pillow ?cases?|pillow ?slips?|protectors?|cushions?|covers?)\b/i
 };
 
 function subWordMatch(hay, needle) {
