@@ -9,13 +9,13 @@
    a signed session token is returned, proving the shopper owns the
    email. Max 5 wrong attempts per code, then it's invalidated.
 
-   Env: optional AUTH_SECRET (falls back to BREVO_API_KEY).
+   Env: AUTH_SECRET (required).
    ============================================================ */
 
 const crypto = require("crypto");
 const { getStore } = require("@netlify/blobs");
 
-const SECRET = process.env.AUTH_SECRET || process.env.BREVO_API_KEY || "samira-home-decor-fallback-secret";
+const SECRET = process.env.AUTH_SECRET || process.env.BREVO_API_KEY || "";
 const MAX_ATTEMPTS = 5;
 
 const CORS = {
@@ -42,6 +42,7 @@ function makeToken(email) {
 }
 
 exports.handler = async (event) => {
+  if (!SECRET) return json(503, { error: "auth_not_configured" });
   if (event.httpMethod === "OPTIONS") return json(200, {});
   if (event.httpMethod !== "POST") return json(405, { error: "Method Not Allowed" });
 

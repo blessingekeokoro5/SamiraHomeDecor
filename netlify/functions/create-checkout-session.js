@@ -1,3 +1,4 @@
+const FurnitureFreight = require("../../js/furniture-freight.js");
 /* ============================================================
    Samira Home Decor — Create Stripe Checkout Session  (Netlify Function)
    ------------------------------------------------------------
@@ -54,6 +55,9 @@ const SHIP_ZONES = {
   "Switzerland":    { base: 21.30, perKg: 28.60, days: [10, 24] },
   "Germany":        { base: 21.30, perKg: 28.60, days: [10, 24] },
 };
+
+// Pure helpers exposed for financial parity tests; Netlify invokes handler only.
+exports._test = { resolveLine, shippingFor };
 const DEFAULT_ITEM_KG = 0.75;
 const HEAVY_KG = 50, HEAVY_MIN_FEE = 150;  // keep in step with js/checkout.js
 const EXPRESS_EXTRA = 150;   // extra charge for Express on gift orders (AUD), keep in step with js/cart.js
@@ -130,10 +134,11 @@ function newOrderNo() { return "SHD-" + Math.floor(100000 + Math.random() * 9000
    their email. We re-check that signature here, so only a real logged-in
    member is charged member prices. */
 const crypto = require("crypto");
-const AUTH_SECRET = process.env.AUTH_SECRET || process.env.BREVO_API_KEY || "samira-home-decor-fallback-secret";
+const AUTH_SECRET = process.env.AUTH_SECRET || process.env.BREVO_API_KEY || "";
 const MEMBER_TOKEN_DAYS = 400;
 function verifyMember(m) {
   try {
+    if (!AUTH_SECRET) return false;
     const email = String((m && m.email) || "").trim().toLowerCase();
     const [issued, sig] = String((m && m.token) || "").split(".");
     if (!email || !issued || !sig) return false;
@@ -252,7 +257,7 @@ function resolveLine(raw, member) {
     else unitPrice = unitPrice * Math.min(1, p.memberPrice / p.price);
   }
 
-  if (p.cat !== "Packaging" && halloweenOn()) {
+  if (!p.readyDining && p.cat !== "Packaging" && halloweenOn()) {
     // Halloween: 15% off storewide; replaces the other promos rather than stacking.
     // Whole dollars, exactly as js/data.js rounds the price the shopper sees.
     unitPrice = Math.round(unitPrice * (1 - HALLOWEEN_PCT / 100));
@@ -260,7 +265,7 @@ function resolveLine(raw, member) {
     // Recurring sofa sale (Tue/Thu/Sat AU time) — apply to the trusted price.
     if (/^sf\d+$/.test(id) && sofaSaleToday()) unitPrice = round2(unitPrice * (1 - SOFA_SALE_PCT / 100));
     // Black Friday → Cyber Monday: 15% off ready-to-ship items (id lxNN).
-    if (/^lx\d+$/.test(id) && blackFridayOn()) unitPrice = round2(unitPrice * (1 - BLACK_FRIDAY_PCT / 100));
+    if (!p.readyDining && /^lx\d+$/.test(id) && blackFridayOn()) unitPrice = round2(unitPrice * (1 - BLACK_FRIDAY_PCT / 100));
   }
 
   const variant = [raw.colour, size].filter(Boolean).map(String).join(", ");
@@ -272,6 +277,8 @@ function resolveLine(raw, member) {
     weight: p.weight != null ? p.weight : DEFAULT_ITEM_KG,
     expressShip: p.expressShip != null ? p.expressShip : null,
     expressOpt: p.expressOpt != null ? p.expressOpt : null,
+    readyDining: !!p.readyDining, supplier: p.supplier, freightClass: p.freightClass,
+    chairSets: p.chairSets, furniture: p.furniture,
     shipFee: p.shipFee != null ? p.shipFee : null,
     arriveBy: p.arriveBy || null,
     auOnly: !!p.auOnly,
@@ -300,8 +307,12 @@ function bizDaysUntil(ymd) {
   return Math.max(1, n);
 }
 
-function shippingFor(country, fulfil, lines, afterDiscount) {
+function shippingFor(country, fulfil, lines, afterDiscount, postcode) {
   const res = shippingBase(country, fulfil, lines, afterDiscount);
+  const ready = FurnitureFreight.quote(lines, postcode, country);
+  if (ready.quoteRequired) return { quoteRequired: true, message: ready.message };
+  res.amount = round2(res.amount + ready.fee);
+  if (ready.fee) res.label = "Furniture delivery" + (ready.surcharge ? " (includes $102 multi-item bulky fee)" : "");
   // Fixed per-item delivery: never free, added on top.
   const fixed = round2(lines.reduce((n, l) => n + (l.shipFee && !l.expressShip ? l.shipFee * l.qty : 0), 0));
   if (fixed > 0) {
@@ -320,7 +331,7 @@ function shippingBase(country, fulfil, lines, afterDiscount) {
   // Express-only items (sofas) carry their own delivery fee per item and
   // are left out of the weight-based quote. Keep in step with js/checkout.js.
   const expressFee = round2(lines.reduce((n, l) => n + (l.expressShip ? l.expressShip * l.qty : 0), 0));
-  const rest = lines.filter((l) => !l.expressShip && !l.shipFee);
+  const rest = lines.filter((l) => !l.expressShip && !l.shipFee && !l.readyDining);
   let amount = 0;
   if (rest.length) {
     const kg = round2(Math.max(rest.reduce((n, l) => n + l.weight * l.qty, 0), 0.1));
@@ -452,8 +463,9 @@ exports.handler = async (event) => {
     // The welcome 10% covers ONE piece only: one unit of the dearest line (one set for a
     // "Set of 2"), never every unit. Gift cards being bought don't count. A sale % (whole
     // order) is used instead if it's worth more; they never stack.
-    const saleDiscount = round2((subtotal * Math.min(askedPct, salePct)) / 100);
-    const welcomeUnit = lines.reduce((m, l, k) => (itemId(items[k]).startsWith("giftcard-") ? m : Math.max(m, l.unitPrice)), 0);
+    const eligibleSubtotal = lines.filter(l => !l.readyDining).reduce((n,l) => n + l.unitPrice * l.qty, 0);
+    const saleDiscount = round2((eligibleSubtotal * Math.min(askedPct, salePct)) / 100);
+    const welcomeUnit = lines.reduce((m, l, k) => ((l.readyDining || itemId(items[k]).startsWith("giftcard-")) ? m : Math.max(m, l.unitPrice)), 0);
     const welcomeDiscount = welcomeOk ? round2((welcomeUnit * WELCOME_PCT) / 100) : 0;
     const discount = Math.max(saleDiscount, welcomeDiscount);
     const pct = welcomeDiscount > saleDiscount ? WELCOME_PCT : Math.min(askedPct, salePct);
@@ -465,7 +477,8 @@ exports.handler = async (event) => {
     const afterDiscount = round2(subtotal - discount - voucher);
 
     // 4. Shipping: recomputed here from weight and region, never taken from the client.
-    const ship = shippingFor(String(customer.country || "Australia"), String(fulfil), lines, afterDiscount);
+    const ship = shippingFor(String(customer.country || "Australia"), String(fulfil), lines, afterDiscount, customer.postcode);
+    if (ship.quoteRequired) return jsonResponse(400, { code: "freight_quote_required", error: ship.message });
 
     // 5. Gift card — verified against the ledger, never taken on trust.
     //    A card only reduces the bill if Samira Home Decor actually issued it and it
@@ -534,7 +547,7 @@ exports.handler = async (event) => {
           ...((discountLabel || l.preorder) ? { description: [l.preorder ? `Pre-order · expected ${l.expected}` : "", discountLabel ? `Includes ${discountLabel}` : ""].filter(Boolean).join(" · ") } : {}),
           ...(l.sku ? { metadata: { sku: l.sku } } : {}),
         },
-        unit_amount: Math.round(l.unitPrice * factor * 100), // GST-inclusive AUD, in cents
+        unit_amount: Math.round(l.unitPrice * (l.readyDining ? 1 : (eligibleSubtotal > 0 ? 1 - discount / eligibleSubtotal : 1)) * (afterDiscount + voucher > 0 ? 1 - voucher / (afterDiscount + voucher) : 1) * 100),
       },
       quantity: l.qty,
     }));

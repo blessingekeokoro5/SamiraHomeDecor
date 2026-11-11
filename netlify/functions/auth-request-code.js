@@ -22,7 +22,7 @@ const { getStore } = require("@netlify/blobs");
 const BREVO_API_KEY = process.env.BREVO_API_KEY || "";
 const SENDER_EMAIL = process.env.SENDER_EMAIL || "hello@samirahomedecor.com.au";
 const SENDER_NAME = process.env.SENDER_NAME || "Samira Home Decor";
-const SECRET = process.env.AUTH_SECRET || BREVO_API_KEY || "samira-home-decor-fallback-secret";
+const SECRET = process.env.AUTH_SECRET || BREVO_API_KEY || "";
 
 const TTL_MS = 10 * 60 * 1000;      // code valid 10 minutes
 const WINDOW_MS = 15 * 60 * 1000;   // rate-limit window
@@ -68,6 +68,7 @@ function codeEmail(code, name) {
 }
 
 exports.handler = async (event) => {
+  if (!SECRET) return json(503, { error: "auth_not_configured" });
   if (event.httpMethod === "OPTIONS") return json(200, {});
   if (event.httpMethod !== "POST") return json(405, { error: "Method Not Allowed" });
   if (!BREVO_API_KEY) return json(503, { error: "email_not_configured" });

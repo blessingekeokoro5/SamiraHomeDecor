@@ -278,10 +278,11 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/data.js?v=92"></script>
+  <script src="js/furniture-freight.js?v=1"></script>
+  <script src="js/data.js?v=93"></script>
   <script src="js/ai-overviews.js?v=7"></script>
   <script src="js/components.js?v=98"></script>
-  <script src="js/cart.js?v=39"></script>
+  <script src="js/cart.js?v=40"></script>
   <script src="js/main.js?v=20"></script>
   <script>
     // Category → breadcrumb path (differs per category). Final crumb = the product's type.
@@ -587,7 +588,7 @@
         const ld = {
           "@context": "https://schema.org", "@type": "Product",
           name: p.name,
-          image: [SITE + "/" + String(imgSrc).replace(/^\//, "")],
+          image: [/^https?:\/\//.test(imgSrc) ? imgSrc : SITE + "/" + String(imgSrc).replace(/^\//, "")],
           description: (p.desc || p.name).slice(0, 320),
           sku: p.sku || p.id,
           brand: { "@type": "Brand", name: p.brand || "Samira Home Decor" },
@@ -712,7 +713,15 @@
             </div>
             ${(typeof isPreorder === "function" && isPreorder(p)) ? `<div class="pdp-preorder" style="margin:-4px 0 16px;text-align:center;font-size:.92rem;color:var(--body)">Expected to arrive ${p.arriveBy ? "by " : ""}<strong style="color:var(--ink)">${preorderExpected(p)}</strong><div style="margin-top:4px;font-size:.84rem">${preorderTermsLink()}</div></div>` : ""}`}
             ${p.price == null ? (p.tag !== "Coming Out Soon" ? "" : `<p style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)"><strong style="color:var(--ink)">Coming out soon.</strong> This kit is on its way and product photos are being uploaded. Enquire now to hear first when it's ready.</p>`) : `<div style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)">
-              ${p.expressShip
+              ${p.readyDining
+                ? `<strong>✓ Ready to ship</strong> · Supplier stock subject to availability.
+                  <div class="pdp-delcalc" style="margin-top:12px;padding:12px 14px;border:1px solid #E8DCC8;border-radius:10px;background:#fff">
+                    <div style="font-weight:700;color:var(--ink)">Delivery calculator</div>
+                    <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap"><input id="dcPost" inputmode="numeric" maxlength="4" placeholder="Your postcode" aria-label="Postcode" style="flex:1;min-width:120px;padding:10px 12px;border:1px solid #D9CBB3;border-radius:8px;font:inherit"><button type="button" class="btn btn--outline" onclick="calcDelivery('${p.id}')">Calculate</button></div>
+                    <div id="dcOut" style="margin-top:8px" aria-live="polite"></div>
+                    <div style="margin-top:6px;font-size:.8rem;color:#8a7f77">Freight is based on the supplier, product and tested postcode. Two or more furniture units include one $102 bulky-order fee. Untested destinations need a quote.</div>
+                  </div>`
+                : p.expressShip
                 ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">⚡ Express delivery only</span> <span style="color:var(--body)">Order today, receive around <strong style="color:var(--ink)">${typeof arriveRange === "function" ? arriveRange(p) : ""}</strong></span>
                   <div style="margin-top:8px">Estimated delivery cost: about <strong style="color:var(--ink)">$${Number(p.expressShip).toLocaleString("en-AU")}</strong> per item, added at checkout.</div>
                   <div style="margin-top:6px;font-size:.84rem">Delivery times can't be guaranteed if there are delays beyond our control, but we'll always keep you updated on your delivery's progress.</div>
@@ -738,7 +747,7 @@
               ${p.price == null || p.cat === "Packaging" ? "" : (p.auOnly
                 ? `<div style="margin-top:8px;font-size:.88rem;color:var(--body)">🇦🇺 <strong style="color:var(--ink)">Ships within Australia only.</strong> Large pieces aren't available for overseas delivery.</div>`
                 : `<div style="margin-top:8px;font-size:.88rem;color:var(--body)">🌏 Also ships to <strong style="color:var(--ink)">New Zealand</strong>, the UK, USA, Canada, Switzerland and Germany. Import duties or taxes may apply.</div>`)}
-              ${(!p.lead && p.fastShip) ? `<div style="margin-top:8px;font-size:0.95rem;color:var(--body)">🚚 Get it by <strong style="color:var(--ink)">${(typeof estArrival === "function" ? estArrival(6) : "")}</strong></div>` : ""}
+              ${(!p.readyDining && !p.lead && p.fastShip) ? `<div style="margin-top:8px;font-size:0.95rem;color:var(--body)">🚚 Get it by <strong style="color:var(--ink)">${(typeof estArrival === "function" ? estArrival(6) : "")}</strong></div>` : ""}
             </div>`}
             ${p.price == null ? "" : `<p class="pdp-stock-note" style="margin:0 0 14px;font-size:.84rem;line-height:1.5;color:var(--body);background:#F7F3EC;border-left:3px solid #E0C992;padding:10px 12px;border-radius:6px"><strong style="color:var(--ink)">Please note:</strong> our pieces sell out quickly and supplier delivery times can change. If an item you order is out of stock or can't arrive by the date shown, we'll email you to discuss a close substitute or a new delivery date. If you're happy with it, we'll go ahead with your order; if not, you'll receive a full refund.</p>`}
             <a class="pdp-intl-wa" href="https://wa.me/61451609398" onclick="openOverseasWA({ enquiry: this.dataset.name, links: [this.dataset.url] });return false;" data-name="${p.name.replace(/"/g, "&quot;")}" data-url="https://www.samirahomedecor.com.au/product.html?id=${p.id}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:10px 12px;border-radius:8px;background:#E9F7EF;color:#0B1F3A;font-size:.86rem;line-height:1.4;text-decoration:none"><span style="font-size:1.25rem">🌏</span><span><strong>Shopping from overseas?</strong> Get priority help on WhatsApp chat for a quick reply.</span></a>
@@ -844,6 +853,11 @@
       var st = /^\d{4}$/.test(pc) ? auState(pc) : null;
       if (!st) { out.dataset.id = ""; out.innerHTML = "Please enter a valid 4-digit Australian postcode."; return; }
       out.dataset.id = id;
+      if (p.readyDining) {
+        var quote = FurnitureFreight.quote([Object.assign({}, p, { qty: pdpQty })], pc, "Australia");
+        out.textContent = quote.quoteRequired ? quote.message : "Delivery to " + st + " " + pc + ": $" + quote.fee.toFixed(2) + (quote.surcharge ? " (includes $102 multi-item bulky fee)" : "") + ". Delivery timing is confirmed separately.";
+        return;
+      }
       var fee = p.shipFee * pdpQty;
       var when = p.arriveBy ? "arrives by <strong style=\"color:var(--ink)\">" + fmtArriveBy(p.arriveBy) + "</strong>" : "arrives " + arriveRange(p);
       out.innerHTML = "Delivery to " + st + " " + pc + ": <strong style=\"color:var(--ink)\">$" + fee.toLocaleString("en-AU", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "</strong> for " + pdpQty + (pdpQty === 1 ? " item" : " items") + " · " + when;

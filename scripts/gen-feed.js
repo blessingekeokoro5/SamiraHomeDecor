@@ -40,6 +40,7 @@ const esc = (s) => String(s == null ? "" : s)
 function basePrice(p) { return p.price; }
 function imgUrl(p) {
   const src = p.img || (Array.isArray(p.imgs) && p.imgs[0]) || ("assets/products/" + p.id + ".png");
+  if (/^https?:\/\//.test(src)) return src;
   return SITE + "/" + src.replace(/^\//, "");
 }
 

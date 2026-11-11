@@ -110,7 +110,7 @@ function cartWeight() {
       return;
     }
     const p = (typeof findProduct === "function") ? findProduct(i.id) : null;
-    if (p && (p.expressShip || p.shipFee)) return;            // own per-item delivery fee
+    if (p && (p.expressShip || p.shipFee || p.readyDining)) return; // own delivery fee
     const raw = (p && p.weight) != null ? p.weight : i.weight;
     let w = null;
     // First number only"88 kg / 100 kg" must read as 88, not 88100.
@@ -150,20 +150,23 @@ function fixedShipFee() {
   return fee;
 }
 function shipQuote(afterDisc) {
+  const ready = FurnitureFreight.quote(getCart().map(i => Object.assign({}, findProduct(i.id) || {}, {
+    qty:i.qty, furniture:typeof isFurnitureProduct === "function" && isFurnitureProduct(findProduct(i.id) || {})
+  })), (document.getElementById("coPost") || {}).value, shipCountry());
   const z = SHIP_ZONES[shipCountry()] || SHIP_ZONES["Australia"];
   const weight = cartWeight();
   const xfee = expressShipFee();
-  const hasRest = getCart().some(function (i) { const p = (!i.giftCard && !i.hamper && typeof findProduct === "function") ? findProduct(i.id) : null; return !i.giftCard && !(p && (p.expressShip || p.shipFee)); });
+  const hasRest = getCart().some(function (i) { const p = (!i.giftCard && !i.hamper && typeof findProduct === "function") ? findProduct(i.id) : null; return !i.giftCard && !(p && (p.expressShip || p.shipFee || p.readyDining)); });
   let fee = hasRest ? Math.round((z.base + z.perKg * weight) * 100) / 100 : 0;
   // Heavy orders (over 50kg) are never less than $150 to deliver. Keep in step with shippingBase() on the server.
   if (hasRest && weight > HEAVY_KG) fee = Math.max(fee, HEAVY_MIN_FEE);
   // Free delivery over $3,500, except heavy orders, which pay a flat $150 instead
   if (hasRest && z.freeOver && afterDisc >= z.freeOver) fee = weight > HEAVY_KG ? HEAVY_MIN_FEE : 0;
   fee += xfee;
-  fee += fixedShipFee();
+  fee += fixedShipFee() + ready.fee;
   const ofee = (window._fulfil === "express" && !isGiftOrder(getCart())) ? expressOptFee() : 0;
   fee += ofee;
-  return { fee: fee, weight: weight, days: z.days, freeOver: z.freeOver, express: xfee > 0 };
+  return { quoteRequired:ready.quoteRequired, freightMessage:ready.message, surcharge:ready.surcharge, fee, weight, days:z.days, freeOver:z.freeOver, express:xfee>0 };
 }
 
 function checkoutTotals() {
@@ -184,7 +187,7 @@ function checkoutTotals() {
   const giftCard = (gc && gc.amount >= preGift && preGift > 0) ? preGift : 0;
   const total = preGift - giftCard;
   const gst = Math.round((total / 11)); // GST component of a GST-inclusive total
-  return { sub, discount, discLabel: disc.label, voucher, voucherCode: vou ? vou.code : null, shipping, preGift, giftCard, giftCode: gc ? gc.code : null, total, gst, coupon: window._coupon, country: shipCountry(), weight: q.weight, shipDays: cartShipDays(q.days), freeOver: q.freeOver };
+  return { quoteRequired:q.quoteRequired, freightMessage:q.freightMessage, surcharge:q.surcharge, sub, discount, discLabel: disc.label, voucher, voucherCode: vou ? vou.code : null, shipping, preGift, giftCard, giftCode: gc ? gc.code : null, total, gst, coupon: window._coupon, country: shipCountry(), weight: q.weight, shipDays: cartShipDays(q.days), freeOver: q.freeOver };
 }
 
 function updateTotalsUI() {
@@ -193,14 +196,15 @@ function updateTotalsUI() {
     ? `<div style="margin-top:12px;padding:10px 14px;border-radius:10px;background:#F7F3EC;border-left:3px solid #E0C992;font-size:.9rem;color:#0B1F3A;line-height:1.45">🌏 <strong>International orders may incur import duties or taxes, payable by the recipient.</strong> These aren't included in our prices or shipping.</div><a href="https://wa.me/61451609398" onclick="openCheckoutWA();return false;" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 14px;border-radius:10px;background:#E9F7EF;color:#0B1F3A;text-decoration:none;font-size:.92rem;line-height:1.4"><span style="font-size:1.4rem">💬</span><span><strong>Priority help for overseas customers.</strong> Chat with us directly on WhatsApp for quick assistance with your order.</span></a>`
     : "";
   const t = checkoutTotals();
-  const shipTxt = t.shipping === 0 ? "Free" : money(t.shipping);
+  const shipTxt = t.quoteRequired ? "Delivery quote required" : t.shipping === 0 ? "Free" : money(t.shipping);
   const line = document.getElementById("coShipLine");
   // Block international checkout when the cart has an item too bulky to ship abroad.
   const bulky = (t.country !== "Australia") ? bulkyIntlItem() : null;
-  window._intlBlocked = !!bulky;
+  window._intlBlocked = !!bulky || t.quoteRequired;
   if (line && bulky) {
     line.innerHTML = `<span style="color:var(--rose-deep)">⚠️ <strong>${bulky.name}</strong> ${(function(){ const bp = (typeof findProduct === "function") ? findProduct(bulky.id) : null; return (bp && bp.auOnly) ? `ships within Australia only, so it can't be sent to ${t.country}.` : `is too large to ship to ${t.country} (over ${INTL_MAX_KG}kg).`; })()} It can only be delivered within Australia — please remove it for an international order, or <a href="contact.html">contact us</a> for a freight quote.</span>`;
-  } else if (line) line.innerHTML = `<strong>${(window._fulfil === "express" || expressShipFee() > 0) ? "Express" : "Standard"}</strong> · ${shipTxt} · to ${t.country} · calculated for ~${t.weight}kg · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
+  } else if (line && t.quoteRequired) line.innerHTML = `${t.freightMessage} <a href="contact.html">Request a quote</a>`;
+  else if (line) line.innerHTML = `<strong>${(window._fulfil === "express" || expressShipFee() > 0) ? "Express" : "Standard"}</strong> · ${shipTxt}${t.surcharge ? " · includes one $102 bulky-order fee" : ""} · to ${t.country} · calculated for ~${t.weight}kg · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
   const s = document.getElementById("sumShip"); if (s) s.textContent = shipTxt;
   const gr = document.getElementById("sumGiftRow"); if (gr) gr.style.display = t.giftCard ? "flex" : "none";
   const gv = document.getElementById("sumGift"); if (gv) gv.textContent = "−" + money(t.giftCard);
@@ -209,7 +213,7 @@ function updateTotalsUI() {
   const btn = document.getElementById("payBtn");
   if (btn) {
     btn.textContent = window._intlBlocked
-      ? "Remove oversized item for international →"
+      ? (t.quoteRequired ? "Delivery quote required" : "Remove oversized item for international →")
       : (window._fulfil === "layby"
         ? "Submit lay-by request →"
         : (t.total <= 0 ? "Complete order (gift card) →" : `Pay ${(typeof DM_CUR!=="undefined"&&DM_CUR!=="AUD")?moneyAud(t.total)+" (AUD)":money(t.total)} securely →`));
@@ -385,8 +389,8 @@ function renderCheckout() {
   Object.keys(kept).forEach((id) => { const el = document.getElementById(id); if (el && id !== "coCode") { if (el.type === "checkbox") el.checked = kept[id]; else el.value = kept[id]; }  });
   const form = document.getElementById("checkoutForm");
   form.addEventListener("submit", startPayment);
-  form.addEventListener("input", coCheckReady);
-  form.addEventListener("change", coCheckReady);
+  form.addEventListener("input", function(){ coCheckReady(); updateTotalsUI(); });
+  form.addEventListener("change", function(){ coCheckReady(); updateTotalsUI(); });
   document.getElementById("coCountry").addEventListener("change", updateTotalsUI);
   if (typeof window._fulfil === "undefined" || (!giftOrder && !(expressOptFee() > 0))) window._fulfil = "delivery";
   setFulfil(window._fulfil);
@@ -477,6 +481,10 @@ function setFulfil(mode) {
 
 async function startPayment(e) {
   e.preventDefault();
+  if (checkoutTotals().quoteRequired) {
+    showToast("Please request a delivery quote before payment.");
+    return;
+  }
   // Every field marked * must be filled in (State only for Australian addresses)
   const au = shipCountry() === "Australia";
   const missing = ["coFirst", "coLast", "coEmail", "coPhone", "coAddr", "coSuburb", "coPost"].concat(au ? ["coState"] : [])

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://samirahomedecor.com.au/ready-to-ship-dining-kitchen.html">
+  <title>Ready To Ship Dining &amp; Kitchen Furniture | Samira Home Decor</title>
+  <meta name="description" content="Shop ready-to-ship and made-to-order dining furniture. Delivery charges are calculated separately.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samira Home Decor">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon-sys.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-sys-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-sys-192.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
+  <link rel="stylesheet" href="css/styles.css?v=70">
+</head>
+<body data-page="dining.html">
+  <div id="site-header"></div>
+
+  <!-- Collection hero, add the photo at assets/collections/dining.png -->
+  <section class="collection-hero">
+    <img class="collection-hero-img" src="assets/collections/dining.png" alt="Dining collection" onerror="this.remove()">
+    <div class="collection-hero-box">
+      <div class="coll-script">Collection</div>
+      <h1 class="coll-title">Ready To Ship Dining &amp; Kitchen Furniture</h1>
+    </div>
+  </section>
+
+  <!-- Feature strip -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="feature-strip">
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3z"/><path d="M14 9h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.7"/><circle cx="17" cy="18" r="1.7"/></svg>
+          <span>Delivery Calculated at Checkout</span>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg>
+          <span id="deliveryNote">Ready-to-Ship &amp; Made-to-Order</span>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 1.6 2.7-.2 1 2.5 2.3 1.4-.8 2.6.8 2.6-2.3 1.4-1 2.5-2.7-.2L12 21l-2.2-1.6-2.7.2-1-2.5-2.3-1.4.8-2.6-.8-2.6 2.3-1.4 1-2.5 2.7.2z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span>100% Satisfaction Guarantee</span>
+        </div>
+        <div class="feature-item">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 6-13 15-13 0 9-5 15-13 13"/><path d="M5 19c3-4 6-6 10-7"/></svg>
+          <span>Eco Friendly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Dining</div>
+      <div class="section-head" style="margin-bottom:26px">
+        <span class="eyebrow">The Dining Edit</span>
+        <h2>Dining, kitchen and occasional furniture</h2>
+        <p>Supplier stock available when checked. Member savings are included; additional percentage offers do not apply. Freight is based on the product, supplier and tested postcode. Orders with two or more furniture units include one $102 bulky-order fee. Untested destinations need a delivery quote.</p>
+      </div>
+
+      <div class="shop-bar">
+        <span id="roomCount" class="shop-count"></span>
+        <label class="shop-sort">Sort
+          <select id="roomSort" onchange="paintRoom()">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="grid grid-4" id="roomGrid"></div>
+      <div id="roomEmpty" class="empty-state" style="display:none">
+        <div class="em">🛋️</div>
+        <h3>New pieces landing here soon</h3>
+        <p>We're curating the Dining collection. Browse the full shop in the meantime.</p>
+        <a class="btn btn--outline btn--pill" href="shop.html">Browse the shop</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js?v=93"></script>
+  <script src="js/components.js?v=98"></script>
+  <script src="js/cart.js?v=40"></script>
+  <script src="js/main.js?v=20"></script>
+  <script>
+    const ROOM = "Dining"; // products with cat: "Dining" in js/data.js appear here
+    function paintRoom() {
+      let list = applyShopFilters(applySubFilter(PRODUCTS.filter(p => p.readyDining)));
+      applyGridCols("roomGrid");
+      renderProducts("roomGrid", list);
+      const c = document.getElementById("roomCount");
+      if (c) c.textContent = `${list.length} ${list.length === 1 ? "piece" : "pieces"}`;
+      document.getElementById("roomEmpty").style.display = list.length ? "none" : "block";
+      document.getElementById("roomGrid").style.display = list.length ? "grid" : "none";
+    }
+    renderShopControls(paintRoom);
+    paintRoom();
+    initReveal();
+  </script>
+</body>
+</html>

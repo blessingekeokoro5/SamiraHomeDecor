@@ -29,6 +29,8 @@ function memberRatio(p, size) {
   return Math.min(1, p.memberPrice / base);
 }
 function linePrice(i) {
+  const current = i && typeof findProduct === "function" ? findProduct(i.id) : null;
+  if (current && current.readyDining) return isMember() ? current.memberPrice : current.price;
   if (!i || i.giftCard || i.hamper || /^(hamper|giftcard)-/.test(String(i.id)) || !isMember()) return i.price;
   const p = (typeof findProduct === "function") ? findProduct(i.id) : null;
   return Math.round(i.price * memberRatio(p, i.size) * 100) / 100;
@@ -87,14 +89,16 @@ function orderDiscount(sub) {
   let campaignPct = 0, campaignLabel = "";
   try { const c = getCampaign(); if (c.active) { campaignPct = c.percent; campaignLabel = c.label; } } catch (e) {}
   const salePct = Math.max(flashPct, campaignPct);
-  const saleAmt = Math.round(sub * salePct / 100);
+  const eligible = getCart().filter(i => !(findProduct(i.id) || {}).readyDining);
+  const eligibleSub = eligible.reduce((n,i) => n + linePrice(i) * i.qty, 0);
+  const saleAmt = Math.round(eligibleSub * salePct / 100);
   // First-order 10% off (welcome offer) covers ONE piece: one unit of the dearest item
   // (one set, for a "Set of 2"), not every unit in the cart. Gift cards don't count.
   // The best single discount applies, they don't stack.
   let welcomePct = 0, welcomeAmt = 0;
   try { const v = getVoucher(); if (v && v.pct && isMember()) welcomePct = v.pct; } catch (e) {}  // members only (checked again at payment)
   if (welcomePct) {
-    const unit = getCart().filter(i => !i.giftCard && !/^giftcard-/.test(String(i.id))).reduce((m, i) => Math.max(m, linePrice(i)), 0);
+    const unit = eligible.filter(i => !i.giftCard && !/^giftcard-/.test(String(i.id))).reduce((m, i) => Math.max(m, linePrice(i)), 0);
     welcomeAmt = Math.round(unit * welcomePct) / 100;
   }
   if (welcomeAmt > saleAmt) return { pct: welcomePct, amount: welcomeAmt, label: `First order ${welcomePct}% off (one piece)` };
