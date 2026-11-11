@@ -63,7 +63,7 @@
     const reviewedProduct = products.find(p => p.id === r.productId);
     const productUrl = reviewedProduct ? 'product.html?id=' + encodeURIComponent(reviewedProduct.id) : '';
     const image = reviewedProduct && ((reviewedProduct.imgs && reviewedProduct.imgs[0]) || reviewedProduct.img);
-    const safeImage = image && /^(https?:\\/\\/|\\/?(?!\\/)[a-zA-Z0-9_.-])/.test(image) ? image : '';
+    const safeImage = typeof image === 'string' && (image.startsWith('https://') || image.startsWith('http://') || (image.startsWith('/') && !image.startsWith('//')) || /^[a-zA-Z0-9_.-]/.test(image)) ? image : '';
     const productDetail = productUrl ? `<a class="shd-review-product" href="${esc(productUrl)}">${safeImage ? `<img class="shd-review-product-img" src="${esc(safeImage)}" alt="${esc(reviewedProduct.name)}" loading="lazy" decoding="async" onerror="this.style.display='none'">` : ''}<span class="shd-review-product-name">${esc(reviewedProduct.name)}</span></a>` : '';
     return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><p>${esc(r.body)}</p><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div>${productDetail}</article>`;
   };
