@@ -95,13 +95,6 @@ const UK_FLAG_SVG = '<svg class="uk-flag" viewBox="0 0 60 40" width="19" height=
 const TIKTOK_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.6 3.5 3.6 3.8v2.5c-1.2.1-2.5-.2-3.6-.9v5.9c0 3.4-2.8 5.9-6 5.4-2.6-.4-4.4-2.7-4.2-5.3.2-2.6 2.5-4.5 5.1-4.3v2.6c-.5-.1-1-.1-1.4.1-1 .3-1.6 1.4-1.3 2.4.3 1 1.3 1.6 2.3 1.4 1-.2 1.6-1.1 1.6-2.1V3h2.3z"/></svg>';
 const YOUTUBE_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg>';
 
-/* ---- Logo loader: try common formats before falling back to the drawn mark ---- */
-const LOGO_SRCS = ["assets/logo-new.jpg?v=2", "assets/logo.jpg", "assets/logo.png"];
-function nextLogo(img) {
-  const i = (+img.dataset.i || 0) + 1;
-  if (i < LOGO_SRCS.length) { img.dataset.i = i; img.src = LOGO_SRCS[i]; }
-  else { const b = img.closest(".brand"); if (b) b.classList.add("no-logo"); img.remove(); }
-}
 
 /* Mobile menu: accordion toggle + search */
 function mNavToggle(btn) { const li = btn.closest(".m-acc"); if (li) li.classList.toggle("open"); }
@@ -297,7 +290,7 @@ function buildHeader() {
   const navMain = `
     <div class="m-drawer-head">
       <button class="m-drawer-close" type="button" aria-label="Close menu">×</button>
-      <a href="index.html" class="m-drawer-brand" aria-label="Samira Home Decor home"><img src="assets/logo-new.jpg?v=2" alt="Samira Home Decor"></a>
+      <a href="index.html" class="m-drawer-brand" aria-label="Samira Home Decor home"><img src="/assets/logo-new.jpg?v=3" alt="Samira Home Decor"></a>
       <button class="m-drawer-region" type="button" aria-label="Choose region and currency" onclick="document.querySelector('.m-drawer-close')?.click();openCountryModal()">${AU_FLAG_SVG}</button>
     </div>
     <div class="m-menu-scroll">
@@ -329,21 +322,8 @@ function buildHeader() {
     <div class="container nav-utility">
       <button class="nav-toggle" id="navToggle" aria-label="Menu">${IC.menu}</button>
       <a class="brand" href="index.html" aria-label="Samira Home Decor home">
-        <img class="brand-logo-full" src="assets/logo-new.jpg?v=2" data-i="0" alt="Samira Home Decor — Beautiful Spaces, Brighter Lives" onerror="nextLogo(this)">
-        <span class="brand-mark">
-          <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <!-- house mark: home outline with chimney and a heart -->
-            <path d="M6 50 L50 10 L70 28.2"/><path d="M80 37.3 L94 50"/>
-            <path d="M70 28.2 V14 H80 V37.3"/>
-            <path d="M18 39.1 V92 H82 V39.1"/>
-            <path d="M50 76 C37 66 34 57 40 52 C45 48 50 51 50 55.5 C50 51 55 48 60 52 C66 57 63 66 50 76 Z" fill="currentColor" stroke="none"/>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <span class="bt-main">Samira Home Decor</span>
-          <span class="bt-sub">Style Your Space</span>
-        </span>
-        <span class="brand-tagline">Beautiful Spaces, Brighter Lives</span>
+        <img class="brand-logo-full" src="/assets/logo-new.jpg?v=3" alt="Samira Home Decor — Beautiful Spaces, Brighter Lives" width="900" height="387" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="brand-logo-error" hidden>Samira Home Decor</span>
       </a>
       <form class="header-search" id="headerSearch" role="search">
         <button type="button" class="hs-tag" onclick="location.href='inspire.html'">Get inspired</button>
