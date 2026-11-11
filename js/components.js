@@ -298,7 +298,7 @@ function buildHeader() {
     <div class="m-drawer-head">
       <button class="m-drawer-close" type="button" aria-label="Close menu">×</button>
       <a href="index.html" class="m-drawer-brand" aria-label="Samira Home Decor home"><img src="assets/logo.svg?v=7" alt="Samira Home Decor"></a>
-      <button class="m-drawer-region" type="button" aria-label="Choose region and currency" onclick="openCountryModal()">${AU_FLAG_SVG}</button>
+      <button class="m-drawer-region" type="button" aria-label="Choose region and currency" onclick="document.querySelector('.m-drawer-close')?.click();openCountryModal()">${AU_FLAG_SVG}</button>
     </div>
     <div class="m-menu-scroll">
       <a class="m-menu-promo" href="ready-to-ship-dining-kitchen.html"><span class="m-menu-promo-kicker">JUST LANDED</span><strong>Ready-to-ship dining &amp; kitchen</strong><span>Shop 303 new pieces →</span></a>
@@ -306,7 +306,7 @@ function buildHeader() {
       <section class="m-menu-section" aria-labelledby="mCats"><h2 id="mCats">Shop by category</h2><div class="m-menu-list">${mobileRows(categoryRows)}</div></section>
       <section class="m-menu-section" aria-labelledby="mInspire"><h2 id="mInspire">Deals &amp; inspiration</h2><div class="m-menu-list">${mobileRows(inspirationRows)}</div></section>
       <section class="m-menu-section" aria-labelledby="mHelp"><h2 id="mHelp">Help &amp; account</h2><div class="m-menu-list">${mobileRows(helpRows)}</div></section>
-      <div class="m-menu-region"><button type="button" onclick="openCountryModal()">${AU_FLAG_SVG}<span>${(typeof curLabel === "function" ? curLabel() : "AUD $")} · Australia</span><span aria-hidden="true">›</span></button></div>
+      <div class="m-menu-region"><button type="button" onclick="document.querySelector('.m-drawer-close')?.click();openCountryModal()">${AU_FLAG_SVG}<span>${(typeof curLabel === "function" ? curLabel() : "AUD $")} · Australia</span><span aria-hidden="true">›</span></button></div>
     </div>`;
 
   return `
