@@ -65,7 +65,7 @@
     const image = reviewedProduct && ((reviewedProduct.imgs && reviewedProduct.imgs[0]) || reviewedProduct.img);
     const safeImage = typeof image === 'string' && (image.startsWith('https://') || image.startsWith('http://') || (image.startsWith('/') && !image.startsWith('//')) || /^[a-zA-Z0-9_.-]/.test(image)) ? image : '';
     const productDetail = productUrl ? `<a class="shd-review-product" href="${esc(productUrl)}">${safeImage ? `<img class="shd-review-product-img" src="${esc(safeImage)}" alt="${esc(reviewedProduct.name)}" loading="lazy" decoding="async" onerror="this.style.display='none'">` : ''}<span class="shd-review-product-name">${esc(reviewedProduct.name)}</span></a>` : '';
-    return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><p>${esc(r.body)}</p><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div>${productDetail}</article>`;
+    return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><p>${esc(r.body)}</p><button type="button" class="shd-review-read" data-review-index="${all.indexOf(r)}">Read full review</button><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div>${productDetail}</article>`;
   };
   function render() {
     all.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
@@ -84,6 +84,21 @@
       if (score) score.textContent = '★'.repeat(Math.round(avg)) + '☆'.repeat(5-Math.round(avg)) + ' ' + avg.toFixed(1) + ' · ' + all.length + ' reviews';
     }
   }
+  const reviewDialog = document.createElement('dialog');
+  reviewDialog.className = 'shd-review-dialog';
+  reviewDialog.innerHTML = '<button type="button" class="shd-review-dialog-close" aria-label="Close full review">×</button><div class="shd-review-dialog-content"></div>';
+  host.append(reviewDialog);
+  reviewDialog.querySelector('.shd-review-dialog-close').addEventListener('click', () => reviewDialog.close());
+  reviewDialog.addEventListener('click', e => { if (e.target === reviewDialog) reviewDialog.close(); });
+  host.querySelector('.shd-review-cards').addEventListener('click', e => {
+    const button = e.target.closest('.shd-review-read');
+    if (!button) return;
+    const r = all[Number(button.dataset.reviewIndex)];
+    if (!r) return;
+    const p = products.find(p => p.id === r.productId);
+    reviewDialog.querySelector('.shd-review-dialog-content').innerHTML = '<div class="shd-review-gold">' + '★'.repeat(r.rating) + '</div><h3>Customer review</h3><p>' + esc(r.body) + '</p><strong>' + esc(r.who || 'Verified buyer') + '</strong>' + (p ? '<div class="shd-review-dialog-product">Reviewed product: ' + esc(p.name) + '</div>' : '');
+    reviewDialog.showModal();
+  });
   render();
   fetch('/api/reviews' + (productId ? '?productId=' + encodeURIComponent(productId) : ''), { cache: 'no-store' }).then(async res => {
     if (!res.ok) throw new Error(); const data = await res.json(); all = staticReviews.concat(data.reviews || []); render();
