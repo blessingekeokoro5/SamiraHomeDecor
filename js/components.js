@@ -96,7 +96,7 @@ const TIKTOK_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" width="20" heig
 const YOUTUBE_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7c-.2-.9-.9-1.5-1.7-1.7C19.4 5.2 12 5.2 12 5.2s-7.4 0-8.9.4c-.8.2-1.5.8-1.7 1.7C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.9.9 1.5 1.7 1.7 1.5.4 8.9.4 8.9.4s7.4 0 8.9-.4c.8-.2 1.5-.8 1.7-1.7.4-1.5.4-4.7.4-4.7zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg>';
 
 /* ---- Logo loader: try common formats before falling back to the drawn mark ---- */
-const LOGO_SRCS = ["assets/logo.svg?v=8", "assets/logo.png", "assets/logo.jpg", "assets/logo.jpeg", "assets/logo.webp"];
+const LOGO_SRCS = ["assets/logo-new.jpg?v=2", "assets/logo.jpg", "assets/logo.png"];
 function nextLogo(img) {
   const i = (+img.dataset.i || 0) + 1;
   if (i < LOGO_SRCS.length) { img.dataset.i = i; img.src = LOGO_SRCS[i]; }
@@ -297,7 +297,7 @@ function buildHeader() {
   const navMain = `
     <div class="m-drawer-head">
       <button class="m-drawer-close" type="button" aria-label="Close menu">×</button>
-      <a href="index.html" class="m-drawer-brand" aria-label="Samira Home Decor home"><img src="assets/logo.svg?v=8" alt="Samira Home Decor"></a>
+      <a href="index.html" class="m-drawer-brand" aria-label="Samira Home Decor home"><img src="assets/logo-new.jpg?v=2" alt="Samira Home Decor"></a>
       <button class="m-drawer-region" type="button" aria-label="Choose region and currency" onclick="document.querySelector('.m-drawer-close')?.click();openCountryModal()">${AU_FLAG_SVG}</button>
     </div>
     <div class="m-menu-scroll">
@@ -329,7 +329,7 @@ function buildHeader() {
     <div class="container nav-utility">
       <button class="nav-toggle" id="navToggle" aria-label="Menu">${IC.menu}</button>
       <a class="brand" href="index.html" aria-label="Samira Home Decor home">
-        <img class="brand-logo-full" src="assets/logo.svg?v=8" data-i="0" alt="Samira Home Decor — Beautiful Spaces, Brighter Lives" onerror="nextLogo(this)">
+        <img class="brand-logo-full" src="assets/logo-new.jpg?v=2" data-i="0" alt="Samira Home Decor — Beautiful Spaces, Brighter Lives" onerror="nextLogo(this)">
         <span class="brand-mark">
           <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
             <!-- house mark: home outline with chimney and a heart -->
