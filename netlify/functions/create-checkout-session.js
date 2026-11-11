@@ -312,7 +312,7 @@ function shippingFor(country, fulfil, lines, afterDiscount, postcode) {
   const ready = FurnitureFreight.quote(lines, postcode, country);
   if (ready.quoteRequired) return { quoteRequired: true, message: ready.message };
   res.amount = round2(res.amount + ready.fee);
-  if (ready.fee) res.label = "Furniture delivery" + (ready.surcharge ? " (includes $102 multi-item bulky fee)" : "");
+  if (ready.fee) res.label = "Furniture delivery" + (ready.surcharge ? " (includes $" + ready.surcharge.toFixed(2) + " for additional items)" : "");
   // Fixed per-item delivery: never free, added on top.
   const fixed = round2(lines.reduce((n, l) => n + (l.shipFee && !l.expressShip ? l.shipFee * l.qty : 0), 0));
   if (fixed > 0) {

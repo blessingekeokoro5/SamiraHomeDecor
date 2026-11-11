@@ -20,7 +20,7 @@ test('multiple furniture units incur one $102 fee',()=>{
 test('imported products have protected member and regular prices',()=>{
  const b={console,localStorage:{getItem:()=>null}};b.window=b;vm.createContext(b);
  vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/data.js'),'utf8')+';globalThis.p=PRODUCTS.filter(x=>x.readyDining)',b);
- assert.equal(b.p.length,303);for(const p of b.p){assert.equal(p.priceFloor,p.memberPrice);assert.ok(p.price>p.memberPrice);assert.ok(['Luxo Living','Koala Living'].includes(p.supplier));}
+ assert.equal(b.p.filter(p=>!p.bedroomImport).length,303);for(const p of b.p){assert.equal(p.priceFloor,p.memberPrice);assert.ok(p.price>p.memberPrice);assert.ok(['Luxo Living','Koala Living'].includes(p.supplier));}
 });
 test('trusted payment server calculates the same protected prices and freight',()=>{
  const cat=require('../netlify/functions/_catalogue.json').products;
