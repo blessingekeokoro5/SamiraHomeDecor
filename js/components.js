@@ -256,54 +256,57 @@ function buildHeader() {
     return `<li data-cat="${cat.key}"><a href="${href}">${cat.label} ${IC.caret}</a></li>`;
   }).join("");
 
-  // Mobile drawer mirrors the desktop category nav order:
-  // categories first, then Styling & Design, About, Contact.
-  const servicesSubs = [
-    { label: "Styled Spaces by Samira", href: "styled-spaces.html" },
-    { label: "Property Styling & Staging", href: "property-styling-staging.html" },
-    { label: "Home Décor Personal Shopper", href: "personal-shopping.html" },
-    { label: "Vacation Rentals", href: "vacation-rentals.html" },
-    { label: "Interior Design", href: "interior-design.html" },
-    { label: "Cleaning Services", href: "cleaning-services.html" }
+  // Mobile navigation is a full-screen catalogue, grouped like a retail app.
+  const mobileRows = rows => rows.map(row => `<a class="m-menu-row" href="${row.href}"><span class="m-menu-icon" aria-hidden="true">${row.icon}</span><span>${row.label}</span><span class="m-menu-go" aria-hidden="true">›</span></a>`).join("");
+  const roomRows = [
+    { label: "Living Room", href: "living-room.html", icon: "🛋" },
+    { label: "Dining Room", href: "dining.html", icon: "🍽" },
+    { label: "Bedroom", href: "bedroom.html", icon: "🛏" },
+    { label: "Bathroom", href: "bathroom.html", icon: "🛁" },
+    { label: "Home Office", href: "office.html", icon: "🪑" },
+    { label: "Outdoor", href: "outdoor.html", icon: "🌿" }
   ];
-  const socials = SAMIRA.socials || {};
-  const socialLinks = [];
-  if (socials.instagram) socialLinks.push(`<a href="${socials.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${IC.instagram}</a>`);
-  if (socials.tiktok) socialLinks.push(`<a href="${socials.tiktok}" target="_blank" rel="noopener" aria-label="TikTok">${TIKTOK_SVG}</a>`);
-  if (socials.youtube) socialLinks.push(`<a href="${socials.youtube}" target="_blank" rel="noopener" aria-label="YouTube">${YOUTUBE_SVG}</a>`);
+  const categoryRows = [
+    { label: "Ready-to-Ship Furniture", href: "ready-to-ship-dining-kitchen.html", icon: "✓" },
+    { label: "Sofas & Seating", href: "living-room.html?sub=Sofas", icon: "▱" },
+    { label: "Tables", href: "dining.html?sub=Tables", icon: "▰" },
+    { label: "Chairs & Stools", href: "dining.html?sub=Chairs%20%26%20Stools", icon: "♧" },
+    { label: "Lighting", href: "home-decor.html?sub=Lighting", icon: "☼" },
+    { label: "Mirrors & Wall Art", href: "home-decor.html?sub=Mirrors", icon: "◇" },
+    { label: "Rugs, Cushions & Throws", href: "home-decor.html?sub=Rugs", icon: "▧" },
+    { label: "Kitchen & Dining", href: "kitchenware.html", icon: "⌂" },
+    { label: "Gifts & Hampers", href: "hampers.html", icon: "🎁" },
+    { label: "All Home Décor", href: "home-decor.html", icon: "✦" }
+  ];
+  const inspirationRows = [
+    { label: "New Arrivals", href: "shop.html", icon: "NEW" },
+    { label: "Ready to Ship", href: "ready-to-ship-dining-kitchen.html", icon: "✓" },
+    { label: "Our Collections", href: "index.html#ranges", icon: "▦" },
+    { label: "Sale & Promotions", href: "promotions.html", icon: "%" },
+    { label: "Styling Inspiration", href: "inspire.html", icon: "✧" },
+    { label: "Styling & Design Services", href: "staging.html", icon: "⌂" }
+  ];
+  const helpRows = [
+    { label: "Contact Us", href: "contact.html", icon: "☎" },
+    { label: "Help & FAQs", href: "support.html", icon: "?" },
+    { label: "Track Delivery", href: "track.html", icon: "▣" },
+    { label: "Wishlist", href: "wishlist.html", icon: "♡" },
+    { label: "My Account / Sign In", href: "account.html", icon: "♙" }
+  ];
 
   const navMain = `
-    <ul class="m-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#ranges">Our Ranges</a></li>
-      <li><a href="shop.html?avail=ready">✓ Ready to Ship</a></li>
-      ${MEGA_MENU.map(cat => {
-        const shopHref = CAT_PAGES[cat.key] || ("shop.html?cat=" + encodeURIComponent(cat.label));
-        const links = cat.columns.reduce((a, c) => a.concat(c.links.map(l => ({ l, href: linkHref(cat, c, l) }))), []).filter(x => !/^shop all/i.test(x.l)).slice(0, cat.mobileMax || 8);
-        return `<li class="m-acc">
-          <div class="m-acc-head"><a href="${shopHref}">${cat.label}</a><button type="button" class="m-chev" aria-label="Expand ${cat.label}" onclick="mNavToggle(this)">${IC.caret}</button></div>
-          <ul class="m-acc-body"><li><a href="${shopHref}">Shop all ${cat.label}</a></li>${links.map(x => `<li><a href="${x.href}">${x.l}</a></li>`).join("")}</ul>
-        </li>`;
-      }).join("")}
-      <li class="m-acc">
-        <div class="m-acc-head"><a href="staging.html">Services</a><button type="button" class="m-chev" aria-label="Expand Services" onclick="mNavToggle(this)">${IC.caret}</button></div>
-        <ul class="m-acc-body">${servicesSubs.map(s => `<li><a href="${s.href}">${s.label}</a></li>`).join("")}</ul>
-      </li>
-      <li><a href="support.html">Customer Care</a></li>
-    </ul>
-    <div class="m-region">
-      <button type="button" onclick="openCountryModal()">${AU_FLAG_SVG}<span>${(typeof curLabel === "function" ? curLabel() : "AUD $")}</span></button>
-      <button type="button" onclick="openCountryModal()">${UK_FLAG_SVG}<span>English</span></button>
+    <div class="m-drawer-head">
+      <button class="m-drawer-close" type="button" aria-label="Close menu">×</button>
+      <a href="index.html" class="m-drawer-brand" aria-label="Samira Home Decor home"><img src="assets/logo.svg?v=7" alt="Samira Home Decor"></a>
+      <button class="m-drawer-region" type="button" aria-label="Choose region and currency" onclick="openCountryModal()">${AU_FLAG_SVG}</button>
     </div>
-    <div class="m-quick">
-      <a href="wishlist.html" aria-label="Wishlist">${IC.heart}</a>
-      <a href="shop.html" aria-label="Shop &amp; sort"><span style="font-size:1.3rem;line-height:1">⇅</span></a>
-    </div>
-    <div class="m-social">${socialLinks.join("")}</div>
-    <div class="m-account">
-      <h4>My Account</h4>
-      <a class="btn btn--outline btn--block" href="account.html">Log in</a>
-      <a class="btn btn--dark btn--block" href="account.html" style="margin-top:8px">Register</a>
+    <div class="m-menu-scroll">
+      <a class="m-menu-promo" href="ready-to-ship-dining-kitchen.html"><span class="m-menu-promo-kicker">JUST LANDED</span><strong>Ready-to-ship dining &amp; kitchen</strong><span>Shop 303 new pieces →</span></a>
+      <section class="m-menu-section" aria-labelledby="mRooms"><h2 id="mRooms">Shop by room</h2><div class="m-menu-list">${mobileRows(roomRows)}</div></section>
+      <section class="m-menu-section" aria-labelledby="mCats"><h2 id="mCats">Shop by category</h2><div class="m-menu-list">${mobileRows(categoryRows)}</div></section>
+      <section class="m-menu-section" aria-labelledby="mInspire"><h2 id="mInspire">Deals &amp; inspiration</h2><div class="m-menu-list">${mobileRows(inspirationRows)}</div></section>
+      <section class="m-menu-section" aria-labelledby="mHelp"><h2 id="mHelp">Help &amp; account</h2><div class="m-menu-list">${mobileRows(helpRows)}</div></section>
+      <div class="m-menu-region"><button type="button" onclick="openCountryModal()">${AU_FLAG_SVG}<span>${(typeof curLabel === "function" ? curLabel() : "AUD $")} · Australia</span><span aria-hidden="true">›</span></button></div>
     </div>`;
 
   return `
@@ -379,7 +382,7 @@ function buildHeader() {
         <a class="icon-btn" href="cart.html" aria-label="Cart" title="Cart">${IC.bag}<span class="cart-count" id="cartCount">0</span></a>
       </div>
     </div>
-    <div class="nav-main" id="navMain">${navMain}</div>
+    <div class="nav-main" id="navMain" aria-hidden="true">${navMain}</div>
     <div class="nav-cats-row" id="navCatsRow">
       <div class="container">
         <ul class="nav-cats" id="navCats">
@@ -1820,7 +1823,31 @@ function wireNav() {
   const navMain = document.getElementById("navMain");
 
   if (toggle && navMain) {
-    toggle.addEventListener("click", () => navMain.classList.toggle("open"));
+    const closeButton = navMain.querySelector(".m-drawer-close");
+    const setMobileNav = open => {
+      navMain.classList.toggle("open", open);
+      navMain.setAttribute("aria-hidden", open ? "false" : "true");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle("m-nav-open", open);
+      if (open && closeButton) setTimeout(() => closeButton.focus(), 40);
+      else if (!open && document.activeElement && navMain.contains(document.activeElement)) toggle.focus();
+    };
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "navMain");
+    toggle.addEventListener("click", () => setMobileNav(!navMain.classList.contains("open")));
+    if (closeButton) closeButton.addEventListener("click", () => setMobileNav(false));
+    navMain.addEventListener("click", e => { if (e.target.closest("a")) setMobileNav(false); });
+    document.addEventListener("keydown", e => {
+      if (!navMain.classList.contains("open")) return;
+      if (e.key === "Escape") { e.preventDefault(); setMobileNav(false); return; }
+      if (e.key !== "Tab") return;
+      const focusable = [...navMain.querySelectorAll('a[href],button:not([disabled])')].filter(el => el.offsetParent !== null);
+      if (!focusable.length) return;
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+    window.addEventListener("resize", () => { if (innerWidth > 960 && navMain.classList.contains("open")) setMobileNav(false); });
   }
 
   if (cats && catsRow) {
