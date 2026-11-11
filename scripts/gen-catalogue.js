@@ -103,6 +103,7 @@ PRODUCTS.forEach((p) => {
     expressOpt: num(p.expressOpt),
     readyDining: !!p.readyDining,
     supplier: p.supplier || null,
+    supplierProductUuid: p.supplierProductUuid || null,
     freightClass: p.freightClass || null,
     chairSets: p.chairSets || 1,
     furniture: isFurniture(p),

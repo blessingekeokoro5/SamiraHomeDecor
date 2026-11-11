@@ -1,3 +1,4 @@
+const { quoteDecor } = require("./lib/koala-decor-delivery");
 const FurnitureFreight = require("../../js/furniture-freight.js");
 /* ============================================================
    Samira Home Decor — Create Stripe Checkout Session  (Netlify Function)
@@ -277,7 +278,7 @@ function resolveLine(raw, member) {
     weight: p.weight != null ? p.weight : DEFAULT_ITEM_KG,
     expressShip: p.expressShip != null ? p.expressShip : null,
     expressOpt: p.expressOpt != null ? p.expressOpt : null,
-    readyDining: !!p.readyDining, supplier: p.supplier, freightClass: p.freightClass,
+    readyDining: !!p.readyDining, supplier: p.supplier, supplierProductUuid: p.supplierProductUuid, freightClass: p.freightClass,
     chairSets: p.chairSets, furniture: p.furniture,
     shipFee: p.shipFee != null ? p.shipFee : null,
     arriveBy: p.arriveBy || null,
@@ -307,12 +308,12 @@ function bizDaysUntil(ymd) {
   return Math.max(1, n);
 }
 
-function shippingFor(country, fulfil, lines, afterDiscount, postcode) {
+function shippingFor(country, fulfil, lines, afterDiscount, postcode, decorQuote) {
   const res = shippingBase(country, fulfil, lines, afterDiscount);
-  const ready = FurnitureFreight.quote(lines, postcode, country);
+  const ready = FurnitureFreight.quote(lines, postcode, country, decorQuote);
   if (ready.quoteRequired) return { quoteRequired: true, message: ready.message };
   res.amount = round2(res.amount + ready.fee);
-  if (ready.fee) res.label = "Furniture delivery" + (ready.surcharge ? " (includes $" + ready.surcharge.toFixed(2) + " for additional items)" : "");
+  if (ready.fee) res.label = (lines.some(l => l.readyDining && !String(l.freightClass || "").startsWith("decor-")) ? "Furniture delivery" : "Home décor delivery") + (ready.surcharge ? " (includes $" + ready.surcharge.toFixed(2) + " for additional items)" : "");
   // Fixed per-item delivery: never free, added on top.
   const fixed = round2(lines.reduce((n, l) => n + (l.shipFee && !l.expressShip ? l.shipFee * l.qty : 0), 0));
   if (fixed > 0) {
@@ -477,7 +478,8 @@ exports.handler = async (event) => {
     const afterDiscount = round2(subtotal - discount - voucher);
 
     // 4. Shipping: recomputed here from weight and region, never taken from the client.
-    const ship = shippingFor(String(customer.country || "Australia"), String(fulfil), lines, afterDiscount, customer.postcode);
+    const decorQuote = await quoteDecor(lines, {country:String(customer.country || "Australia"),postcode:customer.postcode,suburb:customer.suburb});
+    const ship = shippingFor(String(customer.country || "Australia"), String(fulfil), lines, afterDiscount, customer.postcode, decorQuote);
     if (ship.quoteRequired) return jsonResponse(400, { code: "freight_quote_required", error: ship.message });
 
     // 5. Gift card — verified against the ledger, never taken on trust.

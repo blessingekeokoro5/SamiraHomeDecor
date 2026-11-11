@@ -150,9 +150,15 @@ function fixedShipFee() {
   return fee;
 }
 function shipQuote(afterDisc) {
-  const ready = FurnitureFreight.quote(getCart().map(i => Object.assign({}, findProduct(i.id) || {}, {
+  const supplierLines = getCart().map(i => Object.assign({}, findProduct(i.id) || {}, {
     qty:i.qty, furniture:typeof isFurnitureProduct === "function" && isFurnitureProduct(findProduct(i.id) || {})
-  })), (document.getElementById("coPost") || {}).value, shipCountry());
+  }));
+  const decorQuote = typeof DecorDelivery !== "undefined" ? DecorDelivery.quote(supplierLines, {
+    postcode:(document.getElementById("coPost") || {}).value,
+    suburb:(document.getElementById("coSuburb") || {}).value,
+    country:shipCountry()
+  }, updateTotalsUI) : null;
+  const ready = FurnitureFreight.quote(supplierLines, (document.getElementById("coPost") || {}).value, shipCountry(), decorQuote);
   const z = SHIP_ZONES[shipCountry()] || SHIP_ZONES["Australia"];
   const weight = cartWeight();
   const xfee = expressShipFee();
@@ -166,7 +172,7 @@ function shipQuote(afterDisc) {
   fee += fixedShipFee() + ready.fee;
   const ofee = (window._fulfil === "express" && !isGiftOrder(getCart())) ? expressOptFee() : 0;
   fee += ofee;
-  return { quoteRequired:ready.quoteRequired, freightMessage:ready.message, surcharge:ready.surcharge, fee, weight, days:z.days, freeOver:z.freeOver, express:xfee>0 };
+  return { pending:ready.pending, quoteRequired:ready.quoteRequired, freightMessage:ready.message, surcharge:ready.surcharge, fee, weight, days:z.days, freeOver:z.freeOver, express:xfee>0 };
 }
 
 function checkoutTotals() {
@@ -187,7 +193,7 @@ function checkoutTotals() {
   const giftCard = (gc && gc.amount >= preGift && preGift > 0) ? preGift : 0;
   const total = preGift - giftCard;
   const gst = Math.round((total / 11)); // GST component of a GST-inclusive total
-  return { quoteRequired:q.quoteRequired, freightMessage:q.freightMessage, surcharge:q.surcharge, sub, discount, discLabel: disc.label, voucher, voucherCode: vou ? vou.code : null, shipping, preGift, giftCard, giftCode: gc ? gc.code : null, total, gst, coupon: window._coupon, country: shipCountry(), weight: q.weight, shipDays: cartShipDays(q.days), freeOver: q.freeOver };
+  return { pending:q.pending, quoteRequired:q.quoteRequired, freightMessage:q.freightMessage, surcharge:q.surcharge, sub, discount, discLabel: disc.label, voucher, voucherCode: vou ? vou.code : null, shipping, preGift, giftCard, giftCode: gc ? gc.code : null, total, gst, coupon: window._coupon, country: shipCountry(), weight: q.weight, shipDays: cartShipDays(q.days), freeOver: q.freeOver };
 }
 
 function updateTotalsUI() {
@@ -196,15 +202,15 @@ function updateTotalsUI() {
     ? `<div style="margin-top:12px;padding:10px 14px;border-radius:10px;background:#F7F3EC;border-left:3px solid #E0C992;font-size:.9rem;color:#0B1F3A;line-height:1.45">🌏 <strong>International orders may incur import duties or taxes, payable by the recipient.</strong> These aren't included in our prices or shipping.</div><a href="https://wa.me/61451609398" onclick="openCheckoutWA();return false;" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 14px;border-radius:10px;background:#E9F7EF;color:#0B1F3A;text-decoration:none;font-size:.92rem;line-height:1.4"><span style="font-size:1.4rem">💬</span><span><strong>Priority help for overseas customers.</strong> Chat with us directly on WhatsApp for quick assistance with your order.</span></a>`
     : "";
   const t = checkoutTotals();
-  const shipTxt = t.quoteRequired ? "Delivery quote required" : t.shipping === 0 ? "Free" : money(t.shipping);
+  const shipTxt = t.pending ? "Checking delivery…" : t.quoteRequired ? "Delivery quote required" : t.shipping === 0 ? "Free" : money(t.shipping);
   const line = document.getElementById("coShipLine");
   // Block international checkout when the cart has an item too bulky to ship abroad.
   const bulky = (t.country !== "Australia") ? bulkyIntlItem() : null;
   window._intlBlocked = !!bulky || t.quoteRequired;
   if (line && bulky) {
     line.innerHTML = `<span style="color:var(--rose-deep)">⚠️ <strong>${bulky.name}</strong> ${(function(){ const bp = (typeof findProduct === "function") ? findProduct(bulky.id) : null; return (bp && bp.auOnly) ? `ships within Australia only, so it can't be sent to ${t.country}.` : `is too large to ship to ${t.country} (over ${INTL_MAX_KG}kg).`; })()} It can only be delivered within Australia — please remove it for an international order, or <a href="contact.html">contact us</a> for a freight quote.</span>`;
-  } else if (line && t.quoteRequired) line.innerHTML = `${t.freightMessage} <a href="contact.html">Request a quote</a>`;
-  else if (line) line.innerHTML = `<strong>${(window._fulfil === "express" || expressShipFee() > 0) ? "Express" : "Standard"}</strong> · ${shipTxt}${t.surcharge ? " · includes ${money(t.surcharge)} for additional items" : ""} · to ${t.country} · calculated for ~${t.weight}kg · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
+  } else if (line && t.quoteRequired) line.innerHTML = `${t.freightMessage}${t.pending ? "" : ' <a href="contact.html">Request a quote</a>'}`;
+  else if (line) line.innerHTML = `<strong>${(window._fulfil === "express" || expressShipFee() > 0) ? "Express" : "Standard"}</strong> · ${shipTxt}${t.surcharge ? " · includes " + money(t.surcharge) + " for additional items" : ""} · to ${t.country}${t.weight > 0 ? " · calculated for ~" + t.weight + "kg" : ""} · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
   const s = document.getElementById("sumShip"); if (s) s.textContent = shipTxt;
   const gr = document.getElementById("sumGiftRow"); if (gr) gr.style.display = t.giftCard ? "flex" : "none";
   const gv = document.getElementById("sumGift"); if (gv) gv.textContent = "−" + money(t.giftCard);
@@ -213,7 +219,7 @@ function updateTotalsUI() {
   const btn = document.getElementById("payBtn");
   if (btn) {
     btn.textContent = window._intlBlocked
-      ? (t.quoteRequired ? "Delivery quote required" : "Remove oversized item for international →")
+      ? (t.pending ? "Checking delivery…" : t.quoteRequired ? "Delivery quote required" : "Remove oversized item for international →")
       : (window._fulfil === "layby"
         ? "Submit lay-by request →"
         : (t.total <= 0 ? "Complete order (gift card) →" : `Pay ${(typeof DM_CUR!=="undefined"&&DM_CUR!=="AUD")?moneyAud(t.total)+" (AUD)":money(t.total)} securely →`));

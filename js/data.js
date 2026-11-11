@@ -51,9 +51,9 @@ const MEGA_MENU = [
     key: "home", label: "Home Décor",
     columns: [
       { title: "Shop", links: ["Shop All Home Décor", "Ready to Ship", "New Arrivals", "Bestsellers", "On Sale"] },
-      { title: "Decorative", links: ["Vases", "Sculptures & Objects", "Ceramics"] },
-      { title: "Ambience", links: ["Candles", "Reed Diffusers", "Faux Greenery"] },
-      { title: "Finishing Touches", links: ["Mirrors", "Photo Frames", "Trays & Bowls"] }
+      { title: "Decorative", links: ["Vases", "Sculptures & Objects", "Ceramics", "Wall Art", "Clocks", "Bookends"] },
+      { title: "Ambience", links: ["Candles", "Candle Holders", "Reed Diffusers", "Faux Greenery", "Cushions"] },
+      { title: "Finishing Touches", links: ["Mirrors", "Photo Frames", "Trays & Bowls", "Servingware", "Decorative Storage"] }
     ]
   },
   {
@@ -17639,3 +17639,10808 @@ function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
     }
   }
 ];bedroom.forEach(function(p){const at=PRODUCTS.findIndex(x=>x.id===p.id);if(at<0)PRODUCTS.push(p);else PRODUCTS[at]=p;});})();
+/* Koala Living home décor collection — verified 12 November 2026. */
+(function(){const decor=[
+  {
+    "id": "kl124049",
+    "sku": "SH-KD-124049",
+    "name": "Roman Wall Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d6eef64b-fdc2-4681-bd3d-0e749eb44b97",
+    "freightClass": "decor-124049",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/124049/94d7c2db-460c-4a24-9cd0-87ac6e9c6303.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/124049/94d7c2db-460c-4a24-9cd0-87ac6e9c6303.png",
+      "https://img.koalaliving.com.au/products/124049/0c5d5aa5-5dbb-4002-98e7-89074db94d99.png"
+    ],
+    "desc": "Complete your space with the Roman Wall Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "4",
+      "Height": "80",
+      "Depth": "80",
+      "Length": "80",
+      "Weight": "10"
+    }
+  },
+  {
+    "id": "kl124937",
+    "sku": "SH-KD-124937",
+    "name": "Open Cut Iron Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0ffbfa14-85e0-4746-90ac-7020c5b976e0",
+    "freightClass": "decor-124937",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/124937/5836423a-7e34-40a6-ad31-47798d5636d7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/124937/5836423a-7e34-40a6-ad31-47798d5636d7.png",
+      "https://img.koalaliving.com.au/products/124937/4b59b2c5-36f6-454d-93ab-27b71e816bdc.png"
+    ],
+    "desc": "Complete your space with the Open Cut Iron Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "114",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "114",
+      "Weight": "170"
+    }
+  },
+  {
+    "id": "kl125606",
+    "sku": "SH-KD-125606",
+    "name": "Wilting Tree Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e6c540b8-8905-4b66-adff-46e1b8abd8d8",
+    "freightClass": "decor-125606",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125606/663a0fd6-ca4c-47d4-984a-1bb33d91cbf9.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125606/663a0fd6-ca4c-47d4-984a-1bb33d91cbf9.png",
+      "https://img.koalaliving.com.au/products/125606/a2193d8f-1de9-4aad-8165-decfca6f9f86.png"
+    ],
+    "desc": "Complete your space with the Wilting Tree Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "120",
+      "Weight": "4000"
+    }
+  },
+  {
+    "id": "kl125608",
+    "sku": "SH-KD-125608",
+    "name": "Wilderness Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a9704355-c5b3-44d1-a79c-9cb86aa65757",
+    "freightClass": "decor-125608",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125608/fa2ac71f-0eb1-4ae0-8b45-211ba52f176c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125608/fa2ac71f-0eb1-4ae0-8b45-211ba52f176c.png",
+      "https://img.koalaliving.com.au/products/125608/8b5c8869-0d60-4d44-9e06-995cb70af052.png"
+    ],
+    "desc": "Complete your space with the Wilderness Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Large Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "200",
+      "Weight": "5000"
+    }
+  },
+  {
+    "id": "kl125760",
+    "sku": "SH-KD-125760",
+    "name": "Fiddle Leaf Tree 190cm Decorative Plant",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1176,
+    "memberPrice": 1058,
+    "priceFloor": 1058,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "08819909-0094-4170-84d3-24b2e2379772",
+    "freightClass": "decor-125760",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125760/cee8ec86-feb4-4ac2-82f6-35b9b8d4c15a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125760/cee8ec86-feb4-4ac2-82f6-35b9b8d4c15a.png",
+      "https://img.koalaliving.com.au/products/125760/22dc8db5-d9ef-4fbc-9f21-6cacc5789297.png"
+    ],
+    "desc": "Complete your space with the Fiddle Leaf Tree 190cm Decorative Plant. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)",
+      "Width": "0",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "0",
+      "Weight": "130"
+    }
+  },
+  {
+    "id": "kl125776",
+    "sku": "SH-KD-125776",
+    "name": "Abstract Field Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "65d49164-0b4c-4c76-9bfb-0608541ca9ab",
+    "freightClass": "decor-125776",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125776/2ad5c43f-7bed-4652-a802-0ca9cec1d11c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125776/2ad5c43f-7bed-4652-a802-0ca9cec1d11c.png",
+      "https://img.koalaliving.com.au/products/125776/77592a30-9390-42ee-abcb-55061bfffcbe.png"
+    ],
+    "desc": "Complete your space with the Abstract Field Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Large Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "165",
+      "Height": "1",
+      "Depth": "1",
+      "Length": "220",
+      "Weight": "178"
+    }
+  },
+  {
+    "id": "kl125839",
+    "sku": "SH-KD-125839",
+    "name": "Dancing Girl Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a7121585-ae3f-4f83-938c-411a58db64e0",
+    "freightClass": "decor-125839",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125839/c025dcf5-1ebc-489d-98f3-ee9e9984478e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125839/c025dcf5-1ebc-489d-98f3-ee9e9984478e.png",
+      "https://img.koalaliving.com.au/products/125839/0f463eee-ea05-4f3f-9070-17ad5d38e67d.png"
+    ],
+    "desc": "Complete your space with the Dancing Girl Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)",
+      "Width": "230",
+      "Height": "18",
+      "Depth": "18",
+      "Length": "710",
+      "Weight": "40"
+    }
+  },
+  {
+    "id": "kl125841",
+    "sku": "SH-KD-125841",
+    "name": "Impala Decorative - Large",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "3dd4238c-2064-4d63-b169-d02a0becaa14",
+    "freightClass": "decor-125841",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125841/a5bf8864-9104-40bb-a3d7-a4a9456c59a6.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125841/a5bf8864-9104-40bb-a3d7-a4a9456c59a6.png",
+      "https://img.koalaliving.com.au/products/125841/10a76dad-90c6-4a06-9d2e-3dcb18748264.png"
+    ],
+    "desc": "Complete your space with the Impala Decorative - Large. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)",
+      "Width": "115",
+      "Height": "72",
+      "Depth": "72",
+      "Length": "285",
+      "Weight": "40"
+    }
+  },
+  {
+    "id": "kl125842",
+    "sku": "SH-KD-125842",
+    "name": "Impala Decorative - Small",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b24efcce-d884-4c31-9347-e2002e7100ce",
+    "freightClass": "decor-125842",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125842/92710f8b-cdb4-4b8f-925c-1c142983b2dd.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125842/92710f8b-cdb4-4b8f-925c-1c142983b2dd.png",
+      "https://img.koalaliving.com.au/products/125842/d848c56f-5fc5-4623-8314-edddeb179511.png"
+    ],
+    "desc": "Complete your space with the Impala Decorative - Small. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)",
+      "Width": "80",
+      "Height": "54",
+      "Depth": "54",
+      "Length": "185",
+      "Weight": "10"
+    }
+  },
+  {
+    "id": "kl125888",
+    "sku": "SH-KD-125888",
+    "name": "Blue Storm Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "08380009-3502-4a32-8b11-51833835efb4",
+    "freightClass": "decor-125888",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125888/70db8cdc-f8cb-44fa-9dce-a0c48949231d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125888/70db8cdc-f8cb-44fa-9dce-a0c48949231d.png",
+      "https://img.koalaliving.com.au/products/125888/43a1efce-a09a-492f-9d4f-db6f28b4f486.png"
+    ],
+    "desc": "Complete your space with the Blue Storm Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "200",
+      "Weight": "120"
+    }
+  },
+  {
+    "id": "kl125896",
+    "sku": "SH-KD-125896",
+    "name": "Phalaenopsis Decorative Plant 73cm - With Planter",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "941dbe26-c77f-43b5-a2a7-f4cc88e8c5bf",
+    "freightClass": "decor-125896",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125896/add150c4-85c8-49f4-82e9-cd73dc9fdff0.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125896/add150c4-85c8-49f4-82e9-cd73dc9fdff0.png",
+      "https://img.koalaliving.com.au/products/125896/a3b73d87-a1ea-4ce9-b85a-789604a408d0.png"
+    ],
+    "desc": "Complete your space with the Phalaenopsis Decorative Plant 73cm - With Planter. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)",
+      "Width": "0",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "0",
+      "Weight": "40"
+    }
+  },
+  {
+    "id": "kl125914",
+    "sku": "SH-KD-125914",
+    "name": "Queen Of Hearts Framed Paper Collage",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "1f7d3eab-a481-4f35-bd8c-be18a746a668",
+    "freightClass": "decor-125914",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125914/c3722ae0-8184-4fbc-8c78-ecc4618c95ec.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125914/c3722ae0-8184-4fbc-8c78-ecc4618c95ec.png",
+      "https://img.koalaliving.com.au/products/125914/1909e913-90e7-4c51-b382-aaca4a04ddfc.png"
+    ],
+    "desc": "Complete your space with the Queen Of Hearts Framed Paper Collage. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "100",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "145",
+      "Weight": "160"
+    }
+  },
+  {
+    "id": "kl125915",
+    "sku": "SH-KD-125915",
+    "name": "King Of Hearts Framed Paper Collage",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "36377574-cc08-4e98-ae9b-7a42873f1a57",
+    "freightClass": "decor-125915",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125915/5ac6d0d3-d2a9-428c-abb0-06131faa9cf4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125915/5ac6d0d3-d2a9-428c-abb0-06131faa9cf4.png",
+      "https://img.koalaliving.com.au/products/125915/a7fe5f18-a8c6-4d18-9d66-29857fbcc28e.png"
+    ],
+    "desc": "Complete your space with the King Of Hearts Framed Paper Collage. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "100",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "145",
+      "Weight": "160"
+    }
+  },
+  {
+    "id": "kl125916",
+    "sku": "SH-KD-125916",
+    "name": "Bumble Bee Framed Paper Collage",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "50a72ec4-5750-4a2e-b1fc-5e033ce433fb",
+    "freightClass": "decor-125916",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125916/12325c10-a3f7-4aed-b625-6785db610e7e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125916/12325c10-a3f7-4aed-b625-6785db610e7e.png",
+      "https://img.koalaliving.com.au/products/125916/0b6f0a85-ecdc-49d1-94fd-057669fcff4b.png"
+    ],
+    "desc": "Complete your space with the Bumble Bee Framed Paper Collage. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "60",
+      "Height": "3",
+      "Depth": "3",
+      "Length": "60",
+      "Weight": "24"
+    }
+  },
+  {
+    "id": "kl125921",
+    "sku": "SH-KD-125921",
+    "name": "Golden Leaf Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8a851578-f394-4556-9159-4d728351dc47",
+    "freightClass": "decor-125921",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125921/3de6f291-931c-4548-bd92-eac339684ea2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125921/3de6f291-931c-4548-bd92-eac339684ea2.png",
+      "https://img.koalaliving.com.au/products/125921/9e318b55-39b7-4cd9-9492-2ecd844e8af4.png"
+    ],
+    "desc": "Complete your space with the Golden Leaf Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "40",
+      "Height": "3",
+      "Depth": "3",
+      "Length": "120",
+      "Weight": "34"
+    }
+  },
+  {
+    "id": "kl125924",
+    "sku": "SH-KD-125924",
+    "name": "Brass Colour Sea Fan Shadow Box Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "2f544654-b20e-4fde-bb97-7c13ed405a65",
+    "freightClass": "decor-125924",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125924/107725b7-a28a-4822-bc7f-b17c7c83bc50.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125924/107725b7-a28a-4822-bc7f-b17c7c83bc50.png",
+      "https://img.koalaliving.com.au/products/125924/ba5d5552-edb0-42bd-8181-bc8cc26d52ef.png"
+    ],
+    "desc": "Complete your space with the Brass Colour Sea Fan Shadow Box Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "60",
+      "Height": "0",
+      "Depth": "4",
+      "Length": "60",
+      "Weight": "29"
+    }
+  },
+  {
+    "id": "kl125997",
+    "sku": "SH-KD-125997",
+    "name": "Botanical Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 954,
+    "memberPrice": 858,
+    "priceFloor": 858,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ddbc4644-ef0e-4c48-b5af-5fbadf751cc1",
+    "freightClass": "decor-125997",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/125997/c748a804-604b-4ea0-ad84-99489a1c380a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/125997/c748a804-604b-4ea0-ad84-99489a1c380a.png",
+      "https://img.koalaliving.com.au/products/125997/572ba11e-b369-4cf9-8c9a-b4ab53e78815.png"
+    ],
+    "desc": "Complete your space with the Botanical Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "228",
+      "Height": "23",
+      "Depth": "23",
+      "Length": "390",
+      "Weight": "40"
+    }
+  },
+  {
+    "id": "kl126047",
+    "sku": "SH-KD-126047",
+    "name": "Telegraph Table Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d966c111-554f-4624-9aa6-541c20de82d0",
+    "freightClass": "decor-126047",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126047/a7721deb-8185-4eb0-836b-bda63f47b6cf.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126047/a7721deb-8185-4eb0-836b-bda63f47b6cf.png",
+      "https://img.koalaliving.com.au/products/126047/8ee35bee-2d02-494b-9e25-72e0777b9572.png"
+    ],
+    "desc": "Complete your space with the Telegraph Table Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "160",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "360",
+      "Weight": "10"
+    }
+  },
+  {
+    "id": "kl126049",
+    "sku": "SH-KD-126049",
+    "name": "Florence Table Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "594d8899-c20b-4861-8351-8493af6a0338",
+    "freightClass": "decor-126049",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126049/137ce2f1-1b6b-4a14-8879-32923c2205ce.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126049/137ce2f1-1b6b-4a14-8879-32923c2205ce.png",
+      "https://img.koalaliving.com.au/products/126049/ea72c93c-6dec-4372-9ffc-8192bc771bd7.png"
+    ],
+    "desc": "Complete your space with the Florence Table Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Square Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "60",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "220",
+      "Weight": "10"
+    }
+  },
+  {
+    "id": "kl126077",
+    "sku": "SH-KD-126077",
+    "name": "Black and White Circle Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c8312fa9-7e5b-413a-a794-25364c55eb2c",
+    "freightClass": "decor-126077",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126077/d7c403cb-3652-4e36-bed5-4cf04724059e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126077/d7c403cb-3652-4e36-bed5-4cf04724059e.png",
+      "https://img.koalaliving.com.au/products/126077/8544c158-3581-4ad2-8729-97832c8857f7.png"
+    ],
+    "desc": "Complete your space with the Black and White Circle Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "70",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "70",
+      "Weight": "40"
+    }
+  },
+  {
+    "id": "kl126078",
+    "sku": "SH-KD-126078",
+    "name": "Gold Flower Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 909,
+    "memberPrice": 818,
+    "priceFloor": 818,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ac8e6d41-bcc4-40b3-826f-c82799caf9e8",
+    "freightClass": "decor-126078",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126078/4963e790-3008-482d-bdd4-fc0e471ae27f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126078/4963e790-3008-482d-bdd4-fc0e471ae27f.png",
+      "https://img.koalaliving.com.au/products/126078/e3e2f0a4-10b0-4e57-a19c-a97b0f61cbd1.png"
+    ],
+    "desc": "Complete your space with the Gold Flower Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "70",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "70",
+      "Weight": "40"
+    }
+  },
+  {
+    "id": "kl126213",
+    "sku": "SH-KD-126213",
+    "name": "Gold Serviette Holder",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4c15ddbf-297a-42b6-b787-88ba50f4af7b",
+    "freightClass": "decor-126213",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126213/4a5ad3c3-cabf-4cf9-9ded-ed59da8558a6.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126213/4a5ad3c3-cabf-4cf9-9ded-ed59da8558a6.png",
+      "https://img.koalaliving.com.au/products/126213/670a424d-6a47-4073-a353-e73dfb1a9d8c.png"
+    ],
+    "desc": "Complete your space with the Gold Serviette Holder. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)",
+      "Width": "190",
+      "Height": "43",
+      "Depth": "43",
+      "Length": "198",
+      "Weight": "10"
+    }
+  },
+  {
+    "id": "kl126217",
+    "sku": "SH-KD-126217",
+    "name": "Large Gold Branch Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "479048d7-ccc4-41c0-b932-427caa818aa9",
+    "freightClass": "decor-126217",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126217/ea4f1ee4-c48d-4aa4-bc42-083b0d262a64.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126217/ea4f1ee4-c48d-4aa4-bc42-083b0d262a64.png",
+      "https://img.koalaliving.com.au/products/126217/e42cd257-e2a6-4198-9e98-4cbb61103dea.png"
+    ],
+    "desc": "Complete your space with the Large Gold Branch Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "195",
+      "Height": "435",
+      "Depth": "435",
+      "Length": "215",
+      "Weight": "20"
+    }
+  },
+  {
+    "id": "kl126219",
+    "sku": "SH-KD-126219",
+    "name": "Gold Branch Candle Holder",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "674a7bf7-ad28-4ba2-b08a-fcb946864d96",
+    "freightClass": "decor-126219",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126219/3069a2e9-ae93-41e2-90d5-a2cf9e905959.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126219/3069a2e9-ae93-41e2-90d5-a2cf9e905959.png",
+      "https://img.koalaliving.com.au/products/126219/cfad4b9b-509c-49b4-b0c3-6892a87c081d.png"
+    ],
+    "desc": "Complete your space with the Gold Branch Candle Holder. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Candle Holders",
+      "Sold as": "One product (as pictured)",
+      "Width": "265",
+      "Height": "415",
+      "Depth": "415",
+      "Length": "355",
+      "Weight": "40"
+    }
+  },
+  {
+    "id": "kl126269",
+    "sku": "SH-KD-126269",
+    "name": "Postal Wall Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "06e19dcc-daeb-4e4a-acb0-85b637b11d04",
+    "freightClass": "decor-126269",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126269/a0b5bf7d-1d91-4285-914a-99f917bd1cf7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126269/a0b5bf7d-1d91-4285-914a-99f917bd1cf7.png",
+      "https://img.koalaliving.com.au/products/126269/96367285-9879-471d-864d-98a8abb9349e.png"
+    ],
+    "desc": "Complete your space with the Postal Wall Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "80",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "360",
+      "Weight": "510000"
+    }
+  },
+  {
+    "id": "kl126272",
+    "sku": "SH-KD-126272",
+    "name": "Edward Wall Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "cebce43e-0b31-40aa-a165-6ebcc690c38d",
+    "freightClass": "decor-126272",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126272/d569a9a0-8865-41ae-adb0-4f86ab010a2a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126272/d569a9a0-8865-41ae-adb0-4f86ab010a2a.png",
+      "https://img.koalaliving.com.au/products/126272/b159bea5-79fa-47a6-b45d-078304090bb5.png"
+    ],
+    "desc": "Complete your space with the Edward Wall Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "510",
+      "Height": "50",
+      "Depth": "50",
+      "Length": "400",
+      "Weight": "30"
+    }
+  },
+  {
+    "id": "kl126277",
+    "sku": "SH-KD-126277",
+    "name": "Sundial Table Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "95a3fd98-92f8-4ad8-941c-e3198b17bd1e",
+    "freightClass": "decor-126277",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126277/fbde06c3-3097-4a10-956a-5948ce620fcc.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126277/fbde06c3-3097-4a10-956a-5948ce620fcc.png",
+      "https://img.koalaliving.com.au/products/126277/afd7deda-90ff-45dc-b60a-248cd0785ef8.png"
+    ],
+    "desc": "Complete your space with the Sundial Table Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "140",
+      "Height": "330",
+      "Depth": "330",
+      "Length": "260",
+      "Weight": "10"
+    }
+  },
+  {
+    "id": "kl126278",
+    "sku": "SH-KD-126278",
+    "name": "NY Free standing Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "1668cd07-b6db-48d1-a807-e8a8ee72579a",
+    "freightClass": "decor-126278",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126278/9f40a1f0-cec7-4787-a83f-2b4caae91423.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126278/9f40a1f0-cec7-4787-a83f-2b4caae91423.png",
+      "https://img.koalaliving.com.au/products/126278/3243d064-c053-437f-9bfa-859ba11a34c6.png"
+    ],
+    "desc": "Complete your space with the NY Free standing Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "420",
+      "Depth": "420",
+      "Length": "350",
+      "Weight": "10"
+    }
+  },
+  {
+    "id": "kl126283",
+    "sku": "SH-KD-126283",
+    "name": "Thomas Table Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d531bcb4-a02a-4817-8dae-7bcafb32b049",
+    "freightClass": "decor-126283",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126283/b267a2a0-9ca8-4e92-9515-61ff6ff18040.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126283/b267a2a0-9ca8-4e92-9515-61ff6ff18040.png",
+      "https://img.koalaliving.com.au/products/126283/341b1581-f51e-4b8e-b4bd-8e7b8a350e51.png"
+    ],
+    "desc": "Complete your space with the Thomas Table Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Square Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "100",
+      "Height": "200",
+      "Depth": "200",
+      "Length": "130",
+      "Weight": "10"
+    }
+  },
+  {
+    "id": "kl126301",
+    "sku": "SH-KD-126301",
+    "name": "Radio House Table Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e1c7f2b9-8766-4c6c-896f-ed77e8c5531a",
+    "freightClass": "decor-126301",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126301/006ef474-c605-47d8-8572-e520399aa0a2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126301/006ef474-c605-47d8-8572-e520399aa0a2.png",
+      "https://img.koalaliving.com.au/products/126301/8c43175f-5415-4d27-8013-c7fb42bbae88.png"
+    ],
+    "desc": "Complete your space with the Radio House Table Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "30",
+      "Height": "310",
+      "Depth": "310",
+      "Length": "140",
+      "Weight": "0"
+    }
+  },
+  {
+    "id": "kl126460",
+    "sku": "SH-KD-126460",
+    "name": "Autumn Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f419323c-1599-4e72-a0ec-077f53a08e75",
+    "freightClass": "decor-126460",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126460/5fdc6855-f8bc-4ae8-8f86-0f49073a011c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126460/5fdc6855-f8bc-4ae8-8f86-0f49073a011c.png",
+      "https://img.koalaliving.com.au/products/126460/c4b0e2eb-a8c5-45b6-b158-c37c7e256c4f.png"
+    ],
+    "desc": "Complete your space with the Autumn Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "1200",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "1200",
+      "Weight": "70"
+    }
+  },
+  {
+    "id": "kl126461",
+    "sku": "SH-KD-126461",
+    "name": "Reflections Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8907ad7c-4ea3-48b8-bbcf-810a27e7b7f3",
+    "freightClass": "decor-126461",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126461/962ef944-bc7e-4827-b204-009b02ed1613.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126461/962ef944-bc7e-4827-b204-009b02ed1613.png",
+      "https://img.koalaliving.com.au/products/126461/71c34ede-0022-47f7-a2db-193bd9553f12.png"
+    ],
+    "desc": "Complete your space with the Reflections Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "1000",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "1400",
+      "Weight": "70"
+    }
+  },
+  {
+    "id": "kl126463",
+    "sku": "SH-KD-126463",
+    "name": "Winter Solstice Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "bccd6e84-c73d-422d-a494-5b102afb8bfd",
+    "freightClass": "decor-126463",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126463/2d5c1ab6-9e81-4288-aba8-9ab1d4b6d50a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126463/2d5c1ab6-9e81-4288-aba8-9ab1d4b6d50a.png",
+      "https://img.koalaliving.com.au/products/126463/a327ccad-9be8-4f36-8f88-80b430158a9d.png"
+    ],
+    "desc": "Complete your space with the Winter Solstice Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "1000",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "1500",
+      "Weight": "70"
+    }
+  },
+  {
+    "id": "kl126464",
+    "sku": "SH-KD-126464",
+    "name": "Aftermath Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d3bd3849-27b1-4168-87ec-8cc66b9b3ab1",
+    "freightClass": "decor-126464",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126464/860a8750-0310-4848-aed8-de5beb11e22c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126464/860a8750-0310-4848-aed8-de5beb11e22c.png",
+      "https://img.koalaliving.com.au/products/126464/52ebde99-9ebd-42d7-afd7-9a8b84db6282.png"
+    ],
+    "desc": "Complete your space with the Aftermath Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "1000",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "1500",
+      "Weight": "4900"
+    }
+  },
+  {
+    "id": "kl126465",
+    "sku": "SH-KD-126465",
+    "name": "Transcendent Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "bdfc33ab-9310-4f62-890b-cc55a149bbb2",
+    "freightClass": "decor-126465",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126465/2f8624b9-e5bd-4832-b397-d952b4f06562.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126465/2f8624b9-e5bd-4832-b397-d952b4f06562.png",
+      "https://img.koalaliving.com.au/products/126465/368d90bd-b4aa-46d0-a34e-25b006423411.png"
+    ],
+    "desc": "Complete your space with the Transcendent Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "40",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "1400",
+      "Weight": "70"
+    }
+  },
+  {
+    "id": "kl126466",
+    "sku": "SH-KD-126466",
+    "name": "Lava Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ee514db6-2795-4e6a-a486-73be096cf179",
+    "freightClass": "decor-126466",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126466/06161362-a92b-464b-8e8d-df208e5278c7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126466/06161362-a92b-464b-8e8d-df208e5278c7.png",
+      "https://img.koalaliving.com.au/products/126466/f7a12988-b87f-49d7-b5fb-20600d71519c.png"
+    ],
+    "desc": "Complete your space with the Lava Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "1200",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "1200",
+      "Weight": "70"
+    }
+  },
+  {
+    "id": "kl126571",
+    "sku": "SH-KD-126571",
+    "name": "Twin Silver Leaf Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "efade718-384a-4ef0-91a8-1d4b92e68af1",
+    "freightClass": "decor-126571",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126571/f3f40067-57fe-4c4b-836f-72adba73a5c2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126571/f3f40067-57fe-4c4b-836f-72adba73a5c2.png",
+      "https://img.koalaliving.com.au/products/126571/ec3a9f14-3661-4765-979e-49e5cb7c1022.png"
+    ],
+    "desc": "Complete your space with the Twin Silver Leaf Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "600",
+      "Height": "40",
+      "Depth": "40",
+      "Length": "500",
+      "Weight": "25"
+    }
+  },
+  {
+    "id": "kl126575",
+    "sku": "SH-KD-126575",
+    "name": "Ginkgo Silver Leaf Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "494c8d70-b756-4a0a-9388-39eb4248d0f4",
+    "freightClass": "decor-126575",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126575/47ddd8bc-3a2a-43e9-a200-b04526e7b8da.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126575/47ddd8bc-3a2a-43e9-a200-b04526e7b8da.png",
+      "https://img.koalaliving.com.au/products/126575/e1bd3ae9-02b3-4a01-befd-591600b2ec8e.png"
+    ],
+    "desc": "Complete your space with the Ginkgo Silver Leaf Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "600",
+      "Height": "40",
+      "Depth": "40",
+      "Length": "500",
+      "Weight": "25"
+    }
+  },
+  {
+    "id": "kl126576",
+    "sku": "SH-KD-126576",
+    "name": "Maple Silver Leaf Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e654ca7c-8ecd-475e-8add-784187d39fb1",
+    "freightClass": "decor-126576",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126576/f1974eb3-c9cb-404a-8830-f7fd8a5be0ec.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126576/f1974eb3-c9cb-404a-8830-f7fd8a5be0ec.png",
+      "https://img.koalaliving.com.au/products/126576/ce47f896-a9cf-48c0-b2ad-891ad5326576.png"
+    ],
+    "desc": "Complete your space with the Maple Silver Leaf Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "600",
+      "Height": "40",
+      "Depth": "40",
+      "Length": "500",
+      "Weight": "25"
+    }
+  },
+  {
+    "id": "kl126580",
+    "sku": "SH-KD-126580",
+    "name": "Cycas Gold Leaf Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4f7638cf-f794-4002-85a0-961edc0e444d",
+    "freightClass": "decor-126580",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126580/73f758c0-3b9c-413d-b888-5d2b7b932cc4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126580/73f758c0-3b9c-413d-b888-5d2b7b932cc4.png",
+      "https://img.koalaliving.com.au/products/126580/53c53d41-0b18-4784-8997-556c2c8d4d86.png"
+    ],
+    "desc": "Complete your space with the Cycas Gold Leaf Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "600",
+      "Height": "40",
+      "Depth": "40",
+      "Length": "500",
+      "Weight": "25"
+    }
+  },
+  {
+    "id": "kl126581",
+    "sku": "SH-KD-126581",
+    "name": "Ginkgo Gold Leaf Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "87621d6b-793b-4140-b6c8-75f2cc098cd1",
+    "freightClass": "decor-126581",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126581/a1e204fc-649c-4489-bc71-e310c525b85b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126581/a1e204fc-649c-4489-bc71-e310c525b85b.png",
+      "https://img.koalaliving.com.au/products/126581/d0bb1e85-07ef-4669-9156-644b826011f9.png"
+    ],
+    "desc": "Complete your space with the Ginkgo Gold Leaf Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "600",
+      "Height": "40",
+      "Depth": "40",
+      "Length": "500",
+      "Weight": "25"
+    }
+  },
+  {
+    "id": "kl126600",
+    "sku": "SH-KD-126600",
+    "name": "Feather Round Mirror 86cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "aef5366b-667f-4706-a596-cf9c11de632b",
+    "freightClass": "decor-126600",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126600/bc289c0b-40c0-4249-8935-24ac0d628a70.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126600/bc289c0b-40c0-4249-8935-24ac0d628a70.png",
+      "https://img.koalaliving.com.au/products/126600/12870323-deeb-4375-a51c-e03f1a49fe98.png"
+    ],
+    "desc": "Complete your space with the Feather Round Mirror 86cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)",
+      "Width": "860",
+      "Height": "22",
+      "Depth": "22",
+      "Length": "860",
+      "Weight": "50"
+    }
+  },
+  {
+    "id": "kl126612",
+    "sku": "SH-KD-126612",
+    "name": "Boat II 3D Art",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "38f4aca0-88b0-4da3-a295-82c8e2a7f4bd",
+    "freightClass": "decor-126612",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126612/10c2a932-0b54-46a4-a7ac-57e09c13da03.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126612/10c2a932-0b54-46a4-a7ac-57e09c13da03.png",
+      "https://img.koalaliving.com.au/products/126612/689bf9e3-fa4e-4177-9e17-c33a95b8c778.png"
+    ],
+    "desc": "Complete your space with the Boat II 3D Art. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "3d Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "0",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "0",
+      "Weight": "80"
+    }
+  },
+  {
+    "id": "kl126613",
+    "sku": "SH-KD-126613",
+    "name": "Tree of Life II 3D Canvas",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a0b3f2d3-847a-4c2f-ada7-f67ad5058690",
+    "freightClass": "decor-126613",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126613/200966a4-afc7-4db0-ac6a-924932ff9686.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126613/200966a4-afc7-4db0-ac6a-924932ff9686.png",
+      "https://img.koalaliving.com.au/products/126613/804245e9-5d93-441f-8296-d1b0260852bd.png"
+    ],
+    "desc": "Complete your space with the Tree of Life II 3D Canvas. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "3d Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "80",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "160",
+      "Weight": "60"
+    }
+  },
+  {
+    "id": "kl126617",
+    "sku": "SH-KD-126617",
+    "name": "Natural Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "45b10e9b-2bd8-453b-8199-e4e051c90ab5",
+    "freightClass": "decor-126617",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126617/87535703-4305-409d-9042-a8912d9d6d1f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126617/87535703-4305-409d-9042-a8912d9d6d1f.png",
+      "https://img.koalaliving.com.au/products/126617/4852e9eb-41c5-41fe-8f58-c4503a46d7b0.png"
+    ],
+    "desc": "Complete your space with the Natural Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "1200",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "2000",
+      "Weight": "110"
+    }
+  },
+  {
+    "id": "kl126618",
+    "sku": "SH-KD-126618",
+    "name": "Oceanic Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "39f515f9-2f09-4f1e-9a30-2cffc2cb1ba2",
+    "freightClass": "decor-126618",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126618/43534134-4343-4f81-ae67-c4a6278c2cc8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126618/43534134-4343-4f81-ae67-c4a6278c2cc8.png",
+      "https://img.koalaliving.com.au/products/126618/66c02a94-bc5d-4c95-965d-1b919785a00f.png"
+    ],
+    "desc": "Complete your space with the Oceanic Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "2000",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "1200",
+      "Weight": "110"
+    }
+  },
+  {
+    "id": "kl126620",
+    "sku": "SH-KD-126620",
+    "name": "Vermillion Accent Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c3056a09-adb8-418a-b8ec-1f28c40c985c",
+    "freightClass": "decor-126620",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126620/cdbe61db-1b9d-4076-a2eb-1792a3cdd1db.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126620/cdbe61db-1b9d-4076-a2eb-1792a3cdd1db.png",
+      "https://img.koalaliving.com.au/products/126620/ca4594c0-7d5f-4695-a513-e892bd8b7817.png"
+    ],
+    "desc": "Complete your space with the Vermillion Accent Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "1200",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "2000",
+      "Weight": "110"
+    }
+  },
+  {
+    "id": "kl126621",
+    "sku": "SH-KD-126621",
+    "name": "Peony Rose Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a4242c47-c9de-4065-a176-5eac16d1be74",
+    "freightClass": "decor-126621",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126621/a6e9ebf4-afc5-4056-b5ec-dcbaa2400b58.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126621/a6e9ebf4-afc5-4056-b5ec-dcbaa2400b58.png",
+      "https://img.koalaliving.com.au/products/126621/1069fa92-f3ea-4844-910a-1f5ad53fb717.png"
+    ],
+    "desc": "Complete your space with the Peony Rose Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "1500",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "1500",
+      "Weight": "100"
+    }
+  },
+  {
+    "id": "kl126622",
+    "sku": "SH-KD-126622",
+    "name": "Brumby painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5199e5b0-23c8-4dd0-b239-2614b709104c",
+    "freightClass": "decor-126622",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126622/721da6a6-76f0-400f-bad4-c7e6ed080227.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126622/721da6a6-76f0-400f-bad4-c7e6ed080227.png",
+      "https://img.koalaliving.com.au/products/126622/e2bf3e15-ebc3-425f-9c31-ce566104f621.png"
+    ],
+    "desc": "Complete your space with the Brumby painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "1800",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "1300",
+      "Weight": "100"
+    }
+  },
+  {
+    "id": "kl126630",
+    "sku": "SH-KD-126630",
+    "name": "Circular Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "923917af-4ffd-4b74-86c4-7592a17d73a8",
+    "freightClass": "decor-126630",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126630/7d14acff-04fa-4c0f-b930-89a1798a4717.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126630/7d14acff-04fa-4c0f-b930-89a1798a4717.png",
+      "https://img.koalaliving.com.au/products/126630/2e688db3-cbd5-4fe4-af90-e148c606207b.png"
+    ],
+    "desc": "Complete your space with the Circular Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)",
+      "Width": "1200",
+      "Height": "35",
+      "Depth": "35",
+      "Length": "1200",
+      "Weight": "140"
+    }
+  },
+  {
+    "id": "kl126649",
+    "sku": "SH-KD-126649",
+    "name": "Sallow II Silver Leaf Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5fa09bd6-cb72-4fb7-9034-f10416fcbabc",
+    "freightClass": "decor-126649",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126649/10c7f7d5-2e19-46b7-b6f8-54f069868fd4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126649/10c7f7d5-2e19-46b7-b6f8-54f069868fd4.png",
+      "https://img.koalaliving.com.au/products/126649/a70f151f-e545-4189-b09e-d2e6fe54265a.png"
+    ],
+    "desc": "Complete your space with the Sallow II Silver Leaf Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "600",
+      "Height": "40",
+      "Depth": "40",
+      "Length": "500",
+      "Weight": "30"
+    }
+  },
+  {
+    "id": "kl126652",
+    "sku": "SH-KD-126652",
+    "name": "Banana II Gold Leaf Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "6d623642-2de0-4d79-b0a9-4dc7e9bda2fa",
+    "freightClass": "decor-126652",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126652/863c684e-6804-4f8d-9b9d-431e745bfda3.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126652/863c684e-6804-4f8d-9b9d-431e745bfda3.png",
+      "https://img.koalaliving.com.au/products/126652/ba6d12fe-ae76-41ad-8a3c-78aa4133e67c.png"
+    ],
+    "desc": "Complete your space with the Banana II Gold Leaf Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "600",
+      "Height": "40",
+      "Depth": "40",
+      "Length": "500",
+      "Weight": "30"
+    }
+  },
+  {
+    "id": "kl126708",
+    "sku": "SH-KD-126708",
+    "name": "Buchannan Rectangle Mirror - Antique Gold",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 909,
+    "memberPrice": 818,
+    "priceFloor": 818,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "43eb509a-d482-4e7f-b07f-89f150b65f86",
+    "freightClass": "decor-126708",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126708/52f2c276-a7c6-4124-bc47-eb634e2fd316.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126708/52f2c276-a7c6-4124-bc47-eb634e2fd316.png",
+      "https://img.koalaliving.com.au/products/126708/7de66afa-ee29-4dc1-90eb-f4c7cdaf827f.png"
+    ],
+    "desc": "Complete your space with the Buchannan Rectangle Mirror - Antique Gold. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Rectangle Mirrors",
+      "Sold as": "One product (as pictured)",
+      "Width": "750",
+      "Height": "21",
+      "Depth": "21",
+      "Length": "750",
+      "Weight": "65"
+    }
+  },
+  {
+    "id": "kl126778",
+    "sku": "SH-KD-126778",
+    "name": "Evergreen Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8f20cc17-e631-401a-b0e4-4017dbbc42b5",
+    "freightClass": "decor-126778",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126778/df67d2b1-32c2-4996-81d2-00123798307d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126778/df67d2b1-32c2-4996-81d2-00123798307d.png",
+      "https://img.koalaliving.com.au/products/126778/4857dd8f-4ca3-4cbf-9d3c-5f07cd7a6abb.png"
+    ],
+    "desc": "Complete your space with the Evergreen Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "150",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "150",
+      "Weight": "116"
+    }
+  },
+  {
+    "id": "kl126779",
+    "sku": "SH-KD-126779",
+    "name": "Vivid Dream Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "24eb5b75-7d5d-4cc0-b9e9-1b272085c134",
+    "freightClass": "decor-126779",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126779/1fd65f87-0139-4a88-b4ce-26df4fb6ca93.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126779/1fd65f87-0139-4a88-b4ce-26df4fb6ca93.png",
+      "https://img.koalaliving.com.au/products/126779/c27fe3b8-3f04-4835-8607-cf7b2d4365f8.png"
+    ],
+    "desc": "Complete your space with the Vivid Dream Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Abstract Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "200",
+      "Weight": "123"
+    }
+  },
+  {
+    "id": "kl126783",
+    "sku": "SH-KD-126783",
+    "name": "Chessboard Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ca48c591-2ad1-4449-9bea-bfd486293a5c",
+    "freightClass": "decor-126783",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126783/97060a31-c5f3-4abb-af64-d2a23872e200.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126783/97060a31-c5f3-4abb-af64-d2a23872e200.png",
+      "https://img.koalaliving.com.au/products/126783/5b29bebe-1528-48a8-b82a-ab001d567c56.png"
+    ],
+    "desc": "Complete your space with the Chessboard Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "135",
+      "Height": "5",
+      "Depth": "5",
+      "Length": "220",
+      "Weight": "152"
+    }
+  },
+  {
+    "id": "kl126785",
+    "sku": "SH-KD-126785",
+    "name": "Dancing Petals Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "fc0d2b62-7c2a-405b-8baf-5ec4d46de4a4",
+    "freightClass": "decor-126785",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126785/f150596d-1af8-405f-8381-c8049702d258.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126785/f150596d-1af8-405f-8381-c8049702d258.png",
+      "https://img.koalaliving.com.au/products/126785/203ae82c-ba30-4499-8ff3-cbb03a53d394.png"
+    ],
+    "desc": "Complete your space with the Dancing Petals Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "150",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "150",
+      "Weight": "116"
+    }
+  },
+  {
+    "id": "kl126791",
+    "sku": "SH-KD-126791",
+    "name": "Aerialist Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "87c5c297-390b-4299-a9b3-6991a591748d",
+    "freightClass": "decor-126791",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126791/9b8a546e-9ee8-44f5-8f9b-decfcf48fc88.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126791/9b8a546e-9ee8-44f5-8f9b-decfcf48fc88.png",
+      "https://img.koalaliving.com.au/products/126791/5dd78fbe-6ccd-4880-b762-01d9fc507bca.png"
+    ],
+    "desc": "Complete your space with the Aerialist Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "140",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "70",
+      "Weight": "51"
+    }
+  },
+  {
+    "id": "kl126792",
+    "sku": "SH-KD-126792",
+    "name": "Trapezist Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "89dbb8d5-328e-4659-9794-bb2299ef3426",
+    "freightClass": "decor-126792",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126792/1b62ad73-2bbd-46d5-93a7-59d4e1e7a408.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126792/1b62ad73-2bbd-46d5-93a7-59d4e1e7a408.png",
+      "https://img.koalaliving.com.au/products/126792/8277d73f-afc2-4e59-bac7-a24ceb08c759.png"
+    ],
+    "desc": "Complete your space with the Trapezist Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "140",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "70",
+      "Weight": "51"
+    }
+  },
+  {
+    "id": "kl126798",
+    "sku": "SH-KD-126798",
+    "name": "Secret Alpine Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "1e2c16eb-58a3-4822-bd44-0ac2204fc591",
+    "freightClass": "decor-126798",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126798/37538ec0-2a44-4619-9383-6132e956d618.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126798/37538ec0-2a44-4619-9383-6132e956d618.png",
+      "https://img.koalaliving.com.au/products/126798/b13fcf34-0a68-4f1e-975f-81ead5fd47bb.png"
+    ],
+    "desc": "Complete your space with the Secret Alpine Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "200",
+      "Weight": "123"
+    }
+  },
+  {
+    "id": "kl126799",
+    "sku": "SH-KD-126799",
+    "name": "Pearl River Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d82028bd-3810-42da-8f8c-2c2a5492c85b",
+    "freightClass": "decor-126799",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126799/6c2ab7a6-61e2-4232-8d3b-7565f910b4d7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126799/6c2ab7a6-61e2-4232-8d3b-7565f910b4d7.png",
+      "https://img.koalaliving.com.au/products/126799/8a2dc916-8117-4275-a141-f574607b426a.png"
+    ],
+    "desc": "Complete your space with the Pearl River Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "130",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "220",
+      "Weight": "147"
+    }
+  },
+  {
+    "id": "kl126805",
+    "sku": "SH-KD-126805",
+    "name": "Afterglow Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "7171259b-01f8-45dc-bcb3-08a79a332fd2",
+    "freightClass": "decor-126805",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126805/e0d8858b-4ca4-47ba-aefd-b4b00c7bfda1.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126805/e0d8858b-4ca4-47ba-aefd-b4b00c7bfda1.png",
+      "https://img.koalaliving.com.au/products/126805/6a1fd136-c4f4-42eb-935d-90fe47b8ed69.png"
+    ],
+    "desc": "Complete your space with the Afterglow Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "130",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "130",
+      "Weight": "87"
+    }
+  },
+  {
+    "id": "kl126810",
+    "sku": "SH-KD-126810",
+    "name": "Ocean Waves Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c02c041e-e8ee-4273-bb3b-96bdfac038ea",
+    "freightClass": "decor-126810",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126810/408fc48d-6701-4993-8ccb-b6264a7e53da.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126810/408fc48d-6701-4993-8ccb-b6264a7e53da.png",
+      "https://img.koalaliving.com.au/products/126810/7c2fff10-cc41-486b-b499-74790ffe79e3.png"
+    ],
+    "desc": "Complete your space with the Ocean Waves Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "135",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "135",
+      "Weight": "94"
+    }
+  },
+  {
+    "id": "kl126811",
+    "sku": "SH-KD-126811",
+    "name": "Expressionism Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a370a6c5-ef0a-45c5-b30f-f17ee1ee9cf6",
+    "freightClass": "decor-126811",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126811/e0669c45-2a36-4ad7-9454-f757e42f04eb.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126811/e0669c45-2a36-4ad7-9454-f757e42f04eb.png",
+      "https://img.koalaliving.com.au/products/126811/286a35d3-b5de-469f-be92-212bd1c39004.png"
+    ],
+    "desc": "Complete your space with the Expressionism Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "220",
+      "Weight": "135"
+    }
+  },
+  {
+    "id": "kl126812",
+    "sku": "SH-KD-126812",
+    "name": "Wildlings Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "269d7786-71bd-4ac1-8f0e-646765b2a577",
+    "freightClass": "decor-126812",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126812/e07c9431-879e-4c60-bbef-4938df811b77.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126812/e07c9431-879e-4c60-bbef-4938df811b77.png",
+      "https://img.koalaliving.com.au/products/126812/135d90ac-6073-4c80-9cdb-cc8ccd5f5634.png"
+    ],
+    "desc": "Complete your space with the Wildlings Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "140",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "140",
+      "Weight": "101"
+    }
+  },
+  {
+    "id": "kl126814",
+    "sku": "SH-KD-126814",
+    "name": "Ballad Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "826032f9-7150-4509-8afb-186e0586e532",
+    "freightClass": "decor-126814",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126814/46e15011-6491-492d-a3cf-f66e4f35fcfa.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126814/46e15011-6491-492d-a3cf-f66e4f35fcfa.png",
+      "https://img.koalaliving.com.au/products/126814/e448af9e-e492-4381-b478-1cd745d8ee5b.png"
+    ],
+    "desc": "Complete your space with the Ballad Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "140",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "140",
+      "Weight": "101"
+    }
+  },
+  {
+    "id": "kl126835",
+    "sku": "SH-KD-126835",
+    "name": "Laceleaf Antique Gold Round Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4723c01c-9574-499d-916e-e40b8373455c",
+    "freightClass": "decor-126835",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126835/c0afa785-d497-477b-8d4a-6a094d88dbfe.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126835/c0afa785-d497-477b-8d4a-6a094d88dbfe.png",
+      "https://img.koalaliving.com.au/products/126835/9d2cb57d-2d78-498b-b192-3bc599c0caad.png"
+    ],
+    "desc": "Complete your space with the Laceleaf Antique Gold Round Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)",
+      "Width": "5",
+      "Height": "120",
+      "Depth": "120",
+      "Length": "120",
+      "Weight": "200"
+    }
+  },
+  {
+    "id": "kl126851",
+    "sku": "SH-KD-126851",
+    "name": "Gideon Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0e537f69-5922-4cc9-b201-e6123617c6d7",
+    "freightClass": "decor-126851",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126851/1937b589-8ca3-45e9-83e4-483ce080ac5f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126851/1937b589-8ca3-45e9-83e4-483ce080ac5f.png",
+      "https://img.koalaliving.com.au/products/126851/db9c3005-76b7-4bef-9944-c6f9ce0be7c4.png"
+    ],
+    "desc": "Complete your space with the Gideon Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "34",
+      "Height": "75",
+      "Depth": "75",
+      "Length": "34",
+      "Weight": "8000"
+    }
+  },
+  {
+    "id": "kl126852",
+    "sku": "SH-KD-126852",
+    "name": "Avery Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "fc36b148-4ae9-42d5-ba48-3923b50f0ad8",
+    "freightClass": "decor-126852",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126852/07c88dc5-da9a-492c-9ff5-ab75fc1508c9.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126852/07c88dc5-da9a-492c-9ff5-ab75fc1508c9.png",
+      "https://img.koalaliving.com.au/products/126852/4db4c4e3-cfc9-4235-88c6-f09f964a580c.png"
+    ],
+    "desc": "Complete your space with the Avery Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "36",
+      "Height": "90",
+      "Depth": "90",
+      "Length": "36",
+      "Weight": "9000"
+    }
+  },
+  {
+    "id": "kl126853",
+    "sku": "SH-KD-126853",
+    "name": "Gaudi Antique Silver Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "3aef82c1-45ea-4d70-9d96-ee0fde2a0cfe",
+    "freightClass": "decor-126853",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126853/f75aa871-d4e7-4d59-97e7-f2617d84d4ea.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126853/f75aa871-d4e7-4d59-97e7-f2617d84d4ea.png",
+      "https://img.koalaliving.com.au/products/126853/ee131210-4fc6-4f0b-98b4-b69b92e34d8b.png"
+    ],
+    "desc": "Complete your space with the Gaudi Antique Silver Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "36",
+      "Height": "90",
+      "Depth": "90",
+      "Length": "36",
+      "Weight": "9000"
+    }
+  },
+  {
+    "id": "kl126854",
+    "sku": "SH-KD-126854",
+    "name": "Caleb Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 976,
+    "memberPrice": 878,
+    "priceFloor": 878,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "34c76d31-d6af-476d-95b8-01a40ccd9848",
+    "freightClass": "decor-126854",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126854/ed6e1c55-a365-4c8e-8b05-a6d155475777.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126854/ed6e1c55-a365-4c8e-8b05-a6d155475777.png",
+      "https://img.koalaliving.com.au/products/126854/6c26155c-4726-49d5-b92a-ee7863da675a.png"
+    ],
+    "desc": "Complete your space with the Caleb Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "45",
+      "Height": "32",
+      "Depth": "32",
+      "Length": "45",
+      "Weight": "4000"
+    }
+  },
+  {
+    "id": "kl126856",
+    "sku": "SH-KD-126856",
+    "name": "Rapids Tactile Champange Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5a3ea909-911c-448c-a295-0a8786b0471a",
+    "freightClass": "decor-126856",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126856/3c3296cc-97d2-47f1-8880-c45dc866a94c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126856/3c3296cc-97d2-47f1-8880-c45dc866a94c.png",
+      "https://img.koalaliving.com.au/products/126856/8bc1b2b9-215e-4e6b-b7e1-1825be16e5ce.png"
+    ],
+    "desc": "Complete your space with the Rapids Tactile Champange Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "35",
+      "Height": "91",
+      "Depth": "91",
+      "Length": "35",
+      "Weight": "10000"
+    }
+  },
+  {
+    "id": "kl126857",
+    "sku": "SH-KD-126857",
+    "name": "Seawater Tactile Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f9b84325-64cf-4879-b86d-2630f261fc77",
+    "freightClass": "decor-126857",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126857/8a3c499f-97fd-4cf9-9256-caad69aa0fd7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126857/8a3c499f-97fd-4cf9-9256-caad69aa0fd7.png",
+      "https://img.koalaliving.com.au/products/126857/14d17ebf-2dd0-4b80-9d8f-57b70af942eb.png"
+    ],
+    "desc": "Complete your space with the Seawater Tactile Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "45",
+      "Height": "35",
+      "Depth": "35",
+      "Length": "45",
+      "Weight": "4000"
+    }
+  },
+  {
+    "id": "kl126859",
+    "sku": "SH-KD-126859",
+    "name": "Mystique Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "6cd51b99-019d-4eb5-b154-a5b8d2cbc976",
+    "freightClass": "decor-126859",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126859/41655996-8f7e-4154-9371-800429e68dc8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126859/41655996-8f7e-4154-9371-800429e68dc8.png",
+      "https://img.koalaliving.com.au/products/126859/97e0c97e-fd8b-47ee-9b3e-8e56925a218b.png"
+    ],
+    "desc": "Complete your space with the Mystique Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "38",
+      "Height": "90",
+      "Depth": "90",
+      "Length": "38",
+      "Weight": "10000"
+    }
+  },
+  {
+    "id": "kl126860",
+    "sku": "SH-KD-126860",
+    "name": "Polished Rockpile Antique Gold Vase - Small",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "9c3d272c-35fa-4392-8329-9d8cd73236b1",
+    "freightClass": "decor-126860",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126860/333aba02-6b45-4bac-98aa-02dbf87e044e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126860/333aba02-6b45-4bac-98aa-02dbf87e044e.png",
+      "https://img.koalaliving.com.au/products/126860/b67a5a80-ae4e-4e08-ab65-0af0b3c36213.png"
+    ],
+    "desc": "Complete your space with the Polished Rockpile Antique Gold Vase - Small. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "34",
+      "Height": "70",
+      "Depth": "70",
+      "Length": "34",
+      "Weight": "8000"
+    }
+  },
+  {
+    "id": "kl126864",
+    "sku": "SH-KD-126864",
+    "name": "Carter Two-Toned vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e9054a71-dd56-4c93-8aa5-bf5accd8b5d3",
+    "freightClass": "decor-126864",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126864/337bf45b-a527-4c41-b120-c7ed5205a48e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126864/337bf45b-a527-4c41-b120-c7ed5205a48e.png",
+      "https://img.koalaliving.com.au/products/126864/e9efebd0-e9d0-49b0-b5ad-13f462b6f3ea.png"
+    ],
+    "desc": "Complete your space with the Carter Two-Toned vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "35",
+      "Height": "75",
+      "Depth": "75",
+      "Length": "35",
+      "Weight": "7000"
+    }
+  },
+  {
+    "id": "kl126865",
+    "sku": "SH-KD-126865",
+    "name": "Emilia Two-Toned Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "fcdf14ed-8ed8-4b17-8a7d-b3c7ce45a1cb",
+    "freightClass": "decor-126865",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/126865/7624a331-cea5-4194-a2dc-0e1aba85c4db.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/126865/7624a331-cea5-4194-a2dc-0e1aba85c4db.png",
+      "https://img.koalaliving.com.au/products/126865/6207533a-ffe6-4543-87c8-7decc9214422.png"
+    ],
+    "desc": "Complete your space with the Emilia Two-Toned Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "39",
+      "Height": "100",
+      "Depth": "100",
+      "Length": "39",
+      "Weight": "11000"
+    }
+  },
+  {
+    "id": "kl127039",
+    "sku": "SH-KD-127039",
+    "name": "Maximus Wall Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "94e86bd0-afca-4439-8e0a-8e715c63a01b",
+    "freightClass": "decor-127039",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127039/0ca5e725-c4fa-4016-ab1a-7a344a6f9909.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127039/0ca5e725-c4fa-4016-ab1a-7a344a6f9909.png",
+      "https://img.koalaliving.com.au/products/127039/8778a6c6-fa35-4da1-bed6-5b56440b2033.png"
+    ],
+    "desc": "Complete your space with the Maximus Wall Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)",
+      "Width": "254",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "720",
+      "Weight": "500"
+    }
+  },
+  {
+    "id": "kl127232",
+    "sku": "SH-KD-127232",
+    "name": "Joker Card Framed Paper Collage",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b304ce8a-c0f6-4b94-8e51-e5b7ce1d1bd7",
+    "freightClass": "decor-127232",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127232/7f680dd3-bf5e-4244-abac-36d83a1478d1.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127232/7f680dd3-bf5e-4244-abac-36d83a1478d1.png",
+      "https://img.koalaliving.com.au/products/127232/132c92d3-2b2c-446f-b38e-831f423241f6.png"
+    ],
+    "desc": "Complete your space with the Joker Card Framed Paper Collage. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "145",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "100",
+      "Weight": "0"
+    }
+  },
+  {
+    "id": "kl127234",
+    "sku": "SH-KD-127234",
+    "name": "White Quills Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "fcc2b2ba-5a24-4280-b6f8-7717bec749d2",
+    "freightClass": "decor-127234",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127234/8f9756ea-a1b4-4803-9434-d3f69c3e5242.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127234/8f9756ea-a1b4-4803-9434-d3f69c3e5242.png",
+      "https://img.koalaliving.com.au/products/127234/dc5216d8-b7e8-4270-8ea9-8365d914dbd5.png"
+    ],
+    "desc": "Complete your space with the White Quills Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "100",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "100",
+      "Weight": "0"
+    }
+  },
+  {
+    "id": "kl127235",
+    "sku": "SH-KD-127235",
+    "name": "Leilani White and Gold Paper Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c7d66e39-d18b-4596-bd21-b92a20631bbc",
+    "freightClass": "decor-127235",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127235/8b583b1c-bd4a-492e-95a0-df10d8399139.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127235/8b583b1c-bd4a-492e-95a0-df10d8399139.png",
+      "https://img.koalaliving.com.au/products/127235/2ed40e8c-92ba-4bc7-bb97-2294e800cda9.png"
+    ],
+    "desc": "Complete your space with the Leilani White and Gold Paper Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "100",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "100",
+      "Weight": "0"
+    }
+  },
+  {
+    "id": "kl127236",
+    "sku": "SH-KD-127236",
+    "name": "Marigold Gold and White Paper Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4980a81c-772d-471a-861c-c65a6363edd0",
+    "freightClass": "decor-127236",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127236/ae46b453-ffa4-464f-acac-12a59ffb9764.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127236/ae46b453-ffa4-464f-acac-12a59ffb9764.png",
+      "https://img.koalaliving.com.au/products/127236/5e35c7e7-2813-418c-8418-f69ba373c9b3.png"
+    ],
+    "desc": "Complete your space with the Marigold Gold and White Paper Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "100",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "40",
+      "Weight": "0"
+    }
+  },
+  {
+    "id": "kl127237",
+    "sku": "SH-KD-127237",
+    "name": "Silver Apricot Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0549a629-f0e2-4960-a4da-c4ef4a6e5b22",
+    "freightClass": "decor-127237",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127237/5229f800-d2c8-415c-90f3-99411a9f4a88.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127237/5229f800-d2c8-415c-90f3-99411a9f4a88.png",
+      "https://img.koalaliving.com.au/products/127237/4c3405fe-bfdc-478b-9e69-5841417227c8.png"
+    ],
+    "desc": "Complete your space with the Silver Apricot Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "60",
+      "Weight": "0"
+    }
+  },
+  {
+    "id": "kl127238",
+    "sku": "SH-KD-127238",
+    "name": "Golden Quills Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "039259a4-a8a9-44e4-8311-125fb8109e6b",
+    "freightClass": "decor-127238",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127238/4d196090-7cc2-40c1-baae-3d5d8dc27eb5.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127238/4d196090-7cc2-40c1-baae-3d5d8dc27eb5.png",
+      "https://img.koalaliving.com.au/products/127238/78500c17-0ff5-475f-ac0d-42de98536889.png"
+    ],
+    "desc": "Complete your space with the Golden Quills Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "60",
+      "Weight": "0"
+    }
+  },
+  {
+    "id": "kl127243",
+    "sku": "SH-KD-127243",
+    "name": "Ace of Hearts Framed Paper Collage",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "165321d5-40b8-449b-b1d7-01087a754777",
+    "freightClass": "decor-127243",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127243/4b8c34da-27a7-436f-94e3-d6d7fe3b1557.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127243/4b8c34da-27a7-436f-94e3-d6d7fe3b1557.png",
+      "https://img.koalaliving.com.au/products/127243/60c5fafd-d2bf-4721-9831-314fd5764c05.png"
+    ],
+    "desc": "Complete your space with the Ace of Hearts Framed Paper Collage. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "145",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "100",
+      "Weight": "0"
+    }
+  },
+  {
+    "id": "kl127270",
+    "sku": "SH-KD-127270",
+    "name": "Deacon Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5b798377-e3d5-43b2-aced-f228ef9cff1a",
+    "freightClass": "decor-127270",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127270/2481b49f-7833-4943-ab84-298c76fc774f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127270/2481b49f-7833-4943-ab84-298c76fc774f.png",
+      "https://img.koalaliving.com.au/products/127270/3bbe82c8-0e2c-4756-8eec-17f2cd9be853.png"
+    ],
+    "desc": "Complete your space with the Deacon Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "36",
+      "Height": "90",
+      "Depth": "90",
+      "Length": "36",
+      "Weight": "9000"
+    }
+  },
+  {
+    "id": "kl127271",
+    "sku": "SH-KD-127271",
+    "name": "Atlas Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d7e0513c-d234-4170-a3b1-18b25b5c19bc",
+    "freightClass": "decor-127271",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127271/e047486b-2efd-4915-a172-60436f6a578b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127271/e047486b-2efd-4915-a172-60436f6a578b.png",
+      "https://img.koalaliving.com.au/products/127271/24c7188b-b4a9-4030-8bf7-ba180eeeb208.png"
+    ],
+    "desc": "Complete your space with the Atlas Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "36",
+      "Height": "90",
+      "Depth": "90",
+      "Length": "36",
+      "Weight": "9000"
+    }
+  },
+  {
+    "id": "kl127272",
+    "sku": "SH-KD-127272",
+    "name": "Basilios Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "3f904401-b7bc-4ef7-ba80-f3f02f2ea80f",
+    "freightClass": "decor-127272",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127272/8f1eefa5-22af-46d6-8802-e93aab8d94f8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127272/8f1eefa5-22af-46d6-8802-e93aab8d94f8.png",
+      "https://img.koalaliving.com.au/products/127272/61dfa7eb-a78c-4b29-bfa3-8a3af9469cec.png"
+    ],
+    "desc": "Complete your space with the Basilios Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "36",
+      "Height": "90",
+      "Depth": "90",
+      "Length": "36",
+      "Weight": "9000"
+    }
+  },
+  {
+    "id": "kl127273",
+    "sku": "SH-KD-127273",
+    "name": "Drummond Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "082704eb-bde6-411c-ab76-64f7f4bb1595",
+    "freightClass": "decor-127273",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127273/8ada5103-2507-4f0d-8b6a-2f88ef2b3248.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127273/8ada5103-2507-4f0d-8b6a-2f88ef2b3248.png",
+      "https://img.koalaliving.com.au/products/127273/73b40b10-376a-43b1-9fd4-8c93f22ba15c.png"
+    ],
+    "desc": "Complete your space with the Drummond Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "39",
+      "Height": "110",
+      "Depth": "110",
+      "Length": "39",
+      "Weight": "12000"
+    }
+  },
+  {
+    "id": "kl127274",
+    "sku": "SH-KD-127274",
+    "name": "Polished Rockpile Antique Gold Vase - Large",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "34767590-914e-49fc-b4f7-b45f153def64",
+    "freightClass": "decor-127274",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127274/aad6ddc5-a93f-4c93-939f-4f3b8833b39e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127274/aad6ddc5-a93f-4c93-939f-4f3b8833b39e.png",
+      "https://img.koalaliving.com.au/products/127274/151b981c-52f2-4170-a09b-39eac7be2614.png"
+    ],
+    "desc": "Complete your space with the Polished Rockpile Antique Gold Vase - Large. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)",
+      "Width": "36",
+      "Height": "90",
+      "Depth": "90",
+      "Length": "36",
+      "Weight": "9000"
+    }
+  },
+  {
+    "id": "kl127317",
+    "sku": "SH-KD-127317",
+    "name": "Abstract Jewels Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "75f4f160-3e4d-47a3-a2ad-13fc2bf56469",
+    "freightClass": "decor-127317",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127317/48772118-2f9b-456d-ac06-e80de3708c52.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127317/48772118-2f9b-456d-ac06-e80de3708c52.png",
+      "https://img.koalaliving.com.au/products/127317/8c0372e7-64ae-4ab0-bd95-e11106e3d26b.png"
+    ],
+    "desc": "Complete your space with the Abstract Jewels Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)",
+      "Width": "120",
+      "Height": "4",
+      "Depth": "4",
+      "Length": "200",
+      "Weight": "7000"
+    }
+  },
+  {
+    "id": "kl127364",
+    "sku": "SH-KD-127364",
+    "name": "Mimosa Rose Diffuser 180ml",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "153eb107-dbad-4bc5-8566-b392ae270d33",
+    "freightClass": "decor-127364",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127364/51cb73e2-72af-4da3-ba46-fb00da6bc516.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127364/51cb73e2-72af-4da3-ba46-fb00da6bc516.png",
+      "https://img.koalaliving.com.au/products/127364/d8a45db6-b87c-48cf-9e6f-49c667dc9418.png"
+    ],
+    "desc": "Complete your space with the Mimosa Rose Diffuser 180ml. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Candles and Diffusers",
+      "Sold as": "One product (as pictured)",
+      "Width": "0",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "0",
+      "Weight": "9400"
+    }
+  },
+  {
+    "id": "kl127366",
+    "sku": "SH-KD-127366",
+    "name": "Love Tuberose Diffuser 180ml",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e73d1e87-55f6-4dba-8c70-0561830dcf4b",
+    "freightClass": "decor-127366",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127366/7d5fd111-0293-4a16-ba8b-cedb4dc8e381.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127366/7d5fd111-0293-4a16-ba8b-cedb4dc8e381.png",
+      "https://img.koalaliving.com.au/products/127366/15b64f26-772e-4666-8d24-2fa9307e1275.png"
+    ],
+    "desc": "Complete your space with the Love Tuberose Diffuser 180ml. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Candles and Diffusers",
+      "Sold as": "One product (as pictured)",
+      "Width": "0",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "0",
+      "Weight": "9400"
+    }
+  },
+  {
+    "id": "kl127367",
+    "sku": "SH-KD-127367",
+    "name": "Black Sails Diffuser 180ml",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "86b9170c-7952-4a6f-9265-1923265650aa",
+    "freightClass": "decor-127367",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127367/da1b0dc6-b69f-43f6-b9f0-780846d9ccc8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127367/da1b0dc6-b69f-43f6-b9f0-780846d9ccc8.png",
+      "https://img.koalaliving.com.au/products/127367/f1f88e85-4353-40c2-b856-0e9ce2a98974.png"
+    ],
+    "desc": "Complete your space with the Black Sails Diffuser 180ml. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Candles and Diffusers",
+      "Sold as": "One product (as pictured)",
+      "Width": "0",
+      "Height": "0",
+      "Depth": "0",
+      "Length": "0",
+      "Weight": "9400"
+    }
+  },
+  {
+    "id": "kl127379",
+    "sku": "SH-KD-127379",
+    "name": "Round Gold Ginkgo Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1154,
+    "memberPrice": 1038,
+    "priceFloor": 1038,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "534a0a8d-742b-4614-af22-e8853e450fc8",
+    "freightClass": "decor-127379",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127379/502e66df-c251-4682-ae12-20e727b468e3.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127379/502e66df-c251-4682-ae12-20e727b468e3.png",
+      "https://img.koalaliving.com.au/products/127379/25993656-d342-4373-80a6-8a7f53550f07.png"
+    ],
+    "desc": "Complete your space with the Round Gold Ginkgo Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127381",
+    "sku": "SH-KD-127381",
+    "name": "Myrtle Antique Gold Square Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "28b8528d-c3f8-436d-ad7c-7182559a1237",
+    "freightClass": "decor-127381",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127381/12b9f225-fb5b-4621-bbc6-5bc8751def39.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127381/12b9f225-fb5b-4621-bbc6-5bc8751def39.png",
+      "https://img.koalaliving.com.au/products/127381/1942c796-c367-43c9-9031-c984b2de9508.png"
+    ],
+    "desc": "Complete your space with the Myrtle Antique Gold Square Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Square Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127416",
+    "sku": "SH-KD-127416",
+    "name": "Deco Globe Sphere",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c7776ee8-49b7-413e-bd71-8326aacde6c0",
+    "freightClass": "decor-127416",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127416/7466894a-e497-45b3-bd26-33f9b0976067.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127416/7466894a-e497-45b3-bd26-33f9b0976067.png",
+      "https://img.koalaliving.com.au/products/127416/9516d776-ff95-4743-840b-7d08b948e4be.png"
+    ],
+    "desc": "Complete your space with the Deco Globe Sphere. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127417",
+    "sku": "SH-KD-127417",
+    "name": "Marcus Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 932,
+    "memberPrice": 838,
+    "priceFloor": 838,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "651f9ea5-40d0-4198-b180-c8fb53e942f6",
+    "freightClass": "decor-127417",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127417/f102f4ab-5e13-4dc8-a630-213d1f668a36.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127417/f102f4ab-5e13-4dc8-a630-213d1f668a36.png",
+      "https://img.koalaliving.com.au/products/127417/af567b97-fa28-444e-bfb1-642d34ebf491.png"
+    ],
+    "desc": "Complete your space with the Marcus Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127418",
+    "sku": "SH-KD-127418",
+    "name": "Elmer Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4ccd7dc9-8fc8-4cd7-8f76-0db95266e68a",
+    "freightClass": "decor-127418",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127418/18afed82-5259-4ea2-a148-35d9ad9726c7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127418/18afed82-5259-4ea2-a148-35d9ad9726c7.png",
+      "https://img.koalaliving.com.au/products/127418/807f8503-e3a7-499f-a110-3d549a1d1dfe.png"
+    ],
+    "desc": "Complete your space with the Elmer Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127419",
+    "sku": "SH-KD-127419",
+    "name": "Clarence Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b4a5c5d4-9f90-4d3b-b9ee-8f94a4dc8692",
+    "freightClass": "decor-127419",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127419/00439df8-c56d-4e2d-9506-377e8bb60cab.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127419/00439df8-c56d-4e2d-9506-377e8bb60cab.png",
+      "https://img.koalaliving.com.au/products/127419/117a2cdf-9f6f-4ab7-b09c-b0a8bb45b5d0.png"
+    ],
+    "desc": "Complete your space with the Clarence Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Square Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127420",
+    "sku": "SH-KD-127420",
+    "name": "Burke Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "cc5a0006-4037-44d3-a57c-af789f2bbf04",
+    "freightClass": "decor-127420",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127420/a379ce38-a939-447e-a865-dfdcd240bc40.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127420/a379ce38-a939-447e-a865-dfdcd240bc40.png",
+      "https://img.koalaliving.com.au/products/127420/fbc7e031-3c75-4354-b768-bbbe8d20848a.png"
+    ],
+    "desc": "Complete your space with the Burke Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127421",
+    "sku": "SH-KD-127421",
+    "name": "Dalbert Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4982cbc1-18b3-486b-875a-c95e50d22c5a",
+    "freightClass": "decor-127421",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127421/8bf8cd0e-d947-4208-ab31-ab64229e5110.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127421/8bf8cd0e-d947-4208-ab31-ab64229e5110.png",
+      "https://img.koalaliving.com.au/products/127421/bcd2a8b5-5db3-437e-a0d8-eca76a621a79.png"
+    ],
+    "desc": "Complete your space with the Dalbert Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127423",
+    "sku": "SH-KD-127423",
+    "name": "Herschel Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d3fda274-151d-40ff-974a-6a31683e1aeb",
+    "freightClass": "decor-127423",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127423/6dd9509f-cbb5-4beb-9453-891fb9279106.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127423/6dd9509f-cbb5-4beb-9453-891fb9279106.png",
+      "https://img.koalaliving.com.au/products/127423/aecafd7a-081c-49a9-8fa7-fbd5883a13bc.png"
+    ],
+    "desc": "Complete your space with the Herschel Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127424",
+    "sku": "SH-KD-127424",
+    "name": "Amor Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c8d0827b-1d83-482f-9940-880cbe1d170e",
+    "freightClass": "decor-127424",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127424/b39b66ca-a0fc-4aa3-9f7c-e8e187c2dff3.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127424/b39b66ca-a0fc-4aa3-9f7c-e8e187c2dff3.png",
+      "https://img.koalaliving.com.au/products/127424/f279a39c-1084-40dd-8b76-d3bda8796bf4.png"
+    ],
+    "desc": "Complete your space with the Amor Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127425",
+    "sku": "SH-KD-127425",
+    "name": "Cisco Horse Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8295452a-0e04-4a72-af09-6b51d2ffeba8",
+    "freightClass": "decor-127425",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127425/3ffeef37-af18-4861-9357-5d009c86d8c4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127425/3ffeef37-af18-4861-9357-5d009c86d8c4.png",
+      "https://img.koalaliving.com.au/products/127425/a17fba34-5f86-4ac8-bec0-9d811353dd62.png"
+    ],
+    "desc": "Complete your space with the Cisco Horse Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127426",
+    "sku": "SH-KD-127426",
+    "name": "Lionel Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "80c54927-9e08-4bfa-a9b6-a4914d041ee6",
+    "freightClass": "decor-127426",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127426/cd0653df-71e8-46ae-ae6c-2daa4c1e3693.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127426/cd0653df-71e8-46ae-ae6c-2daa4c1e3693.png",
+      "https://img.koalaliving.com.au/products/127426/d530c393-6d64-4a50-af5b-996eef70848c.png"
+    ],
+    "desc": "Complete your space with the Lionel Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127429",
+    "sku": "SH-KD-127429",
+    "name": "Blooming Branches Candle Holder Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d5bd8910-fa7a-4bbe-a9e4-da49e59152ab",
+    "freightClass": "decor-127429",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127429/b697f209-4e36-4d3a-b357-27d098939707.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127429/b697f209-4e36-4d3a-b357-27d098939707.png",
+      "https://img.koalaliving.com.au/products/127429/5ff96ec2-2cac-4520-b310-275fc25809dd.png"
+    ],
+    "desc": "Complete your space with the Blooming Branches Candle Holder Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Candle Holders",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127430",
+    "sku": "SH-KD-127430",
+    "name": "Bamboo Shoots Vase Small",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "cd1cb239-b730-4428-adfc-4073ec01445c",
+    "freightClass": "decor-127430",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127430/88887cd6-de2e-4088-9990-e53631e0ce80.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127430/88887cd6-de2e-4088-9990-e53631e0ce80.png",
+      "https://img.koalaliving.com.au/products/127430/a40c7939-286f-45a2-ab83-b1adec696ec4.png"
+    ],
+    "desc": "Complete your space with the Bamboo Shoots Vase Small. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127431",
+    "sku": "SH-KD-127431",
+    "name": "Bamboo Shoots Vase Large",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "205edd9c-f9a6-4f40-bf8e-7a42d6ec7f80",
+    "freightClass": "decor-127431",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127431/31f190a2-67ac-4d93-bcdc-9cc97e6b36e2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127431/31f190a2-67ac-4d93-bcdc-9cc97e6b36e2.png",
+      "https://img.koalaliving.com.au/products/127431/920c2edf-53bb-42be-adee-507c4928ecca.png"
+    ],
+    "desc": "Complete your space with the Bamboo Shoots Vase Large. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127432",
+    "sku": "SH-KD-127432",
+    "name": "Antique Floral Tray",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 820,
+    "memberPrice": 738,
+    "priceFloor": 738,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "380d19c3-1bbd-43ba-84f8-fb52ea5b6f78",
+    "freightClass": "decor-127432",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127432/2ecf3200-eb62-42ac-8e54-fa8c4d1fcb04.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127432/2ecf3200-eb62-42ac-8e54-fa8c4d1fcb04.png",
+      "https://img.koalaliving.com.au/products/127432/93c27cad-2af6-48b9-9194-a66c52ea3925.png"
+    ],
+    "desc": "Complete your space with the Antique Floral Tray. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Trays and Bowls",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127433",
+    "sku": "SH-KD-127433",
+    "name": "Golden Monstera Decorative - Large",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "611fec91-828e-4f47-9b44-6f26f93a0aff",
+    "freightClass": "decor-127433",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127433/8795537a-567d-4cf7-9f24-94912fc508a8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127433/8795537a-567d-4cf7-9f24-94912fc508a8.png",
+      "https://img.koalaliving.com.au/products/127433/331f8b50-179a-4c4e-8183-63f1977d892f.png"
+    ],
+    "desc": "Complete your space with the Golden Monstera Decorative - Large. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127434",
+    "sku": "SH-KD-127434",
+    "name": "Golden Monstera Decorative - Small",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 820,
+    "memberPrice": 738,
+    "priceFloor": 738,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "9515a59c-5fc0-4a84-9744-60cf06d3c8b5",
+    "freightClass": "decor-127434",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127434/b2eb6a0d-354e-46fe-8fbf-a19321bfe966.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127434/b2eb6a0d-354e-46fe-8fbf-a19321bfe966.png",
+      "https://img.koalaliving.com.au/products/127434/83eb73c1-2b3f-4774-8b33-e71bd5e59ea3.png"
+    ],
+    "desc": "Complete your space with the Golden Monstera Decorative - Small. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127435",
+    "sku": "SH-KD-127435",
+    "name": "Golden Coral Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b669a0aa-bd6a-48fa-87f8-d849ba771597",
+    "freightClass": "decor-127435",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127435/de775237-511d-4104-ac39-8dbedb4d7786.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127435/de775237-511d-4104-ac39-8dbedb4d7786.png",
+      "https://img.koalaliving.com.au/products/127435/48c4f826-defe-43a5-8512-ce3ccac1b691.png"
+    ],
+    "desc": "Complete your space with the Golden Coral Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127436",
+    "sku": "SH-KD-127436",
+    "name": "Gato Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 820,
+    "memberPrice": 738,
+    "priceFloor": 738,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "70353f66-876a-40db-af90-57313a4fdcd5",
+    "freightClass": "decor-127436",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127436/e9807142-7f7e-43ab-9510-37f40325984c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127436/e9807142-7f7e-43ab-9510-37f40325984c.png",
+      "https://img.koalaliving.com.au/products/127436/03c476e5-b6ce-49c1-b40d-041d39375af2.png"
+    ],
+    "desc": "Complete your space with the Gato Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127437",
+    "sku": "SH-KD-127437",
+    "name": "Catalan Vase Large",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 954,
+    "memberPrice": 858,
+    "priceFloor": 858,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "29cca4d6-d4cd-4719-a44b-0106f47abcf8",
+    "freightClass": "decor-127437",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127437/63956245-58e8-4959-b501-6b4c00cfdaa0.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127437/63956245-58e8-4959-b501-6b4c00cfdaa0.png",
+      "https://img.koalaliving.com.au/products/127437/440ee7f7-e31b-4d75-9dfb-95978dd8cf4d.png"
+    ],
+    "desc": "Complete your space with the Catalan Vase Large. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127438",
+    "sku": "SH-KD-127438",
+    "name": "Catalan Vase Small",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "459d97ec-83c3-40d4-84e8-9ca053711169",
+    "freightClass": "decor-127438",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127438/dca27464-3d6c-4d4d-a042-cefa1cfca357.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127438/dca27464-3d6c-4d4d-a042-cefa1cfca357.png",
+      "https://img.koalaliving.com.au/products/127438/93958edb-5ca7-43af-9336-5b5e8244bf45.png"
+    ],
+    "desc": "Complete your space with the Catalan Vase Small. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127439",
+    "sku": "SH-KD-127439",
+    "name": "Golden Branch Mirror Tray",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 820,
+    "memberPrice": 738,
+    "priceFloor": 738,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "85f5e4c1-4f16-4460-b88c-edae7781a6f7",
+    "freightClass": "decor-127439",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127439/652313fc-af48-4dbc-986c-3da2327a3fb1.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127439/652313fc-af48-4dbc-986c-3da2327a3fb1.png",
+      "https://img.koalaliving.com.au/products/127439/444be14d-13f8-4b63-b605-ad61bcdaf38a.png"
+    ],
+    "desc": "Complete your space with the Golden Branch Mirror Tray. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Trays and Bowls",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127440",
+    "sku": "SH-KD-127440",
+    "name": "Bosque Candle Holder",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 954,
+    "memberPrice": 858,
+    "priceFloor": 858,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "dcc60915-821d-4c5a-a84b-42b63fce8c66",
+    "freightClass": "decor-127440",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127440/78b366c2-fd95-4f1d-9a4c-8f7a57f13c60.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127440/78b366c2-fd95-4f1d-9a4c-8f7a57f13c60.png",
+      "https://img.koalaliving.com.au/products/127440/bbce1bf2-f3e1-4d9b-8f92-02c502760314.png"
+    ],
+    "desc": "Complete your space with the Bosque Candle Holder. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Candle Holders",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127441",
+    "sku": "SH-KD-127441",
+    "name": "Golden Bamboo Votive",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 976,
+    "memberPrice": 878,
+    "priceFloor": 878,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a819932e-86a7-4dcb-b3ca-8da76707356c",
+    "freightClass": "decor-127441",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127441/79525523-bc0b-4295-bc1c-d33d9f355f42.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127441/79525523-bc0b-4295-bc1c-d33d9f355f42.png",
+      "https://img.koalaliving.com.au/products/127441/00f365d1-6bbe-43a1-b505-f96877b546af.png"
+    ],
+    "desc": "Complete your space with the Golden Bamboo Votive. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127457",
+    "sku": "SH-KD-127457",
+    "name": "Ernestine Wall Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "3cafb4f5-62c3-4875-8ac8-f6d15dcddee4",
+    "freightClass": "decor-127457",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127457/923fa025-b04d-4ac2-8ff1-ddfaf09fafe9.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127457/923fa025-b04d-4ac2-8ff1-ddfaf09fafe9.png",
+      "https://img.koalaliving.com.au/products/127457/e4cf5d64-d950-4538-9e30-e9ab9a043e0a.png"
+    ],
+    "desc": "Complete your space with the Ernestine Wall Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127458",
+    "sku": "SH-KD-127458",
+    "name": "Atlas Wall Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a4f87492-7b78-489f-8e29-4f752bd37b61",
+    "freightClass": "decor-127458",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127458/04395b24-17fe-4513-8088-f946d60f09d0.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127458/04395b24-17fe-4513-8088-f946d60f09d0.png",
+      "https://img.koalaliving.com.au/products/127458/cebb7895-6a35-4c4f-bec1-f915aaa38f8a.png"
+    ],
+    "desc": "Complete your space with the Atlas Wall Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127626",
+    "sku": "SH-KD-127626",
+    "name": "Arlo Light Grey and Cream Boucle Cushion",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4bf06a51-a7a6-4d10-8f9b-30f72b32ad58",
+    "freightClass": "decor-127626",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127626/1b15e454-1aff-49a7-89ea-f1025f198db5.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127626/1b15e454-1aff-49a7-89ea-f1025f198db5.png",
+      "https://img.koalaliving.com.au/products/127626/2018bd2a-df34-48c5-8151-6a4700d86837.png"
+    ],
+    "desc": "Complete your space with the Arlo Light Grey and Cream Boucle Cushion. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127636",
+    "sku": "SH-KD-127636",
+    "name": "Phalaenopsis Decorative 64cm - With Planter",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "13418196-cd52-451f-960c-4511cb528936",
+    "freightClass": "decor-127636",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127636/5c17807a-200c-4335-8c1f-00c8a41f1eda.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127636/5c17807a-200c-4335-8c1f-00c8a41f1eda.png",
+      "https://img.koalaliving.com.au/products/127636/d4dd0c2f-f654-47b6-ba72-4a48c8413eb2.png"
+    ],
+    "desc": "Complete your space with the Phalaenopsis Decorative 64cm - With Planter. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127641",
+    "sku": "SH-KD-127641",
+    "name": "Toucan Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 2332,
+    "memberPrice": 2098,
+    "priceFloor": 2098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a8009a3d-a5ce-4a9d-88d4-e7229e1df2a4",
+    "freightClass": "decor-127641",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127641/3705240d-39fe-4e4e-ad2a-552db6f903db.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127641/3705240d-39fe-4e4e-ad2a-552db6f903db.png",
+      "https://img.koalaliving.com.au/products/127641/66a30ae7-b098-4272-9894-96a8dd05811d.png"
+    ],
+    "desc": "Complete your space with the Toucan Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127642",
+    "sku": "SH-KD-127642",
+    "name": "World Map Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 2219,
+    "memberPrice": 1997,
+    "priceFloor": 1997,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "34b2f7e6-aca3-4b31-b640-0ea2cc59a95f",
+    "freightClass": "decor-127642",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127642/c283d7ce-4de8-4a4a-a000-f025744b0a65.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127642/c283d7ce-4de8-4a4a-a000-f025744b0a65.png",
+      "https://img.koalaliving.com.au/products/127642/0acb1dec-ed8e-4b96-a080-98b935f89a43.png"
+    ],
+    "desc": "Complete your space with the World Map Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127643",
+    "sku": "SH-KD-127643",
+    "name": "Set Sail Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1665,
+    "memberPrice": 1498,
+    "priceFloor": 1498,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "838e9eef-cdf0-444c-8d44-14b489dff368",
+    "freightClass": "decor-127643",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127643/e824f165-cb3d-4352-9dd0-580f1f9dc471.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127643/e824f165-cb3d-4352-9dd0-580f1f9dc471.png",
+      "https://img.koalaliving.com.au/products/127643/d591bf6e-0cfe-40fd-bb4f-a7a30c973318.png"
+    ],
+    "desc": "Complete your space with the Set Sail Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127644",
+    "sku": "SH-KD-127644",
+    "name": "Seashell Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "baee3466-b849-4b96-a95d-fd584b37286f",
+    "freightClass": "decor-127644",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127644/517d0429-4295-4e38-8ba1-ef109048ec47.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127644/517d0429-4295-4e38-8ba1-ef109048ec47.png",
+      "https://img.koalaliving.com.au/products/127644/2d0bdc28-9e74-4624-9b03-ccfdd9ba3c48.png"
+    ],
+    "desc": "Complete your space with the Seashell Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127645",
+    "sku": "SH-KD-127645",
+    "name": "Wind Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "9bc5499a-1a03-45c5-935c-420e7c554b63",
+    "freightClass": "decor-127645",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127645/767d2d51-c615-4e6e-81bc-0f080b2813d9.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127645/767d2d51-c615-4e6e-81bc-0f080b2813d9.png",
+      "https://img.koalaliving.com.au/products/127645/62da4762-145d-402f-a7a6-eb84fc5cefcf.png"
+    ],
+    "desc": "Complete your space with the Wind Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl127677",
+    "sku": "SH-KD-127677",
+    "name": "Marigold Black and Gold Paper Shadow Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5756f3af-0d22-48d7-b042-2d757e2a880d",
+    "freightClass": "decor-127677",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/127677/2f31360a-c91a-4729-bc17-394c923c8946.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/127677/2f31360a-c91a-4729-bc17-394c923c8946.png",
+      "https://img.koalaliving.com.au/products/127677/d86a1d99-37e4-4d40-b060-e651ae95adc1.png"
+    ],
+    "desc": "Complete your space with the Marigold Black and Gold Paper Shadow Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128043",
+    "sku": "SH-KD-128043",
+    "name": "Jubilee Black Round Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b43df674-8e63-4c33-8c6f-c06347dddbe2",
+    "freightClass": "decor-128043",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128043/e8dae14e-57f5-460c-836e-165f741bf058.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128043/e8dae14e-57f5-460c-836e-165f741bf058.png",
+      "https://img.koalaliving.com.au/products/128043/910a4a3a-ef3d-4d2a-a9a5-ba293959ab80.png"
+    ],
+    "desc": "Complete your space with the Jubilee Black Round Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128095",
+    "sku": "SH-KD-128095",
+    "name": "The Tides Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "52000a80-f4e0-4cbe-8a5a-0fbcddf8cd0f",
+    "freightClass": "decor-128095",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128095/56c24fb1-064c-4faf-a7fe-d1374426e594.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128095/56c24fb1-064c-4faf-a7fe-d1374426e594.png",
+      "https://img.koalaliving.com.au/products/128095/2ac08cfb-18ef-4b70-aac5-b55f27544ce1.png"
+    ],
+    "desc": "Complete your space with the The Tides Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Large Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128097",
+    "sku": "SH-KD-128097",
+    "name": "Gold Rush Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0e9fcdd6-e7cb-48d1-b226-6942a8a28d71",
+    "freightClass": "decor-128097",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128097/7d301991-c5b7-4337-bf7e-f239b6a704e4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128097/7d301991-c5b7-4337-bf7e-f239b6a704e4.png",
+      "https://img.koalaliving.com.au/products/128097/e11e4243-3977-4304-b0a7-3e01bb31b491.png"
+    ],
+    "desc": "Complete your space with the Gold Rush Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128098",
+    "sku": "SH-KD-128098",
+    "name": "Mellifluous Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c3cec787-b216-459c-9484-76a94f1a2bbd",
+    "freightClass": "decor-128098",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128098/f3b01634-0dd4-4b94-a9d9-e992532cc5ea.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128098/f3b01634-0dd4-4b94-a9d9-e992532cc5ea.png",
+      "https://img.koalaliving.com.au/products/128098/c67b47f7-30af-48b7-93c9-090bb71a619a.png"
+    ],
+    "desc": "Complete your space with the Mellifluous Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128099",
+    "sku": "SH-KD-128099",
+    "name": "August Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b04be67c-9ccb-4906-a445-7224bd0d4308",
+    "freightClass": "decor-128099",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128099/7845a741-1c76-40c1-abc0-c3f5831b20d7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128099/7845a741-1c76-40c1-abc0-c3f5831b20d7.png",
+      "https://img.koalaliving.com.au/products/128099/597a39fe-b946-4ee4-be7f-26ae6e84be5a.png"
+    ],
+    "desc": "Complete your space with the August Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Large Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128100",
+    "sku": "SH-KD-128100",
+    "name": "Pura Vida Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "18b91c43-7748-42df-b4ce-313def5a0315",
+    "freightClass": "decor-128100",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128100/222579dd-fa29-4f9a-bdbb-7332e0b6ab46.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128100/222579dd-fa29-4f9a-bdbb-7332e0b6ab46.png",
+      "https://img.koalaliving.com.au/products/128100/fb516471-ddd9-4d6e-9a9b-9087817d8da2.png"
+    ],
+    "desc": "Complete your space with the Pura Vida Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128101",
+    "sku": "SH-KD-128101",
+    "name": "Glacier Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "35882d8d-f2e9-4e91-8775-9c9b1238f8e0",
+    "freightClass": "decor-128101",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128101/b90c5de0-4542-41cf-b58b-23c4499a4f67.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128101/b90c5de0-4542-41cf-b58b-23c4499a4f67.png",
+      "https://img.koalaliving.com.au/products/128101/72e5b6e0-0eee-4e67-a3be-c4fbac02b4dc.png"
+    ],
+    "desc": "Complete your space with the Glacier Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128102",
+    "sku": "SH-KD-128102",
+    "name": "Evanescent Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "725a9d47-4753-4b2a-a6a5-64d41be5249f",
+    "freightClass": "decor-128102",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128102/a43a0313-c51b-4a0c-9ab4-f5fc1e602074.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128102/a43a0313-c51b-4a0c-9ab4-f5fc1e602074.png",
+      "https://img.koalaliving.com.au/products/128102/3fe4d588-5460-42b2-afa6-34a601dd4ae4.png"
+    ],
+    "desc": "Complete your space with the Evanescent Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128103",
+    "sku": "SH-KD-128103",
+    "name": "Photomicrograph Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a0968d0d-3f54-4c20-8db8-083c6f965b42",
+    "freightClass": "decor-128103",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128103/7f2a797d-7bf7-4896-b3ab-598599343411.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128103/7f2a797d-7bf7-4896-b3ab-598599343411.png",
+      "https://img.koalaliving.com.au/products/128103/2aea1b02-f352-4675-80c2-ae455f21b2b1.png"
+    ],
+    "desc": "Complete your space with the Photomicrograph Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128104",
+    "sku": "SH-KD-128104",
+    "name": "Feather Reed Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "14ad1b6a-49f9-4639-abe5-bd3042b2ea3c",
+    "freightClass": "decor-128104",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128104/bf3252c4-0355-449d-8a63-15967f62ecc5.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128104/bf3252c4-0355-449d-8a63-15967f62ecc5.png",
+      "https://img.koalaliving.com.au/products/128104/79d2ded2-51d4-4d56-ae03-74d5e76fac7c.png"
+    ],
+    "desc": "Complete your space with the Feather Reed Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128108",
+    "sku": "SH-KD-128108",
+    "name": "Anther Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a1eda276-99e9-484d-843c-8b3d056c46da",
+    "freightClass": "decor-128108",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128108/634544ba-3543-4ece-b519-13fa3a7a01c2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128108/634544ba-3543-4ece-b519-13fa3a7a01c2.png",
+      "https://img.koalaliving.com.au/products/128108/5d9a9cbb-b8fe-4397-950b-f7afcb586faf.png"
+    ],
+    "desc": "Complete your space with the Anther Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Large Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128252",
+    "sku": "SH-KD-128252",
+    "name": "Posy Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1154,
+    "memberPrice": 1038,
+    "priceFloor": 1038,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "55d90aba-238c-47d5-8f24-55b64b54050c",
+    "freightClass": "decor-128252",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128252/31e400da-cfb0-4d09-98d6-88f30963b651.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128252/31e400da-cfb0-4d09-98d6-88f30963b651.png",
+      "https://img.koalaliving.com.au/products/128252/c56ff158-9bdb-44b8-a4b7-665eb5d2b456.png"
+    ],
+    "desc": "Complete your space with the Posy Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128253",
+    "sku": "SH-KD-128253",
+    "name": "Posy Elongated Antique Gold Vase - Small",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1020,
+    "memberPrice": 918,
+    "priceFloor": 918,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c2b74d9b-f969-4e5e-868e-0126f465cd94",
+    "freightClass": "decor-128253",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128253/a949cb48-ca2c-4e5c-8009-c8f0aae97ecd.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128253/a949cb48-ca2c-4e5c-8009-c8f0aae97ecd.png",
+      "https://img.koalaliving.com.au/products/128253/a8be3a67-ebfe-4ef1-85e5-c35bc250a74d.png"
+    ],
+    "desc": "Complete your space with the Posy Elongated Antique Gold Vase - Small. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128254",
+    "sku": "SH-KD-128254",
+    "name": "Posy Elongated Antique Gold Vase - Large",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1198,
+    "memberPrice": 1078,
+    "priceFloor": 1078,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d55cd091-95bc-4421-b1f2-eb1c996cf3d6",
+    "freightClass": "decor-128254",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128254/091b1222-87b7-4c15-aa01-f5c0da936aba.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128254/091b1222-87b7-4c15-aa01-f5c0da936aba.png",
+      "https://img.koalaliving.com.au/products/128254/cce3f949-530e-4212-8a4e-a4afad42766d.png"
+    ],
+    "desc": "Complete your space with the Posy Elongated Antique Gold Vase - Large. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128255",
+    "sku": "SH-KD-128255",
+    "name": "Dewdrop Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d187eb8b-fe60-4a64-9ff3-c56c2a5af430",
+    "freightClass": "decor-128255",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128255/5d0d6725-8eb3-42f2-ba1f-96d28dc20521.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128255/5d0d6725-8eb3-42f2-ba1f-96d28dc20521.png",
+      "https://img.koalaliving.com.au/products/128255/5d358d9e-ca06-48f6-bc16-ee8e4fca3b4d.png"
+    ],
+    "desc": "Complete your space with the Dewdrop Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128256",
+    "sku": "SH-KD-128256",
+    "name": "Crest Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a682e4ae-8bcb-4ce2-8dfd-5e1d4946c346",
+    "freightClass": "decor-128256",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128256/54ca0e38-85e0-48b0-a452-56e0f9eb74fc.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128256/54ca0e38-85e0-48b0-a452-56e0f9eb74fc.png",
+      "https://img.koalaliving.com.au/products/128256/bc95fe3f-6499-4cfb-b138-3674ca40b5c0.png"
+    ],
+    "desc": "Complete your space with the Crest Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128286",
+    "sku": "SH-KD-128286",
+    "name": "60cm Philodendron Decorative Plant With Pot",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 698,
+    "memberPrice": 628,
+    "priceFloor": 628,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "bdbac316-a41e-47d1-b9b5-b93eb67172ea",
+    "freightClass": "decor-128286",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128286/0f1aa139-c033-4adf-9f5f-ac3d3e498513.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128286/0f1aa139-c033-4adf-9f5f-ac3d3e498513.png",
+      "https://img.koalaliving.com.au/products/128286/0d5872ad-c0d4-458a-b9ba-943747bcb85a.png"
+    ],
+    "desc": "Complete your space with the 60cm Philodendron Decorative Plant With Pot. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Objects",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128288",
+    "sku": "SH-KD-128288",
+    "name": "44cm Phalaenopsis Decorative Plant With Pot",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c5d459f7-4560-4b8c-a924-fa5e043b40cd",
+    "freightClass": "decor-128288",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128288/f6e43c7e-fb49-41bb-94ff-fa03f42ac665.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128288/f6e43c7e-fb49-41bb-94ff-fa03f42ac665.png",
+      "https://img.koalaliving.com.au/products/128288/d4f56f6b-d8a1-445b-afa1-0d185fc92b00.png"
+    ],
+    "desc": "Complete your space with the 44cm Phalaenopsis Decorative Plant With Pot. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128404",
+    "sku": "SH-KD-128404",
+    "name": "White Textured Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d4eec0e0-e1e2-419e-8b5e-04bc3232846f",
+    "freightClass": "decor-128404",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128404/e250983d-02ab-400e-8380-d8c3789ffaef.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128404/e250983d-02ab-400e-8380-d8c3789ffaef.png",
+      "https://img.koalaliving.com.au/products/128404/6d4cc72d-3ec1-4dca-bd3e-e4ab5b046425.png"
+    ],
+    "desc": "Complete your space with the White Textured Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Large Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128455",
+    "sku": "SH-KD-128455",
+    "name": "White Banana Leaves Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ebc1c473-cd70-4c6e-8231-211d4706eb5b",
+    "freightClass": "decor-128455",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128455/48be1257-c5f9-4ea4-8e26-eafcf9a374ce.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128455/48be1257-c5f9-4ea4-8e26-eafcf9a374ce.png",
+      "https://img.koalaliving.com.au/products/128455/4e82ed89-d49f-4b7f-bedc-408439458a3c.png"
+    ],
+    "desc": "Complete your space with the White Banana Leaves Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Large Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128456",
+    "sku": "SH-KD-128456",
+    "name": "Golden Embers Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e5ebae4f-2842-4301-8d6c-9d1293d120b5",
+    "freightClass": "decor-128456",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128456/061ff7c3-544d-47ba-bd02-4080eff97302.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128456/061ff7c3-544d-47ba-bd02-4080eff97302.png",
+      "https://img.koalaliving.com.au/products/128456/7493bdf0-9bb1-433d-9e38-4e54dbc09864.png"
+    ],
+    "desc": "Complete your space with the Golden Embers Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Large Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128459",
+    "sku": "SH-KD-128459",
+    "name": "Earth-toned Toucan Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 2332,
+    "memberPrice": 2098,
+    "priceFloor": 2098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "9393d4a7-6ea1-4b4d-b72d-c00c6e358fae",
+    "freightClass": "decor-128459",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128459/06dafc8f-045b-4cb3-9b3f-63cb88017496.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128459/06dafc8f-045b-4cb3-9b3f-63cb88017496.png",
+      "https://img.koalaliving.com.au/products/128459/d1d0cf8d-a382-43c3-a1cd-86b1de001902.png"
+    ],
+    "desc": "Complete your space with the Earth-toned Toucan Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128479",
+    "sku": "SH-KD-128479",
+    "name": "Cycling Man Gold Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e72441b0-d07e-488e-bbb4-286d012d1d7e",
+    "freightClass": "decor-128479",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128479/d996aab1-2511-4d79-9c36-5b8d9be53aaa.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128479/d996aab1-2511-4d79-9c36-5b8d9be53aaa.png",
+      "https://img.koalaliving.com.au/products/128479/1d4570e0-8110-4dc1-9837-3908b86420c7.png"
+    ],
+    "desc": "Complete your space with the Cycling Man Gold Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128480",
+    "sku": "SH-KD-128480",
+    "name": "Valentina Gold Human Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 798,
+    "memberPrice": 718,
+    "priceFloor": 718,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a8233a6b-b2c6-442e-aaa1-96805949853a",
+    "freightClass": "decor-128480",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128480/1fa5354b-a00f-46e0-bc87-e14f583e3d5f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128480/1fa5354b-a00f-46e0-bc87-e14f583e3d5f.png",
+      "https://img.koalaliving.com.au/products/128480/39d90ff3-8e1d-4925-8994-05f47d47c4d3.png"
+    ],
+    "desc": "Complete your space with the Valentina Gold Human Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128481",
+    "sku": "SH-KD-128481",
+    "name": "Nala Gold Lion Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "feb7da22-cfb7-4a6e-8a46-cb8e202e9184",
+    "freightClass": "decor-128481",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128481/8fdf5e18-0d3a-40ae-b4b8-21e885c648f9.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128481/8fdf5e18-0d3a-40ae-b4b8-21e885c648f9.png",
+      "https://img.koalaliving.com.au/products/128481/6646773a-b7b4-4b2c-9bd8-6cc9b753ca47.png"
+    ],
+    "desc": "Complete your space with the Nala Gold Lion Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128482",
+    "sku": "SH-KD-128482",
+    "name": "Stance Gold Horse Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e49754de-8d16-42b8-8810-afedbb86e9b7",
+    "freightClass": "decor-128482",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128482/bbc7c41c-ec11-4882-b5c8-787873a02490.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128482/bbc7c41c-ec11-4882-b5c8-787873a02490.png",
+      "https://img.koalaliving.com.au/products/128482/94a37af5-ee85-47c2-ba4d-612679d7fe6c.png"
+    ],
+    "desc": "Complete your space with the Stance Gold Horse Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128483",
+    "sku": "SH-KD-128483",
+    "name": "Eli Elephant Antique Copper Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 976,
+    "memberPrice": 878,
+    "priceFloor": 878,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "090bc218-aa68-4d8c-8ced-9947811d8020",
+    "freightClass": "decor-128483",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128483/4fee7408-af43-4a8a-b4e1-836ada1f1d49.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128483/4fee7408-af43-4a8a-b4e1-836ada1f1d49.png",
+      "https://img.koalaliving.com.au/products/128483/69f887dc-969e-47fe-9072-7a0782f479c4.png"
+    ],
+    "desc": "Complete your space with the Eli Elephant Antique Copper Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128484",
+    "sku": "SH-KD-128484",
+    "name": "Seraphine Antique Brass Metal Globe Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ed2e54ee-d87d-4166-8967-72e7e9d25657",
+    "freightClass": "decor-128484",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128484/309826cc-dc6f-433c-ac77-680eb0cfc600.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128484/309826cc-dc6f-433c-ac77-680eb0cfc600.png",
+      "https://img.koalaliving.com.au/products/128484/4aedb7b4-2bb7-48c6-a69c-25080a295d4b.png"
+    ],
+    "desc": "Complete your space with the Seraphine Antique Brass Metal Globe Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128485",
+    "sku": "SH-KD-128485",
+    "name": "The Climb Gold Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "810c9003-efb3-4128-b7c5-31d02f066c5a",
+    "freightClass": "decor-128485",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128485/2f79a401-166e-45c3-ba4c-a577e2c0b357.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128485/2f79a401-166e-45c3-ba4c-a577e2c0b357.png",
+      "https://img.koalaliving.com.au/products/128485/57a0d4cc-06a6-4ef1-82e0-da1cfd52992e.png"
+    ],
+    "desc": "Complete your space with the The Climb Gold Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128486",
+    "sku": "SH-KD-128486",
+    "name": "Sailboat Gold Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "576d6ff1-9d93-4823-9b53-cdb8281d5d6b",
+    "freightClass": "decor-128486",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128486/784ce506-22d8-4721-b685-7704fe6434e5.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128486/784ce506-22d8-4721-b685-7704fe6434e5.png",
+      "https://img.koalaliving.com.au/products/128486/6b39fb22-6265-4f00-94d7-88b600acae63.png"
+    ],
+    "desc": "Complete your space with the Sailboat Gold Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128487",
+    "sku": "SH-KD-128487",
+    "name": "Midnight Polished Gold Metal Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 976,
+    "memberPrice": 878,
+    "priceFloor": 878,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "fedca91c-74da-445e-a0c3-b9dd13ca2cb6",
+    "freightClass": "decor-128487",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128487/a9a5f77f-21e4-4afd-ad47-e10704c8c6f3.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128487/a9a5f77f-21e4-4afd-ad47-e10704c8c6f3.png",
+      "https://img.koalaliving.com.au/products/128487/fbff367c-c730-49b3-afa7-e7a743b3a982.png"
+    ],
+    "desc": "Complete your space with the Midnight Polished Gold Metal Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128488",
+    "sku": "SH-KD-128488",
+    "name": "Jiffy Matte Antique Brass Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 932,
+    "memberPrice": 838,
+    "priceFloor": 838,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "2ccf0033-d273-41c7-ab47-ac0e5edb9e92",
+    "freightClass": "decor-128488",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128488/b1c5c5b9-2d19-433d-bb6f-31e36dec4f58.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128488/b1c5c5b9-2d19-433d-bb6f-31e36dec4f58.png",
+      "https://img.koalaliving.com.au/products/128488/db6ea588-4eb6-4b1b-a1cb-9161f25b292b.png"
+    ],
+    "desc": "Complete your space with the Jiffy Matte Antique Brass Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128489",
+    "sku": "SH-KD-128489",
+    "name": "Alana Gold Metal Tray",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 687,
+    "memberPrice": 618,
+    "priceFloor": 618,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "86d8d224-7a0a-4bfd-a2e1-b16be6faa6c0",
+    "freightClass": "decor-128489",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128489/45e67c78-4c30-4ce7-a17e-89dec1c56eef.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128489/45e67c78-4c30-4ce7-a17e-89dec1c56eef.png",
+      "https://img.koalaliving.com.au/products/128489/b54124c4-a4e7-4112-ae3c-442ec9701ee2.png"
+    ],
+    "desc": "Complete your space with the Alana Gold Metal Tray. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Trays and Bowls",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128490",
+    "sku": "SH-KD-128490",
+    "name": "Armando Croc Etched Antique Brass Metal Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "987f1119-14fa-41e6-8693-0b6fd2fcefd6",
+    "freightClass": "decor-128490",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128490/28bc75d5-1b3c-4372-b416-a4ac89d6f50a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128490/28bc75d5-1b3c-4372-b416-a4ac89d6f50a.png",
+      "https://img.koalaliving.com.au/products/128490/f1f5d5d8-49b8-4797-8317-2507acca9c3f.png"
+    ],
+    "desc": "Complete your space with the Armando Croc Etched Antique Brass Metal Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128491",
+    "sku": "SH-KD-128491",
+    "name": "Miriam Matte Antique Brass Croc Pattern Wall Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0694e5b6-91bb-4976-9b17-004d08342d56",
+    "freightClass": "decor-128491",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128491/49641b90-9632-402b-a330-0711e21266b4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128491/49641b90-9632-402b-a330-0711e21266b4.png",
+      "https://img.koalaliving.com.au/products/128491/22015fd4-4806-4133-84aa-16104ed17769.png"
+    ],
+    "desc": "Complete your space with the Miriam Matte Antique Brass Croc Pattern Wall Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128492",
+    "sku": "SH-KD-128492",
+    "name": "Miriam Matte Antique Brass Croc Pattern Table Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "1ed28c0d-948b-42ba-994a-9fca3cc1fcde",
+    "freightClass": "decor-128492",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128492/08eb3069-ab56-4bad-9ad5-6318d111ac8b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128492/08eb3069-ab56-4bad-9ad5-6318d111ac8b.png",
+      "https://img.koalaliving.com.au/products/128492/c221c620-9129-41bc-8127-2aa7b787fc1e.png"
+    ],
+    "desc": "Complete your space with the Miriam Matte Antique Brass Croc Pattern Table Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128493",
+    "sku": "SH-KD-128493",
+    "name": "Clarita Matte Antique Brass Table Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1176,
+    "memberPrice": 1058,
+    "priceFloor": 1058,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a76e3f3f-efd2-463a-99f9-eacdcabf5fad",
+    "freightClass": "decor-128493",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128493/26ccc4e5-3260-4f5b-9540-969853fe6ca4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128493/26ccc4e5-3260-4f5b-9540-969853fe6ca4.png",
+      "https://img.koalaliving.com.au/products/128493/ce8343d1-6727-42d9-bc9f-f1fbfbc16961.png"
+    ],
+    "desc": "Complete your space with the Clarita Matte Antique Brass Table Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Unique Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128495",
+    "sku": "SH-KD-128495",
+    "name": "Siduri Matte Antique Brass Wine Cooler",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1332,
+    "memberPrice": 1198,
+    "priceFloor": 1198,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c04acf12-0c6b-4f99-9be3-590977fce854",
+    "freightClass": "decor-128495",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128495/20739367-9df4-47b4-b7fb-25bd7074fba7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128495/20739367-9df4-47b4-b7fb-25bd7074fba7.png",
+      "https://img.koalaliving.com.au/products/128495/1de6d069-d53c-4258-a387-eb626349d390.png"
+    ],
+    "desc": "Complete your space with the Siduri Matte Antique Brass Wine Cooler. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Servingware",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128520",
+    "sku": "SH-KD-128520",
+    "name": "The Persona Neutral Colours Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1398,
+    "memberPrice": 1258,
+    "priceFloor": 1258,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "46114713-ad37-453b-99df-cf33ae53c1eb",
+    "freightClass": "decor-128520",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128520/029bbde1-39c9-44fd-a6d2-6b2c08bbadc0.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128520/029bbde1-39c9-44fd-a6d2-6b2c08bbadc0.png",
+      "https://img.koalaliving.com.au/products/128520/f7d8a5ac-75ab-4bec-9c34-c0817bcd3347.png"
+    ],
+    "desc": "Complete your space with the The Persona Neutral Colours Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Canvas Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128521",
+    "sku": "SH-KD-128521",
+    "name": "The Shadow Neutral Colours Abstract Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1398,
+    "memberPrice": 1258,
+    "priceFloor": 1258,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a7b9f0b7-6351-4c92-8235-b84dc3495811",
+    "freightClass": "decor-128521",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128521/f6f2e2d9-da81-46eb-89cf-da00b1513218.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128521/f6f2e2d9-da81-46eb-89cf-da00b1513218.png",
+      "https://img.koalaliving.com.au/products/128521/7e2316ce-787f-4dc3-a154-a55e2a7bd952.png"
+    ],
+    "desc": "Complete your space with the The Shadow Neutral Colours Abstract Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128575",
+    "sku": "SH-KD-128575",
+    "name": "Vinny Gold Metal Dual Platter",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "20739600-6893-43a4-b38a-40b90ee799b5",
+    "freightClass": "decor-128575",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128575/ac7c0dea-7fdd-470b-aab7-434ee875cd35.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128575/ac7c0dea-7fdd-470b-aab7-434ee875cd35.png",
+      "https://img.koalaliving.com.au/products/128575/b1af6da2-e87c-4421-9b02-71e633bf3139.png"
+    ],
+    "desc": "Complete your space with the Vinny Gold Metal Dual Platter. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Servingware",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128578",
+    "sku": "SH-KD-128578",
+    "name": "Desiree Polished Gold Metal Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "bc9caf56-dea5-4f36-b51a-13a0452360ff",
+    "freightClass": "decor-128578",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128578/7af4f217-fa89-423d-b44f-0da8c497065a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128578/7af4f217-fa89-423d-b44f-0da8c497065a.png",
+      "https://img.koalaliving.com.au/products/128578/0843b50a-f5b5-4030-8597-0b8474b75abc.png"
+    ],
+    "desc": "Complete your space with the Desiree Polished Gold Metal Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Photo Frames",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128622",
+    "sku": "SH-KD-128622",
+    "name": "Metallic Stones Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "12a1e349-f6e0-486c-9051-aa5f2aca0e36",
+    "freightClass": "decor-128622",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128622/6ef02452-321c-426a-ba72-a70885e672de.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128622/6ef02452-321c-426a-ba72-a70885e672de.png",
+      "https://img.koalaliving.com.au/products/128622/24d91907-18a8-4b4e-86dc-422d7588d712.png"
+    ],
+    "desc": "Complete your space with the Metallic Stones Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128623",
+    "sku": "SH-KD-128623",
+    "name": "Magenta Agate Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "dc427c3e-f428-4b50-893f-f5e5976ab1a9",
+    "freightClass": "decor-128623",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128623/97fc4ee5-b2fe-4bfd-9959-9989b614f1e8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128623/97fc4ee5-b2fe-4bfd-9959-9989b614f1e8.png",
+      "https://img.koalaliving.com.au/products/128623/8e14c1f7-5858-4679-9ec9-9f57b67c3cc5.png"
+    ],
+    "desc": "Complete your space with the Magenta Agate Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128625",
+    "sku": "SH-KD-128625",
+    "name": "Jade Green Agate Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "2936c6b2-a56d-49a3-8c95-046f61690ee9",
+    "freightClass": "decor-128625",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128625/7182957a-5a78-4ce9-a1a9-8c3540cd69a2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128625/7182957a-5a78-4ce9-a1a9-8c3540cd69a2.png",
+      "https://img.koalaliving.com.au/products/128625/341a440d-b325-4315-9831-ca4326d84b82.png"
+    ],
+    "desc": "Complete your space with the Jade Green Agate Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128627",
+    "sku": "SH-KD-128627",
+    "name": "Snow White Crystal Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b59a2ae9-0400-4388-b367-90362b2f4337",
+    "freightClass": "decor-128627",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128627/2ced6a56-04a9-421c-a59b-e8190f89abda.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128627/2ced6a56-04a9-421c-a59b-e8190f89abda.png",
+      "https://img.koalaliving.com.au/products/128627/548972e1-348c-4885-b91c-b755fca62612.png"
+    ],
+    "desc": "Complete your space with the Snow White Crystal Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128628",
+    "sku": "SH-KD-128628",
+    "name": "Elemental Agate Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "9cf4508b-c2df-4b0b-8fdd-ca8122412083",
+    "freightClass": "decor-128628",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128628/8820852c-f2b9-402b-8eb8-41c4b8bea04b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128628/8820852c-f2b9-402b-8eb8-41c4b8bea04b.png",
+      "https://img.koalaliving.com.au/products/128628/ab817ad9-6895-4535-b897-4bf31d553a59.png"
+    ],
+    "desc": "Complete your space with the Elemental Agate Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128629",
+    "sku": "SH-KD-128629",
+    "name": "Aegean Blue Crystal Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ac8fbae2-315d-4275-9473-c87624e6bd18",
+    "freightClass": "decor-128629",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128629/7e3acd08-f87c-4f5a-bf6b-22693a1e7543.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128629/7e3acd08-f87c-4f5a-bf6b-22693a1e7543.png",
+      "https://img.koalaliving.com.au/products/128629/311d4ae7-d1ed-4cee-bf86-27bdcf57c759.png"
+    ],
+    "desc": "Complete your space with the Aegean Blue Crystal Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128630",
+    "sku": "SH-KD-128630",
+    "name": "Stone Blue Crystal Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b9b5aba0-9569-493e-83ac-03e56d72798c",
+    "freightClass": "decor-128630",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128630/66bc8478-3690-4efe-aba6-59162ef1a57b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128630/66bc8478-3690-4efe-aba6-59162ef1a57b.png",
+      "https://img.koalaliving.com.au/products/128630/9436add1-35de-4e66-983b-ee2fc3e58bad.png"
+    ],
+    "desc": "Complete your space with the Stone Blue Crystal Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128631",
+    "sku": "SH-KD-128631",
+    "name": "Tri-coloured Agate Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "dbd50290-2124-49fe-b3cb-de7a324455bd",
+    "freightClass": "decor-128631",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128631/40283688-248f-4790-9634-bcc34e30c70b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128631/40283688-248f-4790-9634-bcc34e30c70b.png",
+      "https://img.koalaliving.com.au/products/128631/613b23b3-1dca-4e18-884b-6ea5562e8988.png"
+    ],
+    "desc": "Complete your space with the Tri-coloured Agate Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128633",
+    "sku": "SH-KD-128633",
+    "name": "Blue Storm Stone Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f23e9a54-4d01-4c41-9172-f9b0db660e82",
+    "freightClass": "decor-128633",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128633/bc4b3ab4-ef52-45be-b497-54a5bd09faff.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128633/bc4b3ab4-ef52-45be-b497-54a5bd09faff.png",
+      "https://img.koalaliving.com.au/products/128633/021359b1-847e-4991-b37b-c0883b42360a.png"
+    ],
+    "desc": "Complete your space with the Blue Storm Stone Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128634",
+    "sku": "SH-KD-128634",
+    "name": "Purple Stone Shadow Box With Gold Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "338bcd51-bf75-443e-a1d3-06d310ea2288",
+    "freightClass": "decor-128634",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128634/94f95ca3-98e6-4ade-8797-99d7f7b99ccf.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128634/94f95ca3-98e6-4ade-8797-99d7f7b99ccf.png",
+      "https://img.koalaliving.com.au/products/128634/c5f60d97-2c49-4cd5-9001-cc1ca69fab03.png"
+    ],
+    "desc": "Complete your space with the Purple Stone Shadow Box With Gold Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128683",
+    "sku": "SH-KD-128683",
+    "name": "One In A Million Shadow Box With Golden Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "3a63a67b-6f90-4648-8ff4-52ba2d466881",
+    "freightClass": "decor-128683",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128683/b4b1125a-118a-4bbb-a9da-8a4830209571.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128683/b4b1125a-118a-4bbb-a9da-8a4830209571.png",
+      "https://img.koalaliving.com.au/products/128683/7e293c88-8526-4a11-821a-5e8051954672.png"
+    ],
+    "desc": "Complete your space with the One In A Million Shadow Box With Golden Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128684",
+    "sku": "SH-KD-128684",
+    "name": "Golden Specter Shadow Box With Black Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1287,
+    "memberPrice": 1158,
+    "priceFloor": 1158,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "aeea8075-a68c-4567-b112-9ca5f7904e25",
+    "freightClass": "decor-128684",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128684/c20dc3e7-62f2-4616-a96a-781ee2b26914.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128684/c20dc3e7-62f2-4616-a96a-781ee2b26914.png",
+      "https://img.koalaliving.com.au/products/128684/8cea418f-d436-48b9-bb9b-c980e363409c.png"
+    ],
+    "desc": "Complete your space with the Golden Specter Shadow Box With Black Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128685",
+    "sku": "SH-KD-128685",
+    "name": "Ophir Large Shadow Box With Golden Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "6bc32fdb-55ab-4e9e-8eba-13af7128c82d",
+    "freightClass": "decor-128685",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128685/6aade482-f216-4815-bbde-556c8c4631e1.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128685/6aade482-f216-4815-bbde-556c8c4631e1.png",
+      "https://img.koalaliving.com.au/products/128685/6063606e-1143-47cb-9d22-31df84d4ef78.png"
+    ],
+    "desc": "Complete your space with the Ophir Large Shadow Box With Golden Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128687",
+    "sku": "SH-KD-128687",
+    "name": "Virtuoso Shadow Box With Golden Frame - 60cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5596d876-cb8b-4c61-828a-6267b92e42cb",
+    "freightClass": "decor-128687",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128687/8b5e06c8-a230-4e94-9ad4-fea84f421de0.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128687/8b5e06c8-a230-4e94-9ad4-fea84f421de0.png",
+      "https://img.koalaliving.com.au/products/128687/437bbc45-6414-49e6-849b-700383eab759.png"
+    ],
+    "desc": "Complete your space with the Virtuoso Shadow Box With Golden Frame - 60cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128688",
+    "sku": "SH-KD-128688",
+    "name": "Bronte Agate Shadow Box With Golden Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 909,
+    "memberPrice": 818,
+    "priceFloor": 818,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "29e49ec4-5e70-4c79-91af-7cf60bdd0d41",
+    "freightClass": "decor-128688",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128688/82e592b6-8226-409f-ada0-430a3f78fc8d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128688/82e592b6-8226-409f-ada0-430a3f78fc8d.png",
+      "https://img.koalaliving.com.au/products/128688/f2d636a5-9a3b-4ca6-9c84-5c1c96ff4153.png"
+    ],
+    "desc": "Complete your space with the Bronte Agate Shadow Box With Golden Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128753",
+    "sku": "SH-KD-128753",
+    "name": "Insurgent Hemp Rope Shadow Box with Golden Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "fc0253bc-ab1c-4c6e-b248-4c01b37f633a",
+    "freightClass": "decor-128753",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128753/dc067437-ecb6-4b45-a879-8e5124a3679e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128753/dc067437-ecb6-4b45-a879-8e5124a3679e.png",
+      "https://img.koalaliving.com.au/products/128753/e5f3c5e0-1b8a-401d-9785-5b1adb583500.png"
+    ],
+    "desc": "Complete your space with the Insurgent Hemp Rope Shadow Box with Golden Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128754",
+    "sku": "SH-KD-128754",
+    "name": "Surrounded Hemp Rope Shadow Box with Golden Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e221e43f-8c0f-490c-acc6-ab9c64885f12",
+    "freightClass": "decor-128754",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128754/6f8dd27a-1850-4ae0-a9fc-7e926077374b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128754/6f8dd27a-1850-4ae0-a9fc-7e926077374b.png",
+      "https://img.koalaliving.com.au/products/128754/257d2bca-bb83-430f-aba3-a1ce11af88fd.png"
+    ],
+    "desc": "Complete your space with the Surrounded Hemp Rope Shadow Box with Golden Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128756",
+    "sku": "SH-KD-128756",
+    "name": "Closure Paper Pulp Shadow Box with Golden Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "9ffb1d16-2615-453b-bf64-d4b18dee3a52",
+    "freightClass": "decor-128756",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128756/92dc7658-3300-406e-b074-65a83742b4b4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128756/92dc7658-3300-406e-b074-65a83742b4b4.png",
+      "https://img.koalaliving.com.au/products/128756/fe26228e-861f-4ba9-ba85-b872da6ddcf0.png"
+    ],
+    "desc": "Complete your space with the Closure Paper Pulp Shadow Box with Golden Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128758",
+    "sku": "SH-KD-128758",
+    "name": "Quadrate Hemp Rope Shadow Box with Golden Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "00efcfd1-6e7c-4477-8013-5e0f1e5f276c",
+    "freightClass": "decor-128758",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128758/4dade03c-f9d7-48fd-88fe-f7a8ba2c1b3a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128758/4dade03c-f9d7-48fd-88fe-f7a8ba2c1b3a.png",
+      "https://img.koalaliving.com.au/products/128758/b60ef452-c57c-4c08-b1e8-15ba562db4b8.png"
+    ],
+    "desc": "Complete your space with the Quadrate Hemp Rope Shadow Box with Golden Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128823",
+    "sku": "SH-KD-128823",
+    "name": "Elessar Black Rectangle Wooden Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8c8bcab3-243a-4e45-98c2-b3548e06f3a7",
+    "freightClass": "decor-128823",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128823/68329b8a-8c03-4338-96b4-bd3da58f7a80.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128823/68329b8a-8c03-4338-96b4-bd3da58f7a80.png",
+      "https://img.koalaliving.com.au/products/128823/68ddb7c5-9c50-4014-bef9-bd1ae0f2ee39.png"
+    ],
+    "desc": "Complete your space with the Elessar Black Rectangle Wooden Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128825",
+    "sku": "SH-KD-128825",
+    "name": "Sophia Antique Gold Square Wooden Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "183a98ec-aece-482e-afdb-7f06afacbb9d",
+    "freightClass": "decor-128825",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128825/6c1336fc-71f1-4bdf-86eb-da4471a0598b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128825/6c1336fc-71f1-4bdf-86eb-da4471a0598b.png",
+      "https://img.koalaliving.com.au/products/128825/9baf1dbc-cf36-4e96-8997-5f82eb2a2897.png"
+    ],
+    "desc": "Complete your space with the Sophia Antique Gold Square Wooden Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Square Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128827",
+    "sku": "SH-KD-128827",
+    "name": "Ilaria Antique Silver Wooden Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1887,
+    "memberPrice": 1698,
+    "priceFloor": 1698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "771f8668-33b7-49d7-90f1-4aca8d4b48cb",
+    "freightClass": "decor-128827",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128827/27c7d475-ab46-4745-a113-d292289629a5.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128827/27c7d475-ab46-4745-a113-d292289629a5.png",
+      "https://img.koalaliving.com.au/products/128827/04392b14-dc90-4c01-bea2-eccef1297f20.png"
+    ],
+    "desc": "Complete your space with the Ilaria Antique Silver Wooden Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128830",
+    "sku": "SH-KD-128830",
+    "name": "Circe Antique Gold Wooden Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1665,
+    "memberPrice": 1498,
+    "priceFloor": 1498,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "598e7b6d-f47a-4c12-ace3-2e80b3630dab",
+    "freightClass": "decor-128830",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128830/d514f6c1-1c76-4009-a154-69ec23db798e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128830/d514f6c1-1c76-4009-a154-69ec23db798e.png",
+      "https://img.koalaliving.com.au/products/128830/f1ca650d-434e-475f-9645-3a4a99b3022c.png"
+    ],
+    "desc": "Complete your space with the Circe Antique Gold Wooden Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128832",
+    "sku": "SH-KD-128832",
+    "name": "Calliope Antique Gold Rectangle Wooden Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1887,
+    "memberPrice": 1698,
+    "priceFloor": 1698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8c7e1e8b-17a4-4a98-9cd7-d0a6adaccde5",
+    "freightClass": "decor-128832",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128832/63999c81-f048-4e01-89d9-a5465f362fe5.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128832/63999c81-f048-4e01-89d9-a5465f362fe5.png",
+      "https://img.koalaliving.com.au/products/128832/84850873-3c8e-4e0a-8793-ea938dbe82b7.png"
+    ],
+    "desc": "Complete your space with the Calliope Antique Gold Rectangle Wooden Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128835",
+    "sku": "SH-KD-128835",
+    "name": "Fiona Antique Gold Round Wooden Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1776,
+    "memberPrice": 1598,
+    "priceFloor": 1598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4c22a781-e793-4f21-8cef-512428a76fd1",
+    "freightClass": "decor-128835",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128835/3b34724a-32f3-46d8-962b-b60e67fa23b5.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128835/3b34724a-32f3-46d8-962b-b60e67fa23b5.png",
+      "https://img.koalaliving.com.au/products/128835/66217894-a548-4c1e-99ef-fd7cd8d048d3.png"
+    ],
+    "desc": "Complete your space with the Fiona Antique Gold Round Wooden Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128836",
+    "sku": "SH-KD-128836",
+    "name": "Hellenic II Rectangle Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1665,
+    "memberPrice": 1498,
+    "priceFloor": 1498,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "afbe0125-b5dd-4716-859a-499ed14b0b02",
+    "freightClass": "decor-128836",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128836/2f1b5345-dd5c-4bde-aec4-b05f047ba9f6.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128836/2f1b5345-dd5c-4bde-aec4-b05f047ba9f6.png",
+      "https://img.koalaliving.com.au/products/128836/636622b2-1ade-4703-acd7-eeadd70700db.png"
+    ],
+    "desc": "Complete your space with the Hellenic II Rectangle Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Rectangle Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128837",
+    "sku": "SH-KD-128837",
+    "name": "Calliope Antique Gold Round Wooden Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1665,
+    "memberPrice": 1498,
+    "priceFloor": 1498,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "2101a2d0-e982-415a-9c5e-a28e5e8b16e8",
+    "freightClass": "decor-128837",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128837/76154725-dc60-4c19-8b8f-184790dab761.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128837/76154725-dc60-4c19-8b8f-184790dab761.png",
+      "https://img.koalaliving.com.au/products/128837/f60d91e3-ce33-4a19-8d50-1585246639fb.png"
+    ],
+    "desc": "Complete your space with the Calliope Antique Gold Round Wooden Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128838",
+    "sku": "SH-KD-128838",
+    "name": "Calliope Antique Gold Square Wooden Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "bb00174f-f7e1-4a8d-bb58-c4da96d143bb",
+    "freightClass": "decor-128838",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128838/d9c13b9b-629b-459d-8126-4c2a91ae1bef.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128838/d9c13b9b-629b-459d-8126-4c2a91ae1bef.png",
+      "https://img.koalaliving.com.au/products/128838/681f4dc5-9040-4f4b-9755-735852d45712.png"
+    ],
+    "desc": "Complete your space with the Calliope Antique Gold Square Wooden Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Square Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128840",
+    "sku": "SH-KD-128840",
+    "name": "Gillian Antique Gold Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1665,
+    "memberPrice": 1498,
+    "priceFloor": 1498,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f894f996-4897-41ec-bbf3-385356278cf1",
+    "freightClass": "decor-128840",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128840/e0c94792-5425-4b3d-b297-83f72d082460.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128840/e0c94792-5425-4b3d-b297-83f72d082460.png",
+      "https://img.koalaliving.com.au/products/128840/9b7e70c5-4987-4e92-94cd-578ff411fbb3.png"
+    ],
+    "desc": "Complete your space with the Gillian Antique Gold Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Rectangle Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128841",
+    "sku": "SH-KD-128841",
+    "name": "Ezperanza Antique Gold Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "db455d5c-2d02-4117-84b3-f1e67d6144b9",
+    "freightClass": "decor-128841",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128841/86b238c4-81d8-4f6a-96f5-264727645859.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128841/86b238c4-81d8-4f6a-96f5-264727645859.png",
+      "https://img.koalaliving.com.au/products/128841/f9f41db1-b04c-4373-a448-0fb16396c192.png"
+    ],
+    "desc": "Complete your space with the Ezperanza Antique Gold Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Arch Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128857",
+    "sku": "SH-KD-128857",
+    "name": "Irina Antique Gold Wooden Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f464b38f-f829-4d9e-9b15-11036150569a",
+    "freightClass": "decor-128857",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128857/aa2ee6f5-5e4b-4cd1-990d-65c0790e5734.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128857/aa2ee6f5-5e4b-4cd1-990d-65c0790e5734.png",
+      "https://img.koalaliving.com.au/products/128857/b3953dba-025e-412a-9b12-28ccd14883ff.png"
+    ],
+    "desc": "Complete your space with the Irina Antique Gold Wooden Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128872",
+    "sku": "SH-KD-128872",
+    "name": "Mossela II Round Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1665,
+    "memberPrice": 1498,
+    "priceFloor": 1498,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c4890a60-a68f-4249-817c-356e9d338628",
+    "freightClass": "decor-128872",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128872/0c73cdef-da6f-4212-9e97-5a654ffe4b5f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128872/0c73cdef-da6f-4212-9e97-5a654ffe4b5f.png",
+      "https://img.koalaliving.com.au/products/128872/59eb5b99-ade9-4b36-9732-af81116bd32a.png"
+    ],
+    "desc": "Complete your space with the Mossela II Round Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128937",
+    "sku": "SH-KD-128937",
+    "name": "Floral Whispers Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "446fea9c-a060-41ac-afcf-c6758a8b10d2",
+    "freightClass": "decor-128937",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128937/149ffb3f-b73a-400b-9791-3e7560345b9b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128937/149ffb3f-b73a-400b-9791-3e7560345b9b.png",
+      "https://img.koalaliving.com.au/products/128937/ce20698d-892b-46b9-b7e7-fd66a7e8dfc7.png"
+    ],
+    "desc": "Complete your space with the Floral Whispers Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128971",
+    "sku": "SH-KD-128971",
+    "name": "Feather Shadow Box with Golden Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "beb25250-94c7-4c75-abcb-7b52f0871802",
+    "freightClass": "decor-128971",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128971/f8180461-244d-47f5-ab6a-bc6e11079753.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128971/f8180461-244d-47f5-ab6a-bc6e11079753.png",
+      "https://img.koalaliving.com.au/products/128971/586efb45-3675-4df9-80b7-a73dddb3c8fb.png"
+    ],
+    "desc": "Complete your space with the Feather Shadow Box with Golden Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl128977",
+    "sku": "SH-KD-128977",
+    "name": "Paper Pulp And Wooden Bead Shadow Box with Golden Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "7ac823ff-68d6-4959-a6bc-6dc9d5d53365",
+    "freightClass": "decor-128977",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/128977/f7540939-7db3-47e8-9d34-4a0a96e89ee3.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/128977/f7540939-7db3-47e8-9d34-4a0a96e89ee3.png",
+      "https://img.koalaliving.com.au/products/128977/51345f97-4672-4201-978f-0eae212efa8c.png"
+    ],
+    "desc": "Complete your space with the Paper Pulp And Wooden Bead Shadow Box with Golden Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129036",
+    "sku": "SH-KD-129036",
+    "name": "Monstera II 180cm Decorative Plant",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1176,
+    "memberPrice": 1058,
+    "priceFloor": 1058,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "30fc81e3-0976-4e92-bfaa-a8c2e905fa41",
+    "freightClass": "decor-129036",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129036/2da7947b-0a67-4196-af55-011aa75d37c0.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129036/2da7947b-0a67-4196-af55-011aa75d37c0.png",
+      "https://img.koalaliving.com.au/products/129036/b857756a-4d35-4400-80dd-0aca18c1a11c.png"
+    ],
+    "desc": "Complete your space with the Monstera II 180cm Decorative Plant. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129112",
+    "sku": "SH-KD-129112",
+    "name": "Glory Gold Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4dde0320-c572-4a19-a272-9d14651564af",
+    "freightClass": "decor-129112",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129112/4ce2ea0d-1e5c-4e4d-9e17-5b2260cf0643.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129112/4ce2ea0d-1e5c-4e4d-9e17-5b2260cf0643.png",
+      "https://img.koalaliving.com.au/products/129112/bcb3b43f-d0fc-464e-bd13-f5a4c98c21ec.png"
+    ],
+    "desc": "Complete your space with the Glory Gold Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129113",
+    "sku": "SH-KD-129113",
+    "name": "Kyla Gold Human Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "3e076740-8890-4863-a560-0a9c80586572",
+    "freightClass": "decor-129113",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129113/84c4863c-6709-4e88-beb2-2abec6acd3ed.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129113/84c4863c-6709-4e88-beb2-2abec6acd3ed.png",
+      "https://img.koalaliving.com.au/products/129113/d867eb74-a04b-4a99-8969-c5ecd5d08fe3.png"
+    ],
+    "desc": "Complete your space with the Kyla Gold Human Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129114",
+    "sku": "SH-KD-129114",
+    "name": "Glen Table Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "acc7f9e5-43c3-4384-a06a-6930a9ff3bf7",
+    "freightClass": "decor-129114",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129114/65db88c5-040a-4957-9548-6c3a1ffa324b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129114/65db88c5-040a-4957-9548-6c3a1ffa324b.png",
+      "https://img.koalaliving.com.au/products/129114/b7d40b28-13d9-4649-9f2f-29d7062e6af0.png"
+    ],
+    "desc": "Complete your space with the Glen Table Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129115",
+    "sku": "SH-KD-129115",
+    "name": "Jaya Gold Platter",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "bdefb4d1-d230-4976-8006-d8ea80da7ece",
+    "freightClass": "decor-129115",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129115/407bc9e6-feeb-4696-9f04-3686e77f06d6.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129115/407bc9e6-feeb-4696-9f04-3686e77f06d6.png",
+      "https://img.koalaliving.com.au/products/129115/180c1f70-55fd-41d0-a6eb-aba2f8079a13.png"
+    ],
+    "desc": "Complete your space with the Jaya Gold Platter. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Trays and Bowls",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129116",
+    "sku": "SH-KD-129116",
+    "name": "Larina Gold Metal Tray",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "57cbffa5-de9c-4fda-a39d-231e473fde76",
+    "freightClass": "decor-129116",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129116/753ad748-15f4-4cba-a233-65857e86d87a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129116/753ad748-15f4-4cba-a233-65857e86d87a.png",
+      "https://img.koalaliving.com.au/products/129116/d80a0406-2697-4d99-b7fb-10fb46de018b.png"
+    ],
+    "desc": "Complete your space with the Larina Gold Metal Tray. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Trays and Bowls",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129117",
+    "sku": "SH-KD-129117",
+    "name": "Althea Gold Metal Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5556dd96-bfa1-4dd6-8504-19393e30dc2f",
+    "freightClass": "decor-129117",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129117/a549d794-8cee-4903-a191-54b6cd3e63c7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129117/a549d794-8cee-4903-a191-54b6cd3e63c7.png",
+      "https://img.koalaliving.com.au/products/129117/52df244d-2b13-4ca2-9f75-77493d1cd72b.png"
+    ],
+    "desc": "Complete your space with the Althea Gold Metal Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129190",
+    "sku": "SH-KD-129190",
+    "name": "Male Geometric Figure Rectangle Shadow Box with Black PS Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0bd1b3a7-a469-411d-9e9c-1301ececc64a",
+    "freightClass": "decor-129190",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129190/806161b0-0745-4ac4-822c-47b502aac55e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129190/806161b0-0745-4ac4-822c-47b502aac55e.png",
+      "https://img.koalaliving.com.au/products/129190/49ef68ba-063c-443c-af8e-90b390e8cd41.png"
+    ],
+    "desc": "Complete your space with the Male Geometric Figure Rectangle Shadow Box with Black PS Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129191",
+    "sku": "SH-KD-129191",
+    "name": "Female Geometric Figure Rectangle Shadow Box with Black PS Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "99ed23ee-8f45-4c76-990f-634690a44161",
+    "freightClass": "decor-129191",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129191/5d08ff04-337c-4417-9233-f536a026fc4b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129191/5d08ff04-337c-4417-9233-f536a026fc4b.png",
+      "https://img.koalaliving.com.au/products/129191/f44617ca-85e1-4a58-a8b0-f698bd623b3f.png"
+    ],
+    "desc": "Complete your space with the Female Geometric Figure Rectangle Shadow Box with Black PS Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129193",
+    "sku": "SH-KD-129193",
+    "name": "Midas Iron Rectangle Shadow Box with Acrylic Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "40238253-b274-4aef-ad15-01ce1c1a3507",
+    "freightClass": "decor-129193",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129193/df4bcf94-dc72-4b42-8edf-e3c913334424.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129193/df4bcf94-dc72-4b42-8edf-e3c913334424.png",
+      "https://img.koalaliving.com.au/products/129193/4833a0c1-9a49-446a-9a0b-ce591d44ba30.png"
+    ],
+    "desc": "Complete your space with the Midas Iron Rectangle Shadow Box with Acrylic Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129194",
+    "sku": "SH-KD-129194",
+    "name": "Midas Iron Square Shadow Box with Acrylic Box",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e5cbea4d-da6d-4e9a-9209-ac73469d4fce",
+    "freightClass": "decor-129194",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129194/44ca7df5-5515-458a-a235-29bcd507ec54.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129194/44ca7df5-5515-458a-a235-29bcd507ec54.png",
+      "https://img.koalaliving.com.au/products/129194/0b880271-8627-4886-bbd2-ed1c04e46502.png"
+    ],
+    "desc": "Complete your space with the Midas Iron Square Shadow Box with Acrylic Box. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Shadow Box",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129209",
+    "sku": "SH-KD-129209",
+    "name": "Riddle Aluminium Decorative",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "fee3bbab-ba3a-4e6e-a7ce-32dcd5ebf509",
+    "freightClass": "decor-129209",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129209/5b57c07d-164b-4b1d-87dd-f05a4086855f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129209/5b57c07d-164b-4b1d-87dd-f05a4086855f.png",
+      "https://img.koalaliving.com.au/products/129209/23a2cee3-e9d7-4176-80a3-096df6119ba0.png"
+    ],
+    "desc": "Complete your space with the Riddle Aluminium Decorative. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129277",
+    "sku": "SH-KD-129277",
+    "name": "River Bank Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f8b03b83-1fad-432d-b8be-4f4fddc925c7",
+    "freightClass": "decor-129277",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129277/c5db8750-40d1-4be8-bac8-f85d06506222.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129277/c5db8750-40d1-4be8-bac8-f85d06506222.png",
+      "https://img.koalaliving.com.au/products/129277/a5fb9c2c-55ad-4785-904a-3c3df3e4026b.png"
+    ],
+    "desc": "Complete your space with the River Bank Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129278",
+    "sku": "SH-KD-129278",
+    "name": "Wind Trap Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "2f8a42b3-6d40-4165-b632-27b10489aee6",
+    "freightClass": "decor-129278",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129278/94f49e10-3aa1-40f4-94d9-51cf481c0169.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129278/94f49e10-3aa1-40f4-94d9-51cf481c0169.png",
+      "https://img.koalaliving.com.au/products/129278/fa453c54-63b7-4e2c-8e47-d330ecf2f196.png"
+    ],
+    "desc": "Complete your space with the Wind Trap Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129279",
+    "sku": "SH-KD-129279",
+    "name": "Wind Wave Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "deb1684e-567e-4759-985c-23204fdc65eb",
+    "freightClass": "decor-129279",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129279/0d5b36e1-ac1e-4c72-8958-82705955c978.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129279/0d5b36e1-ac1e-4c72-8958-82705955c978.png",
+      "https://img.koalaliving.com.au/products/129279/44b1bedd-bede-4d0e-93c3-7f4397fcc39b.png"
+    ],
+    "desc": "Complete your space with the Wind Wave Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129280",
+    "sku": "SH-KD-129280",
+    "name": "Triple Treasure Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4e68ab7c-8eca-49e5-97e8-021881c9cbf7",
+    "freightClass": "decor-129280",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129280/78ad9c5e-148b-43b3-a57c-9bdf478242aa.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129280/78ad9c5e-148b-43b3-a57c-9bdf478242aa.png",
+      "https://img.koalaliving.com.au/products/129280/238ce6d5-9ef7-46d0-9688-e3febe6ce15a.png"
+    ],
+    "desc": "Complete your space with the Triple Treasure Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129287",
+    "sku": "SH-KD-129287",
+    "name": "Lucid Dreams Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "3dbe5878-33c3-4d5f-bc71-020055cee138",
+    "freightClass": "decor-129287",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129287/1e4f5d70-8ce0-401d-b11b-d8cc2259c264.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129287/1e4f5d70-8ce0-401d-b11b-d8cc2259c264.png",
+      "https://img.koalaliving.com.au/products/129287/2e5dee4d-43b3-4f25-b653-ddee3b5e43a2.png"
+    ],
+    "desc": "Complete your space with the Lucid Dreams Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129322",
+    "sku": "SH-KD-129322",
+    "name": "Ostia Textured White Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a608c02c-ec50-40cc-bc86-c099cd0542d0",
+    "freightClass": "decor-129322",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129322/5e2c0d3c-395a-4b56-9b7b-4e6d25e77f98.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129322/5e2c0d3c-395a-4b56-9b7b-4e6d25e77f98.png",
+      "https://img.koalaliving.com.au/products/129322/e80bc072-2d06-4001-9d07-1e0ced27e830.png"
+    ],
+    "desc": "Complete your space with the Ostia Textured White Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129324",
+    "sku": "SH-KD-129324",
+    "name": "Clarin Graphite Antique Gold Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a3d73eb7-5556-44d2-ab7f-b37f54d38c5a",
+    "freightClass": "decor-129324",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129324/a9176d79-8b8a-41d9-97b7-f279fabd7b92.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129324/a9176d79-8b8a-41d9-97b7-f279fabd7b92.png",
+      "https://img.koalaliving.com.au/products/129324/faa34d88-14b1-4efe-946d-b67598eb035a.png"
+    ],
+    "desc": "Complete your space with the Clarin Graphite Antique Gold Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129384",
+    "sku": "SH-KD-129384",
+    "name": "Leaf Nickel Platter II",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "6cb28b0c-d2fb-4fa6-b748-10f1d650082e",
+    "freightClass": "decor-129384",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129384/6c97e7e6-3d9d-414e-959c-9bf01952b5b4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129384/6c97e7e6-3d9d-414e-959c-9bf01952b5b4.png",
+      "https://img.koalaliving.com.au/products/129384/75289fd1-07d1-4328-8dc7-702abe9e019e.png"
+    ],
+    "desc": "Complete your space with the Leaf Nickel Platter II. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Trays and Bowls",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129385",
+    "sku": "SH-KD-129385",
+    "name": "Golden Leaf Sculpture II",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 865,
+    "memberPrice": 778,
+    "priceFloor": 778,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "dacb1556-6b5f-46a3-a8ef-e5d797c0f555",
+    "freightClass": "decor-129385",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129385/b37316b2-3ae6-4ee6-ae0b-752e9e6ef7d9.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129385/b37316b2-3ae6-4ee6-ae0b-752e9e6ef7d9.png",
+      "https://img.koalaliving.com.au/products/129385/2d17775b-21c1-4467-b7a3-9a938be59cd9.png"
+    ],
+    "desc": "Complete your space with the Golden Leaf Sculpture II. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Ornaments and Statues",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129389",
+    "sku": "SH-KD-129389",
+    "name": "Placid Aura Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "06ce8028-d00b-4be2-918f-0cb1dfc29d3f",
+    "freightClass": "decor-129389",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129389/68bd8bcd-ffa0-46e1-8bc8-a5255363da1e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129389/68bd8bcd-ffa0-46e1-8bc8-a5255363da1e.png",
+      "https://img.koalaliving.com.au/products/129389/f75aa144-81c4-4673-90c5-d7e40d7b5616.png"
+    ],
+    "desc": "Complete your space with the Placid Aura Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129390",
+    "sku": "SH-KD-129390",
+    "name": "Warm Aura Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1109,
+    "memberPrice": 998,
+    "priceFloor": 998,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "85a4ef74-56f5-41b6-9dbb-4762f4b3974c",
+    "freightClass": "decor-129390",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129390/dd7a42f2-2825-4311-a3df-669f97e7097c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129390/dd7a42f2-2825-4311-a3df-669f97e7097c.png",
+      "https://img.koalaliving.com.au/products/129390/f356c220-adb4-471d-96a2-42d2dece3c1e.png"
+    ],
+    "desc": "Complete your space with the Warm Aura Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129427",
+    "sku": "SH-KD-129427",
+    "name": "Leaf Brass Platter II",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "cd6139ca-a3c2-4e08-abfa-a167f5ec0807",
+    "freightClass": "decor-129427",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129427/e4b8de6a-3eca-48f5-a50c-eda8bb3cc798.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129427/e4b8de6a-3eca-48f5-a50c-eda8bb3cc798.png",
+      "https://img.koalaliving.com.au/products/129427/a2fc9b88-15a7-4354-8a08-b4ef96decc9d.png"
+    ],
+    "desc": "Complete your space with the Leaf Brass Platter II. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Trays and Bowls",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129454",
+    "sku": "SH-KD-129454",
+    "name": "Nickel Sculpture Votive II - Deep Gold and Granite Base",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1065,
+    "memberPrice": 958,
+    "priceFloor": 958,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "7b4b8a94-eb02-4fa6-9fc6-123eab88703b",
+    "freightClass": "decor-129454",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129454/3f969d9c-7790-4480-8baa-2d3308ba934d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129454/3f969d9c-7790-4480-8baa-2d3308ba934d.png",
+      "https://img.koalaliving.com.au/products/129454/6f08bc6d-68e4-4475-8fc5-a8ba74d581ba.png"
+    ],
+    "desc": "Complete your space with the Nickel Sculpture Votive II - Deep Gold and Granite Base. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129570",
+    "sku": "SH-KD-129570",
+    "name": "Frosting White Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1287,
+    "memberPrice": 1158,
+    "priceFloor": 1158,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "1893edfb-3ed7-4a3c-bb86-d6a60327a8f3",
+    "freightClass": "decor-129570",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129570/15673dc7-a4b1-4948-9299-ccdf07d75b58.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129570/15673dc7-a4b1-4948-9299-ccdf07d75b58.png",
+      "https://img.koalaliving.com.au/products/129570/e9d18ab5-dec7-47d2-a09e-8ae88453a4d9.png"
+    ],
+    "desc": "Complete your space with the Frosting White Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129582",
+    "sku": "SH-KD-129582",
+    "name": "Dissonance Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 2332,
+    "memberPrice": 2098,
+    "priceFloor": 2098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0f65e7d7-a9f0-47b5-bcca-d8eb9c0bf873",
+    "freightClass": "decor-129582",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129582/b67f9271-99f7-444d-bdd3-a039cb839068.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129582/b67f9271-99f7-444d-bdd3-a039cb839068.png",
+      "https://img.koalaliving.com.au/products/129582/5091fc10-cecd-42c3-9c77-da049c8ddd9a.png"
+    ],
+    "desc": "Complete your space with the Dissonance Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129583",
+    "sku": "SH-KD-129583",
+    "name": "Beige Cyclone Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 2109,
+    "memberPrice": 1898,
+    "priceFloor": 1898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f421cdb7-4e44-4040-a91c-eebedba39620",
+    "freightClass": "decor-129583",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129583/9734ceea-e1d1-4147-b3c1-012c87f5e908.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129583/9734ceea-e1d1-4147-b3c1-012c87f5e908.png",
+      "https://img.koalaliving.com.au/products/129583/e31f06f6-b97b-4f26-9073-d141c3da00cd.png"
+    ],
+    "desc": "Complete your space with the Beige Cyclone Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129587",
+    "sku": "SH-KD-129587",
+    "name": "Egress Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1198,
+    "memberPrice": 1078,
+    "priceFloor": 1078,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8ca6e703-fec8-4301-b7c5-3a441247dffc",
+    "freightClass": "decor-129587",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129587/1ed3a5b5-6518-41ca-9726-6012bc6f5841.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129587/1ed3a5b5-6518-41ca-9726-6012bc6f5841.png",
+      "https://img.koalaliving.com.au/products/129587/98870f14-5a0e-4551-9e93-c5cf5b1e24f8.png"
+    ],
+    "desc": "Complete your space with the Egress Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129588",
+    "sku": "SH-KD-129588",
+    "name": "Mid Portal Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1198,
+    "memberPrice": 1078,
+    "priceFloor": 1078,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c661b44b-2522-4fe5-9365-d5084be03bfe",
+    "freightClass": "decor-129588",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129588/25a52349-0512-4f73-8720-aebf80f8a8b3.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129588/25a52349-0512-4f73-8720-aebf80f8a8b3.png",
+      "https://img.koalaliving.com.au/products/129588/34b72f2c-7ae3-4456-8b3d-05238b982667.png"
+    ],
+    "desc": "Complete your space with the Mid Portal Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129591",
+    "sku": "SH-KD-129591",
+    "name": "Dusk Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 820,
+    "memberPrice": 738,
+    "priceFloor": 738,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "2a581f40-8a21-4904-a302-8b16d9062fac",
+    "freightClass": "decor-129591",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129591/b62dbb47-5f29-4cba-8ef1-862ac6792ea8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129591/b62dbb47-5f29-4cba-8ef1-862ac6792ea8.png",
+      "https://img.koalaliving.com.au/products/129591/2ee8d1f7-0c99-4093-bbe6-6440c69c0c27.png"
+    ],
+    "desc": "Complete your space with the Dusk Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129597",
+    "sku": "SH-KD-129597",
+    "name": "Threshold Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1043,
+    "memberPrice": 938,
+    "priceFloor": 938,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "58b1e07d-ffb3-454a-879c-8f159c96d885",
+    "freightClass": "decor-129597",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129597/b44e9e3b-e1ae-44c3-a30f-3508144b44ad.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129597/b44e9e3b-e1ae-44c3-a30f-3508144b44ad.png",
+      "https://img.koalaliving.com.au/products/129597/4236f847-c672-46ab-a567-a89bb312ef10.png"
+    ],
+    "desc": "Complete your space with the Threshold Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl129605",
+    "sku": "SH-KD-129605",
+    "name": "Vespera Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1887,
+    "memberPrice": 1698,
+    "priceFloor": 1698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "078e60fd-f02b-4192-bf8d-7699baf33820",
+    "freightClass": "decor-129605",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129605/a430d5d4-cab3-4bdb-bad1-21c949465615.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129605/a430d5d4-cab3-4bdb-bad1-21c949465615.png",
+      "https://img.koalaliving.com.au/products/129605/bb5e3452-421b-433b-8fae-5308c7f5bfa4.png"
+    ],
+    "desc": "Complete your space with the Vespera Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl130190",
+    "sku": "SH-KD-130190",
+    "name": "Margins Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a49c9058-1631-41d2-8e03-536696a67f6a",
+    "freightClass": "decor-130190",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/130190/ed3706ef-3aba-42e4-8aa8-051611d6fff3.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/130190/ed3706ef-3aba-42e4-8aa8-051611d6fff3.png",
+      "https://img.koalaliving.com.au/products/130190/2b770bf3-1c2c-4840-a085-04cc7736558a.png"
+    ],
+    "desc": "Complete your space with the Margins Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl130191",
+    "sku": "SH-KD-130191",
+    "name": "Shifting Realities Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a77b9e76-9a90-41e1-84a0-498d1cb8f670",
+    "freightClass": "decor-130191",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/130191/579798c9-2537-48ef-9253-fc9ffa319b77.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/130191/579798c9-2537-48ef-9253-fc9ffa319b77.png",
+      "https://img.koalaliving.com.au/products/130191/f955c03b-cd0e-4b04-9ca2-d46deceeb402.png"
+    ],
+    "desc": "Complete your space with the Shifting Realities Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl130193",
+    "sku": "SH-KD-130193",
+    "name": "Somewhere Beneath Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4e36d024-442f-44a0-a077-112c2476cc31",
+    "freightClass": "decor-130193",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/130193/7a63a474-d762-4717-a321-d94cc61db5e3.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/130193/7a63a474-d762-4717-a321-d94cc61db5e3.png",
+      "https://img.koalaliving.com.au/products/130193/2677b82e-e1dd-4361-808d-ad9a2d4fb775.png"
+    ],
+    "desc": "Complete your space with the Somewhere Beneath Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl130194",
+    "sku": "SH-KD-130194",
+    "name": "Unravel Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "20ba0ed9-55db-4a52-a792-77aff6156d65",
+    "freightClass": "decor-130194",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/130194/9344e134-4b4d-4f4f-a55b-31e425deb62e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/130194/9344e134-4b4d-4f4f-a55b-31e425deb62e.png",
+      "https://img.koalaliving.com.au/products/130194/3c5431b3-4544-4399-880e-1d102b935f6f.png"
+    ],
+    "desc": "Complete your space with the Unravel Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl130195",
+    "sku": "SH-KD-130195",
+    "name": "Patterns Painting",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0c7b2bd3-2d33-4fee-be6f-26d1ce118a17",
+    "freightClass": "decor-130195",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/130195/67ee2cb2-5986-4ffe-8daf-95bd783b4a49.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/130195/67ee2cb2-5986-4ffe-8daf-95bd783b4a49.png",
+      "https://img.koalaliving.com.au/products/130195/7a812e46-8d06-40cf-8692-4daa3680b8df.png"
+    ],
+    "desc": "Complete your space with the Patterns Painting. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131018",
+    "sku": "SH-KD-131018",
+    "name": "Outback Mirage Painting 140x230cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "dea81020-32f0-44cb-9ed9-dda7708e894c",
+    "freightClass": "decor-131018",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131018/f1703be9-9c48-44fd-954b-fb059a3be309.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131018/f1703be9-9c48-44fd-954b-fb059a3be309.png",
+      "https://img.koalaliving.com.au/products/131018/0e4c7d13-7971-46f6-9440-1d56ebab3e83.png"
+    ],
+    "desc": "Complete your space with the Outback Mirage Painting 140x230cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Framed Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131285",
+    "sku": "SH-KD-131285",
+    "name": "Bellius Vase 38cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 820,
+    "memberPrice": 738,
+    "priceFloor": 738,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8eefb9eb-ba7b-47b1-8512-787fd36aba8d",
+    "freightClass": "decor-131285",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131285/1bd66662-dcc8-4e62-9e7a-07b2b994773c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131285/1bd66662-dcc8-4e62-9e7a-07b2b994773c.png",
+      "https://img.koalaliving.com.au/products/131285/a416e294-a573-41b3-b126-122020134fad.png"
+    ],
+    "desc": "Complete your space with the Bellius Vase 38cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131286",
+    "sku": "SH-KD-131286",
+    "name": "Janius Vase 31cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 820,
+    "memberPrice": 738,
+    "priceFloor": 738,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "881ad99e-662e-47ca-91b2-0890b5d52a45",
+    "freightClass": "decor-131286",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131286/097f8a1f-a376-4d15-8efe-24ed30aad07d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131286/097f8a1f-a376-4d15-8efe-24ed30aad07d.png",
+      "https://img.koalaliving.com.au/products/131286/bea7e4d8-1dad-4c44-998f-81a6333f1f5b.png"
+    ],
+    "desc": "Complete your space with the Janius Vase 31cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131287",
+    "sku": "SH-KD-131287",
+    "name": "Neri Vase 43.5cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "fd501e86-7c95-4398-9977-92d2744c9de1",
+    "freightClass": "decor-131287",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131287/51757fec-4932-4a53-a7d9-a5d20e2b331b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131287/51757fec-4932-4a53-a7d9-a5d20e2b331b.png",
+      "https://img.koalaliving.com.au/products/131287/8648d52e-d305-4d3d-b1b4-c9b0346c0fc7.png"
+    ],
+    "desc": "Complete your space with the Neri Vase 43.5cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131288",
+    "sku": "SH-KD-131288",
+    "name": "Licini Vase 25.5cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "520a8ed6-6e6b-413a-8342-2676719535e4",
+    "freightClass": "decor-131288",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131288/55015c15-eec5-41f1-8710-dad1c33bb800.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131288/55015c15-eec5-41f1-8710-dad1c33bb800.png",
+      "https://img.koalaliving.com.au/products/131288/1d11c4e1-8fe7-45a5-b747-9279ad650ea4.png"
+    ],
+    "desc": "Complete your space with the Licini Vase 25.5cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131289",
+    "sku": "SH-KD-131289",
+    "name": "Varini Vase 33.7cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 843,
+    "memberPrice": 758,
+    "priceFloor": 758,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "81fa2f63-dbd7-4b14-841f-81ad079bf439",
+    "freightClass": "decor-131289",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131289/88d1429e-8790-4537-8abb-857d15a6d0cd.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131289/88d1429e-8790-4537-8abb-857d15a6d0cd.png",
+      "https://img.koalaliving.com.au/products/131289/1cf7f38e-9375-4f6b-b603-528c637af6be.png"
+    ],
+    "desc": "Complete your space with the Varini Vase 33.7cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131290",
+    "sku": "SH-KD-131290",
+    "name": "Varini Vase 21.4cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e29d53d3-843d-4238-add5-d144353c4b9f",
+    "freightClass": "decor-131290",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131290/3e4011b5-5fd0-44f0-82be-476d2776b9eb.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131290/3e4011b5-5fd0-44f0-82be-476d2776b9eb.png",
+      "https://img.koalaliving.com.au/products/131290/64936a57-5a8e-4288-92c6-5299bc1d2f47.png"
+    ],
+    "desc": "Complete your space with the Varini Vase 21.4cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131291",
+    "sku": "SH-KD-131291",
+    "name": "Macrini Vase 49.5cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 887,
+    "memberPrice": 798,
+    "priceFloor": 798,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "06632a93-1bce-4fd1-9434-43730d727aea",
+    "freightClass": "decor-131291",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131291/42674d4b-8128-43a7-a187-dacd80646303.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131291/42674d4b-8128-43a7-a187-dacd80646303.png",
+      "https://img.koalaliving.com.au/products/131291/38e4b2a9-4295-42a7-b106-93cb818099bb.png"
+    ],
+    "desc": "Complete your space with the Macrini Vase 49.5cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131292",
+    "sku": "SH-KD-131292",
+    "name": "Novius Vase 35cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c85847f2-886a-40a8-9bd6-b76d59d2b58b",
+    "freightClass": "decor-131292",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131292/c284c047-b68a-4804-8b1b-966bb52c41c5.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131292/c284c047-b68a-4804-8b1b-966bb52c41c5.png",
+      "https://img.koalaliving.com.au/products/131292/03847746-fb71-4a0e-9e00-0aefa60863fa.png"
+    ],
+    "desc": "Complete your space with the Novius Vase 35cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131295",
+    "sku": "SH-KD-131295",
+    "name": "Gavius Vase 25cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4f62c854-d17e-4f0a-8b10-2d76b3a1adce",
+    "freightClass": "decor-131295",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131295/0cffbdb0-888c-4d22-b4d9-a32cb313e62c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131295/0cffbdb0-888c-4d22-b4d9-a32cb313e62c.png",
+      "https://img.koalaliving.com.au/products/131295/670cfdde-66c1-4e6b-ad94-47d5c25364ec.png"
+    ],
+    "desc": "Complete your space with the Gavius Vase 25cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131296",
+    "sku": "SH-KD-131296",
+    "name": "Fadi Vase 32.5cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "476c3ea5-f18b-4281-a762-3be1fd59368a",
+    "freightClass": "decor-131296",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131296/26c2b264-4ed0-480c-904b-b80c3e17bfe1.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131296/26c2b264-4ed0-480c-904b-b80c3e17bfe1.png",
+      "https://img.koalaliving.com.au/products/131296/91022604-43d1-40e4-b6d9-4506ceb046bd.png"
+    ],
+    "desc": "Complete your space with the Fadi Vase 32.5cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131297",
+    "sku": "SH-KD-131297",
+    "name": "Ancha Vase 19cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e11f30eb-e1ed-42f3-8c04-1339b050daee",
+    "freightClass": "decor-131297",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131297/e89dfea3-e9d5-4127-a2ee-7c5fdad4e927.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131297/e89dfea3-e9d5-4127-a2ee-7c5fdad4e927.png",
+      "https://img.koalaliving.com.au/products/131297/f81809e8-9466-40bf-b2ea-5e44482fadd6.png"
+    ],
+    "desc": "Complete your space with the Ancha Vase 19cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Table Accessories",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131336",
+    "sku": "SH-KD-131336",
+    "name": "Birch Tree 180cm Decorative Plant",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8c337b1e-5aa0-4700-86eb-7a5c2b3e0cc9",
+    "freightClass": "decor-131336",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131336/81512bcb-b16d-4b42-9b6d-894041eed2cf.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131336/81512bcb-b16d-4b42-9b6d-894041eed2cf.png",
+      "https://img.koalaliving.com.au/products/131336/dc599086-a78b-40c8-9e0b-d6ea8fceedd0.png"
+    ],
+    "desc": "Complete your space with the Birch Tree 180cm Decorative Plant. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131337",
+    "sku": "SH-KD-131337",
+    "name": "Birch Tree 210cm Decorative Plant",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "075dbcdc-a811-4306-b3b4-0598b1d5f9b3",
+    "freightClass": "decor-131337",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131337/0f7b072b-ba4c-49b5-947e-ef3770331d3e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131337/0f7b072b-ba4c-49b5-947e-ef3770331d3e.png",
+      "https://img.koalaliving.com.au/products/131337/59a0d41d-4f1f-41f1-ae23-e5425b91f7b1.png"
+    ],
+    "desc": "Complete your space with the Birch Tree 210cm Decorative Plant. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131338",
+    "sku": "SH-KD-131338",
+    "name": "Birch Tree 240cm Decorative Plant",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1443,
+    "memberPrice": 1298,
+    "priceFloor": 1298,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "44a2e0d2-f073-4943-855d-7e856d722a20",
+    "freightClass": "decor-131338",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131338/7f13b1e9-ee56-4304-9ba4-7dab139e43b5.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131338/7f13b1e9-ee56-4304-9ba4-7dab139e43b5.png",
+      "https://img.koalaliving.com.au/products/131338/56339445-2c98-4cb3-991f-f8bf4528c640.png"
+    ],
+    "desc": "Complete your space with the Birch Tree 240cm Decorative Plant. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131339",
+    "sku": "SH-KD-131339",
+    "name": "Fiddle Leaf Fig Tree 210cm Decorative Plant",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1887,
+    "memberPrice": 1698,
+    "priceFloor": 1698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "afaa7a34-e712-4a66-973a-0e4dbd353ad1",
+    "freightClass": "decor-131339",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131339/247e538d-3dac-429e-9dbf-a97c1a98517d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131339/247e538d-3dac-429e-9dbf-a97c1a98517d.png",
+      "https://img.koalaliving.com.au/products/131339/46104c45-689c-442c-b830-4b878b184c5b.png"
+    ],
+    "desc": "Complete your space with the Fiddle Leaf Fig Tree 210cm Decorative Plant. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131340",
+    "sku": "SH-KD-131340",
+    "name": "Banana Tree 180cm Decorative Plant",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "018654c3-6845-45a4-afef-cb56e66b279f",
+    "freightClass": "decor-131340",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131340/dafe673e-b845-4843-b099-2ec7201df495.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131340/dafe673e-b845-4843-b099-2ec7201df495.png",
+      "https://img.koalaliving.com.au/products/131340/9d58ac10-044f-4d5e-9b1b-691b03d55ee4.png"
+    ],
+    "desc": "Complete your space with the Banana Tree 180cm Decorative Plant. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131341",
+    "sku": "SH-KD-131341",
+    "name": "Banana Tree 210cm Decorative Plant",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "30c4cb27-3f54-4759-bd23-8fc768ba3af2",
+    "freightClass": "decor-131341",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131341/7a60f739-1175-4192-ace3-95fd9b21585c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131341/7a60f739-1175-4192-ace3-95fd9b21585c.png",
+      "https://img.koalaliving.com.au/products/131341/eb9fae3f-919a-4c5c-a026-39c07c67ab37.png"
+    ],
+    "desc": "Complete your space with the Banana Tree 210cm Decorative Plant. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131343",
+    "sku": "SH-KD-131343",
+    "name": "Solveig II Black Round Mirror",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1665,
+    "memberPrice": 1498,
+    "priceFloor": 1498,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "d33e8c0b-b2ac-4ea5-a402-ba55496303bb",
+    "freightClass": "decor-131343",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131343/97f6909f-29e6-4c5a-a5f7-71e34adb0416.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131343/97f6909f-29e6-4c5a-a5f7-71e34adb0416.png",
+      "https://img.koalaliving.com.au/products/131343/18f73269-f533-496b-8f0b-535a614fab55.png"
+    ],
+    "desc": "Complete your space with the Solveig II Black Round Mirror. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131345",
+    "sku": "SH-KD-131345",
+    "name": "Yulubirngiin, Gunhungurraan - Multi Colour",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 2109,
+    "memberPrice": 1898,
+    "priceFloor": 1898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "dac7aa42-fe7d-4304-9c5a-b018389a52b4",
+    "freightClass": "decor-131345",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131345/06ecf383-a25d-4109-857c-99bae152a389.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131345/06ecf383-a25d-4109-857c-99bae152a389.png",
+      "https://img.koalaliving.com.au/products/131345/e5a74b5f-ef63-4c66-84fd-aa7b99ff1a7e.png"
+    ],
+    "desc": "Complete your space with the Yulubirngiin, Gunhungurraan - Multi Colour. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Textured Wall Art",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131461",
+    "sku": "SH-KD-131461",
+    "name": "Powder White Chenille Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8cd1b02c-d660-4740-be10-c279be4dea87",
+    "freightClass": "decor-131461",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131461/d036f4d4-75de-4849-a868-2c32faeb611a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131461/d036f4d4-75de-4849-a868-2c32faeb611a.png",
+      "https://img.koalaliving.com.au/products/131461/4634ad63-c45c-40e4-ae1e-2219c660a0e7.png"
+    ],
+    "desc": "Complete your space with the Powder White Chenille Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131462",
+    "sku": "SH-KD-131462",
+    "name": "Beige Latte Chenille Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4bf4da0b-770e-4c50-8087-5e81e76166a5",
+    "freightClass": "decor-131462",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131462/6d29014e-9708-43d6-849d-ac59373535d7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131462/6d29014e-9708-43d6-849d-ac59373535d7.png",
+      "https://img.koalaliving.com.au/products/131462/e2cb9426-ed3b-4941-a1e9-516aed8c7cb2.png"
+    ],
+    "desc": "Complete your space with the Beige Latte Chenille Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131478",
+    "sku": "SH-KD-131478",
+    "name": "Green Chenille Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5970fabb-e4d2-45c1-a24f-a0b1aa55df80",
+    "freightClass": "decor-131478",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131478/aae28e62-eaac-4a25-8093-ada1c4024712.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131478/aae28e62-eaac-4a25-8093-ada1c4024712.png",
+      "https://img.koalaliving.com.au/products/131478/d793a526-8b6a-4b12-af76-32dd70a2e952.png"
+    ],
+    "desc": "Complete your space with the Green Chenille Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131479",
+    "sku": "SH-KD-131479",
+    "name": "Powder White Chenille Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c45c26a9-af2e-4385-9f16-d94e0f389b9c",
+    "freightClass": "decor-131479",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131479/b69172d1-b59c-40a0-aeae-e2eb1be0eb97.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131479/b69172d1-b59c-40a0-aeae-e2eb1be0eb97.png",
+      "https://img.koalaliving.com.au/products/131479/0b259a93-a95f-4922-b411-e2e90818c430.png"
+    ],
+    "desc": "Complete your space with the Powder White Chenille Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131480",
+    "sku": "SH-KD-131480",
+    "name": "Beige Latte Chenille Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b56b7513-9ce1-4dfa-9ed4-d7909459c3ba",
+    "freightClass": "decor-131480",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131480/5051e081-a2cf-4a85-8e28-4cf88158497c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131480/5051e081-a2cf-4a85-8e28-4cf88158497c.png",
+      "https://img.koalaliving.com.au/products/131480/8842bc50-2f0f-4dc7-9ea3-2e6132b596e1.png"
+    ],
+    "desc": "Complete your space with the Beige Latte Chenille Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131482",
+    "sku": "SH-KD-131482",
+    "name": "Powder White Chenille Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 643,
+    "memberPrice": 578,
+    "priceFloor": 578,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0fd89a72-c418-4b0c-88d5-b4f4f7990a81",
+    "freightClass": "decor-131482",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131482/ee5677f2-2f63-4e70-8071-4f88ba9a0322.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131482/ee5677f2-2f63-4e70-8071-4f88ba9a0322.png",
+      "https://img.koalaliving.com.au/products/131482/362adf2e-ee9f-4fb9-be0e-3225684f15ae.png"
+    ],
+    "desc": "Complete your space with the Powder White Chenille Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131483",
+    "sku": "SH-KD-131483",
+    "name": "Beige Latte Chenille Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 643,
+    "memberPrice": 578,
+    "priceFloor": 578,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "efa379f6-7944-4f3f-9893-4584453d0512",
+    "freightClass": "decor-131483",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131483/05b7c427-ea63-46db-a810-22612d4282fd.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131483/05b7c427-ea63-46db-a810-22612d4282fd.png",
+      "https://img.koalaliving.com.au/products/131483/559648d2-82fc-47a9-8c1c-3b8e8cb90fc2.png"
+    ],
+    "desc": "Complete your space with the Beige Latte Chenille Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131484",
+    "sku": "SH-KD-131484",
+    "name": "Stone Cream Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a64c8a68-366c-4fbd-9a8a-a10a82feab81",
+    "freightClass": "decor-131484",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131484/a9414c47-78e9-4dd4-bd2e-1ebcfb3b0556.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131484/a9414c47-78e9-4dd4-bd2e-1ebcfb3b0556.png",
+      "https://img.koalaliving.com.au/products/131484/508114fa-008f-4fb2-9a95-d630c83222c4.png"
+    ],
+    "desc": "Complete your space with the Stone Cream Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131485",
+    "sku": "SH-KD-131485",
+    "name": "Mid Beige Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "912aeda4-fa1d-47da-bd28-c55592205b9e",
+    "freightClass": "decor-131485",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131485/1d460ead-6d26-444f-984a-7c779c60a7ca.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131485/1d460ead-6d26-444f-984a-7c779c60a7ca.png",
+      "https://img.koalaliving.com.au/products/131485/fd28bc76-aaa6-4a74-aa66-9c31808986af.png"
+    ],
+    "desc": "Complete your space with the Mid Beige Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131487",
+    "sku": "SH-KD-131487",
+    "name": "Vintage Mustard Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "fd5688dc-e10e-4980-8aa1-7c8699e42dd2",
+    "freightClass": "decor-131487",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131487/46e82677-6817-40f3-8d8d-f5d5deea30c4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131487/46e82677-6817-40f3-8d8d-f5d5deea30c4.png",
+      "https://img.koalaliving.com.au/products/131487/0b8e1df8-e2f6-4832-a844-9846a33a23be.png"
+    ],
+    "desc": "Complete your space with the Vintage Mustard Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131489",
+    "sku": "SH-KD-131489",
+    "name": "Antelope Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "48b5235f-1920-4113-80d5-d26199fed0ef",
+    "freightClass": "decor-131489",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131489/1d4af3c7-7401-4363-b2aa-1291a3d4e915.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131489/1d4af3c7-7401-4363-b2aa-1291a3d4e915.png",
+      "https://img.koalaliving.com.au/products/131489/c2fdb60c-ac71-4232-970c-99457825bbc5.png"
+    ],
+    "desc": "Complete your space with the Antelope Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131490",
+    "sku": "SH-KD-131490",
+    "name": "Stone Cream Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c03c449f-cbcc-4bdd-af0b-594d1971f93a",
+    "freightClass": "decor-131490",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131490/1040adf0-c317-48f5-8a20-c7981a66338c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131490/1040adf0-c317-48f5-8a20-c7981a66338c.png",
+      "https://img.koalaliving.com.au/products/131490/825f28da-13cd-4e3a-ba59-2251f12ba716.png"
+    ],
+    "desc": "Complete your space with the Stone Cream Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131491",
+    "sku": "SH-KD-131491",
+    "name": "Mid Beige Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "da0fcf11-1899-4973-8f9f-fedc452314a6",
+    "freightClass": "decor-131491",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131491/6e75b492-8056-4784-8e40-3afbff9a87a0.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131491/6e75b492-8056-4784-8e40-3afbff9a87a0.png",
+      "https://img.koalaliving.com.au/products/131491/ec772334-b602-4727-aade-1a50d28ee2da.png"
+    ],
+    "desc": "Complete your space with the Mid Beige Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131492",
+    "sku": "SH-KD-131492",
+    "name": "Warm Taupe Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a915549f-da67-4c95-959f-d2ecc6056b59",
+    "freightClass": "decor-131492",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131492/15b4bc4c-4c47-4b3b-b550-23451586a6ca.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131492/15b4bc4c-4c47-4b3b-b550-23451586a6ca.png",
+      "https://img.koalaliving.com.au/products/131492/3c15e924-2778-49ae-88b2-8b08fe7726aa.png"
+    ],
+    "desc": "Complete your space with the Warm Taupe Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131493",
+    "sku": "SH-KD-131493",
+    "name": "Vintage Mustard Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4970ec21-12e0-4564-b66a-d06fca194c54",
+    "freightClass": "decor-131493",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131493/a92026fb-0a67-482b-b464-111a8cc6bd6d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131493/a92026fb-0a67-482b-b464-111a8cc6bd6d.png",
+      "https://img.koalaliving.com.au/products/131493/f46d7bff-7474-4c11-96e1-84ae238a348b.png"
+    ],
+    "desc": "Complete your space with the Vintage Mustard Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131494",
+    "sku": "SH-KD-131494",
+    "name": "Winter Moss Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "34207d8e-e54f-4a9a-993e-abb731ae0e0a",
+    "freightClass": "decor-131494",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131494/d5e8ced3-5fc4-453f-abfe-ac38cc5694d7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131494/d5e8ced3-5fc4-453f-abfe-ac38cc5694d7.png",
+      "https://img.koalaliving.com.au/products/131494/dbbcff9e-992f-4071-9c99-ef9c650e219a.png"
+    ],
+    "desc": "Complete your space with the Winter Moss Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131495",
+    "sku": "SH-KD-131495",
+    "name": "Antelope Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "83ac284e-05b0-4d4e-bd82-54f3ebd8be2e",
+    "freightClass": "decor-131495",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131495/5900d045-8801-4056-a479-6b2d6c9f3562.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131495/5900d045-8801-4056-a479-6b2d6c9f3562.png",
+      "https://img.koalaliving.com.au/products/131495/105dda75-f81c-464f-8129-889e624ba428.png"
+    ],
+    "desc": "Complete your space with the Antelope Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131496",
+    "sku": "SH-KD-131496",
+    "name": "Stone Cream Woven Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 643,
+    "memberPrice": 578,
+    "priceFloor": 578,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f2f83e64-b4a3-4cf1-924a-9ad663070ca8",
+    "freightClass": "decor-131496",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131496/19d82108-a8d8-4b17-8160-222b14edbf28.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131496/19d82108-a8d8-4b17-8160-222b14edbf28.png",
+      "https://img.koalaliving.com.au/products/131496/b614a880-2256-4a4c-adda-dcb839f0ec2c.png"
+    ],
+    "desc": "Complete your space with the Stone Cream Woven Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131497",
+    "sku": "SH-KD-131497",
+    "name": "Mid Beige Woven Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 643,
+    "memberPrice": 578,
+    "priceFloor": 578,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "de63bef3-18eb-42ec-8ad4-76ef64b6f6b1",
+    "freightClass": "decor-131497",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131497/d81a9d68-5350-4ca8-bb3a-f5e5e33eb40f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131497/d81a9d68-5350-4ca8-bb3a-f5e5e33eb40f.png",
+      "https://img.koalaliving.com.au/products/131497/86f9191d-7764-4eac-9622-00f591d41588.png"
+    ],
+    "desc": "Complete your space with the Mid Beige Woven Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131501",
+    "sku": "SH-KD-131501",
+    "name": "Antelope Woven Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 643,
+    "memberPrice": 578,
+    "priceFloor": 578,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "6c23c1be-dc93-496c-8d2b-926b181f6443",
+    "freightClass": "decor-131501",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131501/213b8816-5255-4025-8808-b233f1e18ca9.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131501/213b8816-5255-4025-8808-b233f1e18ca9.png",
+      "https://img.koalaliving.com.au/products/131501/723780d8-7dc2-48b0-91de-196651e1d4fb.png"
+    ],
+    "desc": "Complete your space with the Antelope Woven Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131502",
+    "sku": "SH-KD-131502",
+    "name": "Rust Chenille Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ba390608-5a1e-45a0-a70c-7bc22d714deb",
+    "freightClass": "decor-131502",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131502/3f46bbbb-7835-4dd8-9fd4-956c37eca8d4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131502/3f46bbbb-7835-4dd8-9fd4-956c37eca8d4.png",
+      "https://img.koalaliving.com.au/products/131502/5f99c505-1ed1-4eb1-8bdc-7f73fb216650.png"
+    ],
+    "desc": "Complete your space with the Rust Chenille Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131504",
+    "sku": "SH-KD-131504",
+    "name": "Rust Chenille Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "58eb79c0-c1a0-4b4b-a2e6-113e550b933b",
+    "freightClass": "decor-131504",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131504/9cbb5564-6a41-46c4-a64f-f76a0eb502a2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131504/9cbb5564-6a41-46c4-a64f-f76a0eb502a2.png",
+      "https://img.koalaliving.com.au/products/131504/ec27c6f1-9566-46c7-82b8-b108ed8ee801.png"
+    ],
+    "desc": "Complete your space with the Rust Chenille Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131505",
+    "sku": "SH-KD-131505",
+    "name": "Mousse Brown Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b7d0bb7f-48d6-4cff-9d4c-e592114c7b19",
+    "freightClass": "decor-131505",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131505/6aae99f9-6031-4832-a8f8-40064669b946.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131505/6aae99f9-6031-4832-a8f8-40064669b946.png",
+      "https://img.koalaliving.com.au/products/131505/fcaa83b5-190e-443c-911c-32ac7a9276ca.png"
+    ],
+    "desc": "Complete your space with the Mousse Brown Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131506",
+    "sku": "SH-KD-131506",
+    "name": "Rust Chenille Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e4c65c00-614b-4c2c-8777-c62cd07b6700",
+    "freightClass": "decor-131506",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131506/ce20f6f8-0433-43d6-bc57-6d0ec84efdd7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131506/ce20f6f8-0433-43d6-bc57-6d0ec84efdd7.png",
+      "https://img.koalaliving.com.au/products/131506/76d6ff21-5efb-4e19-a4e3-bb64e3a450d3.png"
+    ],
+    "desc": "Complete your space with the Rust Chenille Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131508",
+    "sku": "SH-KD-131508",
+    "name": "Maze Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c67291ab-485d-4fa2-9c5b-6a0627ceb824",
+    "freightClass": "decor-131508",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131508/d22f91ab-0f00-4d0a-952f-8a84c9816079.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131508/d22f91ab-0f00-4d0a-952f-8a84c9816079.png",
+      "https://img.koalaliving.com.au/products/131508/3884a23c-46c7-4b94-98ab-0ba68b7ed3cf.png"
+    ],
+    "desc": "Complete your space with the Maze Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131509",
+    "sku": "SH-KD-131509",
+    "name": "Maze Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e0cbca22-89d1-400d-b429-14094e9b2683",
+    "freightClass": "decor-131509",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131509/d55235d3-8c1a-413f-abe7-474319410198.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131509/d55235d3-8c1a-413f-abe7-474319410198.png",
+      "https://img.koalaliving.com.au/products/131509/17c2edaa-5ac8-4396-9bda-131e0754f3c8.png"
+    ],
+    "desc": "Complete your space with the Maze Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131510",
+    "sku": "SH-KD-131510",
+    "name": "Maze Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "989a9768-27f9-4eac-9902-35714b7d47d6",
+    "freightClass": "decor-131510",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131510/c1f1da5f-2699-4915-a3e2-a087a8980145.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131510/c1f1da5f-2699-4915-a3e2-a087a8980145.png",
+      "https://img.koalaliving.com.au/products/131510/5270aed9-81b5-46a2-b694-ffa83944060b.png"
+    ],
+    "desc": "Complete your space with the Maze Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131511",
+    "sku": "SH-KD-131511",
+    "name": "Pecan Brown Chenille Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "1b8770d0-9160-4063-80b2-d996082802cc",
+    "freightClass": "decor-131511",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131511/2246e8db-cb8a-4782-b5cd-60ef2148338e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131511/2246e8db-cb8a-4782-b5cd-60ef2148338e.png",
+      "https://img.koalaliving.com.au/products/131511/2b4e95b8-8d8f-4717-9cfe-e5c27cf09a2f.png"
+    ],
+    "desc": "Complete your space with the Pecan Brown Chenille Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131514",
+    "sku": "SH-KD-131514",
+    "name": "Sage Green Chenille Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "781d2c3a-3799-44a5-bf20-f63a06c2e994",
+    "freightClass": "decor-131514",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131514/10359985-ed62-4a4d-85b4-19ea0cbb7cfb.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131514/10359985-ed62-4a4d-85b4-19ea0cbb7cfb.png",
+      "https://img.koalaliving.com.au/products/131514/86fb6333-bcf6-49dc-bb10-2e8d7e214963.png"
+    ],
+    "desc": "Complete your space with the Sage Green Chenille Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131515",
+    "sku": "SH-KD-131515",
+    "name": "Sage Green Chenille Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "750274d6-6240-4501-8a66-fb35844b4b2a",
+    "freightClass": "decor-131515",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131515/efa8ff65-3297-4b05-9c71-0a9da0872a4f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131515/efa8ff65-3297-4b05-9c71-0a9da0872a4f.png",
+      "https://img.koalaliving.com.au/products/131515/6132387c-0bd2-4958-af19-8aedfa0cf7dd.png"
+    ],
+    "desc": "Complete your space with the Sage Green Chenille Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131520",
+    "sku": "SH-KD-131520",
+    "name": "Canola Yellow Chenille Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "6251f36b-6967-45f8-b58f-427eaf364c7c",
+    "freightClass": "decor-131520",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131520/a63e516b-f63b-4298-a199-0cc0bc27debc.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131520/a63e516b-f63b-4298-a199-0cc0bc27debc.png",
+      "https://img.koalaliving.com.au/products/131520/46f53218-c4c4-46fe-91b6-d95e019d3d55.png"
+    ],
+    "desc": "Complete your space with the Canola Yellow Chenille Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131521",
+    "sku": "SH-KD-131521",
+    "name": "Canola Yellow Chenille Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "2aad1f0c-59a4-4525-b0f4-887f5b8b6603",
+    "freightClass": "decor-131521",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131521/b7a49bc4-8038-404c-96a3-5db1f823e769.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131521/b7a49bc4-8038-404c-96a3-5db1f823e769.png",
+      "https://img.koalaliving.com.au/products/131521/a84327d7-0ed7-45b8-a769-cb2ad0519881.png"
+    ],
+    "desc": "Complete your space with the Canola Yellow Chenille Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131522",
+    "sku": "SH-KD-131522",
+    "name": "Atlas Cream Chenille Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "443d5b72-4dcf-4421-a746-32c204f504f7",
+    "freightClass": "decor-131522",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131522/02ab0b92-be3f-4c4f-9923-f3a2a6435588.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131522/02ab0b92-be3f-4c4f-9923-f3a2a6435588.png",
+      "https://img.koalaliving.com.au/products/131522/2e00dad2-3351-438d-a244-100e379b09b9.png"
+    ],
+    "desc": "Complete your space with the Atlas Cream Chenille Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131525",
+    "sku": "SH-KD-131525",
+    "name": "Mocha Brown Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b5e3c5ec-14c9-464b-8a8c-7e259ba94dc4",
+    "freightClass": "decor-131525",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131525/b601d839-697f-45c6-a7d0-90101dc9fba8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131525/b601d839-697f-45c6-a7d0-90101dc9fba8.png",
+      "https://img.koalaliving.com.au/products/131525/123937cb-054e-44ef-83ba-aa2471f5d4a3.png"
+    ],
+    "desc": "Complete your space with the Mocha Brown Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131526",
+    "sku": "SH-KD-131526",
+    "name": "Cocoa Brown Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "00fb1cdd-d5c7-4c81-92c3-368068b5dd21",
+    "freightClass": "decor-131526",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131526/117e53df-eab3-4adf-abb7-79aacc536f5e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131526/117e53df-eab3-4adf-abb7-79aacc536f5e.png",
+      "https://img.koalaliving.com.au/products/131526/3a933bde-7c40-49b9-9e12-4a4999196eb5.png"
+    ],
+    "desc": "Complete your space with the Cocoa Brown Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131527",
+    "sku": "SH-KD-131527",
+    "name": "Dijon Mustard Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "837c7024-8559-4ccd-b9db-3b852f5b8fe4",
+    "freightClass": "decor-131527",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131527/7317001d-222f-405c-b1f0-03812710cbe1.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131527/7317001d-222f-405c-b1f0-03812710cbe1.png",
+      "https://img.koalaliving.com.au/products/131527/03d708a5-86db-47cf-a134-0d6b0e8e56c1.png"
+    ],
+    "desc": "Complete your space with the Dijon Mustard Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131528",
+    "sku": "SH-KD-131528",
+    "name": "Wheat Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "dd38eb3d-17d2-4620-ac9c-ccda33530811",
+    "freightClass": "decor-131528",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131528/0db61714-033b-4ad0-8c7e-a1ec3f1e06b6.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131528/0db61714-033b-4ad0-8c7e-a1ec3f1e06b6.png",
+      "https://img.koalaliving.com.au/products/131528/9494728c-f151-4bae-b98b-d12153a4ae60.png"
+    ],
+    "desc": "Complete your space with the Wheat Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131529",
+    "sku": "SH-KD-131529",
+    "name": "Mocha Brown Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c3514859-6cdd-4f93-b8a6-a043ef0eb6b4",
+    "freightClass": "decor-131529",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131529/351c2eb2-da5b-4174-972e-2c39c48de324.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131529/351c2eb2-da5b-4174-972e-2c39c48de324.png",
+      "https://img.koalaliving.com.au/products/131529/453e9cc7-f89f-4404-8eff-81455c3912b6.png"
+    ],
+    "desc": "Complete your space with the Mocha Brown Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131530",
+    "sku": "SH-KD-131530",
+    "name": "Cocoa Brown Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c667e4f8-afd6-4ea5-a4c7-6e60bf8be6f8",
+    "freightClass": "decor-131530",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131530/4e7d5763-8e44-425c-aa1f-2220da197449.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131530/4e7d5763-8e44-425c-aa1f-2220da197449.png",
+      "https://img.koalaliving.com.au/products/131530/b5c1d100-0b1b-4b9f-99dc-6250eefcfd29.png"
+    ],
+    "desc": "Complete your space with the Cocoa Brown Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131531",
+    "sku": "SH-KD-131531",
+    "name": "Dijon Mustard Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e9d12dda-3f52-4a97-bdb1-307ee8576c48",
+    "freightClass": "decor-131531",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131531/7cebe090-620f-48f6-893c-767f174693d3.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131531/7cebe090-620f-48f6-893c-767f174693d3.png",
+      "https://img.koalaliving.com.au/products/131531/b89e6119-baa1-4b13-9c12-4c9ec7ae3b08.png"
+    ],
+    "desc": "Complete your space with the Dijon Mustard Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131532",
+    "sku": "SH-KD-131532",
+    "name": "Wheat Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5ad91a15-1453-4dd1-830a-eb7b19ae5670",
+    "freightClass": "decor-131532",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131532/67e9b7d8-826a-430b-9ab7-738e1daad8bc.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131532/67e9b7d8-826a-430b-9ab7-738e1daad8bc.png",
+      "https://img.koalaliving.com.au/products/131532/b8cd2301-10b0-4e72-a381-6b11fa249fcb.png"
+    ],
+    "desc": "Complete your space with the Wheat Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131534",
+    "sku": "SH-KD-131534",
+    "name": "Cocoa Brown Woven Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "2241ddf7-e76f-4676-9696-478d805e09f7",
+    "freightClass": "decor-131534",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131534/6cdea4b8-b58c-4731-b5b8-e171e80540ff.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131534/6cdea4b8-b58c-4731-b5b8-e171e80540ff.png",
+      "https://img.koalaliving.com.au/products/131534/cde9cf86-8b7b-48ea-9509-c8f0b3c496ff.png"
+    ],
+    "desc": "Complete your space with the Cocoa Brown Woven Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131535",
+    "sku": "SH-KD-131535",
+    "name": "Dijon Mustard Woven Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "1130507b-19fe-4c27-bb49-569f82e301e7",
+    "freightClass": "decor-131535",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131535/15174838-4894-4792-9e91-5bb00db131e2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131535/15174838-4894-4792-9e91-5bb00db131e2.png",
+      "https://img.koalaliving.com.au/products/131535/24b73bc1-bc26-4098-9673-d247d4e85380.png"
+    ],
+    "desc": "Complete your space with the Dijon Mustard Woven Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131536",
+    "sku": "SH-KD-131536",
+    "name": "Wheat Woven Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b23f358b-51b1-437e-85bf-833e185654c5",
+    "freightClass": "decor-131536",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131536/912d8ac4-ef7f-4b50-9091-14a104e71daa.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131536/912d8ac4-ef7f-4b50-9091-14a104e71daa.png",
+      "https://img.koalaliving.com.au/products/131536/1f52b03f-b2b4-4f67-890d-6e6eb1a255a1.png"
+    ],
+    "desc": "Complete your space with the Wheat Woven Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131538",
+    "sku": "SH-KD-131538",
+    "name": "Auburn Red Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "19ac8c34-acaa-4ce5-ac07-1f045a045501",
+    "freightClass": "decor-131538",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131538/a6739f20-35a4-4ca7-af0d-dd3e7c08fc0c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131538/a6739f20-35a4-4ca7-af0d-dd3e7c08fc0c.png",
+      "https://img.koalaliving.com.au/products/131538/4de06158-322a-4b47-b80b-9fd74cec2266.png"
+    ],
+    "desc": "Complete your space with the Auburn Red Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131539",
+    "sku": "SH-KD-131539",
+    "name": "Dune Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "7b3a144d-8c2d-48ce-8b95-edab32573b7d",
+    "freightClass": "decor-131539",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131539/ac47fe7f-e381-4d9c-ab95-fcf541710e94.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131539/ac47fe7f-e381-4d9c-ab95-fcf541710e94.png",
+      "https://img.koalaliving.com.au/products/131539/dce1bd80-50fd-4f7e-8664-d28b6ff0ae9a.png"
+    ],
+    "desc": "Complete your space with the Dune Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131540",
+    "sku": "SH-KD-131540",
+    "name": "Fern Green Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "254066d3-c185-44e9-909a-25756f47e065",
+    "freightClass": "decor-131540",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131540/fbc41be6-5c5c-42d1-9fd0-dcc670d9f4fd.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131540/fbc41be6-5c5c-42d1-9fd0-dcc670d9f4fd.png",
+      "https://img.koalaliving.com.au/products/131540/83dd82f3-6896-40b1-ae71-b383cb8b8412.png"
+    ],
+    "desc": "Complete your space with the Fern Green Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131541",
+    "sku": "SH-KD-131541",
+    "name": "Auburn Red Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "93090e69-9e9b-4ef8-8cc0-158a47737a05",
+    "freightClass": "decor-131541",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131541/d07c9141-65b7-451a-88bc-b0cf72969b77.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131541/d07c9141-65b7-451a-88bc-b0cf72969b77.png",
+      "https://img.koalaliving.com.au/products/131541/87f5e0ca-b080-4781-9efa-44afbf09aa31.png"
+    ],
+    "desc": "Complete your space with the Auburn Red Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131542",
+    "sku": "SH-KD-131542",
+    "name": "Dune Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "97aea997-3456-4263-b5bc-b094f7069025",
+    "freightClass": "decor-131542",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131542/90760fd9-b9e6-4a21-918f-fd977b3a840c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131542/90760fd9-b9e6-4a21-918f-fd977b3a840c.png",
+      "https://img.koalaliving.com.au/products/131542/c69b0adc-b9b2-4bc4-94fc-6ee73b210ce6.png"
+    ],
+    "desc": "Complete your space with the Dune Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131545",
+    "sku": "SH-KD-131545",
+    "name": "Dune Woven Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 687,
+    "memberPrice": 618,
+    "priceFloor": 618,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e576ccc1-905c-4ab7-b35c-e25e740ebb75",
+    "freightClass": "decor-131545",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131545/3603c224-32d0-4647-8a1b-28a29b3bab4e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131545/3603c224-32d0-4647-8a1b-28a29b3bab4e.png",
+      "https://img.koalaliving.com.au/products/131545/e05c63ff-cd86-40d0-9a64-df249c84fe1b.png"
+    ],
+    "desc": "Complete your space with the Dune Woven Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131546",
+    "sku": "SH-KD-131546",
+    "name": "Velvet Mustard Velveteen Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f3636efe-6bf4-4bc6-8e2a-65b72f37649d",
+    "freightClass": "decor-131546",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131546/fb349acd-3b6b-4440-9539-84ed59c0a2dd.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131546/fb349acd-3b6b-4440-9539-84ed59c0a2dd.png",
+      "https://img.koalaliving.com.au/products/131546/34289be0-3fdd-4197-b5a2-07f49e2a6663.png"
+    ],
+    "desc": "Complete your space with the Velvet Mustard Velveteen Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131548",
+    "sku": "SH-KD-131548",
+    "name": "Velvet Mustard Velveteen Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "805853e8-07e5-4a9b-9a24-67dd3de1d2fe",
+    "freightClass": "decor-131548",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131548/35b94a31-9f67-4267-b091-9ec15c70b6fb.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131548/35b94a31-9f67-4267-b091-9ec15c70b6fb.png",
+      "https://img.koalaliving.com.au/products/131548/679333f1-f494-4304-99f0-84b5932090ea.png"
+    ],
+    "desc": "Complete your space with the Velvet Mustard Velveteen Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131549",
+    "sku": "SH-KD-131549",
+    "name": "Copper Brown Velveteen Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f7e79feb-56e7-4572-ac9d-a5b788bee083",
+    "freightClass": "decor-131549",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131549/d7f6324a-0bb3-4f2c-aeb3-404b6c5bf80c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131549/d7f6324a-0bb3-4f2c-aeb3-404b6c5bf80c.png",
+      "https://img.koalaliving.com.au/products/131549/880da408-8fbd-49a7-ac72-fe38b74d52b1.png"
+    ],
+    "desc": "Complete your space with the Copper Brown Velveteen Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131550",
+    "sku": "SH-KD-131550",
+    "name": "Velvet Mustard Velveteen Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ddcba478-b0b4-4601-967d-410e07d3ebb0",
+    "freightClass": "decor-131550",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131550/9eca64e1-5b50-4049-9299-1ecbca8a1268.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131550/9eca64e1-5b50-4049-9299-1ecbca8a1268.png",
+      "https://img.koalaliving.com.au/products/131550/bfb9fc76-d70e-4844-b5f3-903caeaf5c6e.png"
+    ],
+    "desc": "Complete your space with the Velvet Mustard Velveteen Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131551",
+    "sku": "SH-KD-131551",
+    "name": "Copper Brown Velveteen Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e40ec6e2-3fd1-4804-bea9-16ee3bbb9f40",
+    "freightClass": "decor-131551",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131551/576486d3-8a2e-426d-ac59-a1f6392814f6.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131551/576486d3-8a2e-426d-ac59-a1f6392814f6.png",
+      "https://img.koalaliving.com.au/products/131551/b28bfba9-4e1b-4e08-9763-2c67d38b452e.png"
+    ],
+    "desc": "Complete your space with the Copper Brown Velveteen Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131552",
+    "sku": "SH-KD-131552",
+    "name": "Green Chenille Fabric Bolster Cushion 60x20",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "2e640e92-9551-4325-b57a-2852b64c9244",
+    "freightClass": "decor-131552",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131552/320053fb-7767-47c0-b1d5-785da72d3fe7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131552/320053fb-7767-47c0-b1d5-785da72d3fe7.png",
+      "https://img.koalaliving.com.au/products/131552/d3672bc0-2014-4d8c-8251-b54e36b6fda8.png"
+    ],
+    "desc": "Complete your space with the Green Chenille Fabric Bolster Cushion 60x20. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131554",
+    "sku": "SH-KD-131554",
+    "name": "Beige Latte Chenille Fabric Bolster Cushion 60x20",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 709,
+    "memberPrice": 638,
+    "priceFloor": 638,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "6964c3f9-551c-42ce-97e1-7185dc3c6f23",
+    "freightClass": "decor-131554",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131554/88640cff-c0d8-43d8-932b-9679de00b81a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131554/88640cff-c0d8-43d8-932b-9679de00b81a.png",
+      "https://img.koalaliving.com.au/products/131554/4a0ce76c-9e87-40c6-b45b-be2ae79ada1e.png"
+    ],
+    "desc": "Complete your space with the Beige Latte Chenille Fabric Bolster Cushion 60x20. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131555",
+    "sku": "SH-KD-131555",
+    "name": "Caramel Chenille Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "234c483c-a914-451c-810d-9d3e74acddb3",
+    "freightClass": "decor-131555",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131555/38736219-f106-4b26-827f-a5737351d1a7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131555/38736219-f106-4b26-827f-a5737351d1a7.png",
+      "https://img.koalaliving.com.au/products/131555/bd586b0a-558e-48bc-8a4d-fa0af66af405.png"
+    ],
+    "desc": "Complete your space with the Caramel Chenille Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131556",
+    "sku": "SH-KD-131556",
+    "name": "Caramel Chenille Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "bd724c1d-52fd-49b3-bfb0-a3e06dcfff3f",
+    "freightClass": "decor-131556",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131556/5d91227c-e896-40e9-b2cf-6df36ae69181.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131556/5d91227c-e896-40e9-b2cf-6df36ae69181.png",
+      "https://img.koalaliving.com.au/products/131556/eff82a31-8f6d-4862-8433-b1d2fec0e003.png"
+    ],
+    "desc": "Complete your space with the Caramel Chenille Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131559",
+    "sku": "SH-KD-131559",
+    "name": "Belgian Chocolate Chenille Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5a639fe9-79dd-446f-8c63-c438070fa20e",
+    "freightClass": "decor-131559",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131559/18965481-0365-4303-8229-f4db28a8351a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131559/18965481-0365-4303-8229-f4db28a8351a.png",
+      "https://img.koalaliving.com.au/products/131559/4eb16341-31fb-430d-818a-783ff90b8541.png"
+    ],
+    "desc": "Complete your space with the Belgian Chocolate Chenille Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131560",
+    "sku": "SH-KD-131560",
+    "name": "Belgian Chocolate Chenille Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "55e250d7-9e22-427d-93ce-4376ef0b5e49",
+    "freightClass": "decor-131560",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131560/a72a0a15-1c09-4c04-b265-da7035c9c7e8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131560/a72a0a15-1c09-4c04-b265-da7035c9c7e8.png",
+      "https://img.koalaliving.com.au/products/131560/296e600d-f892-4712-a313-f9efc846d72f.png"
+    ],
+    "desc": "Complete your space with the Belgian Chocolate Chenille Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131561",
+    "sku": "SH-KD-131561",
+    "name": "Hunter Green Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "acd85b61-938d-4709-ada0-9c1183d4efd7",
+    "freightClass": "decor-131561",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131561/bb08b66a-64d6-435f-b219-a85b2aae7eaa.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131561/bb08b66a-64d6-435f-b219-a85b2aae7eaa.png",
+      "https://img.koalaliving.com.au/products/131561/405223d0-23c5-4db1-ac6e-9c96880ce468.png"
+    ],
+    "desc": "Complete your space with the Hunter Green Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131562",
+    "sku": "SH-KD-131562",
+    "name": "Hunter Green Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "933c72d4-c5b2-4444-9930-baf3b5ed44b7",
+    "freightClass": "decor-131562",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131562/d2c38a33-7091-4419-b105-36f8a50001b8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131562/d2c38a33-7091-4419-b105-36f8a50001b8.png",
+      "https://img.koalaliving.com.au/products/131562/9f3fb999-0c34-44e1-b0b8-a2e595e5df70.png"
+    ],
+    "desc": "Complete your space with the Hunter Green Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131563",
+    "sku": "SH-KD-131563",
+    "name": "Hunter Green Woven Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 687,
+    "memberPrice": 618,
+    "priceFloor": 618,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0e51919a-0718-44f3-8b33-863f7e024444",
+    "freightClass": "decor-131563",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131563/72a7f4d2-b517-4a9b-a515-a314d7692a62.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131563/72a7f4d2-b517-4a9b-a515-a314d7692a62.png",
+      "https://img.koalaliving.com.au/products/131563/a18413fe-5ca7-4583-bf59-39c957d94d67.png"
+    ],
+    "desc": "Complete your space with the Hunter Green Woven Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131564",
+    "sku": "SH-KD-131564",
+    "name": "Bordeaux Red Velveteen Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "637bcce3-0628-4d50-a248-6a9bb5b693a7",
+    "freightClass": "decor-131564",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131564/7c461363-6a9b-4710-93c2-cc856630777d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131564/7c461363-6a9b-4710-93c2-cc856630777d.png",
+      "https://img.koalaliving.com.au/products/131564/19628171-fd94-4403-8031-ed63f07b0e7f.png"
+    ],
+    "desc": "Complete your space with the Bordeaux Red Velveteen Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131565",
+    "sku": "SH-KD-131565",
+    "name": "Bordeaux Red Velveteen Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "e2857af4-dcc0-4269-80f9-7ae56f4d99e6",
+    "freightClass": "decor-131565",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131565/2af27992-548d-43d5-a2a2-b973c0140cf4.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131565/2af27992-548d-43d5-a2a2-b973c0140cf4.png",
+      "https://img.koalaliving.com.au/products/131565/04581cc7-3db2-4371-8af8-436b59db9a27.png"
+    ],
+    "desc": "Complete your space with the Bordeaux Red Velveteen Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131567",
+    "sku": "SH-KD-131567",
+    "name": "Bordeaux Red Chenille Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b3a680ea-a8bf-433f-b842-bf2973eaf8c9",
+    "freightClass": "decor-131567",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131567/9682adab-7bcc-43d4-848c-872de61ce775.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131567/9682adab-7bcc-43d4-848c-872de61ce775.png",
+      "https://img.koalaliving.com.au/products/131567/f84bc5da-20e2-445c-a0f5-760ce679e8ed.png"
+    ],
+    "desc": "Complete your space with the Bordeaux Red Chenille Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131569",
+    "sku": "SH-KD-131569",
+    "name": "Bordeaux Red Chenille Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 665,
+    "memberPrice": 598,
+    "priceFloor": 598,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "719982d7-4d4f-4810-999a-40c2a79e2c25",
+    "freightClass": "decor-131569",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131569/6f517873-a68f-49b6-981d-85e08d3e0c2a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131569/6f517873-a68f-49b6-981d-85e08d3e0c2a.png",
+      "https://img.koalaliving.com.au/products/131569/c9eac898-03c9-47da-a63b-f67c82df058c.png"
+    ],
+    "desc": "Complete your space with the Bordeaux Red Chenille Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131570",
+    "sku": "SH-KD-131570",
+    "name": "Sangria Red Woven Fabric Cushion 50x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b2b49362-4b93-410f-9655-424e373da88c",
+    "freightClass": "decor-131570",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131570/a76fab7d-5954-4879-8ccc-899df8b33b7d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131570/a76fab7d-5954-4879-8ccc-899df8b33b7d.png",
+      "https://img.koalaliving.com.au/products/131570/9ed96607-084e-436e-97e4-9b2907ea32ca.png"
+    ],
+    "desc": "Complete your space with the Sangria Red Woven Fabric Cushion 50x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131571",
+    "sku": "SH-KD-131571",
+    "name": "Sangria Red Woven Fabric Cushion 40x60",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "34f5ce33-39da-47b6-832a-71de72b12e30",
+    "freightClass": "decor-131571",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131571/41b3ae3a-7086-4524-8bfa-ed0696efbf72.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131571/41b3ae3a-7086-4524-8bfa-ed0696efbf72.png",
+      "https://img.koalaliving.com.au/products/131571/57e657c4-e702-4c85-9934-c398caaa28bf.png"
+    ],
+    "desc": "Complete your space with the Sangria Red Woven Fabric Cushion 40x60. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131572",
+    "sku": "SH-KD-131572",
+    "name": "Sangria Red Woven Fabric Cushion 30x50",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 687,
+    "memberPrice": 618,
+    "priceFloor": 618,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "947687b6-e480-4bb4-9754-07c670d729ea",
+    "freightClass": "decor-131572",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131572/587fd2e1-6679-4a69-a283-b6d7f515bee2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131572/587fd2e1-6679-4a69-a283-b6d7f515bee2.png",
+      "https://img.koalaliving.com.au/products/131572/98b233d5-2d75-4e95-a410-d6ed2829b794.png"
+    ],
+    "desc": "Complete your space with the Sangria Red Woven Fabric Cushion 30x50. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Cushions",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131735",
+    "sku": "SH-KD-131735",
+    "name": "Cream Onion Fruit Stem - Set of 10",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ef8b42d6-b2b8-46e3-aa8e-0a81f2e831ee",
+    "freightClass": "decor-131735",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131735/eee363e0-2a6d-4100-856c-f32e3a110462.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131735/eee363e0-2a6d-4100-856c-f32e3a110462.png",
+      "https://img.koalaliving.com.au/products/131735/50919a2e-31b6-40a0-b34d-5ddceece1284.png"
+    ],
+    "desc": "Complete your space with the Cream Onion Fruit Stem - Set of 10. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131736",
+    "sku": "SH-KD-131736",
+    "name": "Brown Onion Fruit Stem - Set of 10",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "040d7ac3-61bb-45d9-94fc-a5d4a31320d0",
+    "freightClass": "decor-131736",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131736/fc4a721a-8095-40b8-9a89-a7676ccd188e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131736/fc4a721a-8095-40b8-9a89-a7676ccd188e.png",
+      "https://img.koalaliving.com.au/products/131736/6af63e23-a0d4-4236-8700-0134e2c11027.png"
+    ],
+    "desc": "Complete your space with the Brown Onion Fruit Stem - Set of 10. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131737",
+    "sku": "SH-KD-131737",
+    "name": "Fig Stem - Set of 10",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "a9ba14ea-14c7-440d-a2f3-d42b241f37a7",
+    "freightClass": "decor-131737",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131737/39168473-46b3-4dca-a89c-bfe727317e21.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131737/39168473-46b3-4dca-a89c-bfe727317e21.png",
+      "https://img.koalaliving.com.au/products/131737/e278fc27-689a-4500-8634-cdcae6e2c3b7.png"
+    ],
+    "desc": "Complete your space with the Fig Stem - Set of 10. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131738",
+    "sku": "SH-KD-131738",
+    "name": "Cassia Seed Spray - Set of 10",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 820,
+    "memberPrice": 738,
+    "priceFloor": 738,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4f34b95a-500e-4347-a40f-d471020c694d",
+    "freightClass": "decor-131738",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131738/641c0e62-7aa1-41bc-8079-1d12dc32caa8.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131738/641c0e62-7aa1-41bc-8079-1d12dc32caa8.png",
+      "https://img.koalaliving.com.au/products/131738/12b114d0-ab99-4f9d-8831-7773849a539a.png"
+    ],
+    "desc": "Complete your space with the Cassia Seed Spray - Set of 10. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131739",
+    "sku": "SH-KD-131739",
+    "name": "Tan Onion Fruit Stem - Set of 10",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "aa91a6f0-0b37-4b47-9874-db7571d394f2",
+    "freightClass": "decor-131739",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131739/c49e0b0e-2380-4013-9a08-d697bd7b3ac7.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131739/c49e0b0e-2380-4013-9a08-d697bd7b3ac7.png",
+      "https://img.koalaliving.com.au/products/131739/5643167f-ca62-4d48-8d1d-5475c5417025.png"
+    ],
+    "desc": "Complete your space with the Tan Onion Fruit Stem - Set of 10. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131740",
+    "sku": "SH-KD-131740",
+    "name": "Magnolia Fruit stem - Set of 10",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4a116e9a-c1a6-4e68-bbb0-d5a85f98ed2b",
+    "freightClass": "decor-131740",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131740/7d37dd42-0bdf-4be0-a731-47c326a7a236.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131740/7d37dd42-0bdf-4be0-a731-47c326a7a236.png",
+      "https://img.koalaliving.com.au/products/131740/2b8fbb81-2ce4-4ae7-bb01-742881bb0925.png"
+    ],
+    "desc": "Complete your space with the Magnolia Fruit stem - Set of 10. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131741",
+    "sku": "SH-KD-131741",
+    "name": "Eucalyptus Stem - Set of 10",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 820,
+    "memberPrice": 738,
+    "priceFloor": 738,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "95c1c541-eca4-4a5c-87ea-526505d3ef85",
+    "freightClass": "decor-131741",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131741/633351ec-9c76-445a-8334-2e862c38d8bb.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131741/633351ec-9c76-445a-8334-2e862c38d8bb.png",
+      "https://img.koalaliving.com.au/products/131741/9d7ffdcc-0d49-4a13-a84b-c6836c992364.png"
+    ],
+    "desc": "Complete your space with the Eucalyptus Stem - Set of 10. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Artificial Plants",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131926",
+    "sku": "SH-KD-131926",
+    "name": "Rikki Beige Travertine Candle Holder 25.5cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "f3fa4d02-e629-4be5-a1c5-91b8030de652",
+    "freightClass": "decor-131926",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131926/fe121492-3cb7-4c2c-92c3-64f6d566e13f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131926/fe121492-3cb7-4c2c-92c3-64f6d566e13f.png",
+      "https://img.koalaliving.com.au/products/131926/ffa66bdb-a648-4227-9199-41f8a5013466.png"
+    ],
+    "desc": "Complete your space with the Rikki Beige Travertine Candle Holder 25.5cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Candle Holders",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131927",
+    "sku": "SH-KD-131927",
+    "name": "Rikki Beige Travertine Candle Holder 14cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "4dda029e-9e8f-4a59-bab3-79e9c02230fe",
+    "freightClass": "decor-131927",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131927/3c341b5d-3206-4520-88ad-aa6cf9e4f40a.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131927/3c341b5d-3206-4520-88ad-aa6cf9e4f40a.png",
+      "https://img.koalaliving.com.au/products/131927/6265d94c-4b14-4d0d-85d7-0b2f85298171.png"
+    ],
+    "desc": "Complete your space with the Rikki Beige Travertine Candle Holder 14cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Candle Holders",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131929",
+    "sku": "SH-KD-131929",
+    "name": "Marni Beige Travertine Bookend 9cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "7703f96c-fb3c-4a94-9bcd-4320e070be32",
+    "freightClass": "decor-131929",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131929/71656794-829f-4460-b17d-be556a5ac336.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131929/71656794-829f-4460-b17d-be556a5ac336.png",
+      "https://img.koalaliving.com.au/products/131929/5322d495-0cd5-439e-a174-267c0ee62a3b.png"
+    ],
+    "desc": "Complete your space with the Marni Beige Travertine Bookend 9cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Bookends",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131933",
+    "sku": "SH-KD-131933",
+    "name": "Marni Beige Travertine Bookend 14cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 754,
+    "memberPrice": 678,
+    "priceFloor": 678,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "07eda8a3-2da8-4d61-adc3-a7c78218c0f1",
+    "freightClass": "decor-131933",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131933/355420bc-b059-44e5-99af-f5387751dc7b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131933/355420bc-b059-44e5-99af-f5387751dc7b.png",
+      "https://img.koalaliving.com.au/products/131933/add2e6d3-bb91-4635-8229-97ca6d3abb36.png"
+    ],
+    "desc": "Complete your space with the Marni Beige Travertine Bookend 14cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Bookends",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131937",
+    "sku": "SH-KD-131937",
+    "name": "Peta Beige Travertine Box 17.5cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "c9bb1834-c669-4acc-b280-df98e45d1c2a",
+    "freightClass": "decor-131937",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131937/dc2f167b-2bcd-4efb-93f9-de99055b5d2e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131937/dc2f167b-2bcd-4efb-93f9-de99055b5d2e.png",
+      "https://img.koalaliving.com.au/products/131937/9743e174-c51d-4b26-8a4f-e7915aec6059.png"
+    ],
+    "desc": "Complete your space with the Peta Beige Travertine Box 17.5cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Storage",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131939",
+    "sku": "SH-KD-131939",
+    "name": "Peta Beige Travertine Box 12cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "91124330-a6bb-43f9-be98-2c979e1fde25",
+    "freightClass": "decor-131939",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131939/243a263e-c47e-4dec-826e-5ce44d3a5587.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131939/243a263e-c47e-4dec-826e-5ce44d3a5587.png",
+      "https://img.koalaliving.com.au/products/131939/e6929269-b54b-487d-a76a-deba1de5196c.png"
+    ],
+    "desc": "Complete your space with the Peta Beige Travertine Box 12cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Storage",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131940",
+    "sku": "SH-KD-131940",
+    "name": "Howie Rosso Levanto Vase",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 998,
+    "memberPrice": 898,
+    "priceFloor": 898,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "8c906269-811b-47c8-a417-2665f5f467dd",
+    "freightClass": "decor-131940",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131940/7fbe214a-63fc-4743-a9ec-ccf1c6aa2b6d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131940/7fbe214a-63fc-4743-a9ec-ccf1c6aa2b6d.png",
+      "https://img.koalaliving.com.au/products/131940/6dcef408-098d-4e0e-bd85-5f9aa4bc4df4.png"
+    ],
+    "desc": "Complete your space with the Howie Rosso Levanto Vase. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Vases",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131944",
+    "sku": "SH-KD-131944",
+    "name": "Voni Beige Travertine Square Tray",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 732,
+    "memberPrice": 658,
+    "priceFloor": 658,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "130f8443-929c-4e8e-81e8-05a3186f8c73",
+    "freightClass": "decor-131944",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131944/3e2ced85-57f5-4be9-ac5e-cd017318bcbe.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131944/3e2ced85-57f5-4be9-ac5e-cd017318bcbe.png",
+      "https://img.koalaliving.com.au/products/131944/8c793aca-2972-4034-abf8-147e8cd48223.png"
+    ],
+    "desc": "Complete your space with the Voni Beige Travertine Square Tray. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Trays and Bowls",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131948",
+    "sku": "SH-KD-131948",
+    "name": "Voni Beige Travertine Rectangular Tray",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5fb33c12-198b-4ad2-bc32-a90e59027194",
+    "freightClass": "decor-131948",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131948/c9f2821f-ddba-40a5-bd9c-8e91dfadb8db.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131948/c9f2821f-ddba-40a5-bd9c-8e91dfadb8db.png",
+      "https://img.koalaliving.com.au/products/131948/f12e3beb-dbec-4d30-9269-c8343d3d280e.png"
+    ],
+    "desc": "Complete your space with the Voni Beige Travertine Rectangular Tray. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Trays and Bowls",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl131951",
+    "sku": "SH-KD-131951",
+    "name": "Didi Beige Travertine Photo Frame",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "80807d51-2c99-4a20-84a0-6bd3b7bea065",
+    "freightClass": "decor-131951",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/131951/27b8d9ba-aab3-4f4d-a8b3-2af56e15c00d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/131951/27b8d9ba-aab3-4f4d-a8b3-2af56e15c00d.png",
+      "https://img.koalaliving.com.au/products/131951/bcbdad90-4d98-44e1-90c5-f6b528316b4d.png"
+    ],
+    "desc": "Complete your space with the Didi Beige Travertine Photo Frame. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Photo Frames",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132012",
+    "sku": "SH-KD-132012",
+    "name": "White Canvas Book Storage Box - Set of 3",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 776,
+    "memberPrice": 698,
+    "priceFloor": 698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "cffe10d5-fe62-4989-9909-6c4780e2d15f",
+    "freightClass": "decor-132012",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132012/9b7fb92e-2f92-44f2-8a84-cf20ec5938dc.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132012/9b7fb92e-2f92-44f2-8a84-cf20ec5938dc.png",
+      "https://img.koalaliving.com.au/products/132012/528f6bae-ffc2-49da-8177-86840f0e4975.png"
+    ],
+    "desc": "Complete your space with the White Canvas Book Storage Box - Set of 3. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Decorative Storage",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132224",
+    "sku": "SH-KD-132224",
+    "name": "Maurice Brushed Brass Wall Clock",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0d85184f-7d02-482f-bb6f-5362bca7d8bc",
+    "freightClass": "decor-132224",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132224/f83d053c-f155-48c1-85f2-4d08815dc161.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132224/f83d053c-f155-48c1-85f2-4d08815dc161.png",
+      "https://img.koalaliving.com.au/products/132224/0065a63b-746e-44e0-89b0-501d516723d2.png"
+    ],
+    "desc": "Complete your space with the Maurice Brushed Brass Wall Clock. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Clocks",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132261",
+    "sku": "SH-KD-132261",
+    "name": "Kade Brushed Gold Round Aluminium Mirror 118cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "5937f6dc-92a2-4e3b-99b5-966c24d97f6b",
+    "freightClass": "decor-132261",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132261/c9951e90-432c-42d6-a0b7-7bc19650717d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132261/c9951e90-432c-42d6-a0b7-7bc19650717d.png",
+      "https://img.koalaliving.com.au/products/132261/f9ad8992-8b66-4f88-b494-9e54fd87e574.png"
+    ],
+    "desc": "Complete your space with the Kade Brushed Gold Round Aluminium Mirror 118cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132262",
+    "sku": "SH-KD-132262",
+    "name": "Kade Brushed Gold Round Aluminium Mirror 90cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1176,
+    "memberPrice": 1058,
+    "priceFloor": 1058,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "46cb2d98-2f13-4214-9458-b1b945587fa7",
+    "freightClass": "decor-132262",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132262/d1afe1b8-e01e-4b75-a816-fc7775d1a3c2.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132262/d1afe1b8-e01e-4b75-a816-fc7775d1a3c2.png",
+      "https://img.koalaliving.com.au/products/132262/d34bc906-1ce2-4195-8e13-66f339500d1f.png"
+    ],
+    "desc": "Complete your space with the Kade Brushed Gold Round Aluminium Mirror 90cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132263",
+    "sku": "SH-KD-132263",
+    "name": "Kade Brushed Gold Rectangle Aluminium Mirror 200x90cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1887,
+    "memberPrice": 1698,
+    "priceFloor": 1698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "805f0c5f-998e-4c8d-9f72-aabf57cdc656",
+    "freightClass": "decor-132263",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132263/212da041-9f4f-4c2f-98de-7fffa16b607c.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132263/212da041-9f4f-4c2f-98de-7fffa16b607c.png",
+      "https://img.koalaliving.com.au/products/132263/6443cc38-3e04-4881-a575-a9886b6dfc9e.png"
+    ],
+    "desc": "Complete your space with the Kade Brushed Gold Rectangle Aluminium Mirror 200x90cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132264",
+    "sku": "SH-KD-132264",
+    "name": "Kade Brushed Gold Rectangle Aluminium Mirror 180x110cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1665,
+    "memberPrice": 1498,
+    "priceFloor": 1498,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "7edfb16f-9132-4ea7-b815-f5b296ce9bf1",
+    "freightClass": "decor-132264",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132264/fccb42a7-f56e-42a8-90c8-2b4e4fa33688.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132264/fccb42a7-f56e-42a8-90c8-2b4e4fa33688.png",
+      "https://img.koalaliving.com.au/products/132264/4bec7d03-98a1-442e-b8db-a148c292e63b.png"
+    ],
+    "desc": "Complete your space with the Kade Brushed Gold Rectangle Aluminium Mirror 180x110cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132265",
+    "sku": "SH-KD-132265",
+    "name": "Kade Brushed Gold Rectangle Aluminium Mirror 140x110cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b0de998b-6279-43aa-9a84-8ec34a46ea42",
+    "freightClass": "decor-132265",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132265/6ad68dad-73ab-4c5b-9b8b-7f0db9afad1f.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132265/6ad68dad-73ab-4c5b-9b8b-7f0db9afad1f.png",
+      "https://img.koalaliving.com.au/products/132265/6ec16926-a52c-4b5e-9178-e66a32814c84.png"
+    ],
+    "desc": "Complete your space with the Kade Brushed Gold Rectangle Aluminium Mirror 140x110cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Rectangle Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132267",
+    "sku": "SH-KD-132267",
+    "name": "Kade Brushed Gold Arched Aluminium Mirror 200x90cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1887,
+    "memberPrice": 1698,
+    "priceFloor": 1698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "521890b9-3bcd-4a48-8a35-8dd55e0c71fb",
+    "freightClass": "decor-132267",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132267/d2729609-299b-4a8b-bc6a-71347bbf66aa.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132267/d2729609-299b-4a8b-bc6a-71347bbf66aa.png",
+      "https://img.koalaliving.com.au/products/132267/db85df73-dcbb-4a0c-b960-f58ef78cc52a.png"
+    ],
+    "desc": "Complete your space with the Kade Brushed Gold Arched Aluminium Mirror 200x90cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132270",
+    "sku": "SH-KD-132270",
+    "name": "Kade Brushed Gold Arched Aluminium Mirror 180x50cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "ab27a4f1-1cc7-4a28-9925-e96a0e235868",
+    "freightClass": "decor-132270",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132270/a0140087-80f5-44d5-ad19-bbd77fbdc928.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132270/a0140087-80f5-44d5-ad19-bbd77fbdc928.png",
+      "https://img.koalaliving.com.au/products/132270/aeb9857d-a737-436d-be80-d2c954e56300.png"
+    ],
+    "desc": "Complete your space with the Kade Brushed Gold Arched Aluminium Mirror 180x50cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132271",
+    "sku": "SH-KD-132271",
+    "name": "Kade Brushed Gold Oval Aluminium Mirror 180x110cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1665,
+    "memberPrice": 1498,
+    "priceFloor": 1498,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "85aafb12-e2c2-4ed1-af7c-e8a22d1dc131",
+    "freightClass": "decor-132271",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132271/e942a8b8-c6aa-4645-827b-b9a9fdb12380.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132271/e942a8b8-c6aa-4645-827b-b9a9fdb12380.png",
+      "https://img.koalaliving.com.au/products/132271/4387e613-2c6e-4f57-b53b-5baca7bc6d57.png"
+    ],
+    "desc": "Complete your space with the Kade Brushed Gold Oval Aluminium Mirror 180x110cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132272",
+    "sku": "SH-KD-132272",
+    "name": "Kade Brushed Gold Oval Aluminium Mirror 180x50cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "61b3abf1-c92a-49fe-8402-c00a8f4f2c51",
+    "freightClass": "decor-132272",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132272/26c1fdf3-5075-4783-a191-48fd7d68ad38.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132272/26c1fdf3-5075-4783-a191-48fd7d68ad38.png",
+      "https://img.koalaliving.com.au/products/132272/fb8acc87-d1bc-412e-8e5c-2599b182e1b0.png"
+    ],
+    "desc": "Complete your space with the Kade Brushed Gold Oval Aluminium Mirror 180x50cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132341",
+    "sku": "SH-KD-132341",
+    "name": "Liran Dark Ash Round Wooden Mirror 120cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b1599fa5-8be9-4cf8-a424-3f661a9edc01",
+    "freightClass": "decor-132341",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132341/d16e5188-de08-40ce-8832-25acca50a99b.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132341/d16e5188-de08-40ce-8832-25acca50a99b.png",
+      "https://img.koalaliving.com.au/products/132341/57fef93b-1fcd-4dee-8c81-1cbdcb3bb8c2.png"
+    ],
+    "desc": "Complete your space with the Liran Dark Ash Round Wooden Mirror 120cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132342",
+    "sku": "SH-KD-132342",
+    "name": "Liran Dark Ash Round Wooden Mirror 90cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1176,
+    "memberPrice": 1058,
+    "priceFloor": 1058,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "33ffee13-53c7-49d3-b914-0eea80519489",
+    "freightClass": "decor-132342",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132342/53545bab-abd6-42de-95af-215d688fd38d.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132342/53545bab-abd6-42de-95af-215d688fd38d.png",
+      "https://img.koalaliving.com.au/products/132342/dcb66643-b120-4ccc-bd16-5224cbb46953.png"
+    ],
+    "desc": "Complete your space with the Liran Dark Ash Round Wooden Mirror 90cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Round Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132343",
+    "sku": "SH-KD-132343",
+    "name": "Liran Dark Ash Rectangle Wooden Mirror 200x90cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1887,
+    "memberPrice": 1698,
+    "priceFloor": 1698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "1f28b839-3b35-4a96-8c76-ed477d99ac34",
+    "freightClass": "decor-132343",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132343/c9881537-8b5b-4192-ab52-e6c4034f2278.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132343/c9881537-8b5b-4192-ab52-e6c4034f2278.png",
+      "https://img.koalaliving.com.au/products/132343/43f9244e-0781-454c-a730-48596e424720.png"
+    ],
+    "desc": "Complete your space with the Liran Dark Ash Rectangle Wooden Mirror 200x90cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132345",
+    "sku": "SH-KD-132345",
+    "name": "Liran Dark Ash Rectangle Wooden Mirror 140x110cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1554,
+    "memberPrice": 1398,
+    "priceFloor": 1398,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "0b66eeda-85a7-4c39-a2b5-3956c2391363",
+    "freightClass": "decor-132345",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132345/20e9fa64-b0c4-48d7-8d44-a4e0fa4bcb00.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132345/20e9fa64-b0c4-48d7-8d44-a4e0fa4bcb00.png",
+      "https://img.koalaliving.com.au/products/132345/d998f29f-5e10-42ab-9aef-ce41157e6d50.png"
+    ],
+    "desc": "Complete your space with the Liran Dark Ash Rectangle Wooden Mirror 140x110cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Rectangle Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132346",
+    "sku": "SH-KD-132346",
+    "name": "Liran Dark Ash Rectangle Wooden Mirror 180x50cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1220,
+    "memberPrice": 1098,
+    "priceFloor": 1098,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "47f97fcb-61ab-434b-b475-df6df23c81a6",
+    "freightClass": "decor-132346",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132346/ea898177-e5f3-4f51-bfb2-0c58bd49eaaf.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132346/ea898177-e5f3-4f51-bfb2-0c58bd49eaaf.png",
+      "https://img.koalaliving.com.au/products/132346/9fb74956-2ca4-485d-b631-837d8afe7dc3.png"
+    ],
+    "desc": "Complete your space with the Liran Dark Ash Rectangle Wooden Mirror 180x50cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  },
+  {
+    "id": "kl132347",
+    "sku": "SH-KD-132347",
+    "name": "Liran Dark Ash Arched Wooden Mirror 200x90cm",
+    "cat": "Home Décor",
+    "room": "Home Décor",
+    "price": 1887,
+    "memberPrice": 1698,
+    "priceFloor": 1698,
+    "readyDining": true,
+    "homeDecorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "b69b5d59-72f1-47a5-b3a9-5ada8c3ca36d",
+    "freightClass": "decor-132347",
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/132347/9a8ce51b-593d-4f7a-ab49-7c0be02b2f9e.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/132347/9a8ce51b-593d-4f7a-ab49-7c0be02b2f9e.png",
+      "https://img.koalaliving.com.au/products/132347/4982a92f-c2e5-41e9-a676-df019c7650ba.png"
+    ],
+    "desc": "Complete your space with the Liran Dark Ash Arched Wooden Mirror 200x90cm. Supplied in the design and finish shown; any set quantity is specified in the product name. Delivery is charged separately by postcode and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Full Length Mirrors",
+      "Sold as": "One product (as pictured)"
+    }
+  }
+];decor.forEach(function(p){const at=PRODUCTS.findIndex(x=>x.id===p.id);if(at<0)PRODUCTS.push(p);else PRODUCTS[at]=p;});})();
