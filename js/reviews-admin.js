@@ -19,7 +19,7 @@
   arForm.addEventListener('submit',async e=>{e.preventDefault();const msg=manual.querySelector('#arMessage'),btn=arForm.querySelector('[type=submit]'),b=Object.fromEntries(new FormData(arForm));btn.disabled=true;msg.textContent='Publishing…';try{const res=await fetch('/api/reviews/admin',{method:'POST',headers:headers(),body:JSON.stringify({...b,rating:Number(b.rating),consent:b.consent==='on',action:'create',publish:true})});const d=await res.json();if(!res.ok)throw Error(d.error);arForm.reset();msg.textContent='Published. This review is now visible on the website.';await load();}catch(e){msg.textContent=e.message;}finally{btn.disabled=false;}});
   const message = tab.querySelector('#reviewAdminMessage'), list = tab.querySelector('#reviewAdminList');
   function render() {
-    const filter = tab.querySelector('select').value;
+    const filter = tab.querySelector('#reviewFilter').value;
     tab.querySelector('#reviewCounts').textContent = reviews.filter(r => r.status === 'pending').length + ' pending · ' + reviews.filter(r => r.status === 'approved').length + ' published';
     const shown = reviews.filter(r => filter === 'all' || r.status === filter);
     list.innerHTML = shown.length ? shown.map(r => `<article class="admin-formcard"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><h3>${esc(r.productName)}</h3><b>${esc(r.status)}</b></div><p style="color:#a87924" aria-label="${r.rating} out of 5">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</p><p style="white-space:pre-wrap;overflow-wrap:anywhere">${esc(r.body)}</p><p><b>${esc(r.who)}</b> · ${esc(r.suburb)} · ${esc(new Date(r.date).toLocaleDateString('en-AU'))}<br><small>Private email: ${esc(r.email)}</small></p><div class="btn-row">${r.status !== 'approved' ? `<button type="button" class="btn btn--dark btn--sm" data-id="${esc(r.id)}" data-status="approved">Approve & publish</button>` : `<button type="button" class="btn btn--outline btn--sm" data-id="${esc(r.id)}" data-status="pending">Unpublish</button>`}${r.status !== 'rejected' ? `<button type="button" class="btn btn--outline btn--sm" data-id="${esc(r.id)}" data-status="rejected">Reject</button>` : `<button type="button" class="btn btn--outline btn--sm" data-id="${esc(r.id)}" data-status="pending">Return to pending</button>`}${r.status !== 'archived' ? `<button type="button" class="btn btn--outline btn--sm" data-id="${esc(r.id)}" data-status="archived">Archive</button>` : `<button type="button" class="btn btn--outline btn--sm" data-id="${esc(r.id)}" data-status="pending">Restore to pending</button>`}</div></article>`).join('') : '<div class="admin-empty">No reviews in this category.</div>';
@@ -33,7 +33,7 @@
       reviews = data.reviews || []; render(); message.textContent = '';
     } catch (e) { list.replaceChildren(); message.textContent = e.message + ' You can unlock the Cleaning bookings tab with your existing access key, then refresh here.'; }
   }
-  tab.querySelector('select').addEventListener('change', render);
+  tab.querySelector('#reviewFilter').addEventListener('change', render);
   tab.querySelector('#refreshReviews').addEventListener('click', load);
   list.addEventListener('click', async e => {
     const btn = e.target.closest('button[data-status]'); if (!btn || busy) return;
