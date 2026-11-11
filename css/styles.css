@@ -167,14 +167,15 @@ em { font-style: italic; color: var(--rose-deep); }
   display: grid; place-items: center; color: var(--rose-deep);
 }
 .brand-mark svg { width: 48px; height: 48px; }
-.brand-logo-full { display: block; height: 48px; width: auto; max-width: 220px; object-fit: contain; mix-blend-mode: multiply; }
+.brand-logo-full { display:block; height:68px; width:auto; max-width:192px; object-fit:contain; mix-blend-mode:multiply; }
+.brand:not(.no-logo) .brand-tagline { display:none; }
 /* The drawn D&M mark + wordmark are a fallback only — shown if the logo image can't load,
    so the real logo never flickers in after a brief placeholder. */
 .brand-mark, .brand-text { display: none; }
 .brand.no-logo .brand-logo-full { display: none; }
 .brand.no-logo .brand-mark { display: grid; }
 .brand.no-logo .brand-text { display: block; }
-@media (max-width: 480px) { .brand-logo-full { height: 38px; max-width: 160px; } }
+@media (max-width: 480px) { .brand-logo-full { height: 55px; max-width: 130px; } }
 .brand-text { line-height: 1; }
 .brand-text .bt-main { font-family: var(--font-head); font-size: 1.6rem; font-weight: 500; color: var(--ink); letter-spacing: 0.12em; }
 .brand-text .bt-main .amp { color: var(--rose-deep); font-weight: 400; font-style: italic; }
