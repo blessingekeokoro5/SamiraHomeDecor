@@ -85,3 +85,13 @@
 .shd-review-dialog h3 { font:500 1.6rem var(--font-head,Georgia,serif); margin:10px 0; }
 .shd-review-dialog p { white-space:pre-wrap; overflow-wrap:anywhere; line-height:1.7; }
 .shd-review-dialog-product { margin-top:14px; color:#8a682c; font-size:.85rem; }
+
+/* Ensure the product link and photograph remain visible inside compact cards. */
+.shd-review-card { height:365px; max-height:365px; }
+.shd-review-card .shd-review-gold { flex-shrink:0; }
+.shd-review-card p { -webkit-line-clamp:2; line-clamp:2; flex:0 0 auto; }
+.shd-review-card .shd-review-person { margin-top:auto; flex-shrink:0; }
+.shd-review-card .shd-review-product { flex:0 0 auto; min-height:70px; margin-top:4px; padding-top:10px; position:relative; z-index:1; }
+.shd-review-card .shd-review-product-img { width:60px; height:60px; flex-basis:60px; object-fit:contain; }
+.shd-review-card .shd-review-product-name { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; line-clamp:3; overflow:hidden; }
+@media(max-width:540px) { .shd-review-card { height:350px; max-height:350px; } }
