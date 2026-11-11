@@ -82,6 +82,7 @@
     .edit-prev { left: 4px; } .edit-next { right: 4px; }
     @media (max-width: 900px) { #featuredGrid.edit-row > * { flex-basis: calc((100% - 16px) / 2); } }
     @media (max-width: 640px) { #featuredGrid.edit-row > * { flex-basis: 74%; } .edit-arrow { display: none; } }
+    @media (max-width: 420px) { #featuredGrid.edit-row { gap: 12px; } #featuredGrid.edit-row > * { flex-basis: 86%; } }
   </style>
   <style>@media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr 1fr !important; } }</style>
   <style>.reviews-summary .star-half { position: relative; display: inline-block; color: rgba(198,161,91,.28); } .reviews-summary .star-half::before { content: "★"; position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: var(--gold, #C6A15B); }</style>
@@ -111,7 +112,7 @@
       .why-perks { grid-template-columns: 1fr; gap: 8px; }
     }
   </style>
-  <link rel="stylesheet" href="css/reviews.css?v=2">
+  <link rel="stylesheet" href="css/reviews.css?v=3">
   <script src="js/reviews.js?v=2" defer></script>
 </head>
 <body data-page="index.html">
