@@ -56,17 +56,22 @@
     } catch (e) { message.textContent = e.message; }
     finally { button.disabled = false; button.textContent = 'Submit review for approval'; }
   });
-  let all = staticReviews, visible = 6;
+  let all = staticReviews;
   const more = host.querySelector('.shd-review-more');
+  const reviewCard = r => {
+    const date = r.date ? new Date(r.date).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' }) : '';
+    return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><a class="shd-review-product" href="product.html?id=${encodeURIComponent(r.productId)}">${esc(r.productName)}</a><p>${esc(r.body)}</p><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div></article>`;
+  };
   function render() {
     all.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
     const avg = all.length ? all.reduce((n, r) => n + r.rating, 0) / all.length : 0;
     host.querySelector('.shd-review-summary').innerHTML = all.length ? `<strong>${avg.toFixed(1)}</strong><div><span class="shd-review-gold" aria-label="${avg.toFixed(1)} out of 5 stars">${'★'.repeat(Math.round(avg))}${'☆'.repeat(5-Math.round(avg))}</span><small>from ${all.length} review${all.length === 1 ? '' : 's'}</small></div>` : '<p>No reviews yet. Be the first to share your experience.</p>';
-    host.querySelector('.shd-review-cards').innerHTML = all.slice(0, visible).map(r => {
-      const date = r.date ? new Date(r.date).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' }) : '';
-      return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><a class="shd-review-product" href="product.html?id=${encodeURIComponent(r.productId)}">${esc(r.productName)}</a><p>${esc(r.body)}</p><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div></article>`;
-    }).join('');
-    more.hidden = visible >= all.length;
+    const cards = all.map(reviewCard).join('');
+    const carousel = host.querySelector('.shd-review-cards');
+    carousel.innerHTML = all.length ? `<div class="shd-review-track" style="--review-duration:${Math.max(18, all.length * 7)}s"><div class="shd-review-group">${cards}</div><div class="shd-review-group" aria-hidden="true" inert>${cards}</div></div>` : '';
+    carousel.setAttribute('aria-label', all.length ? 'Customer reviews, continuously scrolling' : 'Customer reviews');
+    carousel.tabIndex = all.length ? 0 : -1;
+    more.hidden = true;
     // Update the product's existing top-of-page rating without changing the product render.
     if (product && all.length) {
       let score = document.querySelector('#pdpWrap .stars');
@@ -74,7 +79,6 @@
       if (score) score.textContent = '★'.repeat(Math.round(avg)) + '☆'.repeat(5-Math.round(avg)) + ' ' + avg.toFixed(1) + ' · ' + all.length + ' reviews';
     }
   }
-  more.addEventListener('click', () => { visible += 6; render(); });
   render();
   fetch('/api/reviews' + (productId ? '?productId=' + encodeURIComponent(productId) : ''), { cache: 'no-store' }).then(async res => {
     if (!res.ok) throw new Error(); const data = await res.json(); all = staticReviews.concat(data.reviews || []); render();

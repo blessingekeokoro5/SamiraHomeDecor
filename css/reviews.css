@@ -7,8 +7,12 @@
 .shd-review-summary strong { font:500 2.8rem var(--font-head,Georgia,serif); }
 .shd-review-summary small { display:block; color:#526074; }
 .shd-review-gold { color:#a87924; letter-spacing:2px; font-size:1.15rem; }
-.shd-review-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin:0 0 28px; }
-.shd-review-card { position:relative; border:1px solid #ded5c4; background:#fffefc; border-radius:22px; padding:24px; display:flex; flex-direction:column; gap:12px; min-width:0; }
+.shd-review-cards { overflow:hidden; margin:0 0 28px; padding:4px 0 8px; }
+.shd-review-track { display:flex; width:max-content; gap:20px; animation:shd-review-scroll var(--review-duration,28s) linear infinite; will-change:transform; }
+.shd-review-group { display:flex; gap:20px; }
+.shd-review-card { position:relative; border:1px solid #ded5c4; background:#fffefc; border-radius:22px; padding:24px; display:flex; flex:0 0 clamp(270px,30vw,340px); flex-direction:column; gap:12px; min-width:0; }
+.shd-review-cards:hover .shd-review-track,.shd-review-cards:focus-within .shd-review-track,.shd-review-cards:active .shd-review-track { animation-play-state:paused; }
+@keyframes shd-review-scroll { to { transform:translateX(calc(-50% - 10px)); } }
 .shd-review-quote { position:absolute; right:18px; top:0; font:3rem Georgia,serif; color:#e6decd; }
 .shd-review-product { color:#8a682c; font-size:.76rem; text-transform:uppercase; letter-spacing:.06em; text-decoration:none; padding-right:8px; }
 .shd-review-card p { font-size:.95rem; line-height:1.75; white-space:pre-wrap; overflow-wrap:anywhere; margin:0 0 6px; }
@@ -43,5 +47,6 @@
 .shd-review-more[hidden] { display:none; }
 .shd-review-message { margin:0; }
 .shd-review-honey { position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
-@media(max-width:850px) { .shd-review-cards { grid-template-columns:repeat(2,minmax(0,1fr)); } .shd-review-box { grid-template-columns:1fr; gap:20px; } }
-@media(max-width:540px) { .shd-reviews { padding:40px 16px; } .shd-review-cards,.shd-review-fields { grid-template-columns:1fr; } .shd-review-box { padding:20px; } }
+@media(max-width:850px) { .shd-review-box { grid-template-columns:1fr; gap:20px; } }
+@media(max-width:540px) { .shd-reviews { padding:40px 16px; } .shd-review-card { flex-basis:84vw; } .shd-review-fields { grid-template-columns:1fr; } .shd-review-box { padding:20px; } }
+@media(prefers-reduced-motion:reduce) { .shd-review-cards { overflow-x:auto; } .shd-review-track { animation:none; } .shd-review-group[aria-hidden="true"] { display:none; } }
