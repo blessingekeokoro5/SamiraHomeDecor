@@ -111,6 +111,8 @@
       .why-perks { grid-template-columns: 1fr; gap: 8px; }
     }
   </style>
+  <link rel="stylesheet" href="css/reviews.css?v=1">
+  <script src="js/reviews.js?v=1" defer></script>
 </head>
 <body data-page="index.html">
   <div id="site-header"></div>
@@ -316,62 +318,7 @@
     </div>
   </section>
 
-  <!-- Customer reviews: real reviews only (PRODUCT_REVIEWS in js/data.js), scrolling non-stop -->
-  <section class="section" id="reviews" hidden>
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Customer reviews</span>
-        <h2>What our customers say</h2>
-        <p>Real reviews from people who bought these pieces.</p>
-      </div>
-    </div>
-    <div class="rvs-viewport" aria-label="Customer reviews">
-      <div class="rvs-track" id="rvsTrack"></div>
-    </div>
-  </section>
-  <style>
-    .rvs-viewport { overflow: hidden; padding: 6px 0 10px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-    .rvs-track { display: flex; gap: 20px; width: max-content; animation: rvs-scroll var(--rvs-dur, 40s) linear infinite; }
-    .rvs-viewport:hover .rvs-track, .rvs-viewport:focus-within .rvs-track { animation-play-state: paused; }
-    @keyframes rvs-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .rvs-card { width: 360px; flex: none; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow-sm); }
-    .rvs-stars { color: var(--gold, #C6A15B); letter-spacing: 2px; font-size: 1.05rem; }
-    .rvs-body { color: var(--body); font-size: .92rem; line-height: 1.6; margin: 0; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
-    .rvs-who { font-size: .8rem; color: var(--muted); }
-    .rvs-prod { display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 12px; border-top: 1px dashed var(--line); text-decoration: none; color: var(--ink); }
-    .rvs-prod img { width: 52px; height: 52px; object-fit: cover; border-radius: 8px; background: var(--cream-2); flex: none; }
-    .rvs-prod span { font-size: .85rem; line-height: 1.35; }
-    .rvs-prod small { display: block; color: var(--gold-deep, #9c7a3a); font-size: .76rem; margin-top: 2px; }
-    @media (max-width: 600px) { .rvs-card { width: 82vw; max-width: 320px; } }
-    @media (prefers-reduced-motion: reduce) { .rvs-track { animation: none; } .rvs-viewport { overflow-x: auto; } }
-  </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Every genuine review across the catalogue, each linked to its product
-      const list = [];
-      try {
-        Object.keys(PRODUCT_REVIEWS).forEach((id) => {
-          const p = findProduct(id);
-          if (p) PRODUCT_REVIEWS[id].forEach((r) => list.push({ r, p }));
-        });
-      } catch (e) {}
-      const track = document.getElementById("rvsTrack");
-      if (!track || !list.length) return;
-      const esc = (s) => String(s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-      const card = ({ r, p }) => '<article class="rvs-card">' +
-        '<div class="rvs-stars" aria-label="' + r.rating + ' out of 5 stars">' + "★".repeat(r.rating) + "☆".repeat(5 - r.rating) + '</div>' +
-        '<p class="rvs-body">“' + esc(r.body) + '”</p>' +
-        '<div class="rvs-who">' + esc(r.who || "Verified buyer") + '</div>' +
-        '<a class="rvs-prod" href="product.html?id=' + p.id + '"><img src="' + esc(p.img || (p.imgs && p.imgs[0]) || "") + '" alt="" loading="lazy"><span>' + esc(p.name) + '<small>Shop this piece →</small></span></a>' +
-        '</article>';
-      // Repeat until one set is wider than the screen, then double it so the loop is seamless
-      let set = list.slice();
-      while (set.length < 6) set = set.concat(list);
-      track.innerHTML = set.concat(set).map(card).join("");
-      track.style.setProperty("--rvs-dur", (set.length * 7) + "s");
-      document.getElementById("reviews").hidden = false;
-    });
-  </script>
+  <section class="shd-reviews" id="reviews" data-customer-reviews></section>
 
   <div id="site-footer"></div>
 
@@ -502,3 +449,4 @@
   </script>
 </body>
 </html>
+
