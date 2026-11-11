@@ -75,3 +75,13 @@
   .shd-review-box { padding:16px; }
 }
 @media(prefers-reduced-motion:reduce) { .shd-review-cards { overflow-x:auto; } .shd-review-track { animation:none; } .shd-review-group[aria-hidden="true"] { display:none; } }
+
+/* Keep the slideshow compact while making every review fully readable. */
+.shd-review-card p { overflow:hidden; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; flex:0 0 auto; }
+.shd-review-read { align-self:flex-start; border:0; background:none; color:#8a682c; font:600 .82rem var(--font-body,Arial,sans-serif); text-decoration:underline; cursor:pointer; padding:3px 0 8px; }
+.shd-review-dialog { box-sizing:border-box; width:min(92vw,500px); max-height:80vh; overflow-y:auto; border:1px solid #ded5c4; border-radius:18px; padding:28px 24px; color:#14263e; background:#fffefc; box-shadow:0 20px 70px #0003; }
+.shd-review-dialog::backdrop { background:#0b1f3abb; }
+.shd-review-dialog-close { float:right; border:0; background:transparent; font-size:2rem; color:#14263e; cursor:pointer; }
+.shd-review-dialog h3 { font:500 1.6rem var(--font-head,Georgia,serif); margin:10px 0; }
+.shd-review-dialog p { white-space:pre-wrap; overflow-wrap:anywhere; line-height:1.7; }
+.shd-review-dialog-product { margin-top:14px; color:#8a682c; font-size:.85rem; }
