@@ -60,7 +60,12 @@
   const more = host.querySelector('.shd-review-more');
   const reviewCard = r => {
     const date = r.date ? new Date(r.date).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' }) : '';
-    return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><a class="shd-review-product" href="product.html?id=${encodeURIComponent(r.productId)}">${esc(r.productName)}</a><p>${esc(r.body)}</p><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div></article>`;
+    const reviewedProduct = products.find(p => p.id === r.productId);
+    const productUrl = reviewedProduct ? 'product.html?id=' + encodeURIComponent(reviewedProduct.id) : '';
+    const image = reviewedProduct && ((reviewedProduct.imgs && reviewedProduct.imgs[0]) || reviewedProduct.img);
+    const safeImage = image && /^(https?:\\/\\/|\\/?(?!\\/)[a-zA-Z0-9_.-])/.test(image) ? image : '';
+    const productDetail = productUrl ? `<a class="shd-review-product" href="${esc(productUrl)}">${safeImage ? `<img class="shd-review-product-img" src="${esc(safeImage)}" alt="${esc(reviewedProduct.name)}" loading="lazy" decoding="async" onerror="this.style.display='none'">` : ''}<span class="shd-review-product-name">${esc(reviewedProduct.name)}</span></a>` : '';
+    return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><p>${esc(r.body)}</p><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div>${productDetail}</article>`;
   };
   function render() {
     all.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
