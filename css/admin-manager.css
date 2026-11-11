@@ -1,0 +1,27 @@
+#tabManager {color:#14263e}
+.am-heading {display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.am-heading h2 {margin:4px 0;font-family:var(--font-head,Georgia,serif);font-weight:500}
+.am-eyebrow {letter-spacing:.16em;font-size:.72rem;color:#8a682c}
+.am-stats {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:22px}
+.am-stat {border:1px solid #dfd9cb;border-radius:18px;background:#fffefc;padding:18px}
+.am-stat:first-child {background:#14263e;color:white}
+.am-stat small {display:block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.am-stat strong {display:block;font-size:1.65rem;font-weight:400;margin:7px 0}
+.am-stat span {font-size:.76rem}
+.am-card {background:#fffefc;border:1px solid #dfd9cb;border-radius:22px;padding:22px;margin-bottom:22px}
+.am-card h3 {margin:0 0 10px;font-size:1.4rem;font-weight:500}
+.am-card p {font-size:.88rem;color:#526074;line-height:1.7}
+.am-columns {display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.am-fields {display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.am-fields .am-wide {grid-column:1/-1}
+.am-card label {display:block;font-size:.84rem}
+.am-card input,.am-card select,.am-card textarea {box-sizing:border-box;display:block;width:100%;border:1px solid #ded5c4;border-radius:12px;background:#f8f7f3;padding:12px;margin:6px 0 10px;font:inherit;color:#14263e}
+.am-card input[type=checkbox] {display:inline-block;width:auto}
+.am-card textarea {resize:vertical}
+.am-filters {display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 20px}
+.am-filters button {border:1px solid #ded5c4;background:white;border-radius:99px;padding:7px 14px;color:#14263e;font:inherit;cursor:pointer}
+.am-filters button.active {background:#14263e;color:white}
+.am-results {overflow:auto}.am-results table {width:100%;border-collapse:collapse;font-size:.85rem}.am-results th,.am-results td {padding:12px;text-align:left;border-bottom:1px solid #e7e2d8;vertical-align:top}
+.am-message {color:#14263e;line-height:1.6}.am-search {max-width:300px}.am-card button {cursor:pointer}
+@media(max-width:900px){.am-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.am-columns{grid-template-columns:1fr}}
+@media(max-width:500px){.am-fields{grid-template-columns:1fr}.am-stat{padding:14px}.am-card{padding:16px}.am-stat strong{font-size:1.35rem}}

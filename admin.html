@@ -43,6 +43,7 @@
     .rec-item { display: flex; gap: 8px; align-items: center; font-size: 0.86rem; }
     @media (max-width: 560px){ .rec-forms { grid-template-columns: 1fr; } }
   </style>
+  <link rel="stylesheet" href="css/admin-manager.css?v=1">
 </head>
 <body data-page="admin.html">
   <div id="site-header"></div>
@@ -75,7 +76,8 @@
 
       <div class="admin-tabs" id="adminTabs">
         <button class="active" data-tab="base">Customer base</button>
-        <button data-tab="orders">Orders</button>
+        <button data-tab="manager">Order &amp; payment manager</button>
+        <button data-tab="orders">Order delivery</button>
         <button data-tab="bookings">Cleaning bookings</button>
         <button data-tab="referrals">Referrals</button>
         <button data-tab="forms">Client forms</button>
@@ -84,6 +86,8 @@
         <button data-tab="reviews">Reviews</button>
         <button data-tab="settings">Settings</button>
       </div>
+
+      <div id="tabManager" hidden></div>
 
       <!-- Customer base -->
       <div id="tabBase">
@@ -208,6 +212,7 @@
       document.getElementById("adminPanel").style.display = "";
       renderDB();
       renderFormsLists();
+      document.querySelector('[data-tab="manager"]')?.click();
     }
 
     /* ===== Forms lists + send-to-recipient ===== */
@@ -704,6 +709,7 @@
     if (isAuthed()) showAdmin();
   </script>
   <script src="js/reviews-admin.js?v=1"></script>
+  <script src="js/admin-manager.js?v=1"></script>
 </body>
 </html>
 

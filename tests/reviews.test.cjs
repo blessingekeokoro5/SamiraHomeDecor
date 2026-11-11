@@ -32,3 +32,13 @@ test('storage failures return an error instead of a false success',async()=>{
   const handler=createHandler({store:()=>{throw Error('storage offline');},catalogue:{},env:()=>''});
   assert.equal((await handler(req('',review))).status,503);
 });
+test('admin can publish consented genuine feedback, archive it and restore it',async()=>{
+  const {handler}=setup();
+  const b={...review,email:'',action:'create',publish:true,date:'2026-11-10'};
+  assert.equal((await handler(req('/admin',{...b,consent:false},true))).status,400);
+  assert.equal((await handler(req('/admin',b))).status,401);
+  const sent=await handler(req('/admin',b,true));assert.equal(sent.status,201);assert.equal((await sent.json()).status,'approved');
+  const pub=(await (await handler(req())).json()).reviews;assert.equal(pub.length,1);assert.equal(pub[0].date,'2026-11-10T00:00:00.000Z');
+  assert.equal((await handler(req('/admin',{id:pub[0].id,status:'archived'},true))).status,200);
+  assert.equal((await (await handler(req())).json()).reviews.length,0);
+});

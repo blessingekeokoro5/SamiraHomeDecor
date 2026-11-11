@@ -19,7 +19,7 @@ function safeEqual(a, b) {
 
 export default async (request, context) => {
   const pass = Netlify.env.get("ADMIN_PASSWORD") || Netlify.env.get("BOOKING_ADMIN_TOKEN");
-  if (!pass) return context.next();
+  if (!pass) return new Response("Admin access is not configured. Set ADMIN_PASSWORD in Netlify.", { status: 503, headers: { "Cache-Control": "no-store" } });
 
   const auth = request.headers.get("authorization") || "";
   let ok = false;
@@ -54,3 +54,4 @@ export default async (request, context) => {
 };
 
 export const config = { path: ["/admin.html", "/admin"] };
+
