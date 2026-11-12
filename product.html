@@ -278,12 +278,13 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/furniture-freight.js?v=4"></script>
+  <script src="js/furniture-freight.js?v=5"></script>
   <script src="js/decor-delivery.js?v=2"></script>
   <script src="js/data.js?v=96"></script>
   <script src="js/ai-overviews.js?v=7"></script>
   <script src="js/components.js?v=98"></script>
   <script src="js/cart.js?v=40"></script>
+  <script src="js/delivery-request.js?v=1"></script>
   <script src="js/main.js?v=22"></script>
   <script>
     // Category → breadcrumb path (differs per category). Final crumb = the product's type.
@@ -712,7 +713,7 @@
               </div>
               <button class="btn btn--primary" onclick="addToCart('${p.id}', pdpQty, pdpColour, pdpSize, pdpSizePrice)">${(typeof isPreorder === "function" && isPreorder(p)) ? "Pre-order" : "Add to cart"}</button>
             </div>
-            ${(typeof isPreorder === "function" && isPreorder(p)) ? `<div class="pdp-preorder" style="margin:-4px 0 16px;text-align:center;font-size:.92rem;color:var(--body)">Expected to arrive ${p.arriveBy ? "by " : ""}<strong style="color:var(--ink)">${preorderExpected(p)}</strong><div style="margin-top:4px;font-size:.84rem">${preorderTermsLink()}</div></div>` : ""}`}
+            ${(typeof isPreorder === "function" && isPreorder(p)) ? `<div class="pdp-preorder" style="margin:-4px 0 16px;text-align:center;font-size:.92rem;color:var(--body)">Expected to arrive ${p.arriveBy ? "by " : ""}<strong style="color:var(--ink)">${preorderExpected(p)}</strong><div style="margin-top:4px;font-size:.84rem">${preorderTermsLink()}</div>${typeof DeliveryRequest !== "undefined" ? DeliveryRequest.html([Object.assign({},p,{qty:pdpQty})],{},"dispatch") : ""}</div>` : ""}`}
             ${p.price == null ? (p.tag !== "Coming Out Soon" ? "" : `<p style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)"><strong style="color:var(--ink)">Coming out soon.</strong> This kit is on its way and product photos are being uploaded. Enquire now to hear first when it's ready.</p>`) : `<div style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)">
               ${p.readyDining
                 ? `<strong>✓ Ready to ship</strong> · Supplier stock subject to availability.
@@ -859,7 +860,9 @@
         var quoteLines = [Object.assign({}, p, { qty: pdpQty })];
         var decorQuote = (p.homeDecorImport || p.outdoorImport) && typeof DecorDelivery !== "undefined" ? DecorDelivery.quote(quoteLines, {postcode:pc,suburb:(document.getElementById("dcSuburb") || {}).value,country:"Australia"}, function(){ calcDelivery(id); }) : null;
         var quote = FurnitureFreight.quote(quoteLines, pc, "Australia", decorQuote);
-        out.textContent = quote.quoteRequired ? quote.message : "Delivery to " + st + " " + pc + ": $" + quote.fee.toFixed(2) + (quote.surcharge ? " (includes $" + quote.surcharge.toFixed(2) + " for additional items)" : "") + ". Delivery timing is confirmed separately.";
+        if(quote.quoteRequired && !quote.pending && typeof DeliveryRequest !== "undefined"){
+          out.innerHTML = DeliveryRequest.escape(quote.message) + DeliveryRequest.html(quoteLines,{postcode:pc,suburb:(document.getElementById("dcSuburb")||{}).value,country:"Australia"},quote.reason);
+        }else out.textContent = quote.quoteRequired ? quote.message : "Delivery to " + st + " " + pc + ": $" + quote.fee.toFixed(2) + (quote.surcharge ? " (includes $" + quote.surcharge.toFixed(2) + " for additional items)" : "") + ". Delivery timing is confirmed separately.";
         return;
       }
       var fee = p.shipFee * pdpQty;

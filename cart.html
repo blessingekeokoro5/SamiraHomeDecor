@@ -53,6 +53,7 @@
   <script src="js/data.js?v=96"></script>
   <script src="js/components.js?v=98"></script>
   <script src="js/cart.js?v=40"></script>
+  <script src="js/delivery-request.js?v=1"></script>
   <script src="js/main.js?v=22"></script>
   <script>
     const CART_EMPTY_SVG = `<svg viewBox="0 0 24 24" width="58" height="58" fill="none" stroke="var(--rose-deep)" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20.5" r="1.5"/><circle cx="17.5" cy="20.5" r="1.5"/><path d="M2 3h3l2.3 11.5a1.5 1.5 0 0 0 1.5 1.2h8.4a1.5 1.5 0 0 0 1.5-1.1L21.5 7H6"/><path d="M11.5 10.5h4M14 8l2.5 2.5L14 13"/></svg>`;
@@ -135,7 +136,7 @@
           <div class="cl-info">
             <div class="cl-cat">${i.cat}</div>
             <h3 class="cl-name">${i.name}${(i.colour || i.size) ? ` <small>· ${[i.colour, i.size].filter(Boolean).join(" · ")}</small>` : ""}</h3>
-            ${(function () { const pp = (typeof findProduct === "function") ? findProduct(i.id) : null; return (pp && typeof isPreorder === "function" && isPreorder(pp)) ? `<div class="cl-preorder" style="font-size:.8rem;color:#0B1F3A;margin:2px 0 4px">⏳ Pre-order · expected ${pp.arriveBy ? "by " : ""}${preorderExpected(pp, true)} · ${preorderTermsLink("Terms")}</div>` : ""; })()}
+            ${(function () { const pp = (typeof findProduct === "function") ? findProduct(i.id) : null; return (pp && typeof isPreorder === "function" && isPreorder(pp)) ? `<div class="cl-preorder" style="font-size:.8rem;color:#0B1F3A;margin:2px 0 4px">⏳ Pre-order · expected ${pp.arriveBy ? "by " : ""}${preorderExpected(pp, true)} · ${preorderTermsLink("Terms")}</div>${typeof DeliveryRequest !== "undefined" ? DeliveryRequest.html([Object.assign({},pp,i)],{},"dispatch") : ""}` : ""; })()}
             ${i.packaging ? `<p class="cl-pack">🎁 ${i.packaging}${i.dispatch ? ` · <strong>${i.dispatch}</strong>` : ""}</p>` : ""}
             ${sku ? `<div class="cl-sku">${sku}</div>` : ""}
             ${afterDisc >= 3500 ? `<div class="cl-bonus">BONUS: FREE DELIVERY</div>` : ""}

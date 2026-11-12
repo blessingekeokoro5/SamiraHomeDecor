@@ -279,7 +279,7 @@ function resolveLine(raw, member) {
     expressShip: p.expressShip != null ? p.expressShip : null,
     expressOpt: p.expressOpt != null ? p.expressOpt : null,
     readyDining: !!p.readyDining, supplier: p.supplier, supplierProductUuid: p.supplierProductUuid, freightClass: p.freightClass,
-    chairSets: p.chairSets, furniture: p.furniture,
+    chairSets: p.chairSets, furniture: p.furniture, shippingSize: p.shippingSize,
     shipFee: p.shipFee != null ? p.shipFee : null,
     arriveBy: p.arriveBy || null,
     auOnly: !!p.auOnly,
@@ -313,7 +313,9 @@ function shippingFor(country, fulfil, lines, afterDiscount, postcode, decorQuote
   const ready = FurnitureFreight.quote(lines, postcode, country, decorQuote);
   if (ready.quoteRequired) return { quoteRequired: true, message: ready.message };
   res.amount = round2(res.amount + ready.fee);
+  res.mixedSurcharge = ready.mixedSurcharge || 0;
   if (ready.fee) res.label = (lines.some(l => l.readyDining && !String(l.freightClass || "").startsWith("decor-")) ? "Furniture delivery" : "Home décor delivery") + (ready.surcharge ? " (includes $" + ready.surcharge.toFixed(2) + " for additional items)" : "");
+  if (ready.mixedSurcharge) res.label = "Delivery";
   // Fixed per-item delivery: never free, added on top.
   const fixed = round2(lines.reduce((n, l) => n + (l.shipFee && !l.expressShip ? l.shipFee * l.qty : 0), 0));
   if (fixed > 0) {

@@ -172,7 +172,7 @@ function shipQuote(afterDisc) {
   fee += fixedShipFee() + ready.fee;
   const ofee = (window._fulfil === "express" && !isGiftOrder(getCart())) ? expressOptFee() : 0;
   fee += ofee;
-  return { pending:ready.pending, quoteRequired:ready.quoteRequired, freightMessage:ready.message, surcharge:ready.surcharge, fee, weight, days:z.days, freeOver:z.freeOver, express:xfee>0 };
+  return { pending:ready.pending, reason:ready.reason, mixedSurcharge:ready.mixedSurcharge, quoteRequired:ready.quoteRequired, freightMessage:ready.message, surcharge:ready.surcharge, fee, weight, days:z.days, freeOver:z.freeOver, express:xfee>0 };
 }
 
 function checkoutTotals() {
@@ -193,7 +193,7 @@ function checkoutTotals() {
   const giftCard = (gc && gc.amount >= preGift && preGift > 0) ? preGift : 0;
   const total = preGift - giftCard;
   const gst = Math.round((total / 11)); // GST component of a GST-inclusive total
-  return { pending:q.pending, quoteRequired:q.quoteRequired, freightMessage:q.freightMessage, surcharge:q.surcharge, sub, discount, discLabel: disc.label, voucher, voucherCode: vou ? vou.code : null, shipping, preGift, giftCard, giftCode: gc ? gc.code : null, total, gst, coupon: window._coupon, country: shipCountry(), weight: q.weight, shipDays: cartShipDays(q.days), freeOver: q.freeOver };
+  return { pending:q.pending, reason:q.reason, mixedSurcharge:q.mixedSurcharge, quoteRequired:q.quoteRequired, freightMessage:q.freightMessage, surcharge:q.surcharge, sub, discount, discLabel: disc.label, voucher, voucherCode: vou ? vou.code : null, shipping, preGift, giftCard, giftCode: gc ? gc.code : null, total, gst, coupon: window._coupon, country: shipCountry(), weight: q.weight, shipDays: cartShipDays(q.days), freeOver: q.freeOver };
 }
 
 function updateTotalsUI() {
@@ -209,7 +209,11 @@ function updateTotalsUI() {
   window._intlBlocked = !!bulky || t.quoteRequired;
   if (line && bulky) {
     line.innerHTML = `<span style="color:var(--rose-deep)">⚠️ <strong>${bulky.name}</strong> ${(function(){ const bp = (typeof findProduct === "function") ? findProduct(bulky.id) : null; return (bp && bp.auOnly) ? `ships within Australia only, so it can't be sent to ${t.country}.` : `is too large to ship to ${t.country} (over ${INTL_MAX_KG}kg).`; })()} It can only be delivered within Australia — please remove it for an international order, or <a href="contact.html">contact us</a> for a freight quote.</span>`;
-  } else if (line && t.quoteRequired) line.innerHTML = `${t.freightMessage}${t.pending ? "" : ' <a href="contact.html">Request a quote</a>'}`;
+  } else if (line && t.quoteRequired) {
+    const requestItems=getCart().map(i=>Object.assign({},findProduct(i.id)||{},i));
+    const requestDestination={postcode:(document.getElementById("coPost")||{}).value,suburb:(document.getElementById("coSuburb")||{}).value,country:shipCountry()};
+    line.innerHTML = typeof DeliveryRequest !== "undefined" ? DeliveryRequest.escape(t.freightMessage)+(t.pending ? "" : DeliveryRequest.html(requestItems,requestDestination,t.reason)) : t.freightMessage;
+  }
   else if (line) line.innerHTML = `<strong>${(window._fulfil === "express" || expressShipFee() > 0) ? "Express" : "Standard"}</strong> · ${shipTxt}${t.surcharge ? " · includes " + money(t.surcharge) + " for additional items" : ""} · to ${t.country}${t.weight > 0 ? " · calculated for ~" + t.weight + "kg" : ""} · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
   const s = document.getElementById("sumShip"); if (s) s.textContent = shipTxt;
   const gr = document.getElementById("sumGiftRow"); if (gr) gr.style.display = t.giftCard ? "flex" : "none";
@@ -284,8 +288,8 @@ function renderCheckout() {
           <span class="cx-name">${i.name}${(i.colour || i.size) ? `<small>${[i.colour, i.size].filter(Boolean).join(" · ")}</small>` : ""}${i.contents ? `<small>${i.contents}</small>` : ""}</span>
           <span class="cx-acts">${prod ? `<button type="button" class="cx-heart${(typeof isWishlisted === "function" && isWishlisted(i.id)) ? " on" : ""}" aria-label="Save to wishlist" onclick="toggleWishlist('${i.id}', this);this.classList.toggle('on')">♡</button>` : ""}<button type="button" class="cx-del" aria-label="Remove ${i.name}" onclick="coRemove('${key}')">🗑</button></span>
         </div>
-        ${(prod && typeof isPreorder === "function" && isPreorder(prod)) ? `<small class="co-preorder">⏳ Pre-order · ${preorderTermsLink("Pre-Order Terms")}</small>` : ""}
-        ${i.giftCard ? "" : `<small class="co-eta" data-gift="${(i.hamper || String(i.id).startsWith("hamper-")) ? 1 : 0}" data-idx="${idx}">🚚 Arrives ${(i.hamper || String(i.id).startsWith("hamper-")) ? fmtBizRange(giftWindow(i, window._fulfil === "express")) : arriveRange(prod || i)}</small>`}
+        ${(prod && typeof isPreorder === "function" && isPreorder(prod)) ? `<small class="co-preorder">⏳ Pre-order · ${preorderTermsLink("Pre-Order Terms")}</small>${typeof DeliveryRequest !== "undefined" ? DeliveryRequest.html([Object.assign({},prod,i)],{},"dispatch") : ""}` : ""}
+        ${i.giftCard ? "" : prod && prod.supplierProductUuid ? `<small>Dispatch timing is confirmed for your delivery location.</small>` : `<small class="co-eta" data-gift="${(i.hamper || String(i.id).startsWith("hamper-")) ? 1 : 0}" data-idx="${idx}">🚚 Arrives ${(i.hamper || String(i.id).startsWith("hamper-")) ? fmtBizRange(giftWindow(i, window._fulfil === "express")) : arriveRange(prod || i)}</small>`}
         <div class="cx-bottom">
           <span class="cx-price">${linePrice(i) < i.price ? `<s>${money(i.price * i.qty)}</s> ` : ""}<strong>${money(linePrice(i) * i.qty)}</strong>${linePrice(i) < i.price ? `<em>Member price</em>` : ""}</span>
           ${fixed ? `<span class="cx-qtyfix">Qty ${i.qty}</span>` : `<span class="cx-qty"><button type="button" aria-label="One less" onclick="coQty('${key}', ${i.qty - 1})">−</button><span>${i.qty}</span><button type="button" aria-label="One more" onclick="coQty('${key}', ${i.qty + 1})">+</button></span>`}

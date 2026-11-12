@@ -7,7 +7,7 @@ function stateFor(pc) {
   if ((n>=2600&&n<=2618)||(n>=2900&&n<=2920)||(n>=200&&n<=299)) return 'ACT';
   if(n>=800&&n<=999)return 'NT';if(n>=1000&&n<=2999)return 'NSW';if(n>=3000&&n<=3999||n>=8000&&n<=8999)return 'VIC';if(n>=4000&&n<=4999||n>=9000&&n<=9999)return 'QLD';if(n>=5000&&n<=5999)return 'SA';if(n>=6000&&n<=6999)return 'WA';if(n>=7000&&n<=7999)return 'TAS';return '';
 }
-function blocked(message) { return {fee:0,quoteRequired:true,message}; }
+function blocked(message,reason="delivery") { return {fee:0,quoteRequired:true,reason,message}; }
 async function quoteDecor(lines,destination,options={}) {
   const decor=lines.filter(isDecor);if(!decor.length)return null;
   const pc=(String(destination.postcode||'').match(/\b\d{4}\b/)||[])[0];
@@ -35,13 +35,14 @@ async function quoteDecor(lines,destination,options={}) {
     if(!res.ok)throw new Error('Supplier response '+res.status);
     const result=await res.json();if(result.errors||!result.data)throw new Error('Supplier quote unavailable');
     const value=q=>{
-      if(!q||!Number.isFinite(q.shipping_price)||q.shipping_price<=0||!Array.isArray(q.productsInCart)||!q.productsInCart.length||q.productsInCart.some(p=>p.itemstatus!=='INSTOCK'))throw new Error('Delivery not available');
+      if(!q||!Number.isFinite(q.shipping_price)||q.shipping_price<=0||!Array.isArray(q.productsInCart)||!q.productsInCart.length||q.productsInCart.some(p=>!['INSTOCK','PREORDER'].includes(p.itemstatus)))throw new Error('Delivery not available');
+      if(q.productsInCart.some(p=>p.itemstatus==='PREORDER')){const e=new Error('Dispatch confirmation required');e.reason='dispatch';throw e;}
       return q.shipping_price;
     };
     const combined=value(result.data.combined);
     const perItem=simple?combined:unique.reduce((sum,p,i)=>sum+value(result.data['u'+i])*p.qty,0);
     // Every additional item carries delivery, and freight never falls below the supplier's whole-cart quote.
     return {fee:round(Math.max(combined,perItem)),quoteRequired:false,message:'',postcode:pc};
-  }catch(error){return blocked('We could not confirm delivery for this address and quantity. Please contact us for a quote before paying.');}
+  }catch(error){return error.reason==='dispatch'?blocked('This order includes pre-order stock for your location. Please confirm the dispatch timeframe by email or live chat before payment.','dispatch'):blocked('We could not confirm the delivery rate or availability for this address. Please request a quote by email or live chat before payment.');}
 }
 module.exports={quoteDecor,stateFor,isDecor};

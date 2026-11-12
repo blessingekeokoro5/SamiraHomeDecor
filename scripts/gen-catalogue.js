@@ -19,6 +19,7 @@ const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
 const { estimateWeight } = require("./estimate-weight");
+const { loadClass } = require("../js/furniture-freight");
 
 const ROOT = path.join(__dirname, "..");
 const SRC = path.join(ROOT, "js", "data.js");
@@ -107,6 +108,7 @@ PRODUCTS.forEach((p) => {
     freightClass: p.freightClass || null,
     chairSets: p.chairSets || 1,
     furniture: isFurniture(p),
+    shippingSize: loadClass(p),
     shipFee: num(p.shipFee),                     // fixed delivery fee per item
     arriveBy: p.arriveBy || null,                // all-items arrive-by date (YYYY-MM-DD)
     auOnly: !!p.auOnly,                          // delivers within Australia only
