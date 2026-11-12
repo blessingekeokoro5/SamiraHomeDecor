@@ -59,7 +59,7 @@
     if(!items.length)return {fee:0,quoteRequired:false};
     const blocked=message=>({fee:0,quoteRequired:true,message});
     if(country&&country!=='Australia')return blocked('Freedom kitchenware is available for Australian delivery only.');
-    const pc=(String(postcode||'').match(/\\b\\d{4}\\b/)||[])[0];
+    const pc=(String(postcode||'').match(/\b\d{4}\b/)||[])[0];
     if(!pc)return blocked('Enter a valid Australian delivery postcode to calculate shipping.');
     const locations=typeof module==='object'&&module.exports?require('./au-locations'):root.AuLocations;
     const place=locations&&locations.rows&&locations.rows.find(r=>r[1]===pc);
