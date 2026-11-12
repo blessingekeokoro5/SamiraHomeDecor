@@ -595,7 +595,7 @@
           image: [/^https?:\/\//.test(imgSrc) ? imgSrc : SITE + "/" + String(imgSrc).replace(/^\//, "")],
           description: (p.desc || p.name).slice(0, 320),
           sku: p.sku || p.id,
-          brand: { "@type": "Brand", name: p.brand || "Samira Home Decor" },
+          brand: { "@type": "Brand", name: "Samira Home Decor" },
           offers: {
             "@type": "Offer",
             url: SITE + "/product.html?id=" + p.id,
@@ -668,7 +668,7 @@
         <div class="pdp">
           ${galleryHtml}
           <div class="pdp-info">
-            ${p.brand ? `<div class="pdp-brand">${p.brand}</div>` : `<span class="cat">${p.cat}</span>`}
+            <span class="cat">${p.cat}</span>
             <h1>${p.name}</h1>
             ${rev ? `<div class="stars" style="margin-bottom:10px">${stars(rev.avg)} <span style="color:var(--muted);font-size:0.85rem">${rev.avg.toFixed(1)} · ${rev.total} review${rev.total === 1 ? "" : "s"}</span></div>` : ""}
             ${p.cat === "Packaging" ? `<div class="price" id="pdpPrice" style="font-size:1.15rem;color:var(--rose-deep)">Retail &amp; wholesale · price on enquiry</div>` : `
@@ -688,9 +688,9 @@
               <a class="btn btn--dark btn--block ms-cta" href="account.html">+ Join Membership for Free</a>
             </div>` : ""}
             <ul class="pdp-detail-list">
-              ${p.brand ? `<li><span>Brand</span><span>${p.brand}</span></li>` : ""}
+              
               <li><span>Category</span><span>${p.cat}</span></li>
-              <li><span>SKU</span><span>${p.sku || "SH-" + p.id.toUpperCase()}</span></li>
+              <li><span>SKU</span><span>${"SH-" + String(p.id).replace(/[^a-z0-9-]/gi,"").toUpperCase()}</span></li>
               ${p.custom ? `<li><span>Made to order</span><span style="color:var(--rose-deep)">Customisable · allow extra time</span></li>` : ""}
               <li><span>Availability</span><span style="color:var(--forest)">${p.tag === "Coming Out Soon" ? "Coming out soon" : p.price == null ? "On enquiry" : (typeof isPreorder === "function" && isPreorder(p)) ? "Pre-order" : "In stock"}</span></li>
             </ul>
