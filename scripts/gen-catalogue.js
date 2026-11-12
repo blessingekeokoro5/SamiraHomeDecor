@@ -36,7 +36,7 @@ sandbox.window = sandbox;
 sandbox.globalThis = sandbox;
 
 const source =
-  fs.readFileSync(SRC, "utf8") + fs.readFileSync(path.join(ROOT,"js","adairs-bathroom.js"),"utf8") +
+  fs.readFileSync(SRC, "utf8") + fs.readFileSync(path.join(ROOT,"js","adairs-bathroom.js"),"utf8") + fs.readFileSync(path.join(ROOT,"js","shein-bathroom-expansion.js"),"utf8") +
   "\n;globalThis.__out = { PRODUCTS, HAMPER_ITEMS, HAMPER_MIN, SAMIRA, PACKAGING_KITS };\n";
 
 vm.createContext(sandbox);
