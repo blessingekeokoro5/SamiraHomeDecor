@@ -84,7 +84,7 @@
     @media (max-width: 640px) { #featuredGrid.edit-row > * { flex-basis: 74%; } .edit-arrow { display: none; } }
     @media (max-width: 420px) { #featuredGrid.edit-row { gap: 12px; } #featuredGrid.edit-row > * { flex-basis: 86%; } }
   </style>
-  <style>@media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr 1fr !important; } }</style>
+  <style>.svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 900px; margin-inline: auto; } #services .card-media { aspect-ratio: 4/3 !important; } @media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr !important; max-width: 420px; } }</style>
   <style>.reviews-summary .star-half { position: relative; display: inline-block; color: rgba(198,161,91,.28); } .reviews-summary .star-half::before { content: "★"; position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: var(--gold, #C6A15B); }</style>
   <style>
     .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
@@ -249,21 +249,13 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">More than a shop</span>
-        <h2>Property styling &amp; interior design</h2>
-        <p>Beyond the products, our stylists help you create spaces you love, with interior styling, property styling for sale, interior design and personal shopping. Book an in-home consultation.</p>
+        <h2>Styling, design &amp; personal shopping</h2>
+        <p>Create a space you love with our complete property styling, staging and interior design service, or let our personal shopper source the perfect pieces for your home.</p>
       </div>
-      <div class="grid grid-4 svc-grid">
-        <a class="card reveal cat-card" href="staging.html?service=istyling#book">
-          <div class="card-media" style="aspect-ratio:3/4"><div class="ph" data-label="Interior Styling"><img class="ph-img" src="assets/service-styling.png" alt="Interior Styling" loading="lazy" onerror="this.remove()"></div></div>
-          <div class="card-body"><div class="service-icon">🛋️</div><h3>Interior Styling</h3><p>Refresh the home you live in with a curated, shoppable plan, styled in-home.</p><span class="link-arrow">Book interior styling →</span></div>
-        </a>
-        <a class="card reveal cat-card" href="staging.html?service=styling#book">
-          <div class="card-media" style="aspect-ratio:3/4"><div class="ph rose" data-label="Property Styling &amp; Staging"><img class="ph-img" src="assets/service-staging.png" alt="Property Styling and Staging" loading="lazy" onerror="this.remove()"></div></div>
-          <div class="card-body"><div class="service-icon">🏡</div><h3>Property Styling &amp; Staging</h3><p>Style your home to sell or rent, photographed to attract buyers faster.</p><span class="link-arrow">Book property styling →</span></div>
-        </a>
-        <a class="card reveal cat-card" href="staging.html?service=interior#book">
-          <div class="card-media" style="aspect-ratio:3/4"><div class="ph forest" data-label="Interior Design"><img class="ph-img" src="assets/service-interior.png" alt="Interior Design" loading="lazy" onerror="this.remove()"></div></div>
-          <div class="card-body"><div class="service-icon">🎨</div><h3>Interior Design</h3><p>A full design consult, layouts, palettes &amp; pieces, to plan a whole space.</p><span class="link-arrow">Book design →</span></div>
+      <div class="grid grid-2 svc-grid">
+        <a class="card reveal cat-card" href="staging.html#book">
+          <div class="card-media" style="aspect-ratio:4/3"><div class="ph" data-label="Property Styling, Staging &amp; Interior Design"><img class="ph-img" src="assets/service-styling.png" alt="Property styling, staging and interior design" loading="lazy" onerror="this.remove()"></div></div>
+          <div class="card-body"><div class="service-icon">🏡</div><h3>Property Styling, Staging &amp; Interior Design</h3><p>One complete service for interior styling, design, property staging and vacation rental styling. From layouts and colour palettes to furniture and finishing touches, we create spaces to live in, sell or rent.</p><span class="link-arrow">Book styling &amp; design →</span></div>
         </a>
         <a class="card reveal cat-card" href="personal-shopping.html">
           <div class="card-media" style="aspect-ratio:3/4"><div class="ph" data-label="Home Décor Personal Shopper"><img class="ph-img" src="assets/services/staging-feature.jpg" alt="Home Décor Personal Shopper" loading="lazy" onerror="this.remove()"></div></div>
