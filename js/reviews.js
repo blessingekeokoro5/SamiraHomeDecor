@@ -73,7 +73,7 @@
     host.querySelector('.shd-review-summary').innerHTML = all.length ? `<strong>${avg.toFixed(1)}</strong><div><span class="shd-review-gold" aria-label="${avg.toFixed(1)} out of 5 stars">${'★'.repeat(Math.round(avg))}${'☆'.repeat(5-Math.round(avg))}</span><small>from ${all.length} review${all.length === 1 ? '' : 's'}</small></div>` : '<p>No reviews yet. Be the first to share your experience.</p>';
     const cards = all.map(reviewCard).join('');
     const carousel = host.querySelector('.shd-review-cards');
-    carousel.innerHTML = all.length ? `<div class="shd-review-track" style="--review-duration:${Math.max(18, all.length * 7)}s"><div class="shd-review-group">${cards}</div><div class="shd-review-group" aria-hidden="true" inert>${cards}</div></div>` : '';
+    carousel.innerHTML = all.length ? `<div class="shd-review-track" style="--review-duration:${Math.max(60, all.length * 22)}s"><div class="shd-review-group">${cards}</div><div class="shd-review-group" aria-hidden="true" inert>${cards}</div></div>` : '';
     carousel.setAttribute('aria-label', all.length ? 'Customer reviews, continuously scrolling' : 'Customer reviews');
     carousel.tabIndex = all.length ? 0 : -1;
     more.hidden = true;
