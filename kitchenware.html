@@ -96,7 +96,7 @@
   <script>
     const ROOM = "Kitchenware"; // products with cat: "Kitchenware" (or room: "Kitchenware") in js/data.js appear here
     function paintRoom() {
-      let list = applyShopFilters(applySubFilter(PRODUCTS.filter(p => p.cat === ROOM || (p.room === ROOM && !["Living Room","Home Décor","Dining","Bedroom","Bathroom","Kitchenware","Outdoor","Office","Lifestyle"].includes(p.cat)))));
+      let list = applyShopFilters(applySubFilter(PRODUCTS.filter(p => { const name = String(p.name || p.title || ""); const isDiningFurniture = /\b(dining chair|dining table)\b/i.test(name); return !isDiningFurniture && (p.cat === ROOM || (p.room === ROOM && !["Living Room","Home Décor","Dining","Bedroom","Bathroom","Kitchenware","Outdoor","Office","Lifestyle"].includes(p.cat))); })));
       applyGridCols("roomGrid");
       renderProducts("roomGrid", list);
       const c = document.getElementById("roomCount");
