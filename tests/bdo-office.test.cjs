@@ -35,3 +35,11 @@ test('BDO import protects per-unit profit through the trusted payment catalogue'
  const cat=require('../netlify/functions/_catalogue.json').products,server=require('../netlify/functions/create-checkout-session')._test;
  for(const p of b.items){assert.equal(p.cat,'Office');assert.equal(p.preorder,false);assert.ok(!/boardroom|reception|meeting|drafting|gaming|lectern|desk frame$/i.test(p.name));assert.equal(p.memberPrice-p.supplierCost,p.shippingSize==='heavy'?2000:1500);assert.equal(cat[p.id].supplierProductId,p.supplierProductId);assert.deepEqual(JSON.parse(JSON.stringify(p.supplierOptions)),cat[p.id].supplierOptions);const line=server.resolveLine({id:p.id,qty:2,price:1},true);assert.equal(line.unitPrice,p.memberPrice);assert.equal(line.supplierCost,p.supplierCost);assert.equal(line.supplierProductId,p.supplierProductId);}
 });
+test('supplier outage uses published free-range estimates, never invents regional/interstate tariffs',async()=>{
+ const unavailable={fetch:async()=>{throw Error('Supplier unreachable')}};
+ const free=await quoteBdo([p],destination,unavailable);assert.equal(free.fee,50);assert.equal(free.estimated,true);assert.equal(free.quoteRequired,false);
+ const {policyEstimate}=require('../netlify/functions/lib/bdo-office-delivery');
+ assert.equal(policyEstimate([{supplierProductId:232967,supplierCost:197,qty:1}],['SYDNEY','2000','NSW']),39);
+ assert.equal(policyEstimate([{supplierProductId:232967,supplierCost:197,qty:1}],['PORT LINCOLN','5606','SA']),null);
+ assert.equal(policyEstimate([{supplierProductId:999999,supplierCost:197,qty:1}],['ADELAIDE','5000','SA']),null);
+});

@@ -4,16 +4,29 @@ const BASE='https://buydirectonline.com.au/';
 const isBdo=p=>p.supplier==='BDO Furniture'&&/^office-/.test(String(p.freightClass||''));
 const blocked=message=>({fee:0,quoteRequired:true,message});
 const cache=new Map();
+const policies=require('./bdo-office-policy.json');
+function confirmation(message){const error=Error(message);error.confirmation=true;return error;}
+function policyEstimate(items,location){
+ const zone=locations.zones[location[1]],metro=zone&&/metro$/i.test(zone.label);
+ const city=metro?zone.label.replace(/ metro$/i,'').toLowerCase():null;
+ const cost=items.reduce((n,p)=>n+p.supplierCost*p.qty,0);
+ const threshold=['adelaide','sydney','melbourne','brisbane'].includes(city)?1000:10000;
+ const free=items.every(p=>policies[p.supplierProductId]?.free);
+ // Published free-range terms, or $39 metro tariff only where the selected product is stocked locally.
+ if(free)return 0;
+ if(!metro||!items.every(p=>policies[p.supplierProductId]?.warehouses.includes(city)))return null;
+ return cost>threshold?0:39;
+}
 function deliveredRate(data,id,qty){
- if(!Array.isArray(data.items)||data.items.length!==1||Number(data.items[0].id)!==id||Number(data.items[0].quantity)!==qty)throw Error('Incorrect supplier cart');
+ if(!Array.isArray(data.items)||data.items.length!==1||Number(data.items[0].id)!==id||Number(data.items[0].quantity)!==qty)throw confirmation('Incorrect supplier cart');
  const packages=data.shipping_rates;
- if(!Array.isArray(packages)||!packages.length)throw Error('No delivery rates');
+ if(!Array.isArray(packages)||!packages.length)throw confirmation('No delivery rates');
  const items=packages.flatMap(p=>p.items||[]);
- if(items.reduce((s,p)=>s+(Number(p.quantity)||0),0)!==qty)throw Error('Incomplete supplier cart');
+ if(items.reduce((s,p)=>s+(Number(p.quantity)||0),0)!==qty)throw confirmation('Incomplete supplier cart');
  let total=0;
  for(const pack of packages){
   const rates=(pack.shipping_rates||[]).filter(r=>r.currency_code==='AUD'&&!/collect|pickup|pick.up|quote|POA/i.test(r.name+' '+r.method_id)&&/shipping|delivery|freight/i.test(r.name)&&/^\d+$/.test(String(r.price))&&/^\d+$/.test(String(r.taxes??0)));
-  if(!rates.length)throw Error('Delivery needs quotation');
+  if(!rates.length)throw confirmation('Delivery needs quotation');
   total+=Math.min(...rates.map(r=>(Number(r.price)+Number(r.taxes||0))/10**Number(r.currency_minor_unit??2)));
  }
  return Math.round(total*100)/100;
@@ -24,20 +37,20 @@ async function supplierRate(line,location,fetcher){
   const headers={...(options.headers||{})};if(cookies.size)headers.Cookie=[...cookies].map(([k,v])=>k+'='+v).join('; ');
   const res=await fetcher(BASE+path,{...options,headers,signal:AbortSignal.timeout(15000)});
   for(const cookie of (res.headers.getSetCookie?.()||[res.headers.get('set-cookie')||''])){for(const c of cookie.split(/,(?=\s*[^;,=]+=[^;,]*)/)){const part=c.split(';')[0],idx=part.indexOf('=');if(idx>0)cookies.set(part.slice(0,idx).trim(),part.slice(idx+1));}}
-  if(!res.ok)throw Error('BDO unavailable');return res;
+  if(!res.ok){if(res.status===404||res.status===400)throw confirmation('Supplier product or configuration unavailable');throw Error('BDO unavailable');}return res;
  }
  const id=Number(line.supplierProductId),qty=Number(line.qty||1);
  const stock=await (await request('wp-json/wc/store/v1/products/'+id)).json();
  const cost=Number(stock.prices?.price)/10**Number(stock.prices?.currency_minor_unit??2);
- if(stock.id!==id||!stock.is_in_stock||stock.is_on_backorder||!stock.is_purchasable||!Number.isFinite(cost)||cost>line.supplierCost)throw Error('Availability or price changed');
+ if(stock.id!==id||!stock.is_in_stock||stock.is_on_backorder||!stock.is_purchasable||!Number.isFinite(cost)||cost>line.supplierCost)throw confirmation('Availability or price changed');
  const body=new URLSearchParams({product_id:String(id),quantity:String(qty),...(line.supplierOptions||{})});
  const added=await (await request('?wc-ajax=add_to_cart',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()})).json();
- if(added.error||!added.fragments)throw Error('Configuration unavailable');
+ if(added.error||!added.fragments)throw confirmation('Configuration unavailable');
  const cart=await request('wp-json/wc/store/v1/cart?_samira='+Date.now());
  const nonce=cart.headers.get('nonce')||cart.headers.get('x-wc-store-api-nonce');if(!nonce)throw Error('No delivery session');
  const data=await (await request('wp-json/wc/store/v1/cart/update-customer',{method:'POST',headers:{'Content-Type':'application/json',Nonce:nonce},body:JSON.stringify({shipping_address:{country:'AU',state:location[2],city:location[0],postcode:location[1]}})})).json();
  const actual=(Number(data.totals?.total_items)+Number(data.totals?.total_items_tax))/10**Number(data.totals?.currency_minor_unit??2);
- if(!Number.isFinite(actual)||actual>line.supplierCost*qty+0.02)throw Error('Configuration price changed');
+ if(!Number.isFinite(actual)||actual>line.supplierCost*qty+0.02)throw confirmation('Configuration price changed');
  return deliveredRate(data,id,qty);
 }
 async function quoteBdo(lines,destination,options={}){
@@ -59,6 +72,10 @@ async function quoteBdo(lines,destination,options={}){
   const quote={fee,quoteRequired:false,message:'',postcode:pc,bdoUnits:units};
   if(!options.fetch){cache.set(key,{at:Date.now(),quote});if(cache.size>100)cache.delete(cache.keys().next().value);}
   return quote;
- }catch{return blocked('BDO delivery or ready stock could not be confirmed for this address and quantity. Please request a quote before payment.');}
+ }catch(error){
+  const estimate=error.confirmation?null:policyEstimate(items,location);
+  if(estimate!==null)return {fee:Math.round((estimate+50*units+102*Math.max(0,units-1))*100)/100,quoteRequired:false,estimated:true,message:'Delivery estimate based on BDO published shipping terms.',postcode:pc,bdoUnits:units};
+  return blocked('BDO delivery or ready stock could not be confirmed for this address and quantity. Please request a quote before payment.');
+ }
 }
-module.exports={quoteBdo,isBdo,deliveredRate,supplierRate};
+module.exports={quoteBdo,isBdo,deliveredRate,supplierRate,policyEstimate};

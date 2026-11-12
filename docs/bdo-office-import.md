@@ -9,3 +9,5 @@ Checkout obtains actual BDO delivery rates for each selected product/configurati
 The payment server repeats the supplier check using trusted catalogue fields. Unavailable stock, increased configuration costs, supplier errors and unconfirmed delivery block payment pending confirmation. Successful quote caches expire after one minute server-side. Public BDO policy: https://buydirectonline.com.au/shipping-information . Delivery is kerbside; assembly and upstairs placement are excluded.
 
 Validation: catalogue, sitemap and shopping feed generated; all repository tests pass; live supplier checks cover Adelaide, Sydney, Perth and Port Lincoln, plus multiple-unit shipping.
+
+Hosted calculator fallback: when BDO is unreachable, apply its advertised free-shipping range, or the $39 tariff/free-order threshold for metro products whose supplier collection attribute confirms local warehouse stock. Other locations/configurations require confirmation. A successful supplier response indicating unavailable stock, increased price or no delivered rate never uses this fallback. Policies are a dated snapshot in bdo-office-policy.json.
