@@ -67,6 +67,7 @@
     const productDetail = productUrl ? `<a class="shd-review-product" href="${esc(productUrl)}" aria-label="View ${esc(reviewedProduct.name)} product">${safeImage ? `<img class="shd-review-product-img" src="${esc(safeImage)}" alt="${esc(reviewedProduct.name)}" loading="lazy" decoding="async" onerror="this.style.display='none'">` : ''}<span class="shd-review-product-name">${esc(reviewedProduct.name)}</span></a>` : '';
     return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><p>${esc(r.body)}</p><button type="button" class="shd-review-read" data-review-index="${all.indexOf(r)}">Read full review</button><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div>${productDetail}</article>`;
   };
+  let loopObserver;
   function render() {
     all.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
     const avg = all.length ? all.reduce((n, r) => n + r.rating, 0) / all.length : 0;
@@ -74,24 +75,31 @@
     const cards = all.map(reviewCard).join('');
     const carousel = host.querySelector('.shd-review-cards');
     carousel.innerHTML = all.length ? `<div class="shd-review-track"><div class="shd-review-group">${cards}</div><div class="shd-review-group" aria-hidden="true" inert></div></div>` : '';
-    // Fill at least one whole viewport PLUS an extra card in every repeating
-    // group. With only one or two reviews, two plain copies left a blank strip.
+    // Size both copies explicitly: flex intrinsic sizing must never leave an
+    // overflowing group whose animation travels past its visible cards.
     if (all.length) {
       const track = carousel.querySelector('.shd-review-track');
       const [first, second] = track.querySelectorAll('.shd-review-group');
-      const card = first.querySelector('.shd-review-card');
-      const cardWidth = card ? card.getBoundingClientRect().width : 290;
-      const gap = parseFloat(getComputedStyle(first).gap) || 20;
-      const minFill = carousel.clientWidth + cardWidth + gap;
-      let copies = 1;
-      while (first.scrollWidth < minFill && copies < 24) {
-        first.insertAdjacentHTML('beforeend', cards);
-        copies++;
-      }
-      second.innerHTML = first.innerHTML;
-      // Consistent ~19 pixels per second, regardless of the review count.
-      const cycleDistance = first.getBoundingClientRect().width + gap;
-      track.style.setProperty('--review-duration', (cycleDistance / 19).toFixed(2) + 's');
+      const sizeLoop = () => {
+        first.innerHTML = cards;
+        first.style.width = '';
+        const card = first.querySelector('.shd-review-card');
+        const cardWidth = card.getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(first).gap) || 20;
+        const repeats = Math.max(1, Math.ceil((carousel.clientWidth + cardWidth + gap) / ((cardWidth + gap) * all.length)));
+        first.innerHTML = cards.repeat(repeats);
+        const groupWidth = (cardWidth + gap) * all.length * repeats - gap;
+        first.style.width = groupWidth + 'px';
+        second.innerHTML = first.innerHTML;
+        second.style.width = groupWidth + 'px';
+        const cycleDistance = groupWidth + gap;
+        track.style.setProperty('--review-distance', '-' + cycleDistance + 'px');
+        track.style.setProperty('--review-duration', (cycleDistance / 19).toFixed(2) + 's');
+      };
+      sizeLoop();
+      if (loopObserver) loopObserver.disconnect();
+      loopObserver = new ResizeObserver(sizeLoop);
+      loopObserver.observe(carousel);
     }
     carousel.setAttribute('aria-label', all.length ? 'Customer reviews, continuously scrolling' : 'Customer reviews');
     carousel.tabIndex = all.length ? 0 : -1;
