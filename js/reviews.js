@@ -73,7 +73,26 @@
     host.querySelector('.shd-review-summary').innerHTML = all.length ? `<strong>${avg.toFixed(1)}</strong><div><span class="shd-review-gold" aria-label="${avg.toFixed(1)} out of 5 stars">${'★'.repeat(Math.round(avg))}${'☆'.repeat(5-Math.round(avg))}</span><small>from ${all.length} review${all.length === 1 ? '' : 's'}</small></div>` : '<p>No reviews yet. Be the first to share your experience.</p>';
     const cards = all.map(reviewCard).join('');
     const carousel = host.querySelector('.shd-review-cards');
-    carousel.innerHTML = all.length ? `<div class="shd-review-track" style="--review-duration:${Math.max(60, all.length * 22)}s"><div class="shd-review-group">${cards}</div><div class="shd-review-group" aria-hidden="true" inert>${cards}</div></div>` : '';
+    carousel.innerHTML = all.length ? `<div class="shd-review-track"><div class="shd-review-group">${cards}</div><div class="shd-review-group" aria-hidden="true" inert></div></div>` : '';
+    // Fill at least one whole viewport PLUS an extra card in every repeating
+    // group. With only one or two reviews, two plain copies left a blank strip.
+    if (all.length) {
+      const track = carousel.querySelector('.shd-review-track');
+      const [first, second] = track.querySelectorAll('.shd-review-group');
+      const card = first.querySelector('.shd-review-card');
+      const cardWidth = card ? card.getBoundingClientRect().width : 290;
+      const gap = parseFloat(getComputedStyle(first).gap) || 20;
+      const minFill = carousel.clientWidth + cardWidth + gap;
+      let copies = 1;
+      while (first.scrollWidth < minFill && copies < 24) {
+        first.insertAdjacentHTML('beforeend', cards);
+        copies++;
+      }
+      second.innerHTML = first.innerHTML;
+      // Consistent ~19 pixels per second, regardless of the review count.
+      const cycleDistance = first.getBoundingClientRect().width + gap;
+      track.style.setProperty('--review-duration', (cycleDistance / 19).toFixed(2) + 's');
+    }
     carousel.setAttribute('aria-label', all.length ? 'Customer reviews, continuously scrolling' : 'Customer reviews');
     carousel.tabIndex = all.length ? 0 : -1;
     more.hidden = true;
