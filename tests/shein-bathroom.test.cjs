@@ -23,3 +23,12 @@ test('bathroom prices preserve exact per-unit markups for members and trusted ch
  assert.ok(b.items.length>=4);
  for(const p of b.items){assert.equal(Math.round((p.price-p.supplierCost)*100),p.markupSize==='small'?5000:15000);assert.equal(p.price,p.memberPrice);assert.equal(p.price,p.priceFloor);assert.equal(catalogue[p.id].price,p.price);assert.equal(catalogue[p.id].readyDining,true);assert.equal(catalogue[p.id].freightClass,'shein-bathroom');assert.equal(freight.loadClass(p),null);}
 });
+
+test('heavy and exceptionally large SHEIN carts have automatic delivery fees, never manual quotes',()=>{
+ const destination={country:'Australia',suburb:'Adelaide',postcode:'5000'};
+ for(const [qty,weight,fee] of [[1,20,200],[15,0.6,200],[50,0.6,215],[2,50,215]]){
+  const result=quoteShein([{...item,qty,weight}],destination);
+  assert.equal(result.quoteRequired,false);
+  assert.equal(result.fee,fee);
+ }
+});
