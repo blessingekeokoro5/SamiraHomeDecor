@@ -101,7 +101,9 @@ function flashPctNow(nowMs) {
   return best;
 }
 // Best discount available to ANY shopper right now, without the welcome offer.
+function blackFriday2026() { const now=Date.now(); return now>=Date.parse("2026-11-12T13:30:00Z") && now<Date.parse("2026-11-14T13:30:00Z"); }
 function saleDiscountPct() {
+  if (blackFriday2026()) return 5;
   let pct = flashPctNow(Date.now());
   const c = CATALOGUE.campaign;
   if (c && c.percent && c.endsAt && Date.now() < new Date(c.endsAt).getTime()) {
@@ -455,7 +457,7 @@ exports.handler = async (event) => {
     const askedPct = Math.max(Number(body.discountPct) || 0, 0);
     const salePct = saleDiscountPct();
     const memberEmail = isMemberBuyer ? String(body.member.email).trim().toLowerCase() : "";
-    const wantsWelcome = String(body.voucherCode || "").toUpperCase() === WELCOME_CODE && askedPct > salePct;
+    const wantsWelcome = !blackFriday2026() && String(body.voucherCode || "").toUpperCase() === WELCOME_CODE && askedPct > salePct;
     let welcomeOk = false;
     if (wantsWelcome) {
       if (!isMemberBuyer) {
@@ -478,11 +480,11 @@ exports.handler = async (event) => {
     // "Set of 2"), never every unit. Gift cards being bought don't count. A sale % (whole
     // order) is used instead if it's worth more; they never stack.
     const eligibleSubtotal = lines.filter(l => !l.readyDining).reduce((n,l) => n + l.unitPrice * l.qty, 0);
-    const saleDiscount = round2((eligibleSubtotal * Math.min(askedPct, salePct)) / 100);
+    const saleDiscount = round2((eligibleSubtotal * (blackFriday2026() ? 5 : Math.min(askedPct, salePct))) / 100);
     const welcomeUnit = lines.reduce((m, l, k) => ((l.readyDining || itemId(items[k]).startsWith("giftcard-")) ? m : Math.max(m, l.unitPrice)), 0);
     const welcomeDiscount = welcomeOk ? round2((welcomeUnit * WELCOME_PCT) / 100) : 0;
     const discount = Math.max(saleDiscount, welcomeDiscount);
-    const pct = welcomeDiscount > saleDiscount ? WELCOME_PCT : Math.min(askedPct, salePct);
+    const pct = welcomeDiscount > saleDiscount ? WELCOME_PCT : (blackFriday2026() ? 5 : Math.min(askedPct, salePct));
 
     // 3. Rewards voucher: clamped, and never more than the order is worth.
     const askedVoucher = Number(body.voucher) || 0;
