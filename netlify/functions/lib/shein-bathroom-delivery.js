@@ -24,11 +24,12 @@ function quoteShein(lines,destination){
   let units=0,kg=0;
   for(const p of items){
     const qty=Number(p.qty||1);
-    if(!Number.isInteger(qty)||qty<1||qty>50)return blocked('Please contact us for a delivery quote for this quantity.');
+    if(!Number.isSafeInteger(qty)||qty<1)return blocked('Enter a valid item quantity.');
     units+=qty;kg+=itemWeight(p)*qty;
   }
-  if(units>50||kg>100)return blocked('Please contact us for a delivery quote for this large order.');
-  const fee=Math.round((7.95+Math.max(0,units-1)*4+Math.max(0,kg-1)*1.5)*100)/100;
+  // Flat store delivery tiers: heavy sets / large carts $200, exceptionally large $215.
+  // Never send valid Australian orders for a manual shipping quote.
+  const fee=units>=50||kg>=100 ? 215 : units>=15||kg>=20 ? 200 : Math.round((7.95+Math.max(0,units-1)*4+Math.max(0,kg-1)*1.5)*100)/100;
   return {fee,quoteRequired:false,message:'',postcode,state:location[2]};
 }
 module.exports={quoteShein,isShein};
