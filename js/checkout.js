@@ -317,7 +317,7 @@ function renderCheckout() {
         <a href="cart.html" class="cx-link">← Edit cart</a>
         ${member ? "" : `<div class="cx-member">
           <h4>Save more as a member</h4>
-          <p>Members pay member prices on every piece and get <strong>10% off one item in their first order</strong>. Joining is free.</p>
+          <p>Members pay member prices on every piece. <strong id="checkoutWelcomeCopy">10% off one item in your first order</strong> resumes Sunday after Black Friday. Joining is free.</p>
           <a class="btn btn--outline btn--block btn--sm" href="account.html">Log in or join free</a>
         </div>`}
       </section>
@@ -439,6 +439,7 @@ function coApplyCode() {
   const acc = getAccount() || {};
   const mine = (acc.vouchers || []).find((v) => (v.code || "").toUpperCase() === code && !v.used);
   if (code === "WELCOME10" || (mine && /welcome/i.test(mine.label || ""))) {
+    if (typeof isBlackFriday2026 === "function" && isBlackFriday2026()) { msg.style.color = "var(--rose-deep)"; msg.textContent = "Black Friday 5% off is already applied. The 10% welcome offer resumes Sunday and cannot be combined."; return; }
     if (!member) { msg.style.color = "var(--rose-deep)"; msg.innerHTML = `This code is for members. <a href="account.html">Log in or join free</a>, then come back to use it on your first order.`; return; }
     setVoucher(WELCOME_VOUCHER); renderCheckout(); showToast("10% off one item in your first order applied 🎉"); return;
   }
