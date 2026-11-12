@@ -278,7 +278,7 @@ function resolveLine(raw, member) {
     weight: p.weight != null ? p.weight : DEFAULT_ITEM_KG,
     expressShip: p.expressShip != null ? p.expressShip : null,
     expressOpt: p.expressOpt != null ? p.expressOpt : null,
-    readyDining: !!p.readyDining, supplier: p.supplier, supplierProductUuid: p.supplierProductUuid, supplierSku:p.supplierSku, supplierHandle:p.supplierHandle, freightClass: p.freightClass,
+    readyDining: !!p.readyDining, supplier: p.supplier, supplierProductUuid: p.supplierProductUuid, supplierSku:p.supplierSku, supplierHandle:p.supplierHandle, supplierProductId:p.supplierProductId, supplierOptions:p.supplierOptions, supplierCost:p.supplierCost, freightClass: p.freightClass,
     chairSets: p.chairSets, furniture: p.furniture, shippingSize: p.shippingSize,
     shipFee: p.shipFee != null ? p.shipFee : null,
     arriveBy: p.arriveBy || null,

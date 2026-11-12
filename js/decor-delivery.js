@@ -15,7 +15,7 @@
     timer=setTimeout(async()=>{
       const entry=cache.get(key);if(entry)entry.started=true;
       let result;
-      try{const res=await fetch('/.netlify/functions/decor-delivery-quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(30000)});result=await res.json();if(!res.ok||typeof result.quoteRequired!=='boolean'||!Number.isFinite(result.fee))throw new Error();}
+      try{const res=await fetch('/.netlify/functions/decor-delivery-quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(55000)});result=await res.json();if(!res.ok||typeof result.quoteRequired!=='boolean'||!Number.isFinite(result.fee))throw new Error();}
       catch(error){result={fee:0,quoteRequired:true,message:'Delivery needs confirmation. Please contact us for a quote before paying.'};}
       cache.set(key,{at:Date.now(),quote:result});if(cache.size>50)cache.delete(cache.keys().next().value);
       if(typeof onUpdate==='function')onUpdate();
