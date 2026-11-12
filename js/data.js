@@ -45886,3 +45886,251 @@ function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
     }
   }
 ];items.forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();
+
+/* FREEDOM kitchenware range — supplier-listed regular prices snapshot 12 Nov 2026. Prices include fixed per-unit markup; delivery is charged separately. */
+(()=>{const items=[
+  {
+    "id": "freedom13115224",
+    "sku": "SH-FR-13115224",
+    "name": "Element Blue 12-Piece Dinner Set",
+    "cat": "Kitchenware",
+    "room": "Kitchenware",
+    "price": 389,
+    "memberPrice": 389,
+    "priceFloor": 389,
+    "supplier": "Freedom",
+    "supplierProductId": "13115224",
+    "supplierUrl": "https://www.freedom.com.au/product/13115224",
+    "supplierCost": 189,
+    "profitMarkup": 200,
+    "markupSize": "medium",
+    "freedomKitchenwareImport": true,
+    "freightClass": "freedom-kitchenware",
+    "readyDining": true,
+    "auOnly": true,
+    "preorder": false,
+    "weight": 9,
+    "shippingSize": "medium",
+    "arriveDays": [
+      7,
+      18
+    ],
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "https://www.ecologyhomewares.com.au/Images/ProductImages/EC18355.jpg",
+    "imgs": [
+      "https://www.ecologyhomewares.com.au/Images/ProductImages/EC18355.jpg"
+    ],
+    "desc": "Four dinner plates, four side plates and four bowls in a blue reactive-glaze stoneware finish. Delivery is calculated from Australian postcode, total units and packed weight at checkout; extra delivery charges apply to larger carts and split shipments.",
+    "specs": {
+      "Type": "Dinner set",
+      "Material": "Stoneware",
+      "Colour": "Blue",
+      "Supplier product code": "13115224",
+      "Delivery": "Australia only; no PO boxes or parcel lockers"
+    }
+  },
+  {
+    "id": "freedom13228579",
+    "sku": "SH-FR-13228579",
+    "name": "Brodie White 12-Piece Dinner Set",
+    "cat": "Kitchenware",
+    "room": "Kitchenware",
+    "price": 299.95,
+    "memberPrice": 299.95,
+    "priceFloor": 299.95,
+    "supplier": "Freedom",
+    "supplierProductId": "13228579",
+    "supplierUrl": "https://www.freedom.com.au/product/13228579",
+    "supplierCost": 99.95,
+    "profitMarkup": 200,
+    "markupSize": "medium",
+    "freedomKitchenwareImport": true,
+    "freightClass": "freedom-kitchenware",
+    "readyDining": true,
+    "auOnly": true,
+    "preorder": false,
+    "weight": 6.2,
+    "shippingSize": "medium",
+    "arriveDays": [
+      7,
+      18
+    ],
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "https://myer-media.com.au/wcsstore/MyerCatalogAssetStore/images/50/500/4678/100/1/205438060/205438060_1_720x928.webp?q=75&w=1920",
+    "imgs": [
+      "https://myer-media.com.au/wcsstore/MyerCatalogAssetStore/images/50/500/4678/100/1/205438060/205438060_1_720x928.webp?q=75&w=1920"
+    ],
+    "desc": "A simple white twelve-piece dining collection with four dinner plates, four side plates and four bowls. Delivery is calculated from Australian postcode, total units and packed weight at checkout; extra delivery charges apply to larger carts and split shipments.",
+    "specs": {
+      "Type": "Dinner set",
+      "Material": "Fine bone china",
+      "Colour": "White",
+      "Supplier product code": "13228579",
+      "Delivery": "Australia only; no PO boxes or parcel lockers"
+    }
+  },
+  {
+    "id": "freedom13171983",
+    "sku": "SH-FR-13171983",
+    "name": "Lucie Taupe 12-Piece Dinner Set",
+    "cat": "Kitchenware",
+    "room": "Kitchenware",
+    "price": 379,
+    "memberPrice": 379,
+    "priceFloor": 379,
+    "supplier": "Freedom",
+    "supplierProductId": "13171983",
+    "supplierUrl": "https://www.freedom.com.au/product/13171983",
+    "supplierCost": 179,
+    "profitMarkup": 200,
+    "markupSize": "medium",
+    "freedomKitchenwareImport": true,
+    "freightClass": "freedom-kitchenware",
+    "readyDining": true,
+    "auOnly": true,
+    "preorder": false,
+    "weight": 7.6,
+    "shippingSize": "medium",
+    "arriveDays": [
+      7,
+      18
+    ],
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "https://planetlinen.com.au/cdn/shop/files/LucieTaupe12-PieceDinnerSet1.png?v=1758598950&width=1024",
+    "imgs": [
+      "https://planetlinen.com.au/cdn/shop/files/LucieTaupe12-PieceDinnerSet1.png?v=1758598950&width=1024"
+    ],
+    "desc": "Taupe stoneware for four place settings, comprising four dinner plates, four side plates and four bowls. Delivery is calculated from Australian postcode, total units and packed weight at checkout; extra delivery charges apply to larger carts and split shipments.",
+    "specs": {
+      "Type": "Dinner set",
+      "Material": "Stoneware",
+      "Colour": "Taupe",
+      "Supplier product code": "13171983",
+      "Delivery": "Australia only; no PO boxes or parcel lockers"
+    }
+  },
+  {
+    "id": "freedom13228578",
+    "sku": "SH-FR-13228578",
+    "name": "Laurie Soft White 12-Piece Dinner Set",
+    "cat": "Kitchenware",
+    "room": "Kitchenware",
+    "price": 389,
+    "memberPrice": 389,
+    "priceFloor": 389,
+    "supplier": "Freedom",
+    "supplierProductId": "13228578",
+    "supplierUrl": "https://www.freedom.com.au/product/13228578",
+    "supplierCost": 189,
+    "profitMarkup": 200,
+    "markupSize": "medium",
+    "freedomKitchenwareImport": true,
+    "freightClass": "freedom-kitchenware",
+    "readyDining": true,
+    "auOnly": true,
+    "preorder": false,
+    "weight": 8.1,
+    "shippingSize": "medium",
+    "arriveDays": [
+      7,
+      18
+    ],
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "https://myer-media.com.au/wcsstore/MyerCatalogAssetStore/images/50/500/4678/100/1/205438960/205438960_1_720x928.webp?q=75&w=1920",
+    "imgs": [
+      "https://myer-media.com.au/wcsstore/MyerCatalogAssetStore/images/50/500/4678/100/1/205438960/205438960_1_720x928.webp?q=75&w=1920"
+    ],
+    "desc": "Soft-white stoneware with delicately textured surfaces; includes four dinner plates, four side plates and four cereal bowls. Delivery is calculated from Australian postcode, total units and packed weight at checkout; extra delivery charges apply to larger carts and split shipments.",
+    "specs": {
+      "Type": "Dinner set",
+      "Material": "Stoneware",
+      "Colour": "Soft white",
+      "Supplier product code": "13228578",
+      "Delivery": "Australia only; no PO boxes or parcel lockers"
+    }
+  },
+  {
+    "id": "freedom13228606",
+    "sku": "SH-FR-13228606",
+    "name": "Bobbie Sage 12-Piece Dinner Set",
+    "cat": "Kitchenware",
+    "room": "Kitchenware",
+    "price": 369,
+    "memberPrice": 369,
+    "priceFloor": 369,
+    "supplier": "Freedom",
+    "supplierProductId": "13228606",
+    "supplierUrl": "https://www.freedom.com.au/product/13228606",
+    "supplierCost": 169,
+    "profitMarkup": 200,
+    "markupSize": "medium",
+    "freedomKitchenwareImport": true,
+    "freightClass": "freedom-kitchenware",
+    "readyDining": true,
+    "auOnly": true,
+    "preorder": false,
+    "weight": 7.3,
+    "shippingSize": "medium",
+    "arriveDays": [
+      7,
+      18
+    ],
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "https://planetlinen.com.au/cdn/shop/files/BobbieSage12-PieceDinnerSet1.png?v=1758612313&width=1024",
+    "imgs": [
+      "https://planetlinen.com.au/cdn/shop/files/BobbieSage12-PieceDinnerSet1.png?v=1758612313&width=1024"
+    ],
+    "desc": "A calming sage-green dinnerware set including four dinner plates, four side plates and four cereal bowls. Delivery is calculated from Australian postcode, total units and packed weight at checkout; extra delivery charges apply to larger carts and split shipments.",
+    "specs": {
+      "Type": "Dinner set",
+      "Material": "Stoneware",
+      "Colour": "Sage",
+      "Supplier product code": "13228606",
+      "Delivery": "Australia only; no PO boxes or parcel lockers"
+    }
+  },
+  {
+    "id": "freedom13172273",
+    "sku": "SH-FR-13172273",
+    "name": "Jeana Silver 42-Piece Cutlery Set",
+    "cat": "Kitchenware",
+    "room": "Kitchenware",
+    "price": 449,
+    "memberPrice": 449,
+    "priceFloor": 449,
+    "supplier": "Freedom",
+    "supplierProductId": "13172273",
+    "supplierUrl": "https://www.freedom.com.au/product/13172273",
+    "supplierCost": 149,
+    "profitMarkup": 300,
+    "markupSize": "large",
+    "freedomKitchenwareImport": true,
+    "freightClass": "freedom-kitchenware",
+    "readyDining": true,
+    "auOnly": true,
+    "preorder": false,
+    "weight": 2.49,
+    "shippingSize": "medium",
+    "arriveDays": [
+      7,
+      18
+    ],
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "assets/products/freedom13172273.svg",
+    "imgs": ["assets/products/freedom13172273.svg"],
+    "desc": "A silver-finish forty-two-piece dining cutlery set with six each of seven utensil styles. Delivery is calculated from Australian postcode, total units and packed weight at checkout; extra delivery charges apply to larger carts and split shipments.",
+    "specs": {
+      "Type": "Large cutlery set",
+      "Material": "Stainless steel",
+      "Colour": "Silver",
+      "Supplier product code": "13172273",
+      "Delivery": "Australia only; no PO boxes or parcel lockers"
+    }
+  }
+];items.forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();

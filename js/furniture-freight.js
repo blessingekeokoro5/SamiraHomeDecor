@@ -51,22 +51,54 @@
     if(parcelUnits)fee+=9.95+2.5*parcelWeight+zone.extra;
     return {fee:Math.round(fee*100)/100,quoteRequired:false,zone:zone.label};
   }
-  function mixedLoadSurcharge(lines){lines=lines.filter(p=>p.supplier!=='James Lane'&&!/^(office|adairs|shein)-/.test(String(p.freightClass||'')));return lines.some(p=>loadClass(p)==='heavy')&&lines.some(p=>loadClass(p)==='medium')?1000:0;}
+  // Freedom kitchenware: quoted from the published $19.95 homewares starting rate.
+  // Postcode, weight, parcel count and mixed-supplier uplift are Samira estimates,
+  // NOT Freedom's private live checkout rates. Every physical unit increases freight.
+  function freedomQuote(lines,postcode,country){
+    const items=lines.filter(p=>p.supplier==='Freedom'&&p.freightClass==='freedom-kitchenware');
+    if(!items.length)return {fee:0,quoteRequired:false};
+    const blocked=message=>({fee:0,quoteRequired:true,message});
+    if(country&&country!=='Australia')return blocked('Freedom kitchenware is available for Australian delivery only.');
+    const pc=(String(postcode||'').match(/\b\d{4}\b/)||[])[0];
+    if(!pc)return blocked('Enter a valid Australian delivery postcode to calculate shipping.');
+    const locations=typeof module==='object'&&module.exports?require('./au-locations'):root.AuLocations;
+    const place=locations&&locations.rows&&locations.rows.find(r=>r[1]===pc);
+    if(!place)return blocked('Please select a valid Australian suburb and postcode.');
+    const zone=locations.zones&&locations.zones[pc];
+    const stateExtra={SA:0,VIC:8,NSW:12,ACT:12,QLD:16,WA:26,TAS:26,NT:36}[place[2]]||0;
+    const remote=Math.max(stateExtra,zone==null?180:Math.max(0,Number(zone.extra)||0));
+    let units=0,kg=0,large=0;
+    const distinct=new Set();
+    for(const p of items){
+      const qty=Number(p.qty||1),weight=Number(p.weight||1.5);
+      if(!Number.isInteger(qty)||qty<1||qty>50||!Number.isFinite(weight)||weight<=0)return blocked('Please enter a supported product quantity.');
+      units+=qty;kg+=weight*qty;if(p.profitMarkup===300||p.markupSize==='large')large+=qty;
+      distinct.add(String(p.supplierProductId||p.id||p.sku));
+    }
+    if(units>50)return blocked('This order exceeds the maximum supported number of kitchenware units.');
+    const otherSuppliers=new Set(lines.filter(p=>p.supplier&&p.supplier!=='Freedom'&&Number(p.qty||1)>0).map(p=>p.supplier));
+    const fullCart=units>=8?120:units>=5?60:units>=3?30:0;
+    const split=otherSuppliers.size?35+15*(otherSuppliers.size-1):0;
+    const fee=19.95+remote+1.4*kg+5*units+12*Math.max(0,units-1)+15*Math.max(0,distinct.size-1)+12*large+fullCart+split;
+    return {fee:Math.round(fee*100)/100,quoteRequired:false,days:[7,18],surcharge:fullCart+split};
+  }
+  function mixedLoadSurcharge(lines){lines=lines.filter(p=>p.supplier!=='James Lane'&&p.supplier!=='Freedom'&&!/^(office|adairs|shein)-/.test(String(p.freightClass||'')));return lines.some(p=>loadClass(p)==='heavy')&&lines.some(p=>loadClass(p)==='medium')?1000:0;}
   function quote(lines,postcode,country,decorQuote){
-    const chosen=lines.filter(x=>x.readyDining&&x.supplier!=='James Lane'),pc=(String(postcode||'').match(/\b\d{4}\b/)||[])[0];
+    const chosen=lines.filter(x=>x.readyDining&&x.supplier!=='James Lane'&&x.supplier!=='Freedom'),pc=(String(postcode||'').match(/\b\d{4}\b/)||[])[0];
     const james=jamesLaneQuote(lines,postcode,country);
+    const freedom=freedomQuote(lines,postcode,country);
     const mixedSurcharge=mixedLoadSurcharge(lines);
-    if(!chosen.length)return {fee:james.fee+mixedSurcharge,surcharge:0,mixedSurcharge,quoteRequired:james.quoteRequired,message:james.message||''};
+    if(!chosen.length)return {fee:james.fee+freedom.fee+mixedSurcharge,surcharge:freedom.surcharge||0,mixedSurcharge,quoteRequired:james.quoteRequired||freedom.quoteRequired,message:freedom.quoteRequired?freedom.message:(james.message||''),days:freedom.days};
     const officeMixed=lines.some(p=>/^office-/.test(String(p.freightClass||'')))&&lines.some(p=>!/^office-/.test(String(p.freightClass||''))&&!/^giftcard-/.test(p.id||p.sku||''))?102:0;
-    let fee=james.fee+officeMixed,quoteRequired=james.quoteRequired;
+    let fee=james.fee+freedom.fee+officeMixed,quoteRequired=james.quoteRequired||freedom.quoteRequired;
     chosen.forEach(p=>{if(/^(office|adairs|shein)-/.test(String(p.freightClass||''))&&!decorQuote){quoteRequired=true;return;}if(decorQuote&&/^(decor|outdoor|office|adairs|shein)-/.test(String(p.freightClass||'')))return;let n;if(p.supplier==='Koala Living')n=String(p.freightClass||'').startsWith('decor-')?(decorRates[String(p.freightClass).slice(6)]||{})[pc]:String(p.freightClass||'').startsWith('bedroom-')?(bedroomRates[String(p.freightClass).slice(8)]||{})[pc]:(koala[pc]||{})[p.freightClass];
       else n=p.freightClass==='chair'?105*(p.chairSets||1):p.freightClass==='sofa'?510:(luxo[pc]||{})[p.freightClass];
       if(country&&country!=='Australia')n=null;if(n==null)quoteRequired=true;else fee+=n*(p.qty||1);});
     if(decorQuote){if(decorQuote.quoteRequired)quoteRequired=true;else fee+=decorQuote.fee;}
     else if(chosen.filter(p=>String(p.freightClass||'').startsWith('decor-')).reduce((n,p)=>n+(p.qty||1),0)>1)quoteRequired=true;
     const hasBedroom=chosen.some(p=>/^(bedroom|outdoor)-/.test(String(p.freightClass||'')));
-    const units=lines.filter(p=>p.supplier!=='James Lane'&&!/^(office|adairs|shein)-/.test(String(p.freightClass||''))).filter(p=>hasBedroom?!/^giftcard-/.test(p.sku||p.id||''):(p.readyDining&&!String(p.freightClass||'').startsWith('decor-'))||p.furniture).reduce((n,p)=>n+(p.qty||1),0),surcharge=units>1?102*(hasBedroom?units-1:1):0;
-    return {fee:Math.round((fee+surcharge+mixedSurcharge)*100)/100,surcharge,mixedSurcharge,quoteRequired,days:decorQuote&&decorQuote.days,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(james.quoteRequired?james.message:decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
+    const units=lines.filter(p=>p.supplier!=='James Lane'&&p.supplier!=='Freedom'&&!/^(office|adairs|shein)-/.test(String(p.freightClass||''))).filter(p=>hasBedroom?!/^giftcard-/.test(p.sku||p.id||''):(p.readyDining&&!String(p.freightClass||'').startsWith('decor-'))||p.furniture).reduce((n,p)=>n+(p.qty||1),0),surcharge=units>1?102*(hasBedroom?units-1:1):0;
+    return {fee:Math.round((fee+surcharge+mixedSurcharge)*100)/100,surcharge:surcharge+(freedom.surcharge||0),mixedSurcharge,quoteRequired,days:(decorQuote&&decorQuote.days)||freedom.days,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(freedom.quoteRequired?freedom.message:james.quoteRequired?james.message:decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
   }
-  const api={luxo,koala,bedroomRates,decorRates,loadClass,mixedLoadSurcharge,jamesLaneQuote,quote};if(typeof module==='object'&&module.exports)module.exports=api;else root.FurnitureFreight=api;
+  const api={luxo,koala,bedroomRates,decorRates,loadClass,mixedLoadSurcharge,jamesLaneQuote,freedomQuote,quote};if(typeof module==='object'&&module.exports)module.exports=api;else root.FurnitureFreight=api;
 })(typeof window==='undefined'?globalThis:window);

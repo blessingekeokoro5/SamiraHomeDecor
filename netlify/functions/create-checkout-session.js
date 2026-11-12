@@ -322,7 +322,10 @@ function shippingFor(country, fulfil, lines, afterDiscount, postcode, decorQuote
   res.amount = round2(res.amount + ready.fee);
   res.mixedSurcharge = ready.mixedSurcharge || 0;
   if(ready.days)res.days=[Math.max(res.days[0],ready.days[0]),Math.max(res.days[1],ready.days[1])];
-  if (ready.fee) res.label = (lines.some(l => l.readyDining && !String(l.freightClass || "").startsWith("decor-")) ? "Furniture delivery" : "Home décor delivery") + (ready.surcharge ? " (includes $" + ready.surcharge.toFixed(2) + " for additional items)" : "");
+  if (ready.fee) {
+    const furniture = lines.some(l => l.readyDining && l.supplier !== "Freedom" && !String(l.freightClass || "").startsWith("decor-"));
+    res.label = (furniture ? "Furniture delivery" : lines.some(l => l.supplier === "Freedom") ? "Kitchenware delivery" : "Home décor delivery") + (ready.surcharge ? " (includes $" + ready.surcharge.toFixed(2) + " for additional items)" : "");
+  }
   if (ready.mixedSurcharge || lines.some(l=>l.supplier==='Adairs')) res.label = "Delivery";
   // Fixed per-item delivery: never free, added on top.
   const fixed = round2(lines.reduce((n, l) => n + (l.shipFee && !l.expressShip ? l.shipFee * l.qty : 0), 0));
@@ -488,7 +491,7 @@ exports.handler = async (event) => {
     const afterDiscount = round2(subtotal - discount - voucher);
 
     // 4. Shipping: recomputed here from weight and region, never taken from the client.
-    if (lines.some(l=>l.supplier==='SHEIN') && /\b(?:p\.?\s*o\.?\s*box|post\s*office\s*box|parcel\s*locker)\b/i.test(String(customer.address||''))) return jsonResponse(400, {error:'These bathroom products require a street address; PO boxes and parcel lockers are unavailable.'});
+    if (lines.some(l=>l.supplier==='SHEIN'||l.supplier==='Freedom') && /\b(?:p\.?\s*o\.?\s*box|post\s*office\s*box|parcel\s*locker)\b/i.test(String(customer.address||''))) return jsonResponse(400, {error:'These products require a street address; PO boxes and parcel lockers are unavailable.'});
     const decorQuote = await quoteSuppliers(lines, {country:String(customer.country || "Australia"),postcode:customer.postcode,suburb:customer.suburb});
     const ship = shippingFor(String(customer.country || "Australia"), String(fulfil), lines, afterDiscount, customer.postcode, decorQuote);
     if (ship.quoteRequired) return jsonResponse(400, { code: "freight_quote_required", error: ship.message });
