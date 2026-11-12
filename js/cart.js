@@ -83,12 +83,13 @@ function getCampaign() {
 }
 
 /* Best discount = larger of live flash-sale % or sale campaign % */
+function isBlackFriday2026() { const now=Date.now(); return now>=Date.parse("2026-11-12T13:30:00Z") && now<Date.parse("2026-11-14T13:30:00Z"); }
 function orderDiscount(sub) {
   let flashPct = 0;
   try { const f = getFlashSale(); if (f.active) flashPct = f.percent; } catch (e) {}
   let campaignPct = 0, campaignLabel = "";
   try { const c = getCampaign(); if (c.active) { campaignPct = c.percent; campaignLabel = c.label; } } catch (e) {}
-  const salePct = Math.max(flashPct, campaignPct);
+  const salePct = isBlackFriday2026() ? 5 : Math.max(flashPct, campaignPct);
   const eligible = getCart().filter(i => !(findProduct(i.id) || {}).readyDining);
   const eligibleSub = eligible.reduce((n,i) => n + linePrice(i) * i.qty, 0);
   const saleAmt = Math.round(eligibleSub * salePct / 100);
@@ -97,13 +98,14 @@ function orderDiscount(sub) {
   // The best single discount applies, they don't stack.
   let welcomePct = 0, welcomeAmt = 0;
   try { const v = getVoucher(); if (v && v.pct && isMember()) welcomePct = v.pct; } catch (e) {}  // members only (checked again at payment)
-  if (welcomePct) {
+  if (welcomePct && !isBlackFriday2026()) {
     const unit = eligible.filter(i => !i.giftCard && !/^giftcard-/.test(String(i.id))).reduce((m, i) => Math.max(m, linePrice(i)), 0);
     welcomeAmt = Math.round(unit * welcomePct) / 100;
   }
   if (welcomeAmt > saleAmt) return { pct: welcomePct, amount: welcomeAmt, label: `First order ${welcomePct}% off (one piece)` };
   let label = "";
-  if (salePct > 0) label = campaignPct === salePct ? `${campaignLabel} (${salePct}% off)` : `Flash sale (${salePct}% off)`;
+  if (isBlackFriday2026()) label = "Black Friday (5% off)";
+  else if (salePct > 0) label = campaignPct === salePct ? `${campaignLabel} (${salePct}% off)` : `Flash sale (${salePct}% off)`;
   return { pct: salePct, amount: saleAmt, label };
 }
 
