@@ -12,7 +12,7 @@
 .shd-review-group { display:flex; flex:0 0 auto; align-items:flex-start; gap:var(--review-gap); }
 .shd-review-card { box-sizing:border-box; position:relative; border:1px solid #ded5c4; background:#fffefc; border-radius:22px; padding:18px; display:flex; flex:0 0 clamp(245px,27vw,290px); flex-direction:column; gap:12px; min-width:0; height:330px; max-height:330px; overflow:hidden; }
 .shd-review-cards:hover .shd-review-track,.shd-review-cards:focus-within .shd-review-track,.shd-review-cards:active .shd-review-track { animation-play-state:paused; }
-@keyframes shd-review-scroll { to { transform:translateX(calc(-50% - var(--review-half-gap))); } }
+@keyframes shd-review-scroll { to { transform:translateX(var(--review-distance, 0px)); } }
 .shd-review-quote { position:absolute; right:18px; top:0; font:3rem Georgia,serif; color:#e6decd; }
 .shd-review-product { display:flex; align-items:center; gap:12px; margin-top:8px; padding-top:12px; border-top:1px solid #e6dfd2; color:#8a682c; font-size:.76rem; text-transform:uppercase; letter-spacing:.04em; text-decoration:none; min-width:0; }
 .shd-review-product:hover .shd-review-product-name,.shd-review-product:focus-visible .shd-review-product-name { text-decoration:underline; }
@@ -95,3 +95,9 @@
 .shd-review-card .shd-review-product-img { width:60px; height:60px; flex-basis:60px; object-fit:contain; }
 .shd-review-card .shd-review-product-name { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; line-clamp:3; overflow:hidden; }
 @media(max-width:540px) { .shd-review-card { height:350px; max-height:350px; } }
+
+/* Keep each repeated group at the measured card width, including on Safari. */
+.shd-review-group { box-sizing:content-box; }
+.shd-review-card { width:clamp(245px,27vw,290px); flex-basis:auto; flex-shrink:0; }
+@media(max-width:540px) { .shd-review-card { width:min(78vw,290px); } }
+@media(max-width:360px) { .shd-review-card { width:calc(100vw - 32px); } }
