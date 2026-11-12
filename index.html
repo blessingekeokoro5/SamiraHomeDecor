@@ -133,6 +133,12 @@
       else clock.textContent='';
     }
     refresh();setInterval(refresh,1000);
+    function adjustWelcomeCopy(){
+      const active=Date.now()>=Date.parse('2026-11-12T13:30:00Z')&&Date.now()<Date.parse('2026-11-14T13:30:00Z');
+      if(!active)return;
+      document.querySelectorAll('.why-hl').forEach(el=>{if(el.textContent.includes('10% off')){const big=el.querySelector('.why-big'),p=el.querySelector('p');if(big)big.textContent='5% off';if(p)p.textContent='Black Friday: 5% off Friday and Saturday only. The 10% new-customer welcome offer resumes Sunday.';}});
+    }
+    document.addEventListener('DOMContentLoaded',adjustWelcomeCopy);
   })();
   </script>
 
