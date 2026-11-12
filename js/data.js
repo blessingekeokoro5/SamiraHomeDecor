@@ -45709,3 +45709,180 @@ function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
     }
   }
 ];office.forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();
+/* SHEIN bathroom selection: verified available 12 November 2026. Fixed unit markups, no promotional discounts. */
+(()=>{const items=[
+  {
+    "id": "shbath562302120",
+    "sku": "SH-SHEIN-562302120",
+    "name": "White Sand Rhinestone Bathroom Set — 4 Piece",
+    "cat": "Bathroom",
+    "room": "Bathroom",
+    "price": 192.36,
+    "memberPrice": 192.36,
+    "priceFloor": 192.36,
+    "supplier": "SHEIN",
+    "supplierSku": "sh260826162827833792837",
+    "supplierUrl": "https://au.shein.com/goods-p-562302120.html",
+    "supplierCost": 42.36,
+    "profitMarkup": 150,
+    "markupSize": "large",
+    "sheinBathroomImport": true,
+    "stockCheckedAt": "2026-11-12",
+    "readyDining": true,
+    "freightClass": "shein-bathroom",
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      10,
+      20
+    ],
+    "dispatch": "2 to 4 business days",
+    "deliveryTime": "5 to 10 business days after dispatch",
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "https://img.ltwebstatic.com/v4/j/spmp/2026/08/26/90/1787732961dac4c60669d9ea0e60934fa471ce70e0.webp",
+    "imgs": [
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/26/90/1787732961dac4c60669d9ea0e60934fa471ce70e0.webp",
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/26/a4/1787732961a20b6eaa794bb764dbff0e82f672b00f.webp",
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/26/2c/1787732961012d25314bc4dcba14e4e0a821a999c4.webp"
+    ],
+    "desc": "A coordinated four-piece vanity collection with a soap dispenser, toothbrush holder, cup and soap dish. Stone construction. Standard delivery is $7.95 per item, calculated after selecting your Australian suburb and postcode. Processing takes 2–4 business days, followed by an estimated 5–10 business days in transit. Street addresses only; no PO boxes or parcel lockers.",
+    "specs": {
+      "Type": "Bathroom accessory set",
+      "Material": "Stone",
+      "Colour": "White Sand Rhinestone",
+      "Pieces": "4",
+      "Delivery": "Australia; street addresses only"
+    }
+  },
+  {
+    "id": "shbath562303381",
+    "sku": "SH-SHEIN-562303381",
+    "name": "Grey Sand Lettered Bathroom Set — 4 Piece",
+    "cat": "Bathroom",
+    "room": "Bathroom",
+    "price": 197.16,
+    "memberPrice": 197.16,
+    "priceFloor": 197.16,
+    "supplier": "SHEIN",
+    "supplierSku": "sh260826140264492954605",
+    "supplierUrl": "https://au.shein.com/goods-p-562303381.html",
+    "supplierCost": 47.16,
+    "profitMarkup": 150,
+    "markupSize": "large",
+    "sheinBathroomImport": true,
+    "stockCheckedAt": "2026-11-12",
+    "readyDining": true,
+    "freightClass": "shein-bathroom",
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      10,
+      20
+    ],
+    "dispatch": "2 to 4 business days",
+    "deliveryTime": "5 to 10 business days after dispatch",
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "https://img.ltwebstatic.com/v4/j/spmp/2026/08/26/f6/17877242073f25c5cf181a196a34bd332c2a297b85.webp",
+    "imgs": [
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/26/f6/17877242073f25c5cf181a196a34bd332c2a297b85.webp",
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/26/39/1787724206332633bd11a8db2f89d726f33e95b173.webp",
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/26/34/178772420979f6c6a68e94da804e625392e9764a44.webp"
+    ],
+    "desc": "A coordinated four-piece vanity collection with a soap dispenser, toothbrush holder, cup and soap dish. Stone construction. Standard delivery is $7.95 per item, calculated after selecting your Australian suburb and postcode. Processing takes 2–4 business days, followed by an estimated 5–10 business days in transit. Street addresses only; no PO boxes or parcel lockers.",
+    "specs": {
+      "Type": "Bathroom accessory set",
+      "Material": "Stone",
+      "Colour": "Grey Sand",
+      "Pieces": "4",
+      "Delivery": "Australia; street addresses only"
+    }
+  },
+  {
+    "id": "shbath562214642",
+    "sku": "SH-SHEIN-562214642",
+    "name": "White & Gold Abstract Line Bathroom Set — 4 Piece",
+    "cat": "Bathroom",
+    "room": "Bathroom",
+    "price": 168,
+    "memberPrice": 168,
+    "priceFloor": 168,
+    "supplier": "SHEIN",
+    "supplierSku": "sh260824205271236040295",
+    "supplierUrl": "https://au.shein.com/goods-p-562214642.html",
+    "supplierCost": 18,
+    "profitMarkup": 150,
+    "markupSize": "large",
+    "sheinBathroomImport": true,
+    "stockCheckedAt": "2026-11-12",
+    "readyDining": true,
+    "freightClass": "shein-bathroom",
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      10,
+      20
+    ],
+    "dispatch": "2 to 4 business days",
+    "deliveryTime": "5 to 10 business days after dispatch",
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "https://img.ltwebstatic.com/v4/j/spmp/2026/08/24/32/17875760600fa867d08abee4bd323725f5bf2651f2.webp",
+    "imgs": [
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/24/32/17875760600fa867d08abee4bd323725f5bf2651f2.webp",
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/24/11/1787576060a9dee4a9781ca55936ce4c5f586266f1.webp",
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/24/ba/1787576060ce3adef7ba2aee9bdb046a3e2ef47df3.webp"
+    ],
+    "desc": "A coordinated four-piece vanity collection with a soap dispenser, toothbrush holder, cup and soap dish. ABS construction. Standard delivery is $7.95 per item, calculated after selecting your Australian suburb and postcode. Processing takes 2–4 business days, followed by an estimated 5–10 business days in transit. Street addresses only; no PO boxes or parcel lockers.",
+    "specs": {
+      "Type": "Bathroom accessory set",
+      "Material": "ABS",
+      "Colour": "White and gold",
+      "Pieces": "4",
+      "Delivery": "Australia; street addresses only"
+    }
+  },
+  {
+    "id": "shbath560062632",
+    "sku": "SH-SHEIN-560062632",
+    "name": "Sculptural Porcelain Soap Dispenser — Silver",
+    "cat": "Bathroom",
+    "room": "Bathroom",
+    "price": 58.16,
+    "memberPrice": 58.16,
+    "priceFloor": 58.16,
+    "supplier": "SHEIN",
+    "supplierSku": "sh260815102342191401797",
+    "supplierUrl": "https://au.shein.com/goods-p-560062632.html",
+    "supplierCost": 8.16,
+    "profitMarkup": 50,
+    "markupSize": "small",
+    "sheinBathroomImport": true,
+    "stockCheckedAt": "2026-11-12",
+    "readyDining": true,
+    "freightClass": "shein-bathroom",
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      10,
+      20
+    ],
+    "dispatch": "2 to 4 business days",
+    "deliveryTime": "5 to 10 business days after dispatch",
+    "added": "2026-11-12",
+    "tag": "New",
+    "img": "https://img.ltwebstatic.com/v4/j/spmp/2026/08/24/00/1787542758812b417725e9cb6ba62e0b860b296e12.webp",
+    "imgs": [
+      "https://img.ltwebstatic.com/v4/j/spmp/2026/08/24/00/1787542758812b417725e9cb6ba62e0b860b296e12.webp"
+    ],
+    "desc": "A sculptural refillable porcelain soap dispenser with a silver finish. Soap is not included. Porcelain construction. Standard delivery is $7.95 per item, calculated after selecting your Australian suburb and postcode. Processing takes 2–4 business days, followed by an estimated 5–10 business days in transit. Street addresses only; no PO boxes or parcel lockers.",
+    "specs": {
+      "Type": "Soap dispenser",
+      "Material": "Porcelain",
+      "Colour": "Silver",
+      "Pieces": "1",
+      "Delivery": "Australia; street addresses only"
+    }
+  }
+];items.forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();

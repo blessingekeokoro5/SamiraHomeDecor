@@ -19,7 +19,7 @@ test('multiple furniture units incur one $102 fee',()=>{
 });
 test('imported products have protected member and regular prices',()=>{
  const b={console,localStorage:{getItem:()=>null}};b.window=b;vm.createContext(b);
- vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/data.js'),'utf8')+fs.readFileSync(path.join(__dirname,'../js/adairs-bathroom.js'),'utf8')+';globalThis.p=PRODUCTS.filter(x=>x.readyDining)',b);
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../js/data.js'),'utf8')+fs.readFileSync(path.join(__dirname,'../js/adairs-bathroom.js'),'utf8')+';globalThis.p=PRODUCTS.filter(x=>x.readyDining&&!x.sheinBathroomImport)',b);
  // The existing Koala wine cooler is now included in the decor import.
  assert.equal(b.p.filter(p=>!p.bedroomImport&&!p.homeDecorImport&&!p.outdoorImport&&!p.jamesLaneImport&&!p.officeImport&&!p.bdoImport&&!p.adairsImport).length,302);for(const p of b.p){assert.equal(p.priceFloor,p.memberPrice);assert.ok(p.adairsImport?p.price===p.memberPrice:p.price>p.memberPrice);assert.ok(['Luxo Living','Koala Living','James Lane','BDO Furniture','Adairs'].includes(p.supplier));}
 });
