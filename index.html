@@ -117,6 +117,24 @@
 </head>
 <body data-page="index.html">
   <div id="site-header"></div>
+  <div id="blackFridayStrip" aria-live="polite" style="display:none;background:#050505;color:#f5ca37;text-align:center;padding:9px 12px;font:600 14px/1.5 Arial,sans-serif">
+    <span id="blackFridayText"></span> <a href="shop.html" style="display:inline-block;margin-left:12px;padding:5px 16px;background:#fff;color:#111;border-radius:20px;text-decoration:none;font-weight:700">Shop Now</a>
+    <span id="blackFridayCountdown" style="margin-left:12px;color:#fff;font-variant-numeric:tabular-nums"></span>
+  </div>
+  <script>
+  (function(){
+    const bar=document.getElementById('blackFridayStrip'), label=document.getElementById('blackFridayText'),clock=document.getElementById('blackFridayCountdown');
+    function refresh(){
+      const now=new Date(), day=new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Adelaide',weekday:'short'}).format(now);
+      const active=now>=new Date('2026-11-12T13:30:00Z')&&now<new Date('2026-11-14T13:30:00Z');
+      bar.style.display='block';
+      label.textContent=active?'✦ BLACK FRIDAY — 5% OFF Friday & Saturday only • Applied at checkout':'✦ NEW CUSTOMER OFFER — 10% OFF one item in your first order';
+      if(active){const seconds=Math.max(0,Math.floor((new Date('2026-11-14T13:30:00Z')-now)/1000));const d=Math.floor(seconds/86400),h=Math.floor(seconds%86400/3600),m=Math.floor(seconds%3600/60),sec=seconds%60;clock.textContent='Ends in '+d+'d '+String(h).padStart(2,'0')+'h '+String(m).padStart(2,'0')+'m '+String(sec).padStart(2,'0')+'s';}
+      else clock.textContent='';
+    }
+    refresh();setInterval(refresh,1000);
+  })();
+  </script>
 
   <!-- ============ HERO ============ -->
   <section class="hero">
