@@ -51,7 +51,7 @@
     if(parcelUnits)fee+=9.95+2.5*parcelWeight+zone.extra;
     return {fee:Math.round(fee*100)/100,quoteRequired:false,zone:zone.label};
   }
-  function mixedLoadSurcharge(lines){lines=lines.filter(p=>p.supplier!=='James Lane'&&!/^office-/.test(String(p.freightClass||'')));return lines.some(p=>loadClass(p)==='heavy')&&lines.some(p=>loadClass(p)==='medium')?1000:0;}
+  function mixedLoadSurcharge(lines){lines=lines.filter(p=>p.supplier!=='James Lane'&&!/^(office|adairs)-/.test(String(p.freightClass||'')));return lines.some(p=>loadClass(p)==='heavy')&&lines.some(p=>loadClass(p)==='medium')?1000:0;}
   function quote(lines,postcode,country,decorQuote){
     const chosen=lines.filter(x=>x.readyDining&&x.supplier!=='James Lane'),pc=(String(postcode||'').match(/\b\d{4}\b/)||[])[0];
     const james=jamesLaneQuote(lines,postcode,country);
@@ -59,14 +59,14 @@
     if(!chosen.length)return {fee:james.fee+mixedSurcharge,surcharge:0,mixedSurcharge,quoteRequired:james.quoteRequired,message:james.message||''};
     const officeMixed=lines.some(p=>/^office-/.test(String(p.freightClass||'')))&&lines.some(p=>!/^office-/.test(String(p.freightClass||''))&&!/^giftcard-/.test(p.id||p.sku||''))?102:0;
     let fee=james.fee+officeMixed,quoteRequired=james.quoteRequired;
-    chosen.forEach(p=>{if(/^office-/.test(String(p.freightClass||''))&&!decorQuote){quoteRequired=true;return;}if(decorQuote&&/^(decor|outdoor|office)-/.test(String(p.freightClass||'')))return;let n;if(p.supplier==='Koala Living')n=String(p.freightClass||'').startsWith('decor-')?(decorRates[String(p.freightClass).slice(6)]||{})[pc]:String(p.freightClass||'').startsWith('bedroom-')?(bedroomRates[String(p.freightClass).slice(8)]||{})[pc]:(koala[pc]||{})[p.freightClass];
+    chosen.forEach(p=>{if(/^(office|adairs)-/.test(String(p.freightClass||''))&&!decorQuote){quoteRequired=true;return;}if(decorQuote&&/^(decor|outdoor|office|adairs)-/.test(String(p.freightClass||'')))return;let n;if(p.supplier==='Koala Living')n=String(p.freightClass||'').startsWith('decor-')?(decorRates[String(p.freightClass).slice(6)]||{})[pc]:String(p.freightClass||'').startsWith('bedroom-')?(bedroomRates[String(p.freightClass).slice(8)]||{})[pc]:(koala[pc]||{})[p.freightClass];
       else n=p.freightClass==='chair'?105*(p.chairSets||1):p.freightClass==='sofa'?510:(luxo[pc]||{})[p.freightClass];
       if(country&&country!=='Australia')n=null;if(n==null)quoteRequired=true;else fee+=n*(p.qty||1);});
     if(decorQuote){if(decorQuote.quoteRequired)quoteRequired=true;else fee+=decorQuote.fee;}
     else if(chosen.filter(p=>String(p.freightClass||'').startsWith('decor-')).reduce((n,p)=>n+(p.qty||1),0)>1)quoteRequired=true;
     const hasBedroom=chosen.some(p=>/^(bedroom|outdoor)-/.test(String(p.freightClass||'')));
-    const units=lines.filter(p=>p.supplier!=='James Lane'&&!/^office-/.test(String(p.freightClass||''))).filter(p=>hasBedroom?!/^giftcard-/.test(p.sku||p.id||''):(p.readyDining&&!String(p.freightClass||'').startsWith('decor-'))||p.furniture).reduce((n,p)=>n+(p.qty||1),0),surcharge=units>1?102*(hasBedroom?units-1:1):0;
-    return {fee:Math.round((fee+surcharge+mixedSurcharge)*100)/100,surcharge,mixedSurcharge,quoteRequired,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(james.quoteRequired?james.message:decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
+    const units=lines.filter(p=>p.supplier!=='James Lane'&&!/^(office|adairs)-/.test(String(p.freightClass||''))).filter(p=>hasBedroom?!/^giftcard-/.test(p.sku||p.id||''):(p.readyDining&&!String(p.freightClass||'').startsWith('decor-'))||p.furniture).reduce((n,p)=>n+(p.qty||1),0),surcharge=units>1?102*(hasBedroom?units-1:1):0;
+    return {fee:Math.round((fee+surcharge+mixedSurcharge)*100)/100,surcharge,mixedSurcharge,quoteRequired,days:decorQuote&&decorQuote.days,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(james.quoteRequired?james.message:decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
   }
   const api={luxo,koala,bedroomRates,decorRates,loadClass,mixedLoadSurcharge,jamesLaneQuote,quote};if(typeof module==='object'&&module.exports)module.exports=api;else root.FurnitureFreight=api;
 })(typeof window==='undefined'?globalThis:window);

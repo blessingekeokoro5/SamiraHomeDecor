@@ -21,7 +21,7 @@ const dataPath = path.join(root, "js", "data.js");
 
 // Load js/data.js in a sandbox (browser-only calls like localStorage
 // are wrapped in try/catch inside the file, so they no-op here).
-const code = fs.readFileSync(dataPath, "utf8");
+const code = fs.readFileSync(dataPath, "utf8") + fs.readFileSync(path.join(root,"js/adairs-bathroom.js"),"utf8");
 const sandbox = { localStorage: { getItem: () => null }, console };
 vm.createContext(sandbox);
 // Run the data file, then export the top-level consts onto the sandbox

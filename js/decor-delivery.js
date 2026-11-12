@@ -2,7 +2,7 @@
 (function(root){
   const cache=new Map();let timer=null,queuedKey=null;
   function quote(lines,destination,onUpdate){
-    const items=lines.filter(p=>/^(decor|outdoor|office)-/.test(String(p.freightClass||''))).map(p=>({id:p.id||p.sku,qty:Number(p.qty||1)})).sort((a,b)=>a.id.localeCompare(b.id));
+    const items=lines.filter(p=>/^(decor|outdoor|office|adairs)-/.test(String(p.freightClass||''))).map(p=>({id:p.id||p.sku,qty:Number(p.qty||1)})).sort((a,b)=>a.id.localeCompare(b.id));
     if(!items.length)return null;
     const postcode=(String(destination.postcode||'').match(/\b\d{4}\b/)||[])[0]||'',suburb=String(destination.suburb||'').trim(),country=destination.country||'Australia';
     if(country!=='Australia')return {fee:0,quoteRequired:true,message:'These products are delivered within Australia only.'};

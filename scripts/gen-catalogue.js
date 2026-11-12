@@ -36,7 +36,7 @@ sandbox.window = sandbox;
 sandbox.globalThis = sandbox;
 
 const source =
-  fs.readFileSync(SRC, "utf8") +
+  fs.readFileSync(SRC, "utf8") + fs.readFileSync(path.join(ROOT,"js","adairs-bathroom.js"),"utf8") +
   "\n;globalThis.__out = { PRODUCTS, HAMPER_ITEMS, HAMPER_MIN, SAMIRA, PACKAGING_KITS };\n";
 
 vm.createContext(sandbox);
@@ -107,6 +107,7 @@ PRODUCTS.forEach((p) => {
     supplierProductUuid: p.supplierProductUuid || null,
     supplierSku: p.supplierSku || null,
     supplierHandle: p.supplierHandle || null,
+    profitMarkup: num(p.profitMarkup),
     supplierProductId: p.supplierProductId || null,
     supplierOptions: p.supplierOptions || null,
     supplierCost: num(p.supplierCost),

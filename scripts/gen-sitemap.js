@@ -16,7 +16,7 @@ const SITE = "https://samirahomedecor.com.au";
 const root = path.resolve(__dirname, "..");
 
 function load(file, exportName) {
-  const code = fs.readFileSync(path.join(root, file), "utf8");
+  const code = fs.readFileSync(path.join(root, file), "utf8") + (file === "js/data.js" ? fs.readFileSync(path.join(root,"js/adairs-bathroom.js"),"utf8") : "");
   const sandbox = { localStorage: { getItem: () => null }, console };
   vm.createContext(sandbox);
   vm.runInContext(code + `\n;globalThis.__X = (typeof ${exportName} !== "undefined") ? ${exportName} : null;`, sandbox, { filename: file });

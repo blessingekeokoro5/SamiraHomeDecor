@@ -172,7 +172,7 @@ function shipQuote(afterDisc) {
   fee += fixedShipFee() + ready.fee;
   const ofee = (window._fulfil === "express" && !isGiftOrder(getCart())) ? expressOptFee() : 0;
   fee += ofee;
-  return { pending:ready.pending, reason:ready.reason, mixedSurcharge:ready.mixedSurcharge, quoteRequired:ready.quoteRequired, freightMessage:ready.message, surcharge:ready.surcharge, fee, weight, days:z.days, freeOver:z.freeOver, express:xfee>0 };
+  return { pending:ready.pending, reason:ready.reason, mixedSurcharge:ready.mixedSurcharge, quoteRequired:ready.quoteRequired, freightMessage:ready.message, surcharge:ready.surcharge, fee, weight, days:ready.days?[Math.max(z.days[0],ready.days[0]),Math.max(z.days[1],ready.days[1])]:z.days, freeOver:z.freeOver, express:xfee>0 };
 }
 
 function checkoutTotals() {
