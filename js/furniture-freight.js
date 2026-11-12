@@ -18,12 +18,12 @@
     const chosen=lines.filter(x=>x.readyDining),pc=(String(postcode||'').match(/\b\d{4}\b/)||[])[0];
     if(!chosen.length)return {fee:0,surcharge:0,quoteRequired:false};
     let fee=0,quoteRequired=false;
-    chosen.forEach(p=>{if(decorQuote&&String(p.freightClass||'').startsWith('decor-'))return;let n;if(p.supplier==='Koala Living')n=String(p.freightClass||'').startsWith('decor-')?(decorRates[String(p.freightClass).slice(6)]||{})[pc]:String(p.freightClass||'').startsWith('bedroom-')?(bedroomRates[String(p.freightClass).slice(8)]||{})[pc]:(koala[pc]||{})[p.freightClass];
+    chosen.forEach(p=>{if(decorQuote&&/^(decor|outdoor)-/.test(String(p.freightClass||'')))return;let n;if(p.supplier==='Koala Living')n=String(p.freightClass||'').startsWith('decor-')?(decorRates[String(p.freightClass).slice(6)]||{})[pc]:String(p.freightClass||'').startsWith('bedroom-')?(bedroomRates[String(p.freightClass).slice(8)]||{})[pc]:(koala[pc]||{})[p.freightClass];
       else n=p.freightClass==='chair'?105*(p.chairSets||1):p.freightClass==='sofa'?510:(luxo[pc]||{})[p.freightClass];
       if(country&&country!=='Australia')n=null;if(n==null)quoteRequired=true;else fee+=n*(p.qty||1);});
     if(decorQuote){if(decorQuote.quoteRequired)quoteRequired=true;else fee+=decorQuote.fee;}
     else if(chosen.filter(p=>String(p.freightClass||'').startsWith('decor-')).reduce((n,p)=>n+(p.qty||1),0)>1)quoteRequired=true;
-    const hasBedroom=chosen.some(p=>String(p.freightClass||'').startsWith('bedroom-'));
+    const hasBedroom=chosen.some(p=>/^(bedroom|outdoor)-/.test(String(p.freightClass||'')));
     const units=lines.filter(p=>hasBedroom?!/^giftcard-/.test(p.sku||p.id||''):(p.readyDining&&!String(p.freightClass||'').startsWith('decor-'))||p.furniture).reduce((n,p)=>n+(p.qty||1),0),surcharge=units>1?102*(hasBedroom?units-1:1):0;
     return {fee:Math.round((fee+surcharge)*100)/100,surcharge,quoteRequired,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
   }

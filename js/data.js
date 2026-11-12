@@ -88,7 +88,7 @@ const MEGA_MENU = [
     key: "outdoor", label: "Outdoor",
     columns: [
       { title: "Shop", links: ["Shop All Outdoor", "New Arrivals", "Bestsellers", "On Sale"] },
-      { title: "Furniture", links: ["Outdoor Lounges", "Dining Sets", "Chairs"] },
+      { title: "Furniture", links: ["Outdoor Lounges", "Outdoor Tables", "Dining Sets", "Chairs"] },
       { title: "Garden", links: ["Faux Plants"] },
       { title: "Comfort", links: ["Outdoor Cushions", "Outdoor Rugs", "Throws"] }
     ]
@@ -28444,3 +28444,96 @@ function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
     }
   }
 ];decor.forEach(function(p){const at=PRODUCTS.findIndex(x=>x.id===p.id);if(at<0)PRODUCTS.push(p);else PRODUCTS[at]=p;});})();
+/* Koala Living outdoor collection — verified 12 November 2026. */
+(function(){const outdoor=[
+  {
+    "id": "kl129851",
+    "sku": "SH-KO-129851",
+    "name": "Luciana Matte Beige Latte 4-Seater Outdoor Sofa",
+    "cat": "Outdoor",
+    "room": "Outdoor",
+    "price": 8332,
+    "memberPrice": 7498,
+    "priceFloor": 7498,
+    "readyDining": true,
+    "outdoorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "236d31f5-c036-4562-b2f0-04110a7b812c",
+    "freightClass": "outdoor-129851",
+    "furniture": true,
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129851/c7a19358-6a57-41cf-943b-e874cad94190.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129851/c7a19358-6a57-41cf-943b-e874cad94190.png",
+      "https://img.koalaliving.com.au/products/129851/18d276a7-cc78-449b-8f76-0b16de360888.png"
+    ],
+    "desc": "Create a welcoming outdoor space with the Luciana Matte Beige Latte 4-Seater Outdoor Sofa. Supplied in the design and finish shown; any included pieces are specified in the product name. Delivery is charged separately by postcode, suburb and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Outdoor Sofas & Lounge Sets",
+      "Sold as": "One unit",
+      "Size class": "Large"
+    }
+  },
+  {
+    "id": "kl129852",
+    "sku": "SH-KO-129852",
+    "name": "Pironi Matte Taupe Outdoor Coffee Table",
+    "cat": "Outdoor",
+    "room": "Outdoor",
+    "price": 3554,
+    "memberPrice": 3198,
+    "priceFloor": 3198,
+    "readyDining": true,
+    "outdoorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "09e7565c-e56d-4a6b-a97f-53d9e7e8904b",
+    "freightClass": "outdoor-129852",
+    "furniture": true,
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129852/70b8a144-6b2a-49f9-9ed6-41378ccaccbc.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129852/70b8a144-6b2a-49f9-9ed6-41378ccaccbc.png",
+      "https://img.koalaliving.com.au/products/129852/9a2d0f0f-8f2b-4801-9fab-63a5b86bf874.png"
+    ],
+    "desc": "Create a welcoming outdoor space with the Pironi Matte Taupe Outdoor Coffee Table. Supplied in the design and finish shown; any included pieces are specified in the product name. Delivery is charged separately by postcode, suburb and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Outdoor Coffee Tables",
+      "Sold as": "One unit",
+      "Size class": "Medium"
+    }
+  },
+  {
+    "id": "kl129854",
+    "sku": "SH-KO-129854",
+    "name": "Carlotta Matte Anthracite 5-Seater Outdoor Sofa With Coffee Table",
+    "cat": "Outdoor",
+    "room": "Outdoor",
+    "price": 14998,
+    "memberPrice": 13498,
+    "priceFloor": 13498,
+    "readyDining": true,
+    "outdoorImport": true,
+    "supplier": "Koala Living",
+    "supplierProductUuid": "60266b9c-f47e-489f-ae0e-52533caeb183",
+    "freightClass": "outdoor-129854",
+    "furniture": true,
+    "auOnly": true,
+    "preorder": false,
+    "tag": "New arrival",
+    "img": "https://img.koalaliving.com.au/products/129854/7c00df40-1529-4598-8f5e-12cdaf3a7818.png",
+    "imgs": [
+      "https://img.koalaliving.com.au/products/129854/7c00df40-1529-4598-8f5e-12cdaf3a7818.png",
+      "https://img.koalaliving.com.au/products/129854/c9fefcd1-f3c8-4592-ba31-9344841b5a14.png"
+    ],
+    "desc": "Create a welcoming outdoor space with the Carlotta Matte Anthracite 5-Seater Outdoor Sofa With Coffee Table. Supplied in the design and finish shown; any included pieces are specified in the product name. Delivery is charged separately by postcode, suburb and quantity. Supplier availability and delivery timing are confirmed for your destination. Member savings are included; additional percentage offers do not apply.",
+    "specs": {
+      "Type": "Outdoor Sofas & Lounge Sets",
+      "Sold as": "Sofa and coffee table",
+      "Size class": "Large"
+    }
+  }
+];outdoor.forEach(function(p){const at=PRODUCTS.findIndex(x=>x.id===p.id);if(at<0)PRODUCTS.push(p);else PRODUCTS[at]=p;});})();

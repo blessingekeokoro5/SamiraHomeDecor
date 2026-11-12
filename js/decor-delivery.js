@@ -2,10 +2,10 @@
 (function(root){
   const cache=new Map();let timer=null,queuedKey=null;
   function quote(lines,destination,onUpdate){
-    const items=lines.filter(p=>String(p.freightClass||'').startsWith('decor-')).map(p=>({id:p.id||p.sku,qty:Number(p.qty||1)})).sort((a,b)=>a.id.localeCompare(b.id));
+    const items=lines.filter(p=>/^(decor|outdoor)-/.test(String(p.freightClass||''))).map(p=>({id:p.id||p.sku,qty:Number(p.qty||1)})).sort((a,b)=>a.id.localeCompare(b.id));
     if(!items.length)return null;
     const postcode=(String(destination.postcode||'').match(/\b\d{4}\b/)||[])[0]||'',suburb=String(destination.suburb||'').trim(),country=destination.country||'Australia';
-    if(country!=='Australia')return {fee:0,quoteRequired:true,message:'These home décor products are delivered within Australia only.'};
+    if(country!=='Australia')return {fee:0,quoteRequired:true,message:'These products are delivered within Australia only.'};
     if(!postcode||!suburb)return {fee:0,quoteRequired:true,message:'Enter your postcode and suburb to calculate delivery.'};
     const payload={items,postcode,suburb,country},key=JSON.stringify(payload),saved=cache.get(key);
     if(saved&&Date.now()-saved.at<5*60*1000)return saved.quote;

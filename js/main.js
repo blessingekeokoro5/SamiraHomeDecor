@@ -375,6 +375,7 @@ function subKeywords(sub) {
     "room sprays": ["room spray", "spray", "mist"],
     "dining sets": ["dining", "dinner set"],
     "outdoor lounges": ["lounge", "sofa", "daybed"],
+    "outdoor tables": ["outdoor table", "outdoor coffee table"],
     "outdoor cushions": ["cushion", "scatter"],
     "outdoor rugs": ["rug"],
     "chopping boards": ["chopping", "board"],

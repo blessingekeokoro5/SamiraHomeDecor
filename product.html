@@ -278,13 +278,13 @@
   </section>
 
   <div id="site-footer"></div>
-  <script src="js/furniture-freight.js?v=3"></script>
-  <script src="js/decor-delivery.js?v=1"></script>
-  <script src="js/data.js?v=95"></script>
+  <script src="js/furniture-freight.js?v=4"></script>
+  <script src="js/decor-delivery.js?v=2"></script>
+  <script src="js/data.js?v=96"></script>
   <script src="js/ai-overviews.js?v=7"></script>
   <script src="js/components.js?v=98"></script>
   <script src="js/cart.js?v=40"></script>
-  <script src="js/main.js?v=21"></script>
+  <script src="js/main.js?v=22"></script>
   <script>
     // Category → breadcrumb path (differs per category). Final crumb = the product's type.
     const CAT_TREE = {
@@ -719,9 +719,9 @@
                   <div class="pdp-delcalc" style="margin-top:12px;padding:12px 14px;border:1px solid #E8DCC8;border-radius:10px;background:#fff">
                     <div style="font-weight:700;color:var(--ink)">Delivery calculator</div>
                     <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap"><input id="dcPost" inputmode="numeric" maxlength="4" placeholder="Your postcode" aria-label="Postcode" style="flex:1;min-width:120px;padding:10px 12px;border:1px solid #D9CBB3;border-radius:8px;font:inherit"><button type="button" class="btn btn--outline" onclick="calcDelivery('${p.id}')">Calculate</button></div>
-                    ${p.homeDecorImport ? `<input id="dcSuburb" autocomplete="address-level2" placeholder="Your suburb" aria-label="Suburb" style="width:100%;margin-top:8px;padding:10px 12px;border:1px solid #D9CBB3;border-radius:8px;font:inherit">` : ""}
+                    ${(p.homeDecorImport || p.outdoorImport) ? `<input id="dcSuburb" autocomplete="address-level2" placeholder="Your suburb" aria-label="Suburb" style="width:100%;margin-top:8px;padding:10px 12px;border:1px solid #D9CBB3;border-radius:8px;font:inherit">` : ""}
                     <div id="dcOut" style="margin-top:8px" aria-live="polite"></div>
-                    <div style="margin-top:6px;font-size:.8rem;color:#8a7f77">${p.homeDecorImport ? "Delivery is checked for your postcode, suburb and quantity. Each additional item carries delivery. Décor-only orders do not incur a furniture bulky-order fee. If delivery cannot be confirmed, please request a quote." : "Freight is based on the supplier, product and tested postcode. Bedroom orders add $102 for each additional item, plus each item’s postcode delivery charge. Other furniture orders include one $102 bulky-order fee when buying two or more units. Untested destinations need a quote."}</div>
+                    <div style="margin-top:6px;font-size:.8rem;color:#8a7f77">${p.outdoorImport ? "Delivery is checked for your postcode, suburb and quantity. Each additional item carries delivery plus a $102 bulky-order charge. If delivery cannot be confirmed, please request a quote." : p.homeDecorImport ? "Delivery is checked for your postcode, suburb and quantity. Each additional item carries delivery. Décor-only orders do not incur a furniture bulky-order fee. If delivery cannot be confirmed, please request a quote." : "Freight is based on the supplier, product and tested postcode. Bedroom orders add $102 for each additional item, plus each item’s postcode delivery charge. Other furniture orders include one $102 bulky-order fee when buying two or more units. Untested destinations need a quote."}</div>
                   </div>`
                 : p.expressShip
                 ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">⚡ Express delivery only</span> <span style="color:var(--body)">Order today, receive around <strong style="color:var(--ink)">${typeof arriveRange === "function" ? arriveRange(p) : ""}</strong></span>
@@ -857,7 +857,7 @@
       out.dataset.id = id;
       if (p.readyDining) {
         var quoteLines = [Object.assign({}, p, { qty: pdpQty })];
-        var decorQuote = p.homeDecorImport && typeof DecorDelivery !== "undefined" ? DecorDelivery.quote(quoteLines, {postcode:pc,suburb:(document.getElementById("dcSuburb") || {}).value,country:"Australia"}, function(){ calcDelivery(id); }) : null;
+        var decorQuote = (p.homeDecorImport || p.outdoorImport) && typeof DecorDelivery !== "undefined" ? DecorDelivery.quote(quoteLines, {postcode:pc,suburb:(document.getElementById("dcSuburb") || {}).value,country:"Australia"}, function(){ calcDelivery(id); }) : null;
         var quote = FurnitureFreight.quote(quoteLines, pc, "Australia", decorQuote);
         out.textContent = quote.quoteRequired ? quote.message : "Delivery to " + st + " " + pc + ": $" + quote.fee.toFixed(2) + (quote.surcharge ? " (includes $" + quote.surcharge.toFixed(2) + " for additional items)" : "") + ". Delivery timing is confirmed separately.";
         return;

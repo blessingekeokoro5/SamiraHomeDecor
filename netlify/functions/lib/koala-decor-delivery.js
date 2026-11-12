@@ -1,6 +1,6 @@
 /* Live, read-only supplier quotes. Product identifiers always come from the trusted catalogue. */
 const ENDPOINT = 'https://8xa3k09jv9.execute-api.ap-southeast-2.amazonaws.com/prd/graphql';
-const isDecor = p => String(p.freightClass || '').startsWith('decor-');
+const isDecor = p => /^(decor|outdoor)-/.test(String(p.freightClass || ''));
 const round = n => Math.round(n * 100) / 100;
 function stateFor(pc) {
   const n=Number(pc);
@@ -12,7 +12,7 @@ async function quoteDecor(lines,destination,options={}) {
   const decor=lines.filter(isDecor);if(!decor.length)return null;
   const pc=(String(destination.postcode||'').match(/\b\d{4}\b/)||[])[0];
   const suburb=String(destination.suburb||'').trim().slice(0,100),state=stateFor(pc);
-  if(destination.country&&destination.country!=='Australia')return blocked('These home décor products are delivered within Australia only.');
+  if(destination.country&&destination.country!=='Australia')return blocked('These products are delivered within Australia only.');
   if(!pc||!state||!suburb)return blocked('Enter your postcode and suburb to calculate delivery.');
   const byId=new Map();
   for(const line of decor){
