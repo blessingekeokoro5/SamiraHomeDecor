@@ -1,0 +1,57 @@
+{
+  "notes": "Staged only. Do not expose as purchasable products until exact selected variant, image rights/URLs, and stock are verified.",
+  "items": [
+    {
+      "sku": "sh260823120969683860656",
+      "name": "Apricot 3-Piece Bathroom Set",
+      "supplier": "SHEIN",
+      "supplierUrl": "https://au.shein.com/Bathroom-Accessories-Set-Includes-Soap-Dispenser%2C-Toothbrush-Holder%2C-Tumbler%2C-Suitable-For-Hotel-Bathroom%2C-Home-Decor%2C-Housewarming-Gift%2C-Holiday-Gift%2C-Thanksgiving%2C-Christmas-Gift%2C-Bathroom-Storage%2C-Back-To-School-Storage%2C-Ideal-Choice-For-Bathroom-Organization-p-560690297.html",
+      "supplierCost": 59.95,
+      "markupSize": "large",
+      "profitMarkup": 250,
+      "proposedPrice": 309.95,
+      "status": "draft-awaiting-variant-and-product-image-verification",
+      "cat": "Bathroom",
+      "freightClass": "shein-bathroom"
+    },
+    {
+      "sku": "sh260817142005118347981",
+      "name": "White Ceramic 4-Piece Bathroom Set",
+      "supplier": "SHEIN",
+      "supplierUrl": "https://au.shein.com/Ceramic-Bathroom-4-Piece-Set%2C-Toiletries%2C-Bathroom-Accessories%2C-Mouthwash-Cup%2C-Toothbrush-Holder%2C-Draining-Tray-Set%2C-Wash-Basin-p-558289677.html",
+      "supplierCost": 29.66,
+      "markupSize": "large",
+      "profitMarkup": 150,
+      "proposedPrice": 179.66,
+      "status": "draft-awaiting-variant-and-product-image-verification",
+      "cat": "Bathroom",
+      "freightClass": "shein-bathroom"
+    },
+    {
+      "sku": "sh260905090355175187879",
+      "name": "Faux Marble Resin 3-Piece Bathroom Set",
+      "supplier": "SHEIN",
+      "supplierUrl": "https://au.shein.com/Resin-Bathroom-Accessories-Set-3-Pieces-Set-Includes-1-Dispenser-Bottle%2C-1-Toothbrush-Cup%2C-1-Bathroom-Tray%2C-Manual-Soap-Dispenser%2C-Bathroom-Shampoo-And-Body-Wash-Empty-Bottle-Set%2C-Minimalist-Wash-Cup%2C-Sink-Storage-Tray%2C-Sink-Tray%2C-Minimalist-Luxury%2C-Faux-Marble-Texture%2C-Bathroom-Countertop-Organization-And-Storage-p-564310681.html",
+      "supplierCost": 41.47,
+      "markupSize": "large",
+      "profitMarkup": 250,
+      "proposedPrice": 291.47,
+      "status": "draft-awaiting-variant-and-product-image-verification",
+      "cat": "Bathroom",
+      "freightClass": "shein-bathroom"
+    },
+    {
+      "sku": "sh260615160725220300986",
+      "name": "Beige Marble-Look Bathroom Accessories",
+      "supplier": "SHEIN",
+      "supplierUrl": "https://au.shein.com/Beige-Marble-Look-Resin-Bathroom-Accessories-Set%2C-Soap-Dispenser%2C-Toothbrush-Holder%2C-Soap-Dish%2C-Bathroom-Tumbler%2C-Vanity-Tray-%26-Tissue-Box-Cover%2C-Modern-Bathroom-Countertop-Decor-p-505607366.html",
+      "supplierCost": 15.72,
+      "markupSize": "small",
+      "profitMarkup": 50,
+      "proposedPrice": 65.72,
+      "status": "draft-awaiting-variant-and-product-image-verification",
+      "cat": "Bathroom",
+      "freightClass": "shein-bathroom"
+    }
+  ]
+}
