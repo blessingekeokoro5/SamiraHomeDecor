@@ -3523,7 +3523,7 @@ const PRODUCTS = [
     ],
     specs: { "Type": "Bedroom > Mattersses > Double", "Size": "Double", "Thickness": "26cm", "Firmness": "Medium firm", "Core": "18cm pocket springs", "Comfort layers": "High-density and memory foam" } },
 
-  { id: "lx90", added: "2026-11-08", name: "Stoten 120cm 4 Seater Round Dining Table in Concrete", cat: "Kitchenware", room: "Kitchenware", price: 411, memberPrice: 380, sku: "SH-11379", tag: "New", ph: "", img: "assets/products/lx90.webp",
+  { id: "lx90", added: "2026-11-08", name: "Stoten 120cm 4 Seater Round Dining Table in Concrete", cat: "Dining", room: "Dining", price: 411, memberPrice: 380, sku: "SH-11379", tag: "New", ph: "", img: "assets/products/lx90.webp",
     imgs: ["assets/products/lx90.webp", "assets/products/lx90-2.webp", "assets/products/lx90-3.webp", "assets/products/lx90-4.webp", "assets/products/lx90-5.webp"],
     fastShip: true, weight: "32 kg",
     desc: "Post-modern style for four. The Stoten pairs a 120cm round top in a concrete-look finish with black powder-coated legs that cross and taper from the centre for a sturdy, balanced stance. Adjustable feet steady it on uneven floors, and rubber pads protect your floorboards.",
@@ -3575,7 +3575,7 @@ const PRODUCTS = [
     ],
     specs: { "Type": "Living Room > Decor > Rugs", "Size": "200 x 300cm", "Material": "100% polyester", "Backing": "Anti-slip", "Use": "Indoor" } },
 
-  { id: "lx95", added: "2026-11-08", name: "Peyton Boucle Fabric Bar Stool Set of 2 in Cream", cat: "Kitchenware", room: "Kitchenware", price: 567, memberPrice: 520, sku: "SH-11384", tag: "New", ph: "", img: "assets/products/lx95.webp",
+  { id: "lx95", added: "2026-11-08", name: "Peyton Boucle Fabric Bar Stool Set of 2 in Cream", cat: "Dining", room: "Dining", price: 567, memberPrice: 520, sku: "SH-11384", tag: "New", ph: "", img: "assets/products/lx95.webp",
     imgs: ["assets/products/lx95.webp", "assets/products/lx95-3.webp", "assets/products/lx95-4.webp", "assets/products/lx95-5.webp"],
     fastShip: true, weight: "12.49 kg",
     desc: "Comfortable enough to linger at the bench. The Peyton stools have a soft, scooped seat in cream bouclé with a low curved back, a footrest ring and black powder-coated metal legs. Sold as a pair, they bring a cosy, minimalist look to a kitchen island or bar.",
@@ -3589,7 +3589,7 @@ const PRODUCTS = [
     specs: { "Type": "Dining & kitchen > Dining > Bar Stools", "Quantity": "2", "Upholstery": "Bouclé fabric", "Legs": "Black powder-coated metal", "Colour": "Cream" },
     dimensions: "51cm W x 42.5cm D x 74cm H (each)" },
 
-  { id: "lx96", added: "2026-11-08", name: "Halsa Classic Velvet Dining Chairs Set of 4 in Black", cat: "Kitchenware", room: "Kitchenware", price: 424, memberPrice: 392, sku: "SH-11385", tag: "New", ph: "", img: "assets/products/lx96.webp",
+  { id: "lx96", added: "2026-11-08", name: "Halsa Classic Velvet Dining Chairs Set of 4 in Black", cat: "Dining", room: "Dining", price: 424, memberPrice: 392, sku: "SH-11385", tag: "New", ph: "", img: "assets/products/lx96.webp",
     imgs: ["assets/products/lx96.webp", "assets/products/lx96-2.webp", "assets/products/lx96-3.webp", "assets/products/lx96-4.webp", "assets/products/lx96-5.webp"],
     fastShip: true, weight: "20 kg",
     desc: "Classic shape, plush comfort. The Halsa chairs wrap a cushioned seat and a supportive 45cm backrest in soft black velvet, on sleek metal legs with anti-slip pads. The set of four suits both modern and traditional dining tables; buy two sets for an eight-seater.",
