@@ -1,4 +1,4 @@
-const { quoteDecor } = require("./lib/koala-decor-delivery");
+const { quoteSuppliers } = require("./lib/supplier-delivery");
 const FurnitureFreight = require("../../js/furniture-freight.js");
 /* ============================================================
    Samira Home Decor — Create Stripe Checkout Session  (Netlify Function)
@@ -278,7 +278,7 @@ function resolveLine(raw, member) {
     weight: p.weight != null ? p.weight : DEFAULT_ITEM_KG,
     expressShip: p.expressShip != null ? p.expressShip : null,
     expressOpt: p.expressOpt != null ? p.expressOpt : null,
-    readyDining: !!p.readyDining, supplier: p.supplier, supplierProductUuid: p.supplierProductUuid, freightClass: p.freightClass,
+    readyDining: !!p.readyDining, supplier: p.supplier, supplierProductUuid: p.supplierProductUuid, supplierSku:p.supplierSku, supplierHandle:p.supplierHandle, freightClass: p.freightClass,
     chairSets: p.chairSets, furniture: p.furniture, shippingSize: p.shippingSize,
     shipFee: p.shipFee != null ? p.shipFee : null,
     arriveBy: p.arriveBy || null,
@@ -487,7 +487,7 @@ exports.handler = async (event) => {
     const afterDiscount = round2(subtotal - discount - voucher);
 
     // 4. Shipping: recomputed here from weight and region, never taken from the client.
-    const decorQuote = await quoteDecor(lines, {country:String(customer.country || "Australia"),postcode:customer.postcode,suburb:customer.suburb});
+    const decorQuote = await quoteSuppliers(lines, {country:String(customer.country || "Australia"),postcode:customer.postcode,suburb:customer.suburb});
     const ship = shippingFor(String(customer.country || "Australia"), String(fulfil), lines, afterDiscount, customer.postcode, decorQuote);
     if (ship.quoteRequired) return jsonResponse(400, { code: "freight_quote_required", error: ship.message });
 

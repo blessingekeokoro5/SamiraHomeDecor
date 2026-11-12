@@ -105,6 +105,8 @@ PRODUCTS.forEach((p) => {
     readyDining: !!p.readyDining,
     supplier: p.supplier || null,
     supplierProductUuid: p.supplierProductUuid || null,
+    supplierSku: p.supplierSku || null,
+    supplierHandle: p.supplierHandle || null,
     freightClass: p.freightClass || null,
     chairSets: p.chairSets || 1,
     furniture: isFurniture(p),
