@@ -46122,6 +46122,8 @@ function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
     ],
     "added": "2026-11-12",
     "tag": "New",
+    "img": "assets/products/freedom13172273.svg",
+    "imgs": ["assets/products/freedom13172273.svg"],
     "desc": "A silver-finish forty-two-piece dining cutlery set with six each of seven utensil styles. Delivery is calculated from Australian postcode, total units and packed weight at checkout; extra delivery charges apply to larger carts and split shipments.",
     "specs": {
       "Type": "Large cutlery set",
