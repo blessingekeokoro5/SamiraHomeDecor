@@ -66,7 +66,7 @@
     if(!place)return blocked('Please select a valid Australian suburb and postcode.');
     const zone=locations.zones&&locations.zones[pc];
     const stateExtra={SA:0,VIC:8,NSW:12,ACT:12,QLD:16,WA:26,TAS:26,NT:36}[place[2]]||0;
-    const remote=Math.max(stateExtra,Math.max(0,Number(zone&&zone.extra)||0));
+    const remote=Math.max(stateExtra,zone==null?180:Math.max(0,Number(zone.extra)||0));
     let units=0,kg=0,large=0;
     const distinct=new Set();
     for(const p of items){
