@@ -182,7 +182,8 @@ function checkoutTotals() {
   const afterDisc = sub - discount;
   // Rewards / gift dollar-voucher applied to this order
   const vou = (typeof getVoucher === "function") ? getVoucher() : null;
-  const voucher = (vou && vou.amount) ? Math.min(vou.amount, afterDisc) : 0;
+  const voucherEligible = Math.max(0, getCart().filter(i => !(findProduct(i.id) || {}).readyDining).reduce((n,i) => n + linePrice(i) * i.qty, 0) - discount);
+  const voucher = (vou && vou.amount) ? Math.min(vou.amount, voucherEligible) : 0;
   const afterVoucher = afterDisc - voucher;
   const q = shipQuote(afterDisc);
   let shipping = sub <= 0 ? 0 : q.fee;
@@ -203,6 +204,9 @@ function updateTotalsUI() {
     : "";
   const t = checkoutTotals();
   const shipTxt = t.pending ? "Checking delivery…" : t.quoteRequired ? "Delivery quote required" : t.shipping === 0 ? "Free" : money(t.shipping);
+  const calculator = document.getElementById("coDeliveryEstimate");
+  const hasDestination = !!((document.getElementById("coPost") || {}).value || "").trim();
+  if (calculator) calculator.textContent = !hasDestination ? "Enter a suburb or postcode to calculate delivery for your cart." : t.quoteRequired ? (t.freightMessage || "Delivery quote required for this location.") : "Delivery for your cart: " + shipTxt + ". Updates when you change the location or quantities.";
   const line = document.getElementById("coShipLine");
   // Block international checkout when the cart has an item too bulky to ship abroad.
   const bulky = (t.country !== "Australia") ? bulkyIntlItem() : null;
@@ -340,6 +344,15 @@ function renderCheckout() {
         <div class="field"><label>Business name (optional)</label><input id="coBiz" autocomplete="organization"></div>
         <div class="field"><label>Email *</label><input id="coEmail" type="email" autocomplete="email" value="${acc.email || ""}" required></div>
         <div class="field"><label>Mobile number *</label><input id="coPhone" type="tel" autocomplete="tel" required></div>
+        <div class="cx-box" id="coCalculator" style="margin:16px 0">
+          <h3 class="cx-h" style="margin-top:0">Calculate delivery</h3>
+          <label for="coLocation">Australian suburb or postcode</label>
+          <input id="coLocation" role="combobox" aria-autocomplete="list" aria-controls="coLocationOptions" aria-expanded="false" autocomplete="off" placeholder="e.g. Adelaide or 5000" style="width:100%;max-width:100%;margin-top:8px">
+          <div id="coLocationOptions" role="listbox" aria-label="Matching suburbs and postcodes" hidden style="max-height:240px;overflow-y:auto;margin-top:8px"></div>
+          <p id="coLocationStatus" role="status" aria-live="polite" style="font-size:.85rem;margin:6px 0"></p>
+          <p id="coDeliveryEstimate" role="status" aria-live="polite" style="margin-bottom:0">Enter a suburb or postcode to calculate delivery for your cart.</p>
+          <p class="form-note">Delivery depends on your location, item weights and quantities. Larger carts cost more to deliver. Remote locations may need a confirmed quote.</p>
+        </div>
         <div class="field"><label>Street address *</label><input id="coAddr" autocomplete="street-address" required></div>
         <div class="field-row">
           <div class="field"><label>Suburb *</label><input id="coSuburb" autocomplete="address-level2" required></div>
@@ -405,6 +418,7 @@ function renderCheckout() {
   if (typeof window._fulfil === "undefined" || (!giftOrder && !(expressOptFee() > 0))) window._fulfil = "delivery";
   setFulfil(window._fulfil);
   coCheckReady();
+  if (typeof CheckoutLocations !== "undefined") CheckoutLocations.init();
 }
 
 /* Cart edits on the checkout page */

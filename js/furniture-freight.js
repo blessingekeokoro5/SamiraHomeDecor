@@ -28,20 +28,44 @@
     if(p.furniture||/\b(chair|chairs|stool|stools|table|tables|desk|desks|bench|ottoman|bookcase|bookshelf)\b/i.test(name))return Number(p.weight)>=50?'heavy':'medium';
     return null;
   }
-  function mixedLoadSurcharge(lines){return lines.some(p=>loadClass(p)==='heavy')&&lines.some(p=>loadClass(p)==='medium')?1000:0;}
+  // Proposed store tariffs. Each extra physical unit adds freight; no cart cap.
+  function jamesLaneQuote(lines, postcode, country) {
+    const items=lines.filter(p=>p.supplier==='James Lane');
+    if(!items.length)return {fee:0,quoteRequired:false};
+    const pc=(String(postcode||'').match(/\b\d{4}\b/)||[])[0];
+    const blocked=message=>({fee:0,quoteRequired:true,message});
+    if(country&&country!=='Australia')return blocked('These products are delivered within Australia only.');
+    if(!pc)return blocked('Enter your postcode to calculate delivery.');
+    const locations=typeof module==='object'&&module.exports?require('./au-locations'):root.AuLocations;
+    if(!locations||!Object.prototype.hasOwnProperty.call(locations.zones,pc))return blocked('Please select a valid Australian suburb and postcode.');
+    const zone=locations.zones[pc];
+    if(!zone)return blocked('Delivery to this location needs confirmation. Please request a quote before payment.');
+    let fee=0,parcelWeight=0,parcelUnits=0;
+    for(const p of items){
+      const qty=Number(p.qty||1),weight=parseFloat(p.weight)||1.5,size=loadClass(p);
+      if(!Number.isInteger(qty)||qty<1||qty>50)return blocked('Please contact us for a delivery quote for this quantity.');
+      if(size==='heavy')fee+=qty*((weight>=100?300:weight>=50?250:200)+zone.extra);
+      else if(size==='medium')fee+=qty*((weight>=40?200:weight>=25?190:180)+zone.extra);
+      else{parcelUnits+=qty;parcelWeight+=weight*qty;}
+    }
+    if(parcelUnits)fee+=9.95+2.5*parcelWeight+zone.extra;
+    return {fee:Math.round(fee*100)/100,quoteRequired:false,zone:zone.label};
+  }
+  function mixedLoadSurcharge(lines){lines=lines.filter(p=>p.supplier!=='James Lane');return lines.some(p=>loadClass(p)==='heavy')&&lines.some(p=>loadClass(p)==='medium')?1000:0;}
   function quote(lines,postcode,country,decorQuote){
-    const chosen=lines.filter(x=>x.readyDining),pc=(String(postcode||'').match(/\b\d{4}\b/)||[])[0];
+    const chosen=lines.filter(x=>x.readyDining&&x.supplier!=='James Lane'),pc=(String(postcode||'').match(/\b\d{4}\b/)||[])[0];
+    const james=jamesLaneQuote(lines,postcode,country);
     const mixedSurcharge=mixedLoadSurcharge(lines);
-    if(!chosen.length)return {fee:mixedSurcharge,surcharge:0,mixedSurcharge,quoteRequired:false};
-    let fee=0,quoteRequired=false;
+    if(!chosen.length)return {fee:james.fee+mixedSurcharge,surcharge:0,mixedSurcharge,quoteRequired:james.quoteRequired,message:james.message||''};
+    let fee=james.fee,quoteRequired=james.quoteRequired;
     chosen.forEach(p=>{if(decorQuote&&/^(decor|outdoor)-/.test(String(p.freightClass||'')))return;let n;if(p.supplier==='Koala Living')n=String(p.freightClass||'').startsWith('decor-')?(decorRates[String(p.freightClass).slice(6)]||{})[pc]:String(p.freightClass||'').startsWith('bedroom-')?(bedroomRates[String(p.freightClass).slice(8)]||{})[pc]:(koala[pc]||{})[p.freightClass];
       else n=p.freightClass==='chair'?105*(p.chairSets||1):p.freightClass==='sofa'?510:(luxo[pc]||{})[p.freightClass];
       if(country&&country!=='Australia')n=null;if(n==null)quoteRequired=true;else fee+=n*(p.qty||1);});
     if(decorQuote){if(decorQuote.quoteRequired)quoteRequired=true;else fee+=decorQuote.fee;}
     else if(chosen.filter(p=>String(p.freightClass||'').startsWith('decor-')).reduce((n,p)=>n+(p.qty||1),0)>1)quoteRequired=true;
     const hasBedroom=chosen.some(p=>/^(bedroom|outdoor)-/.test(String(p.freightClass||'')));
-    const units=lines.filter(p=>hasBedroom?!/^giftcard-/.test(p.sku||p.id||''):(p.readyDining&&!String(p.freightClass||'').startsWith('decor-'))||p.furniture).reduce((n,p)=>n+(p.qty||1),0),surcharge=units>1?102*(hasBedroom?units-1:1):0;
-    return {fee:Math.round((fee+surcharge+mixedSurcharge)*100)/100,surcharge,mixedSurcharge,quoteRequired,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
+    const units=lines.filter(p=>p.supplier!=='James Lane').filter(p=>hasBedroom?!/^giftcard-/.test(p.sku||p.id||''):(p.readyDining&&!String(p.freightClass||'').startsWith('decor-'))||p.furniture).reduce((n,p)=>n+(p.qty||1),0),surcharge=units>1?102*(hasBedroom?units-1:1):0;
+    return {fee:Math.round((fee+surcharge+mixedSurcharge)*100)/100,surcharge,mixedSurcharge,quoteRequired,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(james.quoteRequired?james.message:decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
   }
-  const api={luxo,koala,bedroomRates,decorRates,loadClass,mixedLoadSurcharge,quote};if(typeof module==='object'&&module.exports)module.exports=api;else root.FurnitureFreight=api;
+  const api={luxo,koala,bedroomRates,decorRates,loadClass,mixedLoadSurcharge,jamesLaneQuote,quote};if(typeof module==='object'&&module.exports)module.exports=api;else root.FurnitureFreight=api;
 })(typeof window==='undefined'?globalThis:window);

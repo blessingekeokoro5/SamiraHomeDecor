@@ -58,7 +58,7 @@ const SHIP_ZONES = {
 };
 
 // Pure helpers exposed for financial parity tests; Netlify invokes handler only.
-exports._test = { resolveLine, shippingFor };
+exports._test = { resolveLine, shippingFor, chargePerUnit, protectedVoucher };
 const DEFAULT_ITEM_KG = 0.75;
 const HEAVY_KG = 50, HEAVY_MIN_FEE = 150;  // keep in step with js/checkout.js
 const EXPRESS_EXTRA = 150;   // extra charge for Express on gift orders (AUD), keep in step with js/cart.js
@@ -308,6 +308,13 @@ function bizDaysUntil(ymd) {
   return Math.max(1, n);
 }
 
+// Discounted products keep their per-unit margin even when quantities increase.
+function protectedVoucher(asked, eligibleSubtotal, discount) {
+  return round2(Math.min(Math.max(Number(asked)||0,0), MAX_VOUCHER, Math.max(0,eligibleSubtotal-discount)));
+}
+function chargePerUnit(line, eligibleSubtotal, discount, voucher) {
+  return Math.round(line.unitPrice * (line.readyDining ? 1 : (eligibleSubtotal > 0 ? 1 - (discount + voucher) / eligibleSubtotal : 1)) * 100);
+}
 function shippingFor(country, fulfil, lines, afterDiscount, postcode, decorQuote) {
   const res = shippingBase(country, fulfil, lines, afterDiscount);
   const ready = FurnitureFreight.quote(lines, postcode, country, decorQuote);
@@ -475,7 +482,7 @@ exports.handler = async (event) => {
 
     // 3. Rewards voucher: clamped, and never more than the order is worth.
     const askedVoucher = Number(body.voucher) || 0;
-    const voucher = round2(Math.min(Math.max(askedVoucher, 0), MAX_VOUCHER, subtotal - discount));
+    const voucher = protectedVoucher(askedVoucher, eligibleSubtotal, discount);
 
     const afterDiscount = round2(subtotal - discount - voucher);
 
@@ -548,10 +555,10 @@ exports.handler = async (event) => {
         currency: "aud",
         product_data: {
           name: l.name,
-          ...((discountLabel || l.preorder) ? { description: [l.preorder ? `Pre-order · expected ${l.expected}` : "", discountLabel ? `Includes ${discountLabel}` : ""].filter(Boolean).join(" · ") } : {}),
+          ...((discountLabel || l.preorder) ? { description: [l.preorder ? `Pre-order · expected ${l.expected}` : "", discountLabel && !l.readyDining ? `Includes ${discountLabel}` : ""].filter(Boolean).join(" · ") } : {}),
           ...(l.sku ? { metadata: { sku: l.sku } } : {}),
         },
-        unit_amount: Math.round(l.unitPrice * (l.readyDining ? 1 : (eligibleSubtotal > 0 ? 1 - discount / eligibleSubtotal : 1)) * (afterDiscount + voucher > 0 ? 1 - voucher / (afterDiscount + voucher) : 1) * 100),
+        unit_amount: chargePerUnit(l, eligibleSubtotal, discount, voucher),
       },
       quantity: l.qty,
     }));

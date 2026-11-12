@@ -28537,3 +28537,1797 @@ function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
     }
   }
 ];outdoor.forEach(function(p){const at=PRODUCTS.findIndex(x=>x.id===p.id);if(at<0)PRODUCTS.push(p);else PRODUCTS[at]=p;});})();
+
+// James Lane ready stock checked 12 November 2026. Excludes lighting, rugs and children's items.
+(function(){const ready=[
+  {
+    "id": "jl142adovass50blk",
+    "sku": "SH-JL-142ADOVASS50BLK",
+    "name": "Adora Tall Vase Black - 50cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1311.15,
+    "memberPrice": 1191.95,
+    "priceFloor": 1191.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/adora-tall-vase-black.html",
+    "supplierCost": 191.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "5.8 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/v/c/vcp.059.bk_2.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/v/c/vcp.059.bk_2.jpg?_i=AB"
+    ],
+    "desc": "The Adora Tall Vase - 27cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Black",
+      "Material": "Porcelain",
+      "Dimensions": "length 27 width 27 height 50 weight 5.80",
+      "Weight": "5.80",
+      "Number of Cartons": "1",
+      "Carton 1": "length 29 cm width 29 cm depth 52 cm weight 5.85 kgs"
+    }
+  },
+  {
+    "id": "jl142adovass50whi",
+    "sku": "SH-JL-142ADOVASS50WHI",
+    "name": "Adora Tall Vase White - 50cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1311.15,
+    "memberPrice": 1191.95,
+    "priceFloor": 1191.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/adora-tall-vessel-50cm.html",
+    "supplierCost": 191.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "7.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142adovass50whi.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142adovass50whi.jpg?_i=AB"
+    ],
+    "desc": "The Adora Tall Vase - 27cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "White",
+      "Material": "Porcelain",
+      "Dimensions": "length 27 width 27 height 50 weight 7",
+      "Weight": "7",
+      "Number of Cartons": "1",
+      "Carton 1": "length 29 cm width 29 cm depth 52 cm weight 5.85 kgs"
+    }
+  },
+  {
+    "id": "jl142adovass26blk",
+    "sku": "SH-JL-142ADOVASS26BLK",
+    "name": "Adora Vase Black 26cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1226.45,
+    "memberPrice": 1114.95,
+    "priceFloor": 1114.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/adora-vessel-black-26cm.html",
+    "supplierCost": 114.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/v/c/vcp.058.bk_2.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/v/c/vcp.058.bk_2.jpg?_i=AB"
+    ],
+    "desc": "The Adora Vase - 33cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Black",
+      "Material": "Porcelain",
+      "Dimensions": "length 33 width 33 height 26",
+      "Number of Cartons": "1",
+      "Carton 1": "length 35 cm width 35 cm depth 28 cm weight 3.40 kgs"
+    }
+  },
+  {
+    "id": "jl142adovass26whi",
+    "sku": "SH-JL-142ADOVASS26WHI",
+    "name": "Adora Vase White - 26cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1275.95,
+    "memberPrice": 1159.95,
+    "priceFloor": 1159.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/adora-vessel-white-33cm.html",
+    "supplierCost": 159.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142adovass26whi.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142adovass26whi.jpg?_i=AB"
+    ],
+    "desc": "The Adora Vase - 33cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "White",
+      "Material": "Porcelain",
+      "Dimensions": "length 33 width 33 height 26 weight 3",
+      "Weight": "3",
+      "Number of Cartons": "1",
+      "Carton 1": "length 35 cm width 35 cm depth 28 cm weight 3.40 kgs"
+    }
+  },
+  {
+    "id": "jl202amaplm030jut",
+    "sku": "SH-JL-202AMAPLM030JUT",
+    "name": "Amaya Placemat Jute Round 30cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1112.05,
+    "memberPrice": 1010.95,
+    "priceFloor": 1010.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/amaya-placemat-jute-round-30cm.html",
+    "supplierCost": 10.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "0.21 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/2/0/202amaplm030jut.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/2/0/202amaplm030jut.jpg?_i=AB"
+    ],
+    "desc": "The Amaya Jute Placement is woven in circular and rounded motifs that are reminiscent of tribal art. This natural coloured placement will look great under sharing plates or laid over your timber dining table as centrepiece.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Nat",
+      "Material": "Jute",
+      "Dimensions": "length 30 width 30 height 1 weight 0.21",
+      "Weight": "0.21"
+    }
+  },
+  {
+    "id": "jl142kaabwl109pmc",
+    "sku": "SH-JL-142KAABWL109PMC",
+    "name": "Aphra Paper Mache Bowl - 33cm x 33cm x 13cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1146.15,
+    "memberPrice": 1041.95,
+    "priceFloor": 1041.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/aphra-paper-mache-bowl-33cm-x-33cm-x-13cm.html",
+    "supplierCost": 41.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142kaabwl109pmc_1.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142kaabwl109pmc_1.jpg?_i=AB"
+    ],
+    "desc": "Enhance your decor with this charming Aphra bowl, highlighted by its distinct textured finish, it brings in earthy sophistication to any room. Please note that these uniquely beautiful pieces are one of a kind, with individual characteristics that may differ slightly from the photograph displayed. Your selection will be chosen at random. Each piece is unique, featuring imperfections, wear, and color variations that contribute to its character.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Product Note": "Please note that these uniquely beautiful pieces are one of a kind, with individual characteristics that may differ slightly from the photograph displayed. Your selection will be chosen at random. Each piece is unique, featuring imperfections, wear, and color variations that contribute to its character.",
+      "Colour": "Natural",
+      "Material": "Paper Mache",
+      "Dimensions": "length 33 width 33 height 13 weight 1",
+      "Weight": "1"
+    }
+  },
+  {
+    "id": "jl218aretvu220wh",
+    "sku": "SH-JL-218ARETVU220WH#",
+    "name": "Ares TV Unit Natural & White Marble",
+    "cat": "Living Room",
+    "room": "Living Room",
+    "price": 4343.9,
+    "memberPrice": 3949.0,
+    "priceFloor": 3949.0,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/ares-tv-unit-natural-faux-white-marble.html",
+    "supplierCost": 1949.0,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-heavy",
+    "shippingSize": "heavy",
+    "weight": "135.0 kg",
+    "furniture": true,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/218ARETVU220WH_-1.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/218ARETVU220WH_-1.jpg?_i=AB"
+    ],
+    "desc": "Distinctive solid ash ribbing meets the cool elegance of a marble top to create the Ares TV Unit, a centrepiece designed to captivate. Bring a sense of refined luxury to your lounge room with this durable and visually striking foundation for your entertainment system. Always secure your television with an anchor device. Do not allow children to climb or hang on doors or shelves. Delivery access is restricted to a maximum of two stairs.",
+    "specs": {
+      "Assembly": "Assembly Required",
+      "Product Note": "This item has a matte finish. Please note: Due to OH&S requirements, special delivery conditions may apply to concrete and marble dining tables and TV units is restricted to a maximum of 2 stairs. View our complete delivery terms here: Read More",
+      "Colour": "Natural/White",
+      "Material": "High density marble with premium marble film, MDF, Solid Ash wood Ribbing",
+      "Dimensions": "width 220 height 50 depth 45 weight 135",
+      "Weight": "135",
+      "Number of Cartons": "2",
+      "Carton 1": "length 226 cm width 52 cm depth 59 cm weight 83 kgs",
+      "Carton 2": "length 233 cm width 58 cm depth 13 cm weight 68 kgs"
+    }
+  },
+  {
+    "id": "jl142artdec013grn",
+    "sku": "SH-JL-142ARTDEC013GRN",
+    "name": "Artichoke Decorative",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1121.95,
+    "memberPrice": 1019.95,
+    "priceFloor": 1019.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/artichoke-decorative.html",
+    "supplierCost": 19.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "0.07 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/f/v/fvp.005.gn.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/f/v/fvp.005.gn.jpg?_i=AB"
+    ],
+    "desc": "The Artichoke Decorative adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Green",
+      "Material": "Plastic/Wire/Paper",
+      "Dimensions": "length 12 width 12 height 13 weight 0.07",
+      "Weight": "0.07"
+    }
+  },
+  {
+    "id": "jl188belaccbwlban",
+    "sku": "SH-JL-188BELACCBWLBAN",
+    "name": "Bellagio Banswara Marble Bowl Round - 26cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1192.35,
+    "memberPrice": 1083.95,
+    "priceFloor": 1083.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/bellagio-banswara-marble-bowl-round-26cm.html",
+    "supplierCost": 83.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "4.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/8/188belaccbwlban_2_.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/8/188belaccbwlban_2_.jpg?_i=AB"
+    ],
+    "desc": "Made from Bansawara Marble, this Bellagio Bowl adds elegance to any modern interior with its beautiful natural markings that are intrinsic to the marble, it’s both stylish and practical and no two pieces will be the same due to the nature of natural stone!",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Banswara Marble",
+      "Material": "Bansawara Marble",
+      "Dimensions": "length 26 width 26 height 6 weight 4",
+      "Weight": "4"
+    }
+  },
+  {
+    "id": "jl142conshl012whi",
+    "sku": "SH-JL-142CONSHL012WHI",
+    "name": "Conch Shell Stand Sculpture - 12cm x 12cm x 35cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1121.95,
+    "memberPrice": 1019.95,
+    "priceFloor": 1019.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/conch-shell-stand-sculpture-12cm-x-12cm-x-35cm.html",
+    "supplierCost": 19.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/d/e/de.008.wh.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/d/e/de.008.wh.jpg?_i=AB"
+    ],
+    "desc": "The Conch Shell Stand Sculpture adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "White",
+      "Material": "Resin",
+      "Dimensions": "length 12 width 12 height 35"
+    }
+  },
+  {
+    "id": "jl142durscu022nat",
+    "sku": "SH-JL-142DURSCU022NAT",
+    "name": "Durian Sculpture - 22cm x 16cm x 17cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1145.05,
+    "memberPrice": 1040.95,
+    "priceFloor": 1040.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/durian-sculpture-22cm-x-16cm-x-17cm.html",
+    "supplierCost": 40.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/t/e/template_primary_3__1.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/t/e/template_primary_3__1.jpg?_i=AB"
+    ],
+    "desc": "The Durian Sculpture adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "Natural",
+      "Material": "Resin",
+      "Dimensions": "length 22 width 16 height 17"
+    }
+  },
+  {
+    "id": "jl142durscu030nat",
+    "sku": "SH-JL-142DURSCU030NAT",
+    "name": "Durian Sculpture - 30cm x 19cm x 16cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1152.75,
+    "memberPrice": 1047.95,
+    "priceFloor": 1047.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/durian-sculpture-30cm-x-19cm-x-16cm.html",
+    "supplierCost": 47.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.3 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/2/12214214214214214.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/2/12214214214214214.jpg?_i=AB"
+    ],
+    "desc": "The Durian Sculpture adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "Natural",
+      "Material": "Resin",
+      "Dimensions": "length 30 width 19 height 16 weight 1.30",
+      "Weight": "1.30"
+    }
+  },
+  {
+    "id": "jl142figdec007grn",
+    "sku": "SH-JL-142FIGDEC007GRN",
+    "name": "Fig Decorative",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1106.55,
+    "memberPrice": 1005.95,
+    "priceFloor": 1005.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/fig-decorative.html",
+    "supplierCost": 5.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "0.03 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/f/v/fvp.016.gn_1.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/f/v/fvp.016.gn_1.jpg?_i=AB"
+    ],
+    "desc": "The Fig Decorative adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Green",
+      "Material": "Plastic/Wire/Paper",
+      "Dimensions": "length 6 width 6 height 7 weight 0.03",
+      "Weight": "0.03"
+    }
+  },
+  {
+    "id": "jl142bffscu037bla",
+    "sku": "SH-JL-142BFFSCU037BLA",
+    "name": "Friendship Sculpture Black - 23cm x 22cm x 37cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1214.35,
+    "memberPrice": 1103.95,
+    "priceFloor": 1103.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/friendship-sculpture-black-23cm-x-22cm.html",
+    "supplierCost": 103.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "0.4 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142bffscu037bla_m8dqnw.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142bffscu037bla_m8dqnw.jpg?_i=AB"
+    ],
+    "desc": "The Friendship Sculpture Black - 23cm x 22cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Black",
+      "Dimensions": "length 23 width 22 height 37 weight 0.40",
+      "Weight": "0.40"
+    }
+  },
+  {
+    "id": "jl142gabves017mix",
+    "sku": "SH-JL-142GABVES017MIX",
+    "name": "Gabriella Vessel - 17cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1275.95,
+    "memberPrice": 1159.95,
+    "priceFloor": 1159.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/gabriella-vessel-31cm-x-15cm-x-17cm.html",
+    "supplierCost": 159.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142gabves017mix.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142gabves017mix.jpg?_i=AB"
+    ],
+    "desc": "The Gabriella Vessel adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "Mixed",
+      "Material": "Porcelain",
+      "Dimensions": "length 31 width 15 height 17",
+      "Number of Cartons": "1",
+      "Carton 1": "length 33 cm width 17 cm depth 19 cm weight 1.75 kgs"
+    }
+  },
+  {
+    "id": "jl202harplmo30jut",
+    "sku": "SH-JL-202HARPLMO30JUT",
+    "name": "Harita Placemat Jute Round 30cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1112.05,
+    "memberPrice": 1010.95,
+    "priceFloor": 1010.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/harita-placemat-jute-round-30cm.html",
+    "supplierCost": 10.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "0.21 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/2/0/202harplmo30jut.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/2/0/202harplmo30jut.jpg?_i=AB"
+    ],
+    "desc": "The Harita Jute Placement is woven in a in a circular pattern, creating a graceful swirl. This natural coloured placement will look great under sharing plates or laid over your timber dining table as centrepiece.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Nat",
+      "Material": "Jute",
+      "Dimensions": "length 30 width 30 height 1 weight 0.21",
+      "Weight": "0.21"
+    }
+  },
+  {
+    "id": "jl142jmavas068gld",
+    "sku": "SH-JL-142JMAVAS068GLD",
+    "name": "Jama Bowl Gold - 68cm x 16cm x 7cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1143.95,
+    "memberPrice": 1039.95,
+    "priceFloor": 1039.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/jama-bowl-gold-68cm-x-16cm-x-7cm.html",
+    "supplierCost": 39.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142jmavas068gld_3.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142jmavas068gld_3.jpg?_i=AB"
+    ],
+    "desc": "The Jama Bowl Gold adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Gold",
+      "Material": "Aluminum",
+      "Dimensions": "length 68 width 16 height 7"
+    }
+  },
+  {
+    "id": "jl142julvasgre031",
+    "sku": "SH-JL-142JULVASGRE031",
+    "name": "Julia Ceramic Vase Green - 31cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1192.35,
+    "memberPrice": 1083.95,
+    "priceFloor": 1083.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/julia-ceramic-vase-green-28-x-28-x-31cm.html",
+    "supplierCost": 83.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.25 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142JULVASGRE031.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142JULVASGRE031.jpg?_i=AB"
+    ],
+    "desc": "The Julia Ceramic Vase Green 28 x 28 x 31 cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "Green",
+      "Material": "Creamic",
+      "Dimensions": "length 28 width 28 height 31 weight 3.25",
+      "Weight": "3.25"
+    }
+  },
+  {
+    "id": "jl142junvas23hgrn",
+    "sku": "SH-JL-142JUNVAS23HGRN",
+    "name": "Juni Vase Green - 23cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1139.55,
+    "memberPrice": 1035.95,
+    "priceFloor": 1035.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/juni-vase-23cm.html",
+    "supplierCost": 35.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.1 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/VCP.289.GN.png?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/VCP.289.GN.png?_i=AB"
+    ],
+    "desc": "Create an interesting feature in any interior using a range of floral and greenery stems in a decorative vase",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "Green",
+      "Material": "Ceramic",
+      "Dimensions": "width 16 height 23 depth 16 weight 1.10",
+      "Weight": "1.10",
+      "Number of Cartons": "1",
+      "Carton 1": "length 16 cm width 16 cm depth 24 cm weight 1.20 kgs"
+    }
+  },
+  {
+    "id": "jl142kaawst113wdn",
+    "sku": "SH-JL-142KAAWST113WDN",
+    "name": "Kamiko Wood & Metal Sculpture",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1879.85,
+    "memberPrice": 1708.95,
+    "priceFloor": 1708.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/kamiko-wood-and-metal-sculpture.html",
+    "supplierCost": 208.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-medium",
+    "shippingSize": "medium",
+    "weight": "30.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142kaawst113wdn_1.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142kaawst113wdn_1.jpg?_i=AB"
+    ],
+    "desc": "Transform your room with this remarkable Kamiko Sculpture. A standout décor piece, it’s made from wood featuring an circular silhouette with a textured finish on a elegant metal stand. It’s natural timber tones harmonises with various interior styles. Please note that these uniquely beautiful pieces are one of a kind, with individual characteristics that may differ slightly from the photograph displayed. Your selection will be chosen at random. Each piece is unique, featuring imperfections, wear, and color variations that contribute to its patina and character. We do not view these as faults, but rather as a testament to the natural beauty and history of vintage items.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Product Note": "Please note that these uniquely beautiful pieces are one of a kind, with individual characteristics that may differ slightly from the photograph displayed. Your selection will be chosen at random. Each piece is unique, featuring imperfections, wear, and color variations that contribute to its patina and character. We do not view these as faults, but rather as a testament to the natural beauty and history of vintage items.",
+      "Colour": "Natural",
+      "Material": "Metal, Wood",
+      "Dimensions": "length 51 width 13 height 61 weight 30",
+      "Weight": "30",
+      "Number of Cartons": "1",
+      "Carton 1": "length 53 cm width 15 cm depth 63 cm weight 30.05 kgs"
+    }
+  },
+  {
+    "id": "jl170kavvas081whi",
+    "sku": "SH-JL-170KAVVAS081WHI",
+    "name": "Kavos Vase White - 81cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1319.4,
+    "memberPrice": 1199.45,
+    "priceFloor": 1199.45,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/kavos-vase-white-81cm.html",
+    "supplierCost": 199.45,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "17.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/9/0/908bbb2d0b4659b088fc523d6c11fd1ddf95aae7fb622afd9ff0618f1bf52f49.jpeg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/9/0/908bbb2d0b4659b088fc523d6c11fd1ddf95aae7fb622afd9ff0618f1bf52f49.jpeg?_i=AB"
+    ],
+    "desc": "With its streamlined, slender profile and wide base, this elegant 81cm vase will add the perfect touch of class to any room. With a matte finish, it looks like a masterpiece that you've spent hours making by hand. The White Cement Vase is the perfect combination of old-world craftsmanship with luxury materials and contemporary style.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "White",
+      "Material": "Cement",
+      "Dimensions": "length 30 width 30 height 81 weight 17",
+      "Weight": "17",
+      "Number of Cartons": "1",
+      "Carton 1": "length 49 cm width 48 cm depth 99 cm weight 17 kgs"
+    }
+  },
+  {
+    "id": "jl142kervas028whi",
+    "sku": "SH-JL-142KERVAS028WHI",
+    "name": "Kerry Tall Vase White - 28cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1152.75,
+    "memberPrice": 1047.95,
+    "priceFloor": 1047.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/kerry-tall-vase-white-28cm.html",
+    "supplierCost": 47.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/v/c/vc.310.wh_2.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/v/c/vc.310.wh_2.jpg?_i=AB"
+    ],
+    "desc": "The Kerry Tall Vase adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "White",
+      "Material": "Ceramic",
+      "Dimensions": "length 24 width 15 height 28"
+    }
+  },
+  {
+    "id": "jl142knoplt70hwhi",
+    "sku": "SH-JL-142KNOPLT70HWHI",
+    "name": "Knox Tall Stonelite Planter White - 70cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1384.9,
+    "memberPrice": 1259.0,
+    "priceFloor": 1259.0,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/knox-tall-stonelite-planter-white-70cm.html",
+    "supplierCost": 259.0,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "4.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142KNOPLT70HWHI.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142KNOPLT70HWHI.jpg?_i=AB"
+    ],
+    "desc": "Elevate your favourite outdoor greenery with the Knox Tall Planter, featuring elegant outer lines that add a touch of modern texture to your outdoor space. Crafted from durable yet remarkably lightweight stonelite, this striking piece allows you to effortlessly rearrange your botanical displays whenever inspiration strikes.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "White",
+      "Material": "Polyethylene",
+      "Dimensions": "length 53 width 53 height 70 weight 4",
+      "Weight": "4",
+      "Number of Cartons": "1",
+      "Carton 1": "length 55 cm width 55 cm depth 72 cm weight 6 kgs"
+    }
+  },
+  {
+    "id": "jl142leadis081gol",
+    "sku": "SH-JL-142LEADIS081GOL",
+    "name": "Leaf Dish Gold - 81cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1138.45,
+    "memberPrice": 1034.95,
+    "priceFloor": 1034.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/leaf-dish-gold-81cm.html",
+    "supplierCost": 34.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/6/163leadis081gol.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/6/163leadis081gol.jpg?_i=AB"
+    ],
+    "desc": "The perfect decorative item or serving platter, this exquisite 81 cm Leaf dish in burnished gold is bound to add some elegance to any room or table.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Gold",
+      "Material": "Aluminium",
+      "Dimensions": "length 81 width 26 height 4 weight 3",
+      "Weight": "3"
+    }
+  },
+  {
+    "id": "jl142leatra040gld",
+    "sku": "SH-JL-142LEATRA040GLD",
+    "name": "Leaf Tray Gold - 40cm x 22cm x 5cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1142.52,
+    "memberPrice": 1038.65,
+    "priceFloor": 1038.65,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/leaf-tray-gold-40cm-x-22cm-x-5cm.html",
+    "supplierCost": 38.65,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142leatra040gld_3_.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142leatra040gld_3_.jpg?_i=AB"
+    ],
+    "desc": "The Leaf Tray Gold adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Gold",
+      "Material": "Aluminum",
+      "Dimensions": "length 40 width 22 height 5"
+    }
+  },
+  {
+    "id": "jl142mirscu010whi",
+    "sku": "SH-JL-142MIRSCU010WHI",
+    "name": "Miriam Sculpture White Round",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1121.95,
+    "memberPrice": 1019.95,
+    "priceFloor": 1019.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/miriam-sculpture-white-round.html",
+    "supplierCost": 19.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/d/e/de.193.wh_3.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/d/e/de.193.wh_3.jpg?_i=AB"
+    ],
+    "desc": "The Miriam Sculpture adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "White",
+      "Material": "Wood",
+      "Dimensions": "length 10 width 10 height 10"
+    }
+  },
+  {
+    "id": "jl142obibowivo023",
+    "sku": "SH-JL-142OBIBOWIVO023",
+    "name": "Obioma Bowl Porcelain Ivory 35 x 50 x 23 cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1291.35,
+    "memberPrice": 1173.95,
+    "priceFloor": 1173.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/obioma-bowl-porcelain-ivory-35-x-50-x-23cm.html",
+    "supplierCost": 173.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.45 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142OBIBOWIVO023.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142OBIBOWIVO023.jpg?_i=AB"
+    ],
+    "desc": "The Obioma Bowl Porcelain Ivory 35 x 50 x 23 cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "Ivory",
+      "Material": "Porcelain",
+      "Dimensions": "length 50 width 35 height 23 weight 3.45",
+      "Weight": "3.45",
+      "Number of Cartons": "1",
+      "Carton 1": "length 37 cm width 37 cm depth 25 cm weight 3.50 kgs"
+    }
+  },
+  {
+    "id": "jl142obivesivo040",
+    "sku": "SH-JL-142OBIVESIVO040",
+    "name": "Obioma Vessel Porcelain Ivory - 40cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1329.85,
+    "memberPrice": 1208.95,
+    "priceFloor": 1208.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/obioma-vessel-porcelain-ivory-30-x-30-x-40cm.html",
+    "supplierCost": 208.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "7.6 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142OBIVESIVO040.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142OBIVESIVO040.jpg?_i=AB"
+    ],
+    "desc": "The Obioma Vessel Porcelain Ivory 30 x 30 x 40 cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "Ivory",
+      "Material": "Porcelain",
+      "Dimensions": "length 30 width 30 height 40 weight 7.60",
+      "Weight": "7.60",
+      "Number of Cartons": "1",
+      "Carton 1": "length 32 cm width 32 cm depth 42 cm weight 7.65 kgs"
+    }
+  },
+  {
+    "id": "jl142ophbwl30wbro",
+    "sku": "SH-JL-142OPHBWL30WBRO",
+    "name": "Ophir Decorative Bowl Dark Brown - 15cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1215.45,
+    "memberPrice": 1104.95,
+    "priceFloor": 1104.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/ophir-decorative-bowl-dark-brown-15cm.html",
+    "supplierCost": 104.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "8.3 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142OPHBWL30WBRO.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142OPHBWL30WBRO.jpg?_i=AB"
+    ],
+    "desc": "Designed to make a subtle yet lasting impression, the Ophir Decorative Bowl features a sculptural form enhanced by a deep dark brown finish. Crafted from cast aluminum, it offers a harmonious balance of texture and elegance, creating a versatile decorative accent that complements both contemporary and classic interiors.",
+    "specs": {
+      "Colour": "Dark Brown",
+      "Material": "Aluminium",
+      "Dimensions": "length 30 width 30 height 15 weight 8.30",
+      "Weight": "8.30",
+      "Number of Cartons": "1",
+      "Carton 1": "length 49 cm width 49 cm depth 42 cm weight 10.30 kgs"
+    }
+  },
+  {
+    "id": "jl170orovas045blk",
+    "sku": "SH-JL-170OROVAS045BLK",
+    "name": "Orondo Concrete Vase Black - 45cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1181.9,
+    "memberPrice": 1074.45,
+    "priceFloor": 1074.45,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/orondo-concrete-vase-black-45cm.html",
+    "supplierCost": 74.45,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "8.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170orovas045blk_2_ouy11t.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170orovas045blk_2_ouy11t.jpg?_i=AB"
+    ],
+    "desc": "Add a touch of elegance to your home with the Orondo Vase in Black. Made from concrete, the vase brings organic elements in a refined silhouette. A beautiful centrepiece to add the finishing touch to any tabletop you place, as a standalone piece or to add your favourite artificial flowers and plants.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Black",
+      "Material": "Concrete",
+      "Dimensions": "length 33 width 33 height 45 weight 8",
+      "Weight": "8",
+      "Number of Cartons": "1",
+      "Carton 1": "length 45 cm width 45 cm depth 58 cm weight 9.50 kgs"
+    }
+  },
+  {
+    "id": "jl142peadcr13hbro",
+    "sku": "SH-JL-142PEADCR13HBRO",
+    "name": "Pear Bartlet Brown - 13 cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1109.85,
+    "memberPrice": 1008.95,
+    "priceFloor": 1008.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/pear-bartlet-brown-13cm.html",
+    "supplierCost": 8.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142PEADCR13HBRO.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/142PEADCR13HBRO.jpg?_i=AB"
+    ],
+    "desc": "Crafted with meticulous attention to detail, the Pear Bartlet embodies a designer's vision of perfection. Made from high-quality plastic, wire, and paper, this artificial fruit boasts an incredibly lifelike appearance that mimics nature's finest. The material selection ensures durability and a premium feel, making it suitable for both commercial and residential settings. Its rich brown hue and realistic texture make the Pear Bartlet an ideal centrepiece or merchandising element, adding a touch of elegance to any display.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Brown",
+      "Dimensions": "length 7 width 7 height 13 weight 1",
+      "Material": "Plastic/Wire/Paper",
+      "Weight": "1"
+    }
+  },
+  {
+    "id": "jl170peppl2028blk",
+    "sku": "SH-JL-170PEPPL2028BLK",
+    "name": "Peppe Concrete Planter Black - 20cm x 28cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1130.63,
+    "memberPrice": 1027.85,
+    "priceFloor": 1027.85,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/peppe-concrete-planter-black-20cm-x-28cm.html",
+    "supplierCost": 27.85,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170peppl2028blk_1_fm7ue1.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170peppl2028blk_1_fm7ue1.jpg?_i=AB"
+    ],
+    "desc": "Made from durable concrete, the 20cm Peppe Planter in Black is a stylish addition to house your favourite indoor or outdoor plants. Its neutral colour and unique, minimalistic design will add a touch of sophistication to any interior style.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Black",
+      "Material": "Concrete",
+      "Dimensions": "length 20 width 20 height 28 weight 3.50",
+      "Weight": "3.50",
+      "Number of Cartons": "1",
+      "Carton 1": "length 28 cm width 28 cm depth 39 cm weight 4.50 kgs"
+    }
+  },
+  {
+    "id": "jl170peppl2728blk",
+    "sku": "SH-JL-170PEPPL2728BLK",
+    "name": "Peppe Concrete Planter Black - 27cm x 28cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1132.95,
+    "memberPrice": 1029.95,
+    "priceFloor": 1029.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/peppe-concrete-planter-black-27cm-x-28cm.html",
+    "supplierCost": 29.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "6.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170peppl2728blk_1_kotgu8.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170peppl2728blk_1_kotgu8.jpg?_i=AB"
+    ],
+    "desc": "Made from durable concrete, the 27cm Peppe Planter in Black is a stylish addition to house your favourite indoor or outdoor plants. Its neutral colour and unique, minimalistic design will add a touch of sophistication to any interior style.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Black",
+      "Material": "Concrete",
+      "Dimensions": "length 27 width 27 height 28 weight 6",
+      "Weight": "6",
+      "Number of Cartons": "1",
+      "Carton 1": "length 37 cm width 37 cm depth 39 cm weight 7 kgs"
+    }
+  },
+  {
+    "id": "jl170peppl2028wht",
+    "sku": "SH-JL-170PEPPL2028WHT",
+    "name": "Peppe Concrete Planter White - 20cm x 28cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1130.63,
+    "memberPrice": 1027.85,
+    "priceFloor": 1027.85,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/peppe-concrete-planter-white-20cm-x-28cm.html",
+    "supplierCost": 27.85,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170peppl2028wht_1_d2f629.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170peppl2028wht_1_d2f629.jpg?_i=AB"
+    ],
+    "desc": "Made from durable concrete, the 20cm Peppe Planter in White is a stylish addition to house your favourite indoor or outdoor plants. Its neutral colour and unique, minimalistic design will add a touch of sophistication to any interior style.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "White",
+      "Material": "Concrete",
+      "Dimensions": "length 20 width 20 height 28 weight 3.50",
+      "Weight": "3.50",
+      "Number of Cartons": "1",
+      "Carton 1": "length 28 cm width 28 cm depth 39 cm weight 4.50 kgs"
+    }
+  },
+  {
+    "id": "jl170peppl2728wht",
+    "sku": "SH-JL-170PEPPL2728WHT",
+    "name": "Peppe Concrete Planter White - 27cm x 28cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1132.95,
+    "memberPrice": 1029.95,
+    "priceFloor": 1029.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/peppe-concrete-planter-white-27cm-x-28cm.html",
+    "supplierCost": 29.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "6.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170peppl2728wht_1_f1puf9.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170peppl2728wht_1_f1puf9.jpg?_i=AB"
+    ],
+    "desc": "Made from durable concrete, the 27cm Peppe Planter in White is a stylish addition to house your favourite indoor or outdoor plants. Its neutral colour and unique, minimalistic design will add a touch of sophistication to any interior style.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "White",
+      "Material": "Concrete",
+      "Dimensions": "length 27 width 27 height 28 weight 6",
+      "Weight": "6",
+      "Number of Cartons": "1",
+      "Carton 1": "length 37 cm width 37 cm depth 39 cm weight 7 kgs"
+    }
+  },
+  {
+    "id": "jl142piabwl016ivo",
+    "sku": "SH-JL-142PIABWL016IVO",
+    "name": "Pia Bowl Ivory - 16cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1257.25,
+    "memberPrice": 1142.95,
+    "priceFloor": 1142.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/pia-bowl-ivory-16cm.html",
+    "supplierCost": 142.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "2.8 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/v/c/vcp.064.iv_2.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/v/c/vcp.064.iv_2.jpg?_i=AB"
+    ],
+    "desc": "The Pia Bowl - 45cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "Ivory",
+      "Material": "Porcelain",
+      "Dimensions": "length 45 width 45 height 16 weight 2.80",
+      "Weight": "2.80",
+      "Number of Cartons": "1",
+      "Carton 1": "length 47 cm width 47 cm depth 18 cm weight 3.25 kgs"
+    }
+  },
+  {
+    "id": "jl142pigpot026sil",
+    "sku": "SH-JL-142PIGPOT026SIL",
+    "name": "Pigalle Candle Holder Silver",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1137.35,
+    "memberPrice": 1033.95,
+    "priceFloor": 1033.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/pigalle-candle-holder-silver.html",
+    "supplierCost": 33.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "0.4 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/CL.037.SV.JL_ykm4dh.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/CL.037.SV.JL_ykm4dh.jpg?_i=AB"
+    ],
+    "desc": "With curves galore, the Pigalle Candle Holder in silver is interesting, yet stylish and will add a modern glow to any table.",
+    "specs": {
+      "Assembly": "Fully Assembled",
+      "Colour": "Silver",
+      "Material": "Iron",
+      "Dimensions": "length 16 width 11 height 26 weight 0.40",
+      "Weight": "0.40"
+    }
+  },
+  {
+    "id": "jl142pomdec010red",
+    "sku": "SH-JL-142POMDEC010RED",
+    "name": "Pomegranate Decorative Red - 10cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1106.55,
+    "memberPrice": 1005.95,
+    "priceFloor": 1005.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/pomegranate-decorative.html",
+    "supplierCost": 5.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "0.06 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/f/v/fvp.001.rd.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/f/v/fvp.001.rd.jpg?_i=AB"
+    ],
+    "desc": "The Pomegranate Decorative adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Red",
+      "Material": "Plastic/Wire/Paper",
+      "Dimensions": "length 8 width 8 height 10 weight 0.06",
+      "Weight": "0.06"
+    }
+  },
+  {
+    "id": "jl142prebow052gol",
+    "sku": "SH-JL-142PREBOW052GOL",
+    "name": "Preeti Decorative Bowl Gold - 52cm x 50cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1165.95,
+    "memberPrice": 1059.95,
+    "priceFloor": 1059.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/preeti-decorative-bowl-gold-52cm-x-50cm.html",
+    "supplierCost": 59.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/94087f03ae6aeba86bd64ad669c77b48b0817affd4ed99fa72339e7b5de6cfce_genz0j_c_pad_b_gen_fill_w_1000_h_1000_ifiugb.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/94087f03ae6aeba86bd64ad669c77b48b0817affd4ed99fa72339e7b5de6cfce_genz0j_c_pad_b_gen_fill_w_1000_h_1000_ifiugb.jpg?_i=AB"
+    ],
+    "desc": "With its rough-hewn, handmade look, the Preeti bowl is an excellent serving or decorative platter.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Gold",
+      "Material": "Aluminium",
+      "Dimensions": "length 52 width 50 height 9 weight 3",
+      "Weight": "3",
+      "Number of Cartons": "1",
+      "Carton 1": "length 54 cm width 13 cm depth 53 cm weight 3.25 kgs"
+    }
+  },
+  {
+    "id": "jl142saidecgol046",
+    "sku": "SH-JL-142SAIDECGOL046",
+    "name": "Sainte Decor Accent - Gold",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1176.95,
+    "memberPrice": 1069.95,
+    "priceFloor": 1069.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/sainte-decor-accent-gold.html",
+    "supplierCost": 69.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "2.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142saidecgol046_1.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142saidecgol046_1.jpg?_i=AB"
+    ],
+    "desc": "The Sainte Decor Accent adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Gold",
+      "Dimensions": "length 47 width 25 height 9 weight 2",
+      "Weight": "2"
+    }
+  },
+  {
+    "id": "jl142sitscu023anq",
+    "sku": "SH-JL-142SITSCU023ANQ",
+    "name": "Sitting Man Sculpture - 20cm x 10cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1160.45,
+    "memberPrice": 1054.95,
+    "priceFloor": 1054.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/sitting-man-sculpture-20cm-x-10cm.html",
+    "supplierCost": 54.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.1 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142sitscu023anq_nrma9c.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/4/142sitscu023anq_nrma9c.jpg?_i=AB"
+    ],
+    "desc": "The Sitting Man Sculpture - 20cm x 10cm adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Gold",
+      "Dimensions": "length 20 width 10 height 23 weight 1.10",
+      "Weight": "1.10",
+      "Number of Cartons": "1",
+      "Carton 1": "length 24 cm width 12 cm depth 26 cm weight 1 kgs"
+    }
+  },
+  {
+    "id": "jl142stascucerwhi",
+    "sku": "SH-JL-142STASCUCERWHI",
+    "name": "Star Fruit Sculpture",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1129.65,
+    "memberPrice": 1026.95,
+    "priceFloor": 1026.95,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/star-fruit-sculpture.html",
+    "supplierCost": 26.95,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "1.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/d/e/de.037.wh_nihmcq.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/d/e/de.037.wh_nihmcq.jpg?_i=AB"
+    ],
+    "desc": "The Star Fruit Sculpture adds the perfect touch to any room. Enhance your interiors with our extensive range of beautiful décor accents that’ll be sure to add character to your home.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "White",
+      "Material": "Ceramic",
+      "Dimensions": "length 22 width 16 height 14"
+    }
+  },
+  {
+    "id": "jl174sutbow024whi",
+    "sku": "SH-JL-174SUTBOW024WHI",
+    "name": "Sutton Bowl White - 24cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1112.27,
+    "memberPrice": 1011.15,
+    "priceFloor": 1011.15,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/sutton-bowl-white-24x24x15cm.html",
+    "supplierCost": 11.15,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.5 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/Homewares/174SUTBOW024WHI.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/Homewares/174SUTBOW024WHI.jpg?_i=AB"
+    ],
+    "desc": "With its contemporary, angular lines, the Sutton Bowl in White is just as practical as a more rounded shape but far more interesting and fitting for a modern style home.",
+    "specs": {
+      "Colour": "White",
+      "Dimensions": "length 24 width 24 height 15 weight 3.50",
+      "Weight": "3.50"
+    }
+  },
+  {
+    "id": "jl170ursvas021blk",
+    "sku": "SH-JL-170URSVAS021BLK",
+    "name": "Ursula Concrete Round Vase Black - 21cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1142.9,
+    "memberPrice": 1039.0,
+    "priceFloor": 1039.0,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/ursula-concrete-round-vase-black-21cm.html",
+    "supplierCost": 39.0,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/170URSVAS021BLK_1_-_low_afg68q.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/170URSVAS021BLK_1_-_low_afg68q.jpg?_i=AB"
+    ],
+    "desc": "Add a touch of elegance to your home with the 21cm Ursula Vase in Black. Made from concrete, the vase brings organic elements in a graceful silhouette. A beautiful centrepiece to add the finishing touch to any tabletop you place, as a standalone piece or to add your favourite artificial flowers and plants.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "Black",
+      "Material": "Concrete",
+      "Dimensions": "length 21 width 21 height 21 weight 3",
+      "Weight": "3",
+      "Number of Cartons": "1",
+      "Carton 1": "length 29 cm width 29 cm depth 33 cm weight 4 kgs"
+    }
+  },
+  {
+    "id": "jl170ursvas021wht",
+    "sku": "SH-JL-170URSVAS021WHT",
+    "name": "Ursula Concrete Round Vase White - 21cm",
+    "cat": "Home Décor",
+    "room": "Living Room",
+    "price": 1142.9,
+    "memberPrice": 1039.0,
+    "priceFloor": 1039.0,
+    "readyDining": true,
+    "jamesLaneImport": true,
+    "supplier": "James Lane",
+    "supplierUrl": "https://www.jameslane.com.au/ursula-concrete-round-vase-white-21cm.html",
+    "supplierCost": 39.0,
+    "stockCheckedAt": "2026-11-12",
+    "freightClass": "jl-small",
+    "shippingSize": "small",
+    "weight": "3.0 kg",
+    "furniture": false,
+    "auOnly": true,
+    "preorder": false,
+    "arriveDays": [
+      8,
+      13
+    ],
+    "tag": "Ready to ship",
+    "img": "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170ursvas021wht_1_qh0cxy.jpg?_i=AB",
+    "imgs": [
+      "https://res.cloudinary.com/dmndjbrsi/image/upload/c_lpad,dpr_2.0,f_auto,q_auto/v1/media/catalog/product/1/7/170ursvas021wht_1_qh0cxy.jpg?_i=AB"
+    ],
+    "desc": "Add a touch of elegance to your home with the 21cm Ursula Vase in White. Made from concrete, the vase brings organic elements in a graceful silhouette. A beautiful centrepiece to add the finishing touch to any tabletop you place, as a standalone piece or to add your favourite artificial flowers and plants.",
+    "specs": {
+      "Assembly": "No Assembly Required",
+      "Colour": "White",
+      "Material": "Concrete",
+      "Dimensions": "length 21 width 21 height 21 weight 3",
+      "Weight": "3",
+      "Number of Cartons": "1",
+      "Carton 1": "length 29 cm width 29 cm depth 33 cm weight 4 kgs"
+    }
+  }
+];ready.forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();
