@@ -52,6 +52,71 @@
       "status": "draft-awaiting-variant-and-product-image-verification",
       "cat": "Bathroom",
       "freightClass": "shein-bathroom"
+    },
+    {
+      "sku": "sh260909152065811525683",
+      "name": "Roman Stone-Texture 3-Piece Bathroom Set",
+      "supplier": "SHEIN",
+      "supplierUrl": "https://au.shein.com/Bathroom-Accessories-Set%2C-Resin-Vintage-3D-Vertical-Textured-Bathroom-Set%2C-Customizable-INS-Style-Bathroom-Hand-Soap-Dispenser%2C-Manual-Press-Lotion-Bottle%2C-Toothbrush-Holder%2C-Soap-Dish%2C-Hotel-Homestay-Countertop-Decor-Toiletries-Set%2C-Luxury-Bathroom-Decor-p-565923904.html",
+      "supplierCost": 55.16,
+      "markupSize": "large",
+      "profitMarkup": 250,
+      "proposedPrice": 305.16,
+      "status": "draft-awaiting-variant-and-product-image-verification",
+      "cat": "Bathroom",
+      "freightClass": "shein-bathroom"
+    },
+    {
+      "sku": "sh260826105633762160543",
+      "name": "White Faux-Marble 5-Piece Vanity Set",
+      "supplier": "SHEIN",
+      "supplierUrl": "https://m.shein.com/au/5-Piece-Faux-Marble-Bathroom-Accessory-Set---Resin-Bathroom-Set-Includes-Soap-Dispenser%2C-Toothbrush-Holder%2C-Tumbler%2C-Cotton-Swab-Holder-And-Tray---Perfect-For-Housewarming-Gift%2C-Autumn-Decor%2C-Modern-Bathroom-Decor%2C-Home-Bathroom-Decor%2C-Back-To-School%2C-Thanksgiving%2C-Christmas%2C-New-Year-Gift-p-561395987.html",
+      "supplierCost": 48.74,
+      "markupSize": "large",
+      "profitMarkup": 250,
+      "proposedPrice": 298.74,
+      "status": "draft-awaiting-variant-and-product-image-verification",
+      "cat": "Bathroom",
+      "freightClass": "shein-bathroom"
+    },
+    {
+      "sku": "sh261023172772938222037",
+      "name": "Crystal-Texture Dispenser and Toothbrush Set",
+      "supplier": "SHEIN",
+      "supplierUrl": "https://au.shein.com/Luxury-Thick-Crystal-Texture-Bathroom-Set%2C-Hand-Soap-Dispenser-And-Toothbrush-Holder-Storage-Combination-p-580378769.html",
+      "supplierCost": 48.88,
+      "markupSize": "large",
+      "profitMarkup": 250,
+      "proposedPrice": 298.88,
+      "status": "draft-awaiting-variant-and-product-image-verification",
+      "cat": "Bathroom",
+      "freightClass": "shein-bathroom"
+    },
+    {
+      "sku": "sh260728121111844031209",
+      "name": "Terrazzo-Effect Bathroom Vanity Tray",
+      "supplier": "SHEIN",
+      "supplierUrl": "https://au.shein.com/High-End-Bathtub-Tray-Bathroom-Storage-Tray-Bathroom-Soap-Dispenser-Tray-High-End-Bathroom-Tray-Jewelry-Tray-Sink-Tray-Multi-Functional-Storage-Tray-Bathroom-Toiletries-Set-Suitable-For-Hotels-And-Other-Locations-F-Terrazzo-Texture-.-Bathroom-Storage-All-In-One-Wabi-Sabi-Style-Storage-Tray-.-Restore-Bathroom-Luxury-Waterproof-And-Easy-To-Clean-.-Sink-Organizer-Magic-Tool-Large-Capacity-Compartments-.-Skincare-And-Toiletries-Clearly-Visible-Nordic-Minimalist-.-Faux-Stone-Resin-Material-.-Faux-Stone-Resin-Material-.-Durable-And-Non-Fading-Jewelry-Storage-Tray-p-542034599.html",
+      "supplierCost": 16.1,
+      "markupSize": "small",
+      "profitMarkup": 50,
+      "proposedPrice": 66.1,
+      "status": "draft-awaiting-variant-and-product-image-verification",
+      "cat": "Bathroom",
+      "freightClass": "shein-bathroom"
+    },
+    {
+      "sku": "sr261028112050213175553",
+      "name": "Brushed Ceramic Soap Dispenser",
+      "supplier": "SHEIN",
+      "supplierUrl": "https://au.shein.com/1pc-Premium%2C-Understated-Luxury-Ceramic-Bathroom-Accessory-Set-Featuring-Brushed-Finish-Dispenser-Bottles%2C-Tumblers%2C-And-Soap-Dishes-Perfect-For-Organizing-Your-Bathroom-Vanity.-p-580917744.html",
+      "supplierCost": 17.99,
+      "markupSize": "small",
+      "profitMarkup": 50,
+      "proposedPrice": 67.99,
+      "status": "draft-awaiting-variant-and-product-image-verification",
+      "cat": "Bathroom",
+      "freightClass": "shein-bathroom"
     }
   ]
 }
