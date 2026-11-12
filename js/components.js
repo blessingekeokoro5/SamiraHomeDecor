@@ -1,3 +1,12 @@
+/* Do not display products with temporary placeholder-only imagery. */
+(function(){
+  if(typeof PRODUCTS==='undefined'||!Array.isArray(PRODUCTS))return;
+  for(let i=PRODUCTS.length-1;i>=0;i--){
+    const p=PRODUCTS[i];
+    if(p&&p.id==='freedom13172273')PRODUCTS.splice(i,1);
+  }
+})();
+
 /* ============================================================
    SAMIRA HOME DECOR, Shared components (header, mega-menu, footer)
    Injected into every page for a single source of truth.
