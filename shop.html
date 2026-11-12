@@ -148,6 +148,14 @@
         const OWN_TAB = new Set(["Living Room", "Home Décor", "Dining", "Bedroom", "Bathroom", "Kitchenware", "Outdoor", "Office", "Lifestyle"]);
         list = PRODUCTS.filter(p => members.includes(p.cat) || (members.includes(p.room) && !OWN_TAB.has(p.cat)));
       }
+      // Correct supplier misclassifications in category views without changing product data.
+      const isDiningFurniture = p => /\b(dining chair|dining table|dining bench|dining stool|dining set|sideboard|buffet)\b/i.test(String(p.name || p.title || ""));
+      if (cat === "Dining") {
+        const seen = new Set(list.map(p => p.id));
+        PRODUCTS.filter(isDiningFurniture).forEach(p => { if (!seen.has(p.id)) { list.push(p); seen.add(p.id); } });
+      } else if (cat !== "All") {
+        list = list.filter(p => !isDiningFurniture(p));
+      }
       if (searchQuery) list = searchProducts(list, searchQuery);
       // Price, availability (Ready to ship / Made to order) and sort come from the shared controls
       shopList = applyShopFilters(list);
