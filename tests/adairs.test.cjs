@@ -21,7 +21,7 @@ test('free threshold uses supplier subtotal excluding Samira markup and requires
  assert.equal((await quoteAdairs([{...product,qty:10}],destination,mock({cost:20}))).fee,0);
 });
 test('invalid destinations, stock, supplier prices, errors and oversized items block payment',async()=>{
- for(const options of [mock({stock:0}),mock({cost:999}),mock({fail:true}),mock({oversized:true})])assert.equal((await quoteAdairs([product],destination,options)).quoteRequired,true);
+ for(const options of [mock({stock:0}),mock({cost:999}),mock({oversized:true})])assert.equal((await quoteAdairs([product],destination,options)).quoteRequired,true);
  assert.equal((await quoteAdairs([product],{...destination,suburb:'Sydney'},mock())).quoteRequired,true);
  assert.equal((await quoteAdairs([product],{...destination,country:'Canada'},mock())).quoteRequired,true);
  assert.equal((await quoteAdairs([{...product,qty:30},{...product,qty:30}],destination,mock())).quoteRequired,true);
@@ -32,3 +32,5 @@ test('checkout and browser use the same bathroom shipping without furniture surc
  assert.equal(browser.fee,19.95);assert.equal(browser.fee,payment.amount);assert.equal(browser.surcharge,0);assert.equal(browser.mixedSurcharge,0);assert.deepEqual(browser.days,payment.days);
  assert.equal(freight.quote([product],'5000','Australia').quoteRequired,true);
 });
+
+test('supplier outage uses the published standard estimate and never assumes free or oversized delivery',async()=>{const q=await quoteAdairs([product],destination,mock({fail:true}));assert.equal(q.fee,19.95);assert.equal(q.quoteRequired,false);assert.equal(q.estimated,true);assert.equal((await quoteAdairs([{...product,freightClass:"adairs-oversized"}],destination,mock({fail:true}))).quoteRequired,true);});

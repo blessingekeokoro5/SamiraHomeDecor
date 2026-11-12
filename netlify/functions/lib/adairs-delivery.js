@@ -56,6 +56,12 @@ async function quoteAdairs(lines,destination,options={}){
   }
   const transit=['VIC','NSW','ACT'].includes(location[2])?[3,5]:['WA','NT'].includes(location[2])?[7,9]:[4,6];
   return {fee:cost>17500?0:19.95,quoteRequired:false,message:'',days:[3+transit[0],5+transit[1]],supplierSubtotal:cost/100};
- }catch{return blocked('We could not confirm bathroom availability and delivery. Please request confirmation before payment.');}
+ }catch{
+  // Supplier pages can reject server traffic. The published national standard
+  // rate remains a valid delivery estimate; do not assume free delivery.
+  if(items.some(p=>p.freightClass!=='adairs-standard'))return blocked('Please contact us for a postcode-specific bathroom delivery quote.');
+  const transit=['VIC','NSW','ACT'].includes(location[2])?[3,5]:['WA','NT'].includes(location[2])?[7,9]:[4,6];
+  return {fee:19.95,quoteRequired:false,message:'Standard delivery estimate based on published supplier rates.',estimated:true,days:[3+transit[0],5+transit[1]]};
+ }
 }
 module.exports={quoteAdairs,isAdairs,parseDetails};
