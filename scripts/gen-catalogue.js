@@ -43,6 +43,8 @@ vm.createContext(sandbox);
 vm.runInContext(source, sandbox, { filename: "js/data.js" });
 
 const { PRODUCTS, HAMPER_ITEMS, HAMPER_MIN, SAMIRA, PACKAGING_KITS } = sandbox.__out;
+// Exclude the Freedom cutlery listing until a real approved product photograph is available.
+for (let i=PRODUCTS.length-1;i>=0;i--) if(PRODUCTS[i]?.id==='freedom13172273') PRODUCTS.splice(i,1);
 const packagingKits = {};
 (PACKAGING_KITS || []).forEach((k) => { if (k && k.id && !k.hidden && num(k.price) != null) packagingKits[k.id] = { name: String(k.name || ""), price: num(k.price) }; });
 
