@@ -322,7 +322,10 @@ function shippingFor(country, fulfil, lines, afterDiscount, postcode, decorQuote
   res.amount = round2(res.amount + ready.fee);
   res.mixedSurcharge = ready.mixedSurcharge || 0;
   if(ready.days)res.days=[Math.max(res.days[0],ready.days[0]),Math.max(res.days[1],ready.days[1])];
-  if (ready.fee) res.label = (lines.some(l => l.readyDining && !String(l.freightClass || "").startsWith("decor-")) ? "Furniture delivery" : "Home décor delivery") + (ready.surcharge ? " (includes $" + ready.surcharge.toFixed(2) + " for additional items)" : "");
+  if (ready.fee) {
+    const furniture = lines.some(l => l.readyDining && l.supplier !== "Freedom" && !String(l.freightClass || "").startsWith("decor-"));
+    res.label = (furniture ? "Furniture delivery" : lines.some(l => l.supplier === "Freedom") ? "Kitchenware delivery" : "Home décor delivery") + (ready.surcharge ? " (includes $" + ready.surcharge.toFixed(2) + " for additional items)" : "");
+  }
   if (ready.mixedSurcharge || lines.some(l=>l.supplier==='Adairs')) res.label = "Delivery";
   // Fixed per-item delivery: never free, added on top.
   const fixed = round2(lines.reduce((n, l) => n + (l.shipFee && !l.expressShip ? l.shipFee * l.qty : 0), 0));
