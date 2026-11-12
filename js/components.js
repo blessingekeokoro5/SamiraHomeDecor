@@ -965,6 +965,11 @@ function injectComponents() {
   initFlashBar();
   initEnquire();
   initNewsletterPopup();
+  if (Date.now()>=Date.parse("2026-11-12T13:30:00Z") && Date.now()<Date.parse("2026-11-14T13:30:00Z")) {
+    document.querySelectorAll(".promo-copy strong,.rw-offer,.news-badge + div strong,.nl-card p").forEach(el=>{
+      if(el.textContent.includes("10% off")) el.textContent="Black Friday: 5% off Friday and Saturday only. The 10% new-customer offer resumes Sunday.";
+    });
+  }
 }
 
 /* ---- Favicon (injected on every page), D&M house mark ---- */
