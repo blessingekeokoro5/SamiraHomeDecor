@@ -122,9 +122,9 @@
     #blackFridayStrip .bf-inner{display:flex;align-items:center;justify-content:center;gap:15px;flex-wrap:wrap}
     #blackFridayStrip .bf-label{font-weight:800;letter-spacing:.06em;color:#ffe0a0}
     #blackFridayStrip .bf-clock{display:inline-flex;gap:5px;align-items:center;color:#fff;font-variant-numeric:tabular-nums}
-    #blackFridayStrip .bf-clock b{color:#ffe0a0;font-size:16px}
+    #blackFridayStrip .bf-clock{gap:6px}#blackFridayStrip .bf-time-unit{display:flex;flex-direction:column;align-items:center;justify-content:center;border:1.5px solid #e9b750;border-radius:9px;min-width:49px;padding:3px 5px;line-height:1.1}#blackFridayStrip .bf-time-unit b{color:#fff;font-size:19px;font-weight:800}#blackFridayStrip .bf-time-unit small{font-size:9px;color:#f6d996;margin-top:3px}
     #blackFridayStrip .bf-shop{display:inline-block;padding:6px 17px;background:linear-gradient(120deg,#f8df9d,#c99a42);color:#081c38;border-radius:20px;text-decoration:none;font-weight:800}
-    @media(max-width:600px){#blackFridayStrip{padding:9px 6px;font-size:12px}#blackFridayStrip .bf-inner{gap:7px}#blackFridayStrip .bf-label{font-size:12px}#blackFridayStrip .bf-clock b{font-size:13px}#blackFridayStrip .bf-shop{padding:5px 10px;font-size:11px}}
+    @media(max-width:600px){#blackFridayStrip{padding:9px 6px;font-size:12px}#blackFridayStrip .bf-inner{gap:7px}#blackFridayStrip .bf-label{font-size:12px}#blackFridayStrip .bf-time-unit{min-width:36px;padding:3px 2px;border-radius:6px}#blackFridayStrip .bf-time-unit b{font-size:15px}#blackFridayStrip .bf-time-unit small{font-size:8px}#blackFridayStrip .bf-shop{padding:5px 10px;font-size:11px}}
   </style>
   <div id="blackFridayStrip" aria-live="off">
     <div class="bf-inner"><span id="blackFridayText" class="bf-label"></span><span id="blackFridayCountdown" class="bf-clock"></span><a href="shop.html" class="bf-shop">Shop Now</a></div>
@@ -137,10 +137,10 @@
       const active=now>=new Date('2026-11-12T13:30:00Z')&&now<new Date('2026-11-14T13:30:00Z');
       bar.style.display='block';
       label.textContent=active?'✦ BLACK FRIDAY · 5% OFF':'✦ NEW CUSTOMERS · 10% OFF';
-      if(active){const seconds=Math.max(0,Math.floor((new Date('2026-11-14T13:30:00Z')-now)/1000));const d=Math.floor(seconds/86400),h=Math.floor(seconds%86400/3600),m=Math.floor(seconds%3600/60),sec=seconds%60;clock.innerHTML='<b>'+String(d).padStart(2,'0')+'</b>d <b>'+String(h).padStart(2,'0')+'</b>h <b>'+String(m).padStart(2,'0')+'</b>m <b>'+String(sec).padStart(2,'0')+'</b>s';}
+      if(active){const seconds=Math.max(0,Math.floor((new Date('2026-11-14T13:30:00Z')-now)/1000));const d=Math.floor(seconds/86400),h=Math.floor(seconds%86400/3600),m=Math.floor(seconds%3600/60),sec=seconds%60;clock.innerHTML=[['Days',d],['Hrs',h],['Mins',m],['Secs',sec]].map(([name,value])=>'<span class="bf-time-unit"><b>'+String(value).padStart(2,'0')+'</b><small>'+name+'</small></span>').join('');}
       else clock.textContent='';
     }
-    refresh();setInterval(refresh,1000);
+    refresh();setInterval(refresh,1000);document.addEventListener('visibilitychange',refresh);window.addEventListener('pageshow',refresh);
     function adjustWelcomeCopy(){
       const active=Date.now()>=Date.parse('2026-11-12T13:30:00Z')&&Date.now()<Date.parse('2026-11-14T13:30:00Z');
       if(!active)return;
