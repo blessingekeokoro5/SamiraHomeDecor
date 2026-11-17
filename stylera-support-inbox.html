@@ -11,5 +11,5 @@ $("login").onclick=async()=>{try{await signInWithPopup(auth,new GoogleAuthProvid
 $("logout").onclick=()=>signOut(auth);
 $("refresh").onclick=load;
 $("send").onclick=async()=>{if(!selected||!approved)return;const text=$("message").value.trim();if(!text)return;$("send").disabled=true;try{await request("/.netlify/functions/stylera-support-tickets",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"reply",ticketId:selected,message:text})});$("message").value="";$("status").textContent="Test reply saved internally. No customer notification was sent.";await load();await showTicket(selected);}catch(e){$("status").textContent=e.message;}finally{$("send").disabled=false;}};
-window.setInterval(()=>{if(approved && !document.hidden)load();},30000);
+window.setInterval(()=>{if(approved && !document.hidden && $("replyPanel").hidden)load();},30000);
 onAuthStateChanged(auth,user=>{$("login").hidden=!!user;$("logout").hidden=!user;if(user){$("status").textContent="Checking owner access…";verify();}else{approved=false;$("workspace").hidden=true;$("status").textContent="Sign in to view your protected support inbox.";}});</script></body></html>
