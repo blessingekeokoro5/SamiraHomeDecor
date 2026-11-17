@@ -8,7 +8,17 @@ export default async function handler(request){
  const resendKey=Netlify.env.get("RESEND_API_KEY");
  const from=Netlify.env.get("STYLERA_ALERT_FROM");
  const to=Netlify.env.get("STYLERA_ALERT_TO");
- if(!secret||!resendKey||!from||!to)return respond("Notification service not configured",503);
+ if(!secret||!resendKey||!from||!to){
+   // Log names only. Never log the secret, key, email addresses or webhook body.
+   const missing=[
+     !secret&&"STYLERA_WEBHOOK_SECRET",
+     !resendKey&&"RESEND_API_KEY",
+     !from&&"STYLERA_ALERT_FROM",
+     !to&&"STYLERA_ALERT_TO"
+   ].filter(Boolean);
+   console.error("Stylera notification configuration missing variable names:",missing.join(", "));
+   return respond("Notification service not configured",503);
+ }
  // Shared bearer token must be a long, randomly generated value, set in the
  // Supabase webhook Authorization header and Netlify secret environment variable.
  const provided=request.headers.get("authorization");
