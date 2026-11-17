@@ -32,3 +32,9 @@ Status: **development only**. This branch does not replace Tidio or change the l
 - No auto-enablement of paid AI/image-generation services.
 - No promises of permanently free production hosting; free-tier quotas and inactivity pauses apply.
 - Tidio remains live until the owner approves a tested cutover.
+
+## Sydney project connection
+- Supabase project URL: `https://agqjcvacbrzhwgjbhcqs.supabase.co`
+- REST API endpoint: `https://agqjcvacbrzhwgjbhcqs.supabase.co/rest/v1/`
+- Publishable key: **not yet configured**; obtain via Supabase Settings → API Keys and store in deployment configuration when wiring the client.
+- The initial `stylera_conversations` and `stylera_messages` SQL tables were run by the owner; authenticated customer read and conversation-create policies exist. Message writes, owner-only inbox access, and server-side rate limits are not yet implemented.
