@@ -16,7 +16,7 @@ exports.handler=async(event)=>{
  try{const user=await getAuth(app).verifyIdToken(bearer,true);if(user.uid!==OWNER||user.aud!==PROJECT||user.firebase?.sign_in_provider!=="google.com")return response(403,{error:"Owner only"});}catch{return response(401,{error:"Invalid authentication"});}
  const doc=getFirestore(app).collection("stylera_notification_settings").doc(OWNER);
  try{
-  if(event.httpMethod==="GET"){const snapshot=await doc.get();const v=snapshot.data()||{};return response(200,{emailEnabled:v.emailEnabled??true,pushEnabled:v.pushEnabled??true,emailConfigured:Boolean(process.env.STYLERA_NOTIFICATION_EMAIL_API_KEY&&process.env.STYLERA_NOTIFICATION_FROM),pushConfigured:Boolean(process.env.STYLERA_FIREBASE_WEB_PUSH_VAPID_KEY),deliveryActive:false});}
+  if(event.httpMethod==="GET"){const snapshot=await doc.get();const v=snapshot.data()||{};return response(200,{emailEnabled:v.emailEnabled??true,pushEnabled:v.pushEnabled??true,emailConfigured:Boolean(process.env.STYLERA_NOTIFICATION_EMAIL_API_KEY&&process.env.STYLERA_NOTIFICATION_FROM),pushConfigured:Boolean(process.env.STYLERA_FIREBASE_WEB_PUSH_VAPID_KEY),deliveryActive:false,emailDestination:"hello@samirahomedecor.com.au"});}
   if((event.body||"").length>2048)return response(413,{error:"Payload too large"});
   const body=JSON.parse(event.body||"{}");
   if(typeof body.emailEnabled!=="boolean"||typeof body.pushEnabled!=="boolean")return response(400,{error:"Expected boolean notification preferences"});
