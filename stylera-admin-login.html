@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Stylera Control Centre | Administrator Sign-in</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#142746;background:#f7f8fb}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px}
+main{background:#fff;border:1px solid #e6e8ef;border-radius:18px;padding:36px;width:min(100%,440px);box-shadow:0 12px 40px #14274613;text-align:center}
+.brand{font-size:.82rem;letter-spacing:.18em;font-weight:750;color:#a67c34}
+h1{font-size:1.8rem;margin:12px 0}p{color:#526078;line-height:1.5}
+button{background:#142746;color:#fff;border:0;border-radius:10px;padding:14px 22px;font:inherit;font-weight:650;cursor:pointer;width:100%}
+button:disabled{opacity:.5;cursor:not-allowed}.note{font-size:.82rem}
+#status{min-height:2.5em;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<main>
+<div class="brand">SAMIRA HOME DECOR</div>
+<h1>Stylera Control Centre</h1>
+<p>Private administrator access</p>
+<button id="login" disabled type="button">Continue with Google</button>
+<p id="status" role="status" aria-live="polite">Secure login is being configured. This page is not yet connected to the administrator verification service.</p>
+<p class="note">Only the authorised owner will be able to access customer information. Google sign-in alone does not grant access.</p>
+</main>
+<!-- Deliberately disabled until Firebase SDK, owner UID verification,
+     authenticated server API, and staging domain are configured and tested.
+     Never grant access based solely on email or client-side checks. -->
+</body>
+</html>
