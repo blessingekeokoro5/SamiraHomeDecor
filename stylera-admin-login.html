@@ -45,12 +45,12 @@ button.addEventListener("click", async () => {
       headers: { Authorization: "Bearer " + token },
       cache: "no-store"
     });
+    const resultBody = await response.json().catch(() => ({}));
     if (response.ok) {
       status.textContent = "Administrator identity verified. The private dashboard is still under construction.";
-    } else if (response.status === 503) {
-      status.textContent = "Google sign-in succeeded. Server verification is awaiting Netlify configuration.";
     } else {
-      status.textContent = "Google sign-in succeeded, but administrator access was not granted.";
+      const code = resultBody.diagnostic || ("http-" + response.status);
+      status.textContent = "Google sign-in succeeded, but administrator verification failed. Diagnostic: " + code + ".";
     }
     await signOut(auth);
   } catch (error) {
