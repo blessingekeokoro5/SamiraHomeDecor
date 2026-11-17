@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Stylera Control Centre | Administrator Sign-in</title>
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#142746;background:#f7f8fb}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px}
+main{background:#fff;border:1px solid #e6e8ef;border-radius:18px;padding:36px;width:min(100%,440px);box-shadow:0 12px 40px #14274613;text-align:center}
+.brand{font-size:.82rem;letter-spacing:.18em;font-weight:750;color:#a67c34}
+h1{font-size:1.8rem;margin:12px 0}p{color:#526078;line-height:1.5}
+button{background:#142746;color:#fff;border:0;border-radius:10px;padding:14px 22px;font:inherit;font-weight:650;cursor:pointer;width:100%}
+button:disabled{opacity:.5;cursor:not-allowed}.note{font-size:.82rem}
+#status{min-height:2.5em;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<main>
+<div class="brand">SAMIRA HOME DECOR</div>
+<h1>Stylera Control Centre</h1>
+<p>Private administrator access</p>
+<button id="login" type="button">Continue with Google</button>
+<p id="status" role="status" aria-live="polite">Sign in with Google to verify your identity and request administrator access.</p>
+<p class="note">Only the authorised owner will be able to access customer information. Google sign-in alone does not grant access.</p>
+</main>
+<script src="/js/stylera-support/firebase-project.js"></script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+const button = document.getElementById("login");
+const status = document.getElementById("status");
+const app = initializeApp(window.STYLERA_FIREBASE_CONFIG);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+provider.setCustomParameters({ prompt: "select_account" });
+button.addEventListener("click", async () => {
+  button.disabled = true;
+  status.textContent = "Opening Google sign-in…";
+  try {
+    const result = await signInWithPopup(auth, provider);
+    // Google sign-in is not authorization. Do not expose any protected data here.
+    const token = await result.user.getIdToken();
+    const response = await fetch("/.netlify/functions/stylera-admin-session", {
+      headers: { Authorization: "Bearer " + token },
+      cache: "no-store"
+    });
+    const resultBody = await response.json().catch(() => ({}));
+    if (response.ok) {
+      status.textContent = "Administrator identity verified. The private dashboard is still under construction.";
+    } else {
+      const code = resultBody.diagnostic || ("http-" + response.status);
+      status.textContent = "Google sign-in succeeded, but administrator verification failed. Diagnostic: " + code + ".";
+    }
+    await signOut(auth);
+  } catch (error) {
+    status.textContent = error.code === "auth/unauthorized-domain"
+      ? "This preview domain must be added to Firebase Authentication → Settings → Authorized domains."
+      : "Google sign-in failed: " + (error.code || "please try again");
+  } finally {
+    button.disabled = false;
+  }
+});
+</script>
+</body>
+</html>

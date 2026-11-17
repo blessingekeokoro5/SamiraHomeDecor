@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Deny all client reads and writes until the owner-only admin model
+    // and server-side APIs have been implemented and tested.
+    // Netlify server functions using Firebase Admin SDK bypass these rules
+    // and must perform their own authentication and authorization checks.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
