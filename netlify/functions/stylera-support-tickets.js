@@ -27,6 +27,15 @@ exports.handler = async (event) => {
   } catch { return reply(401,{error:"Invalid authentication"}); }
   const db = getFirestore(firebase);
   try {
+    if (event.httpMethod === "GET" && event.queryStringParameters?.ticketId) {
+      const ticketId = event.queryStringParameters.ticketId;
+      if (!/^[A-Za-z0-9_-]{1,128}$/.test(ticketId)) return reply(400,{error:"Invalid ticket ID"});
+      const ticket = db.collection("stylera_support_tickets").doc(ticketId);
+      const snap = await ticket.get();
+      if (!snap.exists) return reply(404,{error:"Ticket not found"});
+      const messages = await ticket.collection("messages").orderBy("createdAt","asc").limit(100).get();
+      return reply(200,{ticket:{id:snap.id,...snap.data()},messages:messages.docs.map(doc=>({id:doc.id,...doc.data(),createdAt:doc.get("createdAt")?.toDate?.()?.toISOString?.()||null}))});
+    }
     if (event.httpMethod === "GET") {
       const snap = await db.collection("stylera_support_tickets").orderBy("updatedAt","desc").limit(50).get();
       return reply(200,{tickets:snap.docs.map(doc=>({id:doc.id,...doc.data(),createdAt:doc.get("createdAt")?.toDate?.()?.toISOString?.()||null,updatedAt:doc.get("updatedAt")?.toDate?.()?.toISOString?.()||null}))});
