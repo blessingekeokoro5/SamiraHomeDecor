@@ -20,12 +20,37 @@ button:disabled{opacity:.5;cursor:not-allowed}.note{font-size:.82rem}
 <div class="brand">SAMIRA HOME DECOR</div>
 <h1>Stylera Control Centre</h1>
 <p>Private administrator access</p>
-<button id="login" disabled type="button">Continue with Google</button>
-<p id="status" role="status" aria-live="polite">Secure login is being configured. This page is not yet connected to the administrator verification service.</p>
+<button id="login" type="button">Continue with Google</button>
+<p id="status" role="status" aria-live="polite">Sign in with Google to verify your Firebase identity. Administrator access is not enabled yet.</p>
 <p class="note">Only the authorised owner will be able to access customer information. Google sign-in alone does not grant access.</p>
 </main>
-<!-- Deliberately disabled until Firebase SDK, owner UID verification,
-     authenticated server API, and staging domain are configured and tested.
-     Never grant access based solely on email or client-side checks. -->
+<script src="/js/stylera-support/firebase-project.js"></script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+const button = document.getElementById("login");
+const status = document.getElementById("status");
+const app = initializeApp(window.STYLERA_FIREBASE_CONFIG);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+provider.setCustomParameters({ prompt: "select_account" });
+button.addEventListener("click", async () => {
+  button.disabled = true;
+  status.textContent = "Opening Google sign-in…";
+  try {
+    const result = await signInWithPopup(auth, provider);
+    // Google sign-in is not authorization. Do not expose any protected data here.
+    status.textContent = "Google sign-in successful. Your Firebase user ID is " +
+      result.user.uid + ". Administrator access is awaiting secure server verification.";
+    await signOut(auth);
+  } catch (error) {
+    status.textContent = error.code === "auth/unauthorized-domain"
+      ? "This preview domain must be added to Firebase Authentication → Settings → Authorized domains."
+      : "Google sign-in failed: " + (error.code || "please try again");
+  } finally {
+    button.disabled = false;
+  }
+});
+</script>
 </body>
 </html>
