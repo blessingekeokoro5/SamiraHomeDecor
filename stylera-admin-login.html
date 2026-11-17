@@ -21,7 +21,7 @@ button:disabled{opacity:.5;cursor:not-allowed}.note{font-size:.82rem}
 <h1>Stylera Control Centre</h1>
 <p>Private administrator access</p>
 <button id="login" type="button">Continue with Google</button>
-<p id="status" role="status" aria-live="polite">Sign in with Google to verify your Firebase identity. Administrator access is not enabled yet.</p>
+<p id="status" role="status" aria-live="polite">Sign in with Google to verify your identity and request administrator access.</p>
 <p class="note">Only the authorised owner will be able to access customer information. Google sign-in alone does not grant access.</p>
 </main>
 <script src="/js/stylera-support/firebase-project.js"></script>
@@ -40,8 +40,18 @@ button.addEventListener("click", async () => {
   try {
     const result = await signInWithPopup(auth, provider);
     // Google sign-in is not authorization. Do not expose any protected data here.
-    status.textContent = "Google sign-in successful. Your Firebase user ID is " +
-      result.user.uid + ". Administrator access is awaiting secure server verification.";
+    const token = await result.user.getIdToken();
+    const response = await fetch("/.netlify/functions/stylera-admin-session", {
+      headers: { Authorization: "Bearer " + token },
+      cache: "no-store"
+    });
+    if (response.ok) {
+      status.textContent = "Administrator identity verified. The private dashboard is still under construction.";
+    } else if (response.status === 503) {
+      status.textContent = "Google sign-in succeeded. Server verification is awaiting Netlify configuration.";
+    } else {
+      status.textContent = "Google sign-in succeeded, but administrator access was not granted.";
+    }
     await signOut(auth);
   } catch (error) {
     status.textContent = error.code === "auth/unauthorized-domain"
