@@ -1,16 +1,13 @@
-/* Stylera Firebase web app configuration.
- * Registered Firebase web app: Samira Home Decor - Stylera
- * This file is intentionally NOT loaded by any live page.
- * Firebase Web API keys are client identifiers, not admin secrets.
- * Never put service-account keys or OpenAI API keys here.
+/* Firebase public web app configuration for Stylera development.
+ * Never store service-account credentials or OpenAI keys in client code.
+ * This file is not referenced by any production page.
  */
 window.STYLERA_FIREBASE_CONFIG = Object.freeze({
-  projectId: "samira-home-decor",
+  apiKey: "AIzaSyAqZI5h_5R05rACVNDM1fW_fKqgIqZrwG8",
   authDomain: "samira-home-decor.firebaseapp.com",
+  projectId: "samira-home-decor",
   storageBucket: "samira-home-decor.firebasestorage.app",
   messagingSenderId: "440485052345",
-  appId: "1:440485052345:web:6a14e9cdfec2873ba8068"
-  // apiKey to be copied exactly from Firebase Console when wiring SDK.
+  appId: "1:440485052345:web:6a614e9cdfec2873ba8068",
+  measurementId: "G-X1H0HKY3NQ"
 });
-// Google sign-in and Firestore will remain inactive until authenticated
-// backend, access controls, testing and deployment approval are complete.
