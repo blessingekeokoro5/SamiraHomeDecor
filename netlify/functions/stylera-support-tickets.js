@@ -41,6 +41,13 @@ exports.handler = async (event) => {
       return reply(200,{tickets:snap.docs.map(doc=>({id:doc.id,...doc.data(),createdAt:doc.get("createdAt")?.toDate?.()?.toISOString?.()||null,updatedAt:doc.get("updatedAt")?.toDate?.()?.toISOString?.()||null}))});
     }
     const body = JSON.parse(event.body || "{}");
+    if (body.action === "create-test-ticket") {
+      const ref = db.collection("stylera_support_tickets").doc();
+      const now = FieldValue.serverTimestamp();
+      await ref.set({subject:"Stylera messaging test",status:"open",source:"owner-test",createdAt:now,updatedAt:now,customerName:"Test customer",testOnly:true});
+      await ref.collection("messages").add({text:"Hello, this is a test customer message. Can you help me?",sender:"customer",createdAt:FieldValue.serverTimestamp(),deliveryStatus:"test-only"});
+      return reply(201,{ticketId:ref.id,testOnly:true});
+    }
     if (body.action !== "reply" || typeof body.ticketId !== "string" || !/^[A-Za-z0-9_-]{1,128}$/.test(body.ticketId) || typeof body.message !== "string" || !body.message.trim() || body.message.length > 3000) return reply(400,{error:"Invalid reply"});
     const ticket = db.collection("stylera_support_tickets").doc(body.ticketId);
     await db.runTransaction(async tx => {
