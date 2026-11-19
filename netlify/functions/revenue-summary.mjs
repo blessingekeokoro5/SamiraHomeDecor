@@ -1,3 +1,4 @@
+import { ownerSession } from '../lib/stylera-owner-auth.mjs';
 import { createRequire } from 'node:module';
 const require=createRequire(import.meta.url);
 const {authorised}=require('../lib/reviews-core.cjs');
@@ -5,7 +6,7 @@ const env=k=>Netlify.env.get(k);
 const reply=(status,data)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
 export default async req=>{
   if(req.method!=='GET')return reply(405,{error:'Method not allowed'});
-  if(!authorised(req,env))return reply(401,{error:'Admin authentication required'});
+  if(!(await ownerSession(req))&&!authorised(req,env))return reply(401,{error:'Sign in to Stylera Owner Dashboard with the authorized Supabase account'});
   if(!env('STRIPE_SECRET_KEY'))return reply(503,{error:'Stripe not configured'});
   try{
     const stripe=require('stripe')(env('STRIPE_SECRET_KEY'));
