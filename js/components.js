@@ -1990,3 +1990,30 @@ window.openLiveChat = function () {
 
 /* Samira rewards preview: development branch only. */
 (function(){const link=document.createElement('link');link.rel='stylesheet';link.href='/css/samira-rewards.css?v=1';document.head.append(link);function mount(){const script=document.createElement('script');script.src='/js/samira-rewards.js?v=1';document.body.append(script)}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount()})();
+
+/* Australia-wide trust strip — no unverified showroom, warranty or payment-provider claims. */
+(function(){
+ function mountTrustStrip(){
+  if(document.getElementById('shdTrustStrip'))return;
+  const footer=document.querySelector('.site-footer');
+  if(!footer)return;
+  const style=document.createElement('style');
+  style.textContent='#shdTrustStrip{background:#f9f7f2;border-top:1px solid #e5d9c4;border-bottom:1px solid #c6a15b;color:#0b1f3a}#shdTrustStrip .shd-trust-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:17px 15px}#shdTrustStrip .shd-trust-item{display:flex;align-items:center;gap:12px;padding:0 18px;border-right:1px solid #dfd4c0;min-width:0;text-decoration:none;color:inherit}#shdTrustStrip .shd-trust-item:last-child{border:0}#shdTrustStrip .shd-trust-icon{color:#bc903e;font-size:21px;flex-shrink:0}#shdTrustStrip strong{display:block;font-size:13px}#shdTrustStrip small{display:block;color:#515d6b;font-size:12px;margin-top:4px}@media(max-width:720px){#shdTrustStrip .shd-trust-inner{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 0}#shdTrustStrip .shd-trust-item:nth-child(2){border:0}}@media(max-width:390px){#shdTrustStrip .shd-trust-item{padding:0 9px}#shdTrustStrip strong{font-size:12px}}';
+  document.head.append(style);
+  const strip=document.createElement('aside');strip.id='shdTrustStrip';strip.setAttribute('aria-label','Shopping with Samira Home Decor');
+  const grid=document.createElement('div');grid.className='shd-trust-inner';
+  const items=[
+   {icon:'◎',title:'Australia-wide',detail:'Online home décor store',href:'/shop.html'},
+   {icon:'♙',title:'Secure payments',detail:'Protected checkout',href:'/shop.html'},
+   {icon:'✉',title:'Customer support',detail:'Contact our team',href:'/contact.html'},
+   {icon:'♧',title:'Delivery information',detail:'Shipping & returns',href:'/shipping-policy.html'}
+  ];
+  for(const item of items){
+   const a=document.createElement('a');a.className='shd-trust-item';a.href=item.href;
+   const icon=document.createElement('span');icon.className='shd-trust-icon';icon.setAttribute('aria-hidden','true');icon.textContent=item.icon;
+   const words=document.createElement('span');const strong=document.createElement('strong');strong.textContent=item.title;const small=document.createElement('small');small.textContent=item.detail;words.append(strong,small);a.append(icon,words);grid.append(a);
+  }
+  strip.append(grid);footer.parentNode.insertBefore(strip,footer);
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountTrustStrip,{once:true});else mountTrustStrip();
+})();
