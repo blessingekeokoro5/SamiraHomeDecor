@@ -1063,7 +1063,7 @@ function buildCountryModal() {
     <div class="country-card" role="dialog" aria-label="Confirm your country">
       <button class="country-close" id="countryClose" aria-label="Close">✕</button>
       <h3>Confirm your country</h3>
-      <p>You're shopping the <strong>Samira Home Decor Australia</strong> store <span id="homeFlag">🇦🇺</span>. We ship to Australia, New Zealand, the UK, Canada, the USA, Switzerland &amp; Germany. Confirm your region to see prices in your currency.</p>
+      <p>You're shopping the <strong>Samira Home Decor Australia</strong> store <span id="homeFlag">🇦🇺</span>. We ship to Australia and New Zealand. Confirm your region to see prices in your currency.</p>
       <div class="country-detected" id="countryDetected"></div>
       <label class="country-select-label">Shopping from another country?
         <select id="countrySelect">${options}</select>
@@ -1594,7 +1594,7 @@ function chatReply(text) {
 
   else if (has(/\b(overseas|international|internationally|abroad|outside australia|worldwide|new zealand|nz|uk|united kingdom|england|britain|london|usa|united states|america|canada|switzerland|germany|europe)\b/)
         || (chatIsOverseas() && has(/\b(ship|shipping|deliver|delivery|postage|freight|how long|arrive)\b/)))
-    html = `We'd love to help! 🌏 We deliver to New Zealand, the UK, Canada, the USA, Switzerland and Germany. For help from a customer representative, use our secure Stylera live chat.<br>${waButton("Speak to a customer representative")}`;
+    html = `We'd love to help! 🌏 We deliver to Australia and New Zealand. For help from a customer representative, use our secure Stylera live chat.<br>${waButton("Speak to a customer representative")}`;
 
   else if (has(/\b(ship|shipping|deliver|delivery|post|postage|freight|worldwide|international|country|countries|how long|when.*(arrive|get|receive)|dispatch)\b/))
     html = `Great question! 📦 We offer <strong>free standard shipping on orders over $3,500</strong> Australia-wide, and you'll see your estimated arrival dates at checkout. Gift hampers arrive in <strong>5 to 10 business days</strong> (Standard) or <strong>3 to 5 business days</strong> (Express). We ship to <strong>Australia, New Zealand, the UK, Canada, the USA, Switzerland &amp; Germany</strong>. Full details in our ${link("policy.html?doc=delivery", "Delivery policy")}.`;
