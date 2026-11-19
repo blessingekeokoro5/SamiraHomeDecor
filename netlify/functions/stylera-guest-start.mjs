@@ -10,7 +10,7 @@ export default async function handler(request){
  if(!secret||!serviceKey)return reply("Guest chat setup incomplete",503);
  let body;try{body=await request.json()}catch{return reply("Invalid request",400)}
  const {name,email,token,captcha}=body||{};
- if(typeof name!=="string"||name.trim().length<2||name.trim().length>100||typeof email!=="string"||email.length>254||!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)||typeof token!=="string"||!/^[a-f0-9]{64}$/.test(token)||typeof captcha!=="string"||captcha.length>2048)return reply("Please complete the form and verification",400);
+ if(typeof name!=="string"||name.trim().length<2||name.trim().length>100||typeof email!=="string"||email.length>254||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||typeof token!=="string"||!/^[a-f0-9]{64}$/.test(token)||typeof captcha!=="string"||captcha.length>2048)return reply("Please complete the form and verification",400);
  const form=new URLSearchParams({secret,response:captcha});
  const verify=await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify",{method:"POST",headers:{"content-type":"application/x-www-form-urlencoded"},body:form});
  if(!verify.ok)return reply("Verification unavailable, please try again",503);
@@ -20,7 +20,7 @@ export default async function handler(request){
   method:"POST",headers:{"content-type":"application/json","apikey":serviceKey,"authorization":"Bearer "+serviceKey},
   body:JSON.stringify({p_name:name.trim(),p_email:email.trim(),p_token:token})
  });
- if(!created.ok){return reply(created.status===429?"Please try again later":"Unable to start chat. Please try again later",created.status===429?429:400)}
+ if(!created.ok){console.error("Stylera guest registration upstream HTTP status:",created.status);return reply(created.status===429?"Please try again later":"Unable to start chat. Please try again later",created.status===429?429:400)}
  return Response.json({thread:await created.json()},{headers:{"cache-control":"no-store"}});
 }
 export const config={method:"POST",rateLimit:{action:"rate_limit",aggregateBy:"ip",windowSize:60,windowLimit:5}};
