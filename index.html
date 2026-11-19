@@ -167,14 +167,6 @@
       <div class="hero-slide" style="background-image:url('assets/hero-3.jpg')"></div>
     </div>
     <div class="container hero-grid">
-      <a id="bfBanner" href="shop.html?avail=ready" style="display:none;grid-column:1/-1;align-items:center;gap:12px;flex-wrap:wrap;background:linear-gradient(90deg,#0B1F3A,#13294a);color:#fff;border:1px solid #C6A15B;border-radius:12px;padding:12px 18px;margin-bottom:22px;text-decoration:none;font:500 1rem/1.35 var(--font-body,inherit)">
-        🛍️ <b style="color:#C6A15B;letter-spacing:.04em">BLACK FRIDAY</b> <span>— 15% off selected furniture · now through Cyber Monday</span>
-        <span style="margin-left:auto;background:#C6A15B;color:#0B1F3A;font-weight:700;padding:7px 15px;border-radius:999px;white-space:nowrap">Shop now →</span>
-      </a>
-      <a id="halloweenBanner" href="shop.html" style="display:none;grid-column:1/-1;align-items:center;gap:12px;flex-wrap:wrap;background:linear-gradient(90deg,#1a0f2e,#3a1d0e);color:#fff;border:1px solid #E8833A;border-radius:12px;padding:12px 18px;margin-bottom:22px;text-decoration:none;font:500 1rem/1.35 var(--font-body,inherit)">
-        🎃 <b style="color:#F39A4A;letter-spacing:.04em">HALLOWEEN SALE</b> <span>— 15% off storewide · ends <span id="halloweenEnd">Monday 2 Nov</span></span>
-        <span style="margin-left:auto;background:#E8833A;color:#1a0f2e;font-weight:700;padding:7px 15px;border-radius:999px;white-space:nowrap">Shop the sale →</span>
-      </a>
       <div class="reveal">
         <h1 class="hero-title">Australia's home décor store</h1>
         <p class="hero-sub">Discover over <span data-product-count>140</span> beautifully curated pieces in furniture, décor, bedding and gifts, thoughtfully selected to bring warmth, style and soft-life luxury into your home.<span class="hs-more"> Delivered across Australia and select regions. Want a personalised touch? Our styling services help you create a space that feels uniquely yours.</span></p>
@@ -229,7 +221,7 @@
       <div class="grid grid-3">
         <a class="card reveal cat-card" href="home-decor.html">
           <div class="card-media"><div class="ph" data-label="Furniture & Home Décor"><img class="ph-img" src="assets/nav/home-decor.png" alt="Furniture & Home Décor collections" loading="lazy" onerror="this.remove()"></div></div>
-          <div class="card-body"><div class="service-icon">🛋️</div><h3>Furniture &amp; Home Décor</h3><p>Sofas, lighting, mirrors, rugs, vases and the finishing touches for every room.</p><span class="link-arrow">Shop the collection →</span></div>
+          <div class="card-body"><div class="service-icon">🛋️</div><h3>Furniture &amp; Home Décor</h3><p>Sofas, dining furniture, mirrors, vases and thoughtfully curated accents for every room.</p><span class="link-arrow">Shop the collection →</span></div>
         </a>
         <a class="card reveal cat-card" href="hampers.html">
           <div class="card-media"><div class="ph" data-label="Gifts & Hampers" style="background:var(--cream)"><img class="ph-img" src="assets/cat-gifting.png" alt="Gifts & Hampers" loading="lazy" style="object-fit:contain" onerror="this.remove()"></div></div>
@@ -352,13 +344,6 @@
   <script src="js/cart.js?v=40"></script>
   <script src="js/main.js?v=22"></script>
   <script>
-    // Black Friday → Cyber Monday hero banner (auto, Adelaide time, from js/data.js)
-    try { if (typeof blackFridayOn === "function" && blackFridayOn()) { var _bf = document.getElementById("bfBanner"); if (_bf) _bf.style.display = "flex"; } } catch (e) {}
-    // Halloween hero banner (31 Oct – 2 Nov, Adelaide time, from js/data.js)
-    try { if (typeof halloweenOn === "function" && halloweenOn()) {
-      var _hw = document.getElementById("halloweenBanner"); if (_hw) _hw.style.display = "flex";
-      var _he = document.getElementById("halloweenEnd"); if (_he && typeof halloweenEndLabel === "function") _he.textContent = halloweenEndLabel();
-    } } catch (e) {}
     // Featured products (first 4 with tags) + reviews
     // Hero slideshow, crossfades through ALL .hero-slide photos (any number)
     (function heroSlideshow() {
