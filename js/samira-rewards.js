@@ -10,11 +10,11 @@
  head.append(close,welcome,title);
  const content=document.createElement('div');content.className='shd-reward-content';
  const items=[['Place an order','$3 in store credit for every $100 spent (3% back)',null],['Create an account','$10 store credit',null],['Follow on Instagram','$10 store credit',145],['Newsletter signup','$10 store credit',100],['Birthday','$50 store credit',null]];
- const intro=document.createElement('p');intro.className='shd-reward-disclaimer';intro.textContent='New rewards are being prepared. Credits cannot yet be earned or redeemed. Existing membership, referral and Christmas voucher benefits remain available under their current terms.';
+ const intro=document.createElement('p');intro.className='shd-reward-disclaimer';intro.textContent='Sign in or create your Samira Home Decor account to explore your rewards and member benefits.';
  const heading=document.createElement('h3');heading.textContent='Ways to earn';content.append(intro,heading);
  for(const [name,detail,days] of items){
   const card=document.createElement('article');card.className='shd-reward-card';const strong=document.createElement('strong');strong.textContent=name;const small=document.createElement('small');small.textContent=detail;card.append(strong,small);
-  if(days){const expiry=document.createElement('div');expiry.className='shd-reward-expiry';expiry.textContent='Proposed expiry: '+days+' days after earning';card.append(expiry)}
+
   if(name==='Follow on Instagram'){
    const link=document.createElement('a');
    link.href=(typeof SAMIRA!=='undefined'&&SAMIRA.socials&&/^https:\/\/((www\.)?instagram\.com)\//i.test(SAMIRA.socials.instagram||''))?SAMIRA.socials.instagram:'#';
@@ -23,7 +23,7 @@
    link.style.cssText='display:inline-block;margin-top:12px;color:#0b1f3a;text-decoration:underline;font-weight:600;font-size:13px';
    if(link.href.endsWith('#')){link.removeAttribute('href');link.textContent='Instagram link temporarily unavailable'}
    card.append(link);
-   const note=document.createElement('small');note.textContent='Following does not automatically issue credit. Reward verification will be enabled when the program launches.';card.append(note);
+
   }
   content.append(card);
  }
