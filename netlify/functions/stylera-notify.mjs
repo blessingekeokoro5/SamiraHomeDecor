@@ -1,5 +1,5 @@
 // Supabase Database Webhook -> Netlify Function -> Resend.
-// Development-only: configure secrets with Netlify Functions scope for Deploy Previews.
+// Configure secrets per deployment context with Netlify Functions scope.
 // No secrets are stored in this repository. Never invoke from browser JavaScript.
 const respond=(message,status)=>Response.json({message},{status,headers:{"cache-control":"no-store"}});
 export default async function handler(request){
@@ -38,7 +38,7 @@ export default async function handler(request){
    body:JSON.stringify({
      from,to:[to],
      subject:payload.table==="stylera_guest_messages"?"Stylera: new guest customer message":"Stylera: new customer support message",
-     text:`A customer has sent a new message in Stylera.\n\nOpen your private support inbox:\n${Netlify.env.get("STYLERA_INBOX_URL") || "https://deploy-preview-5--samirahomedecorau.netlify.app/stylera-supabase-inbox.html"}\n\nSign in to see the customer name and conversation.\n\nThis is a development notification; do not reply to this email.`
+     text:`A customer has sent a new message in Stylera.\n\nOpen your private support inbox:\n${Netlify.env.get("STYLERA_INBOX_URL") || `${new URL(request.url).origin}/stylera-supabase-inbox.html`}\n\nSign in to see the customer name and conversation.\n\nThis is an automated notification; do not reply to this email.`
    })
  });
  if(!result.ok){console.error("Stylera notification delivery failed",result.status);return respond("Email provider error",502)}
