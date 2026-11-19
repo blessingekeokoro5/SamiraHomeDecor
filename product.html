@@ -734,7 +734,7 @@
                     <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap"><input id="dcPost" inputmode="numeric" maxlength="4" placeholder="Your postcode" aria-label="Postcode" style="flex:1;min-width:120px;padding:10px 12px;border:1px solid #D9CBB3;border-radius:8px;font:inherit"><button type="button" class="btn btn--outline" onclick="calcDelivery('${p.id}')">Calculate</button></div>
                     ${(p.homeDecorImport || p.outdoorImport) ? `<input id="dcSuburb" autocomplete="address-level2" placeholder="Your suburb" aria-label="Suburb" style="width:100%;margin-top:8px;padding:10px 12px;border:1px solid #D9CBB3;border-radius:8px;font:inherit">` : ""}
                     <div id="dcOut" style="margin-top:8px" aria-live="polite"></div>
-                    <div style="margin-top:6px;font-size:.8rem;color:#8a7f77">${p.outdoorImport ? "Delivery is checked for your postcode, suburb and quantity. Each additional item carries delivery plus a $102 bulky-order charge. If delivery cannot be confirmed, please request a quote." : p.homeDecorImport ? "Delivery is checked for your postcode, suburb and quantity. Each additional item carries delivery. Décor-only orders do not incur a furniture bulky-order fee. If delivery cannot be confirmed, please request a quote." : "Freight is based on the supplier, product and tested postcode. Bedroom orders add $102 for each additional item, plus each item’s postcode delivery charge. Other furniture orders include one $102 bulky-order fee when buying two or more units. Untested destinations need a quote."}</div>
+                    
                   </div>`
                 : p.expressShip
                 ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">⚡ Express delivery only</span> <span style="color:var(--body)">Order today, receive around <strong style="color:var(--ink)">${typeof arriveRange === "function" ? arriveRange(p) : ""}</strong></span>
@@ -750,7 +750,7 @@
                       <button type="button" class="btn btn--outline" onclick="calcDelivery('${p.id}')">Calculate</button>
                     </div>
                     <div id="dcOut" style="margin-top:8px;font-size:.92rem;color:var(--body)" aria-live="polite"></div>
-                    <div style="margin-top:6px;font-size:.8rem;color:#8a7f77">$${Number(p.shipFee).toLocaleString("en-AU")} delivery per item, so each extra piece adds $${Number(p.shipFee).toLocaleString("en-AU")}. Delivered within Australia only.</div>
+                    
                   </div>`
                 : p.expressOpt
                 ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">🚚 Standard delivery</span> <span style="color:var(--body)">About 4 weeks, arrives <strong style="color:var(--ink)">${typeof fmtArriveRange === "function" ? fmtArriveRange(p.arriveDays || [28, 33]) : ""}</strong></span>
@@ -874,7 +874,7 @@
         var quote = FurnitureFreight.quote(quoteLines, pc, "Australia", decorQuote);
         if(quote.quoteRequired && !quote.pending && typeof DeliveryRequest !== "undefined"){
           out.innerHTML = DeliveryRequest.escape(quote.message) + DeliveryRequest.html(quoteLines,{postcode:pc,suburb:(document.getElementById("dcSuburb")||{}).value,country:"Australia"},quote.reason);
-        }else out.textContent = quote.quoteRequired ? quote.message : "Delivery to " + st + " " + pc + ": $" + quote.fee.toFixed(2) + (quote.surcharge ? " (includes $" + quote.surcharge.toFixed(2) + " for additional items)" : "") + ". Delivery timing is confirmed separately.";
+        }else out.textContent = quote.quoteRequired ? quote.message : "Delivery to " + st + " " + pc + ": $" + quote.fee.toFixed(2) + ".";
         return;
       }
       var fee = p.shipFee * pdpQty;
