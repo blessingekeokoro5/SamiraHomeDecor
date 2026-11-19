@@ -14,7 +14,7 @@ export default async function handler(request){
   method:"POST",headers:{"content-type":"application/json","apikey":serviceKey,"authorization":"Bearer "+serviceKey},
   body:JSON.stringify({p_name:name.trim(),p_email:email.trim(),p_token:token})
  });
- if(!created.ok){console.error("Stylera guest registration upstream HTTP status:",created.status);return reply(created.status===429?"Please try again later":"Unable to start chat. Please try again later",created.status===429?429:400)}
+ if(!created.ok){const raw=await created.json().catch(()=>({}));const upstreamMessage=typeof raw.message==="string"?raw.message:"";const limited=/Too many chats started/i.test(upstreamMessage);console.error("Stylera guest registration upstream HTTP status:",created.status,"code:",typeof raw.code==="string"?raw.code:"unknown","limited:",limited);return reply(limited?"You have started 3 chats with this email in the past hour. Please return to an existing chat or wait until the hourly limit resets.":created.status===429?"Too many requests. Please try again shortly.":"Unable to start chat right now. Please try again later.",limited?429:created.status===429?429:400)}
  return Response.json({thread:await created.json()},{headers:{"cache-control":"no-store"}});
 }
 export const config={method:"POST",rateLimit:{action:"rate_limit",aggregateBy:"ip",windowSize:60,windowLimit:5}};
