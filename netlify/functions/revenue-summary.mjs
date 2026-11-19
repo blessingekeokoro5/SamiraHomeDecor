@@ -19,6 +19,7 @@ export default async req=>{
       for(const s of res.data){
         if(s.mode!=='payment'||s.payment_status!=='paid'||seen.has(s.id))continue;
         seen.add(s.id);
+        if((s.currency||'').toLowerCase()!=='aud')continue;
         const key=new Date(s.created*1000).toISOString().slice(0,7);
         const row=byMonth.get(key)||{month:key,orders:0,grossCents:0};
         row.orders++;row.grossCents+=s.amount_total||0;byMonth.set(key,row);
@@ -27,10 +28,11 @@ export default async req=>{
     }
     const months=[...byMonth.values()].sort((a,b)=>a.month.localeCompare(b.month));
     const current=now.toISOString().slice(0,7);
+    const twoStart=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth()-1,1)).toISOString().slice(0,7);
     const sixStart=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth()-5,1)).toISOString().slice(0,7);
     const yearStart=String(now.getUTCFullYear())+'-01';
     const sum=start=>months.filter(m=>m.month>=start&&m.month<=current).reduce((n,m)=>n+m.grossCents,0);
-    return reply(200,{ok:true,currency:'AUD',monthlyCents:sum(current),sixMonthCents:sum(sixStart),yearToDateCents:sum(yearStart),trailingTwelveMonthsCents:sum(new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth()-11,1)).toISOString().slice(0,7)),months,complete:!hasMore,disclaimer:'Gross paid Stripe checkout totals only; refunds, fees, taxes and costs are not deducted. Excludes payments outside this Stripe checkout flow.'});
+    return reply(200,{ok:true,currency:'AUD',monthlyCents:sum(current),twoMonthCents:sum(twoStart),sixMonthCents:sum(sixStart),yearToDateCents:sum(yearStart),trailingTwelveMonthsCents:sum(new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth()-11,1)).toISOString().slice(0,7)),months,complete:!hasMore,disclaimer:'Gross AUD paid Stripe checkout totals only; refunds, fees, taxes and costs are not deducted. Excludes payments outside this Stripe checkout flow.'});
   }catch(e){console.error('Revenue summary failed:',e.message);return reply(503,{error:'Revenue report temporarily unavailable'})}
 };
 export const config={path:'/api/admin/revenue-summary'};
