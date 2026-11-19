@@ -642,16 +642,13 @@ function buildFloating() {
 
     <div class="chat-nudge" id="chatNudge">
       <button class="nudge-x" id="nudgeX" aria-label="Dismiss">✕</button>
-      <span>Get personalised gift suggestions from the <strong>Samira Stylera</strong>, our AI gift advisor.</span>
+      <span>We're here to help if you need us.</span>
     </div>
 
     <div class="dm-launch" id="dmLaunch">
       <button class="launch-btn launch-gift" id="giftFab" aria-label="Ask Samira Stylera, gifts, décor, styling & support">
         <span class="lb-star" aria-hidden="true">SYS</span>
         <span class="visually-hidden">Ask Samira Stylera</span>
-      </button>
-      <button class="launch-btn launch-help" id="supportFab" aria-label="Help desk, track an order, returns, FAQs &amp; contact">
-        <span>?</span><span>Help</span>
       </button>
     </div>
 
@@ -1763,7 +1760,7 @@ function initChat() {
   window.openHelpDesk = () => { renderSupport(); if (!panel.classList.contains("open")) open("support"); else switchTab("support"); };
 
   if (giftFab) giftFab.addEventListener("click", () => { if (!panel.classList.contains("open")) open("chat"); else switchTab("chat"); });
-  if (supportFab) supportFab.addEventListener("click", () => window.openHelpDesk());
+
   if (close) close.addEventListener("click", closeFn);
 
   // Animated greeting nudge (once per session, if not opened)
