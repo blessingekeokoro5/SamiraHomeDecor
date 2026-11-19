@@ -1935,8 +1935,39 @@ const TIDIO_SRC = ""; // Tidio retired; Stylera guest support is live.
 })();
 
 /* Open live chat with the team. Falls back to the Contact page if Tidio hasn't loaded. */
+// Open the same secure customer-support conversation from either Stylera or Help Desk.
 window.openLiveChat = function () {
-  window.location.href = "/stylera-supabase-customer.html";
+  const panel = document.getElementById("chatPanel");
+  if (!panel) { window.location.href = "/stylera-supabase-customer.html"; return; }
+  let overlay = document.getElementById("styleraLiveSupport");
+  if (!overlay) {
+    overlay = document.createElement("section");
+    overlay.id = "styleraLiveSupport";
+    overlay.setAttribute("aria-label", "Stylera live customer support");
+    overlay.style.cssText = "position:absolute;inset:0;z-index:50;display:flex;flex-direction:column;background:#fff;border-radius:inherit;overflow:hidden;";
+    const top = document.createElement("div");
+    top.style.cssText = "display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;background:#0b1f3a;color:white;flex-shrink:0;";
+    const heading = document.createElement("strong");
+    heading.textContent = "Stylera · Customer Care";
+    const back = document.createElement("button");
+    back.type = "button"; back.textContent = "← Back";
+    back.setAttribute("aria-label", "Back to Stylera");
+    back.style.cssText = "background:transparent;color:white;border:1px solid #c9a55e;border-radius:8px;padding:7px 10px;cursor:pointer;";
+    back.addEventListener("click", () => { overlay.hidden = true; overlay.style.display = "none"; });
+    top.append(heading, back);
+    const iframe = document.createElement("iframe");
+    iframe.src = "/stylera-supabase-customer.html";
+    iframe.title = "Live chat with Samira Home Decor customer care";
+    iframe.style.cssText = "border:0;width:100%;flex:1;min-height:0;background:white;";
+    overlay.append(top, iframe);
+    panel.appendChild(overlay);
+    // Allow the user to close the original chat panel without losing the guest conversation.
+  }
+  panel.classList.add("open");
+  panel.setAttribute("aria-hidden", "false");
+  const launch = document.getElementById("dmLaunch");
+  if (launch) launch.classList.add("hidden");
+  overlay.hidden = false; overlay.style.display = "flex";
 };
 
 /* ---- Product photos: no right-click / drag / long-press save ----
