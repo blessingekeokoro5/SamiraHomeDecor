@@ -27,9 +27,9 @@ export default async function handler(request){
  if(raw.length>12000)return respond("Payload too large",413);
  let payload;
  try{payload=JSON.parse(raw)}catch{return respond("Invalid JSON",400)}
- if(payload?.type!=="INSERT"||payload?.table!=="stylera_messages"||payload?.schema!=="public"||payload?.record?.sender!=="customer")return respond("Ignored",202);
+ if(payload?.type!=="INSERT"||payload?.schema!=="public"||!["stylera_messages","stylera_guest_messages"].includes(payload?.table)||payload?.record?.sender!=="customer")return respond("Ignored",202);
  const record=payload.record;
- if(typeof record.id!=="string"||typeof record.conversation_id!=="string")return respond("Invalid event",400);
+ if(typeof record.id!=="string"||(payload.table==="stylera_messages"?typeof record.conversation_id!=="string":typeof record.thread_id!=="string"))return respond("Invalid event",400);
  // Deliberately omit customer message contents, email, and identifiers from
  // email to minimize disclosure and avoid HTML injection.
  const result=await fetch("https://api.resend.com/emails",{
@@ -37,7 +37,7 @@ export default async function handler(request){
    headers:{"Authorization":`Bearer ${resendKey}`,"Content-Type":"application/json"},
    body:JSON.stringify({
      from,to:[to],
-     subject:"Stylera: new customer support message",
+     subject:payload.table==="stylera_guest_messages"?"Stylera: new guest customer message":"Stylera: new customer support message",
      text:"A customer has sent a new message in Stylera. Sign in to your private support inbox to review and respond.\n\nThis is a development notification; do not reply to this email."
    })
  });
