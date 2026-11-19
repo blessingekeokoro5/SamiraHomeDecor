@@ -19,7 +19,7 @@
     <p class="shd-review-intro">Customer experiences with Samira Home Decor. Ordered from us? We'd love to hear how it went.</p>
     <div class="shd-review-summary" aria-live="polite"></div>
     <div class="shd-review-cards"></div><button type="button" class="shd-review-more" hidden>Show more reviews</button>
-    <div class="shd-review-box" id="reviewForm"><div><h3>Leave a review</h3>
+    <button type="button" class="shd-review-open" aria-expanded="false" aria-controls="reviewForm">Write a Review</button>\n    <div class="shd-review-box" id="reviewForm" hidden><div><h3>Leave a review</h3>
       <p>Tell us about your purchase and how you enjoyed it. Your review goes to our team and appears here only after approval.</p>
       <p class="shd-review-fine">Your email stays private. Your first name, last initial, optional suburb and review may be displayed. Please avoid sharing personal information in your review.</p></div>
       <form class="shd-review-form">
@@ -34,7 +34,19 @@
         <button type="submit" class="shd-review-submit">Submit review for approval</button>
         <p class="shd-review-message" role="status" aria-live="polite"></p>
       </form></div></div>`;
+  const reviewStyles = document.createElement('style');
+  reviewStyles.textContent = '.shd-review-box[hidden]{display:none!important}.shd-review-open{display:block;margin:26px auto 12px;padding:15px 32px;min-height:48px;border:0;border-radius:9px;background:#c9a45d;color:#fff;font:600 16px Jost,sans-serif;cursor:pointer}.shd-review-open:hover{background:#ad8741}';
+  host.append(reviewStyles);
   const form = host.querySelector('form'), message = host.querySelector('.shd-review-message');
+  const reviewToggle = host.querySelector('.shd-review-open');
+  const reviewBox = host.querySelector('#reviewForm');
+  reviewToggle.addEventListener('click', () => {
+    const opening = reviewBox.hidden;
+    reviewBox.hidden = !opening;
+    reviewToggle.setAttribute('aria-expanded', String(opening));
+    reviewToggle.textContent = opening ? 'Close Review Form' : 'Write a Review';
+    if (opening) reviewBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   form.addEventListener('change', e => {
     if (e.target.name !== 'rating') return;
     const n = Number(e.target.value);
@@ -71,7 +83,7 @@
   function render() {
     all.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
     const avg = all.length ? all.reduce((n, r) => n + r.rating, 0) / all.length : 0;
-    host.querySelector('.shd-review-summary').innerHTML = all.length ? `<strong>${avg.toFixed(1)}</strong><div><span class="shd-review-gold" aria-label="${avg.toFixed(1)} out of 5 stars">${'★'.repeat(Math.round(avg))}${'☆'.repeat(5-Math.round(avg))}</span><small>from ${all.length} review${all.length === 1 ? '' : 's'}</small></div>` : '<p>No reviews yet. Be the first to share your experience.</p>';
+    host.querySelector('.shd-review-summary').innerHTML = all.length ? `<strong>${avg.toFixed(1)}</strong><div><span class="shd-review-gold" aria-label="${avg.toFixed(1)} out of 5 stars">${'★'.repeat(Math.round(avg))}${'☆'.repeat(5-Math.round(avg))}</span><small>from ${all.length} review${all.length === 1 ? '' : 's'}</small></div>` : '';
     const cards = all.map(reviewCard).join('');
     const carousel = host.querySelector('.shd-review-cards');
     carousel.innerHTML = all.length ? `<div class="shd-review-track"><div class="shd-review-group">${cards}</div><div class="shd-review-group" aria-hidden="true" inert></div></div>` : '';
