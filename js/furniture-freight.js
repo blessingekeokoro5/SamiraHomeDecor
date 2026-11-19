@@ -98,7 +98,13 @@
     else if(chosen.filter(p=>String(p.freightClass||'').startsWith('decor-')).reduce((n,p)=>n+(p.qty||1),0)>1)quoteRequired=true;
     const hasBedroom=chosen.some(p=>/^(bedroom|outdoor)-/.test(String(p.freightClass||'')));
     const units=lines.filter(p=>p.supplier!=='James Lane'&&p.supplier!=='Freedom'&&!/^(office|adairs|shein)-/.test(String(p.freightClass||''))).filter(p=>hasBedroom?!/^giftcard-/.test(p.sku||p.id||''):(p.readyDining&&!String(p.freightClass||'').startsWith('decor-'))||p.furniture).reduce((n,p)=>n+(p.qty||1),0),surcharge=units>1?102*(hasBedroom?units-1:1):0;
-    return {fee:Math.round((fee+surcharge+mixedSurcharge)*100)/100,surcharge:surcharge+(freedom.surcharge||0),mixedSurcharge,quoteRequired,days:(decorQuote&&decorQuote.days)||freedom.days,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(freedom.quoteRequired?freedom.message:james.quoteRequired?james.message:decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
+    // Two-piece Australian mixed heavy/medium furniture orders: customer-approved $1,050 delivery ceiling.
+    // Larger carts and other destinations retain their existing weight/region tariffs.
+    const furnitureUnits=lines.reduce((n,p)=>n+(Number(p.qty)||1),0);
+    const twoPieceMixedFurniture=country==='Australia'&&furnitureUnits===2&&mixedSurcharge===1000&&lines.every(p=>loadClass(p)==='heavy'||loadClass(p)==='medium');
+    const calculatedFee=Math.round((fee+surcharge+mixedSurcharge)*100)/100;
+    const finalFee=twoPieceMixedFurniture?Math.min(calculatedFee,1050):calculatedFee;
+    return {fee:finalFee,surcharge:surcharge+(freedom.surcharge||0),mixedSurcharge,quoteRequired,days:(decorQuote&&decorQuote.days)||freedom.days,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(freedom.quoteRequired?freedom.message:james.quoteRequired?james.message:decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
   }
   const api={luxo,koala,bedroomRates,decorRates,loadClass,mixedLoadSurcharge,jamesLaneQuote,freedomQuote,quote};if(typeof module==='object'&&module.exports)module.exports=api;else root.FurnitureFreight=api;
 })(typeof window==='undefined'?globalThis:window);
