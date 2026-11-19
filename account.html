@@ -391,9 +391,18 @@
 
       document.getElementById("accTitle").textContent = acc.name ? `Hello, ${acc.name.split(" ")[0]} 👋` : "My account";
       document.getElementById("accSub").textContent = "Your membership card, coupon, orders and saved favourites.";
+      // Use the same official Instagram URL already configured for the site footer.
+      const instagramUrl = (typeof SAMIRA !== "undefined" && SAMIRA.socials && /^https:\/\/((www\.)?instagram\.com)\//i.test(SAMIRA.socials.instagram || "")) ? SAMIRA.socials.instagram : "";
       const wishN = wishlistCount();
       const orders = acc.orders || [];
       document.getElementById("accWrap").innerHTML = `
+        <div style="padding:20px 24px;margin-bottom:18px;border:1px solid #dfd0b2;border-radius:12px;background:#faf6ed">
+          <strong style="display:block;color:#0b1f3a;margin-bottom:8px">🎁 Earn more with Samira Rewards</strong>
+          <p style="margin:0 0 12px">Follow Samira Home Decor on Instagram to become eligible for the upcoming $10 store-credit reward.</p>
+          ${instagramUrl ? `<a href="${instagramUrl}" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Follow us on Instagram ↗</a>` : '<span>Instagram link currently unavailable.</span>'}
+          <p style="font-size:12px;margin:12px 0 0">Rewards are not yet active. Following does not automatically award credit; verification will be required when the program launches. <a href="rewards.html">View all rewards</a>.</p>
+        </div>
+
         <div class="mcard reveal" id="memberCard">
           <div class="mc-frame"></div>
           <div class="mc-top"><span class="mc-brand">SYS</span><span class="mc-emblem">✦</span></div>
