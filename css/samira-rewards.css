@@ -33,3 +33,7 @@
 .shd-reward-drawer{left:auto!important;right:16px!important}
 @media(max-width:720px){#shdRewardsButton.shd-reward-fab{left:auto!important;right:90px!important;bottom:calc(17px + env(safe-area-inset-bottom))!important;padding:11px 13px!important;font-size:12px!important;z-index:140!important}}
 @media(max-width:380px){#shdRewardsButton.shd-reward-fab{right:83px!important;padding:10px!important}}
+
+/* Unified floating-controls stack: Rewards above Help above SYS, no overlap. */
+#shdRewardsButton.shd-reward-fab{right:22px!important;left:auto!important;bottom:calc(150px + env(safe-area-inset-bottom))!important;z-index:149!important;max-width:none;min-height:42px}
+@media(max-width:720px){#shdRewardsButton.shd-reward-fab{right:14px!important;bottom:calc(137px + env(safe-area-inset-bottom))!important;padding:10px 14px!important;font-size:12px!important}}
