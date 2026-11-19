@@ -30,8 +30,8 @@
 <button type="button" data-admin-section="reviews">Customer Reviews</button>
 <button type="button" data-admin-section="settings">Original Admin Settings</button>
 </nav></div>
-<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0"><strong>Complete Samira Home Decor Administration</strong><a href="/admin.html" target="_blank" rel="noopener noreferrer">Open full-size view</a></div>
-<p class="muted">All existing customer history, order and payment records, delivery management, bookings, referrals, client and employee forms, reviews and settings remain in the original administration below. Your browser may reuse its saved admin credentials; until secure single sign-on is completed, a separate admin prompt may still appear.</p>
+<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0"><strong>Complete Samira Home Decor Administration</strong><button type="button" id="ownerExpandAdmin" aria-expanded="false" style="padding:8px 12px">Open full-size view in this tab</button></div>
+<p class="muted">All existing customer history, order and payment records, delivery management, bookings, referrals, client and employee forms, reviews and settings remain in the original administration below. The original administration is embedded here. Stylera attempts to unlock it using your verified Supabase session; the old admin sign-in remains available as a fallback.</p>
 <p id="ownerAdminLoginStatus" class="muted" role="status" aria-live="polite">Select Store Admin to verify your Supabase session.</p><iframe id="ownerLegacyAdmin" title="Complete Samira Home Decor administration — customer records, forms, orders and reviews" loading="lazy" style="display:block;width:100%;height:82vh;min-height:650px;border:1px solid #e6dcc9;border-radius:12px;background:white" referrerpolicy="same-origin"></iframe>
 </section>
 <section id="ownerTrafficPanel" class="panel" hidden aria-label="Visitor analytics">
@@ -110,6 +110,17 @@ const note=document.createElement('p');note.className='muted';note.textContent=d
 })();
 
 const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),legacy=document.getElementById('ownerLegacyAdmin');
+const expandAdmin=document.getElementById('ownerExpandAdmin');
+if(expandAdmin)expandAdmin.addEventListener('click',()=>{
+ const expanded=expandAdmin.getAttribute('aria-expanded')!=='true';
+ expandAdmin.setAttribute('aria-expanded',String(expanded));
+ expandAdmin.textContent=expanded?'Return to standard view':'Open full-size view in this tab';
+ if(legacy){legacy.style.height=expanded?'calc(100vh - 110px)':'82vh';legacy.style.minHeight=expanded?'760px':'650px';}
+ const wrapper=document.querySelector('main.wrap');
+ if(wrapper)wrapper.style.maxWidth=expanded?'none':'1000px';
+ const panel=document.getElementById('ownerStorePanel');
+ if(panel&&expanded)panel.scrollIntoView({behavior:'smooth',block:'start'});
+});
 const modules=document.getElementById('ownerAdminModules');let requestedAdminSection='manager';
 function showAdminModule(section){
  requestedAdminSection=section;
