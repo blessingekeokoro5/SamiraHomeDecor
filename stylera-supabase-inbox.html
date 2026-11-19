@@ -15,7 +15,7 @@
 </nav>
 </section>
 <section id="ownerStorePanel" class="panel" hidden aria-label="Store administration and revenue">
-<h2>Store Admin &amp; Revenue</h2><p class="muted">The existing admin dashboard appears below without leaving Stylera. Your current store-admin security may request a separate password until authentication is consolidated.</p>
+<h2>Store Admin &amp; Revenue</h2><p class="muted">Revenue reports use your signed-in Supabase owner session. The legacy store-admin tools below still require their existing security until migration is complete.</p><button type="button" id="ownerLoadRevenue">Load Stripe Revenue</button><div id="ownerRevenueResult" role="status" style="margin:14px 0" aria-live="polite">No revenue report loaded yet.</div>
 <iframe id="ownerStoreFrame" title="Samira Home Decor Store Administration" loading="lazy" style="width:100%;height:min(78vh,950px);min-height:560px;border:1px solid #e6dcc9;border-radius:12px" referrerpolicy="same-origin"></iframe>
 </section>
 <section id="ownerTrafficPanel" class="panel" hidden aria-label="Visitor analytics">
@@ -60,6 +60,26 @@ const choice=button.dataset.ownerTab;
 support.hidden=choice!=='support';store.hidden=choice!=='store';traffic.hidden=choice!=='traffic';
 tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
 if(choice==='store'&&!frame.getAttribute('src'))frame.setAttribute('src','/admin.html');
+});
+})();
+</script><script>
+(function(){
+const button=document.getElementById('ownerLoadRevenue'),out=document.getElementById('ownerRevenueResult');
+if(!button||!out)return;
+button.addEventListener('click',async()=>{
+if(typeof client==='undefined'||!client){out.textContent='Please sign in to Stylera first.';return}
+button.disabled=true;out.textContent='Loading Stripe revenue…';
+try{
+const {data:{session}}=await client.auth.getSession();
+if(!session?.access_token)throw Error('Sign in again to load revenue');
+const response=await fetch('/api/admin/revenue-summary',{headers:{Authorization:'Bearer '+session.access_token},cache:'no-store'});
+const data=await response.json();if(!response.ok)throw Error(data.error||'Revenue unavailable');
+const formatter=new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'});
+const metrics=[['This month',data.monthlyCents],['Last six months',data.sixMonthCents],['Year to date',data.yearToDateCents],['Trailing twelve months',data.trailingTwelveMonthsCents]];
+out.replaceChildren();const grid=document.createElement('div');grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px';
+for(const [label,cents] of metrics){const item=document.createElement('div');item.style.cssText='background:#f4efe6;border-radius:10px;padding:14px';const name=document.createElement('div');name.textContent=label;const amount=document.createElement('strong');amount.textContent=formatter.format((cents||0)/100);item.append(name,amount);grid.append(item)}out.append(grid);
+const note=document.createElement('p');note.className='muted';note.textContent=data.disclaimer||'Gross Stripe revenue before refunds and fees';out.append(note);
+}catch(e){out.textContent=e.message}finally{button.disabled=false}
 });
 })();
 </script></body></html>
