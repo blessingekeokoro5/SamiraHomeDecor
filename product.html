@@ -523,7 +523,14 @@
       </section>`;
     }
     function productAccordion(p) {
-      const desc = p.desc || blurb(p);
+      const rawDescription = p.desc || blurb(p);
+      const desc = String(rawDescription)
+        .replace(/(?:Ready-to-ship\s+)?supplier stock,?\s*subject to availability\.?/gi, "")
+        .replace(/Delivery is calculated separately\.?/gi, "")
+        .replace(/Member savings are included;?\s*additional percentage offers do not apply\.?/gi, "")
+        .replace(/Additional percentage offers do not apply\.?/gi, "")
+        .replace(/Supplier stock subject to availability\.?/gi, "")
+        .replace(/\s{2,}/g, " ").trim();
       const specs = productSpecsHtml(p);
       const shipping = `
         <h3>Shipping</h3>
