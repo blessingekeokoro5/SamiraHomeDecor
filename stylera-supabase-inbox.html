@@ -59,7 +59,7 @@ document.getElementById('ownerEmailChange').addEventListener('submit',async e=>{
  out.textContent=error?'Email change failed: '+error.message:'Email verification requested. Follow the Supabase confirmation email(s). Important: store admin and revenue access will require updating STYLERA_OWNER_EMAIL to the verified new address; do not sign out until that is done.';
 });
 client?.auth.onAuthStateChange((event)=>{
- if(event==='PASSWORD_RECOVERY'){say('Password recovery verified. Sign in if needed, then use Account settings to choose your new password.');}
+ if(event==='PASSWORD_RECOVERY'){say('Password recovery verified. Open Account settings to choose your new password.');load().catch(()=>{});}
 });
 signout.addEventListener('click',async()=>{if(client)await client.rpc('stylera_set_support_presence',{p_available:false});await client.auth.signOut();await fetch('/api/admin/owner-session/logout',{method:'POST'}).catch(()=>{});reset();say('Signed out.')});
 async function updatePresence(){if(!client||presenceBusy||workspace.hidden)return;if(document.hidden&&availableToggle.checked)return;presenceBusy=true;try{const active=availableToggle.checked&&!document.hidden&&(Date.now()-lastActivity<90000);const {error}=await client.rpc('stylera_set_support_presence',{p_available:active});presenceState.textContent=error?'Support availability could not update: '+error.message:'Support availability: '+(active?'Online':'Away');}finally{presenceBusy=false}}
