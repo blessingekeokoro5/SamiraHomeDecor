@@ -52,3 +52,16 @@
  #giftFab.launch-gift .lb-star{font-size:16px!important}
  #shdRewardsButton.shd-reward-fab{right:12px!important;bottom:calc(150px + env(safe-area-inset-bottom))!important;padding:10px 13px!important}
 }
+
+/* Compact floating support layout: one SYS launcher, Rewards alongside, dismissible greeting above. */
+#supportFab{display:none!important}
+#dmLaunch.dm-launch{right:14px!important;bottom:calc(16px + env(safe-area-inset-bottom))!important;gap:0!important}
+#shdRewardsButton.shd-reward-fab{right:92px!important;bottom:calc(25px + env(safe-area-inset-bottom))!important;z-index:145!important}
+#chatNudge.chat-nudge{display:block!important;position:fixed!important;right:16px!important;bottom:calc(94px + env(safe-area-inset-bottom))!important;max-width:230px!important;padding:13px 35px 13px 15px!important;border-radius:13px!important;background:#fff!important;color:#0b1f3a!important;font-size:13px!important;line-height:1.45!important;box-shadow:0 5px 18px #0002!important;z-index:151!important;pointer-events:none!important;opacity:0!important;visibility:hidden!important;transform:translateY(8px)!important;animation:none!important}
+#chatNudge.chat-nudge.show{opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto!important;animation:none!important}
+#chatNudge .nudge-x{width:25px!important;height:25px!important;top:5px!important;right:5px!important;cursor:pointer!important}
+@media(max-width:720px){
+ #dmLaunch.dm-launch{right:12px!important;bottom:calc(12px + env(safe-area-inset-bottom))!important}
+ #shdRewardsButton.shd-reward-fab{right:82px!important;bottom:calc(17px + env(safe-area-inset-bottom))!important}
+ #chatNudge.chat-nudge{right:10px!important;bottom:calc(82px + env(safe-area-inset-bottom))!important;max-width:min(225px,calc(100vw - 25px))!important}
+}
