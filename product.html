@@ -530,7 +530,7 @@
         <ul class="pdp-highlights">
           ${(p.arriveDays && typeof fmtArriveRange === "function") ? `<li>Estimated delivery ${fmtArriveRange(p.arriveDays)} if you order today</li>` : `<li>Dispatched in ${p.dispatch || "1 to 2 business days"}</li>
           <li>Delivery in ${p.deliveryTime || "3 to 8 business days"}, depending on your location</li>`}
-          <li>Ships Australia-wide &amp; to NZ, UK, USA, Canada, Switzerland &amp; Germany</li>
+          <li>Ships within Australia and to New Zealand</li>
           <li>Free standard shipping on Australian orders over $3,500</li>
           <li>Tracking provided, follow your order online</li>
         </ul>
@@ -761,7 +761,7 @@
                 : `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">✓ Ready to ship</span> <span style="color:var(--body)">Dispatched in <strong style="color:var(--ink)">${p.dispatch || "1 to 2 business days"}</strong>${p.deliveryTime ? `, delivered in <strong style="color:var(--ink)">${p.deliveryTime}</strong>` : ""}</span>`}
               ${p.price == null || p.cat === "Packaging" ? "" : (p.auOnly
                 ? `<div style="margin-top:8px;font-size:.88rem;color:var(--body)">🇦🇺 <strong style="color:var(--ink)">Ships within Australia only.</strong> Large pieces aren't available for overseas delivery.</div>`
-                : `<div style="margin-top:8px;font-size:.88rem;color:var(--body)">🌏 Also ships to <strong style="color:var(--ink)">New Zealand</strong>, the UK, USA, Canada, Switzerland and Germany. Import duties or taxes may apply.</div>`)}
+                : `<div style="margin-top:8px;font-size:.88rem;color:var(--body)">🌏 Also ships to <strong style="color:var(--ink)">New Zealand</strong>, with delivery charges calculated at checkout.</div>`)}
               ${(!p.readyDining && !p.lead && p.fastShip) ? `<div style="margin-top:8px;font-size:0.95rem;color:var(--body)">🚚 Get it by <strong style="color:var(--ink)">${(typeof estArrival === "function" ? estArrival(6) : "")}</strong></div>` : ""}
             </div>`}
             
