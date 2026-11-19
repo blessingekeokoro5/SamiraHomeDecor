@@ -32,7 +32,7 @@ const h=document.createElement('h2');h.textContent='Stylera suggests matching pi
 const close=document.createElement('button');close.className='shd-dismiss';close.textContent='×';close.setAttribute('aria-label','Close recommendations');close.addEventListener('click',()=>{sessionStorage.setItem('shd_match_dismissed','1');panel.remove()});panel.append(close);
 const why=document.createElement('p');why.textContent=group.why;panel.append(why);
 for(const p of scored){const a=document.createElement('a');a.className='shd-match';a.href='/product.html?id='+encodeURIComponent(p.id);const img=document.createElement('img');img.src=p.img;img.alt='';img.loading='lazy';const label=document.createElement('span');label.textContent=p.name;a.append(img,label);panel.append(a)}
-const ask=document.createElement('button');ask.textContent='Ask Stylera about matching my room';ask.addEventListener('click',()=>{panel.remove();if(typeof window.openLiveChat==='function')window.openLiveChat();else location.href='/stylist.html'});panel.append(ask);
+const ask=document.createElement('button');ask.textContent='Ask Stylera about matching my room';ask.addEventListener('click',()=>{panel.remove();location.href='/stylist.html'});panel.append(ask);
 document.body.append(panel);
 }
 document.addEventListener('DOMContentLoaded',()=>{
