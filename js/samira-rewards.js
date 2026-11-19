@@ -15,6 +15,16 @@
  for(const [name,detail,days] of items){
   const card=document.createElement('article');card.className='shd-reward-card';const strong=document.createElement('strong');strong.textContent=name;const small=document.createElement('small');small.textContent=detail;card.append(strong,small);
   if(days){const expiry=document.createElement('div');expiry.className='shd-reward-expiry';expiry.textContent='Proposed expiry: '+days+' days after earning';card.append(expiry)}
+  if(name==='Follow on Instagram'){
+   const link=document.createElement('a');
+   link.href=(typeof SAMIRA!=='undefined'&&SAMIRA.socials&&/^https:\/\/((www\.)?instagram\.com)\//i.test(SAMIRA.socials.instagram||''))?SAMIRA.socials.instagram:'#';
+   link.textContent='Open Samira Home Decor on Instagram ↗';
+   link.target='_blank';link.rel='noopener noreferrer';
+   link.style.cssText='display:inline-block;margin-top:12px;color:#0b1f3a;text-decoration:underline;font-weight:600;font-size:13px';
+   if(link.href.endsWith('#')){link.removeAttribute('href');link.textContent='Instagram link temporarily unavailable'}
+   card.append(link);
+   const note=document.createElement('small');note.textContent='Following does not automatically issue credit. Reward verification will be enabled when the program launches.';card.append(note);
+  }
   content.append(card);
  }
  const existing=document.createElement('article');existing.className='shd-reward-card';const exTitle=document.createElement('strong');exTitle.textContent='Your existing member benefits stay';const exDesc=document.createElement('small');exDesc.textContent='First-order discount, referral rewards and Christmas vouchers remain separate from the new store-credit program.';existing.append(exTitle,exDesc);content.append(existing);
