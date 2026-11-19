@@ -1915,7 +1915,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Tidio → Settings → Live chat → Installation (manual install).
    Left empty = no live chat loaded (the Help desk still works).
    ============================================================ */
-const TIDIO_SRC = "https://code.tidio.co/zcdbx87dxqrxsock4arzm0clcdfqkx4j.js";
+const TIDIO_SRC = ""; // Retired in Stylera preview; do not load Tidio.
 (function () {
   if (!TIDIO_SRC) return;
   // Keep Tidio's own bubble hidden so it doesn't sit on top of our
@@ -1935,13 +1935,9 @@ const TIDIO_SRC = "https://code.tidio.co/zcdbx87dxqrxsock4arzm0clcdfqkx4j.js";
 })();
 
 /* Open live chat with the team. Falls back to the Contact page if Tidio hasn't loaded. */
-window.openLiveChat = function (msg) {
-  var api = window.tidioChatApi;
-  if (api && typeof api.open === "function") {
-    try { var p = document.getElementById("chatPanel"); if (p && p.classList.contains("open")) document.getElementById("chatClose").click(); } catch (e) {}
-    api.show(); api.open(); return;
-  }
-  location.href = "contact.html";
+window.openLiveChat = function () {
+  // Guest support is hosted on the same origin; no third-party chat widget.
+  window.location.href = "/stylera-supabase-customer.html";
 };
 
 /* ---- Product photos: no right-click / drag / long-press save ----
