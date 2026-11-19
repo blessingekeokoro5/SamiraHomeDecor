@@ -72,8 +72,7 @@ const note=document.createElement('p');note.className='muted';note.textContent=d
 }catch(e){out.textContent=e.message}finally{button.disabled=false}
 });
 })();
-</script><script>
-(function(){
+
 const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),legacy=document.getElementById('ownerLegacyAdmin');
 if(tabs&&support&&store&&traffic){
 tabs.addEventListener('click',async event=>{
@@ -96,4 +95,5 @@ if(choice==='store'&&legacy){
 }
 });
 }
+
 </script></body></html>
