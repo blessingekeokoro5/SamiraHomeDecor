@@ -50,19 +50,7 @@ setInterval(async()=>{if(inboxPolling||document.hidden||workspace.hidden||!clien
 document.getElementById('refresh').addEventListener('click',()=>load());for(const event of ['change','input']){document.getElementById(event==='change'?'filter':'search').addEventListener(event,renderTickets)}
 document.getElementById('saveStatus').addEventListener('click',async()=>{if(!selected)return;const next=document.getElementById('conversationStatus').value;if(!['open','escalated','closed'].includes(next))return;say('Updating conversation…');const {data,error}=await client.from('stylera_conversations').update({status:next}).eq('id',selected).select('id,status').single();if(error){say('Unable to update status: '+error.message);return}const item=conversations.find(c=>c.id===selected);if(item)item.status=data.status;renderTickets();replyPanel.hidden=data.status==='closed';say('Conversation marked '+data.status+'.')});
 replyPanel.addEventListener('submit',async e=>{e.preventDefault();if(!selected&&!selectedGuest)return;const box=document.getElementById('reply'),content=box.value.trim();if(!content)return;say('Sending reply…');const {error}=selectedGuest?await client.rpc('stylera_staff_guest_reply',{p_thread:selectedGuest,p_message:content}):await client.from('stylera_messages').insert({conversation_id:selected,sender:'support',content});if(error){say('Reply not sent: '+error.message);return}box.value='';if(selectedGuest)await selectGuest(selectedGuest);else await selectConversation(selected);say('Support reply saved to conversation. Customer notification is not configured yet.')});
-</script><script>
-(function(){
-const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),frame=document.getElementById('ownerStoreFrame');
-if(!tabs||!support||!store||!traffic||!frame)return;
-tabs.addEventListener('click',event=>{
-const button=event.target.closest('[data-owner-tab]');if(!button)return;
-const choice=button.dataset.ownerTab;
-support.hidden=choice!=='support';store.hidden=choice!=='store';traffic.hidden=choice!=='traffic';
-tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
-if(choice==='store'&&!frame.getAttribute('src'))frame.setAttribute('src','/admin.html');
-});
-})();
-</script><script>
+
 (function(){
 const button=document.getElementById('ownerLoadRevenue'),out=document.getElementById('ownerRevenueResult');
 if(!button||!out)return;
@@ -80,6 +68,18 @@ out.replaceChildren();const grid=document.createElement('div');grid.style.cssTex
 for(const [label,cents] of metrics){const item=document.createElement('div');item.style.cssText='background:#f4efe6;border-radius:10px;padding:14px';const name=document.createElement('div');name.textContent=label;const amount=document.createElement('strong');amount.textContent=formatter.format((cents||0)/100);item.append(name,amount);grid.append(item)}out.append(grid);
 const note=document.createElement('p');note.className='muted';note.textContent=data.disclaimer||'Gross Stripe revenue before refunds and fees';out.append(note);
 }catch(e){out.textContent=e.message}finally{button.disabled=false}
+});
+})();
+</script><script>
+(function(){
+const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),frame=document.getElementById('ownerStoreFrame');
+if(!tabs||!support||!store||!traffic||!frame)return;
+tabs.addEventListener('click',event=>{
+const button=event.target.closest('[data-owner-tab]');if(!button)return;
+const choice=button.dataset.ownerTab;
+support.hidden=choice!=='support';store.hidden=choice!=='store';traffic.hidden=choice!=='traffic';
+tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+if(choice==='store'&&!frame.getAttribute('src'))frame.setAttribute('src','/admin.html');
 });
 })();
 </script></body></html>
