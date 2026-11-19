@@ -874,9 +874,7 @@
         var quoteLines = [Object.assign({}, p, { qty: pdpQty })];
         var decorQuote = (p.homeDecorImport || p.outdoorImport) && typeof DecorDelivery !== "undefined" ? DecorDelivery.quote(quoteLines, {postcode:pc,suburb:(document.getElementById("dcSuburb") || {}).value || address.replace(/\b\d{4}\b/g,"").trim(),country:"Australia"}, function(){ calcDelivery(id); }) : null;
         var quote = FurnitureFreight.quote(quoteLines, pc, "Australia", decorQuote);
-        if(quote.quoteRequired && !quote.pending && typeof DeliveryRequest !== "undefined"){
-          out.innerHTML = DeliveryRequest.escape(quote.message) + DeliveryRequest.html(quoteLines,{postcode:pc,suburb:(document.getElementById("dcSuburb")||{}).value,country:"Australia"},quote.reason);
-        }else out.textContent = quote.quoteRequired ? quote.message : "Delivery to " + st + " " + pc + ": $" + quote.fee.toFixed(2) + ".";
+        out.textContent = quote.quoteRequired ? "Delivery price is currently unavailable for this address." : "Delivery to " + st + " " + pc + ": $" + quote.fee.toFixed(2) + ".";
         return;
       }
       var fee = p.shipFee * pdpQty;
