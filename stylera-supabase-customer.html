@@ -30,14 +30,16 @@ el('complaintForm').addEventListener('submit',async e=>{
  if(details.length<10){el('complaintResult').textContent='Please provide at least 10 characters describing your complaint.';return}
  if(Date.now()-lastSend<8000){el('complaintResult').textContent='Please wait a few seconds before submitting.';return}
  const button=e.currentTarget.querySelector('button');button.disabled=true;
- const reference='SHD-'+thread.slice(0,8).toUpperCase();
- const content='[COMPLAINT TICKET '+reference+']\\nCategory: '+category+'\\nOrder reference: '+(order||'Not supplied')+'\\nIssue and requested resolution: '+details;
  try{
-  const {error}=await client.rpc('stylera_guest_send',{p_thread:thread,p_token:token,p_message:content});
-  if(error)throw error;
+  const response=await fetch('/api/admin/support-tickets',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'create',thread,token,name:el('customerName').value.trim(),email:el('email').value.trim(),category,orderReference:order,description:details})});
+  const result=await response.json();if(!response.ok)throw Error(result.error||'Ticket could not be created');
+  const reference='SHD-'+String(result.ticket.ticket_number).padStart(6,'0');
+  const content='[COMPLAINT TICKET '+reference+'] Category: '+category+'. Order: '+(order||'Not supplied')+'. Issue: '+details;
+  const {error:messageError}=await client.rpc('stylera_guest_send',{p_thread:thread,p_token:token,p_message:content});
   lastSend=Date.now();el('complaintDetails').value='';el('complaintOrder').value='';
-  el('complaintResult').textContent='Complaint submitted. Your support reference is '+reference+'. Keep this reference for follow-up. Our team will review your message.';
-  say('Complaint sent to Samira Support.');await loadMessages();
+  el('complaintResult').textContent='Ticket '+reference+' created successfully. Status: Open. Keep this reference for follow-up.'+(messageError?' Your ticket is saved; the chat notification was not delivered.':'');
+  say('Complaint ticket created.');await loadMessages();
+
  }catch(err){el('complaintResult').textContent='Complaint could not be submitted: '+err.message}
  finally{button.disabled=false}
 });
