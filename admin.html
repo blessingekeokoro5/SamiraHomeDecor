@@ -74,7 +74,13 @@
         <button class="btn btn--outline btn--sm" onclick="adminLogout()">Log out</button>
       </div>
 
-      <div class="admin-tabs" id="adminTabs">
+      <section aria-label="Revenue overview" style="background:#f7f3eb;border:1px solid #c6a15b;border-radius:14px;padding:18px;margin:12px 0 22px">
+<h2 style="margin:0 0 8px;color:#0B1F3A">Sales &amp; Revenue Overview</h2>
+<p style="font-size:.85rem">Verified paid Stripe checkout totals (AUD). Gross revenue before refunds, Stripe fees and supplier/shipping costs. This does not include payments processed outside Stripe checkout.</p>
+<div id="revenueSummary" aria-live="polite">Select “Load revenue” to retrieve the latest totals securely.</div>
+<button type="button" class="btn btn--outline btn--sm" id="loadRevenue" style="margin-top:12px">Load revenue</button>
+</section>
+<div class="admin-tabs" id="adminTabs">
         <button class="active" data-tab="base">Customer base</button>
         <button data-tab="manager">Order &amp; payment manager</button>
         <button data-tab="orders">Order delivery</button>
@@ -711,6 +717,27 @@
   </script>
   <script src="js/reviews-admin.js?v=2"></script>
   <script src="js/admin-manager.js?v=1"></script>
+<script>
+(function(){
+const button=document.getElementById('loadRevenue'),out=document.getElementById('revenueSummary');
+if(!button||!out)return;
+const fmt=n=>new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(n/100);
+button.addEventListener('click',async()=>{
+button.disabled=true;out.textContent='Loading verified Stripe revenue…';
+try{
+const token=localStorage.getItem('shd_book_token')||'';
+const response=await fetch('/api/admin/revenue-summary',{headers:token?{'x-admin-token':token}:{},cache:'no-store'});
+const data=await response.json();
+if(!response.ok)throw Error(data.error||'Could not load report');
+out.replaceChildren();
+const cards=[['This month',data.monthlyCents],['Last six calendar months',data.sixMonthCents],['Year to date',data.yearToDateCents],['Trailing 12 months',data.trailingTwelveMonthsCents]];
+const grid=document.createElement('div');grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:14px 0';
+for(const [label,value] of cards){const el=document.createElement('div');el.style.cssText='background:white;border-radius:10px;padding:14px';const heading=document.createElement('div');heading.textContent=label;heading.style.fontSize='.8rem';const amount=document.createElement('strong');amount.textContent=fmt(value);amount.style.cssText='display:block;font-size:1.2rem;color:#0B1F3A';el.append(heading,amount);grid.append(el)}
+out.append(grid);const note=document.createElement('small');note.textContent=data.complete?'All matching Stripe pages processed.':'Report incomplete: Stripe pagination limit reached.';out.append(note);
+}catch(e){out.textContent=e.message+'. Use the existing admin payment access key if prompted.'}finally{button.disabled=false}
+});
+})();
+</script>
 </body>
 </html>
 
