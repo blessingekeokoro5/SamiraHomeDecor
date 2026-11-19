@@ -218,7 +218,7 @@ function updateTotalsUI() {
     const requestDestination={postcode:(document.getElementById("coPost")||{}).value,suburb:(document.getElementById("coSuburb")||{}).value,country:shipCountry()};
     line.innerHTML = typeof DeliveryRequest !== "undefined" ? DeliveryRequest.escape(t.freightMessage)+(t.pending ? "" : DeliveryRequest.html(requestItems,requestDestination,t.reason)) : t.freightMessage;
   }
-  else if (line) line.innerHTML = `<strong>${(window._fulfil === "express" || expressShipFee() > 0) ? "Express" : "Standard"}</strong> · ${shipTxt}${t.surcharge ? " · includes " + money(t.surcharge) + " for additional items" : ""} · to ${t.country}${t.weight > 0 ? " · calculated for ~" + t.weight + "kg" : ""} · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
+  else if (line) line.innerHTML = `<strong>${(window._fulfil === "express" || expressShipFee() > 0) ? "Express" : "Standard"}</strong> · ${shipTxt} · to ${t.country} · ${t.shipDays || "3 to 8 business days"}${(t.shipping === 0 && t.freeOver) ? ` · <span style="color:var(--forest)">free over ${money(t.freeOver)}</span>` : ""}`;
   const s = document.getElementById("sumShip"); if (s) s.textContent = shipTxt;
   const gr = document.getElementById("sumGiftRow"); if (gr) gr.style.display = t.giftCard ? "flex" : "none";
   const gv = document.getElementById("sumGift"); if (gv) gv.textContent = "−" + money(t.giftCard);
@@ -293,7 +293,7 @@ function renderCheckout() {
           <span class="cx-acts">${prod ? `<button type="button" class="cx-heart${(typeof isWishlisted === "function" && isWishlisted(i.id)) ? " on" : ""}" aria-label="Save to wishlist" onclick="toggleWishlist('${i.id}', this);this.classList.toggle('on')">♡</button>` : ""}<button type="button" class="cx-del" aria-label="Remove ${i.name}" onclick="coRemove('${key}')">🗑</button></span>
         </div>
         ${(prod && typeof isPreorder === "function" && isPreorder(prod)) ? `<small class="co-preorder">⏳ Pre-order · ${preorderTermsLink("Pre-Order Terms")}</small>${typeof DeliveryRequest !== "undefined" ? DeliveryRequest.html([Object.assign({},prod,i)],{},"dispatch") : ""}` : ""}
-        ${i.giftCard ? "" : prod && prod.supplierProductUuid ? `<small>Dispatch timing is confirmed for your delivery location.</small>` : `<small class="co-eta" data-gift="${(i.hamper || String(i.id).startsWith("hamper-")) ? 1 : 0}" data-idx="${idx}">🚚 Arrives ${(i.hamper || String(i.id).startsWith("hamper-")) ? fmtBizRange(giftWindow(i, window._fulfil === "express")) : arriveRange(prod || i)}</small>`}
+        ${i.giftCard ? "" : prod && prod.supplierProductUuid ? `` : `<small class="co-eta" data-gift="${(i.hamper || String(i.id).startsWith("hamper-")) ? 1 : 0}" data-idx="${idx}">🚚 Arrives ${(i.hamper || String(i.id).startsWith("hamper-")) ? fmtBizRange(giftWindow(i, window._fulfil === "express")) : arriveRange(prod || i)}</small>`}
         <div class="cx-bottom">
           <span class="cx-price">${linePrice(i) < i.price ? `<s>${money(i.price * i.qty)}</s> ` : ""}<strong>${money(linePrice(i) * i.qty)}</strong>${linePrice(i) < i.price ? `<em>Member price</em>` : ""}</span>
           ${fixed ? `<span class="cx-qtyfix">Qty ${i.qty}</span>` : `<span class="cx-qty"><button type="button" aria-label="One less" onclick="coQty('${key}', ${i.qty - 1})">−</button><span>${i.qty}</span><button type="button" aria-label="One more" onclick="coQty('${key}', ${i.qty + 1})">+</button></span>`}
