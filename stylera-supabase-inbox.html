@@ -16,7 +16,7 @@
 </section>
 <section id="ownerStorePanel" class="panel" hidden aria-label="Store administration and revenue">
 <h2>Store Admin &amp; Revenue</h2><p class="muted">Revenue reports use your signed-in Supabase owner session. The legacy store-admin tools below still require their existing security until migration is complete.</p><button type="button" id="ownerLoadRevenue">Load Stripe Revenue</button><div id="ownerRevenueResult" role="status" style="margin:14px 0" aria-live="polite">No revenue report loaded yet.</div>
-<iframe id="ownerStoreFrame" title="Samira Home Decor Store Administration" loading="lazy" style="width:100%;height:min(78vh,950px);min-height:560px;border:1px solid #e6dcc9;border-radius:12px" referrerpolicy="same-origin"></iframe>
+<p class="muted">Legacy order and review management still uses its existing separate security. Open it in a new tab until the owner-only migration is complete.</p><a href="/admin.html" target="_blank" rel="noopener noreferrer">Open legacy order and review administration</a>
 </section>
 <section id="ownerTrafficPanel" class="panel" hidden aria-label="Visitor analytics">
 <h2>Visitor Analytics</h2><p>Real-time individual visitor monitoring, countries, devices, product journeys and owner push notifications are not active yet.</p>
@@ -72,14 +72,14 @@ const note=document.createElement('p');note.className='muted';note.textContent=d
 })();
 </script><script>
 (function(){
-const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),frame=document.getElementById('ownerStoreFrame');
-if(!tabs||!support||!store||!traffic||!frame)return;
+const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel');
+if(!tabs||!support||!store||!traffic)return;
 tabs.addEventListener('click',event=>{
 const button=event.target.closest('[data-owner-tab]');if(!button)return;
 const choice=button.dataset.ownerTab;
 support.hidden=choice!=='support';store.hidden=choice!=='store';traffic.hidden=choice!=='traffic';
-tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
-if(choice==='store'&&!frame.getAttribute('src'))frame.setAttribute('src','/admin.html');
+tabs.querySelectorAll('button').forEach(b=>{b.setAttribute('aria-pressed',String(b===button));b.style.background=b===button?'#C6A15B':'#0B1F3A';b.style.color=b===button?'#0B1F3A':'white'});
+
 });
 })();
 </script></body></html>
