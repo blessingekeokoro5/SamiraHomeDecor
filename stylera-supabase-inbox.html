@@ -52,6 +52,18 @@
 <div style="display:flex;flex-wrap:wrap;gap:12px;margin:12px 0"><a href="https://analytics.google.com/analytics/web/" target="_self">View Google Analytics</a><a href="https://search.google.com/search-console" target="_self">View Google Search Console</a></div>
 <p class="muted">These links open Google's reporting services in this same browser tab. To show verified figures directly here, connect the relevant Google property through a secure server-side integration. No passwords or private API keys should be placed in the page code.</p>
 </section>
+<section class="panel" id="ticketManagement" aria-label="Complaint ticket management" style="margin:18px 0" hidden>
+<h2>Complaint Ticket Management</h2><p class="muted">Track complaints, priority, assigned staff, internal notes and resolution history. Tickets remain private to authorized owners.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><button type="button" id="loadSupportTickets">Refresh tickets</button><label for="ticketStatusFilter">Status</label><select id="ticketStatusFilter"><option value="all">All statuses</option><option value="open">Open</option><option value="in_progress">In progress</option><option value="waiting_customer">Waiting for customer</option><option value="resolved">Resolved</option><option value="closed">Closed</option></select></div>
+<p id="ticketFeedback" class="muted" role="status"></p><div id="ticketSummary" class="muted"></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin-top:12px"><div id="ticketList" style="max-height:550px;overflow:auto"></div>
+<div id="ticketDetail" hidden style="border:1px solid #e6dcc9;padding:15px;border-radius:10px"><h3 id="ticketHeading"></h3><div id="ticketInfo" style="white-space:pre-wrap;overflow-wrap:anywhere"></div>
+<label for="ticketEditStatus">Status</label><select id="ticketEditStatus"><option value="open">Open</option><option value="in_progress">In progress</option><option value="waiting_customer">Waiting for customer</option><option value="resolved">Resolved</option><option value="closed">Closed</option></select>
+<label for="ticketEditPriority">Priority</label><select id="ticketEditPriority"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option><option value="urgent">Urgent</option></select>
+<label for="ticketEditAssignee">Assigned to</label><input id="ticketEditAssignee" maxlength="120" placeholder="Staff name or email">
+<label for="ticketEditResolution">Resolution</label><textarea id="ticketEditResolution" maxlength="2000" placeholder="Document how the complaint was resolved"></textarea>
+<label for="ticketEditNote">Internal note (optional)</label><textarea id="ticketEditNote" maxlength="2000" placeholder="Private note for the support team"></textarea>
+<button type="button" id="saveSupportTicket">Save ticket changes</button><h4>Ticket activity history</h4><div id="ticketHistory" style="max-height:280px;overflow:auto"></div></div></div></section>
 <div class="grid" id="supportConversations"><section class="panel"><h2>Conversations</h2><div class="muted" id="presenceState" role="status">Support availability: Away</div><label for="availableToggle"><input type="checkbox" id="availableToggle" style="width:auto;margin-right:8px">Available for live chat</label><p class="muted">Shows Online only while this dashboard is open and active. Automatically switches to Away after inactivity.</p><button id="refresh" type="button">Refresh</button><p class="muted">Inbox refreshes about every 15 seconds while this tab is open.</p><label for="filter">Filter conversations</label><select id="filter" aria-label="Conversation status"><option value="all">All statuses</option><option value="open">Open</option><option value="escalated">Escalated</option><option value="closed">Closed</option></select><label for="search">Find conversation</label><input id="search" type="search" placeholder="Search conversation ID"><div id="tickets" class="muted">No conversations loaded.</div></section><section class="panel"><h2 id="selectedTitle">Select a conversation</h2><div id="messages" aria-live="polite"></div><div id="actions" hidden><label for="conversationStatus">Conversation status</label><select id="conversationStatus"><option value="open">Open</option><option value="escalated">Escalated</option><option value="closed">Closed</option></select><button type="button" id="saveStatus">Save status</button></div><form id="replyPanel" hidden><label for="reply">Reply as support</label><textarea id="reply" maxlength="3000" required></textarea><button type="submit">Send reply</button></form></section></div></section></main>
 <script src="/js/stylera-supabase-config.js"></script>
 <script type="module">
@@ -132,6 +144,53 @@ const help=document.createElement('p');help.className='muted';help.textContent='
 button.addEventListener('click',loadRevenue);
 period.addEventListener('change',loadRevenue);
 })();;
+
+const ticketPanel=document.getElementById('ticketManagement');
+let supportTickets=[],activeSupportTicket=null;
+const ticketEl=id=>document.getElementById(id);
+const ticketSay=message=>{ticketEl('ticketFeedback').textContent=message};
+async function ticketRequest(payload){
+ const {data:{session}}=await client.auth.getSession();
+ if(!session?.access_token)throw Error('Please sign in again');
+ const response=await fetch('/api/admin/support-tickets',{method:payload?'POST':'GET',headers:{Authorization:'Bearer '+session.access_token,...(payload?{'content-type':'application/json'}:{})},...(payload?{body:JSON.stringify(payload)}:{})});
+ const result=await response.json();if(!response.ok)throw Error(result.error||'Ticket service unavailable');return result;
+}
+function renderSupportTickets(){
+ const list=ticketEl('ticketList');list.replaceChildren();const status=ticketEl('ticketStatusFilter').value;
+ ticketEl('ticketSummary').textContent=supportTickets.length+' tickets · '+supportTickets.filter(t=>!['closed','resolved'].includes(t.status)).length+' unresolved';
+ for(const t of supportTickets.filter(t=>status==='all'||t.status===status)){
+  const button=document.createElement('button');button.type='button';button.style.cssText='display:block;width:100%;text-align:left;margin:6px 0;padding:12px;background:#f4efe6;color:#0b1f3a';
+  button.textContent='SHD-'+String(t.ticket_number).padStart(6,'0')+' · '+t.status+' · '+t.priority+' · '+t.category+' · '+t.customer_name;
+  button.addEventListener('click',()=>openSupportTicket(t.id));list.append(button);
+ }
+ if(!list.children.length)list.textContent='No tickets in this category.';
+}
+async function loadSupportTickets(){
+ ticketSay('Loading complaint tickets…');
+ try{const result=await ticketRequest();supportTickets=result.tickets||[];renderSupportTickets();ticketSay('Tickets loaded.')}catch(e){ticketSay(e.message)}
+}
+async function openSupportTicket(id){
+ ticketSay('Loading ticket details…');
+ try{
+  const {ticket,events}=await ticketRequest({action:'detail',id});if(!ticket)throw Error('Ticket not found');
+  activeSupportTicket=ticket;ticketEl('ticketDetail').hidden=false;
+  ticketEl('ticketHeading').textContent='SHD-'+String(ticket.ticket_number).padStart(6,'0');
+  ticketEl('ticketInfo').textContent='Customer: '+ticket.customer_name+' ('+ticket.customer_email+')\\nCategory: '+ticket.category+'\\nOrder: '+(ticket.order_reference||'Not provided')+'\\nCreated: '+new Date(ticket.created_at).toLocaleString()+'\\n\\n'+ticket.description;
+  ticketEl('ticketEditStatus').value=ticket.status;ticketEl('ticketEditPriority').value=ticket.priority;ticketEl('ticketEditAssignee').value=ticket.assigned_to||'';ticketEl('ticketEditResolution').value=ticket.resolution||'';ticketEl('ticketEditNote').value='';
+  const history=ticketEl('ticketHistory');history.replaceChildren();
+  for(const event of events||[]){const item=document.createElement('p');item.style.cssText='border-bottom:1px solid #ddd;padding:7px 0;white-space:pre-wrap';item.textContent=new Date(event.created_at).toLocaleString()+' · '+event.actor+' · '+event.event_type+'\\n'+event.details;history.append(item)}
+  ticketSay('Ticket details loaded.');
+ }catch(e){ticketSay(e.message)}
+}
+ticketEl('loadSupportTickets').addEventListener('click',loadSupportTickets);
+ticketEl('ticketStatusFilter').addEventListener('change',renderSupportTickets);
+ticketEl('saveSupportTicket').addEventListener('click',async()=>{
+ if(!activeSupportTicket)return;ticketSay('Saving ticket…');
+ try{
+  await ticketRequest({action:'update',id:activeSupportTicket.id,status:ticketEl('ticketEditStatus').value,priority:ticketEl('ticketEditPriority').value,assigned_to:ticketEl('ticketEditAssignee').value,resolution:ticketEl('ticketEditResolution').value,...(ticketEl('ticketEditNote').value.trim()?{note:ticketEl('ticketEditNote').value.trim()}:{})});
+  await loadSupportTickets();await openSupportTicket(activeSupportTicket.id);ticketSay('Ticket saved and history updated.');
+ }catch(e){ticketSay(e.message)}
+});
 
 const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),legacy=document.getElementById('ownerLegacyAdmin');
 const expandAdmin=document.getElementById('ownerExpandAdmin');
