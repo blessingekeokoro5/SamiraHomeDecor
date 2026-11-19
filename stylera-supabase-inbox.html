@@ -15,7 +15,11 @@
 </nav>
 </section>
 <section id="ownerStorePanel" class="panel" hidden aria-label="Store administration and revenue">
-<h2>Store Admin &amp; Revenue</h2><p class="muted">Revenue reports use your signed-in Supabase owner session. The legacy store-admin tools below still require their existing security until migration is complete.</p><button type="button" id="ownerLoadRevenue">Load Stripe Revenue</button><div id="ownerRevenueResult" role="status" style="margin:14px 0" aria-live="polite">No revenue report loaded yet.</div>
+<h2>Store Admin &amp; Revenue</h2><p class="muted">Revenue reports use your signed-in Supabase owner session. The legacy store-admin tools below still require their existing security until migration is complete.</p><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0">
+<label for="ownerRevenuePeriod">Revenue period</label><select id="ownerRevenuePeriod" style="padding:10px;border-radius:8px;border:1px solid #c7bda8">
+<option value="1">1 month</option><option value="2">2 months</option><option value="6">6 months</option><option value="12">12 months</option>
+</select><button type="button" id="ownerLoadRevenue">Refresh Stripe Revenue</button></div>
+<div id="ownerRevenueResult" role="status" style="margin:14px 0" aria-live="polite">Select a period to view paid Stripe checkout revenue.</div>
 <div style="margin:16px 0"><h3 style="margin:0 0 8px">Original Admin Dashboard — All Sections</h3>
 <p class="muted">Select a section to open its original management screen below. No customer records or forms are recreated or replaced.</p>
 <nav id="ownerAdminModules" aria-label="Original store administration sections" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px">
@@ -90,24 +94,35 @@ document.getElementById('saveStatus').addEventListener('click',async()=>{if(!sel
 replyPanel.addEventListener('submit',async e=>{e.preventDefault();if(!selected&&!selectedGuest)return;const box=document.getElementById('reply'),content=box.value.trim();if(!content)return;say('Sending reply…');const {error}=selectedGuest?await client.rpc('stylera_staff_guest_reply',{p_thread:selectedGuest,p_message:content}):await client.from('stylera_messages').insert({conversation_id:selected,sender:'support',content});if(error){say('Reply not sent: '+error.message);return}box.value='';if(selectedGuest)await selectGuest(selectedGuest);else await selectConversation(selected);say('Support reply saved to conversation. Customer notification is not configured yet.')});
 
 (function(){
-const button=document.getElementById('ownerLoadRevenue'),out=document.getElementById('ownerRevenueResult');
-if(!button||!out)return;
-button.addEventListener('click',async()=>{
-if(typeof client==='undefined'||!client){out.textContent='Please sign in to Stylera first.';return}
-button.disabled=true;out.textContent='Loading Stripe revenue…';
-try{
-const {data:{session}}=await client.auth.getSession();
-if(!session?.access_token)throw Error('Sign in again to load revenue');
-const response=await fetch('/api/admin/revenue-summary',{headers:{Authorization:'Bearer '+session.access_token},cache:'no-store'});
-const data=await response.json();if(!response.ok)throw Error(data.error||'Revenue unavailable');
+const button=document.getElementById('ownerLoadRevenue'),out=document.getElementById('ownerRevenueResult'),period=document.getElementById('ownerRevenuePeriod');
+if(!button||!out||!period)return;
 const formatter=new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'});
-const metrics=[['This month',data.monthlyCents],['Last six months',data.sixMonthCents],['Year to date',data.yearToDateCents],['Trailing twelve months',data.trailingTwelveMonthsCents]];
-out.replaceChildren();const grid=document.createElement('div');grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px';
-for(const [label,cents] of metrics){const item=document.createElement('div');item.style.cssText='background:#f4efe6;border-radius:10px;padding:14px';const name=document.createElement('div');name.textContent=label;const amount=document.createElement('strong');amount.textContent=formatter.format((cents||0)/100);item.append(name,amount);grid.append(item)}out.append(grid);
-const note=document.createElement('p');note.className='muted';note.textContent=data.disclaimer||'Gross Stripe revenue before refunds and fees';out.append(note);
-}catch(e){out.textContent=e.message}finally{button.disabled=false}
-});
-})();
+async function loadRevenue(){
+button.disabled=true;out.textContent='Loading verified Stripe checkout revenue…';
+try{
+const {data:{session},error:sessionError}=await client.auth.getSession();
+if(sessionError||!session?.access_token)throw Error('Your Stylera login has expired. Please sign in again.');
+const response=await fetch('/api/admin/revenue-summary',{headers:{Authorization:'Bearer '+session.access_token},cache:'no-store'});
+const data=await response.json().catch(()=>({error:'Revenue service returned an unexpected response'}));
+if(!response.ok)throw Error(data.error||'Revenue unavailable');
+const values={1:data.monthlyCents,2:data.twoMonthCents,6:data.sixMonthCents,12:data.trailingTwelveMonthsCents};
+const labels={1:'This month',2:'Last 2 calendar months',6:'Last 6 calendar months',12:'Last 12 calendar months'};
+const selected=period.value;
+out.replaceChildren();
+const total=document.createElement('div');total.style.cssText='padding:18px;border:1px solid #e3d4b6;border-radius:12px;background:#f7f2e8';
+const name=document.createElement('div');name.textContent=labels[selected]+' · Gross paid checkout revenue';
+const amount=document.createElement('strong');amount.style.cssText='display:block;font-size:2rem;margin-top:8px;color:#0B1F3A';amount.textContent=formatter.format((values[selected]||0)/100);
+total.append(name,amount);out.append(total);
+const grid=document.createElement('div');grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:12px';
+for(const [months,label] of Object.entries(labels)){const card=document.createElement('div');card.style.cssText='padding:12px;border:1px solid #e6dcc9;border-radius:9px';const title=document.createElement('div');title.textContent=label;const value=document.createElement('strong');value.textContent=formatter.format((values[months]||0)/100);card.append(title,value);grid.append(card)}out.append(grid);
+const note=document.createElement('p');note.className='muted';note.textContent=(data.disclaimer||'Gross paid checkout revenue before refunds and fees')+(data.complete===false?' Warning: Stripe pagination limit reached; figures may be incomplete.':'');out.append(note);
+}catch(e){out.replaceChildren();const err=document.createElement('p');err.textContent='Revenue could not be loaded: '+e.message;out.append(err);
+const help=document.createElement('p');help.className='muted';help.textContent='Your Stylera owner email must match the authorized Supabase account, and Stripe must be configured in this Netlify environment. No revenue amounts have been assumed.';out.append(help);
+}finally{button.disabled=false}
+}
+button.addEventListener('click',loadRevenue);
+period.addEventListener('change',loadRevenue);
+})();;
 
 const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),legacy=document.getElementById('ownerLegacyAdmin');
 const expandAdmin=document.getElementById('ownerExpandAdmin');
