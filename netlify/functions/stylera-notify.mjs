@@ -38,7 +38,7 @@ export default async function handler(request){
    body:JSON.stringify({
      from,to:[to],
      subject:payload.table==="stylera_guest_messages"?"Stylera: new guest customer message":"Stylera: new customer support message",
-     text:"A customer has sent a new message in Stylera. Sign in to your private support inbox to review and respond.\n\nThis is a development notification; do not reply to this email."
+     text:`A customer has sent a new message in Stylera.\n\nOpen your private support inbox:\n${Netlify.env.get("STYLERA_INBOX_URL") || "https://deploy-preview-5--samirahomedecorau.netlify.app/stylera-supabase-inbox.html"}\n\nSign in to see the customer name and conversation.\n\nThis is a development notification; do not reply to this email.`
    })
  });
  if(!result.ok){console.error("Stylera notification delivery failed",result.status);return respond("Email provider error",502)}
