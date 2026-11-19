@@ -223,7 +223,7 @@
     .prf-form { margin-top: 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
   </style>
   <link rel="stylesheet" href="css/reviews.css?v=3">
-  <script src="js/reviews.js?v=2" defer></script>
+  <script src="js/reviews.js?v=3" defer></script>
 </head>
 <body data-page="product.html">
   <div id="site-header"></div>
@@ -427,7 +427,7 @@
       if (!s) return `
       <section class="pdp-reviews">
         <h2>Reviews</h2>
-        <p class="rv-guidelines" style="margin-top:6px">No reviews yet. Bought this piece? Be the first to share what you think below.</p>
+        
       </section>`;
       const max = Math.max.apply(null, s.dist) || 1;
       const rows = [5, 4, 3, 2, 1].map((star, i) => {
