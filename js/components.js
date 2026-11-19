@@ -3,7 +3,7 @@
   if(typeof PRODUCTS==='undefined'||!Array.isArray(PRODUCTS))return;
   for(let i=PRODUCTS.length-1;i>=0;i--){
     const p=PRODUCTS[i];
-    if(p&&p.id==='freedom13172273')PRODUCTS.splice(i,1);
+    if(p&&['freedom13172273','kl131951'].includes(p.id))PRODUCTS.splice(i,1);
   }
 })();
 
