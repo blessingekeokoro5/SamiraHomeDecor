@@ -1451,6 +1451,7 @@ function renderSupport() {
     <div id="hdResults" hidden></div>
     <div id="hdHome">
       <div class="hd-actions">
+        <button type="button" class="hd-card" onclick="dmTicketComingSoon()"><span class="hd-ic">🎫</span><div class="hd-card-t"><strong>Raise a support ticket</strong><small>Queries, complaints, orders or other issues · Coming soon</small></div><span class="hd-go">›</span></button>
         <button type="button" class="hd-card" onclick="openLiveChat()"><span class="hd-ic">🟢</span><div class="hd-card-t"><strong>Live chat with our team</strong><small>Chat with a real person, right here</small></div><span class="hd-go">›</span></button>
         <form class="hd-card hd-track" id="hdTrack">
           <span class="hd-ic">🚚</span>
@@ -1507,6 +1508,21 @@ function dmMessageTopics() {
     </ul>
     <a class="support-more" href="support.html">Visit the full Support Centre</a>`;
 }
+function dmTicketComingSoon() {
+  const el = document.getElementById("supportBody");
+  if (!el) return;
+  el.innerHTML = `
+    <button class="support-back" type="button" onclick="renderSupport()">← Help desk</button>
+    <div class="support-title">🎫 Raise a support ticket</div>
+    <p class="support-lead">Our ticketing feature is currently in progress and will be available soon.</p>
+    <div style="padding:16px;border:1px solid #e4d7bf;border-radius:12px;background:#fbf8f1;line-height:1.6;margin:14px 0">
+      In the meantime, please use our live chat for any questions, complaints or issues. A customer representative will get back to you.
+    </div>
+    <button type="button" class="btn btn--primary btn--block" onclick="openLiveChat()">💬 Continue to live chat</button>
+    <button type="button" class="support-back" style="margin-top:15px" onclick="dmMessageTopics()">Or send us a message</button>
+  `;
+}
+
 function dmSelectIssue(issue) {
   const el = document.getElementById("supportBody");
   if (!el) return;
