@@ -58,14 +58,17 @@ async function imageIsAccessible(url) {
 }
 
 async function verifiedFeatured(products, count) {
-  const candidates = pickFeatured(products, Math.min(products.length, 60));
+  const candidates = pickFeatured(products, Math.min(products.length, 24));
   const valid = [];
-  for (const p of candidates) {
-    const url = imageUrl(p.img);
-    if (await imageIsAccessible(url)) valid.push({ ...p, emailImageUrl: url });
+  for (let i = 0; i < candidates.length; i += 8) {
+    const checked = await Promise.all(candidates.slice(i, i + 8).map(async (p) => {
+      const url = imageUrl(p.img);
+      return await imageIsAccessible(url) ? { ...p, emailImageUrl: url } : null;
+    }));
+    valid.push(...checked.filter(Boolean));
     if (valid.length >= count) break;
   }
-  return valid;
+  return valid.slice(0, count);
 }
 
 const money = (n) => "$" + Math.round(Number(n) || 0).toLocaleString("en-AU");
