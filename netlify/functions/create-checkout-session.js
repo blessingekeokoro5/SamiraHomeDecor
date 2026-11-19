@@ -326,7 +326,7 @@ function shippingFor(country, fulfil, lines, afterDiscount, postcode, decorQuote
   if(ready.days)res.days=[Math.max(res.days[0],ready.days[0]),Math.max(res.days[1],ready.days[1])];
   if (ready.fee) {
     const furniture = lines.some(l => l.readyDining && l.supplier !== "Freedom" && !String(l.freightClass || "").startsWith("decor-"));
-    res.label = (furniture ? "Furniture delivery" : lines.some(l => l.supplier === "Freedom") ? "Kitchenware delivery" : "Home décor delivery") + (ready.surcharge ? " (includes $" + ready.surcharge.toFixed(2) + " for additional items)" : "");
+    res.label = (furniture ? "Furniture delivery" : lines.some(l => l.supplier === "Freedom") ? "Kitchenware delivery" : "Home décor delivery");
   }
   if (ready.mixedSurcharge || lines.some(l=>l.supplier==='Adairs')) res.label = "Delivery";
   // Fixed per-item delivery: never free, added on top.
