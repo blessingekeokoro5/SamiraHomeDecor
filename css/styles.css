@@ -2388,3 +2388,8 @@ a.svc-display-tile:hover img { transform: scale(1.03); }
 #giftFab.launch-gift::before{content:'♡';position:absolute;right:-3px;top:-11px;font:22px Georgia,serif;color:#0b1f3a;background:#fff;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;box-shadow:0 2px 6px #0002}
 #giftFab.launch-gift:hover,#giftFab.launch-gift:focus-visible{outline-offset:3px;box-shadow:0 7px 20px rgba(11,31,58,.4)}
 @media(max-width:480px){#giftFab.launch-gift{width:54px;height:54px;min-width:54px}#giftFab.launch-gift .lb-star{font-size:16px}}
+
+/* Keep the Stylera greeting away from Rewards, Help and SYS controls. */
+#dmLaunch.dm-launch{right:22px;bottom:calc(20px + env(safe-area-inset-bottom));gap:10px;align-items:flex-end}
+#chatNudge.chat-nudge{right:108px;bottom:calc(195px + env(safe-area-inset-bottom));max-width:245px}
+@media(max-width:720px){#dmLaunch.dm-launch{right:14px;bottom:calc(12px + env(safe-area-inset-bottom))}#chatNudge.chat-nudge{display:none!important}}
