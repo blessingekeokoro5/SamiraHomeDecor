@@ -1987,3 +1987,6 @@ window.openLiveChat = function () {
 
 
 
+
+/* Samira rewards panel — joins through existing account verification flow. */
+(function(){const link=document.createElement('link');link.rel='stylesheet';link.href='/css/samira-rewards.css?v=1';document.head.append(link);function mount(){const script=document.createElement('script');script.src='/js/samira-rewards.js?v=1';document.body.append(script)}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount()})();
