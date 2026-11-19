@@ -24,6 +24,50 @@ const NAVY = "#0B1F3A", MID = "#061525", GOLD = "#C6A15B", CHAMP = "#E0C992",
       IVORY = "#F4EFE6", TAUPE = "#A89886", BODY = "#4B4540";
 
 const esc = (s) => String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+function imageUrl(path) {
+  if (typeof path !== "string" || !path.trim()) return "";
+  const value = path.trim();
+  if (/^https:\/\//i.test(value)) return value;
+  if (/^http:\/\//i.test(value)) return "";
+  if (/^(data:|blob:|javascript:|\/\/)/i.test(value)) return "";
+  try {
+    const origin = new URL(SITE_URL);
+    if (origin.protocol !== "https:") return "";
+    return new URL(value, origin.origin + "/").href;
+  } catch (_) { return ""; }
+}
+
+async function imageIsAccessible(url) {
+  if (!url) return false;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 6500);
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { Accept: "image/avif,image/webp,image/png,image/jpeg,image/gif,image/*" },
+      signal: controller.signal,
+    });
+    const type = (response.headers.get("content-type") || "").toLowerCase();
+    if (response.body && typeof response.body.cancel === "function") await response.body.cancel().catch(() => {});
+    return response.ok && type.startsWith("image/");
+  } catch (_) {
+    return false;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function verifiedFeatured(products, count) {
+  const candidates = pickFeatured(products, Math.min(products.length, 60));
+  const valid = [];
+  for (const p of candidates) {
+    const url = imageUrl(p.img);
+    if (await imageIsAccessible(url)) valid.push({ ...p, emailImageUrl: url });
+    if (valid.length >= count) break;
+  }
+  return valid;
+}
+
 const money = (n) => "$" + Math.round(Number(n) || 0).toLocaleString("en-AU");
 
 async function loadProducts() {
@@ -48,7 +92,7 @@ function pickFeatured(PRODUCTS, n) {
 
 function productCard(p) {
   const url = SITE_URL + "/product.html?id=" + encodeURIComponent(p.id);
-  const img = SITE_URL + "/" + String(p.img).replace(/^\//, "");
+  const img = p.emailImageUrl || imageUrl(p.img);
   return `
     <td width="50%" valign="top" style="padding:8px">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate;background:#fff;border:1px solid ${IVORY};border-radius:14px;overflow:hidden">
@@ -74,7 +118,7 @@ function buildHtml(featured) {
 
   // Hero is a featured product photo (falls back to a styled room if none)
   const heroP = featured[0];
-  const heroImg = heroP ? (SITE_URL + "/" + String(heroP.img).replace(/^\//, "")) : (SITE_URL + "/assets/cat-home-decor.jpg");
+  const heroImg = heroP ? (heroP.emailImageUrl || imageUrl(heroP.img)) : "";
   const heroAlt = heroP ? esc(heroP.name) : "Styled home";
   const heroHref = heroP ? (SITE_URL + "/product.html?id=" + encodeURIComponent(heroP.id)) : (SITE_URL + "/shop.html");
 
@@ -135,7 +179,11 @@ const run = async () => {
     return { statusCode: 200, body: "skipped (not configured)" };
   }
   const PRODUCTS = await loadProducts();
-  const featured = pickFeatured(PRODUCTS, 4);
+  const featured = await verifiedFeatured(PRODUCTS, 4);
+  if (featured.length < 4) {
+    console.error("weekly-email: not sent — fewer than four verified product images", featured.length);
+    return { statusCode: 200, body: "skipped (image validation failed)" };
+  }
   const html = buildHtml(featured);
   const subjectPool = [
     "This week at Samira Home Decor ✦",
@@ -174,3 +222,5 @@ exports.handler = run; // scheduled via netlify.toml ([functions."weekly-email"]
 module.exports.buildHtml = buildHtml;
 module.exports.pickFeatured = pickFeatured;
 module.exports.loadProducts = loadProducts;
+module.exports.imageUrl = imageUrl;
+module.exports.verifiedFeatured = verifiedFeatured;
