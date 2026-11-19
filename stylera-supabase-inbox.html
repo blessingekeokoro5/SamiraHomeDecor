@@ -16,6 +16,20 @@
 </section>
 <section id="ownerStorePanel" class="panel" hidden aria-label="Store administration and revenue">
 <h2>Store Admin &amp; Revenue</h2><p class="muted">Revenue reports use your signed-in Supabase owner session. The legacy store-admin tools below still require their existing security until migration is complete.</p><button type="button" id="ownerLoadRevenue">Load Stripe Revenue</button><div id="ownerRevenueResult" role="status" style="margin:14px 0" aria-live="polite">No revenue report loaded yet.</div>
+<div style="margin:16px 0"><h3 style="margin:0 0 8px">Original Admin Dashboard — All Sections</h3>
+<p class="muted">Select a section to open its original management screen below. No customer records or forms are recreated or replaced.</p>
+<nav id="ownerAdminModules" aria-label="Original store administration sections" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px">
+<button type="button" data-admin-section="base">Customer History &amp; Records</button>
+<button type="button" data-admin-section="manager">Orders, Payments &amp; Refunds</button>
+<button type="button" data-admin-section="orders">Order Tracking &amp; Deliveries</button>
+<button type="button" data-admin-section="bookings">Cleaning Bookings</button>
+<button type="button" data-admin-section="referrals">Referrals</button>
+<button type="button" data-admin-section="forms">Client Forms &amp; Documents</button>
+<button type="button" data-admin-section="empforms">Employee Forms</button>
+<button type="button" data-admin-section="send">Send Forms to Clients</button>
+<button type="button" data-admin-section="reviews">Customer Reviews</button>
+<button type="button" data-admin-section="settings">Original Admin Settings</button>
+</nav></div>
 <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0"><strong>Complete Samira Home Decor Administration</strong><a href="/admin.html" target="_blank" rel="noopener noreferrer">Open full-size view</a></div>
 <p class="muted">All existing customer history, order and payment records, delivery management, bookings, referrals, client and employee forms, reviews and settings remain in the original administration below. Your browser may reuse its saved admin credentials; until secure single sign-on is completed, a separate admin prompt may still appear.</p>
 <p id="ownerAdminLoginStatus" class="muted" role="status" aria-live="polite">Select Store Admin to verify your Supabase session.</p><iframe id="ownerLegacyAdmin" title="Complete Samira Home Decor administration — customer records, forms, orders and reviews" loading="lazy" style="display:block;width:100%;height:82vh;min-height:650px;border:1px solid #e6dcc9;border-radius:12px;background:white" referrerpolicy="same-origin"></iframe>
@@ -96,6 +110,24 @@ const note=document.createElement('p');note.className='muted';note.textContent=d
 })();
 
 const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),legacy=document.getElementById('ownerLegacyAdmin');
+const modules=document.getElementById('ownerAdminModules');let requestedAdminSection='manager';
+function showAdminModule(section){
+ requestedAdminSection=section;
+ if(!legacy||!legacy.contentDocument)return;
+ try{
+ const frameDoc=legacy.contentDocument;
+ const button=frameDoc.querySelector('#adminTabs [data-tab="'+section+'"]');
+ if(!button){document.getElementById('ownerAdminLoginStatus').textContent='Sign in to the original admin section if prompted, then select your section.';return}
+ button.click();
+ document.getElementById('ownerAdminLoginStatus').textContent='Viewing '+button.textContent.trim()+' from your original admin dashboard.';
+ }catch(e){document.getElementById('ownerAdminLoginStatus').textContent='Original admin is protected. Complete authentication before opening this section.'}
+}
+if(modules)modules.addEventListener('click',e=>{
+ const button=e.target.closest('[data-admin-section]');if(!button)return;
+ modules.querySelectorAll('button').forEach(b=>{b.style.background=b===button?'#C6A15B':'#0B1F3A';b.style.color=b===button?'#0B1F3A':'white'});
+ showAdminModule(button.dataset.adminSection);
+});
+if(legacy)legacy.addEventListener('load',()=>showAdminModule(requestedAdminSection));
 if(tabs&&support&&store&&traffic){
 tabs.addEventListener('click',async event=>{
 const button=event.target.closest('[data-owner-tab]');if(!button)return;
