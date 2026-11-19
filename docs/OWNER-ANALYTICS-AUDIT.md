@@ -24,3 +24,9 @@ Branch: `feature/owner-analytics-commerce` (not production).
 8. Validate Netlify preview and run a checkout regression test before merging into `main`.
 
 Do not infer real visitor counts, product interests, abandoned carts, or net revenue from demo figures.
+
+## Conversion features added in development
+- `js/stylera-matching.js` loaded by `product.html`: dismissible, delayed matching-piece panel using real public catalogue entries, contextual explanatory copy, and a link to the existing stylist page. Does not claim live stock availability. Requires QA for product image URLs and category relevance.
+- Product page includes secure-payment explanation and an existing transparent returns-policy link.
+- Existing `cart.html` already has “Email my shopping list” and local cart persistence; neither is a consented automatic abandoned-cart recovery service.
+- **Not yet built:** consented automated cart recovery, owner push alerts, targeted discounts, full event ingestion, and visitor dashboard. Do not enable automated marketing without permission and unsubscribe support.
