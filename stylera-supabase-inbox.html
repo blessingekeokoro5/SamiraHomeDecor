@@ -18,7 +18,7 @@
 <h2>Store Admin &amp; Revenue</h2><p class="muted">Revenue reports use your signed-in Supabase owner session. The legacy store-admin tools below still require their existing security until migration is complete.</p><button type="button" id="ownerLoadRevenue">Load Stripe Revenue</button><div id="ownerRevenueResult" role="status" style="margin:14px 0" aria-live="polite">No revenue report loaded yet.</div>
 <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0"><strong>Complete Samira Home Decor Administration</strong><a href="/admin.html" target="_blank" rel="noopener noreferrer">Open full-size view</a></div>
 <p class="muted">All existing customer history, order and payment records, delivery management, bookings, referrals, client and employee forms, reviews and settings remain in the original administration below. Your browser may reuse its saved admin credentials; until secure single sign-on is completed, a separate admin prompt may still appear.</p>
-<iframe id="ownerLegacyAdmin" title="Complete Samira Home Decor administration — customer records, forms, orders and reviews" loading="lazy" style="display:block;width:100%;height:82vh;min-height:650px;border:1px solid #e6dcc9;border-radius:12px;background:white" referrerpolicy="same-origin"></iframe>
+<p id="ownerAdminLoginStatus" class="muted" role="status" aria-live="polite">Select Store Admin to verify your Supabase session.</p><iframe id="ownerLegacyAdmin" title="Complete Samira Home Decor administration — customer records, forms, orders and reviews" loading="lazy" style="display:block;width:100%;height:82vh;min-height:650px;border:1px solid #e6dcc9;border-radius:12px;background:white" referrerpolicy="same-origin"></iframe>
 </section>
 <section id="ownerTrafficPanel" class="panel" hidden aria-label="Visitor analytics">
 <h2>Visitor Analytics</h2><p>Real-time individual visitor monitoring, countries, devices, product journeys and owner push notifications are not active yet.</p>
@@ -39,7 +39,7 @@ client=createClient(cfg.url,cfg.publishableKey,{auth:{persistSession:true,autoRe
 const {data:{session}}=await client.auth.getSession();if(session)await load();
 }
 document.getElementById('loginForm').addEventListener('submit',async e=>{e.preventDefault();if(!client)return;const email=document.getElementById('email').value.trim(),password=document.getElementById('password').value;say('Signing in…');const {error}=await client.auth.signInWithPassword({email,password});document.getElementById('password').value='';if(error){say('Sign-in failed: '+error.message);return}await load()});
-signout.addEventListener('click',async()=>{if(client)await client.rpc('stylera_set_support_presence',{p_available:false});await client.auth.signOut();reset();say('Signed out.')});
+signout.addEventListener('click',async()=>{if(client)await client.rpc('stylera_set_support_presence',{p_available:false});await client.auth.signOut();await fetch('/api/admin/owner-session/logout',{method:'POST'}).catch(()=>{});reset();say('Signed out.')});
 async function updatePresence(){if(!client||presenceBusy||workspace.hidden)return;if(document.hidden&&availableToggle.checked)return;presenceBusy=true;try{const active=availableToggle.checked&&!document.hidden&&(Date.now()-lastActivity<90000);const {error}=await client.rpc('stylera_set_support_presence',{p_available:active});presenceState.textContent=error?'Support availability could not update: '+error.message:'Support availability: '+(active?'Online':'Away');}finally{presenceBusy=false}}
 availableToggle.addEventListener('change',()=>{lastActivity=Date.now();updatePresence()});document.addEventListener('visibilitychange',()=>{if(!document.hidden){lastActivity=Date.now();updatePresence()}});setInterval(updatePresence,30000);
 async function load(silent=false){if(!silent)say('Checking support access…');const {data:staff,error:staffError}=await client.rpc('stylera_is_support_staff');if(staffError||staff!==true){reset();await client.auth.signOut();say('Access denied: this account is not authorized for Stylera support.');return}const {data,error}=await client.from('stylera_conversations').select('id,customer_id,status,created_at').order('created_at',{ascending:false}).limit(100);if(error){reset();say('Unable to load conversations: '+error.message);return}
@@ -75,13 +75,25 @@ const note=document.createElement('p');note.className='muted';note.textContent=d
 </script><script>
 (function(){
 const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),legacy=document.getElementById('ownerLegacyAdmin');
-if(!tabs||!support||!store||!traffic)return;
-tabs.addEventListener('click',event=>{
+if(tabs&&support&&store&&traffic){
+tabs.addEventListener('click',async event=>{
 const button=event.target.closest('[data-owner-tab]');if(!button)return;
 const choice=button.dataset.ownerTab;
-support.hidden=choice!=='support';store.hidden=choice!=='store';traffic.hidden=choice!=='traffic';if(choice==='store'&&legacy&&!legacy.src)legacy.src='/admin.html';
+support.hidden=choice!=='support';store.hidden=choice!=='store';traffic.hidden=choice!=='traffic';
 tabs.querySelectorAll('button').forEach(b=>{b.setAttribute('aria-pressed',String(b===button));b.style.background=b===button?'#C6A15B':'#0B1F3A';b.style.color=b===button?'#0B1F3A':'white'});
-
+if(choice==='store'&&legacy){
+ const notice=document.getElementById('ownerAdminLoginStatus');
+ if(notice)notice.textContent='Verifying your existing Supabase owner login…';
+ try{
+ const {data:{session}}=await client.auth.getSession();
+ if(!session?.access_token)throw Error('Please sign in to Stylera again');
+ const response=await fetch('/api/admin/owner-session',{method:'POST',headers:{Authorization:'Bearer '+session.access_token},credentials:'same-origin'});
+ const data=await response.json();
+ if(!response.ok)throw Error(data.error||'Owner authentication failed');
+ if(notice)notice.textContent='Owner access verified. Loading complete administration…';
+ legacy.src='/admin.html';
+ }catch(e){if(notice)notice.textContent=e.message}
+}
 });
-})();
+}
 </script></body></html>
