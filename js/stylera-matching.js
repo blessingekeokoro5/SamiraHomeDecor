@@ -14,7 +14,7 @@ const groups=[
  {match:/bed|bedroom|mattress/,terms:/pillow|cushion|bedding|throw|bedside|linen|decor/,why:'Combine soft furnishings and complementary bedside accents for a finished look.'}
 ];
 const group=groups.find(g=>g.match.test(src))||{terms:/cushion|vase|decor|accessor|table|throw/,why:'These accents can complement your room; compare sizes, finishes and colors before ordering.'};
-const candidates=items.filter(p=>p&&p.id!==current.id&&p.name&&p.price>0&&group.terms.test(text(p))&&p.img&&!/placeholder/i.test(String(p.img))).slice(0,60);
+const candidates=items.filter(p=>p&&p.id!==current.id&&p.name&&p.price>0&&group.terms.test(text(p))&&(p.img||p.ph)&&!/placeholder/i.test(String(p.img||p.ph))).slice(0,60);
 const scored=candidates.map(p=>({p,score:(p.cat===current.cat?2:0)+(String(p.name).toLowerCase().includes('set')?1:0)})).sort((a,b)=>b.score-a.score).slice(0,3).map(x=>x.p);
 if(!scored.length)return;
 const style=document.createElement('style');style.textContent=`
@@ -29,9 +29,9 @@ function open(){
 if(document.getElementById('shdMatchPanel'))return;
 const panel=document.createElement('aside');panel.id='shdMatchPanel';panel.setAttribute('aria-label','Stylera matching pieces');
 const h=document.createElement('h2');h.textContent='Stylera suggests matching pieces';panel.append(h);
-const close=document.createElement('button');close.className='shd-dismiss';close.textContent='×';close.setAttribute('aria-label','Close recommendations');close.addEventListener('click',()=>{sessionStorage.setItem('shd_match_dismissed','1');panel.remove()});panel.append(close);
+const close=document.createElement('button');close.className='shd-dismiss';close.textContent='×';close.setAttribute('aria-label','Close recommendations');close.addEventListener('click',()=>{try{sessionStorage.setItem('shd_match_dismissed','1')}catch(e){}panel.remove()});panel.append(close);
 const why=document.createElement('p');why.textContent=group.why;panel.append(why);
-for(const p of scored){const a=document.createElement('a');a.className='shd-match';a.href='/product.html?id='+encodeURIComponent(p.id);const img=document.createElement('img');img.src=p.img;img.alt='';img.loading='lazy';const label=document.createElement('span');label.textContent=p.name;a.append(img,label);panel.append(a)}
+for(const p of scored){const a=document.createElement('a');a.className='shd-match';a.href='/product.html?id='+encodeURIComponent(p.id);const img=document.createElement('img');img.src=p.img||p.ph;img.alt='';img.loading='lazy';const label=document.createElement('span');label.textContent=p.name;a.append(img,label);panel.append(a)}
 const ask=document.createElement('button');ask.textContent='Ask Stylera about matching my room';ask.addEventListener('click',()=>{panel.remove();location.href='/stylist.html'});panel.append(ask);
 document.body.append(panel);
 }
@@ -40,6 +40,6 @@ const footer=document.createElement('div');footer.style.cssText='padding:12px 0;
 const a=document.createElement('a');a.href='/policy.html?doc=returns';a.textContent='Read our returns policy';footer.append('Secure payment processing at checkout · ',a);
 const target=document.querySelector('#pdpPrice')?.parentElement||document.querySelector('main');
 if(target)target.append(footer);
-if(sessionStorage.getItem('shd_match_dismissed')!=='1')setTimeout(open,12000);
+try{if(sessionStorage.getItem('shd_match_dismissed')!=='1')setTimeout(open,12000)}catch(e){setTimeout(open,12000)}
 });
 })();
