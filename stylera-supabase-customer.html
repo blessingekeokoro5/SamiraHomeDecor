@@ -3,7 +3,7 @@ import {createClient} from 'https://esm.sh/@supabase/supabase-js@2';
 const cfg=window.STYLERA_SUPABASE_CONFIG;
 const client=cfg?.url&&cfg?.publishableKey?createClient(cfg.url,cfg.publishableKey,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}}):null;
 const el=id=>document.getElementById(id), status=el('status'),chat=el('chatPanel'),form=el('emailForm'),messages=el('messages');
-let thread=null,token=null,lastSend=0,lastSignature='';
+let thread=null,token=null,lastSend=0,lastSignature='',refreshPending=false;
 function say(t){status.textContent=t}
 function showAnswer(id,q,topic){
  const target=el(id);target.replaceChildren();
@@ -21,9 +21,34 @@ const saved=sessionStorage.getItem('stylera_guest_session');
 if(saved){try{const obj=JSON.parse(saved);if(/^[a-f0-9]{64}$/.test(obj.token)&&/^[a-f0-9-]{36}$/.test(obj.thread)){thread=obj.thread;token=obj.token;showChat()}}catch{sessionStorage.removeItem('stylera_guest_session')}}
 if(!client)say('Chat temporarily unavailable. Please email hello@samirahomedecor.com.au.');
 form.addEventListener('submit',async e=>{e.preventDefault();if(!client)return;const name=el('customerName').value.trim(),email=el('email').value.trim();if(name.length<2||!el('email').checkValidity()){say('Please enter your name and valid email.');return}const button=form.querySelector('button');button.disabled=true;say('Connecting you to Customer Care…');try{const bytes=crypto.getRandomValues(new Uint8Array(32));const secret=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');const response=await fetch('/.netlify/functions/stylera-guest-start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,token:secret})});const data=await response.json();if(!response.ok)throw new Error(data.message||'Unable to start chat');thread=data.thread;token=secret;sessionStorage.setItem('stylera_guest_session',JSON.stringify({thread,token}));showChat()}catch(err){say('Unable to start chat: '+err.message);}finally{button.disabled=false}});
-async function loadMessages(){if(!client||!thread||!token)return;const {data,error}=await client.rpc('stylera_guest_read',{p_thread:thread,p_token:token});if(error){say('Unable to load replies: '+error.message);return}const signature=JSON.stringify(data||[]);if(signature===lastSignature)return;const bottom=messages.scrollHeight-messages.scrollTop-messages.clientHeight<70;const first=!lastSignature;lastSignature=signature;messages.replaceChildren();for(const m of data||[]){const d=document.createElement('div');d.className='msg '+(m.sender==='customer'?'customer':'');const label=document.createElement('strong');label.textContent=m.sender==='customer'?'You':'Samira Support';const p=document.createElement('p');p.textContent=m.content;d.append(label,p);messages.append(d)}if(bottom||first)messages.scrollTop=messages.scrollHeight}
+async function loadMessages(manual=false){
+ if(!client||!thread||!token){if(manual)say('Please start a chat before checking replies.');return}
+ if(refreshPending)return;
+ refreshPending=true;
+ const button=el('refreshMessages');
+ if(manual){button.disabled=true;button.textContent='Checking replies…';say('Checking for new replies…')}
+ try{
+  const {data,error}=await client.rpc('stylera_guest_read',{p_thread:thread,p_token:token});
+  if(error)throw error;
+  const signature=JSON.stringify(data||[]);
+  if(signature===lastSignature){if(manual)say('You’re up to date. No new replies yet.');return}
+  const bottom=messages.scrollHeight-messages.scrollTop-messages.clientHeight<70;
+  const first=!lastSignature;
+  lastSignature=signature;
+  messages.replaceChildren();
+  for(const m of data||[]){
+   const d=document.createElement('div');d.className='msg '+(m.sender==='customer'?'customer':'');
+   const label=document.createElement('strong');label.textContent=m.sender==='customer'?'You':'Samira Support';
+   const p=document.createElement('p');p.textContent=m.content;
+   d.append(label,p);messages.append(d);
+  }
+  if(bottom||first)messages.scrollTop=messages.scrollHeight;
+  if(manual)say(first?'Chat history loaded.': 'Replies updated.');
+ }catch(err){say('Unable to refresh replies. Please check your connection and try again.');console.error('Stylera reply refresh failed',err)}
+ finally{refreshPending=false;if(manual){button.disabled=false;button.textContent='Refresh replies'}}
+}
 el('messageForm').addEventListener('submit',async e=>{e.preventDefault();if(!thread)return;const box=el('message'),content=box.value.trim();if(!content)return;if(Date.now()-lastSend<8000){say('Please wait a few seconds before sending another message.');return}const button=e.currentTarget.querySelector('button');button.disabled=true;const {error}=await client.rpc('stylera_guest_send',{p_thread:thread,p_token:token,p_message:content});button.disabled=false;if(error){say('Message not sent: '+error.message);return}lastSend=Date.now();box.value='';say('Message sent. Our team will be in touch shortly.');await loadMessages()});
-el('refreshMessages').addEventListener('click',loadMessages);
+el('refreshMessages').addEventListener('click',()=>loadMessages(true));
 el('signout').addEventListener('click',()=>{clearSession();say('Chat ended. Thank you for contacting Samira Home Decor.')});
 setInterval(()=>{if(!document.hidden&&thread){loadMessages();availability()}},15000);
 </script></body></html>
