@@ -37,3 +37,18 @@
 /* Unified floating-controls stack: Rewards above Help above SYS, no overlap. */
 #shdRewardsButton.shd-reward-fab{right:22px!important;left:auto!important;bottom:calc(150px + env(safe-area-inset-bottom))!important;z-index:149!important;max-width:none;min-height:42px}
 @media(max-width:720px){#shdRewardsButton.shd-reward-fab{right:14px!important;bottom:calc(137px + env(safe-area-inset-bottom))!important;padding:10px 14px!important;font-size:12px!important}}
+
+/* 2026-11-19: unified bottom-right control rail, no overlap or promotional nudge. */
+#chatNudge.chat-nudge{display:none!important}
+#dmLaunch.dm-launch{position:fixed!important;right:16px!important;bottom:calc(16px + env(safe-area-inset-bottom))!important;left:auto!important;display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:12px!important;z-index:150!important}
+#giftFab.launch-gift{display:flex!important;width:62px!important;height:62px!important;min-width:62px!important;padding:0!important;border-radius:50%!important;background:linear-gradient(145deg,#0b1f3a,#a47c32)!important;color:#f7e6b7!important;justify-content:center!important;align-items:center!important}
+#giftFab.launch-gift .lb-star{display:block!important;font:700 18px/1 Georgia,serif!important;letter-spacing:-1px!important}
+#giftFab.launch-gift .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
+#supportFab.launch-help{margin:0!important}
+#shdRewardsButton.shd-reward-fab{position:fixed!important;right:16px!important;left:auto!important;bottom:calc(168px + env(safe-area-inset-bottom))!important;z-index:145!important;max-width:145px!important;padding:12px 16px!important;white-space:nowrap!important}
+@media(max-width:720px){
+ #dmLaunch.dm-launch{right:12px!important;bottom:calc(12px + env(safe-area-inset-bottom))!important;gap:10px!important}
+ #giftFab.launch-gift{width:54px!important;height:54px!important;min-width:54px!important}
+ #giftFab.launch-gift .lb-star{font-size:16px!important}
+ #shdRewardsButton.shd-reward-fab{right:12px!important;bottom:calc(150px + env(safe-area-inset-bottom))!important;padding:10px 13px!important}
+}
