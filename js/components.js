@@ -60,7 +60,7 @@
 
 /* ---- Google Analytics 4 (loads on every page via this shared script) ---- */
 (function () {
-  var GA_ID = "G-JX43NY5BPC";
+  var GA_ID = "G-X1H0HKY3NQ";
   var s = document.createElement("script");
   s.async = true;
   s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
@@ -1987,3 +1987,6 @@ window.openLiveChat = function () {
 
 
 
+
+/* Samira rewards preview: development branch only. */
+(function(){const link=document.createElement('link');link.rel='stylesheet';link.href='/css/samira-rewards.css?v=1';document.head.append(link);function mount(){const script=document.createElement('script');script.src='/js/samira-rewards.js?v=1';document.body.append(script)}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount()})();

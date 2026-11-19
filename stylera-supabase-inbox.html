@@ -1,20 +1,70 @@
 <!doctype html>
-<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Stylera | Private Support Inbox</title>
-<style>:root{font-family:system-ui,sans-serif;color:#0B1F3A;background:#f4efe6}*{box-sizing:border-box}body{margin:0;padding:24px}.wrap{max-width:1000px;margin:auto}header,.panel{background:white;border:1px solid #e6dcc9;border-radius:16px;padding:24px;margin-bottom:16px}header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.eyebrow{color:#a9843c;letter-spacing:.15em;font-size:12px;font-weight:800}h1{margin:6px 0;font-family:Georgia,serif}button{background:#0B1F3A;color:white;border:0;border-radius:10px;padding:12px 16px;cursor:pointer}button:disabled{opacity:.5}input,textarea,select{width:100%;border:1px solid #cbbd9f;border-radius:9px;padding:12px;font:inherit;margin:8px 0}textarea{min-height:100px}label{display:block;margin-top:12px;font-weight:600}#workspace[hidden],#loginPanel[hidden],#replyPanel[hidden],#actions[hidden],#signout[hidden]{display:none}.grid{display:grid;grid-template-columns:minmax(220px,1fr) 2fr;gap:16px}.ticket{display:block;text-align:left;background:#f4efe6;color:#0B1F3A;width:100%;margin:8px 0;overflow-wrap:anywhere}.ticket[aria-pressed=true]{outline:2px solid #C6A15B}.message{padding:12px;border-radius:10px;background:#f4efe6;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}.message.support{background:#e3eaf3}.muted{color:#665f55;font-size:13px}.status{min-height:1.5em}a{color:#0B1F3A}@media(max-width:650px){.grid{grid-template-columns:1fr}body{padding:12px}}</style></head>
-<body><main class="wrap"><header><div><div class="eyebrow">SAMIRA HOME DECOR</div><h1>Stylera Support Inbox</h1><div class="muted">Owner workspace · Customer care, store administration and analytics</div></div><button id="signout" hidden>Sign out</button></header>
-<section class="panel" id="loginPanel"><h2>Owner sign-in</h2><p class="muted">Use the administrator email and password you created in Supabase Authentication.</p><form id="loginForm"><label for="email">Email</label><input type="email" id="email" autocomplete="username" required><label for="password">Password</label><input type="password" id="password" autocomplete="current-password" required><button type="submit">Sign in</button></form></section>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Stylera Owner Dashboard | Samira Home Decor</title>
+<style>:root{font-family:system-ui,sans-serif;color:#0B1F3A;background:#f4efe6}*{box-sizing:border-box}body{margin:0;padding:24px}.wrap{max-width:1000px;margin:auto}header,.panel{background:white;border:1px solid #e6dcc9;border-radius:16px;padding:24px;margin-bottom:16px}header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.eyebrow{color:#a9843c;letter-spacing:.15em;font-size:12px;font-weight:800}h1{margin:6px 0;font-family:Georgia,serif}button{background:#0B1F3A;color:white;border:0;border-radius:10px;padding:12px 16px;cursor:pointer}button:disabled{opacity:.5}input,textarea,select{width:100%;border:1px solid #cbbd9f;border-radius:9px;padding:12px;font:inherit;margin:8px 0}textarea{min-height:100px}label{display:block;margin-top:12px;font-weight:600}#ownerStorePanel[hidden],#ownerTrafficPanel[hidden],#supportConversations[hidden],#workspace[hidden],#loginPanel[hidden],#replyPanel[hidden],#actions[hidden],#signout[hidden]{display:none}.grid{display:grid;grid-template-columns:minmax(220px,1fr) 2fr;gap:16px}.ticket{display:block;text-align:left;background:#f4efe6;color:#0B1F3A;width:100%;margin:8px 0;overflow-wrap:anywhere}.ticket[aria-pressed=true]{outline:2px solid #C6A15B}.message{padding:12px;border-radius:10px;background:#f4efe6;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}.message.support{background:#e3eaf3}.muted{color:#665f55;font-size:13px}.status{min-height:1.5em}a{color:#0B1F3A}@media(max-width:650px){.grid{grid-template-columns:1fr}body{padding:12px}}</style></head>
+<body><main class="wrap"><header><div><div class="eyebrow">SAMIRA HOME DECOR</div><h1>Stylera Owner Dashboard</h1><div class="muted">One workspace for customer care, store administration, revenue and analytics</div></div><button id="signout" hidden>Sign out</button></header>
+<section class="panel" id="loginPanel"><h2>Owner sign-in</h2><p class="muted">Use the administrator email and password you created in Supabase Authentication.</p><form id="loginForm"><label for="email">Email</label><input type="email" id="email" autocomplete="username" required><label for="password">Password</label><input type="password" id="password" autocomplete="current-password" required><button type="submit">Sign in</button></form><button type="button" id="forgotOwnerPassword" style="margin-top:12px;background:transparent;color:#0B1F3A;text-decoration:underline;padding:4px">Forgot password? Email me a reset link</button><p class="muted">Password resets are handled securely by Supabase. Check your inbox and spam folder for the email.</p></section>
 <p class="status" id="status" role="status" aria-live="polite"></p>
-<section id="workspace" hidden>
-<section class="panel" aria-label="Unified management shortcuts">
-<div class="eyebrow">OWNER WORKSPACE</div><h2 style="margin:8px 0 6px">Samira Management Dashboard</h2>
-<p class="muted">Your customer conversations, store administration and existing Google Analytics are accessible from one workspace. Visitor reports remain in Google Analytics until secure reporting access is connected.</p>
-<nav style="display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px;margin:18px 0 8px" aria-label="Management sections">
-<a href="#supportConversations" style="display:block;background:#f4efe6;padding:16px;border:1px solid #c6a15b;border-radius:12px;text-decoration:none"><strong>💬 Stylera Support</strong><span class="muted" style="display:block;margin-top:8px">Manage customer conversations below</span></a>
-<a href="/admin.html" style="display:block;background:#f4efe6;padding:16px;border:1px solid #c6a15b;border-radius:12px;text-decoration:none"><strong>🛍 Store Administration</strong><span class="muted" style="display:block;margin-top:8px">Orders, reviews and customer records · separate admin sign-in</span></a>
-<a href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener noreferrer" style="display:block;background:#f4efe6;padding:16px;border:1px solid #c6a15b;border-radius:12px;text-decoration:none"><strong>📊 Website Visitors</strong><span class="muted" style="display:block;margin-top:8px">Page views, traffic sources, approximate location · Google Analytics sign-in</span></a>
+<section id="workspace" hidden><section class="panel" aria-label="Owner account settings"><details><summary style="cursor:pointer;font-weight:700">Account settings — email and password</summary><p class="muted">Change your password or request a verified email change. Changing the owner email also requires updating the secure owner-email allowlist before admin and revenue access will work under the new address.</p><form id="ownerPasswordChange"><label for="ownerNewPassword">New password</label><input type="password" id="ownerNewPassword" minlength="12" autocomplete="new-password" required><label for="ownerNewPasswordConfirm">Confirm new password</label><input type="password" id="ownerNewPasswordConfirm" minlength="12" autocomplete="new-password" required><button type="submit">Change my password</button></form><form id="ownerEmailChange"><label for="ownerNewEmail">New email address</label><input type="email" id="ownerNewEmail" autocomplete="email" required><button type="submit">Request verified email change</button></form><p class="muted" id="ownerAccountStatus" role="status" aria-live="polite"></p></details></section>
+<section class="panel" aria-label="Stylera Owner Dashboard navigation">
+<div class="eyebrow">OWNER WORKSPACE</div><h2 style="margin:8px 0 6px">Business Management</h2>
+<p class="muted">Manage your customer conversations and store operations in one place. Visitor activity tracking is still being developed; existing Google Analytics is available separately.</p>
+<nav id="ownerTabs" style="display:flex;flex-wrap:wrap;gap:10px;margin:16px 0" aria-label="Dashboard sections">
+<button type="button" data-owner-tab="support" aria-pressed="true">💬 Customer Conversations</button>
+<button type="button" data-owner-tab="store" aria-pressed="false">🛍 Store Admin &amp; Revenue</button>
+<button type="button" data-owner-tab="traffic" aria-pressed="false">📊 Visitor Analytics</button>
 </nav>
-<p class="muted">Analytics uses the site's existing GA4 tag (G-JX43NY5BPC). Location data is approximate; exact physical location history is not collected here. No visitor identity is linked to support conversations.</p>
-</section><div class="grid" id="supportConversations"><section class="panel"><h2>Conversations</h2><div class="muted" id="presenceState" role="status">Support availability: Away</div><label for="availableToggle"><input type="checkbox" id="availableToggle" style="width:auto;margin-right:8px">Available for live chat</label><p class="muted">Shows Online only while this dashboard is open and active. Automatically switches to Away after inactivity.</p><button id="refresh" type="button">Refresh</button><p class="muted">Inbox refreshes about every 15 seconds while this tab is open.</p><label for="filter">Filter conversations</label><select id="filter" aria-label="Conversation status"><option value="all">All statuses</option><option value="open">Open</option><option value="escalated">Escalated</option><option value="closed">Closed</option></select><label for="search">Find conversation</label><input id="search" type="search" placeholder="Search conversation ID"><div id="tickets" class="muted">No conversations loaded.</div></section><section class="panel"><h2 id="selectedTitle">Select a conversation</h2><div id="messages" aria-live="polite"></div><div id="actions" hidden><label for="conversationStatus">Conversation status</label><select id="conversationStatus"><option value="open">Open</option><option value="escalated">Escalated</option><option value="closed">Closed</option></select><button type="button" id="saveStatus">Save status</button></div><form id="replyPanel" hidden><label for="reply">Reply as support</label><textarea id="reply" maxlength="3000" required></textarea><button type="submit">Send reply</button></form></section></div></section></main>
+</section>
+<section id="ownerStorePanel" class="panel" hidden aria-label="Store administration and revenue">
+<h2>Store Admin &amp; Revenue</h2><p class="muted">Revenue reports use your signed-in Supabase owner session. The legacy store-admin tools below still require their existing security until migration is complete.</p><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0">
+<label for="ownerRevenuePeriod">Revenue period</label><select id="ownerRevenuePeriod" style="padding:10px;border-radius:8px;border:1px solid #c7bda8">
+<option value="1">1 month</option><option value="2">2 months</option><option value="6">6 months</option><option value="12">12 months</option>
+</select><button type="button" id="ownerLoadRevenue">Refresh Stripe Revenue</button></div>
+<div id="ownerRevenueResult" role="status" style="margin:14px 0" aria-live="polite">Select a period to view paid Stripe checkout revenue.</div>
+<div style="margin:16px 0"><h3 style="margin:0 0 8px">Original Admin Dashboard — All Sections</h3>
+<p class="muted">Select a section to open its original management screen below. No customer records or forms are recreated or replaced.</p>
+<nav id="ownerAdminModules" aria-label="Original store administration sections" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px">
+<button type="button" data-admin-section="base">Customer History &amp; Records</button>
+<button type="button" data-admin-section="manager">Orders, Payments &amp; Refunds</button>
+<button type="button" data-admin-section="orders">Order Tracking &amp; Deliveries</button>
+<button type="button" data-admin-section="bookings">Cleaning Bookings</button>
+<button type="button" data-admin-section="referrals">Referrals</button>
+<button type="button" data-admin-section="forms">Client Forms &amp; Documents</button>
+<button type="button" data-admin-section="empforms">Employee Forms</button>
+<button type="button" data-admin-section="send">Send Forms to Clients</button>
+<button type="button" data-admin-section="reviews">Customer Reviews</button>
+<button type="button" data-admin-section="settings">Original Admin Settings</button>
+</nav></div>
+<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0"><strong>Complete Samira Home Decor Administration</strong><button type="button" id="ownerExpandAdmin" aria-expanded="false" style="padding:8px 12px">Open full-size view in this tab</button></div>
+<p class="muted">All existing customer history, order and payment records, delivery management, bookings, referrals, client and employee forms, reviews and settings remain in the original administration below. The original administration is embedded here. Stylera attempts to unlock it using your verified Supabase session; the old admin sign-in remains available as a fallback.</p>
+<p id="ownerAdminLoginStatus" class="muted" role="status" aria-live="polite">Select Store Admin to verify your Supabase session.</p><iframe id="ownerLegacyAdmin" title="Complete Samira Home Decor administration — customer records, forms, orders and reviews" loading="lazy" style="display:block;width:100%;height:82vh;min-height:650px;border:1px solid #e6dcc9;border-radius:12px;background:white" referrerpolicy="same-origin"></iframe>
+</section>
+<section id="ownerTrafficPanel" class="panel" hidden aria-label="Visitor analytics">
+<h2>Visitor Analytics</h2>
+<p class="muted">Your website has Google Analytics measurement ID <strong>G-X1H0HKY3NQ</strong>. This confirms the tracking code is configured, not that reports are successfully collecting data.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0">
+<div style="border:1px solid #ddd0b7;border-radius:10px;padding:15px"><strong>Website visitors</strong><p>Not connected</p></div>
+<div style="border:1px solid #ddd0b7;border-radius:10px;padding:15px"><strong>Product page views</strong><p>Not connected</p></div>
+<div style="border:1px solid #ddd0b7;border-radius:10px;padding:15px"><strong>Traffic sources &amp; countries</strong><p>Not connected</p></div>
+<div style="border:1px solid #ddd0b7;border-radius:10px;padding:15px"><strong>Google Search clicks</strong><p>Not connected to Search Console</p></div>
+</div>
+<p><strong>Why aren't numbers appearing?</strong> Google Analytics reports require authorized access to the GA4 Data API and the correct property ID. Google Search Console click counts require a separate connection. The website tracking tag alone cannot supply either report.</p>
+<p class="muted">Your email reporting 30 clicks may be from Search Console or another source. It cannot be verified or shown as visitor traffic without connecting the correct account.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin:12px 0"><a href="https://analytics.google.com/analytics/web/" target="_self">View Google Analytics</a><a href="https://search.google.com/search-console" target="_self">View Google Search Console</a></div>
+<p class="muted">These links open Google's reporting services in this same browser tab. To show verified figures directly here, connect the relevant Google property through a secure server-side integration. No passwords or private API keys should be placed in the page code.</p>
+</section>
+<section class="panel" id="ticketManagement" aria-label="Complaint ticket management" style="margin:18px 0" hidden>
+<h2>Complaint Ticket Management</h2><p class="muted">Track complaints, priority, assigned staff, internal notes and resolution history. Tickets remain private to authorized owners.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center"><button type="button" id="loadSupportTickets">Refresh tickets</button><label for="ticketStatusFilter">Status</label><select id="ticketStatusFilter"><option value="all">All statuses</option><option value="open">Open</option><option value="in_progress">In progress</option><option value="waiting_customer">Waiting for customer</option><option value="resolved">Resolved</option><option value="closed">Closed</option></select></div>
+<p id="ticketFeedback" class="muted" role="status"></p><div id="ticketSummary" class="muted"></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin-top:12px"><div id="ticketList" style="max-height:550px;overflow:auto"></div>
+<div id="ticketDetail" hidden style="border:1px solid #e6dcc9;padding:15px;border-radius:10px"><h3 id="ticketHeading"></h3><div id="ticketInfo" style="white-space:pre-wrap;overflow-wrap:anywhere"></div>
+<label for="ticketEditStatus">Status</label><select id="ticketEditStatus"><option value="open">Open</option><option value="in_progress">In progress</option><option value="waiting_customer">Waiting for customer</option><option value="resolved">Resolved</option><option value="closed">Closed</option></select>
+<label for="ticketEditPriority">Priority</label><select id="ticketEditPriority"><option value="low">Low</option><option value="normal">Normal</option><option value="high">High</option><option value="urgent">Urgent</option></select>
+<label for="ticketEditAssignee">Assigned to</label><input id="ticketEditAssignee" maxlength="120" placeholder="Staff name or email">
+<label for="ticketEditResolution">Resolution</label><textarea id="ticketEditResolution" maxlength="2000" placeholder="Document how the complaint was resolved"></textarea>
+<label for="ticketEditNote">Internal note (optional)</label><textarea id="ticketEditNote" maxlength="2000" placeholder="Private note for the support team"></textarea>
+<button type="button" id="saveSupportTicket">Save ticket changes</button><h4>Ticket activity history</h4><div id="ticketHistory" style="max-height:280px;overflow:auto"></div></div></div></section>
+<div class="grid" id="supportConversations"><section class="panel"><h2>Conversations</h2><div class="muted" id="presenceState" role="status">Support availability: Away</div><label for="availableToggle"><input type="checkbox" id="availableToggle" style="width:auto;margin-right:8px">Available for live chat</label><p class="muted">Shows Online only while this dashboard is open and active. Automatically switches to Away after inactivity.</p><button id="refresh" type="button">Refresh</button><p class="muted">Inbox refreshes about every 15 seconds while this tab is open.</p><label for="filter">Filter conversations</label><select id="filter" aria-label="Conversation status"><option value="all">All statuses</option><option value="open">Open</option><option value="escalated">Escalated</option><option value="closed">Closed</option></select><label for="search">Find conversation</label><input id="search" type="search" placeholder="Search conversation ID"><div id="tickets" class="muted">No conversations loaded.</div></section><section class="panel"><h2 id="selectedTitle">Select a conversation</h2><div id="messages" aria-live="polite"></div><div id="actions" hidden><label for="conversationStatus">Conversation status</label><select id="conversationStatus"><option value="open">Open</option><option value="escalated">Escalated</option><option value="closed">Closed</option></select><button type="button" id="saveStatus">Save status</button></div><form id="replyPanel" hidden><label for="reply">Reply as support</label><textarea id="reply" maxlength="3000" required></textarea><button type="submit">Send reply</button></form></section></div></section></main>
 <script src="/js/stylera-supabase-config.js"></script>
 <script type="module">
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
@@ -28,17 +78,170 @@ client=createClient(cfg.url,cfg.publishableKey,{auth:{persistSession:true,autoRe
 const {data:{session}}=await client.auth.getSession();if(session)await load();
 }
 document.getElementById('loginForm').addEventListener('submit',async e=>{e.preventDefault();if(!client)return;const email=document.getElementById('email').value.trim(),password=document.getElementById('password').value;say('Signing in…');const {error}=await client.auth.signInWithPassword({email,password});document.getElementById('password').value='';if(error){say('Sign-in failed: '+error.message);return}await load()});
-signout.addEventListener('click',async()=>{if(client)await client.rpc('stylera_set_support_presence',{p_available:false});await client.auth.signOut();reset();say('Signed out.')});
+document.getElementById('forgotOwnerPassword').addEventListener('click',async()=>{
+ const email=document.getElementById('email').value.trim();
+ if(!email){say('Enter your Supabase login email first, then select Forgot password.');return}
+ const btn=document.getElementById('forgotOwnerPassword');btn.disabled=true;
+ try{const {error}=await client.auth.resetPasswordForEmail(email,{redirectTo:location.origin+'/stylera-supabase-inbox.html'});
+ if(error)throw error;say('If this email has an eligible Supabase account, a password reset email will be sent. Check your inbox.')}
+ catch(e){say('Reset request could not be completed: '+e.message)}finally{btn.disabled=false}
+});
+document.getElementById('ownerPasswordChange').addEventListener('submit',async e=>{
+ e.preventDefault();const pw=document.getElementById('ownerNewPassword').value,confirm=document.getElementById('ownerNewPasswordConfirm').value,out=document.getElementById('ownerAccountStatus');
+ if(pw!==confirm){out.textContent='Passwords do not match.';return}
+ const {error}=await client.auth.updateUser({password:pw});out.textContent=error?'Password update failed: '+error.message:'Supabase password updated. Use this password for future Stylera sign-ins.';
+ if(!error)e.target.reset();
+});
+document.getElementById('ownerEmailChange').addEventListener('submit',async e=>{
+ e.preventDefault();const email=document.getElementById('ownerNewEmail').value.trim().toLowerCase(),out=document.getElementById('ownerAccountStatus');
+ const {error}=await client.auth.updateUser({email});
+ out.textContent=error?'Email change failed: '+error.message:'Email verification requested. Follow the Supabase confirmation email(s). Important: store admin and revenue access will require updating STYLERA_OWNER_EMAIL to the verified new address; do not sign out until that is done.';
+});
+client?.auth.onAuthStateChange((event)=>{
+ if(event==='PASSWORD_RECOVERY'){say('Password recovery verified. Open Account settings to choose your new password.');load().catch(()=>{});}
+});
+signout.addEventListener('click',async()=>{if(client)await client.rpc('stylera_set_support_presence',{p_available:false});await client.auth.signOut();await fetch('/api/admin/owner-session/logout',{method:'POST'}).catch(()=>{});reset();say('Signed out.')});
 async function updatePresence(){if(!client||presenceBusy||workspace.hidden)return;if(document.hidden&&availableToggle.checked)return;presenceBusy=true;try{const active=availableToggle.checked&&!document.hidden&&(Date.now()-lastActivity<90000);const {error}=await client.rpc('stylera_set_support_presence',{p_available:active});presenceState.textContent=error?'Support availability could not update: '+error.message:'Support availability: '+(active?'Online':'Away');}finally{presenceBusy=false}}
 availableToggle.addEventListener('change',()=>{lastActivity=Date.now();updatePresence()});document.addEventListener('visibilitychange',()=>{if(!document.hidden){lastActivity=Date.now();updatePresence()}});setInterval(updatePresence,30000);
 async function load(silent=false){if(!silent)say('Checking support access…');const {data:staff,error:staffError}=await client.rpc('stylera_is_support_staff');if(staffError||staff!==true){reset();await client.auth.signOut();say('Access denied: this account is not authorized for Stylera support.');return}const {data,error}=await client.from('stylera_conversations').select('id,customer_id,status,created_at').order('created_at',{ascending:false}).limit(100);if(error){reset();say('Unable to load conversations: '+error.message);return}
-conversations=data||[];const {data:guests,error:guestError}=await client.rpc('stylera_staff_guest_threads');if(!guestError)guestThreads=guests||[];else if(!silent)say('Guest inbox unavailable until guest SQL is installed: '+guestError.message);loginPanel.hidden=true;workspace.hidden=false;signout.hidden=false;renderTickets();if(!silent)say('Support inbox ready. '+conversations.length+' conversation(s) loaded.')}
+conversations=data||[];const {data:guests,error:guestError}=await client.rpc('stylera_staff_guest_threads');if(!guestError)guestThreads=guests||[];else if(!silent)say('Guest inbox unavailable until guest SQL is installed: '+guestError.message);loginPanel.hidden=true;workspace.hidden=false;signout.hidden=false;ticketEl('ticketManagement').hidden=false;renderTickets();loadSupportTickets();if(!silent)say('Support inbox ready. '+conversations.length+' conversation(s) loaded.')}
 function renderTickets(){tickets.replaceChildren();if(!conversations.length&&!guestThreads.length){tickets.textContent='No customer conversations yet.';return}const filter=document.getElementById('filter').value,term=document.getElementById('search').value.trim().toLowerCase();for(const g of guestThreads.filter(g=>(filter==='all'||g.status===filter)&&(!term||g.visitor_name.toLowerCase().includes(term)||g.visitor_email.toLowerCase().includes(term)))){const b=document.createElement('button');b.type='button';b.className='ticket';b.setAttribute('aria-pressed',String(selectedGuest===g.id));b.textContent='Guest · '+g.visitor_name+' · '+g.visitor_email+' · '+g.status;b.addEventListener('click',()=>selectGuest(g.id));tickets.append(b)}for(const c of conversations.filter(c=>(filter==='all'||c.status===filter)&&(!term||c.id.toLowerCase().includes(term)))){const b=document.createElement('button');b.type='button';b.className='ticket';b.setAttribute('aria-pressed',String(selected===c.id));b.textContent=c.status+' · '+new Date(c.created_at).toLocaleString()+' · '+c.id.slice(0,8);b.addEventListener('click',()=>selectConversation(c.id));tickets.append(b)}}
 async function selectConversation(id,silent=false){selectedGuest=null;selected=id;renderTickets();if(!silent)say('Loading messages…');messages.replaceChildren();const {data,error}=await client.from('stylera_messages').select('sender,content,created_at').eq('conversation_id',id).order('created_at',{ascending:true}).limit(200);if(error){say('Unable to load messages: '+error.message);replyPanel.hidden=true;return}document.getElementById('selectedTitle').textContent='Conversation '+id.slice(0,8);for(const m of data||[]){const el=document.createElement('div');el.className='message '+(m.sender==='support'?'support':'');const strong=document.createElement('strong');strong.textContent=m.sender+' · '+new Date(m.created_at).toLocaleString();const p=document.createElement('p');p.textContent=m.content;el.append(strong,p);messages.append(el)}if(!(data||[]).length)messages.textContent='No messages yet.';const current=conversations.find(c=>c.id===id);document.getElementById('actions').hidden=!current;document.getElementById('conversationStatus').value=current?.status||'open';replyPanel.hidden=!current||current.status==='closed';if(!silent)say('Messages loaded.')}
-async function selectGuest(id,silent=false){selectedGuest=id;selected=null;renderTickets();const {data,error}=await client.rpc('stylera_staff_guest_messages',{p_thread:id});if(error){say('Unable to load guest messages: '+error.message);return}messages.replaceChildren();const guest=guestThreads.find(g=>g.id===id);document.getElementById('selectedTitle').textContent='Guest: '+(guest?.visitor_name||'Customer')+' · '+(guest?.visitor_email||'');for(const m of data||[]){const d=document.createElement('div');d.className='message '+(m.sender==='support'?'support':'');const h=document.createElement('strong');h.textContent=(m.sender==='support'?'Support':'Customer')+' · '+new Date(m.created_at).toLocaleString();const p=document.createElement('p');p.textContent=m.content;d.append(h,p);messages.append(d)}document.getElementById('actions').hidden=true;replyPanel.hidden=guest?.status!=='open';if(!silent)say('Guest conversation loaded.')}
+async function selectGuest(id,silent=false){selectedGuest=id;selected=null;renderTickets();const {data,error}=await client.rpc('stylera_staff_guest_messages',{p_thread:id});if(error){say('Unable to load guest messages: '+error.message);return}messages.replaceChildren();const guest=guestThreads.find(g=>g.id===id);document.getElementById('selectedTitle').textContent=((data||[]).some(m=>m.content?.includes('[COMPLAINT TICKET '))?'⚠ Complaint ticket · ':'Guest: ')+(guest?.visitor_name||'Customer')+' · '+(guest?.visitor_email||'');for(const m of data||[]){const d=document.createElement('div');d.className='message '+(m.sender==='support'?'support':'');const h=document.createElement('strong');h.textContent=(m.sender==='support'?'Support':'Customer')+' · '+new Date(m.created_at).toLocaleString();const p=document.createElement('p');p.textContent=m.content;d.append(h,p);messages.append(d)}document.getElementById('actions').hidden=true;replyPanel.hidden=guest?.status!=='open';if(!silent)say('Guest conversation loaded.')}
 let inboxPolling=false;
 setInterval(async()=>{if(inboxPolling||document.hidden||workspace.hidden||!client)return;inboxPolling=true;try{await load(true);if(selected)await selectConversation(selected,true);else if(selectedGuest)await selectGuest(selectedGuest,true)}finally{inboxPolling=false}},15000);
 document.getElementById('refresh').addEventListener('click',()=>load());for(const event of ['change','input']){document.getElementById(event==='change'?'filter':'search').addEventListener(event,renderTickets)}
 document.getElementById('saveStatus').addEventListener('click',async()=>{if(!selected)return;const next=document.getElementById('conversationStatus').value;if(!['open','escalated','closed'].includes(next))return;say('Updating conversation…');const {data,error}=await client.from('stylera_conversations').update({status:next}).eq('id',selected).select('id,status').single();if(error){say('Unable to update status: '+error.message);return}const item=conversations.find(c=>c.id===selected);if(item)item.status=data.status;renderTickets();replyPanel.hidden=data.status==='closed';say('Conversation marked '+data.status+'.')});
 replyPanel.addEventListener('submit',async e=>{e.preventDefault();if(!selected&&!selectedGuest)return;const box=document.getElementById('reply'),content=box.value.trim();if(!content)return;say('Sending reply…');const {error}=selectedGuest?await client.rpc('stylera_staff_guest_reply',{p_thread:selectedGuest,p_message:content}):await client.from('stylera_messages').insert({conversation_id:selected,sender:'support',content});if(error){say('Reply not sent: '+error.message);return}box.value='';if(selectedGuest)await selectGuest(selectedGuest);else await selectConversation(selected);say('Support reply saved to conversation. Customer notification is not configured yet.')});
+
+(function(){
+const button=document.getElementById('ownerLoadRevenue'),out=document.getElementById('ownerRevenueResult'),period=document.getElementById('ownerRevenuePeriod');
+if(!button||!out||!period)return;
+const formatter=new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'});
+async function loadRevenue(){
+button.disabled=true;out.textContent='Loading verified Stripe checkout revenue…';
+try{
+const {data:{session},error:sessionError}=await client.auth.getSession();
+if(sessionError||!session?.access_token)throw Error('Your Stylera login has expired. Please sign in again.');
+const response=await fetch('/api/admin/revenue-summary',{headers:{Authorization:'Bearer '+session.access_token},cache:'no-store'});
+const data=await response.json().catch(()=>({error:'Revenue service returned an unexpected response'}));
+if(!response.ok)throw Error(data.error||'Revenue unavailable');
+const values={1:data.monthlyCents,2:data.twoMonthCents,6:data.sixMonthCents,12:data.trailingTwelveMonthsCents};
+const labels={1:'This month',2:'Last 2 calendar months',6:'Last 6 calendar months',12:'Last 12 calendar months'};
+const selected=period.value;
+out.replaceChildren();
+const total=document.createElement('div');total.style.cssText='padding:18px;border:1px solid #e3d4b6;border-radius:12px;background:#f7f2e8';
+const name=document.createElement('div');name.textContent=labels[selected]+' · Gross paid checkout revenue';
+const amount=document.createElement('strong');amount.style.cssText='display:block;font-size:2rem;margin-top:8px;color:#0B1F3A';amount.textContent=formatter.format((values[selected]||0)/100);
+total.append(name,amount);out.append(total);
+const grid=document.createElement('div');grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:12px';
+for(const [months,label] of Object.entries(labels)){const card=document.createElement('div');card.style.cssText='padding:12px;border:1px solid #e6dcc9;border-radius:9px';const title=document.createElement('div');title.textContent=label;const value=document.createElement('strong');value.textContent=formatter.format((values[months]||0)/100);card.append(title,value);grid.append(card)}out.append(grid);
+const note=document.createElement('p');note.className='muted';note.textContent=(data.disclaimer||'Gross paid checkout revenue before refunds and fees')+(data.complete===false?' Warning: Stripe pagination limit reached; figures may be incomplete.':'');out.append(note);
+}catch(e){out.replaceChildren();const err=document.createElement('p');err.textContent='Revenue could not be loaded: '+e.message;out.append(err);
+const help=document.createElement('p');help.className='muted';help.textContent='Your Stylera owner email must match the authorized Supabase account, and Stripe must be configured in this Netlify environment. No revenue amounts have been assumed.';out.append(help);
+}finally{button.disabled=false}
+}
+button.addEventListener('click',loadRevenue);
+period.addEventListener('change',loadRevenue);
+})();;
+
+const ticketPanel=document.getElementById('ticketManagement');
+let supportTickets=[],activeSupportTicket=null;
+const ticketEl=id=>document.getElementById(id);
+const ticketSay=message=>{ticketEl('ticketFeedback').textContent=message};
+async function ticketRequest(payload){
+ const {data:{session}}=await client.auth.getSession();
+ if(!session?.access_token)throw Error('Please sign in again');
+ const response=await fetch('/api/admin/support-tickets',{method:payload?'POST':'GET',headers:{Authorization:'Bearer '+session.access_token,...(payload?{'content-type':'application/json'}:{})},...(payload?{body:JSON.stringify(payload)}:{})});
+ const result=await response.json();if(!response.ok)throw Error(result.error||'Ticket service unavailable');return result;
+}
+function renderSupportTickets(){
+ const list=ticketEl('ticketList');list.replaceChildren();const status=ticketEl('ticketStatusFilter').value;
+ ticketEl('ticketSummary').textContent=supportTickets.length+' tickets · '+supportTickets.filter(t=>!['closed','resolved'].includes(t.status)).length+' unresolved';
+ for(const t of supportTickets.filter(t=>status==='all'||t.status===status)){
+  const button=document.createElement('button');button.type='button';button.style.cssText='display:block;width:100%;text-align:left;margin:6px 0;padding:12px;background:#f4efe6;color:#0b1f3a';
+  button.textContent='SHD-'+String(t.ticket_number).padStart(6,'0')+' · '+t.status+' · '+t.priority+' · '+t.category+' · '+t.customer_name;
+  button.addEventListener('click',()=>openSupportTicket(t.id));list.append(button);
+ }
+ if(!list.children.length)list.textContent='No tickets in this category.';
+}
+async function loadSupportTickets(){
+ ticketSay('Loading complaint tickets…');
+ try{const result=await ticketRequest();supportTickets=result.tickets||[];renderSupportTickets();ticketSay('Tickets loaded.')}catch(e){ticketSay(e.message)}
+}
+async function openSupportTicket(id){
+ ticketSay('Loading ticket details…');
+ try{
+  const {ticket,events}=await ticketRequest({action:'detail',id});if(!ticket)throw Error('Ticket not found');
+  activeSupportTicket=ticket;ticketEl('ticketDetail').hidden=false;
+  ticketEl('ticketHeading').textContent='SHD-'+String(ticket.ticket_number).padStart(6,'0');
+  ticketEl('ticketInfo').textContent='Customer: '+ticket.customer_name+' ('+ticket.customer_email+')\\nCategory: '+ticket.category+'\\nOrder: '+(ticket.order_reference||'Not provided')+'\\nCreated: '+new Date(ticket.created_at).toLocaleString()+'\\n\\n'+ticket.description;
+  ticketEl('ticketEditStatus').value=ticket.status;ticketEl('ticketEditPriority').value=ticket.priority;ticketEl('ticketEditAssignee').value=ticket.assigned_to||'';ticketEl('ticketEditResolution').value=ticket.resolution||'';ticketEl('ticketEditNote').value='';
+  const history=ticketEl('ticketHistory');history.replaceChildren();
+  for(const event of events||[]){const item=document.createElement('p');item.style.cssText='border-bottom:1px solid #ddd;padding:7px 0;white-space:pre-wrap';item.textContent=new Date(event.created_at).toLocaleString()+' · '+event.actor+' · '+event.event_type+'\\n'+event.details;history.append(item)}
+  ticketSay('Ticket details loaded.');
+ }catch(e){ticketSay(e.message)}
+}
+ticketEl('loadSupportTickets').addEventListener('click',loadSupportTickets);
+ticketEl('ticketStatusFilter').addEventListener('change',renderSupportTickets);
+ticketEl('saveSupportTicket').addEventListener('click',async()=>{
+ if(!activeSupportTicket)return;ticketSay('Saving ticket…');
+ try{
+  await ticketRequest({action:'update',id:activeSupportTicket.id,status:ticketEl('ticketEditStatus').value,priority:ticketEl('ticketEditPriority').value,assigned_to:ticketEl('ticketEditAssignee').value,resolution:ticketEl('ticketEditResolution').value,...(ticketEl('ticketEditNote').value.trim()?{note:ticketEl('ticketEditNote').value.trim()}:{})});
+  await loadSupportTickets();await openSupportTicket(activeSupportTicket.id);ticketSay('Ticket saved and history updated.');
+ }catch(e){ticketSay(e.message)}
+});
+
+const tabs=document.getElementById('ownerTabs'),support=document.getElementById('supportConversations'),store=document.getElementById('ownerStorePanel'),traffic=document.getElementById('ownerTrafficPanel'),legacy=document.getElementById('ownerLegacyAdmin');
+const expandAdmin=document.getElementById('ownerExpandAdmin');
+if(expandAdmin)expandAdmin.addEventListener('click',()=>{
+ const expanded=expandAdmin.getAttribute('aria-expanded')!=='true';
+ expandAdmin.setAttribute('aria-expanded',String(expanded));
+ expandAdmin.textContent=expanded?'Return to standard view':'Open full-size view in this tab';
+ if(legacy){legacy.style.height=expanded?'calc(100vh - 110px)':'82vh';legacy.style.minHeight=expanded?'760px':'650px';}
+ const wrapper=document.querySelector('main.wrap');
+ if(wrapper)wrapper.style.maxWidth=expanded?'none':'1000px';
+ const panel=document.getElementById('ownerStorePanel');
+ if(panel&&expanded)panel.scrollIntoView({behavior:'smooth',block:'start'});
+});
+const modules=document.getElementById('ownerAdminModules');let requestedAdminSection='manager';
+function showAdminModule(section){
+ requestedAdminSection=section;
+ if(!legacy||!legacy.contentDocument)return;
+ try{
+ const frameDoc=legacy.contentDocument;
+ const button=frameDoc.querySelector('#adminTabs [data-tab="'+section+'"]');
+ if(!button){document.getElementById('ownerAdminLoginStatus').textContent='Sign in to the original admin section if prompted, then select your section.';return}
+ button.click();
+ document.getElementById('ownerAdminLoginStatus').textContent='Viewing '+button.textContent.trim()+' from your original admin dashboard.';
+ }catch(e){document.getElementById('ownerAdminLoginStatus').textContent='Original admin is protected. Complete authentication before opening this section.'}
+}
+if(modules)modules.addEventListener('click',e=>{
+ const button=e.target.closest('[data-admin-section]');if(!button)return;
+ modules.querySelectorAll('button').forEach(b=>{b.style.background=b===button?'#C6A15B':'#0B1F3A';b.style.color=b===button?'#0B1F3A':'white'});
+ showAdminModule(button.dataset.adminSection);
+});
+if(legacy)legacy.addEventListener('load',()=>showAdminModule(requestedAdminSection));
+if(tabs&&support&&store&&traffic){
+tabs.addEventListener('click',async event=>{
+const button=event.target.closest('[data-owner-tab]');if(!button)return;
+const choice=button.dataset.ownerTab;
+support.hidden=choice!=='support';store.hidden=choice!=='store';traffic.hidden=choice!=='traffic';
+tabs.querySelectorAll('button').forEach(b=>{b.setAttribute('aria-pressed',String(b===button));b.style.background=b===button?'#C6A15B':'#0B1F3A';b.style.color=b===button?'#0B1F3A':'white'});
+if(choice==='store'&&legacy){
+ const notice=document.getElementById('ownerAdminLoginStatus');
+ if(notice)notice.textContent='Verifying your existing Supabase owner login…';
+ try{
+ const {data:{session}}=await client.auth.getSession();
+ if(!session?.access_token)throw Error('Please sign in to Stylera again');
+ const response=await fetch('/api/admin/owner-session',{method:'POST',headers:{Authorization:'Bearer '+session.access_token},credentials:'same-origin'});
+ const data=await response.json();
+ if(!response.ok)throw Error(data.error||'Owner authentication failed');
+ if(notice)notice.textContent='Owner access verified. Loading complete administration…';
+ legacy.src='/admin.html';
+ }catch(e){if(notice)notice.textContent=e.message}
+}
+});
+}
+
 </script></body></html>
