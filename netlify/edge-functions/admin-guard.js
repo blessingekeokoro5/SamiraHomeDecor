@@ -24,13 +24,13 @@ export default async (request, context) => {
   // A Stylera Supabase owner session may unlock this page without a second password.
   // Verify it with Supabase Auth on every request; never trust an unsigned email cookie.
   const cookie = request.headers.get("cookie") || "";
-  const match = cookie.match(/(?:^|;\\s*)shd_owner_session=([^;]+)/);
+  const match = cookie.match(/(?:^|;\s*)shd_owner_session=([^;]+)/);
   if (match) {
     try {
       const jwt = decodeURIComponent(match[1]);
       const ownerEmail = (Netlify.env.get("STYLERA_OWNER_EMAIL") || "lasemic@gmail.com").trim().toLowerCase();
       const key = Netlify.env.get("STYLERA_SUPABASE_PUBLISHABLE_KEY") || "sb_publishable_Efaabu3t4Ye52NjM9IGYrg_Ehx_hTHS";
-      const url = (Netlify.env.get("STYLERA_SUPABASE_URL") || "https://agqjcvacbrzhwgjbhcqs.supabase.co").replace(/\\/$/, "");
+      const url = (Netlify.env.get("STYLERA_SUPABASE_URL") || "https://agqjcvacbrzhwgjbhcqs.supabase.co").replace(/\/$/, "");
       const verified = await fetch(url + "/auth/v1/user", { headers: { apikey: key, Authorization: "Bearer " + jwt }, signal: AbortSignal.timeout(6000) });
       if (verified.ok) {
         const user = await verified.json();
