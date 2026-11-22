@@ -2,9 +2,10 @@
 (function(){
 "use strict";
 const topics={
+ availability:"I’m Stylera, your AI shopping and styling assistant, available 24 hours a day, 7 days a week. Human Customer Care availability may vary. You can leave a message or raise a support ticket any time.",
  packaging:"I can help you find packaging supplies. Are you looking for gift boxes, wrapping materials, or something else? I will only recommend products listed in our shop.",
  international:"We currently serve Australia and New Zealand. Furniture delivery is available within Australia only; eligible décor, homewares and gifts may be shipped to New Zealand. Which destination and postcode are you shopping for? Shipping rates must be confirmed at checkout.",
- human:"I can connect you with Customer Care. Use the live chat link below to speak with a representative, or raise a support ticket if your enquiry needs follow-up.",
+ human:"I’m available as your AI assistant 24/7. Human representatives may not be online at all hours. I can connect you with Customer Care. Use the live chat link below to speak with a representative, or raise a support ticket if your enquiry needs follow-up.",
  gifts:"I can help you find a thoughtful gift! Who is it for, what is the occasion, and what is your budget in AUD? You can browse ready-made gift hampers at /hampers.html, build a personalised selection at /hamper-maker.html, or explore home décor gifts at /shop.html. Tell me a little about the recipient and I will narrow down the options.",
  delivery:"Delivery costs depend on your postcode, product size and weight, and the items in your cart. Enter your full delivery address or postcode at checkout to see the charge before paying. Furniture and multiple-item orders can cost more to deliver. Dispatch and arrival estimates depend on product availability; pre-orders can take longer. We deliver within Australia, and eligible décor, homewares and gifts can be delivered to New Zealand. Furniture delivery is within Australia only. For the published details, read /policy.html?doc=delivery. If checkout cannot calculate a rate, please contact Customer Care rather than assuming a price.",
  styling:"I'd love to help style your space. Which room are you working on, what are its approximate dimensions, which colours do you like, and what is your budget? For a living room, start with seating and a focal point, then layer cushions, throws, artwork, mirrors and accents. For bedrooms, coordinate bedding, bedside pieces and a statement accent. Browse /shop.html for pieces that suit your room. You can also explore /stylist.html for styling guidance. I won't promise a specific item is in stock until its product page confirms it.",
@@ -33,6 +34,7 @@ function isIssue(q){
 function choose(q,preferred){
  const t=clean(q);
  if(/representative|human agent|customer service|live chat|speak to someone/.test(t))return "human";
+ if(/24 7|24 hours|always available|opening hours|what time.*open|are you open/.test(t))return "availability";
  if(/track my order|track order|order status/.test(t))return "orders";
  if(isIssue(q))return "returns";
  if(/packaging|gift box|wrapping supplies|packing supplies/.test(t))return "packaging";
