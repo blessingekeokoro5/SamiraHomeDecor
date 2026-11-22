@@ -22,6 +22,9 @@ function productMatches(question){
 }
 function link(href,label){const a=document.createElement("a");a.href=href;a.textContent=label;a.target="_top";a.rel="noopener";return a}
 function formatProduct(p){const row=document.createElement("div");row.style.marginTop="9px";row.append(link("/product.html?id="+encodeURIComponent(p.id),p.name));const detail=document.createElement("span");const price=Number(p.price);detail.textContent=" · "+(Number.isFinite(price)&&price>0?"from $"+price.toLocaleString("en-AU",{maximumFractionDigits:2})+" AUD":"check product page for price")+" · "+(p.cat||"Home Décor");row.append(detail);return row}
+function isIssue(q){
+ return /\\b(issue|problem|complaint|complain|fault|faulty|broken|damage|damaged|missing|wrong item|incorrect|not working|doesn.t work|failed|failure|error|refund|return|exchange|cancel|late|delay|delayed|lost|never arrived|not received|charged twice|overcharg|payment failed|delivery problem|shipping problem|order problem|dispute|support ticket|raise a ticket|report an issue|help with my order|contact support|representative|human agent)\\b/i.test(String(q||""));
+}
 function choose(q,preferred){
  const t=clean(q);
  if(preferred&&topics[preferred])return preferred;
@@ -33,16 +36,16 @@ function choose(q,preferred){
 }
 window.StyleraKnowledge={
  respond(question,preferred){
-  const q=String(question||"").trim(),topic=choose(q,preferred);
+  const q=String(question||"").trim(),issue=isIssue(q),topic=choose(q,preferred);
   const node=document.createElement("div");
-  const para=document.createElement("p");para.style.margin="0 0 9px";para.textContent=topic?topics[topic]:"I can help with delivery estimates, styling ideas, product discovery and order-support steps. Please tell me which item, room or delivery destination you're asking about so I can give you a more useful answer. For a personal order or a question I cannot verify, connect with Customer Care below.";
+  const para=document.createElement("p");para.style.margin="0 0 9px";para.textContent=issue?"I’m sorry you’re experiencing an issue. Please submit a support ticket so our Customer Care Team can review your concern and respond by email. Include your order number (if applicable) and a short description, but never include passwords or payment card details.":topic?topics[topic]:"I can help with delivery estimates, styling ideas, product discovery and order-support steps. Please tell me which item, room or delivery destination you're asking about so I can give you a more useful answer. For a personal order or a question I cannot verify, connect with Customer Care below.";
   node.append(para);
-  if(topic==="products"||topic==="styling"||(!topic&&q.length>5)){
+  if(!issue&&(topic==="products"||topic==="styling"||(!topic&&q.length>5))){
    const matches=productMatches(q);
    if(matches.length){const title=document.createElement("strong");title.textContent="Matching products on our website:";node.append(title);matches.forEach(p=>node.append(formatProduct(p)))}
    else if(topic==="products"){const note=document.createElement("p");note.textContent="I couldn't confidently identify a matching product from that description. Try a specific item name, or browse the current collection.";node.append(note)}
   }
-  const links=document.createElement("p");links.style.margin="12px 0 0";links.append(link(topic==="orders"?"/track.html":topic==="styling"?"/stylist.html":"/shop.html",topic==="orders"?"Track an order":topic==="styling"?"Explore styling tools":"Browse our shop"));node.append(links);
+  const links=document.createElement("p");links.style.margin="12px 0 0";links.append(link(issue?"/support.html#ticket":topic==="orders"?"/track.html":topic==="styling"?"/stylist.html":"/shop.html",issue?"Submit a support ticket":topic==="orders"?"Track an order":topic==="styling"?"Explore styling tools":"Browse our shop"));node.append(links);
   return node;
  }
 };
