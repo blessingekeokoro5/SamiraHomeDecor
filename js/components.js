@@ -1562,9 +1562,10 @@ function chatAppend(who, html, opts = {}) {
   const body = document.getElementById("chatBody");
   const msg = document.createElement("div");
   msg.className = "chat-msg " + who;
-  msg.innerHTML = who === "bot"
-    ? `<span class="chat-avatar sm">${IC.spark}</span><div class="bubble">${html}</div>`
-    : `<div class="bubble">${html}</div>`;
+  msg.innerHTML = who === "bot" ? `<span class="chat-avatar sm">${IC.spark}</span><div class="bubble"></div>` : `<div class="bubble"></div>`;
+  const bubble=msg.querySelector(".bubble");
+  if(html instanceof Node)bubble.append(html);
+  else bubble.innerHTML=String(html);
   body.appendChild(msg);
 
   // Helpfulness rating under bot answers (not the greeting)
@@ -1618,7 +1619,7 @@ function ensureStyleraKnowledge(){
   if(styleraKnowledgeLoading)return styleraKnowledgeLoading;
   styleraKnowledgeLoading=new Promise((resolve,reject)=>{
     const script=document.createElement("script");
-    script.src="/js/stylera-knowledge.js?v=5";
+    script.src="/js/stylera-knowledge.js?v=7";
     script.onload=()=>window.StyleraKnowledge?resolve(window.StyleraKnowledge):reject(new Error("Stylera knowledge unavailable"));
     script.onerror=()=>reject(new Error("Stylera knowledge could not load"));
     document.head.append(script);
@@ -1640,7 +1641,7 @@ async function chatSend(text) {
     const knowledge=await ensureStyleraKnowledge();
     const answer=knowledge.respond(text);
     chatAnswerCount++;
-    chatAppend("bot",answer instanceof Node ? answer.outerHTML : String(answer),{feedback:true});
+    chatAppend("bot",answer,{feedback:true});
   }catch(error){
     console.error("Stylera knowledge error",error);
     chatAppend("bot",'I couldn’t load my shopping guidance just now. Please try again, or <a href="/support.html#ticket">raise a support ticket</a>. You can also <a href="/stylera-supabase-customer.html">chat with Customer Care</a>.');
