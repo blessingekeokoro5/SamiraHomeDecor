@@ -125,6 +125,10 @@
                 <div class="field"><input type="text" name="customerName" autocomplete="name" maxlength="100" placeholder="Your name" required></div>
                 <div class="field"><input type="email" name="customerEmail" autocomplete="email" placeholder="Your email" required></div>
               </div>
+              <div class="field-row">
+                <div class="field"><label for="ticketPhone" style="display:block;color:#fff;margin-bottom:6px">Phone number</label><input id="ticketPhone" type="tel" name="customerPhone" autocomplete="tel" maxlength="30" placeholder="Your phone number" required></div>
+                <div class="field"><label for="ticketContact" style="display:block;color:#fff;margin-bottom:6px">Preferred contact method</label><select id="ticketContact" name="contactPreference" required><option value="" disabled selected>How should we contact you?</option><option value="Email">Email</option><option value="Phone call">Phone call</option><option value="Live chat">Live chat</option></select></div>
+              </div>
               <div class="field"><textarea name="message" maxlength="2000" placeholder="How can we help?" required style="min-height:100px"></textarea></div>
               <button type="submit" class="btn btn--light">📩 Send my ticket</button>
               <div class="form-success" id="supportTicketResult" role="status" aria-live="polite"></div>
@@ -236,8 +240,10 @@
         const data=new FormData(form);
         const name=String(data.get('customerName')||'').trim();
         const email=String(data.get('customerEmail')||'').trim();
+        const phone=String(data.get('customerPhone')||'').trim();
+        const contactPreference=String(data.get('contactPreference')||'').trim();
         const message=String(data.get('message')||'').trim();
-        if(name.length<2||!form.checkValidity()||!message)throw new Error('Please complete all fields.');
+        if(name.length<2||phone.length<6||!['Email','Phone call','Live chat'].includes(contactPreference)||!form.checkValidity()||!message)throw new Error('Please complete all fields.');
         const bytes=crypto.getRandomValues(new Uint8Array(32));
         const token=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
         const response=await fetch('/.netlify/functions/stylera-guest-start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,token})});
@@ -248,7 +254,7 @@
         sessionStorage.setItem('stylera_guest_session',JSON.stringify({thread:result.thread,token}));
         let emailDelivered=false;
         try{
-          const notice=await fetch('/.netlify/functions/support-ticket-email',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,message,reference:result.thread})});
+          const notice=await fetch('/.netlify/functions/support-ticket-email',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,phone,contactPreference,message,reference:result.thread})});
           emailDelivered=notice.ok&&(await notice.json()).ok===true;
         }catch(error){console.warn('Support ticket email notification failed',error)}
         output.textContent='Your support request has been received. Reference: '+result.thread.slice(0,8).toUpperCase()+'. You can continue this conversation in live chat on this device.'+(emailDelivered?' A notification was sent to our support inbox.':' Email notification could not be confirmed; your request remains in the support inbox.');
