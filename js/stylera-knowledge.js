@@ -2,6 +2,9 @@
 (function(){
 "use strict";
 const topics={
+ packaging:"I can help you find packaging supplies. Are you looking for gift boxes, wrapping materials, or something else? I will only recommend products listed in our shop.",
+ international:"We currently serve Australia and New Zealand. Furniture delivery is available within Australia only; eligible décor, homewares and gifts may be shipped to New Zealand. Which destination and postcode are you shopping for? Shipping rates must be confirmed at checkout.",
+ human:"I can connect you with Customer Care. Use the live chat link below to speak with a representative, or raise a support ticket if your enquiry needs follow-up.",
  gifts:"I can help you find a thoughtful gift! Who is it for, what is the occasion, and what is your budget in AUD? You can browse ready-made gift hampers at /hampers.html, build a personalised selection at /hamper-maker.html, or explore home décor gifts at /shop.html. Tell me a little about the recipient and I will narrow down the options.",
  delivery:"Delivery costs depend on your postcode, product size and weight, and the items in your cart. Enter your full delivery address or postcode at checkout to see the charge before paying. Furniture and multiple-item orders can cost more to deliver. Dispatch and arrival estimates depend on product availability; pre-orders can take longer. We deliver within Australia, and eligible décor, homewares and gifts can be delivered to New Zealand. Furniture delivery is within Australia only. For the published details, read /policy.html?doc=delivery. If checkout cannot calculate a rate, please contact Customer Care rather than assuming a price.",
  styling:"I'd love to help style your space. Which room are you working on, what are its approximate dimensions, which colours do you like, and what is your budget? For a living room, start with seating and a focal point, then layer cushions, throws, artwork, mirrors and accents. For bedrooms, coordinate bedding, bedside pieces and a statement accent. Browse /shop.html for pieces that suit your room. You can also explore /stylist.html for styling guidance. I won't promise a specific item is in stock until its product page confirms it.",
@@ -25,11 +28,14 @@ function productMatches(question){
 function link(href,label){const a=document.createElement("a");a.href=href;a.textContent=label;a.target="_top";a.rel="noopener";return a}
 function formatProduct(p){const row=document.createElement("div");row.style.marginTop="9px";row.append(link("/product.html?id="+encodeURIComponent(p.id),p.name));const detail=document.createElement("span");const price=Number(p.price);detail.textContent=" · "+(Number.isFinite(price)&&price>0?"from $"+price.toLocaleString("en-AU",{maximumFractionDigits:2})+" AUD":"check product page for price")+" · "+(p.cat||"Home Décor");row.append(detail);return row}
 function isIssue(q){
- return /\\b(issue|problem|complaint|complain|fault|faulty|broken|damage|damaged|missing|wrong item|incorrect|not working|doesn.t work|failed|failure|error|refund|return|exchange|cancel|late|delay|delayed|lost|never arrived|not received|charged twice|overcharg|payment failed|delivery problem|shipping problem|order problem|dispute|support ticket|raise a ticket|report an issue|help with my order|contact support|representative|human agent)\\b/i.test(String(q||""));
+ return /\b(issue|problem|complaint|complain|fault|faulty|broken|damage|damaged|missing|wrong item|incorrect|not working|doesn.t work|failed|failure|error|refund|return|exchange|cancel|late|delay|delayed|lost|never arrived|not received|charged twice|overcharg|payment failed|delivery problem|shipping problem|order problem|dispute|support ticket|raise a ticket|report an issue|help with my order|contact support|representative|human agent)\b/i.test(String(q||""));
 }
 function choose(q,preferred){
  const t=clean(q);
- if(isIssue(q))return "returns";
+ if(isIssue(q))return /track|order status/i.test(q)?"orders":"returns";
+ if(/packaging|gift box|wrapping supplies|packing supplies/.test(t))return "packaging";
+ if(/overseas|international|new zealand|other country|abroad/.test(t))return "international";
+ if(/representative|human|live chat|customer service/.test(t))return "human";
  if(preferred&&topics[preferred])return preferred;
  if(/return|refund|exchange|warranty|consumer law|change of mind/.test(t))return "returns";
  if(/order|track|cancel|payment|invoice|damaged|missing parcel/.test(t))return "orders";
@@ -45,12 +51,13 @@ window.StyleraKnowledge={
   const node=document.createElement("div");
   const para=document.createElement("p");para.style.margin="0 0 9px";para.textContent=issue?"For a problem with an order, delivery, payment, faulty item or a refund request, please submit a support ticket so Customer Care can review the details. Include your order reference if you have one, but never send payment card details or passwords. You can also use live chat below to speak with a representative.":topic?topics[topic]:"I can help with delivery estimates, styling ideas, product discovery and order-support steps. Please tell me which item, room or delivery destination you're asking about so I can give you a more useful answer. For a personal order or a question I cannot verify, connect with Customer Care below.";
   node.append(para);
-  if(!issue&&(topic==="products"||topic==="styling"||topic==="gifts"||(!topic&&q.length>5))){
-   const matches=productMatches(q);
+  if(!issue&&(topic==="products"||topic==="styling"||topic==="gifts"||topic==="packaging"||(!topic&&q.length>5))){
+   const matches=productMatches(topic==="packaging"?"packaging":q);
    if(matches.length){const title=document.createElement("strong");title.textContent="Matching products on our website:";node.append(title);matches.forEach(p=>node.append(formatProduct(p)))}
    else if(topic==="products"){const note=document.createElement("p");note.textContent="I couldn't confidently identify a matching product from that description. Try a specific item name, or browse the current collection.";node.append(note)}
   }
   const links=document.createElement("p");links.style.margin="12px 0 0";links.append(link(issue?"/support.html#ticket":topic==="returns"?"/policy.html?doc=returns":topic==="orders"?"/track.html":topic==="styling"?"/stylist.html":topic==="gifts"?"/hampers.html":topic==="delivery"?"/policy.html?doc=delivery":"/shop.html",issue?"Submit a support ticket":topic==="returns"?"Read returns policy":topic==="orders"?"Track an order":topic==="styling"?"Explore styling tools":topic==="gifts"?"Browse gift hampers":topic==="delivery"?"Read delivery policy":"Browse our shop"));node.append(links);
+  if(topic==="human"){const live=document.createElement("p");live.append(link("/stylera-supabase-customer.html","Chat with Customer Care"));node.append(live)}
   if(!issue&&(topic==="orders"||topic==="returns"||topic==="delivery"||!topic)){const help=document.createElement("p");help.style.margin="8px 0 0";help.append(link("/support.html#ticket","Need more help? Raise a support ticket"));node.append(help)}
   return node;
  }
