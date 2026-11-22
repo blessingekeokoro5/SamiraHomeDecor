@@ -1703,20 +1703,39 @@ function chatRate(n) {
   }
 }
 
-function chatSend(text) {
-  if (!text.trim()) return;
-  chatAppend("me", text.replace(/</g, "&lt;"));
-  const body = document.getElementById("chatBody");
-  const typing = document.createElement("div");
-  typing.className = "chat-msg bot";
-  typing.innerHTML = `<span class="chat-avatar sm">${IC.spark}</span><div class="bubble typing"><span></span><span></span><span></span></div>`;
-  body.appendChild(typing); body.scrollTop = body.scrollHeight;
-  setTimeout(() => {
-    typing.remove();
+let styleraKnowledgeLoading=null;
+function ensureStyleraKnowledge(){
+  if(window.StyleraKnowledge)return Promise.resolve(window.StyleraKnowledge);
+  if(styleraKnowledgeLoading)return styleraKnowledgeLoading;
+  styleraKnowledgeLoading=new Promise((resolve,reject)=>{
+    const script=document.createElement("script");
+    script.src="/js/stylera-knowledge.js?v=4";
+    script.onload=()=>window.StyleraKnowledge?resolve(window.StyleraKnowledge):reject(new Error("Stylera knowledge unavailable"));
+    script.onerror=()=>reject(new Error("Stylera knowledge could not load"));
+    document.head.append(script);
+  }).catch(error=>{styleraKnowledgeLoading=null;throw error});
+  return styleraKnowledgeLoading;
+}
+async function chatSend(text) {
+  text=String(text||"").trim();
+  if(!text)return;
+  const body=document.getElementById("chatBody");
+  if(!body)return;
+  chatAppend("me",text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"));
+  const typing=document.createElement("div");
+  typing.className="chat-msg bot";
+  typing.innerHTML=`<span class="chat-avatar sm">${IC.spark}</span><div class="bubble typing"><span></span><span></span><span></span></div>`;
+  body.appendChild(typing);
+  body.scrollTop=body.scrollHeight;
+  try{
+    const knowledge=await ensureStyleraKnowledge();
+    const answer=knowledge.respond(text);
     chatAnswerCount++;
-    if(window.StyleraKnowledge){const answer=window.StyleraKnowledge.respond(text);chatAppend("bot",answer.innerHTML,{feedback:true});}
-    else {const res=chatReply(text);chatAppend("bot",res.html,{feedback:true});}
-  }, 700);
+    chatAppend("bot",answer.innerHTML,{feedback:true});
+  }catch(error){
+    console.error("Stylera knowledge error",error);
+    chatAppend("bot",'I couldn’t load my shopping guidance just now. Please try again, or <a href="/support.html#ticket">raise a support ticket</a>. You can also <a href="/stylera-supabase-customer.html">chat with Customer Care</a>.');
+  }finally{typing.remove()}
 }
 
 function initChat() {
@@ -1731,7 +1750,7 @@ function initChat() {
   const nudge = document.getElementById("chatNudge");
   const nudgeX = document.getElementById("nudgeX");
   if (!panel) return;
-  if(!window.StyleraKnowledge&&!document.getElementById("styleraKnowledgeScript")){const script=document.createElement("script");script.id="styleraKnowledgeScript";script.src="/js/stylera-knowledge.js?v=2";document.head.append(script);}
+  ensureStyleraKnowledge().catch(error=>console.warn("Stylera guidance will retry on next message",error));
 
   let greeted = false;
   const hideNudge = () => nudge && nudge.classList.remove("show");
