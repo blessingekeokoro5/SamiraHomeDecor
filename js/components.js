@@ -1509,18 +1509,7 @@ function dmMessageTopics() {
     <a class="support-more" href="support.html">Visit the full Support Centre</a>`;
 }
 function dmTicketComingSoon() {
-  const el = document.getElementById("supportBody");
-  if (!el) return;
-  el.innerHTML = `
-    <button class="support-back" type="button" onclick="renderSupport()">← Help desk</button>
-    <div class="support-title">🎫 Raise a support ticket</div>
-    <p class="support-lead">Our ticketing feature is currently in progress and will be available soon.</p>
-    <div style="padding:16px;border:1px solid #e4d7bf;border-radius:12px;background:#fbf8f1;line-height:1.6;margin:14px 0">
-      In the meantime, please use our live chat for any questions, complaints or issues. A customer representative will get back to you.
-    </div>
-    <button type="button" class="btn btn--primary btn--block" onclick="openLiveChat()">💬 Continue to live chat</button>
-    <button type="button" class="support-back" style="margin-top:15px" onclick="dmMessageTopics()">Or send us a message</button>
-  `;
+  window.location.href = "/support.html#ticket";
 }
 
 function dmSelectIssue(issue) {
