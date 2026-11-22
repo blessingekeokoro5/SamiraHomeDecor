@@ -231,7 +231,12 @@
         const sent=await client.rpc('stylera_guest_send',{p_thread:result.thread,p_token:token,p_message:message});
         if(sent.error)throw sent.error;
         sessionStorage.setItem('stylera_guest_session',JSON.stringify({thread:result.thread,token}));
-        output.textContent='Your support request has been received. Reference: '+result.thread.slice(0,8).toUpperCase()+'. You can continue this conversation in live chat on this device.';
+        let emailDelivered=false;
+        try{
+          const notice=await fetch('/.netlify/functions/support-ticket-email',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,message,reference:result.thread})});
+          emailDelivered=notice.ok&&(await notice.json()).ok===true;
+        }catch(error){console.warn('Support ticket email notification failed',error)}
+        output.textContent='Your support request has been received. Reference: '+result.thread.slice(0,8).toUpperCase()+'. You can continue this conversation in live chat on this device.'+(emailDelivered?' A notification was sent to our support inbox.':' Email notification could not be confirmed; your request remains in the support inbox.');
         form.reset();
       }catch(error){
         output.textContent='We could not confirm your request was submitted. Please use live chat or email hello@samirahomedecor.com.au. '+(error.message||'');
