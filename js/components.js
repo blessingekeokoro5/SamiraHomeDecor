@@ -657,7 +657,7 @@ function buildFloating() {
           <span class="chat-avatar">${IC.spark}</span>
           <div>
             <strong>Samira Stylera</strong>
-            <small><span class="chat-online"></span> Typically replies instantly</small>
+            <small><span class="chat-online"></span> AI available 24/7 · Human support may vary</small>
           </div>
         </div>
         <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
@@ -1669,7 +1669,7 @@ function initChat() {
 
   const greet = () => {
     if (greeted) return; greeted = true;
-    chatAppend("bot", `Hi, I'm the <strong>Samira Stylera</strong> ✦ your AI décor &amp; gift advisor. Tell me who you're shopping for and I'll suggest something they'll love, or pick a category below. Need help with an order? Switch to the <strong>Help desk</strong> above.`);
+    chatAppend("bot", `Hi, I'm the <strong>Samira Stylera</strong> ✦ your 24/7 AI décor, shopping &amp; gift advisor. Tell me who you're shopping for and I'll suggest something they'll love, or pick a category below. Need help with an order? Switch to the <strong>Help desk</strong> above.`);
   };
   const switchTab = (name) => {
     tabs.forEach(x => x.classList.toggle("active", x.dataset.tab === name));
