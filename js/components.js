@@ -317,7 +317,7 @@ function buildHeader() {
       <div class="tu-left"><a href="policy.html?doc=returns">✓ 30-Day Returns · Free shipping over $3,500</a></div>
       <div class="tu-right">
         <a href="staging.html#book">Book Consult</a>
-        <a href="support.html">Help Centre</a>
+        <a href="support.html">Customer Care Centre</a>
         <a href="about.html">About Us</a>
         <a href="trade.html">Trade</a>
         <a href="contact.html">Contact Us</a>
