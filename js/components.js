@@ -1713,9 +1713,9 @@ function chatSend(text) {
   body.appendChild(typing); body.scrollTop = body.scrollHeight;
   setTimeout(() => {
     typing.remove();
-    const res = chatReply(text);
     chatAnswerCount++;
-    chatAppend("bot", res.html, { feedback: true });
+    if(window.StyleraKnowledge){const answer=window.StyleraKnowledge.respond(text);chatAppend("bot",answer.innerHTML,{feedback:true});}
+    else {const res=chatReply(text);chatAppend("bot",res.html,{feedback:true});}
   }, 700);
 }
 
@@ -1731,6 +1731,7 @@ function initChat() {
   const nudge = document.getElementById("chatNudge");
   const nudgeX = document.getElementById("nudgeX");
   if (!panel) return;
+  if(!window.StyleraKnowledge&&!document.getElementById("styleraKnowledgeScript")){const script=document.createElement("script");script.id="styleraKnowledgeScript";script.src="/js/stylera-knowledge.js?v=2";document.head.append(script);}
 
   let greeted = false;
   const hideNudge = () => nudge && nudge.classList.remove("show");
