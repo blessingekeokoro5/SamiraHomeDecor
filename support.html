@@ -141,18 +141,18 @@
               <span class="eyebrow" style="color:var(--rose-soft)">Quick contact</span>
               <h3 style="color:#fff">Request a call back</h3>
               <p style="color:#d7cec3;font-size:0.94rem">Leave your details and our team will call you back within 2 business hours.</p>
-              <form data-demo-form data-success-msg="Thanks! We'll call you back within 2 business hours.">
-                <div class="field"><input type="text" placeholder="Your name" required></div>
-                <div class="field"><input type="tel" placeholder="Best number to reach you" required></div>
+              <form id="supportCallbackForm">
+                <div class="field"><input type="text" name="callbackName" maxlength="100" placeholder="Your name" required></div>
+                <div class="field"><input type="tel" name="callbackPhone" maxlength="30" placeholder="Best number to reach you" required><input type="email" name="callbackEmail" maxlength="254" placeholder="Your email" required></div>
                 <div class="field">
-                  <select>
+                  <select name="callbackTime">
                     <option>Best time to call, Anytime</option>
                     <option>Morning</option><option>Afternoon</option><option>Evening</option>
                   </select>
                 </div>
                 <div class="field"><input type="text" placeholder="What's it regarding?"></div>
                 <button type="submit" class="btn btn--primary btn--block">📞 Request my callback</button>
-                <div class="form-success"></div>
+                <div class="form-success" id="supportCallbackResult" role="status" aria-live="polite"></div>
               </form>
             </div>
           </div>
@@ -231,6 +231,17 @@
     const output=document.getElementById('supportTicketResult');
     const cfg=window.STYLERA_SUPABASE_CONFIG;
     const client=cfg?.url&&cfg?.publishableKey?createClient(cfg.url,cfg.publishableKey,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}}):null;
+    const callback=document.getElementById('supportCallbackForm'),callbackOutput=document.getElementById('supportCallbackResult');
+    callback.addEventListener('submit',async event=>{
+      event.preventDefault();const button=callback.querySelector('[type="submit"]');button.disabled=true;callbackOutput.textContent='Submitting callback request…';
+      try{
+        const data=new FormData(callback),name=String(data.get('callbackName')||'').trim(),phone=String(data.get('callbackPhone')||'').trim(),email=String(data.get('callbackEmail')||'').trim(),subject=String(data.get('callbackSubject')||'').trim(),time=String(data.get('callbackTime')||'Anytime');
+        const response=await fetch('/.netlify/functions/stylera-care-sync',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'callback',name,email,phone,subject,message:'Preferred callback time: '+time})});
+        const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.message||'Unable to submit callback.');
+        callbackOutput.textContent='Your callback request has been received. Our team will follow up when available.';callback.reset();
+      }catch(error){callbackOutput.textContent='Your callback request could not be confirmed. Please contact us through live chat. '+(error.message||'')}
+      finally{button.disabled=false}
+    });
     form.addEventListener('submit',async event=>{
       event.preventDefault();
       const button=form.querySelector('[type="submit"]');
@@ -254,12 +265,18 @@
         const sent=await client.rpc('stylera_guest_send',{p_thread:result.thread,p_token:token,p_message:message});
         if(sent.error)throw sent.error;
         sessionStorage.setItem('stylera_guest_session',JSON.stringify({thread:result.thread,token}));
+        let caseSynced=false;
+        try{
+          const sync=await fetch('/.netlify/functions/stylera-care-sync',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'ticket',thread:result.thread,name,email,phone,subject:message.slice(0,120),message})});
+          caseSynced=sync.ok&&(await sync.json()).ok===true;
+        }catch(error){console.warn('Ticket case sync unavailable',error)}
         let emailDelivered=false;
         try{
           const notice=await fetch('/.netlify/functions/support-ticket-email',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,phone,contactPreference,message,reference:result.thread})});
           emailDelivered=notice.ok&&(await notice.json()).ok===true;
         }catch(error){console.warn('Support ticket email notification failed',error)}
         output.textContent='Your support request has been received. Reference: '+result.thread.slice(0,8).toUpperCase()+'. You can continue this conversation in live chat on this device.'+(emailDelivered?' A notification was sent to our support inbox.':' Email notification could not be confirmed; your request remains in the support inbox.');
+        if(!caseSynced)output.textContent+=' Case tracking sync is pending; your message remains in the support inbox.';
         form.reset();
       }catch(error){
         output.textContent='We could not confirm your request was submitted. Please use live chat or email hello@samirahomedecor.com.au. '+(error.message||'');
