@@ -242,12 +242,15 @@
       }catch(error){callbackOutput.textContent='Your callback request could not be confirmed. Please contact us through live chat. '+(error.message||'')}
       finally{button.disabled=false}
     });
+    let ticketSubmitted=false;
+    form.addEventListener('input',()=>{if(ticketSubmitted){ticketSubmitted=false;const b=form.querySelector('[type="submit"]');b.disabled=false;b.textContent='📩 Send my ticket';}});
     form.addEventListener('submit',async event=>{
       event.preventDefault();
       const button=form.querySelector('[type="submit"]');
-      if(button.disabled)return;
+      if(button.disabled||ticketSubmitted)return;
       button.disabled=true;
-      output.textContent='Submitting your support request…';
+      button.textContent='Sending…';
+      output.textContent='Sending your ticket securely. Please wait; you only need to click once.';
       try{
         if(!client)throw new Error('Support service is temporarily unavailable.');
         const data=new FormData(form);
@@ -265,6 +268,10 @@
         const sent=await client.rpc('stylera_guest_send',{p_thread:result.thread,p_token:token,p_message:message});
         if(sent.error)throw sent.error;
         sessionStorage.setItem('stylera_guest_session',JSON.stringify({thread:result.thread,token}));
+        ticketSubmitted=true;
+        button.textContent='✓ Ticket sent';
+        output.textContent='Your support request has been received. Reference: '+result.thread.slice(0,8).toUpperCase()+'. Saving case tracking and notifying our team…';
+        form.reset();
         let caseSynced=false;
         try{
           const sync=await fetch('/.netlify/functions/stylera-care-sync',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'ticket',thread:result.thread,name,email,phone,subject:message.slice(0,120),message})});
@@ -277,10 +284,9 @@
         }catch(error){console.warn('Support ticket email notification failed',error)}
         output.textContent='Your support request has been received. Reference: '+result.thread.slice(0,8).toUpperCase()+'. You can continue this conversation in live chat on this device.'+(emailDelivered?' A notification was sent to our support inbox.':' Email notification could not be confirmed; your request remains in the support inbox.');
         if(!caseSynced)output.textContent+=' Case tracking sync is pending; your message remains in the support inbox.';
-        form.reset();
       }catch(error){
         output.textContent='We could not confirm your request was submitted. Please use live chat or email hello@samirahomedecor.com.au. '+(error.message||'');
-      }finally{button.disabled=false}
+      }finally{if(!ticketSubmitted){button.disabled=false;button.textContent='📩 Send my ticket';}}
     });
   </script>
   <script src="js/main.js?v=22"></script>
