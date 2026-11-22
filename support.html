@@ -163,14 +163,14 @@
                 <small>Scan to visit our site</small>
               </div>
             </div>
-            <form data-demo-form data-success-msg="Thank you! Your ticket has been sent, we'll reply by email shortly." style="margin-top:26px">
+            <form id="supportTicketForm" style="margin-top:26px">
               <div class="field-row">
-                <div class="field"><input type="text" placeholder="Your name" required></div>
-                <div class="field"><input type="email" placeholder="Your email" required></div>
+                <div class="field"><input type="text" name="customerName" autocomplete="name" maxlength="100" placeholder="Your name" required></div>
+                <div class="field"><input type="email" name="customerEmail" autocomplete="email" placeholder="Your email" required></div>
               </div>
-              <div class="field"><textarea placeholder="How can we help?" required style="min-height:100px"></textarea></div>
+              <div class="field"><textarea name="message" maxlength="2000" placeholder="How can we help?" required style="min-height:100px"></textarea></div>
               <button type="submit" class="btn btn--light">📩 Send my ticket</button>
-              <div class="form-success"></div>
+              <div class="form-success" id="supportTicketResult" role="status" aria-live="polite"></div>
             </form>
           </div>
           <div id="callback">
@@ -203,6 +203,41 @@
   <script src="js/adairs-bathroom.js?v=1"></script>
   <script src="js/components.js?v=98"></script>
   <script src="js/cart.js?v=39"></script>
+  <script src="js/stylera-supabase-config.js"></script>
+  <script type="module">
+    import {createClient} from 'https://esm.sh/@supabase/supabase-js@2';
+    const form=document.getElementById('supportTicketForm');
+    const output=document.getElementById('supportTicketResult');
+    const cfg=window.STYLERA_SUPABASE_CONFIG;
+    const client=cfg?.url&&cfg?.publishableKey?createClient(cfg.url,cfg.publishableKey,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}}):null;
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();
+      const button=form.querySelector('[type="submit"]');
+      if(button.disabled)return;
+      button.disabled=true;
+      output.textContent='Submitting your support request…';
+      try{
+        if(!client)throw new Error('Support service is temporarily unavailable.');
+        const data=new FormData(form);
+        const name=String(data.get('customerName')||'').trim();
+        const email=String(data.get('customerEmail')||'').trim();
+        const message=String(data.get('message')||'').trim();
+        if(name.length<2||!form.checkValidity()||!message)throw new Error('Please complete all fields.');
+        const bytes=crypto.getRandomValues(new Uint8Array(32));
+        const token=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+        const response=await fetch('/.netlify/functions/stylera-guest-start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,token})});
+        const result=await response.json();
+        if(!response.ok||!result.thread)throw new Error(result.message||'Could not open support request.');
+        const sent=await client.rpc('stylera_guest_send',{p_thread:result.thread,p_token:token,p_message:message});
+        if(sent.error)throw sent.error;
+        sessionStorage.setItem('stylera_guest_session',JSON.stringify({thread:result.thread,token}));
+        output.textContent='Your support request has been received. Reference: '+result.thread.slice(0,8).toUpperCase()+'. You can continue this conversation in live chat on this device.';
+        form.reset();
+      }catch(error){
+        output.textContent='We could not confirm your request was submitted. Please use live chat or email hello@samirahomedecor.com.au. '+(error.message||'');
+      }finally{button.disabled=false}
+    });
+  </script>
   <script src="js/main.js?v=22"></script>
 </body>
 </html>
