@@ -32,7 +32,9 @@ function isIssue(q){
 }
 function choose(q,preferred){
  const t=clean(q);
- if(isIssue(q))return /track|order status/i.test(q)?"orders":"returns";
+ if(/representative|human agent|customer service|live chat|speak to someone/.test(t))return "human";
+ if(/track my order|track order|order status/.test(t))return "orders";
+ if(isIssue(q))return "returns";
  if(/packaging|gift box|wrapping supplies|packing supplies/.test(t))return "packaging";
  if(/overseas|international|new zealand|other country|abroad/.test(t))return "international";
  if(/representative|human|live chat|customer service/.test(t))return "human";
