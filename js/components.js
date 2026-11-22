@@ -657,7 +657,7 @@ function buildFloating() {
           <span class="chat-avatar">${IC.spark}</span>
           <div>
             <strong>Samira Stylera</strong>
-            <small><span class="chat-online"></span> AI available 24/7 · Human support may vary</small>
+            <small><span class="chat-online"></span> AI available 24/7</small>
           </div>
         </div>
         <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
