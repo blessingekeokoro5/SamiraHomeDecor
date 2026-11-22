@@ -42,13 +42,40 @@ async function refresh(){
  const g=await client.rpc('stylera_staff_guest_threads');guest=g.data||[];
  if(g.error)say('Guest inbox unavailable: '+errText(g.error));
  $('unreadNote').textContent='Unread sync is unavailable in this recovery view; use Refresh to check messages.';
- $('careStatus').textContent='Case tracking is temporarily unavailable in this recovery view.';
+ await loadCare();
  $('inboxSummary').textContent=(registered.length+guest.length)+' conversations';
  $('careUnresolved').textContent=String([...registered,...guest].filter(x=>x.status!=='closed').length);
  $('careEscalated').textContent=String([...registered,...guest].filter(x=>x.status==='escalated').length);
- $('carePriority').textContent='—';$('careUnread').textContent='—';
+ document.querySelector('[data-care-filter="high"] strong').textContent='—';$('careUnread').textContent='—';
  render();
 }
+let careRecords=[];
+const ticketStatuses=['new','in_progress','awaiting_customer','resolved'],callbackStatuses=['pending','completed','unsuccessful'];
+function setCareStatuses(value){const options=$('careKind').value==='callback'?callbackStatuses:ticketStatuses;const sel=$('careStatusSelect');sel.replaceChildren();for(const x of options){const opt=document.createElement('option');opt.value=x;opt.textContent=x.replaceAll('_',' ');sel.append(opt)}if(options.includes(value))sel.value=value}
+function editCare(item){
+ $('careForm').hidden=false;$('careId').value=item?.id||'';$('careKind').value=item?.kind||'ticket';setCareStatuses(item?.status);
+ for(const [id,key] of [['careName','customer_name'],['careEmail','customer_email'],['carePhone','customer_phone'],['careSubject','subject'],['careNotes','notes']])$(id).value=item?.[key]||'';
+ $('carePriority').value=item?.priority||'normal';$('careForm').scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+async function loadCare(){
+ const res=await client.rpc('stylera_care_list');
+ if(res.error){$('careStatus').textContent='Case tracking is not connected: '+errText(res.error)+'. Check whether the approved Stylera care-management migration was applied.';$('careNew').hidden=true;return}
+ careRecords=res.data||[];$('careNew').hidden=false;$('careStatus').textContent=careRecords.length+' saved case record(s). New website tickets are not automatically imported.';
+ const box=$('careRecords');box.replaceChildren();
+ for(const item of careRecords){const row=document.createElement('div');row.className='inbox-note';row.style.marginBottom='10px';const b=document.createElement('button');b.type='button';b.textContent='Edit';b.style.marginLeft='12px';b.onclick=()=>editCare(item);const span=document.createElement('span');span.textContent=(item.kind==='callback'?'Callback':'Ticket')+' · '+item.customer_name+' · '+item.subject+' · '+item.status.replaceAll('_',' ')+' · '+item.priority;row.append(span,b);box.append(row)}
+ if(!careRecords.length)box.textContent='No cases saved yet. Use Add ticket or callback record to create one.';
+}
+$('careKind').onchange=()=>setCareStatuses();
+$('careNew').onclick=()=>editCare(null);
+$('careCancel').onclick=()=>{$('careForm').hidden=true;$('careForm').reset()};
+$('careForm').addEventListener('submit',async e=>{
+ e.preventDefault();const btn=e.currentTarget.querySelector('button[type=submit]');btn.disabled=true;
+ try{
+ const args={p_id:$('careId').value||null,p_kind:$('careKind').value,p_name:$('careName').value.trim(),p_email:$('careEmail').value.trim(),p_phone:$('carePhone').value.trim(),p_subject:$('careSubject').value.trim(),p_status:$('careStatusSelect').value,p_priority:$('carePriority').value,p_notes:$('careNotes').value.trim()};
+ const res=await client.rpc('stylera_care_save',args);if(res.error)throw res.error;
+ $('careForm').hidden=true;$('careForm').reset();await loadCare();say('Case record saved securely.')
+ }catch(error){$('careStatus').textContent='Case not saved: '+errText(error)}finally{btn.disabled=false}
+});
 function render(){
  const box=$('tickets');box.replaceChildren();
  const term=$('search').value.toLowerCase().trim(),filter=$('filter').value;
