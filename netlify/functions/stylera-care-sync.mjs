@@ -21,8 +21,8 @@ export default async function handler(request){
    const matches=await check.json();if(!matches.length)return json({ok:false,message:"Support message not verified"},403);
  }
  const record={kind,source_thread_id:thread,customer_name:name,customer_email:email,customer_phone:phone,subject,status:kind==="ticket"?"new":"pending",priority:"normal",notes:kind==="ticket"?"Customer Care form submission; original message remains in the linked guest conversation.":"Customer requested a callback: "+message};
- const response=await fetch(url+"/rest/v1/stylera_care_records"+(thread?"?on_conflict=source_thread_id":""),{method:"POST",headers:{...headers,"prefer":thread?"resolution=ignore-duplicates,return=minimal":"return=minimal"},body:JSON.stringify(record)});
- if(!response.ok){console.error("Case sync failed",response.status);return json({ok:false,message:"Unable to save case record"},502)}
+ const response=await fetch(url+"/rest/v1/stylera_care_records",{method:"POST",headers:{...headers,"prefer":"return=minimal"},body:JSON.stringify(record)});
+ if(!response.ok){let failure={};try{failure=await response.json()}catch{};if(response.status===409&&failure.code==="23505"&&thread)return json({ok:true,alreadySynced:true});console.error("Case sync database error",{status:response.status,code:failure.code||"unknown",hint:failure.hint||null});return json({ok:false,message:"Unable to save case record",errorCode:failure.code||"database_error"},502)}
  return json({ok:true});
 }
 export const config={method:"POST",rateLimit:{action:"rate_limit",aggregateBy:"ip",windowSize:60,windowLimit:5}};
