@@ -450,7 +450,7 @@ function buildFooter() {
         <div class="footer-help">
           <h3 class="fh-title">Questions?<br>We're here to help</h3>
           <p class="fh-avail">We're available <strong>Monday to Friday, 9am&ndash;5pm</strong><br><span>(All times ACST, Adelaide)</span></p>
-          <a class="fh-help-btn" href="support.html"><span>Help Centre</span><span class="fh-chev">&rsaquo;</span></a>
+          <a class="fh-help-btn" href="support.html"><span>Customer Care Centre</span><span class="fh-chev">&rsaquo;</span></a>
           <div class="fh-policies">${col("Our policies", policyLinks)}</div>
           <p class="fh-legal">By using our website, you agree to our <a href="policy.html?doc=terms">Terms</a> and, by providing us with your information, you are agreeing to our <a href="policy.html?doc=privacy">Privacy Policy</a>.</p>
         </div>
