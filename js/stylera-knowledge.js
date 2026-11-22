@@ -21,7 +21,8 @@ function budgetOf(q){const m=String(q).match(/(?:under|below|less than|up to|max
 const aliases={couch:"sofa",couches:"sofa",settee:"sofa",pillows:"cushion",pillow:"cushion",cushions:"cushion",vases:"vase",trays:"tray",desks:"desk",chairs:"chair",bath:"bathroom",office:"desk",wrap:"packaging",wrapping:"packaging",boxes:"box",hampers:"hamper"};
 function productMatches(question,topic){
  const budget=budgetOf(question),q=clean(question);
- let tokens=q.split(" ").filter(x=>x.length>2&&!stop.has(x)).map(x=>aliases[x]||x);
+ let tokens=q.split(" ").filter(x=>x.length>2&&!stop.has(x)&&!/^\d+$/.test(x)).map(x=>aliases[x]||x);
+ if(topic==="gifts")tokens=tokens.filter(x=>!/^(?:her|him|birthday|anniversary|christmas|housewarming|wedding|occasion|someone|special|friend|mum|dad|mother|father)$/.test(x));
  if(topic==="packaging")tokens=["packaging","box","gift"];
  if(topic==="gifts"&&!tokens.length)tokens=["hamper","vase","candle","diffuser","tray"];
  if(topic==="styling"&&!tokens.length)return [];
@@ -31,7 +32,7 @@ function productMatches(question,topic){
   let score=0;
   for(const t of tokens){if(name.includes(t))score+=7;if(cat.includes(t))score+=4;if(room.includes(t))score+=3;if(desc.includes(t))score+=1}
   if(topic==="packaging"&&!/packaging|box|wrap|bag|ribbon/.test(name+" "+cat))score=0;
-  if(topic==="gifts"&&/hamper|gift|candle|diffuser|vase|tray|decor/.test(name+" "+cat))score+=1;
+  if(topic==="gifts"&&/hamper|gift|candle|diffuser|vase|tray|decor/.test(name+" "+cat))score+=2;
   if(tokens.some(t=>colours.has(t))&&!tokens.some(t=>name.includes(t)||desc.includes(t)))score=0;
   return {p,score};
  }).filter(x=>x.score>=3).sort((a,b)=>b.score-a.score||Number(a.p.price)-Number(b.p.price)).slice(0,4).map(x=>x.p);
