@@ -72,6 +72,29 @@ window.StyleraKnowledge={
   const node=document.createElement("div");
   const para=document.createElement("p");para.style.margin="0 0 9px";para.textContent=issue?"For a problem with an order, delivery, payment, faulty item or a refund request, please submit a support ticket so Customer Care can review the details. Include your order reference if you have one, but never send payment card details or passwords. You can also use live chat below to speak with a representative.":topic?topics[topic]:"I can help with delivery estimates, styling ideas, product discovery and order-support steps. Please tell me which item, room or delivery destination you're asking about so I can give you a more useful answer. For a personal order or a question I cannot verify, connect with Customer Care below.";
   node.append(para);
+  if(topic==="orders"&&!issue){
+    const form=document.createElement("form");form.style.cssText="display:grid;gap:8px;margin:10px 0";
+    const number=document.createElement("input");number.required=true;number.maxLength=10;number.placeholder="Order number (SHD-123456)";number.setAttribute("aria-label","Order number");
+    const contact=document.createElement("input");contact.required=true;contact.maxLength=254;contact.placeholder="Checkout email or phone";contact.setAttribute("aria-label","Checkout email or phone");
+    const submit=document.createElement("button");submit.type="submit";submit.textContent="Check order status";
+    const result=document.createElement("p");result.setAttribute("role","status");
+    form.append(number,contact,submit,result);
+    form.addEventListener("submit",async event=>{
+      event.preventDefault();if(submit.disabled)return;
+      submit.disabled=true;result.textContent="Checking your order securely…";
+      try{
+        const response=await fetch("/.netlify/functions/order-track",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({orderNo:number.value.trim().toUpperCase(),contact:contact.value.trim()})});
+        const data=await response.json();
+        if(!response.ok||!data.ok){result.textContent="We could not verify that order. Please check your details or contact Customer Care.";return}
+        const status=data.status||{};const order=data.order||{};
+        result.textContent="Order "+String(order.orderNo||number.value)+" — "+String(status.stage||"Processing")+(status.courier?" · Courier: "+status.courier:"")+(status.trackingNo?" · Tracking: "+status.trackingNo:"")+".";
+        contact.value="";
+      }catch(error){result.textContent="Tracking is temporarily unavailable. Please use the order tracking page or contact Customer Care."}
+      finally{submit.disabled=false}
+    });
+    node.append(form);
+  }
+
   if(!issue&&(topic==="products"||topic==="styling"||topic==="gifts"||topic==="packaging"||(!topic&&q.length>5))){
    const matches=productMatches(q,topic);
    if(matches.length){const title=document.createElement("strong");title.textContent="Matching products on our website:";node.append(title);matches.forEach(p=>node.append(formatProduct(p)))}
