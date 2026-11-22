@@ -23,7 +23,7 @@ if(!client)say('Chat temporarily unavailable. Please email hello@samirahomedecor
 form.addEventListener('submit',async e=>{e.preventDefault();if(!client)return;const name=el('customerName').value.trim(),email=el('email').value.trim();if(name.length<2||!el('email').checkValidity()){say('Please enter your name and valid email.');return}const button=form.querySelector('button');button.disabled=true;say('Connecting you to Customer Care…');try{const bytes=crypto.getRandomValues(new Uint8Array(32));const secret=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');const response=await fetch('/.netlify/functions/stylera-guest-start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,token:secret})});const data=await response.json();if(!response.ok)throw new Error(data.message||'Unable to start chat');thread=data.thread;token=secret;sessionStorage.setItem('stylera_guest_session',JSON.stringify({thread,token}));showChat()}catch(err){say('Unable to start chat: '+err.message);}finally{button.disabled=false}});
 async function loadMessages(manual=false){
  if(!client||!thread||!token){if(manual)say('Please start a chat before checking replies.');return}
- if(refreshPending)return;
+ if(refreshPending){if(manual)say('A reply check is already running. Please wait a moment.');return}
  refreshPending=true;
  const button=el('refreshMessages');
  if(manual){button.disabled=true;button.textContent='Checking replies…';say('Checking for new replies…')}
