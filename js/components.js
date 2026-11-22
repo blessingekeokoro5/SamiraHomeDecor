@@ -1451,7 +1451,7 @@ function renderSupport() {
     <div id="hdResults" hidden></div>
     <div id="hdHome">
       <div class="hd-actions">
-        <button type="button" class="hd-card" onclick="dmTicketComingSoon()"><span class="hd-ic">🎫</span><div class="hd-card-t"><strong>Raise a support ticket</strong><small>Queries, complaints, orders or other issues · Coming soon</small></div><span class="hd-go">›</span></button>
+        <button type="button" class="hd-card" onclick="window.location.href='support.html#ticket'"><span class="hd-ic">🎫</span><div class="hd-card-t"><strong>Raise a support ticket</strong><small>Queries, complaints, orders or other issues</small></div><span class="hd-go">›</span></button>
         <button type="button" class="hd-card" onclick="openLiveChat()"><span class="hd-ic">🟢</span><div class="hd-card-t"><strong>Live chat with our team</strong><small>Chat with a real person, right here</small></div><span class="hd-go">›</span></button>
         <form class="hd-card hd-track" id="hdTrack">
           <span class="hd-ic">🚚</span>
