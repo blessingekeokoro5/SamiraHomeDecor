@@ -199,6 +199,7 @@
   <script src="js/cart.js?v=39"></script>
   <script src="js/main.js?v=22"></script>
   <script src="js/stylist.js?v=4"></script>
+  <script src="js/stylera-knowledge.js?v=5"></script>
   <script>
     /* ===== Samira Stylera chat, conversational décor & gift advisor ===== */
     const MUSE_CHIPS = ["Gift for her under $200", "Gift for him under $200", "Under $100",
@@ -246,7 +247,7 @@
       if (museWelcome) { document.getElementById("mcBody").innerHTML = ""; museWelcome = false; }
       museAddMsg(text, "user");
       museTyping(true);
-      setTimeout(() => { museTyping(false); museReply(museRespond(text)); }, 750);
+      setTimeout(() => { museTyping(false); const answer=window.StyleraKnowledge?.respond(text); if(answer){museAddMsg(answer.outerHTML,"bot");}else{museAddMsg('Stylera is temporarily unavailable. Please <a href="/support.html#ticket">raise a support ticket</a>.',"bot");} }, 300);
     }
 
     function museImg(p) { return p.img || (p.imgs && p.imgs[0]) || ("assets/products/" + p.id + ".jpg"); }
