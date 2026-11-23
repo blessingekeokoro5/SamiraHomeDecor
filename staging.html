@@ -55,14 +55,18 @@
     .dh-controls[hidden] { display:none; }
     .dh-controls button { min-height:44px; padding:6px 14px; border:1px solid #e5cc94; border-radius:20px; color:#fff; background:transparent; cursor:pointer; }
     .dh-card ul { padding-left:20px; margin:0 0 20px; }
-    .dh-prep { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:clamp(22px,5vw,64px); align-items:center; }
-    .dh-prep ol { padding-left:24px; }
-    .dh-prep li { margin:14px 0; }
-    .dh-prep strong { display:block; color:#0c2039; }
+    .dh-process-grid { list-style:none; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,3vw,32px); }
+    .dh-process-grid li { overflow:hidden; background:#fffaf2; border:1px solid #e6ddce; border-radius:14px; }
+    .dh-process-photo { position:relative; aspect-ratio:1; overflow:hidden; background:#f0e7d8; }
+    .dh-process-photo img { position:absolute; width:300%; max-width:none; height:100%; object-fit:fill; left:var(--photo-offset,0%); }
+    .dh-process-copy { padding:clamp(18px,3vw,28px); }
+    .dh-process-copy h3 { margin:0 0 8px; }
+    .dh-process-copy p { margin:0; }
+    .dh-process-van { margin-top:32px; }
     .dh-faq details { border-top:1px solid #d8c8ab; padding:15px 0; }
     .dh-faq summary { cursor:pointer; color:#0c2039; font-weight:600; }
     .dh-faq details p { margin:10px 0 0; }
-    @media(max-width:720px) { .dh-prep { grid-template-columns:1fr; } }
+    @media(max-width:720px) { .dh-process-grid { grid-template-columns:1fr; } }
     @media(prefers-reduced-motion:reduce) { .dh-slide:not([hidden]) { animation:none; } }
   </style>
 </head>
@@ -160,16 +164,23 @@
 
 
   <section class="section bg-blush" id="process">
-    <div class="container dh-prep">
-      <div>
-        <h2>What to expect when consultations open</h2>
-        <ol>
-          <li><strong>Tell us about your project</strong> Share the suburb, rooms, timing and budget you have in mind. Photos, measurements and a floor plan are helpful if you have them.</li>
-          <li><strong>Talk through the space</strong> We’ll discuss how the rooms need to work, what you want to keep and where you’d like design or staging support.</li>
-          <li><strong>Review the proposed plan</strong> Depending on the service, we’ll outline the recommended pieces, design or styling work, and a quote so you can decide how to proceed.</li>
-        </ol>
-      </div>
-      <img class="dh-van" src="assets/services/banner-van.jpg?v=4" width="1536" height="1024" alt="Samira Home Decor van outside a client’s home" loading="lazy">
+    <div class="container">
+      <h2>What to expect when consultations open</h2>
+      <ol class="dh-process-grid">
+        <li>
+          <div class="dh-process-photo" style="--photo-offset:-0%"><img src="/assets/services/design-house-process.webp" alt="Warm design studio with a timber desk and upholstered chairs" loading="lazy"></div>
+          <div class="dh-process-copy"><span class="eyebrow">Step 1</span><h3>Tell us about your project</h3><p>When consultations open, share your suburb, the rooms you’d like to work on, your timing and budget. Photos, measurements or a floor plan will help us understand the space.</p></div>
+        </li>
+        <li>
+          <div class="dh-process-photo" style="--photo-offset:-100%"><img src="/assets/services/design-house-process.webp" alt="Interior design materials and textile samples on a timber worktable" loading="lazy"></div>
+          <div class="dh-process-copy"><span class="eyebrow">Step 2</span><h3>Talk through the space</h3><p>We’ll discuss how you want the rooms to feel and function, which pieces you want to keep and where you’d like help with layout, finishes or furnishing.</p></div>
+        </li>
+        <li>
+          <div class="dh-process-photo" style="--photo-offset:-200%"><img src="/assets/services/design-house-process.webp" alt="A designer sketching a furniture layout in pencil" loading="lazy"></div>
+          <div class="dh-process-copy"><span class="eyebrow">Step 3</span><h3>Review your proposed plan</h3><p>Depending on the service, we’ll outline our styling recommendations, furniture and homewares selections, and a quote for the proposed work.</p></div>
+        </li>
+      </ol>
+      <div class="dh-process-van"><img class="dh-van" src="assets/services/banner-van.jpg?v=4" width="1536" height="1024" alt="Samira Home Decor van outside a client’s home" loading="lazy"></div>
     </div>
   </section>
 
