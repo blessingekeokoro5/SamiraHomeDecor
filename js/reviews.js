@@ -32,7 +32,13 @@
 
   if (typeof PRODUCT_REVIEWS !== 'undefined') Object.entries(PRODUCT_REVIEWS).forEach(([id, list]) => {
     const p = products.find(p => p.id === id);
-    if (p && (!productId || id === productId)) list.forEach(r => staticReviews.push({ ...r, productId: id, productName: p.name }));
+    if (p && (!productId || id === productId)) list.forEach(r => staticReviews.push({
+      ...r, productId: id, productName: p.name,
+      who: r.who || r.name || r.author || 'Customer',
+      suburb: r.suburb || r.location || '',
+      body: r.body || r.text || r.review || r.comment || '',
+      rating: Number(r.rating || r.stars || 5)
+    }));
   });
   host.innerHTML = `<div class="shd-reviews-inner"><span class="shd-review-eyebrow">REVIEWS</span>
     <h2>What our customers say</h2>
