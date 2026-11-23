@@ -37,6 +37,9 @@
     .dh-card p { margin-bottom:18px; }
     .dh-links { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
     .dh-links a:not(.btn) { text-decoration:underline; text-underline-offset:4px; }
+    .dh-notice { padding:24px 0; background:#f8f4ee; border-bottom:1px solid #e6ddce; }
+    .dh-notice h2 { margin:0 0 8px; font-size:clamp(1.4rem,3vw,2rem); }
+    .dh-notice p { margin:0 0 14px; max-width:70ch; }
     #book, #services { scroll-margin-top:145px; }
     @media(max-width:720px) { .dh-hero-inner,.dh-grid { grid-template-columns:1fr; } }
   </style>
@@ -52,11 +55,20 @@
         <h1>Design House</h1>
         <p>Interior design and styling for the home you live in, the property you’re preparing to sell or the short stay you’re getting ready for guests.</p>
         <div class="dh-links">
-          <a class="btn btn--gold" href="#book">Book a consultation</a>
+          <a class="btn btn--gold" href="#book">Consultation update</a>
           <a class="btn btn--outline" style="color:#fff;border-color:#e5cc94" href="#services">Explore design services</a>
         </div>
       </div>
       <img class="dh-van" src="assets/services/banner-van.jpg?v=4" width="1536" height="1024" alt="Samira Home Decor van outside a client’s home" fetchpriority="high">
+    </div>
+  </section>
+
+  <section class="dh-notice" id="book" aria-labelledby="design-house-update">
+    <div class="container">
+      <h2 id="design-house-update">A Design House update</h2>
+      <p>We’re updating Samira Design House to better serve you. You can explore our design and styling services below while consultations are temporarily paused. We’ll post an update here when bookings reopen.</p>
+      <p>In the meantime, our online shop is open for furniture, home décor and gifts.</p>
+      <a class="btn btn--dark btn--sm" href="shop.html">Shop the collection</a>
     </div>
   </section>
 
@@ -72,7 +84,6 @@
             <p>Plan a room refresh or a whole-home project. We help refine the layout, palette, materials and furniture selections around how you live.</p>
             <div class="dh-links">
               <a class="btn btn--outline btn--sm" href="interior-design.html">Explore Interior design</a>
-              <a href="staging.html?service=interior#book">Book a consultation</a>
             </div>
           </div>
         </article>
@@ -83,7 +94,6 @@
             <p>Designed for newly built homes. Samira walks through the space with you, builds a room-by-room styling plan, sources the pieces and coordinates installation. Choose individual pieces or ask about styling kits.</p>
             <div class="dh-links">
               <a class="btn btn--outline btn--sm" href="styled-spaces.html">Explore Styled Spaces by Samira</a>
-              <a href="staging.html?service=istyling#book">Book a consultation</a>
             </div>
           </div>
         </article>
@@ -94,7 +104,6 @@
             <p>Refresh the home you live in or prepare a property for sale or rent. We’ll help you decide what to keep, what to add and how to present each room.</p>
             <div class="dh-links">
               <a class="btn btn--outline btn--sm" href="property-styling-staging.html">Explore Home styling &amp; staging</a>
-              <a href="staging.html?service=styling#book">Book a consultation</a>
             </div>
           </div>
         </article>
@@ -105,7 +114,6 @@
             <p>Furnish and style an Airbnb or short-stay property with practical pieces, easy-care finishes and details that photograph well.</p>
             <div class="dh-links">
               <a class="btn btn--outline btn--sm" href="vacation-rentals.html">Explore Vacation rental styling</a>
-              <a href="staging.html?service=vacation#book">Book a consultation</a>
             </div>
           </div>
         </article>
@@ -113,15 +121,7 @@
     </div>
   </section>
 
-  <section class="section bg-blush" id="book">
-    <div class="container">
-      <div class="section-head reveal"><span class="eyebrow">Consultation booking</span><h2>Book your session</h2>
-        <p>Choose your consultation and select a time. We’ll confirm the details by email.</p></div>
-      <div class="form-card reveal">
-        <div id="bookingWidget"></div>
-      </div>
-    </div>
-  </section>
+
 
   <section class="section">
     <div class="container">
@@ -154,7 +154,6 @@
   <script src="js/components.js?v=106"></script>
   <script src="js/cart.js?v=39"></script>
   <script src="js/main.js?v=22"></script>
-  <script src="js/booking.js?v=3"></script>
   <script>
     /* ===== Our Latest Projects, highlights + galleries =====
        Each highlight has a title and a list of images. To add more photos to a
