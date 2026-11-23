@@ -2,6 +2,8 @@
 (function(){
 "use strict";
 const topics={
+ greeting:"Hi! I’m Stylera, your AI Home Stylist ✨ Welcome to Samira Home Decor. Whether you’re decorating a new home, refreshing a room or searching for a statement piece, I can help with styling ideas, product discovery and shopping questions. What would you like to explore today?",
+ payments:"For available payment methods and secure checkout options, please review the payment choices shown at checkout. I cannot collect card details or verify payments in chat. If payment failed or you were charged incorrectly, please raise a support ticket so Customer Care can investigate.",
  availability:"I’m Stylera, your AI shopping and styling assistant, available 24 hours a day, 7 days a week. Human Customer Care availability may vary. You can leave a message or raise a support ticket any time.",
  packaging:"I can help you find packaging supplies. Are you looking for gift boxes, wrapping materials, or something else? I will only recommend products listed in our shop.",
  international:"We currently serve Australia and New Zealand. Furniture delivery is available within Australia only; eligible décor, homewares and gifts may be shipped to New Zealand. Which destination and postcode are you shopping for? Shipping rates must be confirmed at checkout.",
@@ -41,7 +43,7 @@ function link(href,label){const a=document.createElement("a");a.href=href;a.text
 function formatProduct(p){
  const row=document.createElement("div");row.style.cssText="display:flex;gap:9px;align-items:center;margin-top:10px";
  const img=p.img||(Array.isArray(p.imgs)&&p.imgs[0]);
- if(img&&/^(?:assets\/|\/assets\/)/.test(String(img))){const photo=document.createElement("img");photo.src="/"+String(img).replace(/^\//,"");photo.alt=p.name;photo.loading="lazy";photo.style.cssText="width:58px;height:58px;object-fit:cover;border-radius:8px";photo.onerror=()=>photo.remove();row.append(photo)}
+ if(img&&/^(?:https?:\/\/|assets\/|\/assets\/)/i.test(String(img))){const photo=document.createElement("img");photo.src=/^https?:\/\//i.test(String(img))?String(img):"/"+String(img).replace(/^\//,"");photo.alt=p.name;photo.loading="lazy";photo.style.cssText="width:64px;height:64px;object-fit:contain;border-radius:9px;background:#f7f4ed;flex-shrink:0";photo.onerror=()=>photo.remove();row.append(photo)}
  const content=document.createElement("div");content.append(link("/product.html?id="+encodeURIComponent(p.id),p.name));
  const detail=document.createElement("div");detail.textContent=Number(p.price).toLocaleString("en-AU",{style:"currency",currency:"AUD"})+" · "+(p.cat||"Home Décor");content.append(detail);row.append(content);return row
 }
@@ -51,10 +53,13 @@ function isIssue(q){
 function choose(q,preferred){
  const t=clean(q);
  if(/representative|human agent|customer service|live chat|speak to someone/.test(t))return "human";
+ if(/^(hi|hello|hey|good morning|good afternoon|good evening)[!. ]*$/.test(t))return "greeting";
+ if(/payment methods|pay by|how can i pay|accepted payments|payment options/.test(t))return "payments";
  if(/24 7|24 hours|always available|opening hours|what time.*open|are you open/.test(t))return "availability";
  if(/track my order|track order|order status/.test(t))return "orders";
  if(isIssue(q))return "returns";
  if(/packaging|gift box|wrapping supplies|packing supplies/.test(t))return "packaging";
+ if(/help me find a gift|find a gift|gift ideas|gift for|present for|birthday gift|housewarming gift/.test(t))return "gifts";
  if(/overseas|international|new zealand|other country|abroad/.test(t))return "international";
  if(/representative|human|live chat|customer service/.test(t))return "human";
  if(preferred&&topics[preferred])return preferred;
@@ -69,7 +74,7 @@ function choose(q,preferred){
 window.StyleraKnowledge={
  respond(question,preferred){
   const q=String(question||"").trim(),issue=isIssue(q),topic=choose(q,preferred);
-  const node=document.createElement("div");
+  const node=document.createElement("div");node.className="stylera-answer";
   const para=document.createElement("p");para.style.margin="0 0 9px";para.textContent=issue?"For a problem with an order, delivery, payment, faulty item or a refund request, please submit a support ticket so Customer Care can review the details. Include your order reference if you have one, but never send payment card details or passwords. You can also use live chat below to speak with a representative.":topic?topics[topic]:"I can help with delivery estimates, styling ideas, product discovery and order-support steps. Please tell me which item, room or delivery destination you're asking about so I can give you a more useful answer. For a personal order or a question I cannot verify, connect with Customer Care below.";
   node.append(para);
   if(topic==="orders"&&!issue){
@@ -102,7 +107,7 @@ window.StyleraKnowledge={
   }
   const links=document.createElement("p");links.style.margin="12px 0 0";links.append(link(issue?"/support.html#ticket":topic==="returns"?"/policy.html?doc=returns":topic==="orders"?"/track.html":topic==="styling"?"/stylist.html":topic==="gifts"?"/hampers.html":topic==="delivery"?"/policy.html?doc=delivery":"/shop.html",issue?"Submit a support ticket":topic==="returns"?"Read returns policy":topic==="orders"?"Track an order":topic==="styling"?"Explore styling tools":topic==="gifts"?"Browse gift hampers":topic==="delivery"?"Read delivery policy":"Browse our shop"));node.append(links);
   if(topic==="human"){const live=document.createElement("p");live.append(link("/stylera-supabase-customer.html","Chat with Customer Care"));node.append(live)}
-  if(!issue&&(topic==="orders"||topic==="returns"||topic==="delivery"||!topic)){const help=document.createElement("p");help.style.margin="8px 0 0";help.append(link("/support.html#ticket","Need more help? Raise a support ticket"));node.append(help)}
+  if(!issue&&(topic==="orders"||topic==="returns"||topic==="delivery"||topic==="payments"||!topic)){const help=document.createElement("p");help.style.margin="8px 0 0";help.append(link("/support.html#ticket","Need more help? Raise a support ticket"));node.append(help)}
   return node;
  }
 };
