@@ -657,7 +657,7 @@ function buildFloating() {
           <span class="chat-avatar">${IC.spark}</span>
           <div>
             <strong>Samira Stylera</strong>
-            <small><span class="chat-online"></span> AI available 24/7</small>
+            <small><span class="chat-online"></span> AI Home Stylist · Available 24/7</small>
           </div>
         </div>
         <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
@@ -1619,7 +1619,7 @@ function ensureStyleraKnowledge(){
   if(styleraKnowledgeLoading)return styleraKnowledgeLoading;
   styleraKnowledgeLoading=new Promise((resolve,reject)=>{
     const script=document.createElement("script");
-    script.src="/js/stylera-knowledge.js?v=7";
+    script.src="/js/stylera-knowledge.js?v=8";
     script.onload=()=>window.StyleraKnowledge?resolve(window.StyleraKnowledge):reject(new Error("Stylera knowledge unavailable"));
     script.onerror=()=>reject(new Error("Stylera knowledge could not load"));
     document.head.append(script);
@@ -1670,7 +1670,7 @@ function initChat() {
 
   const greet = () => {
     if (greeted) return; greeted = true;
-    chatAppend("bot", `Hi, I'm the <strong>Samira Stylera</strong> ✦ your 24/7 AI décor, shopping &amp; gift advisor. Tell me who you're shopping for and I'll suggest something they'll love, or pick a category below. Need help with an order? Switch to the <strong>Help desk</strong> above.`);
+    chatAppend("bot", `Hi! I’m <strong>Stylera, your AI Home Stylist ✨</strong><br><br>Welcome to Samira Home Decor! Whether you’re decorating a new home, refreshing a room or searching for that perfect statement piece, I’m here to help.<br><br>What would you like to explore today?`);
   };
   const switchTab = (name) => {
     tabs.forEach(x => x.classList.toggle("active", x.dataset.tab === name));
