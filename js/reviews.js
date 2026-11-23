@@ -90,6 +90,9 @@
   });
   let all = staticReviews;
   const more = host.querySelector('.shd-review-more');
+  // Imported email reviews sometimes include a separate star line in the review text.
+  // Ratings are rendered by the review card, so remove that redundant line only.
+  const cleanReviewBody = value => String(value || '').replace(/^\s*(?:(?:⭐|🌟|★|☆|✨|⭐️)\s*){2,}(?:[.!:–—-]\s*)?/, '').trim();
   const reviewCard = r => {
     const date = r.date ? new Date(r.date).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' }) : '';
     const reviewedProduct = products.find(p => p.id === r.productId);
@@ -99,7 +102,7 @@
     const productDetail = productUrl ? `<a class="shd-review-product" href="${esc(productUrl)}" aria-label="View ${esc(reviewedProduct.name)} product">${safeImage ? `<img class="shd-review-product-img" src="${esc(safeImage)}" alt="${esc(reviewedProduct.name)}" loading="lazy" decoding="async" onerror="this.style.display='none'">` : ''}<span class="shd-review-product-name">${esc(reviewedProduct.name)}</span></a>` : '';
     // Some imported reviews include emoji star ratings in their text.
     // The card already renders the verified numeric rating; avoid a second row of stars.
-    const displayBody = String(r.body || '').replace(/^\\s*(?:(?:⭐|🌟|★|☆|✨)\\s*){2,}(?:[.!:–—-]\\s*)?/, '').trim() || String(r.body || '');
+    const displayBody = cleanReviewBody(r.body);
     return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${stars(r.rating)}</div><p>${esc(displayBody)}</p><button type="button" class="shd-review-read" data-review-index="${all.indexOf(r)}">Read full review</button><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div>${productDetail}</article>`;
   };
   let loopObserver;
