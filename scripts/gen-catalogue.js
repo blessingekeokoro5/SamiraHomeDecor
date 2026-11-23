@@ -160,13 +160,32 @@ const shareIndex = {};
 (PRODUCTS || []).forEach((p) => {
   if (!p || !p.id || p.demo || p.comingSoon) return;
   const img = (p.imgs && p.imgs[0]) || p.img || "";
+  const firstSize = p.sizes?.[0];
+  const description = String(p.desc || "")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/(?:Ready-to-ship\s+)?supplier stock,?\s*subject to availability\.?/gi, "")
+    .replace(/Member savings are included;?\s*additional percentage offers do not apply\.?/gi, "")
+    .replace(/Additional percentage offers do not apply\.?/gi, "")
+    .replace(/\s+/g, " ").trim();
   shareIndex[p.id] = {
     n: String(p.name || ""),
     i: String(img).split("?")[0],
-    p: p.price != null ? Number(p.price) : null,
-    d: String(p.desc || "").replace(/\s+/g, " ").slice(0, 180)
+    p: p.price == null ? null : num(firstSize?.price ?? p.price),
+    d: description,
+    sku: p.sku || p.id,
+    preorder: products[p.id]?.preorder || false
   };
 });
+const descriptionFrequency = new Map();
+for (const item of Object.values(shareIndex)) {
+  descriptionFrequency.set(item.d, (descriptionFrequency.get(item.d) || 0) + 1);
+}
+for (const [id, item] of Object.entries(shareIndex)) {
+  if (descriptionFrequency.get(item.d) > 1) item.meta = `${item.n}. ${item.d}`;
+  if (id === "bt01") {
+    item.meta = "Shop the Aurelia 5-piece marble and gold bathroom accessories set. See the included vanity pieces, finish and delivery options at Samira Home Decor.";
+  }
+}
 fs.writeFileSync(
   path.join(__dirname, "..", "share-index.json"),
   JSON.stringify(shareIndex) + "\n"

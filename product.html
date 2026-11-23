@@ -578,6 +578,10 @@
       if (btn) btn.classList.add("active");
     }
 
+    function productImageLabel(p) {
+      return String(p.name).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+    }
+
     function render() {
       const id = new URLSearchParams(location.search).get("id");
       const p = (typeof PRODUCTS !== "undefined") && PRODUCTS.find(x => x.id === id);
@@ -586,7 +590,7 @@
         wrap.innerHTML = `<div class="empty-state"><div class="em">🔍</div><h2>Product not found</h2><p>This piece may have sold out or moved.</p><a class="btn btn--primary" href="shop.html" style="margin-top:16px">Back to shop</a></div>`;
         return;
       }
-      document.title = p.name + ", Samira Home Decor";
+      document.title = p.name + " | Samira Home Decor";
       // Self-referencing canonical for this specific product (SEO: each product = its own URL)
       (function(){ let l = document.querySelector('link[rel="canonical"]'); if (!l){ l = document.createElement("link"); l.rel = "canonical"; document.head.appendChild(l); } l.href = "https://samirahomedecor.com.au/product.html?id=" + p.id; })();
       // Normalise plain-string sizes -> {label, price} so the gallery/size template (which expects objects) doesn't throw
@@ -598,7 +602,7 @@
       // Product schema (JSON-LD) for Google rich results
       (function () {
         const SITE = "https://samirahomedecor.com.au";
-        const startPrice = (p.sizes && p.sizes.length) ? Math.min.apply(null, p.sizes.map(s => s.price)) : p.price;
+        const startPrice = (p.sizes && p.sizes.length) ? (p.sizes[0].price ?? p.price) : p.price;
         const imgSrc = (p.imgs && p.imgs[0]) || p.img || ("assets/products/" + p.id + ".jpg");
         const ld = {
           "@context": "https://schema.org", "@type": "Product",
@@ -612,16 +616,24 @@
             url: SITE + "/product.html?id=" + p.id,
             priceCurrency: "AUD",
             price: Number(startPrice).toFixed(2),
-            availability: "https://schema.org/InStock",
+            availability: "https://schema.org/" + (isPreorder(p) ? "PreOrder" : "InStock"),
             itemCondition: "https://schema.org/NewCondition"
           }
         };
         if (rev) ld.aggregateRating = { "@type": "AggregateRating", ratingValue: rev.avg, reviewCount: rev.total };
         if (p.price == null) delete ld.offers; // enquiry-only: no price to advertise
-        const s = document.createElement("script");
+        const existing = document.getElementById("product-schema");
+        const s = existing || document.createElement("script");
+        s.id = "product-schema";
         s.type = "application/ld+json";
-        s.textContent = JSON.stringify(ld);
-        document.head.appendChild(s);
+        if (existing) {
+          const serverProduct = JSON.parse(existing.textContent);
+          if (ld.aggregateRating) serverProduct.aggregateRating = ld.aggregateRating;
+          s.textContent = JSON.stringify(serverProduct);
+        } else {
+          s.textContent = JSON.stringify(ld);
+        }
+        if (!existing) document.head.appendChild(s);
       })();
 
       // GA4: product view
@@ -666,15 +678,20 @@
         galleryHtml = `
           <div class="pdp-gallery">
             <div class="main">${saveBadge}${verifiedBadge}
-              <div class="ph" data-label="${p.name}"><img class="ph-img" id="pdpMainImg" src="${gimgs[0]}" alt="${p.name}"></div>
+              <div class="ph" data-label="${p.name}"><img class="ph-img" id="pdpMainImg" src="${gimgs[0]}" alt="${productImageLabel(p)}" fetchpriority="high"></div>
               <button class="zoom-btn" type="button" aria-label="Zoom image" data-name="${(p.name || '').replace(/"/g, '&quot;')}" onclick="showZoom(document.getElementById('pdpMainImg').src, this.getAttribute('data-name'))">${IC.search}</button>
             </div>
             ${toolsHtml}
-            ${gimgs.length > 1 ? `<div class="pdp-thumbs">${gimgs.map((s, i) => `<button type="button" class="pdp-thumb ${i === 0 ? 'active' : ''}" onclick="pdpSetImg('${s}', this)"><img src="${s}" alt=""></button>`).join("")}</div>` : ""}
+            ${gimgs.length > 1 ? `<div class="pdp-thumbs">${gimgs.map((s, i) => `<button type="button" class="pdp-thumb ${i === 0 ? 'active' : ''}" aria-label="View image ${i + 1} of ${productImageLabel(p)}" onclick="pdpSetImg('${s}', this)"><img src="${s}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
           </div>`;
       } else {
         galleryHtml = `<div class="pdp-gallery"><div class="main">${saveBadge}${verifiedBadge}<div class="ph ${p.ph}" data-label="${p.name}">${prodImgTag(p)}</div></div>${toolsHtml}</div>`;
       }
+      const guide = p.cat === "Bathroom" || p.room === "Bathroom"
+        ? '<p><a href="bathroom-accessories-buying-guide.html">Bathroom accessories buying guide</a></p>'
+        : ["Living Room", "Furniture", "Home Décor"].includes(p.cat)
+          ? '<p><a href="luxury-home-styling-guide.html">Luxury home styling guide</a></p>'
+          : "";
       wrap.innerHTML = `
         <div class="pdp">
           ${galleryHtml}
@@ -810,6 +827,7 @@
             ${p.cat === "Packaging" ? "" : `<div class="pdp-social">🛒 <span><strong>Other people want this.</strong> Over <b>${cartWant(p)}</b> people have this in their carts right now.</span></div>`}
             ${aiOverviewHtml(p)}
             ${productAccordion(p)}
+            ${guide}
             <a class="pdp-trade" href="trade.html">🧳 <span><strong>Shopping for a business?</strong> Join our Trade &amp; Commercial Program for exclusive trade pricing →</span></a>
           </div>
         </div>`;

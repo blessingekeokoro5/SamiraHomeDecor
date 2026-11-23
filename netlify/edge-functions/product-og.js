@@ -33,7 +33,7 @@ const esc = (s) => String(s)
 
 function money(n) {
   if (n == null) return "";
-  return "$" + Number(n).toLocaleString("en-AU", { maximumFractionDigits: 0 });
+  return "$" + Number(n).toLocaleString("en-AU", { maximumFractionDigits: 2 });
 }
 
 export default async function handler(request, context) {
@@ -50,22 +50,45 @@ export default async function handler(request, context) {
     const product = Object.hasOwn(index, id) ? index[id] : null;
     if (!product) return response;
 
-    const raw = product.i ? "/" + String(product.i).replace(/^\//, "") : FALLBACK_IMG;
-    const image = `${SITE}/.netlify/images?url=${encodeURIComponent(raw)}&w=1200&h=630&fit=cover&fm=jpg&q=82`;
-    const title = `${product.n}${product.p ? " — " + money(product.p) : ""} | Samira Home Decor`;
+    const raw = product.i || FALLBACK_IMG;
+    const productImage = new URL(raw, SITE + "/").href;
+    const image = `${SITE}/.netlify/images?url=${encodeURIComponent(/^https?:/i.test(raw) ? raw : new URL(raw, SITE + "/").pathname)}&w=1200&h=630&fit=cover&fm=jpg&q=82`;
+    const title = `${product.n} | Samira Home Decor`;
     const description = product.d || "Discover " + product.n + " at Samira Home Decor. Check delivery options on the product page.";
     const pageUrl = `${SITE}/product.html?id=${encodeURIComponent(id)}`;
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: product.n,
+      image: product.i ? [productImage] : undefined,
+      description,
+      sku: product.sku || id,
+      ...(product.p > 0 ? {
+        offers: {
+          "@type": "Offer",
+          url: pageUrl,
+          priceCurrency: "AUD",
+          price: Number(product.p).toFixed(2),
+          availability: product.preorder ? "https://schema.org/PreOrder" : "https://schema.org/InStock",
+          itemCondition: "https://schema.org/NewCondition"
+        }
+      } : {})
+    };
+    const productJson = JSON.stringify(schema).replace(/</g, "\\u003c");
+    const snippet = product.meta || description;
+    const metaDescription = snippet.length > 170 ? snippet.slice(0, 167).replace(/\s+\S*$/, "") + "…" : snippet;
 
     // Straight string work on the head: no rewriter dependency, nothing to break.
     html = await response.text();
     const set = (pattern, replacement) => { html = html.replace(pattern, () => replacement); };
 
-    set(/<\/head>/i, `<link rel="canonical" href="${esc(pageUrl)}">\n</head>`);
-    set('<div id="pdpWrap"></div>', `<div id="pdpWrap"><h1>${esc(product.n)}</h1><p>${esc(description)}</p></div>`);
+    set(/<\/head>/i, `<link rel="canonical" href="${esc(pageUrl)}">\n<script id="product-schema" type="application/ld+json">${productJson}</script>\n</head>`);
+    set('<div id="pdpWrap"></div>', `<div id="pdpWrap"><h1>${esc(product.n)}</h1><p>${esc(description)}</p>${product.p > 0 ? `<p>${esc(money(product.p))} AUD${product.preorder ? " · Pre-order" : ""}</p>` : ""}</div>`);
     set(/<title>[\s\S]*?<\/title>/i, `<title>${esc(title)}</title>`);
-    set(/<meta name="description" content="[^"]*">/i, `<meta name="description" content="${esc(description)}">`);
+    set(/<meta name="description" content="[^"]*">/i, `<meta name="description" content="${esc(metaDescription)}">`);
     set(/<meta property="og:title" content="[^"]*">/i, `<meta property="og:title" content="${esc(title)}">`);
-    set(/<meta property="og:description" content="[^"]*">/i, `<meta property="og:description" content="${esc(description)}">`);
+    set(/<meta property="og:description" content="[^"]*">/i, `<meta property="og:description" content="${esc(metaDescription)}">`);
     set(/<meta property="og:url" content="[^"]*">/i, `<meta property="og:url" content="${esc(pageUrl)}">`);
     set(/<meta property="og:image" content="[^"]*">/i, `<meta property="og:image" content="${esc(image)}">`);
     set(/<meta name="twitter:image" content="[^"]*">/i, `<meta name="twitter:image" content="${esc(image)}">`);

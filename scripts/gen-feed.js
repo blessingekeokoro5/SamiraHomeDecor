@@ -21,7 +21,8 @@ const dataPath = path.join(root, "js", "data.js");
 
 // Load js/data.js in a sandbox (browser-only calls like localStorage
 // are wrapped in try/catch inside the file, so they no-op here).
-const code = fs.readFileSync(dataPath, "utf8") + fs.readFileSync(path.join(root,"js/adairs-bathroom.js"),"utf8");
+const code = [dataPath, ...["adairs-bathroom.js", "shein-bathroom-expansion.js"].map((file) => path.join(root, "js", file))]
+  .map((file) => fs.readFileSync(file, "utf8")).join("\n");
 const sandbox = { localStorage: { getItem: () => null }, console };
 vm.createContext(sandbox);
 // Run the data file, then export the top-level consts onto the sandbox
@@ -35,9 +36,6 @@ const esc = (s) => String(s == null ? "" : s)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
   .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 
-// The product's headline price (p.price is the intended "from" price — for sofas
-// this is the real sofa, not the cheapest footstool/chair variant).
-function basePrice(p) { return p.price; }
 function imgUrl(p) {
   const src = p.img || (Array.isArray(p.imgs) && p.imgs[0]) || ("assets/products/" + p.id + ".png");
   if (/^https?:\/\//.test(src)) return src;
@@ -57,23 +55,21 @@ function googleCat(cat) {
   return map[cat] || "Home & Garden > Decor";
 }
 
-// Enquiry-only products (price: null) can't be listed with a price, so they stay out of the feed
-const items = PRODUCTS.filter((p) => p && p.id && p.sku && p.price != null).map((p) => {
-  const price = basePrice(p).toFixed(2);
-  const desc = (p.desc || p.name).replace(/\s+/g, " ").trim();
+// The catalogue build excludes retired, demo and coming-soon listings.
+const publicProducts = JSON.parse(fs.readFileSync(path.join(root, "share-index.json"), "utf8"));
+const items = PRODUCTS.filter((p) => p?.id && p.sku && publicProducts[p.id]?.p > 0).map((p) => {
+  const product = publicProducts[p.id];
+  const price = product.p.toFixed(2);
+  const desc = product.d || p.name;
   const extras = [];
   if (Array.isArray(p.colours) && p.colours.length) {
     extras.push(`    <g:color>${esc(p.colours.map((c) => c.name).join("/"))}</g:color>`);
-  }
-  if (p.memberPrice != null) {
-    // Member price advertised as a sale price.
-    extras.push(`    <g:sale_price>${Number(p.memberPrice).toFixed(2)} AUD</g:sale_price>`);
   }
   return `  <item>
     <g:id>${esc(p.sku)}</g:id>
     <g:title>${esc(p.name)}</g:title>
     <g:description>${esc(desc)}</g:description>
-    <g:link>${SITE}/product.html?id=${esc(p.id)}</g:link>
+    <g:link>${SITE}/product.html?id=${encodeURIComponent(p.id)}</g:link>
     <g:image_link>${esc(imgUrl(p))}</g:image_link>
     <g:availability>in_stock</g:availability>
     <g:condition>new</g:condition>
