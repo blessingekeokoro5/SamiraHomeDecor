@@ -167,3 +167,10 @@
   to = "/shop.html"
   status = 301
   force = true
+
+# Keep extensionless product links on the same canonical product route.
+[[redirects]]
+  from = "/product"
+  to = "/product.html"
+  status = 301
+  force = true

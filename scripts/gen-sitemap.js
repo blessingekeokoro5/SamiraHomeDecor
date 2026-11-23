@@ -79,7 +79,7 @@ for (const [id, product] of products) {
   const entry = catalogue[id];
   if (!entry) throw new Error(`Missing catalogue entry for ${id}`);
   const category = Object.keys(collections).find((page) => collections[page].includes(entry.cat));
-  const link = `          <li><a href="${productUrl(id)}">${esc(product.n)}</a></li>`;
+  const link = `          <li><a href="${SITE}/${productUrl(id)}">${esc(product.n)}</a></li>`;
   grouped.get(category || "shop.html").push(link);
   if (entry.furniture) grouped.get("furniture.html").push(link);
 }
