@@ -10,6 +10,17 @@
   if (productId && !product) return;
   const catalogue = products.filter(p => !p.comingSoon && p.price != null && p.cat !== 'Packaging');
   const staticReviews = [];
+  // Customer-authorised email reviews, published by the store owner.
+  const emailReviews = [
+    { productId: 'ad124741black', who: 'Lily A.', suburb: 'Geelong, VIC', rating: 5, body: 'The Clayton Black Toilet Brush Holder is surprisingly elegant for such a practical item. It looks fantastic in our renovated bathroom and feels very well made.' },
+    { productId: 'bt47', who: 'Emma D.', suburb: 'Canberra, ACT', rating: 4.5, body: 'Great quality and great value. The finish is exactly what I was looking for, and the ordering process was very easy. Highly recommend.' }
+  ];
+  for (const review of emailReviews) {
+    const p = products.find(p => p.id === review.productId);
+    if (p && (!productId || productId === review.productId)) staticReviews.push({ ...review, productName: p.name });
+  }
+  const stars = rating => '★'.repeat(Math.floor(rating)) + (rating % 1 ? '½' : '') + '☆'.repeat(Math.max(0, 5 - Math.ceil(rating)));
+
   if (typeof PRODUCT_REVIEWS !== 'undefined') Object.entries(PRODUCT_REVIEWS).forEach(([id, list]) => {
     const p = products.find(p => p.id === id);
     if (p && (!productId || id === productId)) list.forEach(r => staticReviews.push({ ...r, productId: id, productName: p.name }));
@@ -80,7 +91,7 @@
     // Some imported reviews include emoji star ratings in their text.
     // The card already renders the verified numeric rating; avoid a second row of stars.
     const displayBody = String(r.body || '').replace(/^\\s*(?:(?:⭐|🌟|★|☆|✨)\\s*){2,}(?:[.!:–—-]\\s*)?/, '').trim() || String(r.body || '');
-    return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><p>${esc(displayBody)}</p><button type="button" class="shd-review-read" data-review-index="${all.indexOf(r)}">Read full review</button><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div>${productDetail}</article>`;
+    return `<article class="shd-review-card"><span class="shd-review-quote" aria-hidden="true">“</span><div class="shd-review-gold" aria-label="${r.rating} out of 5 stars">${stars(r.rating)}</div><p>${esc(displayBody)}</p><button type="button" class="shd-review-read" data-review-index="${all.indexOf(r)}">Read full review</button><div class="shd-review-person"><span class="shd-review-avatar" aria-hidden="true">${esc((r.who || 'C').charAt(0))}</span><div><b>${esc(r.who || 'Customer')}</b><small>${esc([r.suburb, date].filter(Boolean).join(' · '))}</small></div></div>${productDetail}</article>`;
   };
   let loopObserver;
   function render() {
@@ -138,7 +149,7 @@
     const r = all[Number(button.dataset.reviewIndex)];
     if (!r) return;
     const p = products.find(p => p.id === r.productId);
-    reviewDialog.querySelector('.shd-review-dialog-content').innerHTML = '<div class="shd-review-gold">' + '★'.repeat(r.rating) + '</div><h3>Customer review</h3><p>' + esc(r.body) + '</p><strong>' + esc(r.who || 'Verified buyer') + '</strong>' + (p ? '<div class="shd-review-dialog-product">Reviewed product: ' + esc(p.name) + '</div>' : '');
+    reviewDialog.querySelector('.shd-review-dialog-content').innerHTML = '<div class="shd-review-gold">' + stars(r.rating) + '</div><h3>Customer review</h3><p>' + esc(r.body) + '</p><strong>' + esc(r.who || 'Verified buyer') + '</strong>' + (p ? '<div class="shd-review-dialog-product">Reviewed product: ' + esc(p.name) + '</div>' : '');
     reviewDialog.showModal();
   });
   render();
