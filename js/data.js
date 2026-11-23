@@ -16609,48 +16609,6 @@ function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
     }
   },
   {
-    "id": "kl129996",
-    "sku": "SH-KB-129996",
-    "name": "San Pierre Light Brown Ash Veneer Double Bed",
-    "cat": "Bedroom",
-    "room": "Bedroom",
-    "price": 6665,
-    "memberPrice": 5998,
-    "priceFloor": 5998,
-    "readyDining": true,
-    "bedroomImport": true,
-    "supplier": "Koala Living",
-    "supplierProductId": 129996,
-    "freightClass": "bedroom-129996",
-    "furniture": true,
-    "auOnly": true,
-    "preorder": false,
-    "fastShip": true,
-    "tag": "New arrival",
-    "img": "https://img.koalaliving.com.au/products/129996/015973d1-554d-4c12-a528-d6879ddba327.png",
-    "imgs": [
-      "https://img.koalaliving.com.au/products/129996/015973d1-554d-4c12-a528-d6879ddba327.png",
-      "https://img.koalaliving.com.au/products/129996/0aabe7d5-2086-4088-bf85-1d1f09eb5a19.png",
-      "https://img.koalaliving.com.au/products/129996/08469716-c0f3-44d6-9c70-d4cc56442fb9.png",
-      "https://img.koalaliving.com.au/products/129996/80294814-4801-480f-8cef-66fc831b0a58.png",
-      "https://img.koalaliving.com.au/products/129996/62713004-c3a2-4063-b2a7-33d4f90200cb.png",
-      "https://img.koalaliving.com.au/products/129996/94827020-dd41-4a27-9f33-50d4c2058366.png",
-      "https://img.koalaliving.com.au/products/129996/2e450999-ee1e-4825-9069-2f5caee7f3de.png",
-      "https://img.koalaliving.com.au/products/129996/5701e700-3bab-45ca-ad01-60b686b64f22.png",
-      "https://img.koalaliving.com.au/products/129996/30634b4d-e1ba-438a-b26e-1f7c34ec09e6.png",
-      "https://img.koalaliving.com.au/products/129996/be66055a-9558-4972-8713-bb8757cc14ce.png",
-      "https://img.koalaliving.com.au/products/129996/c18ba357-5bcf-481c-8869-4e6bcb779f47.png",
-      "https://img.koalaliving.com.au/products/129996/ddf6077f-3546-452a-9a28-c9dbd32d1f0a.png",
-      "https://img.koalaliving.com.au/products/129996/c13f9e78-4587-4774-872d-48378c78f4da.png"
-    ],
-    "desc": "Style your bedroom with the San Pierre Light Brown Ash Veneer Double Bed. Supplied as one item in the finish shown. Availability and delivery timing are confirmed for your location. Delivery is charged separately by postcode and quantity; additional items incur additional delivery charges. Member savings are included; additional percentage offers do not apply.",
-    "specs": {
-      "Type": "Beds",
-      "Sold as": "One unit",
-      "Colour": "Brown"
-    }
-  },
-  {
     "id": "kl130117",
     "sku": "SH-KB-130117",
     "name": "Riviera Isabelline White Fabric Queen Bed with Medium Brown Ash Veneer",
