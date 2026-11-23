@@ -4257,7 +4257,7 @@ function realReviews(id) {
 
 /* ============================================================
    HALLOWEEN SALE — 15% off every priced shop product (Adelaide
-   time), 31 Oct to 2 Nov inclusive, repeating every year. Packaging
+   time), 31 Oct to 2 Nov 2026 inclusive. Packaging
    (price on enquiry) and gift cards are excluded. Runs BEFORE the
    sofa sale so Halloween takes priority and discounts never stack
    (the sofa sale skips anything already marked down). The Netlify
@@ -4269,7 +4269,7 @@ function halloweenOn() {
   var now;
   try { now = new Date(new Date().toLocaleString("en-US", { timeZone: "Australia/Adelaide" })); }
   catch (e) { now = new Date(); }
-  var y = now.getFullYear();
+  var y = 2026;
   var start = new Date(y, HALLOWEEN.startMonth, HALLOWEEN.startDay, 0, 0, 0);
   var end = new Date(y, HALLOWEEN.endMonth, HALLOWEEN.endDay, 23, 59, 59);
   return now >= start && now <= end;

@@ -47,19 +47,21 @@ export default async function handler(request, context) {
     if (!id) return response;
 
     const index = await shareIndex(request);
-    const product = index[id];
+    const product = Object.hasOwn(index, id) ? index[id] : null;
     if (!product) return response;
 
     const raw = product.i ? "/" + String(product.i).replace(/^\//, "") : FALLBACK_IMG;
     const image = `${SITE}/.netlify/images?url=${encodeURIComponent(raw)}&w=1200&h=630&fit=cover&fm=jpg&q=82`;
     const title = `${product.n}${product.p ? " — " + money(product.p) : ""} | Samira Home Decor`;
-    const description = product.d || "Beautiful spaces, brighter lives. Home décor delivered Australia-wide.";
+    const description = product.d || "Discover " + product.n + " at Samira Home Decor. Check delivery options on the product page.";
     const pageUrl = `${SITE}/product.html?id=${encodeURIComponent(id)}`;
 
     // Straight string work on the head: no rewriter dependency, nothing to break.
     html = await response.text();
-    const set = (pattern, replacement) => { html = html.replace(pattern, replacement); };
+    const set = (pattern, replacement) => { html = html.replace(pattern, () => replacement); };
 
+    set(/<\/head>/i, `<link rel="canonical" href="${esc(pageUrl)}">\n</head>`);
+    set('<div id="pdpWrap"></div>', `<div id="pdpWrap"><h1>${esc(product.n)}</h1><p>${esc(description)}</p></div>`);
     set(/<title>[\s\S]*?<\/title>/i, `<title>${esc(title)}</title>`);
     set(/<meta name="description" content="[^"]*">/i, `<meta name="description" content="${esc(description)}">`);
     set(/<meta property="og:title" content="[^"]*">/i, `<meta property="og:title" content="${esc(title)}">`);

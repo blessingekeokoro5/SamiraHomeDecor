@@ -9,17 +9,12 @@
    worked out automatically from the total weight of the cart and the region
    the shopper selects at checkout. Adjust these numbers to match your courier. */
 /* International rates = Australia Post International Standard (2026), fitted to
-   base + perKg (AUD). e.g. USA 1 kg = 16.10 + 27.50 = $43.60, 2 kg = $71.10.
+   base + perKg (AUD).
    Australia stays domestic. Note: Aus Post International Standard has a 20 kg
    per-parcel limit — items over 20 kg need a custom freight quote. */
 const SHIP_ZONES = {
   "Australia":       { base: 9.95,  perKg: 2.5,  freeOver: 3500, days: "3 to 8 business days" },
   "New Zealand":     { base: 14.20, perKg: 14.80, days: "6 to 12 business days" },
-  "United Kingdom":  { base: 21.30, perKg: 28.60, days: "10 to 24 business days" },
-  "United States":   { base: 16.10, perKg: 27.50, days: "10 to 24 business days" },
-  "Canada":          { base: 16.10, perKg: 27.50, days: "10 to 24 business days" },
-  "Switzerland":     { base: 21.30, perKg: 28.60, days: "10 to 24 business days" },
-  "Germany":         { base: 21.30, perKg: 28.60, days: "10 to 24 business days" }
 };
 const DEFAULT_ITEM_KG = 0.75; // used when a product has no weight set
 const INTL_MAX_KG = 20;       // Australia Post International Standard parcel limit
@@ -74,7 +69,7 @@ function bulkyIntlItem() {
   const found = getCart().find(function (i) {
     if (i.giftCard || i.hamper) return false;
     const p = (typeof findProduct === "function") ? findProduct(i.id) : null;
-    return (p && p.auOnly) || estimateWeight(p || i) > INTL_MAX_KG;
+    return (p && (p.auOnly || isFurniture(p))) || estimateWeight(p || i) > INTL_MAX_KG;
   });
   return found || null;
 }
@@ -212,7 +207,7 @@ function updateTotalsUI() {
   const bulky = (t.country !== "Australia") ? bulkyIntlItem() : null;
   window._intlBlocked = !!bulky || t.quoteRequired;
   if (line && bulky) {
-    line.innerHTML = `<span style="color:var(--rose-deep)">⚠️ <strong>${bulky.name}</strong> ${(function(){ const bp = (typeof findProduct === "function") ? findProduct(bulky.id) : null; return (bp && bp.auOnly) ? `ships within Australia only, so it can't be sent to ${t.country}.` : `is too large to ship to ${t.country} (over ${INTL_MAX_KG}kg).`; })()} It can only be delivered within Australia — please remove it for an international order, or <a href="contact.html">contact us</a> for a freight quote.</span>`;
+    line.innerHTML = `<span style="color:var(--rose-deep)">⚠️ <strong>${bulky.name}</strong> ${(function(){ const bp = (typeof findProduct === "function") ? findProduct(bulky.id) : null; return (bp && (bp.auOnly || isFurniture(bp))) ? `ships within Australia only, so it can't be sent to ${t.country}.` : `is too large to ship to ${t.country} (over ${INTL_MAX_KG}kg).`; })()} It can only be delivered within Australia — please remove it for an international order, or <a href="contact.html">contact us</a> for a freight quote.</span>`;
   } else if (line && t.quoteRequired) {
     const requestItems=getCart().map(i=>Object.assign({},findProduct(i.id)||{},i));
     const requestDestination={postcode:(document.getElementById("coPost")||{}).value,suburb:(document.getElementById("coSuburb")||{}).value,country:shipCountry()};
@@ -361,7 +356,7 @@ function renderCheckout() {
         <div class="field-row">
           <div class="field" id="coStateField"><label>State *</label><select id="coState"><option value="">Select state</option>${STATES.map(s => `<option>${s}</option>`).join("")}</select></div>
           <div class="field"><label>Country</label>
-            <select id="coCountry"><option>Australia</option><option>New Zealand</option><option>United Kingdom</option><option>United States</option><option>Canada</option><option>Switzerland</option><option>Germany</option></select></div>
+            <select id="coCountry"><option>Australia</option><option>New Zealand</option></select></div>
         </div>
         <div id="intlHelp"></div>
         <h3 class="cx-h" style="margin-top:22px">Delivery method</h3>

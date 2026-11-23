@@ -8,7 +8,7 @@
   functions = "netlify/functions"
   # On every deploy, regenerate from js/data.js (the single source of truth):
   #  • the trusted server-side price catalogue (checkout can't drift from shop)
-  #  • the sitemap (so new products get crawled)
+  #  • the sitemap and collection links (so new products get crawled)
   #  • the Google Shopping feed (so new products reach Merchant Center)
   command = "node scripts/gen-catalogue.js && node scripts/gen-sitemap.js && node scripts/gen-feed.js"
 
@@ -158,5 +158,12 @@
 [[redirects]]
   from = "/admin.html."
   to = "/admin.html"
+  status = 301
+  force = true
+
+# Keep the historical shop URL and its query parameters working.
+[[redirects]]
+  from = "/shop"
+  to = "/shop.html"
   status = 301
   force = true

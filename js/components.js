@@ -1030,11 +1030,6 @@ function initCookies() {
 const REGIONS = {
   AU: { name: "Australia", flag: "🇦🇺", cur: "AUD" },
   NZ: { name: "New Zealand", flag: "🇳🇿", cur: "NZD" },
-  GB: { name: "United Kingdom", flag: "🇬🇧", cur: "GBP" },
-  US: { name: "United States", flag: "🇺🇸", cur: "USD" },
-  CA: { name: "Canada", flag: "🇨🇦", cur: "CAD" },
-  CH: { name: "Switzerland", flag: "🇨🇭", cur: "CHF" },
-  DE: { name: "Germany", flag: "🇩🇪", cur: "EUR" }
 };
 const HOME_REGION = "AU";
 
@@ -1043,11 +1038,6 @@ function detectRegion() {
     const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone || "");
     if (/Australia/.test(tz)) return "AU";
     if (/Auckland/.test(tz)) return "NZ";
-    if (/London/.test(tz)) return "GB";
-    if (/Toronto|Vancouver|Edmonton|Winnipeg|Halifax/.test(tz)) return "CA";
-    if (/Berlin/.test(tz)) return "DE";
-    if (/Zurich/.test(tz)) return "CH";
-    if (/America\//.test(tz)) return "US";
     const lang = (navigator.language || "").toUpperCase();
     for (const code of Object.keys(REGIONS)) if (lang.endsWith("-" + code)) return code;
   } catch (e) {}
@@ -1062,7 +1052,7 @@ function buildCountryModal() {
     <div class="country-card" role="dialog" aria-label="Confirm your country">
       <button class="country-close" id="countryClose" aria-label="Close">✕</button>
       <h3>Confirm your country</h3>
-      <p>You're shopping the <strong>Samira Home Decor Australia</strong> store <span id="homeFlag">🇦🇺</span>. We ship to Australia and New Zealand. Confirm your region to see prices in your currency.</p>
+      <p>You're shopping the <strong>Samira Home Decor Australia</strong> store <span id="homeFlag">🇦🇺</span>. We deliver across Australia and ship eligible décor, homewares and gifts to New Zealand. Furniture ships within Australia only. Confirm your region to see prices in your currency.</p>
       <div class="country-detected" id="countryDetected"></div>
       <label class="country-select-label">Shopping from another country?
         <select id="countrySelect">${options}</select>

@@ -44,17 +44,12 @@ function getStripe() {
 const SITE_URL = process.env.SITE_URL || "https://samirahomedecor.com.au";
 
 // Countries we ship to (ISO codes) — matches the site's shipping calculator regions
-const SHIP_COUNTRIES = ["AU", "NZ", "GB", "US", "CA", "CH", "DE"];
+const SHIP_COUNTRIES = new Map([["Australia", "AU"], ["New Zealand", "NZ"]]);
 
 /* ---- Shipping: mirrors SHIP_ZONES in js/checkout.js ---------- */
 const SHIP_ZONES = {
   "Australia":      { base: 9.95,  perKg: 2.5,  freeOver: 3500, days: [3, 8] },
   "New Zealand":    { base: 14.20, perKg: 14.80, days: [6, 12] },
-  "United Kingdom": { base: 21.30, perKg: 28.60, days: [10, 24] },
-  "United States":  { base: 16.10, perKg: 27.50, days: [10, 24] },
-  "Canada":         { base: 16.10, perKg: 27.50, days: [10, 24] },
-  "Switzerland":    { base: 21.30, perKg: 28.60, days: [10, 24] },
-  "Germany":        { base: 21.30, perKg: 28.60, days: [10, 24] },
 };
 
 // Pure helpers exposed for financial parity tests; Netlify invokes handler only.
@@ -193,13 +188,13 @@ function blackFridayOn() {
 }
 
 // Halloween: 15% off every priced catalogue product except Packaging,
-// 31 Oct – 2 Nov inclusive (Adelaide time), every year. Takes priority over
+// 31 Oct – 2 Nov 2026 inclusive (Adelaide time). Takes priority over
 // the sofa sale and Black Friday (no stacking). Mirrors js/data.js.
 const HALLOWEEN_PCT = 15;
 function halloweenOn() {
   try {
     const now = new Date(new Date().toLocaleString("en-US", { timeZone: "Australia/Adelaide" }));
-    const y = now.getFullYear();
+    const y = 2026;
     return now >= new Date(y, 9, 31, 0, 0, 0) && now <= new Date(y, 10, 2, 23, 59, 59);
   } catch (e) { return false; }
 }
@@ -432,8 +427,11 @@ exports.handler = async (event) => {
     // bulky furniture can only ship within Australia.
     const INTL_MAX_KG = 20;
     const shipCountry = String(customer.country || "Australia");
+    if (!SHIP_COUNTRIES.has(shipCountry)) {
+      return jsonResponse(400, { error: "Delivery is available in Australia and New Zealand only." });
+    }
     if (shipCountry !== "Australia") {
-      const auOnly = lines.find((l) => l.auOnly);
+      const auOnly = lines.find((l) => l.auOnly || l.furniture);
       if (auOnly) {
         return jsonResponse(400, { error: `"${auOnly.name}" can only be delivered within Australia. Please remove it for international orders.` });
       }
@@ -612,7 +610,7 @@ exports.handler = async (event) => {
         ? { custom_text: { submit: { message: "International orders may incur import duties or taxes, payable by the recipient." } } }
         : {}),
       customer_email: customer.email || undefined,
-      shipping_address_collection: { allowed_countries: SHIP_COUNTRIES },
+      shipping_address_collection: { allowed_countries: [SHIP_COUNTRIES.get(shipCountry)] },
       billing_address_collection: "auto",
       // Prices are GST-inclusive (Australian standard) so no Stripe Tax is added.
       allow_promotion_codes: false,
