@@ -278,6 +278,7 @@ function buildHeader() {
     { label: "Rugs, Cushions & Throws", href: "home-decor.html?sub=Rugs", icon: "▧" },
     { label: "Kitchen & Dining", href: "kitchenware.html", icon: "⌂" },
     { label: "Gifts & Hampers", href: "hampers.html", icon: "🎁" },
+    { label: "Digital Products", href: "digital-products.html", icon: "▤" },
     { label: "All Home Décor", href: "home-decor.html", icon: "✦" }
   ];
   const inspirationRows = [
@@ -377,6 +378,7 @@ function buildHeader() {
           <li><a href="index.html#ranges">Our Ranges</a></li>
           <li><a class="nav-ready" href="shop.html?avail=ready">✓ Ready to Ship</a></li>
           ${catTabs}
+          <li><a href="digital-products.html"${page === "digital-products.html" ? ' aria-current="page"' : ""}>Digital Products</a></li>
           <li data-cat="services"><a href="staging.html">Services ${IC.caret}</a></li>
         </ul>
       </div>
