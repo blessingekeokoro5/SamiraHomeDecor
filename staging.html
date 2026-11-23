@@ -86,9 +86,6 @@
       </div>
       <div class="dh-carousel" id="design-carousel" role="group" aria-label="Featured furniture and homewares">
         <a class="dh-slide" href="/product.html?id=lx03"><img src="/assets/products/lx03.webp" alt="Talor cream velvet sofa" width="800" height="640" fetchpriority="high"><span>Talor cream velvet sofa · View product</span></a>
-        <a class="dh-slide" href="/product.html?id=lx10" hidden><img src="/assets/products/lx10.webp" alt="Roux mother-of-pearl console" width="800" height="640" loading="lazy"><span>Roux mother-of-pearl console · View product</span></a>
-        <a class="dh-slide" href="/product.html?id=kl12" hidden><img src="/assets/products/kl12.webp" alt="Gold sculptural vase" width="800" height="640" loading="lazy"><span>Gold sculptural vase · View product</span></a>
-        <a class="dh-slide" href="/product.html?id=bl189" hidden><img src="/assets/products/bl189.webp" alt="Camden white coverlet" width="800" height="640" loading="lazy"><span>Camden white coverlet · View product</span></a>
         <div class="dh-controls" hidden>
           <button type="button" data-move="-1" aria-label="Previous product">←</button>
           <button type="button" data-play>Pause slideshow</button>
@@ -189,43 +186,118 @@
   <div id="site-footer"></div>
   <script src="js/data.js?v=99"></script>
   <script src="js/adairs-bathroom.js?v=1"></script>
+  <script src="js/shein-bathroom-expansion.js?v=1"></script>
   <script src="js/components.js?v=106"></script>
   <script src="js/cart.js?v=39"></script>
   <script src="js/main.js?v=22"></script>
   <script>
     (() => {
       const carousel = document.getElementById("design-carousel");
-      const slides = [...carousel.querySelectorAll(".dh-slide")];
+      const initial = carousel.querySelector(".dh-slide");
       const controls = carousel.querySelector(".dh-controls");
       const play = controls.querySelector("[data-play]");
       const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+      const furnitureCategories = new Set(["Furniture", "Living Room", "Dining", "Bedroom", "Office", "Outdoor"]);
+      const homewareCategories = new Set(["Home Décor", "Bathroom", "Kitchenware"]);
+      const seen = new Set(["lx03"]);
+      const furniture = [];
+      const homewares = [];
+      const catalogue = typeof PRODUCTS === "undefined" ? [] : [...PRODUCTS];
+      catalogue.sort((a, b) => String(b?.added || "").localeCompare(String(a?.added || "")));
+      for (const product of catalogue) {
+        if (!product?.id || seen.has(product.id) || !product.name || !(product.price > 0)
+          || product.hidden || product.demo || product.comingSoon || product.placeholder
+          || product.soldOut || product.outOfStock || product.inStock === false) continue;
+        const group = furnitureCategories.has(product.cat) ? furniture : homewareCategories.has(product.cat) ? homewares : null;
+        if (!group) continue;
+        const source = product.imgs?.[0] || product.img;
+        if (typeof source !== "string" || !source.trim()) continue;
+        const image = new URL(source, document.baseURI);
+        if (!["https:", "http:"].includes(image.protocol)) continue;
+        seen.add(product.id);
+        group.push({ id: product.id, name: product.name, image: image.href });
+      }
+      const products = [{ id: "lx03", name: initial.querySelector("img").alt, image: initial.querySelector("img").src }];
+      for (let i = 0; i < Math.max(furniture.length, homewares.length); i++) {
+        if (homewares[i]) products.push(homewares[i]);
+        if (furniture[i]) products.push(furniture[i]);
+      }
+      if (products.length < 2) return;
+
       let current = 0;
       let playing = !reduced.matches;
       let timer;
-      function move(by) {
-        slides[current].hidden = true;
-        current = (current + by + slides.length) % slides.length;
-        slides[current].hidden = false;
+      let generation = 0;
+      let pending;
+      const unavailable = new Set();
+
+      function preload(direction) {
+        if (pending?.direction === direction) return pending;
+        let index = current;
+        do {
+          index = (index + direction + products.length) % products.length;
+        } while (index !== current && unavailable.has(index));
+        if (index === current) return null;
+        const image = new Image();
+        image.src = products[index].image;
+        pending = { direction, index, image };
+        return pending;
       }
+
+      function move(direction) {
+        const next = preload(direction);
+        if (!next) return;
+        const { index, image } = next;
+        if (!image.complete) return;
+        pending = null;
+        if (!image.naturalWidth) {
+          unavailable.add(index);
+          preload(direction);
+          return;
+        }
+        const product = products[index];
+        const link = document.createElement("a");
+        link.className = "dh-slide";
+        link.href = "/product.html?id=" + encodeURIComponent(product.id);
+        image.alt = product.name;
+        const caption = document.createElement("span");
+        caption.textContent = product.name + " · View product";
+        link.append(image, caption);
+        carousel.querySelector(".dh-slide").replaceWith(link);
+        current = index;
+        preload(1);
+      }
+
       function schedule() {
         clearTimeout(timer);
         play.textContent = playing ? "Pause slideshow" : "Play slideshow";
-        if (playing && !document.hidden && !carousel.matches(":hover, :focus-within")) {
-          timer = setTimeout(() => { move(1); schedule(); }, 5500);
+        if (playing && !document.hidden && !carousel.querySelector(".dh-slide").matches(":focus-within")) {
+          timer = setTimeout(() => { move(1); schedule(); }, 3000);
         }
       }
-      controls.addEventListener("click", event => {
+
+      controls.addEventListener("click", async event => {
         const button = event.target.closest("button");
         if (!button) return;
-        if (button === play) playing = !playing;
-        else move(Number(button.dataset.move));
+        const request = ++generation;
+        clearTimeout(timer);
+        if (button === play) {
+          playing = !playing;
+        } else {
+          const direction = Number(button.dataset.move);
+          const next = preload(direction);
+          if (next && !next.image.complete) await next.image.decode().catch(() => {});
+          if (request !== generation) return;
+          move(direction);
+        }
         schedule();
       });
-      for (const event of ["mouseenter", "mouseleave", "focusin", "focusout"]) {
+      for (const event of ["focusin", "focusout"]) {
         carousel.addEventListener(event, () => setTimeout(schedule, 0));
       }
       reduced.addEventListener("change", () => { playing = !reduced.matches; schedule(); });
       document.addEventListener("visibilitychange", schedule);
+      preload(1);
       controls.hidden = false;
       schedule();
     })();
