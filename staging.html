@@ -42,6 +42,27 @@
     .dh-notice p { margin:0 0 14px; max-width:70ch; }
     #book, #services { scroll-margin-top:145px; }
     @media(max-width:720px) { .dh-hero-inner,.dh-grid { grid-template-columns:1fr; } }
+
+    .dh-carousel { min-width:0; }
+    .dh-slide { display:block; position:relative; overflow:hidden; border-radius:14px; background:#faf8f4; }
+    .dh-slide[hidden] { display:none; }
+    .dh-slide img { width:100%; height:clamp(260px,38vw,520px); object-fit:contain; display:block; }
+    .dh-slide span { display:block; padding:13px 18px; background:#eee4d1; color:#0c2039; font-weight:600; }
+    .dh-slide:not([hidden]) { animation:dh-fade .55s ease; }
+    @keyframes dh-fade { from { opacity:.55; } to { opacity:1; } }
+    .dh-controls { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .dh-controls[hidden] { display:none; }
+    .dh-controls button { min-height:44px; padding:6px 14px; border:1px solid #e5cc94; border-radius:20px; color:#fff; background:transparent; cursor:pointer; }
+    .dh-card ul { padding-left:20px; margin:0 0 20px; }
+    .dh-prep { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:clamp(22px,5vw,64px); align-items:center; }
+    .dh-prep ol { padding-left:24px; }
+    .dh-prep li { margin:14px 0; }
+    .dh-prep strong { display:block; color:#0c2039; }
+    .dh-faq details { border-top:1px solid #d8c8ab; padding:15px 0; }
+    .dh-faq summary { cursor:pointer; color:#0c2039; font-weight:600; }
+    .dh-faq details p { margin:10px 0 0; }
+    @media(max-width:720px) { .dh-prep { grid-template-columns:1fr; } }
+    @media(prefers-reduced-motion:reduce) { .dh-slide:not([hidden]) { animation:none; } }
   </style>
 </head>
 <body data-page="staging.html">
@@ -59,7 +80,17 @@
           <a class="btn btn--outline" style="color:#fff;border-color:#e5cc94" href="#services">Explore design services</a>
         </div>
       </div>
-      <img class="dh-van" src="assets/services/banner-van.jpg?v=4" width="1536" height="1024" alt="Samira Home Decor van outside a client’s home" fetchpriority="high">
+      <div class="dh-carousel" id="design-carousel" role="group" aria-label="Featured furniture and homewares">
+        <a class="dh-slide" href="/product.html?id=lx03"><img src="/assets/products/lx03.webp" alt="Talor cream velvet sofa" width="800" height="640" fetchpriority="high"><span>Talor cream velvet sofa · View product</span></a>
+        <a class="dh-slide" href="/product.html?id=lx10" hidden><img src="/assets/products/lx10.webp" alt="Roux mother-of-pearl console" width="800" height="640" loading="lazy"><span>Roux mother-of-pearl console · View product</span></a>
+        <a class="dh-slide" href="/product.html?id=kl12" hidden><img src="/assets/products/kl12.webp" alt="Gold sculptural vase" width="800" height="640" loading="lazy"><span>Gold sculptural vase · View product</span></a>
+        <a class="dh-slide" href="/product.html?id=bl189" hidden><img src="/assets/products/bl189.webp" alt="Camden white coverlet" width="800" height="640" loading="lazy"><span>Camden white coverlet · View product</span></a>
+        <div class="dh-controls" hidden>
+          <button type="button" data-move="-1" aria-label="Previous product">←</button>
+          <button type="button" data-play>Pause slideshow</button>
+          <button type="button" data-move="1" aria-label="Next product">→</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -74,7 +105,8 @@
 
   <section class="section" id="services">
     <div class="container">
-      <h2>Design services</h2>
+      <h2>Planned design services</h2>
+      <p>Explore the support we’re preparing, from finishing a single room to furnishing a new build or short stay. The scope and quote will depend on your property, priorities and budget.</p>
       <nav class="dh-nav" aria-label="Design services"><a href="#interior">Interior design</a><a href="#styled-spaces">Styled Spaces by Samira</a><a href="#home-styling">Home styling &amp; staging</a><a href="#vacation-rental">Vacation rental styling</a></nav>
       <div class="dh-grid">
         <article class="dh-card" id="interior">
@@ -82,16 +114,17 @@
           <div class="dh-copy">
             <h3>Interior design</h3>
             <p>For a room refresh or a whole-home project, we plan to begin with your priorities, measurements and budget. Depending on the project, the next step may include layout ideas, a colour and materials palette, and a shortlist of furniture and finishes.</p>
+            <ul><li>A room layout and furniture placement</li><li>Colour, materials and finishes</li><li>A curated furniture and homewares shortlist</li></ul>
             <div class="dh-links">
               <a class="btn btn--outline btn--sm" href="interior-design.html">Explore Interior design</a>
             </div>
           </div>
         </article>
         <article class="dh-card" id="styled-spaces">
-          <img src="assets/services/project-1.jpg" alt="Furnished rooms styled by Samira" width="800" height="500" loading="lazy">
           <div class="dh-copy">
             <h3>Styled Spaces by Samira</h3>
             <p>Designed for newly built homes, this service is intended to start with a walkthrough with Samira. Together, you’ll identify what each room needs and which pieces you want to keep. The proposed plan can cover furniture placement, textiles and finishing touches, with sourcing and installation discussed as part of the scope.</p>
+            <ul><li>A walkthrough for your newly built home</li><li>A room-by-room styling plan</li><li>Options for sourcing and installation</li></ul>
             <div class="dh-links">
               <a class="btn btn--outline btn--sm" href="styled-spaces.html">Explore Styled Spaces by Samira</a>
             </div>
@@ -102,6 +135,7 @@
           <div class="dh-copy">
             <h3>Home styling &amp; staging</h3>
             <p>For a home you live in, the focus will be on using your existing furniture, improving the layout and choosing pieces that bring the room together. For a property going to market, we’ll discuss the rooms to stage, your photography date and whether furniture hire or installation fits the project.</p>
+            <ul><li>Advice on what to keep, move or add</li><li>A staging scope aligned to your listing date</li><li>Furniture hire and installation options where suitable</li></ul>
             <div class="dh-links">
               <a class="btn btn--outline btn--sm" href="property-styling-staging.html">Explore Home styling &amp; staging</a>
             </div>
@@ -112,6 +146,7 @@
           <div class="dh-copy">
             <h3>Vacation rental styling</h3>
             <p>For an Airbnb or short-stay property, we plan to start with who stays there, what furnishings are already in place and when you want to list. Recommendations may include a guest-friendly room layout, easy-care furniture and finishing touches for listing photos.</p>
+            <ul><li>Furnishings planned around your guests</li><li>Easy-care finishes and practical layouts</li><li>Styling for listing photography</li></ul>
             <div class="dh-links">
               <a class="btn btn--outline btn--sm" href="vacation-rentals.html">Explore Vacation rental styling</a>
             </div>
@@ -123,30 +158,38 @@
 
 
 
-  <section class="section">
+  <section class="section bg-blush" id="process">
+    <div class="container dh-prep">
+      <div>
+        <h2>What to expect when consultations open</h2>
+        <ol>
+          <li><strong>Tell us about your project</strong> Share the suburb, rooms, timing and budget you have in mind. Photos, measurements and a floor plan are helpful if you have them.</li>
+          <li><strong>Talk through the space</strong> We’ll discuss how the rooms need to work, what you want to keep and where you’d like design or staging support.</li>
+          <li><strong>Review the proposed plan</strong> Depending on the service, we’ll outline the recommended pieces, design or styling work, and a quote so you can decide how to proceed.</li>
+        </ol>
+      </div>
+      <img class="dh-van" src="assets/services/banner-van.jpg?v=4" width="1536" height="1024" alt="Samira Home Decor van outside a client’s home" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section" id="service-area">
     <div class="container">
-      <div class="section-head reveal">
-        <h2 class="mission-title" style="margin-top:0">Our Latest Projects</h2>
-        <span class="mission-div"></span>
-        <p style="text-align:center;max-width:730px;margin:22px auto 0;color:var(--body)">We pride ourselves on creating a lasting first impression through beautiful furnishings and considered design, a vision that helps your home sell or rent quickly, and feels truly special to live in.</p>
-      </div>
-      <div class="proj-grid" id="projGrid"></div>
-      <p class="text-center"><a href="personal-shopping.html">Personal shopping</a> · <a href="cleaning-services.html">Cleaning services</a></p>
-      <div class="text-center" style="margin-top:40px">
-        <a class="btn btn--dark" href="portfolio.html">View our full portfolio →</a>
-      </div>
+      <h2>Design House service area</h2>
+      <p>We’re planning Design House services for Adelaide. We’ll share suburb coverage and consultation options when bookings open. You can already browse furniture and homewares in the <a href="shop.html">online shop</a>.</p>
+    </div>
+  </section>
+
+  <section class="section bg-blush" id="design-faq">
+    <div class="container dh-faq">
+      <h2>Design House FAQs</h2>
+      <details><summary>Can I book a consultation now?</summary><p>Consultations are temporarily paused. We’ll post an update on this page when bookings open.</p></details>
+      <details><summary>Can Design House help with a renovation?</summary><p>We plan to help with the furnishing and styling decisions around a renovation, such as layout, finishes and pieces to purchase. Tell us which decisions are already made and what you’re still working through.</p></details>
+      <details><summary>What will my service include?</summary><p>That depends on the property and the work you need. The proposed scope and quote will outline what’s included before you decide to proceed.</p></details>
+      <details><summary>What should I prepare for a consultation?</summary><p>Bring room photos, measurements, any floor plans you have, inspiration images and a list of pieces you’d like to keep. A rough budget and target date will help guide the conversation.</p></details>
     </div>
   </section>
 
   </main>
-
-  <!-- Project gallery lightbox -->
-  <div class="proj-lightbox" id="projLightbox" aria-hidden="true">
-    <button class="pl-close" onclick="closeProject()" aria-label="Close">✕</button>
-    <button class="pl-nav prev" onclick="gNav(-1)" aria-label="Previous">‹</button>
-    <figure class="pl-stage"><img id="projLbImg" alt="Project photo"><div id="projLbCrop" class="pl-crop" style="display:none"></div><figcaption id="projLbCap"></figcaption></figure>
-    <button class="pl-nav next" onclick="gNav(1)" aria-label="Next">›</button>
-  </div>
 
   <div id="site-footer"></div>
   <script src="js/data.js?v=99"></script>
@@ -155,56 +198,42 @@
   <script src="js/cart.js?v=39"></script>
   <script src="js/main.js?v=22"></script>
   <script>
-    /* ===== Our Latest Projects, highlights + galleries =====
-       Each highlight has a title and a list of images. To add more photos to a
-       highlight, drop them in assets/services/ and add their paths to `images`. */
-    // Each pair image is split into two suburb-labelled cards (left / right half).
-    const PROJECTS = [
-      { title: "Paradise, SA · Fireplace Living Room",  src: "assets/services/project-1.jpg", pos: "0%" },
-      { title: "Norwood, SA · Restful Bedroom",         src: "assets/services/project-1.jpg", pos: "100%" },
-      { title: "Burnside, SA · Timber Kitchen",         src: "assets/services/project-2.jpg", pos: "0%" },
-      { title: "Prospect, SA · Bright Family Lounge",   src: "assets/services/project-2.jpg", pos: "100%" },
-      { title: "Glenelg, SA · Statement Kitchen",       src: "assets/services/project-3.jpg", pos: "0%" },
-      { title: "Unley, SA · Calm Bedroom",              src: "assets/services/project-3.jpg", pos: "100%" },
-      { title: "Walkerville, SA · Butler's Pantry",     src: "assets/services/project-4.jpg", pos: "0%" },
-      { title: "North Adelaide, SA · Serene Bedroom",   src: "assets/services/project-4.jpg", pos: "100%" },
-      { title: "Henley Beach, SA · Coastal Living Room", src: "assets/services/project-5.jpg", pos: "0%" },
-      { title: "Brighton, SA · Entertainer's Kitchen",  src: "assets/services/project-5.jpg", pos: "100%" },
-      { title: "Stirling, SA · Whole-Home Living",      src: "assets/services/project-6.jpg", pos: "100%" }
-    ];
-
-    (function renderProjects() {
-      const grid = document.getElementById("projGrid");
-      if (!grid) return;
-      grid.innerHTML = PROJECTS.map((p, i) =>
-        `<figure class="proj-item reveal" onclick="openHalf(${i})" title="${p.title}">
-          <div class="proj-half" style="background-image:url('${p.src}');background-position:${p.pos} center"></div>
-          <figcaption class="proj-cap">${p.title}</figcaption>
-        </figure>`).join("");
-      if (typeof initReveal === "function") initReveal();
+    (() => {
+      const carousel = document.getElementById("design-carousel");
+      const slides = [...carousel.querySelectorAll(".dh-slide")];
+      const controls = carousel.querySelector(".dh-controls");
+      const play = controls.querySelector("[data-play]");
+      const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+      let current = 0;
+      let playing = !reduced.matches;
+      let timer;
+      function move(by) {
+        slides[current].hidden = true;
+        current = (current + by + slides.length) % slides.length;
+        slides[current].hidden = false;
+      }
+      function schedule() {
+        clearTimeout(timer);
+        play.textContent = playing ? "Pause slideshow" : "Play slideshow";
+        if (playing && !document.hidden && !carousel.matches(":hover, :focus-within")) {
+          timer = setTimeout(() => { move(1); schedule(); }, 5500);
+        }
+      }
+      controls.addEventListener("click", event => {
+        const button = event.target.closest("button");
+        if (!button) return;
+        if (button === play) playing = !playing;
+        else move(Number(button.dataset.move));
+        schedule();
+      });
+      for (const event of ["mouseenter", "mouseleave", "focusin", "focusout"]) {
+        carousel.addEventListener(event, () => setTimeout(schedule, 0));
+      }
+      reduced.addEventListener("change", () => { playing = !reduced.matches; schedule(); });
+      document.addEventListener("visibilitychange", schedule);
+      controls.hidden = false;
+      schedule();
     })();
-
-    function openHalf(i) {
-      const p = PROJECTS[i]; if (!p) return;
-      const crop = document.getElementById("projLbCrop");
-      crop.style.backgroundImage = `url('${p.src}')`;
-      crop.style.backgroundPosition = `${p.pos} center`;
-      crop.style.display = "block";
-      document.getElementById("projLbImg").style.display = "none";
-      document.getElementById("projLbCap").textContent = p.title;
-      document.querySelectorAll("#projLightbox .pl-nav").forEach(b => b.style.display = "none");
-      const lb = document.getElementById("projLightbox");
-      lb.classList.add("open"); lb.setAttribute("aria-hidden", "false");
-    }
-    function closeProject() {
-      const lb = document.getElementById("projLightbox");
-      lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true");
-    }
-    document.getElementById("projLightbox").addEventListener("click", (e) => { if (e.target.id === "projLightbox") closeProject(); });
-    document.addEventListener("keydown", (e) => {
-      if (document.getElementById("projLightbox").classList.contains("open") && e.key === "Escape") closeProject();
-    });
-
   </script>
 </body>
 </html>
