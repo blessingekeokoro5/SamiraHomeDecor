@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://samirahomedecor.com.au/staging.html">
-  <title>Property Styling, Staging & Interior Design, Samira Home Decor</title>
-  <meta name="description" content="Samira Home Decor home styling, property staging and interior design services. Book an in-home styling, staging or interior design consultation, available Australia-wide.">
+  <title>Design House | Samira Home Decor</title>
+  <meta name="description" content="Explore Samira Design House in Adelaide for interior design, new-build styling, home styling and staging, and vacation rental styling.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Samira Home Decor">
   <meta property="og:image" content="https://samirahomedecor.com.au/assets/hero.jpg">
@@ -21,114 +21,94 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
   <link rel="stylesheet" href="css/styles.css?v=70">
   <style>
-    .svc-hero { position: relative; overflow: hidden; border-radius: var(--radius-lg); min-height: 540px; display: flex; align-items: center; box-shadow: var(--shadow); }
-    .svc-hero-slides { position: absolute; inset: 0; z-index: 0; }
-    .svc-hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0;
-      transition: opacity 1.4s ease; animation: svcKen 20s ease-in-out infinite alternate; }
-    .svc-hero-slide.active { opacity: 1; }
-    @keyframes svcKen { from { transform: scale(1.06); } to { transform: scale(1.15); } }
-    .svc-hero-scrim { position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(90deg, rgba(28,22,20,0.85) 0%, rgba(28,22,20,0.62) 46%, rgba(28,22,20,0.22) 100%); }
-    .svc-hero-inner { position: relative; z-index: 2; color: #fff; max-width: 620px; padding: 64px 52px; }
-    .svc-hero-inner .eyebrow { color: var(--rose-soft); }
-    .svc-hero-inner h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin: 10px 0 14px; }
-    .svc-hero-inner .lead { color: #f1e8e0; }
-    .svc-hero-inner .feature-list li { color: #f1e8e0; }
-    .svc-hero-inner .btn--outline { color: #fff; border-color: rgba(255,255,255,0.6); }
-    .svc-hero-inner .btn--outline:hover { background: rgba(255,255,255,0.14); color: #fff; border-color: #fff; }
-    @media (max-width: 760px) {
-      .svc-hero { min-height: 480px; border-radius: var(--radius); }
-      .svc-hero-scrim { background: linear-gradient(180deg, rgba(28,22,20,0.45) 0%, rgba(28,22,20,0.85) 100%); }
-      .svc-hero-inner { padding: 40px 24px; }
-    }
+    .dh-hero { background:#0c2039; color:#fff; padding:clamp(28px,5vw,72px) 0; }
+    .dh-hero-inner { display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 3fr); align-items:center; gap:clamp(24px,4vw,56px); }
+    .dh-hero h1 { color:#fff; font-size:clamp(2.6rem,5.6vw,5.3rem); margin:.14em 0 .22em; line-height:1.02; }
+    .dh-hero p { color:#f0ebdf; max-width:38ch; margin-bottom:24px; }
+    .dh-hero .eyebrow { color:#e5cc94; }
+    .dh-van { display:block; width:100%; height:auto; border-radius:14px; }
+    .dh-nav { display:flex; flex-wrap:wrap; gap:8px 18px; margin-bottom:32px; }
+    .dh-nav a { color:#0c2039; text-decoration:underline; text-underline-offset:4px; }
+    .dh-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(18px,3vw,34px); }
+    .dh-card { background:#f8f4ee; border:1px solid #e6ddce; border-radius:14px; overflow:hidden; scroll-margin-top:150px; }
+    .dh-card img { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; object-position:center 45%; }
+    .dh-card .dh-copy { padding:clamp(20px,3vw,36px); }
+    .dh-card h3 { font-size:clamp(1.55rem,3vw,2.2rem); margin:0 0 10px; }
+    .dh-card p { margin-bottom:18px; }
+    .dh-links { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+    .dh-links a:not(.btn) { text-decoration:underline; text-underline-offset:4px; }
+    #book, #services { scroll-margin-top:145px; }
+    @media(max-width:720px) { .dh-hero-inner,.dh-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body data-page="staging.html">
   <div id="site-header"></div>
 
-  <section class="page-banner">
-    <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a> / Services</div>
-      <span class="eyebrow">Property Styling / Staging · Interior Design · Vacation Rentals · Home Décor Personal Shopper</span>
-      <h1>Beautifully styled, effortlessly you</h1>
-      <p>Personalised property styling &amp; staging, interior design and vacation rental styling, for living beautifully today or selling faster tomorrow. Enquire to get started.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px">
-        <a class="btn btn--primary" href="#book">Book a consultation</a>
-        <a class="btn btn--outline" href="#services">View our services</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Display banner: van photo shown whole, then styling and cleaning -->
-  <section class="svc-display" aria-label="Samira Home Decor styling, delivery and cleaning">
-    <div class="svc-display-van"><img src="assets/services/banner-van.jpg?v=4" width="1536" height="1024" alt="Samira Home Decor van delivering styled décor to a client's home" loading="eager"></div>
-    <div class="svc-display-grid">
-      <a class="svc-display-tile" href="property-styling-staging.html"><img src="assets/services/banner-styling.jpg?v=2" width="1024" height="1536" alt="Samira Home Decor stylist arranging a coffee table" loading="lazy"><span>Home styling &amp; staging</span></a>
-      <a class="svc-display-tile" href="cleaning-services.html"><img src="assets/services/banner-cleaning.jpg?v=2" width="1024" height="1536" alt="Samira Cleaning team member wiping a kitchen bench" loading="lazy"><span>Cleaning services</span></a>
-    </div>
-  </section>
-
-
-  <section class="room-nav" aria-label="Spaces we style">
-    <div class="container spaces-inner">
-      <span class="spaces-label">Spaces we style</span>
-      <div class="spaces-marquee">
-        <div class="spaces-track">
-          <span>Living Rooms</span><i>·</i><span>Bedrooms</span><i>·</i><span>Bathrooms</span><i>·</i><span>Kitchens</span><i>·</i><span>Home Offices</span><i>·</i><span>Outdoor Spaces</span><i>·</i>
-          <span aria-hidden="true">Living Rooms</span><i>·</i><span aria-hidden="true">Bedrooms</span><i>·</i><span aria-hidden="true">Bathrooms</span><i>·</i><span aria-hidden="true">Kitchens</span><i>·</i><span aria-hidden="true">Home Offices</span><i>·</i><span aria-hidden="true">Outdoor Spaces</span><i>·</i>
+  <main>
+  <section class="dh-hero">
+    <div class="container dh-hero-inner">
+      <div>
+        <span class="eyebrow">Samira Home Decor · Adelaide</span>
+        <h1>Design House</h1>
+        <p>Interior design and styling for the home you live in, the property you’re preparing to sell or the short stay you’re getting ready for guests.</p>
+        <div class="dh-links">
+          <a class="btn btn--gold" href="#book">Book a consultation</a>
+          <a class="btn btn--outline" style="color:#fff;border-color:#e5cc94" href="#services">Explore design services</a>
         </div>
       </div>
+      <img class="dh-van" src="assets/services/banner-van.jpg?v=4" width="1536" height="1024" alt="Samira Home Decor van outside a client’s home" fetchpriority="high">
     </div>
   </section>
 
-  <section class="section bg-cream2" id="services">
+  <section class="section" id="services">
     <div class="container">
-      <div class="section-head reveal"><span class="eyebrow">Services</span><h2>Ways to work together</h2>
-        <p>We're dedicated to helping you live beautifully today, or sell faster tomorrow, with a considered, hands-on approach.</p></div>
-      <div class="svc-circles">
-        <figure class="svc-circle reveal">
-          <a href="styled-spaces.html" class="svc-round"><img src="assets/services/project-1.jpg" alt="Styled Spaces by Samira" loading="lazy"><span class="svc-title">Styled Spaces by Samira</span></a>
-          <figcaption>Styling for newly built homes, handled by Samira, so the blank canvas feels lived in rather than like a display suite.<br><a class="btn btn--outline btn--sm" href="styled-spaces.html" style="margin-top:12px">Learn more →</a></figcaption>
-        </figure>
-        <figure class="svc-circle reveal">
-          <a href="property-styling-staging.html" class="svc-round"><img src="assets/services/property-styling.jpg" alt="Property Styling / Staging" loading="lazy"><span class="svc-title">Property Styling / Staging</span></a>
-          <figcaption>Refresh and restyle your rooms, or stage your home to sell, beautifully styled and photographed to attract the right buyers, faster.<br><a class="btn btn--outline btn--sm" href="property-styling-staging.html" style="margin-top:12px">Learn more →</a></figcaption>
-        </figure>
-        <figure class="svc-circle reveal">
-          <a href="interior-design.html" class="svc-round"><img src="assets/services/interior-design.jpg" alt="Interior Design" loading="lazy"><span class="svc-title">Interior Design</span></a>
-          <figcaption>A full design consult, layouts, palettes and pieces, to plan and coordinate a whole space with confidence.<br><a class="btn btn--outline btn--sm" href="interior-design.html" style="margin-top:12px">Learn more →</a></figcaption>
-        </figure>
-        <figure class="svc-circle reveal">
-          <a href="vacation-rentals.html" class="svc-round"><img src="assets/services/property-staging.jpg" alt="Vacation Rentals" loading="lazy"><span class="svc-title">Vacation Rentals</span></a>
-          <figcaption>Turnkey styling and furnishing for short-stays &amp; Airbnbs, photo-ready spaces that lift bookings and guest reviews.<br><a class="btn btn--outline btn--sm" href="vacation-rentals.html" style="margin-top:12px">Learn more →</a></figcaption>
-        </figure>
-        <figure class="svc-circle reveal">
-          <a href="personal-shopping.html" class="svc-round"><img src="assets/services/staging-feature.jpg" alt="Home Décor Personal Shopper" loading="lazy"><span class="svc-title">Home Décor Personal Shopper</span></a>
-          <figcaption>Curated décor sourcing, I shop, source and style furniture, textiles, lighting, art &amp; accessories to match your aesthetic and budget.<br><a class="btn btn--outline btn--sm" href="personal-shopping.html" style="margin-top:12px">Learn more →</a></figcaption>
-        </figure>
-        <figure class="svc-circle reveal">
-          <a href="cleaning-services.html" class="svc-round"><img src="assets/services/staging-feature.jpg" alt="Cleaning Services" loading="lazy" onerror="this.remove()"><span class="svc-title">Cleaning Services</span></a>
-          <figcaption>Residential &amp; commercial cleaning — standard, deep, spring, move-in, end-of-lease and office cleans, booked online with clear, fixed prices.<br><a class="btn btn--outline btn--sm" href="cleaning-services.html" style="margin-top:12px">Learn more →</a></figcaption>
-        </figure>
-      </div>
-      <div class="text-center" style="margin-top:40px"><a class="btn btn--dark" href="#book">Book a consultation →</a> <a class="btn btn--outline" href="contact.html" style="margin-left:8px">Get in touch</a></div>
-    </div>
-  </section>
-
-  <section class="section" id="packages">
-    <div class="container">
-      <div class="section-head reveal"><span class="eyebrow">Styling packages</span><h2>Considered packages, tailored to you</h2>
-        <p>Every space is different, so each package is priced to suit your project. Tell us what you need and we'll send a personalised quote.</p></div>
-      <div class="grid grid-3">
-        <div class="pkg reveal"><h3>Property Styling / Staging</h3><div class="amount amount--quote">Price on enquiry</div>
-          <ul><li>In-home styling consultations</li><li>Room-by-room styling plan &amp; mood board</li><li>Full-home staging for sale</li><li>Furniture &amp; décor hire</li><li>Install, style &amp; de-stage</li><li>Photography styling</li></ul>
-          <a class="btn btn--outline btn--block" href="#" onclick="openEnquire();return false;">Request a quote</a></div>
-        <div class="pkg featured reveal"><h3>Interior Design</h3><div class="amount amount--quote">Price on enquiry</div>
-          <ul><li>Full interior design consultation</li><li>Layouts, palettes &amp; material selections</li><li>Curated, shoppable product plan</li><li>Sourcing &amp; coordination</li><li>Project managed to completion</li><li>Styling &amp; the final reveal</li></ul>
-          <a class="btn btn--primary btn--block" href="#" onclick="openEnquire();return false;">Request a quote</a></div>
-        <div class="pkg reveal"><h3>Vacation Rentals</h3><div class="amount amount--quote">Price on enquiry</div>
-          <ul><li>Short-stay &amp; Airbnb styling &amp; fit-out</li><li>Turnkey furnishing packages</li><li>Photography-ready, guest-friendly styling</li><li>Durable, low-maintenance pieces</li><li>Refresh &amp; restock options</li><li>Design that lifts bookings</li></ul>
-          <a class="btn btn--outline btn--block" href="#" onclick="openEnquire();return false;">Request a quote</a></div>
+      <h2>Design services</h2>
+      <nav class="dh-nav" aria-label="Design services"><a href="#interior">Interior design</a><a href="#styled-spaces">Styled Spaces by Samira</a><a href="#home-styling">Home styling &amp; staging</a><a href="#vacation-rental">Vacation rental styling</a></nav>
+      <div class="dh-grid">
+        <article class="dh-card" id="interior">
+          <img src="assets/services/interior-design.jpg" alt="A furnished interior with coordinated finishes" width="800" height="500" loading="lazy">
+          <div class="dh-copy">
+            <h3>Interior design</h3>
+            <p>Plan a room refresh or a whole-home project. We help refine the layout, palette, materials and furniture selections around how you live.</p>
+            <div class="dh-links">
+              <a class="btn btn--outline btn--sm" href="interior-design.html">Explore Interior design</a>
+              <a href="staging.html?service=interior#book">Book a consultation</a>
+            </div>
+          </div>
+        </article>
+        <article class="dh-card" id="styled-spaces">
+          <img src="assets/services/project-1.jpg" alt="Furnished rooms styled by Samira" width="800" height="500" loading="lazy">
+          <div class="dh-copy">
+            <h3>Styled Spaces by Samira</h3>
+            <p>Designed for newly built homes. Samira walks through the space with you, builds a room-by-room styling plan, sources the pieces and coordinates installation. Choose individual pieces or ask about styling kits.</p>
+            <div class="dh-links">
+              <a class="btn btn--outline btn--sm" href="styled-spaces.html">Explore Styled Spaces by Samira</a>
+              <a href="staging.html?service=istyling#book">Book a consultation</a>
+            </div>
+          </div>
+        </article>
+        <article class="dh-card" id="home-styling">
+          <img src="assets/services/banner-styling.jpg?v=2" alt="Samira Home Decor stylist arranging greenery on a coffee table" width="800" height="500" loading="lazy">
+          <div class="dh-copy">
+            <h3>Home styling &amp; staging</h3>
+            <p>Refresh the home you live in or prepare a property for sale or rent. We’ll help you decide what to keep, what to add and how to present each room.</p>
+            <div class="dh-links">
+              <a class="btn btn--outline btn--sm" href="property-styling-staging.html">Explore Home styling &amp; staging</a>
+              <a href="staging.html?service=styling#book">Book a consultation</a>
+            </div>
+          </div>
+        </article>
+        <article class="dh-card" id="vacation-rental">
+          <img src="assets/services/property-staging.jpg" alt="A furnished property with layered textiles" width="800" height="500" loading="lazy">
+          <div class="dh-copy">
+            <h3>Vacation rental styling</h3>
+            <p>Furnish and style an Airbnb or short-stay property with practical pieces, easy-care finishes and details that photograph well.</p>
+            <div class="dh-links">
+              <a class="btn btn--outline btn--sm" href="vacation-rentals.html">Explore Vacation rental styling</a>
+              <a href="staging.html?service=vacation#book">Book a consultation</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -136,107 +116,9 @@
   <section class="section bg-blush" id="book">
     <div class="container">
       <div class="section-head reveal"><span class="eyebrow">Consultation booking</span><h2>Book your session</h2>
-        <p>Choose an in-home styling, staging or interior design consultation, pick a day &amp; time that suits you, and we'll confirm by email.</p></div>
+        <p>Choose your consultation and select a time. We’ll confirm the details by email.</p></div>
       <div class="form-card reveal">
         <div id="bookingWidget"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head reveal"><span class="eyebrow eyebrow-lined">Our process</span><h2>How we bring your space to life</h2>
-        <p>From first consultation to the final reveal, a considered, hands-on approach at every step.</p></div>
-      <div class="process-grid">
-        <div class="process-step reveal">
-          <div class="process-ic">🎯</div><h3>Scope</h3>
-          <p>We meet to understand your space, style, timing and budget, then measure up and map out what each room needs.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="process-ic">📋</div><h3>Proposal</h3>
-          <p>Using everything we've gathered, we send a tailored proposal and a personalised quote for your project.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="process-ic">🎨</div><h3>Creative</h3>
-          <p>Our stylists develop the style, colour palette and furnishings, and create a mood board for your review.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="process-ic">✅</div><h3>Approval</h3>
-          <p>Once you're happy with everything, you approve the plan and we confirm dates and begin sourcing your pieces.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="process-ic">🚚</div><h3>Install &amp; Reveal</h3>
-          <p>We deliver, style and install every piece, then reveal a finished space that's warm, considered and unmistakably yours.</p>
-        </div>
-      </div>
-      <div class="text-center" style="margin-top:40px"><a class="btn btn--dark" href="#" onclick="openEnquire();return false;">Get a quote →</a></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="svc-hero reveal">
-        <div class="svc-hero-slides" id="svcHeroSlides">
-          <div class="svc-hero-slide active" style="background-image:url('assets/hero.jpg')"></div>
-          <div class="svc-hero-slide" style="background-image:url('assets/services/staging-feature.jpg')"></div>
-          <div class="svc-hero-slide" style="background-image:url('assets/services/interior-design-feature.jpg')"></div>
-          <div class="svc-hero-slide" style="background-image:url('assets/services/property-styling.jpg')"></div>
-        </div>
-        <div class="svc-hero-scrim"></div>
-        <div class="svc-hero-inner">
-          <span class="eyebrow">Considered, layered &amp; lived-in</span>
-          <h2>Styling that tells your story</h2>
-          <p class="lead">Whether you're refreshing a single room or preparing a home for market, we bring a considered eye, a curated inventory and hands-on care, so your space feels warm, intentional and unmistakably yours.</p>
-          <ul class="feature-list">
-            <li>In-home styling consultations</li>
-            <li>Full-home staging for sale</li>
-            <li>Interior design plans, room by room</li>
-            <li>Shoppable styling plans from the Samira Home Decor shop</li>
-          </ul>
-          <div class="btn-row" style="margin-top:26px">
-            <a class="btn btn--primary" href="#book">Book a consultation</a>
-            <a class="btn btn--outline" href="stylist.html">✦ Try Samira Stylera</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="stage-clients">
-    <div class="sc-text reveal">
-      <div class="sc-inner">
-        <h2 class="sc-title">Staging</h2>
-        <span class="sc-div"></span>
-        <span class="eyebrow">Who are our clients?</span>
-        <ul class="sc-list">
-          <li>Home Owners</li>
-          <li>Real Estate Agents</li>
-          <li>Property Developers</li>
-          <li>Investors</li>
-        </ul>
-        <p class="sc-note">Love what you see? Every piece we style with can be purchased individually or as a complete package.</p>
-        <a class="btn btn--dark" href="portfolio.html">Learn more</a>
-      </div>
-    </div>
-    <div class="sc-image" style="background-image:url('assets/services/staging-feature.jpg')" role="img" aria-label="A beautifully staged Samira Home Decor kitchen interior"></div>
-  </section>
-
-  <section class="stage-clients">
-    <div class="sc-image" style="background-image:url('assets/services/interior-design-feature.jpg')" role="img" aria-label="A beautifully designed Samira Home Decor bedroom interior"></div>
-    <div class="sc-text reveal">
-      <div class="sc-inner sc-wide">
-        <h2 class="sc-title">Interior Design</h2>
-        <span class="sc-div"></span>
-        <span class="eyebrow">Why do you need a designer?</span>
-        <ul class="sc-benefits">
-          <li><strong>A look that lasts</strong><span>From edgy to elegant, we create spaces that make a lasting impression.</span></li>
-          <li><strong>Curated &amp; cohesive</strong><span>A consistent, considered style that flows through your whole home.</span></li>
-          <li><strong>One-stop-shop</strong><span>From concept to completion, we design, source and coordinate it all.</span></li>
-          <li><strong>We handle everything</strong><span>Delivery, styling, unpacking and setup, so you don't lift a finger.</span></li>
-        </ul>
-        <p class="sc-note">Every plan is created by our experienced Samira Home Decor stylists, with a considered, hands-on eye and a shoppable finish.</p>
-        <p class="sc-tag">Imagine the big reveal, just like you see on TV.</p>
-        <a class="btn btn--dark" href="#" onclick="openEnquire();return false;">Learn more</a>
       </div>
     </div>
   </section>
@@ -249,11 +131,14 @@
         <p style="text-align:center;max-width:730px;margin:22px auto 0;color:var(--body)">We pride ourselves on creating a lasting first impression through beautiful furnishings and considered design, a vision that helps your home sell or rent quickly, and feels truly special to live in.</p>
       </div>
       <div class="proj-grid" id="projGrid"></div>
+      <p class="text-center"><a href="personal-shopping.html">Personal shopping</a> · <a href="cleaning-services.html">Cleaning services</a></p>
       <div class="text-center" style="margin-top:40px">
         <a class="btn btn--dark" href="portfolio.html">View our full portfolio →</a>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Project gallery lightbox -->
   <div class="proj-lightbox" id="projLightbox" aria-hidden="true">
@@ -266,7 +151,7 @@
   <div id="site-footer"></div>
   <script src="js/data.js?v=99"></script>
   <script src="js/adairs-bathroom.js?v=1"></script>
-  <script src="js/components.js?v=98"></script>
+  <script src="js/components.js?v=106"></script>
   <script src="js/cart.js?v=39"></script>
   <script src="js/main.js?v=22"></script>
   <script src="js/booking.js?v=3"></script>
@@ -321,17 +206,6 @@
       if (document.getElementById("projLightbox").classList.contains("open") && e.key === "Escape") closeProject();
     });
 
-    // Intro banner slideshow, crossfades the background photos like the homepage hero
-    (function svcHeroSlideshow() {
-      const slides = document.querySelectorAll("#svcHeroSlides .svc-hero-slide");
-      if (slides.length < 2) return;
-      let i = 0;
-      setInterval(() => {
-        slides[i].classList.remove("active");
-        i = (i + 1) % slides.length;
-        slides[i].classList.add("active");
-      }, 5000);
-    })();
   </script>
 </body>
 </html>

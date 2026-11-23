@@ -218,13 +218,13 @@ function buildHeader() {
       <div class="mega" data-mega="services">
         <div class="container mega-inner">
           <div>
-            <h4>Services</h4>
+            <h4>Design House</h4>
             <div class="mega-cols">
               <div class="mega-col">
-                <h5>Our services</h5>
+                <h5>Design services</h5>
                 <ul>
                   <li><a href="styled-spaces.html">Styled Spaces by Samira</a></li>
-                  <li><a href="property-styling-staging.html">Property Styling &amp; Staging</a></li>
+                  <li><a href="property-styling-staging.html">Home Styling &amp; Staging</a></li>
                   <li><a href="personal-shopping.html">Home Décor Personal Shopper</a></li>
                   <li><a href="vacation-rentals.html">Vacation Rentals</a></li>
                   <li><a href="interior-design.html">Interior Design</a></li>
@@ -234,7 +234,7 @@ function buildHeader() {
               <div class="mega-col">
                 <h5>Explore</h5>
                 <ul>
-                  <li><a href="staging.html">All services</a></li>
+                  <li><a href="staging.html">Explore Design House</a></li>
                   <li><a href="portfolio.html">Our portfolio</a></li>
                   <li><a href="staging.html#book">Book a consultation</a></li>
                   <li><a href="stylist.html">Samira Stylera</a></li>
@@ -287,7 +287,7 @@ function buildHeader() {
     { label: "Our Collections", href: "index.html#ranges", icon: "▦" },
     { label: "Sale & Promotions", href: "promotions.html", icon: "%" },
     { label: "Styling Inspiration", href: "inspire.html", icon: "✧" },
-    { label: "Styling & Design Services", href: "staging.html", icon: "⌂" }
+    { label: "Design House", href: "staging.html", icon: "⌂" }
   ];
   const helpRows = [
     { label: "Contact Us", href: "contact.html", icon: "☎" },
@@ -379,7 +379,7 @@ function buildHeader() {
           <li><a class="nav-ready" href="shop.html?avail=ready">✓ Ready to Ship</a></li>
           ${catTabs}
           <li><a href="digital-products.html"${page === "digital-products.html" ? ' aria-current="page"' : ""}>Digital Products</a></li>
-          <li data-cat="services"><a href="staging.html">Services ${IC.caret}</a></li>
+          <li data-cat="services"><a href="staging.html">Design House ${IC.caret}</a></li>
         </ul>
       </div>
       ${megaMarkup}${servicesMega}
