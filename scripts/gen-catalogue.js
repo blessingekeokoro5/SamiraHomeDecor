@@ -53,6 +53,13 @@ for(let i=PRODUCTS.length-1;i>=0;i--){
  if(flagged)PRODUCTS.splice(i,1);
 }
 
+// Strip supplier branding from customer-facing BDO office product titles.
+for(const p of PRODUCTS){
+ if(!p||!(p.bdoImport||/^bdo/i.test(String(p.id||''))))continue;
+ if(typeof p.name==='string')p.name=p.name.replace(/^\\s*(?:BDO|Buy\\s*Direct\\s*Online)(?:\\s*[-–—:]\\s*|\\s+)/i,'').trim();
+ if(typeof p.title==='string')p.title=p.title.replace(/^\\s*(?:BDO|Buy\\s*Direct\\s*Online)(?:\\s*[-–—:]\\s*|\\s+)/i,'').trim();
+}
+
 const packagingKits = {};
 (PACKAGING_KITS || []).forEach((k) => { if (k && k.id && !k.hidden && num(k.price) != null) packagingKits[k.id] = { name: String(k.name || ""), price: num(k.price) }; });
 
