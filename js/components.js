@@ -3,8 +3,8 @@
  if(typeof PRODUCTS==='undefined'||!Array.isArray(PRODUCTS))return;
  for(const p of PRODUCTS){
   if(!p||!(p.bdoImport||/^bdo/i.test(String(p.id||''))))continue;
-  if(typeof p.name==='string')p.name=p.name.replace(/^\\s*(?:BDO|Buy\\s*Direct\\s*Online)(?:\\s*[-–—:]\\s*|\\s+)/i,'').trim();
-  if(typeof p.title==='string')p.title=p.title.replace(/^\\s*(?:BDO|Buy\\s*Direct\\s*Online)(?:\\s*[-–—:]\\s*|\\s+)/i,'').trim();
+  if(typeof p.name==='string')p.name=p.name.replace(/\b(?:BDO|Buy\s*Direct\s*Online)\b\s*[-–—:]?\s*/gi,'').replace(/\s{2,}/g,' ').trim();
+  if(typeof p.title==='string')p.title=p.title.replace(/\b(?:BDO|Buy\s*Direct\s*Online)\b\s*[-–—:]?\s*/gi,'').replace(/\s{2,}/g,' ').trim();
  }
 })();
 
