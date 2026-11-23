@@ -2074,4 +2074,4 @@
       "Delivery": "Calculated for your suburb and postcode at checkout."
     }
   }
-];items.forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();
+];items.filter(p=>p.id!=='ad124801black').forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();
