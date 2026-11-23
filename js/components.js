@@ -1,3 +1,10 @@
+
+/* Remove supplier-branded Koala bed listings from all storefront collections and recommendations. */
+(function(){
+  if(typeof PRODUCTS==='undefined'||!Array.isArray(PRODUCTS))return;
+  const flagged=p=>{const name=String(p.name||p.title||''); const koala=/^(kl|koala)/i.test(String(p.id||''))||/koala/i.test(String(p.supplier||p.source||'')); return koala&&/(?:cream velvet king|mustard velvet queen|stone cream queen|stone cream king single|white fabric queen.*floating drawers|\bgertrude\b|\bjacques\b|\bmadrid\b|\bharlow\b|\bsummerton\b|\bpoppy\b|\briviera\b|\bantonella\b|\bestelle\b)/i.test(name);};
+  for(let i=PRODUCTS.length-1;i>=0;i--)if(PRODUCTS[i]&&flagged(PRODUCTS[i]))PRODUCTS.splice(i,1);
+})();
 /* Do not display products with temporary placeholder-only imagery. */
 (function(){
   if(typeof PRODUCTS==='undefined'||!Array.isArray(PRODUCTS))return;
