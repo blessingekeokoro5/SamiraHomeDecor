@@ -99,9 +99,19 @@
   // Imported email reviews sometimes include a separate star line in the review text.
   // Ratings are rendered by the review card, so remove that redundant line only.
   const cleanReviewBody = value => String(value || '').replace(/^\s*(?:(?:⭐|🌟|★|☆|✨|⭐️)\s*){2,}(?:[.!:–—-]\s*)?/, '').trim();
+  // Older approved reviews may have a product name but no catalogue ID.
+  // Link only when a unique, exact catalogue match exists; never guess a product.
+  const resolveReviewedProduct = r => {
+    const byId = products.find(p => p.id === r.productId);
+    if (byId) return byId;
+    const name = String(r.productName || '').trim().toLocaleLowerCase();
+    if (!name) return null;
+    const matches = products.filter(p => String(p.name || '').trim().toLocaleLowerCase() === name);
+    return matches.length === 1 ? matches[0] : null;
+  };
   const reviewCard = r => {
     const date = r.date ? new Date(r.date).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' }) : '';
-    const reviewedProduct = products.find(p => p.id === r.productId);
+    const reviewedProduct = resolveReviewedProduct(r);
     const productUrl = reviewedProduct ? '/product.html?id=' + encodeURIComponent(reviewedProduct.id) : '';
     const image = reviewedProduct && ((reviewedProduct.imgs && reviewedProduct.imgs[0]) || reviewedProduct.img);
     const safeImage = typeof image === 'string' && (image.startsWith('https://') || image.startsWith('http://') || (image.startsWith('/') && !image.startsWith('//')) || /^[a-zA-Z0-9_.-]/.test(image)) ? image : '';
@@ -166,8 +176,8 @@
     if (!button) return;
     const r = all[Number(button.dataset.reviewIndex)];
     if (!r) return;
-    const p = products.find(p => p.id === r.productId);
-    reviewDialog.querySelector('.shd-review-dialog-content').innerHTML = '<div class="shd-review-gold">' + stars(r.rating) + '</div><h3>Customer review</h3><p>' + esc(r.body) + '</p><strong>' + esc(r.who || 'Verified buyer') + '</strong>' + (p ? '<div class="shd-review-dialog-product">Reviewed product: ' + esc(p.name) + '</div>' : '');
+    const p = resolveReviewedProduct(r);
+    reviewDialog.querySelector('.shd-review-dialog-content').innerHTML = '<div class="shd-review-gold">' + stars(r.rating) + '</div><h3>Customer review</h3><p>' + esc(r.body) + '</p><strong>' + esc(r.who || 'Verified buyer') + '</strong>' + (p ? '<div class="shd-review-dialog-product">Reviewed product: <a href="/product.html?id=' + encodeURIComponent(p.id) + '">' + esc(p.name) + '</a></div>' : '');
     reviewDialog.showModal();
   });
   render();
