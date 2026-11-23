@@ -51,6 +51,7 @@
     .dh-slide:not([hidden]) { animation:dh-fade .55s ease; }
     @keyframes dh-fade { from { opacity:.55; } to { opacity:1; } }
     .dh-controls { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .dh-slide-count { align-self:center; margin-inline-start:8px; color:#f0ebdf; }
     .dh-controls[hidden] { display:none; }
     .dh-controls button { min-height:44px; padding:6px 14px; border:1px solid #e5cc94; border-radius:20px; color:#fff; background:transparent; cursor:pointer; }
     .dh-card ul { padding-left:20px; margin:0 0 20px; }
@@ -90,6 +91,7 @@
           <button type="button" data-move="-1" aria-label="Previous product">←</button>
           <button type="button" data-play>Pause slideshow</button>
           <button type="button" data-move="1" aria-label="Next product">→</button>
+          <span class="dh-slide-count" data-slide-count></span>
         </div>
       </div>
     </div>
@@ -197,32 +199,44 @@
       const controls = carousel.querySelector(".dh-controls");
       const play = controls.querySelector("[data-play]");
       const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-      const furnitureCategories = new Set(["Furniture", "Living Room", "Dining", "Bedroom", "Office", "Outdoor"]);
-      const homewareCategories = new Set(["Home Décor", "Bathroom", "Kitchenware"]);
+      const categories = ["Furniture", "Living Room", "Dining", "Bedroom", "Office", "Outdoor", "Home Décor", "Bathroom", "Kitchenware", "Lifestyle"];
+      const buckets = new Map(categories.map(category => [category, []]));
       const seen = new Set(["lx03"]);
-      const furniture = [];
-      const homewares = [];
-      const catalogue = typeof PRODUCTS === "undefined" ? [] : [...PRODUCTS];
-      catalogue.sort((a, b) => String(b?.added || "").localeCompare(String(a?.added || "")));
-      for (const product of catalogue) {
+      for (const product of (typeof PRODUCTS === "undefined" ? [] : PRODUCTS)) {
         if (!product?.id || seen.has(product.id) || !product.name || !(product.price > 0)
           || product.hidden || product.demo || product.comingSoon || product.placeholder
           || product.soldOut || product.outOfStock || product.inStock === false) continue;
-        const group = furnitureCategories.has(product.cat) ? furniture : homewareCategories.has(product.cat) ? homewares : null;
-        if (!group) continue;
+        const bucket = buckets.get(product.cat);
+        if (!bucket || (product.cat === "Lifestyle" && !/\b(?:throw|blanket|towels?)\b/i.test(product.name))) continue;
         const source = product.imgs?.[0] || product.img;
         if (typeof source !== "string" || !source.trim()) continue;
-        const image = new URL(source, document.baseURI);
+        let image;
+        try { image = new URL(source, document.baseURI); } catch { continue; }
         if (!["https:", "http:"].includes(image.protocol)) continue;
         seen.add(product.id);
-        group.push({ id: product.id, name: product.name, image: image.href });
+        bucket.push({ id: product.id, name: product.name, image: image.href });
       }
-      const products = [{ id: "lx03", name: initial.querySelector("img").alt, image: initial.querySelector("img").src }];
-      for (let i = 0; i < Math.max(furniture.length, homewares.length); i++) {
-        if (homewares[i]) products.push(homewares[i]);
-        if (furniture[i]) products.push(furniture[i]);
+
+      // Vary the order on each visit and rotate across collections before
+      // returning to the same category. Every eligible listing gets a turn.
+      function shuffle(items) {
+        for (let i = items.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [items[i], items[j]] = [items[j], items[i]];
+        }
+        return items;
+      }
+      const groups = shuffle([...buckets.values()].filter(items => items.length).map(shuffle));
+      const firstPhoto = initial.querySelector("img");
+      const products = [{ id: "lx03", name: firstPhoto.alt, image: firstPhoto.src }];
+      for (let i = 0; i < Math.max(...groups.map(items => items.length)); i++) {
+        for (const items of groups) {
+          if (items[i]) products.push(items[i]);
+        }
       }
       if (products.length < 2) return;
+      const count = carousel.querySelector("[data-slide-count]");
+      count.textContent = "1 of " + products.length + " products";
 
       let current = 0;
       let playing = !reduced.matches;
@@ -265,6 +279,7 @@
         link.append(image, caption);
         carousel.querySelector(".dh-slide").replaceWith(link);
         current = index;
+        count.textContent = (current + 1) + " of " + products.length + " products";
         preload(1);
       }
 
