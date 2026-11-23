@@ -137,7 +137,7 @@
           <input id="mcInput" placeholder="Ask about décor, gifts, orders…" autocomplete="off">
           <button type="submit" aria-label="Send">➤</button>
         </form>
-        <div class="mc-disclaimer">AI-powered suggestions may not always be accurate.</div>
+        <div class="mc-disclaimer">AI-powered suggestions may not always be accurate. <button type="button" class="btn btn--outline" onclick="museEnd()">End chat &amp; rate</button></div>
       </div>
     </div>
   </section>
@@ -195,22 +195,23 @@
   <div id="site-footer"></div>
   <script src="js/data.js?v=99"></script>
   <script src="js/adairs-bathroom.js?v=1"></script>
-  <script src="js/components.js?v=101"></script>
+  <script src="js/components.js?v=102"></script>
   <script src="js/cart.js?v=39"></script>
   <script src="js/main.js?v=22"></script>
   <script src="js/stylist.js?v=4"></script>
-  <script src="js/stylera-knowledge.js?v=8"></script>
+  <script src="js/stylera-knowledge.js?v=9"></script>
   <script>
     /* ===== Samira Stylera chat, conversational décor & gift advisor ===== */
     const MUSE_CHIPS = ["Gift for her under $200", "Gift for him under $200", "Under $100",
       "Home décor", "Candles & fragrance", "Wellness & self-care", "Treat myself", "Help with an order"];
     let museWelcome = true;
+    let museConversation;
 
     function museWelcomeHtml() {
       return `<div class="mc-welcome">
         <div class="gi">🎁</div>
         <h3>Find the perfect piece</h3>
-        <p>Tell me who you're shopping for, or the room you're styling, and I'll suggest something they'll love.</p>
+        <p>Hi, I’m Stylera, Samira Home Decor’s AI shopping and customer care assistant. I’m not a human. How can I help today?</p>
         <p>I can help you find the perfect Samira Home Decor piece, and if you need help with an order, just ask. You can also <a href="contact.html">contact us</a> directly.</p>
       </div>`;
     }
@@ -223,7 +224,7 @@
       const body = document.getElementById("mcBody");
       const d = document.createElement("div");
       d.className = "mc-msg " + who;
-      if(html instanceof Node)d.append(html);else d.innerHTML = html;
+      if(html instanceof Node)d.append(html);else if(who==="user")d.textContent=html;else d.innerHTML = html;
       body.appendChild(d);
       body.scrollTop = body.scrollHeight;
     }
@@ -243,11 +244,16 @@
       if (!v) return false;
       i.value = ""; museAsk(v); return false;
     }
+    function museEnd() {
+      const survey = museConversation?.rating();
+      if (survey) museAddMsg(survey, "bot");
+      else document.querySelector("#mcBody .stylera-rating")?.scrollIntoView({block:"nearest"});
+    }
     function museAsk(text) {
       if (museWelcome) { document.getElementById("mcBody").innerHTML = ""; museWelcome = false; }
       museAddMsg(text, "user");
       museTyping(true);
-      setTimeout(() => { museTyping(false); const answer=window.StyleraKnowledge?.respond(text); if(answer){museAddMsg(answer,"bot");}else{museAddMsg('Stylera is temporarily unavailable. Please <a href="/support.html#ticket">raise a support ticket</a>.',"bot");} }, 300);
+      setTimeout(() => { museTyping(false); museConversation ||= window.StyleraKnowledge?.createConversation("stylist"); const answer=museConversation?.answer(text); if(answer){museAddMsg(answer,"bot");}else{museAddMsg('Stylera is temporarily unavailable. Please <a href="/support.html#ticket">raise a support ticket</a>.',"bot");} }, 300);
     }
 
     function museImg(p) { return p.img || (p.imgs && p.imgs[0]) || ("assets/products/" + p.id + ".jpg"); }

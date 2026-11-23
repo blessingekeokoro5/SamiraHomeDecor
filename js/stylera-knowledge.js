@@ -71,7 +71,121 @@ function choose(q,preferred){
  if(/product|stock|available|price|cost|sofa|chair|table|bed|bathroom|kitchen|office|outdoor|cushion|throw|vase|mirror|dining|furniture|gift/.test(t))return "products";
  return null;
 }
+const intro = "Hi, I’m Stylera, Samira Home Decor’s AI shopping and customer care assistant. I’m not a human. How can I help today?";
+const supportPaths = {
+  ticket: ["/support.html#ticket", "Open the support ticket form"],
+  human: ["/stylera-supabase-customer.html", "Chat with Customer Care"],
+  account: ["/account.html", "Go to account sign-in"],
+  callback: ["/support.html#callback", "Request a callback"]
+};
+
+function supportReply(message, ...actions) {
+  const node = document.createElement("div");
+  node.className = "stylera-answer";
+  const text = document.createElement("p");
+  text.textContent = message;
+  node.append(text);
+  for (const action of actions) {
+    const row = document.createElement("p");
+    row.append(link(...supportPaths[action]));
+    node.append(row);
+  }
+  return node;
+}
+
+function createConversation(channel) {
+  let supportActive = false;
+  let awaitingTicket = false;
+  let replied = false;
+  let survey;
+  let ratingId;
+
+  function rating() {
+    if (!replied || survey) return null;
+    const node = document.createElement("div");
+    survey = node;
+    node.className = "stylera-answer stylera-rating";
+    const prompt = document.createElement("p");
+    prompt.textContent = "Thanks for chatting with Samira Home Decor! How satisfied were you with Stylera today, from 1 to 5?";
+    const options = document.createElement("div");
+    options.className = "chat-stars";
+    const status = document.createElement("p");
+    status.setAttribute("role", "status");
+    node.append(prompt, options, status);
+    for (let score = 1; score <= 5; score++) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = score + " ★";
+      button.setAttribute("aria-label", score + " out of 5");
+      button.addEventListener("click", async () => {
+        for (const option of options.children) option.disabled = true;
+        status.textContent = "Saving your rating…";
+        try {
+          ratingId ||= crypto.randomUUID();
+          const response = await fetch("/api/stylera-rating", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({id: ratingId, score, channel})
+          });
+          if (!response.ok) throw new Error("Rating unavailable");
+          options.remove();
+          status.textContent = "Thank you. Your " + score + " out of 5 rating was saved.";
+          if (score <= 2) node.append(link(...supportPaths.human));
+        } catch {
+          status.textContent = "Your rating couldn’t be saved. Please try again.";
+          for (const option of options.children) option.disabled = false;
+        }
+      });
+      options.append(button);
+    }
+    return node;
+  }
+
+  function answer(question) {
+    const t = clean(question);
+    const closing = /^(?:ok |okay |no )?(?:all good(?: for now)?|that s all(?: for now)?|nothing else|i m good|i am good|no thanks|goodbye|bye|thanks(?: so much)?|thank you|no worries)(?: thanks| thank you| for now)?$/.test(t);
+    if (closing) return rating() || supportReply("You’re welcome. I’m here if you need anything else.");
+    replied = true;
+
+    const ticket = /\b(?:open|raise|submit|start|create|send)(?: me)? (?:a |my |the )?(?:support )?(?:ticket|case|request)\b/.test(t)
+      || (awaitingTicket && /^(?:yes(?: please)?|please do|go ahead|sure|ok|okay)$/.test(t));
+    if (ticket) {
+      supportActive = true;
+      awaitingTicket = false;
+      return supportReply("Please open the ticket form and enter an email you can access. In the message, explain which account has the issue and add the order reference if you have it. Select Email as your contact preference if you want an email reply. You’ll see confirmation and a reference after the form has been submitted.", "ticket");
+    }
+    if (/\b(?:phone number|contact number|call back|callback|can i call|how (?:do|can) i call|phone support|speak.*phone)\b/.test(t)) {
+      supportActive = true;
+      return supportReply("You can request a callback from Samira Home Decor’s Customer Care team. If you’d rather use live chat or email, you can contact the team using the options below.", "callback", "human", "ticket");
+    }
+    if (/(?:how long|when|timeframe).*(?:reply|respond|hear back|get back|care team|follow up|ticket|callback)/.test(t) || (supportActive && /^how long(?: will it take)?$/.test(t))) {
+      return supportReply("Response times vary. If you chose email on your ticket, keep an eye on the inbox and spam folder for the reply address you provided. If you need to follow up, include your ticket reference.", "human");
+    }
+    if (/\b(?:human|representative|real person|live agent|live chat|speak to someone|talk to someone)\b/.test(t)) {
+      supportActive = true;
+      return supportReply("Of course. Use live chat to reach a human on the Customer Care team. If they’re unavailable, send a support ticket and choose where you’d like the team to reply.", "human", "ticket");
+    }
+    const giftCard = /\b(?:gift cards?|giftcards?)\b/.test(t);
+    const login = /\b(?:login|log in|sign in|signing in|one time)\b/.test(t);
+    const code = /\b(?:code|otp)\b/.test(t);
+    const missing = /\b(?:missing|lost|never|not|didn t|did not|can t|couldn t|cannot|resend|re send|hasn t|haven t|where)\b/.test(t);
+    const giftIssue = giftCard && (missing || /account|email|find|locat|look|sent|receiv/.test(t));
+    if ((login && (code || missing)) || (code && missing && !giftCard) || giftIssue) {
+      supportActive = true;
+      awaitingTicket = true;
+      const codeHelp = "For a missing sign-in code, check that the sign-in email is spelled correctly, look in spam, junk and Promotions, then use Resend code on the account page. Never share the code in chat.";
+      const giftHelp = "For a missing gift card, check the recipient’s spam and Promotions folders. Customer Care can investigate using the order reference or the last four characters if you have them. Please keep the full gift card code private.";
+      const message = "I can’t look up accounts, see gift cards or verify which email an order belongs to. " + (giftIssue ? giftHelp + (login && code ? " " + codeHelp : "") : codeHelp) + " If you still need help, would you like to open a support ticket? You can give the team a reply email you can access.";
+      return supportReply(message, "ticket", "account", "human");
+    }
+    return window.StyleraKnowledge.respond(question);
+  }
+
+  return {answer, rating};
+}
+
 window.StyleraKnowledge={
+ intro, createConversation,
  respond(question,preferred){
   const q=String(question||"").trim(),issue=isIssue(q),topic=choose(q,preferred);
   const node=document.createElement("div");node.className="stylera-answer";

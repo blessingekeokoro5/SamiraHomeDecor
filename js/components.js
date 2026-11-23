@@ -669,6 +669,7 @@ function buildFloating() {
       <div class="chat-view" id="chatViewChat">
         <div class="chat-body" id="chatBody"></div>
         <div class="chat-quick" id="chatQuick"></div>
+        <div class="chat-quick"><button type="button" id="chatEnd">End chat &amp; rate</button></div>
         <form class="chat-input" id="chatForm">
           <input type="text" id="chatText" placeholder="Ask me anything…" autocomplete="off">
           <button type="submit" aria-label="Send">${IC.arrow}</button>
@@ -1545,8 +1546,7 @@ function waButton(label) {
 /* Stylera answers are now provided exclusively by js/stylera-knowledge.js. */
 
 let chatMsgSeq = 0;
-let chatAnswerCount = 0;
-let chatRated = false;
+let floatingConversation;
 
 function chatAppend(who, html, opts = {}) {
   const body = document.getElementById("chatBody");
@@ -1579,28 +1579,6 @@ function chatFeedback(id, good) {
   } else {
     chatAppend("bot", `Thanks for the honesty, I'd like to get you a better answer. Try rephrasing, or I can connect you with a Samira Home Decor customer representative right now:<br>${waButton()}`);
   }
-  maybeAskRating();
-}
-
-function maybeAskRating() {
-  if (chatRated || chatAnswerCount < 3) return;
-  chatRated = true;
-  const body = document.getElementById("chatBody");
-  const r = document.createElement("div");
-  r.className = "chat-rate";
-  r.innerHTML = `<span>How am I doing so far? Rate your experience:</span>
-    <div class="chat-stars">${[1,2,3,4,5].map(n => `<button type="button" data-n="${n}" onclick="chatRate(${n})">★</button>`).join("")}</div>`;
-  body.appendChild(r);
-  body.scrollTop = body.scrollHeight;
-}
-
-function chatRate(n) {
-  document.querySelectorAll(".chat-rate").forEach(el => el.remove());
-  if (n >= 4) {
-    chatAppend("bot", `Thank you, ${"★".repeat(n)}! 💛 I'm always here in the corner if you need me.`);
-  } else {
-    chatAppend("bot", `Thank you for the feedback, I'd love to do better. Let me connect you with a customer representative who can help properly:<br>${waButton()}`);
-  }
 }
 
 let styleraKnowledgeLoading=null;
@@ -1609,7 +1587,7 @@ function ensureStyleraKnowledge(){
   if(styleraKnowledgeLoading)return styleraKnowledgeLoading;
   styleraKnowledgeLoading=new Promise((resolve,reject)=>{
     const script=document.createElement("script");
-    script.src="/js/stylera-knowledge.js?v=8";
+    script.src="/js/stylera-knowledge.js?v=9";
     script.onload=()=>window.StyleraKnowledge?resolve(window.StyleraKnowledge):reject(new Error("Stylera knowledge unavailable"));
     script.onerror=()=>reject(new Error("Stylera knowledge could not load"));
     document.head.append(script);
@@ -1629,9 +1607,9 @@ async function chatSend(text) {
   body.scrollTop=body.scrollHeight;
   try{
     const knowledge=await ensureStyleraKnowledge();
-    const answer=knowledge.respond(text);
-    chatAnswerCount++;
-    chatAppend("bot",answer,{feedback:true});
+    floatingConversation ||= knowledge.createConversation("floating");
+    const answer = floatingConversation.answer(text);
+    chatAppend("bot", answer, {feedback: !answer.classList.contains("stylera-rating")});
   }catch(error){
     console.error("Stylera knowledge error",error);
     chatAppend("bot",'I couldn’t load my shopping guidance just now. Please try again, or <a href="/support.html#ticket">raise a support ticket</a>. You can also <a href="/stylera-supabase-customer.html">chat with Customer Care</a>.');
@@ -1660,7 +1638,7 @@ function initChat() {
 
   const greet = () => {
     if (greeted) return; greeted = true;
-    chatAppend("bot", `Hi! I’m <strong>Stylera, your AI Home Stylist ✨</strong><br><br>Welcome to Samira Home Decor! Whether you’re decorating a new home, refreshing a room or searching for that perfect statement piece, I’m here to help.<br><br>What would you like to explore today?`);
+    chatAppend("bot", "Hi, I’m Stylera, Samira Home Decor’s AI shopping and customer care assistant. I’m not a human. How can I help today?");
   };
   const switchTab = (name) => {
     tabs.forEach(x => x.classList.toggle("active", x.dataset.tab === name));
@@ -1686,6 +1664,12 @@ function initChat() {
   if (giftFab) giftFab.addEventListener("click", () => { if (!panel.classList.contains("open")) open("chat"); else switchTab("chat"); });
 
   if (close) close.addEventListener("click", closeFn);
+  document.getElementById("chatEnd")?.addEventListener("click", () => {
+    const survey = floatingConversation?.rating();
+    if (survey) chatAppend("bot", survey);
+    else if (!floatingConversation) closeFn();
+    else document.querySelector("#chatBody .stylera-rating")?.scrollIntoView({block:"nearest"});
+  });
 
   // Animated greeting nudge (once per session, if not opened)
   if (nudge && !sessionStorage.getItem("dm_nudged")) {
