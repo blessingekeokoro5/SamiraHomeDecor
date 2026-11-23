@@ -27,28 +27,6 @@ const POSTS = [
       <p>Odd numbers, varied heights, one hero, and breathing room. Style it once with intention and it will look effortless every day after.</p>`
   },
   {
-    slug: "choosing-a-home-fragrance",
-    title: "Choosing a Home Fragrance for Every Room",
-    excerpt: "Scent is the fastest way to change how a room feels. A quick guide to matching fragrance families to the mood you want, room by room.",
-    date: "2026-07-12",
-    cat: "Fragrance",
-    read: 5,
-    cover: "assets/blog/choosing-a-home-fragrance.jpg",
-    ph: "forest",
-    body: `
-      <p>Fragrance is the invisible layer of styling. You can't see it, but it's the first thing people notice and the last thing they remember. Here's how to scent a home with intention.</p>
-      <h2>Entryway, make a first impression</h2>
-      <p>Reach for something fresh and green, or a soft floral. A <a href="shop.html">diffuser</a> works beautifully here because it releases scent continuously without a flame.</p>
-      <h2>Living room, warm and welcoming</h2>
-      <p>Amber, sandalwood and vanilla notes make a space feel cosy and lived-in, perfect for the room where people gather.</p>
-      <h2>Bedroom, calm and grounding</h2>
-      <p>Lavender, chamomile and light woods signal the body to wind down. Keep it subtle; the bedroom should whisper, not shout.</p>
-      <h2>Bathroom, clean and uplifting</h2>
-      <p>Citrus, eucalyptus and sea-salt notes read as fresh and spa-like.</p>
-      <h3>A note on strength</h3>
-      <p>Match the scent throw to the room size. An ultrasonic diffuser suits open-plan living, while a smaller vaporiser is perfect for a bedside table. Rotate fragrances with the seasons, brighter in summer, warmer in winter.</p>`
-  },
-  {
     slug: "the-art-of-gifting",
     title: "The Art of Gifting: Building a Hamper They'll Remember",
     excerpt: "A thoughtful hamper says more than any card. Our stylists share how to build a gift that feels personal, generous and beautifully considered.",

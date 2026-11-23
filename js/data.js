@@ -115,7 +115,6 @@ const MEGA_MENU = [
     key: "lifestyle", label: "Lifestyle",
     columns: [
       { title: "Shop", links: ["Shop All Lifestyle", "New Arrivals", "Bestsellers", "On Sale"] },
-      { title: "Home Fragrances", links: ["Room Sprays", "Essential Oils", "Fragrance Gift Sets"] },
       { title: "Everyday", links: ["Textiles & Linen", "Stationery", "Travel Essentials"] },
       { title: "Self & Home", links: ["Gifts Under $100"] }
     ]
@@ -1582,24 +1581,6 @@ const PRODUCTS = [
 
 
 
-  { id: "hd01", name: "Aura Mist Ultrasonic Diffuser 160ml", cat: "Home Décor", price: 284, memberPrice: 254, sku: "SH-10101", tag: "New", ph: "", img: "assets/products/hd01.webp",
-    imgs: ["assets/products/hd01.webp", "assets/products/hd01-2.webp"],
-    desc: "A sculptural teardrop diffuser that turns fragrance into a moment. Whisper-quiet ultrasonic mist, soft ambient light and a 160ml reservoir bring calm, scent and a designer silhouette to any room." },
-  { id: "hd09", name: "Flame-Effect Ultrasonic Humidifier & Diffuser", cat: "Home Décor", room: "Home Décor", price: 90.10, memberPrice: 85.75, sku: "SH-10111", tag: "New", ph: "", img: "assets/products/hd09.webp",
-    imgs: ["assets/products/hd09.webp", "assets/products/hd09-2.webp", "assets/products/hd09-3.webp", "assets/products/hd09-4.webp", "assets/products/hd09-5.webp"],
-    colours: [{ name: "White", hex: "#f2efe9" }, { name: "Black", hex: "#1c1c1c" }],
-    desc: "Set the mood with the gentle flicker of a flame, without the flame. A 3-in-1 essential-oil diffuser, air humidifier and flame-effect night light in one 200ml unit, it projects a remarkably realistic dancing flame while releasing a fine, whisper-quiet mist (as low as 40 decibels) that softens dry air and carries your favourite oils through the room. A calming centrepiece for the living room, bedroom, office, yoga studio or gym, with 1/3/5-hour timers and an auto shut-off when the water runs low. Add a few drops of oil, dim the lights, and unwind.",
-    features: [
-      "3-in-1: essential-oil diffuser, air humidifier & flame-effect night light in one 200ml unit",
-      "Add a few drops of your favourite oil to relieve fatigue and relax, while improving air quality",
-      "Timer with 3 modes, 1 / 3 / 5 hours, set the spray and light mode to suit you",
-      "Auto shut-off when there's no more water, making it secure and reliable",
-      "Ultra-quiet noise-reduction technology, as low as 40 decibels, a silent partner for work, study or rest",
-      "Available in White or Black"
-    ],
-    specs: { "Type": "3-in-1 diffuser / humidifier / night light", "Capacity": "200ml", "Timer": "1 / 3 / 5 hours", "Noise level": "As low as 40 dB", "Feature": "Flame-effect light" },
-    boxContents: ["1 × Oil Diffuser", "1 × English manual"],
-    care: "Do not open the cap while in use, to avoid water leakage. Fill with water below the maximum line, overfilling can let water re-enter the main unit and damage the circuit board. Keep water away from the heat-dissipation vents (they are not waterproof). Empty and wipe dry after use." },
   { id: "hd10", added: "2026-11-04", dispatch: "2 to 3 business days", deliveryTime: "5 to 8 business days", variantImg: {"Brown":"assets/products/hd10.webp","Rust":"assets/products/hd10-2.webp","Camel":"assets/products/hd10-3.webp","Light Brown":"assets/products/hd10-4.webp","Beige":"assets/products/hd10-5.webp","Grey":"assets/products/hd10-6.webp"}, name: "Ondine Abstract Curve Cushion Covers — Set of 2 (45cm)", cat: "Home Décor", room: "Home Décor", price: 280, memberPrice: 250, sku: "SH-11326", tag: "New", ph: "", img: "assets/products/hd10.webp",
     imgs: ["assets/products/hd10.webp", "assets/products/hd10-2.webp", "assets/products/hd10-3.webp", "assets/products/hd10-4.webp", "assets/products/hd10-5.webp", "assets/products/hd10-6.webp", "assets/products/hd10-7.webp", "assets/products/hd10-8.webp"],
     colours: [{ name: "Rust", hex: "#a4441f" }, { name: "Brown", hex: "#6b4423" }, { name: "Camel", hex: "#b08a5a" }, { name: "Light Brown", hex: "#a08870" }, { name: "Beige", hex: "#d9c9a3" }, { name: "Grey", hex: "#6e6e6e" }],
@@ -1642,23 +1623,6 @@ const PRODUCTS = [
     ],
     specs: { "Type": "Vase", "Location": "Tabletop", "Material": "Glass", "Primary Colour": "Blue" },
     dimensions: "26cm H x 23cm W x 23cm D", weight: "1.97 kg", boxContents: "1 x vase", care: "Wipe clean with a dry cloth" },
-  { id: "hd03", name: "Ceramic Electric Oil Vaporiser", cat: "Home Décor", price: 98.90, memberPrice: 78.95, sku: "SH-10103", tag: "New", ph: "", img: "assets/products/hd03.webp",
-    imgs: ["assets/products/hd03.webp", "assets/products/hd03-2.webp", "assets/products/hd03-3.webp", "assets/products/hd03-4.webp", "assets/products/hd03-5.webp"],
-    colours: [{ name: "Black", hex: "#1c1c1c" }, { name: "Natural", hex: "#cbb291" }, { name: "White", hex: "#f2efe9" }],
-    desc: "Bring a subtle, calming fragrance to any room with this ceramic electric oil vaporiser that gently warms essential oils without harming them. Designed to run safely for long periods, it emits heat only from the recessed bowl, so the outer surface stays cool to the touch. No water is needed, making it a drip-free option ideal for aromatherapy at night or when hosting friends, creating a calm, fragrant atmosphere in living areas, bedrooms and for quiet evenings.",
-    features: [
-      "Unique design gently vaporises essential oils without causing any harm to them",
-      "Designed to operate safely when unattended for prolonged periods",
-      "Only the recessed area of the vaporiser emits heat",
-      "Cool-to-touch and does not overheat",
-      "No water required",
-      "Power supply: 240V"
-    ],
-    specs: { "Type": "Vaporiser", "Material": "Ceramic", "Aromatherapy": "Yes", "Dripless": "Yes" },
-    dimensions: "4cm H x 6.7cm W x 5.5cm D", weight: "0.55 kg",
-    boxContents: ["1 × vaporiser", "1 × user manual"], warranty: "1 Year",
-    care: "Use a damp cloth to wipe the vaporiser bowl after use.",
-    about: "Established in 1992 and proudly 100% Australian owned, the maker is a market leader in the aromatherapy and wellness space, specialising in safe, clean and efficient essential oil mist diffusers and electric vaporisers." },
   { id: "hd04", name: "Diamond Velvet Throw Pillow Cover", cat: "Home Décor", price: 15.99, sku: "SH-10104", tag: "New", ph: "", img: "assets/products/hd04.webp",
     imgs: ["assets/products/hd04.webp", "assets/products/hd04-2.webp", "assets/products/hd04-3.webp", "assets/products/hd04-4.webp", "assets/products/hd04-5.webp", "assets/products/hd04-6.webp", "assets/products/hd04-7.webp"],
     colours: [{ name: "Beige", hex: "#d9c7a8" }, { name: "Cerulean", hex: "#2a7fba" }, { name: "Forest Green", hex: "#33513a" }, { name: "Grey", hex: "#9b9b9b" }, { name: "Navy", hex: "#232f4d" }, { name: "Orange", hex: "#d5843a" }, { name: "Rosy Brown", hex: "#bc8f8f" }, { name: "Turquoise", hex: "#3fb8ad" }],
@@ -2288,202 +2252,6 @@ const PRODUCTS = [
     care: "Wipe the body with a soft, damp cloth. Wash the bottle by hand in warm soapy water and air dry it. Never put the carbonating bottle in the dishwasher or fill it with anything but water." },
 
   // ── Lifestyle ──
-  { id: "lf01", name: "Oakwood & Vanilla Bean Reed Diffuser 150ml", cat: "Lifestyle", room: "Lifestyle", price: 18, memberPrice: 16, sku: "SH-11033", tag: "New", ph: "", img: "assets/products/lf01-1.webp",
-    imgs: ["assets/products/lf01-1.webp", "assets/products/lf01-2.webp", "assets/products/lf01-3.webp", "assets/products/lf01-4.webp", "assets/products/lf01-5.webp"],
-    desc: "Scent that works without being switched on. 150ml of oil and a bundle of reeds, no flame, no switch, just scent that sits in the room. Turn the reeds when you want it louder.",
-    features: [
-      "Volume: 150ml",
-      "Size: 11.8cm (H) x 6cm (Dia.)",
-      "Oakwood and vanilla bean fragrance",
-      "Top notes: Lemon and fruit",
-      "Middle notes: Green and vanilla bean",
-      "Base notes: Saffron, leather, tonka bean, moss and patchouli"
-    ],
-    specs: { "Type": "Reed diffuser", "Volume": "150ml", "Size": "11.8cm (H) x 6cm (Dia.)" },
-    care: "Turn the reeds every week or so to refresh the scent. Stand the bottle on a coaster, the oil marks timber and stone, and keep it out of direct sun." },
-
-  { id: "lf02", name: "Amber & Tonka Reed Diffuser 350ml", cat: "Lifestyle", room: "Lifestyle", price: 20, memberPrice: 18, sku: "SH-11034", tag: "New", ph: "", img: "assets/products/lf02-1.webp",
-    imgs: ["assets/products/lf02-1.webp", "assets/products/lf02-2.webp", "assets/products/lf02-3.webp", "assets/products/lf02-4.webp", "assets/products/lf02-5.webp"],
-    desc: "Scent that works without being switched on. No flame, no switch, just scent that sits in the room. Turn the reeds when you want it louder.",
-    features: [
-      "Reeds and oil included",
-      "No flame or power needed",
-      "Lasts several months"
-    ],
-    specs: { "Type": "Reed diffuser" },
-    care: "Turn the reeds every week or so to refresh the scent. Stand the bottle on a coaster, the oil marks timber and stone, and keep it out of direct sun." },
-
-  { id: "lf03", name: "Sandalwood & Musk Reed Diffuser 350ml", cat: "Lifestyle", room: "Lifestyle", price: 20, memberPrice: 18, sku: "SH-11035", tag: "New", ph: "", img: "assets/products/lf03-1.webp",
-    imgs: ["assets/products/lf03-1.webp", "assets/products/lf03-2.webp", "assets/products/lf03-3.webp", "assets/products/lf03-4.webp", "assets/products/lf03-5.webp"],
-    desc: "Sandalwood & Musk Reed Diffuser 350ml. Place the diffuser on a stable surface in an entryway or living room for a continuous, flame-free fragrance. The 350 ml bottle comes with reeds.",
-    features: [
-      "Volume: 350ml",
-      "Size: 16.5cm (H) x 9cm (Dia.)",
-      "XL size",
-      "Bergamot and sandalwood fragrance"
-    ],
-    specs: { "Type": "Reed diffuser", "Volume": "350ml", "Size": "16.5cm (H) x 9cm (Dia.)" },
-    care: "Turn the reeds every week or so to refresh the scent. Stand the bottle on a coaster, the oil marks timber and stone, and keep it out of direct sun." },
-
-  { id: "lf04", name: "Vanilla & Amber Reed Diffuser 350ml", cat: "Lifestyle", room: "Lifestyle", price: 20, memberPrice: 18, sku: "SH-11036", tag: "New", ph: "", img: "assets/products/lf04-1.webp",
-    imgs: ["assets/products/lf04-1.webp", "assets/products/lf04-2.webp", "assets/products/lf04-3.webp", "assets/products/lf04-4.webp", "assets/products/lf04-5.webp"],
-    desc: "Vanilla & Amber Reed Diffuser 350ml. Place the diffuser on a stable surface in an entryway or living room for a continuous, flame-free fragrance. The 350 ml bottle comes with reeds.",
-    features: [
-      "Volume: 350ml",
-      "Size: 16.5cm (H) x 9cm (Dia.)",
-      "XL size",
-      "Vanilla and amber fragrance"
-    ],
-    specs: { "Type": "Reed diffuser", "Volume": "350ml", "Size": "16.5cm (H) x 9cm (Dia.)" },
-    care: "Turn the reeds every week or so to refresh the scent. Stand the bottle on a coaster, the oil marks timber and stone, and keep it out of direct sun." },
-
-  { id: "lf05", name: "Mahogany Reed Diffuser 150ml", cat: "Lifestyle", room: "Lifestyle", price: 18, memberPrice: 16, sku: "SH-11037", tag: "New", ph: "", img: "assets/products/lf05-1.webp",
-    imgs: ["assets/products/lf05-1.webp", "assets/products/lf05-2.webp", "assets/products/lf05-3.webp", "assets/products/lf05-4.webp", "assets/products/lf05-5.webp"],
-    desc: "Scent that works without being switched on. 150ml of oil and a bundle of reeds, no flame, no switch, just scent that sits in the room. Turn the reeds when you want it louder. Bottle: Pressed glass.",
-    features: [
-      "Volume: 150ml",
-      "Bottle: Pressed glass",
-      "Glass bottle: 12cm (H) x 6cm (Dia.)",
-      "Mahogany, teakwood and vanilla fragrance",
-      "Top notes: Tonka and vanilla",
-      "Middle notes: Wood and sandalwood"
-    ],
-    specs: { "Type": "Reed diffuser", "Volume": "150ml", "Material": "Bottle: Pressed glass, Lid: Polypropylene (PP), Fibre: Greige yarns and dyed yarns, Transp" },
-    care: "Turn the reeds every week or so to refresh the scent. Stand the bottle on a coaster, the oil marks timber and stone, and keep it out of direct sun." },
-
-  { id: "lf06", name: "Ceramic Aroma Diffuser 100ml, Sage Green", cat: "Lifestyle", room: "Lifestyle", price: 37.5, memberPrice: 33.5, sku: "SH-11038", tag: "New", ph: "", img: "assets/products/lf06-1.webp",
-    imgs: ["assets/products/lf06-1.webp", "assets/products/lf06-2.webp", "assets/products/lf06-3.webp", "assets/products/lf06-4.webp", "assets/products/lf06-5.webp"],
-    desc: "Fragrance you can turn on and off. A 100ml (Tank) tank, a ceramic cover and a quiet mist, so the fragrance is yours to control. Oil is sold separately, which means you pick the scent.",
-    features: [
-      "Capacity: 100ml (Tank)",
-      "Size: 15.3cm (H) x 9.2cm (Dia.)",
-      "Fragrance not included",
-      "Cover: Ceramic",
-      "Splash water cover and water tank: Polypropylene (PP)",
-      "Foot: Silicone"
-    ],
-    specs: { "Type": "Electric aroma diffuser", "Capacity": "100ml (Tank)", "Size": "15.3cm (H) x 9.2cm (Dia.)", "Colour": "Sage green (Light green)" },
-    care: "Clean according to given instructions." },
-
-  { id: "lf07", name: "Bergamot, Blossom & Musk Room Spray 100ml", cat: "Lifestyle", room: "Lifestyle", price: 8.5, memberPrice: 7.5, sku: "SH-11039", tag: "New", ph: "", img: "assets/products/lf07-1.webp",
-    imgs: ["assets/products/lf07-1.webp", "assets/products/lf07-2.webp", "assets/products/lf07-3.webp", "assets/products/lf07-4.webp", "assets/products/lf07-5.webp"],
-    desc: "Bergamot, blossom and musk give this 100 ml room spray a citrus, floral and musky scent profile. Keep it handy in an entryway or guest room for a quick refresh.",
-    features: [
-      "Volume: 100ml",
-      "Bergamot and blossom musk fragrance",
-      "Home Retreat collection"
-    ],
-    specs: { "Type": "Room spray", "Volume": "100ml" },
-    care: "Spray into the air rather than onto fabric or polished surfaces. Store upright and away from heat." },
-
-  { id: "lf08", name: "Vetiver & Smoked Cedar Room Spray 100ml", cat: "Lifestyle", room: "Lifestyle", price: 9, memberPrice: 8, sku: "SH-11040", tag: "New", ph: "", img: "assets/products/lf08-1.webp",
-    imgs: ["assets/products/lf08-1.webp", "assets/products/lf08-2.webp", "assets/products/lf08-3.webp", "assets/products/lf08-4.webp", "assets/products/lf08-5.webp"],
-    desc: "Vetiver and smoked cedar make this 100 ml room spray a woody option for a study or living room. Use it when you want the room fragrance to lean earthy and smoky.",
-    features: [
-      "Volume: 100ml",
-      "Vetiver and smoked cedar fragrance",
-      "Home Retreat collection"
-    ],
-    specs: { "Type": "Room spray", "Volume": "100ml" },
-    care: "Spray into the air rather than onto fabric or polished surfaces. Store upright and away from heat." },
-
-  { id: "lf09", name: "Mahogany, Teakwood & Vanilla Room Spray 100ml", cat: "Lifestyle", room: "Lifestyle", price: 9, memberPrice: 8, sku: "SH-11041", tag: "New", ph: "", img: "assets/products/lf09-1.webp",
-    imgs: ["assets/products/lf09-1.webp", "assets/products/lf09-2.webp", "assets/products/lf09-3.webp", "assets/products/lf09-4.webp", "assets/products/lf09-5.webp"],
-    desc: "Mahogany and teakwood bring woody notes to this 100 ml room spray, with vanilla adding a sweeter note. Try it in a lounge or guest room.",
-    features: [
-      "Volume: 100ml",
-      "Mahogany teakwood and vanilla fragrance",
-      "Home Retreat collection"
-    ],
-    specs: { "Type": "Room spray", "Volume": "100ml" },
-    care: "Spray into the air rather than onto fabric or polished surfaces. Store upright and away from heat." },
-
-  { id: "lf10", name: "Mahogany Scented Candle, Extra Large", cat: "Lifestyle", room: "Lifestyle", price: 20, memberPrice: 18, sku: "SH-11042", tag: "New", ph: "", img: "assets/products/lf10-1.webp",
-    imgs: ["assets/products/lf10-1.webp", "assets/products/lf10-2.webp", "assets/products/lf10-3.webp", "assets/products/lf10-4.webp", "assets/products/lf10-5.webp"],
-    desc: "A candle big enough to be the thing on the table. A soy wax blend with a long burn and a wide melt pool, so the scent carries past the table it is standing on. 15cm (H) x 12cm (W) x 8cm (D).",
-    features: [
-      "Size: 15cm (H) x 12cm (W) x 8cm (D)",
-      "Product weight: 1.394kg",
-      "Mahogany teakwood and vanilla fragrance",
-      "Double wick",
-      "Ribbed design",
-      "Home retreat collection"
-    ],
-    specs: { "Type": "Scented candle", "Size": "15cm (H) x 12cm (W) x 8cm (D)" },
-    care: "Burn for two to three hours the first time, until the melt pool reaches the edge. Trim the wick to 5mm before each burn, and never leave a burning candle unattended." },
-
-  { id: "lf11", name: "Vetiver & Fig Soy Wax Ceramic Candle, Extra Large", cat: "Lifestyle", room: "Lifestyle", price: 25, memberPrice: 22.5, sku: "SH-11043", tag: "New", ph: "", img: "assets/products/lf11-1.webp",
-    imgs: ["assets/products/lf11-1.webp", "assets/products/lf11-2.webp", "assets/products/lf11-3.webp", "assets/products/lf11-4.webp", "assets/products/lf11-5.webp"],
-    desc: "A candle big enough to be the thing on the table. A soy wax blend with a long burn and a wide melt pool, so the scent carries past the table it is standing on. 16.5cm (H) x 13.2cm (Dia.). XL VETIVER FIG CANDLE.",
-    features: [
-      "Size: 16.5cm (H) x 13.2cm (Dia.)",
-      "Product weight: 2.1kg",
-      "XL VETIVER FIG CANDLE",
-      "Vetiver and fig fragrance",
-      "100% soy candle",
-      "Extra large size"
-    ],
-    specs: { "Type": "Scented candle", "Size": "16.5cm (H) x 13.2cm (Dia.)", "Material": "XL VETIVER FIG CANDLE", "Colour": "Green" },
-    care: "Burn for two to three hours the first time, until the melt pool reaches the edge. Trim the wick to 5mm before each burn, and never leave a burning candle unattended." },
-
-  { id: "lf12", name: "Vanilla & Amber Soy Wax Candle, Extra Large", cat: "Lifestyle", room: "Lifestyle", price: 20, memberPrice: 18, sku: "SH-11044", tag: "New", ph: "", img: "assets/products/lf12-1.webp",
-    imgs: ["assets/products/lf12-1.webp", "assets/products/lf12-2.webp", "assets/products/lf12-3.webp", "assets/products/lf12-4.webp"],
-    desc: "A candle big enough to be the thing on the table. A soy wax blend with a long burn and a wide melt pool, so the scent carries past the table it is standing on. 16.4cm (H) x 13cm (Dia.) (with lid). Vessel: Glass.",
-    features: [
-      "Size: 16.4cm (H) x 13cm (Dia.) (with lid)",
-      "Product weight: 1.79kg",
-      "Vessel: Glass",
-      "Vanilla and amber fragrance",
-      "Triple wick",
-      "Soy wax blend"
-    ],
-    specs: { "Type": "Scented candle", "Size": "16.4cm (H) x 13cm (Dia.) (with lid)", "Material": "Vessel: Glass, Wax: Soy and paraffin wax, Wick: Cotton" },
-    care: "Burn for two to three hours the first time, until the melt pool reaches the edge. Trim the wick to 5mm before each burn, and never leave a burning candle unattended." },
-
-  { id: "lf13", name: "Pure Lavender Essential Oil 10ml", cat: "Lifestyle", room: "Lifestyle", price: 6, memberPrice: 5, sku: "SH-11045", tag: "New", ph: "", img: "assets/products/lf13-1.webp",
-    imgs: ["assets/products/lf13-1.webp", "assets/products/lf13-2.webp", "assets/products/lf13-3.webp"],
-    desc: "Pure Lavender Essential Oil 10ml. The 10 ml bottle is a compact way to try this individual essential oil. Follow the directions on the label and those supplied with your diffuser.",
-    features: [
-      "Volume: 10ml",
-      "10ml pure essential oil",
-      "For diffusers, burners and baths"
-    ],
-    specs: { "Type": "Essential oil", "Volume": "10ml" },
-    care: "Dilute before applying to skin. Keep the bottle closed, out of sunlight and away from children and pets, some oils are not safe around animals." },
-
-  { id: "lf14", name: "Pure Eucalyptus Essential Oil 10ml", cat: "Lifestyle", room: "Lifestyle", price: 6, memberPrice: 5, sku: "SH-11046", tag: "New", ph: "", img: "assets/products/lf14-1.webp",
-    imgs: ["assets/products/lf14-1.webp", "assets/products/lf14-2.webp", "assets/products/lf14-3.webp", "assets/products/lf14-4.webp"],
-    desc: "Pure Eucalyptus Essential Oil 10ml. The 10 ml bottle is a compact way to try this individual essential oil. Follow the directions on the label and those supplied with your diffuser.",
-    features: [
-      "Volume: 10ml",
-      "10ml pure essential oil",
-      "For diffusers, burners and baths"
-    ],
-    specs: { "Type": "Essential oil", "Volume": "10ml" },
-    care: "Dilute before applying to skin. Keep the bottle closed, out of sunlight and away from children and pets, some oils are not safe around animals." },
-
-  { id: "lf15", name: "Pure Peppermint Essential Oil 10ml", cat: "Lifestyle", room: "Lifestyle", price: 6, memberPrice: 5, sku: "SH-11047", tag: "New", ph: "", img: "assets/products/lf15-1.webp",
-    imgs: ["assets/products/lf15-1.webp", "assets/products/lf15-2.webp", "assets/products/lf15-3.webp"],
-    desc: "Pure Peppermint Essential Oil 10ml. The 10 ml bottle is a compact way to try this individual essential oil. Follow the directions on the label and those supplied with your diffuser.",
-    features: [
-      "Volume: 10ml",
-      "10ml pure essential oil",
-      "For diffusers, burners and baths"
-    ],
-    specs: { "Type": "Essential oil", "Volume": "10ml" },
-    care: "Dilute before applying to skin. Keep the bottle closed, out of sunlight and away from children and pets, some oils are not safe around animals." },
-
-  { id: "lf16", name: "Pure Lemon Essential Oil 10ml", cat: "Lifestyle", room: "Lifestyle", price: 6, memberPrice: 5, sku: "SH-11048", tag: "New", ph: "", img: "assets/products/lf16-1.webp",
-    imgs: ["assets/products/lf16-1.webp", "assets/products/lf16-2.webp", "assets/products/lf16-3.webp"],
-    desc: "Pure Lemon Essential Oil 10ml. The 10 ml bottle is a compact way to try this individual essential oil. Follow the directions on the label and those supplied with your diffuser.",
-    features: [
-      "Volume: 10ml",
-      "10ml pure essential oil",
-      "For diffusers, burners and baths"
-    ],
-    specs: { "Type": "Essential oil", "Volume": "10ml" },
-    care: "Dilute before applying to skin. Keep the bottle closed, out of sunlight and away from children and pets, some oils are not safe around animals." },
-
   { id: "lf17", name: "Ruffle-Trim Cotton Knit Throw", cat: "Lifestyle", room: "Lifestyle", price: 25, memberPrice: 22.5, sku: "SH-11049", tag: "New", ph: "", img: "assets/products/lf17-1.webp",
     imgs: ["assets/products/lf17-1.webp", "assets/products/lf17-2.webp", "assets/products/lf17-3.webp", "assets/products/lf17-4.webp"],
     desc: "The throw that ends up on whoever sat down first. Cotton and generously sized, for the end of a bed or the arm of a sofa. The kind of thing that quietly decides where everyone sits.",
@@ -2549,44 +2317,6 @@ const PRODUCTS = [
     ],
     specs: { "Type": "Slippers" },
     care: "Spot clean with a damp cloth and air dry away from direct heat. Not for outdoor wear." },
-
-  { id: "lf23", name: "Ribbed Plush Hot Water Bottle 2L", cat: "Lifestyle", room: "Lifestyle", price: 13, memberPrice: 11.5, sku: "SH-11055", tag: "New", ph: "", img: "assets/products/lf23-1.webp",
-    imgs: ["assets/products/lf23-1.webp", "assets/products/lf23-2.webp"],
-    desc: "An old idea that still works better than most new ones. Two litres, in a plush cover that stays comfortable against skin. Good for cold feet, a sore back, or a bed that needs warming before you get in it. Plush and rubber.",
-    features: [
-      "Capacity: 2 litres",
-      "Size: 36cm (H) x 21cm (W)",
-      "Plush and rubber",
-      "Ribbed design",
-      "Plush detail",
-      "High quality rubber"
-    ],
-    specs: { "Type": "Hot water bottle", "Capacity": "2 litres", "Size": "36cm (H) x 21cm (W)", "Material": "Plush and rubber", "Colour": "Stone (Grey)" },
-    care: "Fill to no more than two-thirds with hot, not boiling, water and expel the air before sealing. Replace the bottle every two years, or sooner if the rubber perishes." },
-
-  { id: "lf24", name: "Hot Water Bottle 2L, Ice Blue", cat: "Lifestyle", room: "Lifestyle", price: 8.5, memberPrice: 7.5, sku: "SH-11056", tag: "New", ph: "", img: "assets/products/lf24-1.webp",
-    imgs: ["assets/products/lf24-1.webp", "assets/products/lf24-2.webp"],
-    desc: "An old idea that still works better than most new ones. Two litres, in a plush cover that stays comfortable against skin. Good for cold feet, a sore back, or a bed that needs warming before you get in it. HOT WATER BOTTLE - BLUE.",
-    features: [
-      "HOT WATER BOTTLE - BLUE",
-      "2 litre capacity",
-      "Plush removable cover"
-    ],
-    specs: { "Type": "Hot water bottle", "Material": "HOT WATER BOTTLE - BLUE" },
-    care: "Fill to no more than two-thirds with hot, not boiling, water and expel the air before sealing. Replace the bottle every two years, or sooner if the rubber perishes." },
-
-  { id: "lf25", name: "Padded Sleep Eye Mask, Pink", cat: "Lifestyle", room: "Lifestyle", price: 7, memberPrice: 6, sku: "SH-11057", tag: "New", ph: "", img: "assets/products/lf25-1.webp",
-    imgs: ["assets/products/lf25-1.webp", "assets/products/lf25-2.webp", "assets/products/lf25-3.webp", "assets/products/lf25-4.webp"],
-    desc: "Dark enough to sleep in on a plane. Padded, light on the face, and wide enough to block the gap by your nose. Polyester (Filling and fibre).",
-    features: [
-      "Size: 9.5cm (H) x 19.5cm (W)",
-      "Polyester (Filling and fibre)",
-      "Soft stretchy strap",
-      "Bow print",
-      "One size"
-    ],
-    specs: { "Type": "Sleep eye mask", "Size": "9.5cm (H) x 19.5cm (W)", "Material": "Polyester (Filling and fibre)", "Colour": "Pink" },
-    care: "Hand wash in cool water and air dry flat. Do not wring, bleach or tumble dry." },
 
   { id: "lf26", name: "Wellness Life Planner Journal (160 Pages)", cat: "Lifestyle", room: "Lifestyle", price: 8, memberPrice: 7, sku: "SH-11058", tag: "New", ph: "", img: "assets/products/lf26-1.webp",
     imgs: ["assets/products/lf26-1.webp", "assets/products/lf26-2.webp", "assets/products/lf26-3.webp", "assets/products/lf26-4.webp", "assets/products/lf26-5.webp"],
@@ -4054,19 +3784,9 @@ const HAMPER_ITEMS = [
   { id: "h-gb069", name: "Pukka Herbal Collection 35g", price: 13.52, cat: "Drinks", emoji: "☕", img: "assets/hamper/h069.webp" },
   { id: "h-gb070", name: "T2 English Breakfast", price: 28.33, cat: "Drinks", emoji: "☕", img: "assets/hamper/h070.webp" },
   { id: "h-gb071", name: "Toby's Estate Coffee Woolloomoolloo 200g", price: 24.63, cat: "Drinks", emoji: "☕", img: "assets/hamper/h071.webp" },
-  { id: "h-gb072", name: "Addition Studio Bath Brew Milk Bath Soak 55g", price: 28.33, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h072.webp" },
   { id: "h-gb073", name: "Cosy Luxe Pink Slippers", price: 43.15, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h073.webp" },
-  { id: "h-gb074", name: "Balsa Wood Diffuser Flower", price: 6.11, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h074.webp" },
-  { id: "h-gb075", name: "Equilibrium Himalyas Bath Salts 200g", price: 27.1, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h075.webp" },
   { id: "h-gb076", name: "Luxury Blush Microplush Throw Rug", price: 43.15, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h076.webp" },
   { id: "h-gb077", name: "Luxury White Robe", price: 61.67, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h077.webp" },
-  { id: "h-gb078", name: "Urban Rituelle Uplifting Lemongrass, Lemon Myrtle, Grapefruit and Eucalyptus Diffuser Set 220ml", price: 70.31, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h078.webp" },
-  { id: "h-gb079", name: "Urban Rituelle Uplifting Lemongrass, Lemon Myrtle, Grapefruit and Eucalyptus Hand and Body Wash 500ml", price: 54.26, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h079.webp" },
-  { id: "h-gb080", name: "Urban Rituelle Uplifting Lemongrass, Lemon Myrtle, Grapefruit and Eucalyptus Hand Cream 100ml", price: 36.98, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h080.webp" },
-  { id: "h-gb081", name: "Urban Rituelle Love Neroli Blossom and Cardamom Hand Cream 100ml", price: 36.98, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h081.webp" },
-  { id: "h-gb082", name: "Urban Rituelle White Lotus Geranium Leaf and Bergamot Hand and Body Wash 500ml", price: 54.26, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h082.webp" },
-  { id: "h-gb083", name: "Urban Rituelle White Lotus Geranium Leaf and Bergamot Hand Cream 100ml", price: 36.98, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h083.webp" },
-  { id: "h-gb084", name: "Urban Rituelle White Lotus Geranium Leaf and Bergamot Soy Candle 140g", price: 43.15, cat: "Pamper", emoji: "🕯️", img: "assets/hamper/h084.webp" },
   { id: "h-gb085", name: "Beechworth Honey Eucalyptus Sweets 225g", price: 23.4, cat: "Sweet", emoji: "🍫", img: "assets/hamper/h085.webp" },
   { id: "h-gb086", name: "Byron Bay Cookie White Choc Chunk Macadamia Cookies Gift Bag 150g", price: 19.69, cat: "Sweet", emoji: "🍫", img: "assets/hamper/h086.webp" },
   { id: "h-gb087", name: "Chocolatier Pure Indulgence Assorted Milk Chocolate Giftbox 190g", price: 39.44, cat: "Sweet", emoji: "🍫", img: "assets/hamper/h087.webp" },
@@ -4097,8 +3817,6 @@ const HAMPER_ITEMS = [
   { id: "h-gb112", name: "Zokoko Goddess Dark Chocolate 57g", price: 15.99, cat: "Sweet", emoji: "🍫", img: "assets/hamper/h112.webp" },
   { id: "h-gb113", name: "Hand Decorated Gingerbread Moustache 30g", price: 11.05, cat: "For Him", emoji: "🧔", img: "assets/hamper/h113.webp" },
   { id: "h-gb114", name: "Aussie BBQ Bible", price: 50.56, cat: "For Him", emoji: "🧔", img: "assets/hamper/h114.webp" },
-  { id: "h-gb115", name: "Aromatherapy Co. Therapy Man Sea Salt and Sandalwood Hand and Body Wash 500ml", price: 35.74, cat: "For Him", emoji: "🧔", img: "assets/hamper/h115.webp" },
-  { id: "h-gb116", name: "Aromatherapy Co. Therapy Man Sea Salt and Sandalwood Shave Cream 100ml", price: 28.33, cat: "For Him", emoji: "🧔", img: "assets/hamper/h116.jpg" },
   { id: "h-gb117", name: "Callaway Golf Cap", price: 67.84, cat: "For Him", emoji: "🧔", img: "assets/hamper/h117.webp" },
   { id: "h-gb118", name: "Callaway Golf Tee Pack", price: 11.05, cat: "For Him", emoji: "🧔", img: "assets/hamper/h118.webp" },
   { id: "h-gb119", name: "Callaway Warbird Golf Balls 3 Pack", price: 18.46, cat: "For Him", emoji: "🧔", img: "assets/hamper/h119.webp" },

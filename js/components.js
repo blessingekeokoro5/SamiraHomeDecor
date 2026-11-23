@@ -394,6 +394,7 @@ function buildFooter() {
   ];
   const shopLinks = [
     { t: "Shop All", h: "shop.html" },
+    { t: "Digital Products", h: "digital-products.html" },
     { t: "Ready to Ship", h: "shop.html?avail=ready" },
     { t: "On Sale", h: "sale.html" },
     { t: "Gift Cards", h: "gift-cards.html" },
@@ -1132,7 +1133,7 @@ function buildSearchOverlay() {
     <div class="search-inner">
       <div class="search-bar">
         ${IC.search}
-        <input type="text" id="searchInput" placeholder="Search décor, furniture, candles…" autocomplete="off" aria-label="Search products">
+        <input type="text" id="searchInput" placeholder="Search décor, furniture and gifts…" autocomplete="off" aria-label="Search products">
         <button id="searchClose" aria-label="Close search">✕</button>
       </div>
       <div class="search-results" id="searchResults"></div>

@@ -64,14 +64,15 @@
   <script src="js/components.js?v=98"></script>
   <script src="js/cart.js?v=39"></script>
   <script src="js/main.js?v=22"></script>
-  <script src="js/blog.js"></script>
+  <script src="js/blog.js?v=2"></script>
   <script>
     function fmtDate(s){ return new Date(s + "T00:00:00").toLocaleDateString("en-AU",{ day:"numeric", month:"long", year:"numeric" }); }
     function postCover(p, cls){ return `<div class="ph ${p.ph||''} ${cls||''}" data-label="${p.title}"><img class="ph-img" src="${p.cover}" alt="${p.title}" loading="lazy" onerror="this.remove()"></div>`; }
 
     (function(){
       const slug = new URLSearchParams(location.search).get("post");
-      const p = POSTS.find(x => x.slug === slug) || POSTS[0];
+      const p = slug ? POSTS.find(x => x.slug === slug) : POSTS[0];
+      if (slug && !p) { location.replace("/blog.html"); return; }
       const url = "https://samirahomedecor.com.au/article.html?post=" + p.slug;
 
       // Update meta + title for SEO / sharing

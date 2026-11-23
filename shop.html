@@ -53,6 +53,7 @@
         <a class="pill" href="office.html">Home office</a>
         <a class="pill" href="lifestyle.html">Lifestyle</a>
         <a class="pill" href="hampers.html">Gift hampers</a>
+        <a class="pill" href="digital-products.html">Digital products</a>
       </nav>
       <div class="pills" id="shopPills"></div>
       <div class="shop-bar">
@@ -104,7 +105,7 @@
   <script src="js/cart.js?v=40"></script>
   <script src="js/main.js?v=22"></script>
   <script>
-    const CATS = ["All", "Living Room", "Home Décor", "Home Fragrance", "Dining", "Bedroom & Bath", "Kitchenware", "Outdoor", "Office", "Lifestyle", "Gifts"];
+    const CATS = ["All", "Living Room", "Home Décor", "Dining", "Bedroom & Bath", "Kitchenware", "Outdoor", "Office", "Lifestyle", "Gifts"];
     const CAT_GROUPS = {
       "Living Room": ["Living Room", "Furniture"],
       "Bedroom & Bath": ["Bedroom", "Bathroom"],
@@ -113,8 +114,7 @@
       "Outdoor": ["Outdoor"],
       "Office": ["Office"]
     };
-    // Home Fragrance & Gifts aren't a catalogue category — they're keyword views across Home Décor
-    const FRAGRANCE_RE = /candle|diffuser|oil burner|incense|reed|fragrance|scent|aroma|vaporiser|perfume/i;
+    // Gifts is a catalogue view based on product labels.
     const GIFT_RE = /candle|diffuser|vase|trinket|jewell|photo frame|keepsake|gift|coaster|bookend|ornament|sculpture/i;
     let currentCat = "All";
     let searchQuery = "";
@@ -152,7 +152,6 @@
       renderPills();
       let list;
       if (cat === "All") list = PRODUCTS.slice();
-      else if (cat === "Home Fragrance") list = PRODUCTS.filter(p => FRAGRANCE_RE.test(p.name));
       else if (cat === "Gifts") list = PRODUCTS.filter(p => GIFT_RE.test(p.name));
       else {
         const members = CAT_GROUPS[cat] || [cat];
