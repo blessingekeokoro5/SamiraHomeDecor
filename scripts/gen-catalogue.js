@@ -45,6 +45,14 @@ vm.runInContext(source, sandbox, { filename: "js/data.js" });
 const { PRODUCTS, HAMPER_ITEMS, HAMPER_MIN, SAMIRA, PACKAGING_KITS } = sandbox.__out;
 // Exclude the Freedom cutlery listing until a real approved product photograph is available.
 for (let i=PRODUCTS.length-1;i>=0;i--) if(['freedom13172273','kl131951'].includes(PRODUCTS[i]?.id)) PRODUCTS.splice(i,1);
+
+// Keep branded Koala beds out of the trusted checkout catalogue as well.
+for(let i=PRODUCTS.length-1;i>=0;i--){
+ const p=PRODUCTS[i]; if(!p)continue;
+ const flagged=(()=>{const name=String(p.name||p.title||''); const koala=/^(kl|koala)/i.test(String(p.id||''))||/koala/i.test(String(p.supplier||p.source||'')); return koala&&/(?:cream velvet king|mustard velvet queen|stone cream queen|stone cream king single|white fabric queen.*floating drawers|\bgertrude\b|\bjacques\b|\bmadrid\b|\bharlow\b|\bsummerton\b|\bpoppy\b|\briviera\b|\bantonella\b|\bestelle\b)/i.test(name);})();
+ if(flagged)PRODUCTS.splice(i,1);
+}
+
 const packagingKits = {};
 (PACKAGING_KITS || []).forEach((k) => { if (k && k.id && !k.hidden && num(k.price) != null) packagingKits[k.id] = { name: String(k.name || ""), price: num(k.price) }; });
 
