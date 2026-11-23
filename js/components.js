@@ -221,9 +221,11 @@ function buildHeader() {
             <h4>Design House</h4>
             <div class="mega-cols">
               <div class="mega-col">
-                <h5>Design services</h5>
+                <h5>Design House, digital products &amp; cleaning</h5>
                 <ul>
                   <li><a href="staging.html#services">All design services</a></li>
+                  <li><a href="digital-products.html">Digital Products</a></li>
+                  <li><a href="cleaning-services.html">Cleaning Services</a></li>
                 </ul>
               </div>
               <div class="mega-col">
@@ -272,7 +274,6 @@ function buildHeader() {
     { label: "Rugs, Cushions & Throws", href: "home-decor.html?sub=Rugs", icon: "▧" },
     { label: "Kitchen & Dining", href: "kitchenware.html", icon: "⌂" },
     { label: "Gifts & Hampers", href: "hampers.html", icon: "🎁" },
-    { label: "Digital Products", href: "digital-products.html", icon: "▤" },
     { label: "All Home Décor", href: "home-decor.html", icon: "✦" }
   ];
   const inspirationRows = [
@@ -300,8 +301,9 @@ function buildHeader() {
       <a class="m-menu-promo" href="ready-to-ship-dining-kitchen.html"><span class="m-menu-promo-kicker">JUST LANDED</span><strong>Ready-to-ship dining &amp; kitchen</strong><span>Shop 303 new pieces →</span></a>
       <section class="m-menu-section" aria-labelledby="mRooms"><h2 id="mRooms">Shop by room</h2><div class="m-menu-list">${mobileRows(roomRows)}</div></section>
       <section class="m-menu-section" aria-labelledby="mCats"><h2 id="mCats">Shop by category</h2><div class="m-menu-list">${mobileRows(categoryRows)}</div></section>
-      <section class="m-menu-section" aria-labelledby="mServices"><h2 id="mServices">Services</h2><div class="m-menu-list">${mobileRows([
+      <section class="m-menu-section" aria-labelledby="mServices"><h2 id="mServices">Design House</h2><div class="m-menu-list">${mobileRows([
       { label: "Design House", href: "staging.html", icon: "⌂" },
+        { label: "Digital Products", href: "digital-products.html", icon: "▤" },
         { label: "Cleaning Services", href: "cleaning-services.html", icon: "🧼" }
       ])}</div></section>
       <section class="m-menu-section" aria-labelledby="mInspire"><h2 id="mInspire">Deals &amp; inspiration</h2><div class="m-menu-list">${mobileRows(inspirationRows)}</div></section>
@@ -375,9 +377,7 @@ function buildHeader() {
           <li><a href="index.html#ranges">Our Ranges</a></li>
           <li><a class="nav-ready" href="shop.html?avail=ready">✓ Ready to Ship</a></li>
           ${catTabs}
-          <li><a href="digital-products.html"${page === "digital-products.html" ? ' aria-current="page"' : ""}>Digital Products</a></li>
           <li data-cat="services"><a href="staging.html">Design House ${IC.caret}</a></li>
-          <li><a href="cleaning-services.html">Cleaning Services</a></li>
         </ul>
       </div>
       ${megaMarkup}${servicesMega}
