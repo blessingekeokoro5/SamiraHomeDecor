@@ -2447,3 +2447,8 @@ a.svc-display-tile:hover img { transform: scale(1.03); }
 .stylera-answer a { overflow-wrap:anywhere; }
 .stylera-answer img { max-width:64px; }
 @media(max-width:480px){.chat-panel{height:min(74dvh,640px);max-height:calc(100dvh - 105px);border-radius:18px}}
+
+/* Homepage carousel: prevent oversized headings and aggressive photo zoom. */
+.hero .hero-grid .hero-title { font-size: clamp(1.8rem, 3.2vw, 2.75rem); font-weight: 600; line-height: 1.18; max-width: 24ch; margin: 0 0 14px; }
+.hero-slides .hero-slide.active { animation: none; transform: none; }
+@media (max-width: 640px) { .hero .hero-grid .hero-title { font-size: clamp(1.65rem, 6vw, 2.15rem); max-width: 100%; } .hero-grid { min-height: 58vh; padding-top: 65px; padding-bottom: 42px; } }
