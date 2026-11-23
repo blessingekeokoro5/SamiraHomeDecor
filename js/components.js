@@ -223,20 +223,14 @@ function buildHeader() {
               <div class="mega-col">
                 <h5>Design services</h5>
                 <ul>
-                  <li><a href="styled-spaces.html">Styled Spaces by Samira</a></li>
-                  <li><a href="property-styling-staging.html">Home Styling &amp; Staging</a></li>
-                  <li><a href="personal-shopping.html">Home Décor Personal Shopper</a></li>
-                  <li><a href="vacation-rentals.html">Vacation Rentals</a></li>
-                  <li><a href="interior-design.html">Interior Design</a></li>
-                  <li><a href="cleaning-services.html">Cleaning Services</a></li>
+                  <li><a href="staging.html#services">All design services</a></li>
                 </ul>
               </div>
               <div class="mega-col">
                 <h5>Explore</h5>
                 <ul>
-                  <li><a href="staging.html">Explore Design House</a></li>
                   <li><a href="portfolio.html">Our portfolio</a></li>
-                  <li><a href="staging.html#book">Book a consultation</a></li>
+                  <li><a href="staging.html#book">Consultation update</a></li>
                   <li><a href="stylist.html">Samira Stylera</a></li>
                   <li><a href="careers.html">Careers</a></li>
                 </ul>
@@ -286,8 +280,7 @@ function buildHeader() {
     { label: "Ready to Ship", href: "ready-to-ship-dining-kitchen.html", icon: "✓" },
     { label: "Our Collections", href: "index.html#ranges", icon: "▦" },
     { label: "Sale & Promotions", href: "promotions.html", icon: "%" },
-    { label: "Styling Inspiration", href: "inspire.html", icon: "✧" },
-    { label: "Design House", href: "staging.html", icon: "⌂" }
+    { label: "Styling Inspiration", href: "inspire.html", icon: "✧" }
   ];
   const helpRows = [
     { label: "Contact Us", href: "contact.html", icon: "☎" },
@@ -307,6 +300,10 @@ function buildHeader() {
       <a class="m-menu-promo" href="ready-to-ship-dining-kitchen.html"><span class="m-menu-promo-kicker">JUST LANDED</span><strong>Ready-to-ship dining &amp; kitchen</strong><span>Shop 303 new pieces →</span></a>
       <section class="m-menu-section" aria-labelledby="mRooms"><h2 id="mRooms">Shop by room</h2><div class="m-menu-list">${mobileRows(roomRows)}</div></section>
       <section class="m-menu-section" aria-labelledby="mCats"><h2 id="mCats">Shop by category</h2><div class="m-menu-list">${mobileRows(categoryRows)}</div></section>
+      <section class="m-menu-section" aria-labelledby="mServices"><h2 id="mServices">Services</h2><div class="m-menu-list">${mobileRows([
+      { label: "Design House", href: "staging.html", icon: "⌂" },
+        { label: "Cleaning Services", href: "cleaning-services.html", icon: "🧼" }
+      ])}</div></section>
       <section class="m-menu-section" aria-labelledby="mInspire"><h2 id="mInspire">Deals &amp; inspiration</h2><div class="m-menu-list">${mobileRows(inspirationRows)}</div></section>
       <section class="m-menu-section" aria-labelledby="mHelp"><h2 id="mHelp">Help &amp; account</h2><div class="m-menu-list">${mobileRows(helpRows)}</div></section>
       <div class="m-menu-region"><button type="button" onclick="document.querySelector('.m-drawer-close')?.click();openCountryModal()">${AU_FLAG_SVG}<span>${(typeof curLabel === "function" ? curLabel() : "AUD $")} · Australia</span><span aria-hidden="true">›</span></button></div>
@@ -317,7 +314,7 @@ function buildHeader() {
     <div class="container top-utility-inner">
       <div class="tu-left"><a href="policy.html?doc=returns">✓ 30-Day Returns · Free shipping over $3,500</a></div>
       <div class="tu-right">
-        <a href="staging.html#book">Book Consult</a>
+        <a href="staging.html#book">Consultation update</a>
         <a href="support.html">Customer Care</a>
         <a href="about.html">About Us</a>
         <a href="trade.html">Trade</a>
@@ -380,6 +377,7 @@ function buildHeader() {
           ${catTabs}
           <li><a href="digital-products.html"${page === "digital-products.html" ? ' aria-current="page"' : ""}>Digital Products</a></li>
           <li data-cat="services"><a href="staging.html">Design House ${IC.caret}</a></li>
+          <li><a href="cleaning-services.html">Cleaning Services</a></li>
         </ul>
       </div>
       ${megaMarkup}${servicesMega}
