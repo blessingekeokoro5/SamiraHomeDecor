@@ -75,8 +75,7 @@ const intro = "Hi, I’m Stylera, Samira Home Decor’s AI shopping and customer
 const supportPaths = {
   ticket: ["/support.html#ticket", "Open the support ticket form"],
   human: ["/stylera-supabase-customer.html", "Chat with Customer Care"],
-  account: ["/account.html", "Go to account sign-in"],
-  callback: ["/support.html#callback", "Request a callback"]
+  account: ["/account.html", "Go to account sign-in"]
 };
 
 function supportReply(message, ...actions) {
@@ -152,11 +151,11 @@ function createConversation(channel) {
     if (ticket) {
       supportActive = true;
       awaitingTicket = false;
-      return supportReply("Please open the ticket form and enter an email you can access. In the message, explain which account has the issue and add the order reference if you have it. Select Email as your contact preference if you want an email reply. You’ll see confirmation and a reference after the form has been submitted.", "ticket");
+      return supportReply("Please open the ticket form and enter an email you can access. In the message, explain which account has the issue and add the order reference if you have it. You’ll see confirmation and a reference after the form has been submitted.", "ticket");
     }
     if (/\b(?:phone number|contact number|call back|callback|can i call|how (?:do|can) i call|phone support|speak.*phone)\b/.test(t)) {
       supportActive = true;
-      return supportReply("You can request a callback from Samira Home Decor’s Customer Care team. If you’d rather use live chat or email, you can contact the team using the options below.", "callback", "human", "ticket");
+      return supportReply("For store questions, our Customer Care team can help through live chat or reply to a support ticket by email.", "human", "ticket");
     }
     if (/(?:how long|when|timeframe).*(?:reply|respond|hear back|get back|care team|follow up|ticket|callback)/.test(t) || (supportActive && /^how long(?: will it take)?$/.test(t))) {
       return supportReply("Response times vary. If you chose email on your ticket, keep an eye on the inbox and spam folder for the reply address you provided. If you need to follow up, include your ticket reference.", "human");

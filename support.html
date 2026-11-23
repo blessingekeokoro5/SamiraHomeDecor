@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://samirahomedecor.com.au/support.html">
   <title>Assistance & Contact, Samira Home Decor Customer Care Centre</title>
-  <meta name="description" content="Samira Home Decor customer care centre, find answers about orders, delivery, returns and your account, or contact us by ticket, live chat or request a call back.">
+  <meta name="description" content="Samira Home Decor customer care centre, find answers about orders, delivery, returns and your account, or contact us by support ticket or live chat.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Samira Home Decor">
   <meta property="og:image" content="https://samirahomedecor.com.au/assets/hero.jpg">
@@ -31,7 +31,7 @@
     .more-q { columns: 2; column-gap: 40px; }
     .more-q a { display: block; padding: 10px 0; color: var(--body); border-bottom: 1px dashed var(--line); break-inside: avoid; }
     .more-q a:hover { color: var(--rose-deep); }
-    .contact-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 44px; }
+    .contact-opts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 44px; }
     .opt-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 24px; text-align: center; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
     .opt-card .opt-ic { font-size: 2.2rem; margin-bottom: 12px; }
     .opt-card h3 { margin-bottom: 8px; }
@@ -77,7 +77,7 @@
       <div class="breadcrumb"><a href="index.html">Home</a> / Assistance &amp; Contact</div>
       <span class="eyebrow">Customer Care Centre</span>
       <h1>We're here to help</h1>
-      <p>Our live chat is available and we typically reply instantly. If our customer care representative is busy assisting other shoppers, you can request a call back or submit a support ticket for any pending issues through our Customer Care Centre.</p>
+      <p>Start a live chat with our team or send a support ticket for an email reply.</p>
       <button type="button" class="btn btn--primary" style="margin-top:14px" onclick="openHelpDesk()">Open Customer Care</button>
     </div>
   </section>
@@ -85,8 +85,8 @@
   <!-- Contact options -->
   <section class="section">
     <div class="container">
-      <div class="section-head reveal"><span class="eyebrow">Get in touch</span><h2>3 ways we can get in touch</h2>
-        <p>Start with live chat for a quick response. If our team is assisting other shoppers, request a call back or submit a ticket for an issue that needs follow-up.</p></div>
+      <div class="section-head reveal"><span class="eyebrow">Get in touch</span><h2>Contact Customer Care</h2>
+        <p>Start with live chat for a quick response. If our team is assisting other shoppers, submit a ticket for an issue that needs follow-up.</p></div>
       <div class="contact-opts">
         <div class="opt-card reveal">
           <div class="opt-ic">💬</div>
@@ -94,13 +94,6 @@
           <p>Our live chat is available, with typically instant replies. Speak with our customer care team right here on the site.</p>
           <div class="hours">Replies may take longer when representatives are busy</div>
           <a class="btn btn--forest" href="contact.html" onclick="openLiveChat(this.dataset.msg);return false;">Live chat</a>
-        </div>
-        <div class="opt-card reveal">
-          <div class="opt-ic">📞</div>
-          <h3>Request a call back</h3>
-          <p>Leave your details and our team will call you back at a time that suits you.</p>
-          <div class="hours">Our team will contact you as soon as available</div>
-          <a class="btn btn--outline" href="#callback">Request a call back</a>
         </div>
         <div class="opt-card reveal">
           <div class="opt-ic">📩</div>
@@ -113,11 +106,11 @@
     </div>
   </section>
 
-  <!-- Ticket + Callback (green block) -->
+  <!-- Support ticket -->
   <section class="section" style="padding-top:0">
     <div class="container">
       <div class="contact-forest reveal">
-        <div class="split" style="gap:44px">
+        <div style="max-width:680px;margin-inline:auto">
           <div id="ticket">
             <span class="eyebrow">Send a ticket</span>
             <h2>Message our team</h2>
@@ -127,34 +120,10 @@
                 <div class="field"><input type="text" name="customerName" autocomplete="name" maxlength="100" placeholder="Your name" required></div>
                 <div class="field"><input type="email" name="customerEmail" autocomplete="email" placeholder="Your email" required></div>
               </div>
-              <div class="field-row">
-                <div class="field"><label for="ticketPhone" style="display:block;color:#fff;margin-bottom:6px">Phone number</label><input id="ticketPhone" type="tel" name="customerPhone" autocomplete="tel" maxlength="30" placeholder="Your phone number" required></div>
-                <div class="field"><label for="ticketContact" style="display:block;color:#fff;margin-bottom:6px">Preferred contact method</label><select id="ticketContact" name="contactPreference" required><option value="" disabled selected>How should we contact you?</option><option value="Email">Email</option><option value="Phone call">Phone call</option><option value="Live chat">Live chat</option></select></div>
-              </div>
               <div class="field"><textarea name="message" maxlength="2000" placeholder="How can we help?" required style="min-height:100px"></textarea></div>
               <button type="submit" class="btn btn--light">📩 Send my ticket</button>
               <div class="form-success" id="supportTicketResult" role="status" aria-live="polite"></div>
             </form>
-          </div>
-          <div id="callback">
-            <div class="form-card" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.14)">
-              <span class="eyebrow" style="color:var(--rose-soft)">Quick contact</span>
-              <h3 style="color:#fff">Request a call back</h3>
-              <p style="color:#d7cec3;font-size:0.94rem">Leave your details and our team will call you back within 2 business hours.</p>
-              <form id="supportCallbackForm">
-                <div class="field"><input type="text" name="callbackName" maxlength="100" placeholder="Your name" required></div>
-                <div class="field"><input type="tel" name="callbackPhone" maxlength="30" placeholder="Best number to reach you" required><input type="email" name="callbackEmail" maxlength="254" placeholder="Your email" required></div>
-                <div class="field">
-                  <select name="callbackTime">
-                    <option>Best time to call, Anytime</option>
-                    <option>Morning</option><option>Afternoon</option><option>Evening</option>
-                  </select>
-                </div>
-                <div class="field"><input type="text" placeholder="What's it regarding?"></div>
-                <button type="submit" class="btn btn--primary btn--block">📞 Request my callback</button>
-                <div class="form-success" id="supportCallbackResult" role="status" aria-live="polite"></div>
-              </form>
-            </div>
           </div>
         </div>
       </div>
@@ -231,17 +200,6 @@
     const output=document.getElementById('supportTicketResult');
     const cfg=window.STYLERA_SUPABASE_CONFIG;
     const client=cfg?.url&&cfg?.publishableKey?createClient(cfg.url,cfg.publishableKey,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}}):null;
-    const callback=document.getElementById('supportCallbackForm'),callbackOutput=document.getElementById('supportCallbackResult');
-    callback.addEventListener('submit',async event=>{
-      event.preventDefault();const button=callback.querySelector('[type="submit"]');button.disabled=true;callbackOutput.textContent='Submitting callback request…';
-      try{
-        const data=new FormData(callback),name=String(data.get('callbackName')||'').trim(),phone=String(data.get('callbackPhone')||'').trim(),email=String(data.get('callbackEmail')||'').trim(),subject=String(data.get('callbackSubject')||'').trim(),time=String(data.get('callbackTime')||'Anytime');
-        const response=await fetch('/.netlify/functions/stylera-care-sync',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'callback',name,email,phone,subject,message:'Preferred callback time: '+time})});
-        const result=await response.json();if(!response.ok||!result.ok)throw new Error(result.message||'Unable to submit callback.');
-        callbackOutput.textContent='Your callback request has been received. Our team will follow up when available.';callback.reset();
-      }catch(error){callbackOutput.textContent='Your callback request could not be confirmed. Please contact us through live chat. '+(error.message||'')}
-      finally{button.disabled=false}
-    });
     let ticketSubmitted=false;
     form.addEventListener('input',()=>{if(ticketSubmitted){ticketSubmitted=false;const b=form.querySelector('[type="submit"]');b.disabled=false;b.textContent='📩 Send my ticket';}});
     form.addEventListener('submit',async event=>{
@@ -256,10 +214,8 @@
         const data=new FormData(form);
         const name=String(data.get('customerName')||'').trim();
         const email=String(data.get('customerEmail')||'').trim();
-        const phone=String(data.get('customerPhone')||'').trim();
-        const contactPreference=String(data.get('contactPreference')||'').trim();
         const message=String(data.get('message')||'').trim();
-        if(name.length<2||phone.length<6||!['Email','Phone call','Live chat'].includes(contactPreference)||!form.checkValidity()||!message)throw new Error('Please complete all fields.');
+        if(name.length<2||!form.checkValidity()||!message)throw new Error('Please complete all fields.');
         const bytes=crypto.getRandomValues(new Uint8Array(32));
         const token=Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
         const response=await fetch('/.netlify/functions/stylera-guest-start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,token})});
@@ -274,12 +230,12 @@
         form.reset();
         let caseSynced=false;
         try{
-          const sync=await fetch('/.netlify/functions/stylera-care-sync',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'ticket',thread:result.thread,name,email,phone,subject:message.slice(0,120),message})});
+          const sync=await fetch('/.netlify/functions/stylera-care-sync',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({kind:'ticket',thread:result.thread,name,email,subject:message.slice(0,120),message})});
           caseSynced=sync.ok&&(await sync.json()).ok===true;
         }catch(error){console.warn('Ticket case sync unavailable',error)}
         let emailDelivered=false;
         try{
-          const notice=await fetch('/.netlify/functions/support-ticket-email',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,phone,contactPreference,message,reference:result.thread})});
+          const notice=await fetch('/.netlify/functions/support-ticket-email',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name,email,message,reference:result.thread})});
           emailDelivered=notice.ok&&(await notice.json()).ok===true;
         }catch(error){console.warn('Support ticket email notification failed',error)}
         output.textContent='Your support request has been received. Reference: '+result.thread.slice(0,8).toUpperCase()+'. You can continue this conversation in live chat on this device.'+(emailDelivered?' A notification was sent to our support inbox.':' Email notification could not be confirmed; your request remains in the support inbox.');
