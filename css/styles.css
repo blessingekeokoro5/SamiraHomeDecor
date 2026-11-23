@@ -2427,3 +2427,23 @@ a.svc-display-tile:hover img { transform: scale(1.03); }
   .cx-ic { width: 36px; height: 36px; }
   .fulfil-grid { grid-template-columns: minmax(0,1fr); }
 }
+
+/* Stylera brand refresh: consistent navy, gold and white chat experience */
+.chat-panel { border-radius:20px; border:1px solid #d9c59a; box-shadow:0 18px 48px rgba(11,31,58,.24); }
+.chat-head { background:#112b48; border-bottom:2px solid #d6af65; }
+.chat-avatar { background:#d6af65; color:#112b48; }
+.chat-head-id small { color:#f0dfb8; }
+.chat-online { background:#4fce80; box-shadow:0 0 0 3px rgba(79,206,128,.15); }
+.chat-msg.me .bubble { background:#112b48; color:white; }
+.chat-msg.bot .bubble { border-color:#e9dfca; background:white; }
+.chat-msg.bot .bubble a { color:#123e69; text-decoration:underline; }
+.chat-quick button { border-color:#d6af65; color:#112b48; background:#fffdf8; }
+.chat-quick button:hover,.chat-quick button:focus-visible { background:#f5e8cb; border-color:#a47c32; }
+.chat-input button { background:#112b48; }
+.chat-input button:hover { background:#23476c; }
+.chat-input input:focus { border-color:#b38b43; }
+.chat-tab.active { color:#112b48; border-color:#b38b43; }
+.stylera-answer { overflow-wrap:anywhere; }
+.stylera-answer a { overflow-wrap:anywhere; }
+.stylera-answer img { max-width:64px; }
+@media(max-width:480px){.chat-panel{height:min(74dvh,640px);max-height:calc(100dvh - 105px);border-radius:18px}}
