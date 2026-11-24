@@ -617,7 +617,9 @@ exports.handler = async (event) => {
       client_reference_id: orderNo,
       payment_intent_data: { description: `Samira Home Decor order ${orderNo}`, metadata: { order_no: orderNo } },
       success_url: `${SITE_URL}/order-confirmed.html?order=${orderNo}&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${SITE_URL}/cart.html`,
+      cancel_url: body.channel === "app-web"
+        ? "https://samira-home-decor-app.netlify.app/checkout?cancelled=1"
+        : `${SITE_URL}/cart.html`,
       metadata: {
         order_no: orderNo,
         source: "samira-web",

@@ -206,3 +206,7 @@ fs.writeFileSync(
   JSON.stringify(shareIndex) + "\n"
 );
 console.log(`✓ share index written: ${Object.keys(shareIndex).length} products -> share-index.json`);
+
+/* Publish only fields needed by the shopping app. Keep wholesale, supplier,
+   fulfilment and member pricing in the server-side checkout catalogue. */
+require("./write-mobile-catalogue")(ROOT, PRODUCTS, products, shareIndex);

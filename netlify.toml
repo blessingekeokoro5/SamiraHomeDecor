@@ -174,3 +174,9 @@
   to = "/product.html"
   status = 301
   force = true
+
+[[headers]]
+  for = "/mobile-catalogue.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=300, must-revalidate"
