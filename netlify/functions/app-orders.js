@@ -1,4 +1,4 @@
-const { findOrder, loadStatus, openStore, publicStatus, validOrderNo } = require("./_orders");
+const { findOrder, itemsFor, loadStatus, openStore, publicStatus, validOrderNo } = require("./_orders");
 const { indexPaidOrder, listOrders, normaliseEmail, verifiedEmail } = require("./_app-order-index");
 
 function json(statusCode, value) {
@@ -24,14 +24,23 @@ exports.handler = async event => {
   const email = verifiedEmail(input?.member);
   if (!email) return json(401, { error: "sign_in_required" });
   const { action, orderNo } = input;
-  if (!["list", "add"].includes(action) || (action === "add" && !validOrderNo(orderNo))) {
+  if (!["list", "add", "track"].includes(action) || (action !== "list" && !validOrderNo(orderNo))) {
     return json(400, { error: "bad_request" });
   }
   try {
-    if (action === "add") {
+    if (action !== "list") {
       const order = await findOrder(orderNo);
       if (!order || order.orderNo !== orderNo || normaliseEmail(order.email) !== email) {
         return json(404, { error: "order_not_found" });
+      }
+      if (action === "track") {
+        const [record, items] = await Promise.all([loadStatus(openStore(), orderNo), itemsFor(order.sessionId)]);
+        return json(200, {
+          ok: true,
+          order: { orderNo, suburb: order.suburb, state: order.state, country: order.country },
+          status: publicStatus(order, record),
+          items: items.map(({ name, qty }) => ({ name, qty })),
+        });
       }
       if (!await indexPaidOrder(email, order)) return json(503, { error: "orders_unavailable" });
     }
