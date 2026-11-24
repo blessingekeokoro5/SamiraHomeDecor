@@ -23,6 +23,7 @@ const { issueGiftCard } = require("./_giftcards");
 const { recordReferral } = require("./_referrals");
 const { emailShop } = require("./_notify");
 const { orderPdf } = require("./_orderpdf");
+const { indexPaidSession } = require("./_app-order-index");
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 
 function money(cents, cur) {
@@ -211,6 +212,11 @@ exports.handler = async (event) => {
   } catch (err) {
     console.error("Webhook signature verification failed:", err.message);
     return { statusCode: 400, body: `Webhook Error: ${err.message}` };
+  }
+
+  if (["checkout.session.completed", "checkout.session.async_payment_succeeded"].includes(stripeEvent.type)) {
+    try { await indexPaidSession(stripeEvent.data.object); }
+    catch { console.error("Could not update the app order history."); }
   }
 
   try {
