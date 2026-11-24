@@ -214,10 +214,9 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: `Webhook Error: ${err.message}` };
   }
 
-  if (["checkout.session.completed", "checkout.session.async_payment_succeeded"].includes(stripeEvent.type)) {
-    try { await indexPaidSession(stripeEvent.data.object); }
-    catch { console.error("Could not update the app order history."); }
-  }
+  const historyUpdate = ["checkout.session.completed", "checkout.session.async_payment_succeeded"].includes(stripeEvent.type)
+    ? indexPaidSession(stripeEvent.data.object).catch(() => console.error("Could not update the app order history."))
+    : null;
 
   try {
     if (stripeEvent.type === "checkout.session.completed") {
@@ -277,5 +276,6 @@ exports.handler = async (event) => {
     // the event is still visible in the Stripe Dashboard.
   }
 
+  await historyUpdate;
   return { statusCode: 200, body: JSON.stringify({ received: true }) };
 };
