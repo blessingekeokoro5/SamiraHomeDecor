@@ -22,6 +22,8 @@
    ============================================================ */
 
 const { STAGES, AU_STATES, openStore, stripe, fromSession, findOrder, itemsFor, loadStatus, publicStatus, validOrderNo, productInfo, newToken } = require("./_orders");
+const { alertsEnabled } = require("./app-customer-settings");
+const { getStore } = require("@netlify/blobs");
 const { sendCustomerOffer } = require("./_offers");
 
 const TOKEN = process.env.BOOKING_ADMIN_TOKEN || "";
@@ -76,6 +78,35 @@ async function emailOutForDelivery(order, status) {
     }),
   });
   return res.ok;
+}
+
+const ALERT_STAGES = new Map([["confirmed", "confirmed"], ["shipped", "dispatched"], ["delivered", "delivered"]]);
+
+async function sendAppOrderAlert(order, stage) {
+  const label = ALERT_STAGES.get(stage);
+  if (!label || !BREVO_API_KEY || !order.email || !(await alertsEnabled(order.email))) return;
+  const alerts = getStore({ name: "app-order-alerts", consistency: "strong" });
+  const key = order.orderNo + "/" + stage;
+  const claim = await alerts.setJSON(key, { started: Date.now() }, { onlyIfNew: true });
+  if (!claim.modified) return;
+  try {
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: { "api-key": BREVO_API_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sender: { email: SENDER_EMAIL, name: SENDER_NAME },
+        to: [{ email: order.email }],
+        subject: "Samira Home Decor order " + order.orderNo + " " + label,
+        textContent: "Your Samira Home Decor order " + order.orderNo + " has been " + label +
+          ". Track its progress at " + SITE_URL + "/track.html?order=" + encodeURIComponent(order.orderNo),
+      }),
+      signal: AbortSignal.timeout(6000),
+    });
+    if (!response.ok) await alerts.delete(key);
+  } catch (error) {
+    await alerts.delete(key);
+    throw error;
+  }
 }
 
 exports.handler = async (event) => {
@@ -156,6 +187,7 @@ exports.handler = async (event) => {
   }
 
   await store.setJSON(orderNo, rec);
+  try { await sendAppOrderAlert(order, stage); } catch { console.error("Could not send the app order alert."); }
   return json(200, { ok: true, status: publicStatus(order, rec), emailed });
 };
 

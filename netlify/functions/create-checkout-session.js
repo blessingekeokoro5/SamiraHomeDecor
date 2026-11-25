@@ -383,7 +383,7 @@ function overRateLimit(ip) {
   return hits.length > RATE_MAX;
 }
 
-exports.handler = async (event) => {
+async function handleCheckout(event, deliveryEstimate = false) {
   if (event.httpMethod === "OPTIONS") return jsonResponse(200, {});
   if (event.httpMethod !== "POST") return jsonResponse(405, { error: "Method Not Allowed" });
 
@@ -392,7 +392,7 @@ exports.handler = async (event) => {
     return jsonResponse(429, { error: "That's a lot of attempts in a row. Please wait a moment and try again." });
   }
 
-  if (!process.env.STRIPE_SECRET_KEY) {
+  if (!deliveryEstimate && !process.env.STRIPE_SECRET_KEY) {
     console.error("STRIPE_SECRET_KEY is not set");
     return jsonResponse(500, { error: "Payments aren’t configured yet. Please contact us to complete your order." });
   }
@@ -495,6 +495,9 @@ exports.handler = async (event) => {
     const decorQuote = await quoteSuppliers(lines, {country:String(customer.country || "Australia"),postcode:customer.postcode,suburb:customer.suburb});
     const ship = shippingFor(String(customer.country || "Australia"), String(fulfil), lines, afterDiscount, customer.postcode, decorQuote);
     if (ship.quoteRequired) return jsonResponse(400, { code: "freight_quote_required", error: ship.message });
+    if (deliveryEstimate) {
+      return jsonResponse(200, { delivery: { amount: ship.amount, days: ship.days, label: ship.label } });
+    }
 
     // 5. Gift card — verified against the ledger, never taken on trust.
     //    A card only reduces the bill if Samira Home Decor actually issued it and it
@@ -652,4 +655,7 @@ exports.handler = async (event) => {
       error: clientSafe ? err.message : "Payment could not be started. Please try again or contact us.",
     });
   }
-};
+}
+
+exports.handler = event => handleCheckout(event);
+exports.estimate = event => handleCheckout(event, true);
