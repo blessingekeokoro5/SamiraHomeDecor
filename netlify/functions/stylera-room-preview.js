@@ -1,5 +1,5 @@
 const { createHmac } = require("node:crypto");
-const { getStore } = require("@netlify/blobs");
+const { appStore, connectAppBlobs } = require("./_app-blobs");
 const { verifiedEmail } = require("./_app-order-index");
 
 const MAX_BODY = 2_650_000;
@@ -41,7 +41,8 @@ exports.handler = async event => {
   const day = new Date().toISOString().slice(0, 10);
   const identity = createHmac("sha256", process.env.AUTH_SECRET || process.env.BREVO_API_KEY).update(email).digest("hex");
   try {
-    const limits = getStore({ name: "stylera-image-limits", consistency: "strong" });
+    connectAppBlobs(event);
+    const limits = appStore("stylera-image-limits");
     const account = day + "/account/" + identity;
     if (!(await limits.setJSON(account, true, { onlyIfNew: true })).modified) {
       return json(429, { error: "You’ve used today’s room preview." });

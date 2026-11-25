@@ -1,5 +1,5 @@
 const { createHmac, createHash, timingSafeEqual } = require("node:crypto");
-const { getStore } = require("@netlify/blobs");
+const { appStore, connectAppBlobs } = require("./_app-blobs");
 const { verifiedEmail } = require("./_app-order-index");
 const { products } = require("./_catalogue.json");
 const { handler: emailTicket } = require("./support-ticket-email");
@@ -12,8 +12,8 @@ const HEADERS = {
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
 };
 const reply = (statusCode, data) => ({ statusCode, headers: HEADERS, body: JSON.stringify(data) });
-const careStore = () => getStore({ name: "app-customer-care", consistency: "strong" });
-const reviewsStore = () => getStore({ name: "app-product-reviews", consistency: "strong" });
+const careStore = () => appStore("app-customer-care");
+const reviewsStore = () => appStore("app-product-reviews");
 const bounded = (value, max) => typeof value === "string" ? value.trim().slice(0, max) : "";
 const productId = id => typeof id === "string" && /^[a-z\d_-]{1,64}$/i.test(id) && Object.hasOwn(products, id);
 const refMatch = /^[a-f\d]{8}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{12}$/i;
@@ -146,6 +146,7 @@ exports.handler = async event => {
   const method = event.httpMethod;
   if (method === "OPTIONS") return reply(200, {});
   try {
+    connectAppBlobs(event);
     if (method === "GET") {
       const { product, photo } = event.queryStringParameters || {};
       if (!productId(product)) return reply(404, { error: "Product not found." });
@@ -172,7 +173,8 @@ exports.handler = async event => {
     if (body.action === "list-tickets" || body.action === "create-ticket") return await support(body, email);
     if (body.action === "submit-review") return await submitReview(body, email);
     return reply(400, { error: "Unknown request." });
-  } catch {
+  } catch (error) {
+    console.error('App care storage failed:', error?.name, error?.status ?? error?.statusCode);
     return reply(503, { error: "Customer care is temporarily unavailable. Try again." });
   }
 };

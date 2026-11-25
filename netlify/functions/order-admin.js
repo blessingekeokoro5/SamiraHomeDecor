@@ -23,7 +23,7 @@
 
 const { STAGES, AU_STATES, openStore, stripe, fromSession, findOrder, itemsFor, loadStatus, publicStatus, validOrderNo, productInfo, newToken } = require("./_orders");
 const { alertsEnabled } = require("./app-customer-settings");
-const { getStore } = require("@netlify/blobs");
+const { appStore, connectAppBlobs } = require("./_app-blobs");
 const { sendCustomerOffer } = require("./_offers");
 
 const TOKEN = process.env.BOOKING_ADMIN_TOKEN || "";
@@ -85,7 +85,7 @@ const ALERT_STAGES = new Map([["confirmed", "confirmed"], ["shipped", "dispatche
 async function sendAppOrderAlert(order, stage) {
   const label = ALERT_STAGES.get(stage);
   if (!label || !BREVO_API_KEY || !order.email || !(await alertsEnabled(order.email))) return;
-  const alerts = getStore({ name: "app-order-alerts", consistency: "strong" });
+  const alerts = appStore("app-order-alerts");
   const key = order.orderNo + "/" + stage;
   const claim = await alerts.setJSON(key, { started: Date.now() }, { onlyIfNew: true });
   if (!claim.modified) return;
@@ -187,7 +187,7 @@ exports.handler = async (event) => {
   }
 
   await store.setJSON(orderNo, rec);
-  try { await sendAppOrderAlert(order, stage); } catch { console.error("Could not send the app order alert."); }
+  try { connectAppBlobs(event); await sendAppOrderAlert(order, stage); } catch { console.error("Could not send the app order alert."); }
   return json(200, { ok: true, status: publicStatus(order, rec), emailed });
 };
 

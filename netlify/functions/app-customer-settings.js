@@ -1,5 +1,5 @@
 const { createHmac } = require("node:crypto");
-const { getStore } = require("@netlify/blobs");
+const { appStore, connectAppBlobs } = require("./_app-blobs");
 const { normaliseEmail, verifiedEmail } = require("./_app-order-index");
 
 const SECRET = process.env.AUTH_SECRET || process.env.BREVO_API_KEY || "";
@@ -11,7 +11,7 @@ const HEADERS = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 const reply = (statusCode, value) => ({ statusCode, headers: HEADERS, body: JSON.stringify(value) });
-const store = () => getStore({ name: "app-customer-settings", consistency: "strong" });
+const store = () => appStore("app-customer-settings");
 const accountKey = email => createHmac("sha256", SECRET).update("app-settings|" + email).digest("hex");
 
 function cleanPlan(plan) {
@@ -50,6 +50,7 @@ exports.handler = async event => {
   const prefix = accountKey(email);
   const planPrefix = prefix + "/plan/";
   try {
+    connectAppBlobs(event);
     const blobs = store();
     switch (body.action) {
       case "get-alerts":
