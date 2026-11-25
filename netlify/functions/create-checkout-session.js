@@ -258,7 +258,8 @@ function resolveLine(raw, member) {
     else unitPrice = unitPrice * Math.min(1, p.memberPrice / p.price);
   }
 
-  const memberDiscountApplied = round2(regularUnitPrice) > round2(unitPrice);
+  const memberDiscountAmount = Math.max(0, round2(regularUnitPrice) - round2(unitPrice));
+  const memberDiscountApplied = memberDiscountAmount > 0;
 
   if (!p.readyDining && p.cat !== "Packaging" && halloweenOn()) {
     // Halloween: 15% off storewide; replaces the other promos rather than stacking.
@@ -276,6 +277,7 @@ function resolveLine(raw, member) {
     name: (variant ? `${p.name} (${variant})` : p.name).slice(0, 250),
     sku: id,
     memberDiscountApplied,
+    memberDiscountAmount,
     unitPrice: round2(unitPrice),
     qty,
     weight: p.weight != null ? p.weight : DEFAULT_ITEM_KG,
@@ -569,7 +571,7 @@ async function handleCheckout(event, deliveryEstimate = false) {
         currency: "aud",
         product_data: {
           name: l.name,
-          ...((l.memberDiscountApplied || l.preorder || (discountLabel && !l.readyDining)) ? { description: [l.memberDiscountApplied ? "Member discount applied" : "", l.preorder ? `Pre-order · expected ${l.expected}` : "", discountLabel && !l.readyDining ? `Includes ${discountLabel}` : ""].filter(Boolean).join(" · ") } : {}),
+          ...((l.memberDiscountApplied || l.preorder || (discountLabel && !l.readyDining)) ? { description: [l.memberDiscountApplied ? `Member discount: −A${round2(l.memberDiscountAmount * l.qty).toFixed(2)}${l.qty > 1 ? " (total for " + l.qty + " items)" : ""}` : "", l.preorder ? `Pre-order · expected ${l.expected}` : "", discountLabel && !l.readyDining ? `Includes ${discountLabel}` : ""].filter(Boolean).join(" · ") } : {}),
           ...(l.sku ? { metadata: { sku: l.sku } } : {}),
         },
         unit_amount: chargePerUnit(l, eligibleSubtotal, discount, voucher),
