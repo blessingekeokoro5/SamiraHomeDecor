@@ -42,6 +42,8 @@ function getStripe() {
 }
 
 const SITE_URL = process.env.SITE_URL || "https://samirahomedecor.com.au";
+const APP_CHECKOUT = "https://samira-home-decor-app.netlify.app/checkout";
+const APP_EMBEDDED_CHANNEL = "samira-app-embedded";
 
 // Countries we ship to (ISO codes) — matches the site's shipping calculator regions
 const SHIP_COUNTRIES = new Map([["Australia", "AU"], ["New Zealand", "NZ"]]);
@@ -596,6 +598,7 @@ async function handleCheckout(event, deliveryEstimate = false) {
     ];
 
     const orderNo = newOrderNo();
+    const embedded = body.channel === "app-web-embedded";
     const session = await getStripe().checkout.sessions.create({
       mode: "payment",
       line_items,
@@ -619,13 +622,20 @@ async function handleCheckout(event, deliveryEstimate = false) {
       allow_promotion_codes: false,
       client_reference_id: orderNo,
       payment_intent_data: { description: `Samira Home Decor order ${orderNo}`, metadata: { order_no: orderNo } },
-      success_url: `${SITE_URL}/order-confirmed.html?order=${orderNo}&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: body.channel === "app-web"
-        ? "https://samira-home-decor-app.netlify.app/checkout?cancelled=1"
-        : `${SITE_URL}/cart.html`,
+      ...(embedded
+        ? {
+            ui_mode: "embedded",
+            redirect_on_completion: "if_required",
+            return_url: APP_CHECKOUT + "?stripe_session={CHECKOUT_SESSION_ID}",
+          }
+        : {
+            success_url: `${SITE_URL}/order-confirmed.html?order=${orderNo}&session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: body.channel === "app-web" ? APP_CHECKOUT + "?cancelled=1" : `${SITE_URL}/cart.html`,
+          }),
       metadata: {
         order_no: orderNo,
         source: "samira-web",
+        ...(embedded ? { checkout_channel: APP_EMBEDDED_CHANNEL } : {}),
         fulfil: String(fulfil),
         suburb: customer.suburb || "",
         postcode: customer.postcode || "",
@@ -646,6 +656,10 @@ async function handleCheckout(event, deliveryEstimate = false) {
       },
     });
 
+    if (embedded) {
+      if (!session.client_secret) throw new Error("Stripe did not return an embedded checkout session");
+      return jsonResponse(200, { clientSecret: session.client_secret, id: session.id });
+    }
     return jsonResponse(200, { url: session.url, id: session.id, orderNo });
   } catch (err) {
     console.error("create-checkout-session error:", err.message);
@@ -659,3 +673,37 @@ async function handleCheckout(event, deliveryEstimate = false) {
 
 exports.handler = event => handleCheckout(event);
 exports.estimate = event => handleCheckout(event, true);
+
+exports.appPaymentStatus = async event => {
+  const respond = (statusCode, value) => {
+    const response = jsonResponse(statusCode, value);
+    response.headers["Cache-Control"] = "no-store";
+    return response;
+  };
+  if (event.httpMethod === "OPTIONS") return respond(200, {});
+  if (event.httpMethod !== "POST") return respond(405, { error: "Method not allowed." });
+  if (event.isBase64Encoded || (event.body || "").length > 1024) return respond(400, { error: "Invalid request." });
+  const ip = (event.headers?.["x-nf-client-connection-ip"] || event.headers?.["client-ip"] || "").split(",")[0].trim();
+  if (overRateLimit(ip)) return respond(429, { error: "Please wait before checking your payment again." });
+  let body;
+  try { body = JSON.parse(event.body || "{}"); }
+  catch { return respond(400, { error: "Invalid request." }); }
+  const id = body?.id;
+  if (typeof id !== "string" || !/^cs_(live|test)_[a-zA-Z0-9]{8,250}$/.test(id)) {
+    return respond(400, { error: "Invalid payment session." });
+  }
+  try {
+    const session = await getStripe().checkout.sessions.retrieve(id);
+    if (session.metadata?.checkout_channel !== APP_EMBEDDED_CHANNEL) {
+      return respond(404, { error: "This payment session could not be found." });
+    }
+    if (session.payment_status === "paid" || session.payment_status === "no_payment_required" && session.status === "complete") {
+      return respond(200, { status: "paid", orderNo: session.metadata.order_no });
+    }
+    const status = session.status === "complete" ? "processing" : session.status === "expired" ? "expired" : "open";
+    return respond(200, { status });
+  } catch (error) {
+    if (error?.code === "resource_missing") return respond(404, { error: "This payment session could not be found." });
+    return respond(503, { error: "Could not verify your payment yet." });
+  }
+};
