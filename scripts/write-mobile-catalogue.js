@@ -50,6 +50,7 @@ module.exports = function writeMobileCatalogue(root, source, trusted, shareIndex
       ...(sizes.length ? {sizes} : {}),
       ...(typeof p.optionLabel === "string" && !SUPPLIER.test(p.optionLabel) ? {optionLabel: p.optionLabel} : {}),
       ...(sale.preorder ? {preorder: true} : {}),
+      readyToShip: !sale.preorder && !p.lead && !p.arriveBy,
       ...(sale.auOnly ? {auOnly: true} : {})
     });
   }

@@ -21,7 +21,7 @@ function catalog(){try{return typeof PRODUCTS!=="undefined"&&Array.isArray(PRODU
 function clean(s){return String(s||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[^\p{L}\p{N}\s-]/gu," ").toLowerCase().replace(/\s+/g," ").trim()}
 function budgetOf(q){const m=String(q).match(/(?:under|below|less than|up to|max(?:imum)?|budget(?: of)?|within)\s*(?:a\$|aud|\$)?\s*([\d,]+(?:\.\d{1,2})?)/i)||String(q).match(/(?:a\$|aud|\$)\s*([\d,]+(?:\.\d{1,2})?)/i);return m?Number(m[1].replace(/,/g,"")):null}
 const aliases={couch:"sofa",couches:"sofa",settee:"sofa",pillows:"cushion",pillow:"cushion",cushions:"cushion",vases:"vase",trays:"tray",desks:"desk",chairs:"chair",bath:"bathroom",office:"desk",wrap:"packaging",wrapping:"packaging",boxes:"box",hampers:"hamper"};
-function productMatches(question,topic){
+function productMatches(question,topic,available=catalog()){
  const budget=budgetOf(question),q=clean(question);
  let tokens=q.split(" ").filter(x=>x.length>2&&!stop.has(x)&&!/^\d+$/.test(x)).map(x=>aliases[x]||x);
  if(topic==="gifts")tokens=tokens.filter(x=>!/^(?:her|him|birthday|anniversary|christmas|housewarming|wedding|occasion|someone|special|friend|mum|dad|mother|father)$/.test(x));
@@ -29,7 +29,7 @@ function productMatches(question,topic){
  if(topic==="gifts"&&!tokens.length)tokens=["hamper","vase","candle","diffuser","tray"];
  if(topic==="styling"&&!tokens.length)return [];
  const colours=new Set(["white","black","navy","blue","gold","beige","cream","grey","gray","green","pink","brown","natural","marble","wood","silver"]);
- return catalog().filter(p=>budget==null||Number(p.price)<=budget).map(p=>{
+ return available.filter(p=>budget==null||Number(p.price)<=budget).map(p=>{
   const name=clean(p.name),cat=clean(p.cat),room=clean(p.room),desc=clean(p.desc||p.description||"");
   let score=0;
   for(const t of tokens){if(name.includes(t))score+=7;if(cat.includes(t))score+=4;if(room.includes(t))score+=3;if(desc.includes(t))score+=1}
@@ -182,6 +182,30 @@ function createConversation(channel) {
 
   return {answer, rating};
 }
+
+const appTopics = {
+  gifts: "Tell me who you’re shopping for, the occasion and your budget in AUD. I’ll look for suitable gifts in the app catalogue.",
+  styling: "Which room are you styling? Tell me the dimensions, colours and budget. In a living room, start with seating and a focal point, then layer cushions, artwork and accents. You can open the room planner below.",
+  products: "Tell me what you’re looking for, including the item, colour or budget. Open any matching product for its price and available options.",
+  orders: "Open order tracking to check your delivery. For an address change or an issue with your order, send a Customer Care request. Keep your payment details private.",
+  returns: "Open Support & returns to request help. Customer Care will check your order and explain the options.",
+  delivery: "We deliver within Australia. Eligible homewares can also be delivered to New Zealand. Enter your delivery address at checkout for an estimate based on your bag.",
+  human: "You can open live chat with Customer Care or send a support request right here in the app.",
+  international: "Delivery is available in Australia and New Zealand. Furniture delivery is within Australia. Your checkout shows the delivery estimate for eligible items.",
+};
+function answerForApp(question, products, previousTopic) {
+  const q = String(question || "").trim();
+  const issue = isIssue(q);
+  const continued = ["gifts","styling","products","packaging"].includes(previousTopic) ? previousTopic : null;
+  const topic = issue ? "returns" : choose(q) || continued;
+  const matches = !issue && (["products","styling","gifts","packaging"].includes(topic) || !topic)
+    ? productMatches(q,topic,products).map(product => product.id) : [];
+  const message = appTopics[topic] || topics[topic] ||
+    "I can help with styling, finding products and shopping questions. Tell me which room, product or delivery destination you’re asking about.";
+  return { topic: topic || "general", message, productIds: matches };
+}
+if (typeof module !== "undefined" && module.exports) module.exports = { answerForApp };
+if (typeof window === "undefined") return;
 
 window.StyleraKnowledge={
  intro, createConversation,
