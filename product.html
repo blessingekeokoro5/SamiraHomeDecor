@@ -223,7 +223,7 @@
     .prf-form { margin-top: 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
   </style>
   <link rel="stylesheet" href="css/reviews.css?v=3">
-  <script src="js/reviews.js?v=8" defer></script>
+  <script src="js/reviews.js?v=9" defer></script>
 </head>
 <body data-page="product.html">
   <div id="site-header"></div>
@@ -285,7 +285,7 @@
   <script src="js/shein-bathroom-expansion.js?v=1"></script>
   <script src="js/ai-overviews.js?v=7"></script>
   <script src="js/components.js?v=99"></script>
-  <script src="js/cart.js?v=40"></script>
+  <script src="js/cart.js?v=41"></script>
   <script src="js/delivery-request.js?v=1"></script>
   <script src="js/main.js?v=22"></script>
   <script>
@@ -734,7 +734,7 @@
               <div class="pdp-colour-label">Colour: <strong id="pdpColourName">${p.colours[0].name}</strong></div>
               <div class="pdp-swatches">${p.colours.map((c, i) => `<button type="button" class="pdp-swatch ${i === 0 ? 'active' : ''}" style="background:${c.hex}" aria-label="${c.name}" title="${c.name}" onclick="pdpSetColour('${c.name.replace(/'/g, "\\'")}', this)"></button>`).join("")}</div>
             </div>` : ""}
-            ${p.cat === "Packaging" ? `<div class="pdp-buy">
+            ${isSoldOut(p) ? `<div class="pdp-buy"><button class="btn btn--primary" disabled aria-disabled="true">Sold Out</button></div>` : p.cat === "Packaging" ? `<div class="pdp-buy">
               <a class="btn btn--primary" href="contact.html" onclick="openLiveChat(this.dataset.msg);return false;" data-msg="${("Hi Samira Home Decor, I'd like details and pricing for: " + p.name).replace(/"/g, "&quot;")}">💬 Enquire via live chat</a>
               <a class="btn btn--outline" href="packaging.html#bulk">Request a bulk quote</a>
             </div>` : `<div class="pdp-buy">
@@ -754,7 +754,7 @@
               <span aria-hidden="true" style="font-size:24px;color:#a47d37">›</span>
             </a>
             ${(typeof isPreorder === "function" && isPreorder(p)) ? `<div class="pdp-preorder" style="margin:-4px 0 16px;text-align:center;font-size:.92rem;color:var(--body)">Expected to arrive ${p.arriveBy ? "by " : ""}<strong style="color:var(--ink)">${preorderExpected(p)}</strong><div style="margin-top:4px;font-size:.84rem">${preorderTermsLink()}</div></div>` : ""}`}
-            ${p.price == null ? (p.tag !== "Coming Out Soon" ? "" : `<p style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)"><strong style="color:var(--ink)">Coming out soon.</strong> This kit is on its way and product photos are being uploaded. Enquire now to hear first when it's ready.</p>`) : `<div style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)">
+            ${isSoldOut(p) ? `<p role="status" style="color:#8b342d;font-weight:700">Sold Out — currently unavailable.</p>` : p.price == null ? (p.tag !== "Coming Out Soon" ? "" : `<p style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)"><strong style="color:var(--ink)">Coming out soon.</strong> This kit is on its way and product photos are being uploaded. Enquire now to hear first when it's ready.</p>`) : `<div style="margin:2px 0 16px;font-size:0.92rem;color:var(--body)">
               ${p.readyDining
                 ? `<strong>✓ Ready to ship</strong>
                   <div class="pdp-delcalc" style="margin-top:12px;padding:12px 14px;border:1px solid #E8DCC8;border-radius:10px;background:#fff">
