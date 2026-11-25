@@ -47,9 +47,11 @@ function gaItem(p, qty, price) {
 }
 
 // Cart lines are keyed by product + colour + size so variants are separate lines.
+function isSoldOut(p){return !!p && ["Aura Mist Ultrasonic Diffuser 160ml","Flame-Effect Ultrasonic Humidifier & Diffuser"].includes(String(p.name||"").trim());}
 function addToCart(id, qty = 1, colour = null, size = null, price = null) {
   const p = findProduct(id);
   if (!p) return;
+  if (isSoldOut(p)) { showToast('This product is sold out'); return; }
   const unitPrice = (price != null) ? price : p.price;
   const key = [id, colour || "", size || ""].join("|");
   const cart = getCart();
@@ -462,8 +464,8 @@ function productCard(p) {
       </div>
     </article>`;
   }
-  const tag = p.tag ? `<span class="tag ${/sale|black friday/i.test(p.tag) ? 'sale' : ''}">${p.tag}</span>` : "";
-  const hot = sellingFast(p) ? `<span class="badge-hot">⚡ Selling fast</span>` : "";
+  const tag = isSoldOut(p) ? `<span class="tag">Sold Out</span>` : p.tag ? `<span class="tag ${/sale|black friday/i.test(p.tag) ? 'sale' : ''}">${p.tag}</span>` : "";
+  const hot = !isSoldOut(p) && sellingFast(p) ? `<span class="badge-hot">⚡ Selling fast</span>` : "";
   const was = p.was ? `<small>${money(p.was)}</small>` : "";
   return `
     <article class="card product" data-cat="${p.cat}">
@@ -483,14 +485,14 @@ function productCard(p) {
         ${p.dontPay ? `<div class="dont-pay"><span class="dp-tag">Don't Pay</span> <s>${money(p.dontPay)}</s><button class="dp-info" type="button" aria-label="Why?" onclick="showDontPayInfo(event)">ⓘ</button></div>` : ""}
         ${p.memberPrice ? `<div class="member-price">✦ Members ${money(p.memberPrice)}</div>` : ""}
         ${p.freeship ? `<div class="freeship-tag">🚚 Free shipping</div>` : ""}
-        ${isPreorder(p)
+        ${isSoldOut(p) ? `<div style="font-weight:700;color:#8b342d">Sold Out</div>` : isPreorder(p)
           ? `<div style="display:inline-block;font-size:.7rem;font-weight:700;color:#0B1F3A;background:#F4EFE6;padding:3px 9px;border-radius:20px;margin-top:6px" title="Pre-order: expected arrival">⏳ Pre-order · ${p.arriveBy ? "arrives by " : "arrives "}${preorderExpected(p, true)}</div>`
           : p.arriveBy
           ? `<div style="display:inline-block;font-size:.7rem;font-weight:700;color:#0B1F3A;background:#F4EFE6;padding:3px 9px;border-radius:20px;margin-top:6px" title="Delivered by our supplier">🚚 Arrives by ${fmtArriveBy(p.arriveBy, true)}</div>`
           : p.lead
           ? `<div style="display:inline-block;font-size:.7rem;font-weight:600;color:#8a7f77;background:#F4EFE6;padding:3px 9px;border-radius:20px;margin-top:6px" title="Made to order">⏳ Made to order · ${p.lead}</div>`
           : `<div style="display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.2px;color:#0B1F3A;background:#E0C992;padding:3px 9px;border-radius:20px;margin-top:6px" title="In stock, ready to ship">✓ Ready to ship · a few days</div>`}
-        ${arrivalLine(p)}`}
+        ${isSoldOut(p) ? "" : arrivalLine(p)}`}
         <div class="card-actions">
           <button class="card-act ${isWishlisted(p.id) ? "on" : ""}" type="button" data-wish="${p.id}" aria-pressed="${isWishlisted(p.id)}" aria-label="Save ${p.name} to your wishlist"
                   title="Save to wishlist" onclick="toggleWishlist('${p.id}', this)">${IC.heart}<span>${isWishlisted(p.id) ? "Saved" : "Save"}</span></button>
@@ -500,7 +502,7 @@ function productCard(p) {
         </div>
         <div class="product-foot">
           ${(typeof realReviews === "function" && realReviews(p.id).length) ? `<span class="stars">${"★".repeat(Math.round(realReviews(p.id).reduce((t, r) => t + r.rating, 0) / realReviews(p.id).length))}</span>` : "<span></span>"}
-          ${p.cat === "Packaging"
+          ${isSoldOut(p) ? `<a class="btn btn--outline btn--sm" href="product.html?id=${p.id}">View details</a>` : p.cat === "Packaging"
             ? `<a class="btn btn--primary btn--sm" href="product.html?id=${p.id}">View details</a>`
             : `<button class="btn btn--primary btn--sm" onclick="addToCart('${p.id}')">${isPreorder(p) ? "Pre-order" : "Add to cart"}</button>`}
         </div>
