@@ -37,7 +37,7 @@ sandbox.globalThis = sandbox;
 
 const source =
   fs.readFileSync(SRC, "utf8") + fs.readFileSync(path.join(ROOT,"js","adairs-bathroom.js"),"utf8") + fs.readFileSync(path.join(ROOT,"js","shein-bathroom-expansion.js"),"utf8") +
-  "\n;globalThis.__out = { PRODUCTS, HAMPER_ITEMS, HAMPER_MIN, SAMIRA, PACKAGING_KITS };\n";
+  "\n;globalThis.__out = { PRODUCTS, HAMPER_ITEMS, HAMPER_MIN, SAMIRA, PACKAGING_KITS, reviews: typeof PRODUCT_REVIEWS === 'undefined' ? {} : PRODUCT_REVIEWS };\n";
 
 vm.createContext(sandbox);
 vm.runInContext(source, sandbox, { filename: "js/data.js" });
@@ -210,3 +210,4 @@ console.log(`✓ share index written: ${Object.keys(shareIndex).length} products
 /* Publish only fields needed by the shopping app. Keep wholesale, supplier,
    fulfilment and member pricing in the server-side checkout catalogue. */
 require("./write-mobile-catalogue")(ROOT, PRODUCTS, products, shareIndex);
+require("./write-mobile-reviews")(ROOT, PRODUCTS, sandbox.__out.reviews);
