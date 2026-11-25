@@ -13,7 +13,7 @@
    ============================================================ */
 
 const crypto = require("crypto");
-const { getStore } = require("@netlify/blobs");
+const { appStore, connectAppBlobs } = require("./_app-blobs");
 
 const SECRET = process.env.AUTH_SECRET || process.env.BREVO_API_KEY || "";
 const MAX_ATTEMPTS = 5;
@@ -54,11 +54,15 @@ exports.handler = async (event) => {
   if (!/^\d{6}$/.test(code)) return json(400, { error: "bad_code" });
 
   let store;
-  try { store = getStore("auth-codes"); }
+  try {
+    connectAppBlobs(event);
+    store = appStore("auth-codes");
+  }
   catch (e) { return json(500, { error: "storage_unavailable" }); }
 
   let rec = null;
-  try { rec = await store.get(email, { type: "json" }); } catch (e) { rec = null; }
+  try { rec = await store.get(email, { type: "json" }); }
+  catch { return json(500, { error: "storage_unavailable" }); }
   if (!rec || !rec.codeHash) return json(400, { error: "no_code" });
   if (Date.now() > (rec.expires || 0)) {
     try { await store.delete(email); } catch (e) {}

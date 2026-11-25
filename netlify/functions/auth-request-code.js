@@ -17,7 +17,7 @@
    ============================================================ */
 
 const crypto = require("crypto");
-const { getStore } = require("@netlify/blobs");
+const { appStore, connectAppBlobs } = require("./_app-blobs");
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY || "";
 const SENDER_EMAIL = process.env.SENDER_EMAIL || "hello@samirahomedecor.com.au";
@@ -80,12 +80,16 @@ exports.handler = async (event) => {
   if (!isEmail(email)) return json(400, { error: "bad_email" });
 
   let store;
-  try { store = getStore("auth-codes"); }
+  try {
+    connectAppBlobs(event);
+    store = appStore("auth-codes");
+  }
   catch (e) { return json(500, { error: "storage_unavailable" }); }
 
   const now = Date.now();
   let rec = null;
-  try { rec = await store.get(email, { type: "json" }); } catch (e) { rec = null; }
+  try { rec = await store.get(email, { type: "json" }); }
+  catch { return json(500, { error: "storage_unavailable" }); }
   let sends = (rec && Array.isArray(rec.sends) ? rec.sends : []).filter((t) => now - t < WINDOW_MS);
   if (sends.length >= MAX_SENDS) return json(429, { error: "too_many_requests" });
 
