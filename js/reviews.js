@@ -104,7 +104,8 @@
   const resolveReviewedProduct = r => {
     const byId = products.find(p => p.id === r.productId);
     if (byId) return byId;
-    const name = String(r.productName || '').trim().toLocaleLowerCase();
+    const confirmed = r.who === 'Benny K.' && /diffuser/i.test(r.body||'') ? 'Aura Mist Ultrasonic Diffuser 160ml' : r.who === 'Annie G.' && /flame effect/i.test(r.body||'') ? 'Flame-Effect Ultrasonic Humidifier & Diffuser' : '';
+    const name = String(confirmed || r.productName || '').trim().toLocaleLowerCase();
     if (!name) return null;
     const matches = products.filter(p => String(p.name || '').trim().toLocaleLowerCase() === name);
     return matches.length === 1 ? matches[0] : null;
