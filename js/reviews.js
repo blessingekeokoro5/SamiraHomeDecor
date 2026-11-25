@@ -183,6 +183,6 @@
   });
   render();
   fetch('/api/reviews' + (productId ? '?productId=' + encodeURIComponent(productId) : ''), { cache: 'no-store' }).then(async res => {
-    if (!res.ok) throw new Error(); const data = await res.json(); all = staticReviews.concat(data.reviews || []); render();
+    if (!res.ok) throw new Error(); const data = await res.json(); all = staticReviews.concat(data.reviews || []).filter(r => !((String(r.who || '').trim().toLowerCase() === 'benny k.' || String(r.who || '').trim().toLowerCase() === 'annie g.') && /diffuser/i.test(String(r.body || '')))); render();
   }).catch(() => { const p = document.createElement('p'); p.className = 'shd-review-fine'; p.textContent = 'New reviews could not be loaded. Please refresh to try again.'; host.querySelector('.shd-review-summary').append(p); });
 })();
