@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>View in My Room | Samira Home Decor</title>
+<style>
+body{margin:0;background:#faf8f3;color:#101f3a;font:16px/1.55 system-ui,sans-serif}main{max-width:560px;margin:32px auto;padding:24px}section{background:#fff;border:1px solid #e8dcc8;border-radius:12px;padding:20px}h1{font-size:28px;margin:0 0 12px}p{color:#34445b}.action{display:inline-block;padding:13px 18px;background:#101f3a;color:#fff;text-decoration:none;font-weight:650;border-radius:8px}.action:focus-visible{outline:3px solid #a8843b;outline-offset:4px}#apple::after{content:"Open camera in AR"}#apple img{width:1px;height:1px;position:absolute}[hidden]{display:none!important}
+</style>
+<script defer src="/js/room-ar-viewer.js"></script>
+</head>
+<body>
+<main>
+<h1>View in My Room</h1>
+<section>
+<p id="status" role="status" aria-live="polite">Checking model availability…</p>
+<p id="dimensions" hidden></p>
+<a id="apple" class="action" rel="ar" aria-label="Open camera in AR" hidden><img alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a>
+<a id="android" class="action" hidden>Open camera in AR</a>
+<p id="product" hidden><a id="product-link">View product details</a></p>
+</section>
+</main>
+</body>
+</html>

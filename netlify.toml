@@ -180,3 +180,19 @@
   [headers.values]
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/ar-models.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/ar-models/*.usdz"
+  [headers.values]
+    Content-Type = "model/vnd.usdz+zip"
+
+[[headers]]
+  for = "/ar-models/*.glb"
+  [headers.values]
+    Content-Type = "model/gltf-binary"
