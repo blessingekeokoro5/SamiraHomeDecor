@@ -80,7 +80,7 @@ function customerEmailHtml(order, offer) {
   <div style="font-family:Arial,Helvetica,sans-serif;max-width:600px;margin:0 auto;color:#0B1F3A;padding:8px">
     <div style="text-align:center;padding:16px 0 6px">
       <div style="font-family:Georgia,serif;font-size:26px;font-weight:bold;letter-spacing:3px;color:#14365F">Samira Home Decor</div>
-      <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8a7f77">Beautiful Spaces, Brighter Lives</div>
+      <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#8a7f77">A home that feels freshly styled, every time you walk in.</div>
     </div>
     <div style="background:#14365F;color:#fff;border-radius:14px;padding:22px 24px;text-align:center;border-bottom:4px solid #C6A15B">
       <div style="font-size:21px;font-family:Georgia,serif">${offer.type === "substitute" ? "An update on your order " : "A delivery update on your order "}${esc(order.orderNo)}</div>
