@@ -166,7 +166,8 @@ function shipQuote(afterDisc) {
   fee += xfee;
   fee += fixedShipFee() + ready.fee;
   const ofee = (window._fulfil === "express" && !isGiftOrder(getCart())) ? expressOptFee() : 0;
-  fee = Math.max(fee, FurnitureFreight.heavyMinimum(supplierLines, (document.getElementById("coPost") || {}).value, shipCountry()) + (ready.surcharge || 0) + (ready.mixedSurcharge || 0));
+  const heavyFloor = FurnitureFreight.heavyMinimum(supplierLines, (document.getElementById("coPost") || {}).value, shipCountry());
+  if (heavyFloor) fee = Math.max(fee, heavyFloor + (ready.surcharge || 0) + (ready.mixedSurcharge || 0));
   fee += ofee;
   return { pending:ready.pending, reason:ready.reason, mixedSurcharge:ready.mixedSurcharge, quoteRequired:ready.quoteRequired, freightMessage:ready.message, surcharge:ready.surcharge, fee, weight, days:ready.days?[Math.max(z.days[0],ready.days[0]),Math.max(z.days[1],ready.days[1])]:z.days, freeOver:z.freeOver, express:xfee>0 };
 }
