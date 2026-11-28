@@ -151,11 +151,11 @@ exports.handler = async (event) => {
       </div>` : ""}
 
       <div style="background:#F6EEE8;border-radius:12px;padding:16px 18px;margin-top:20px;font-size:13px;color:#5a5049;line-height:1.6">
-        📦 <strong>What's next?</strong> We'll pick, pack and dispatch your order — you can watch it live in <a href="${SITE_URL}/account.html" style="color:#A9843C">your account → Orders → Track order</a>, with an estimated arrival time.
+        📦 <strong>What's next?</strong> We’ll pick, pack and dispatch your order. Guests can track using the SHD- order number and the email or phone used at checkout. Members can also sign in to <a href="${SITE_URL}/account.html" style="color:#A9843C">My Account → Orders</a> for tracking updates.
       </div>
 
       <div style="text-align:center;margin:22px 0">
-        <a href="${SITE_URL}/account.html" style="background:#C6A15B;color:#fff;text-decoration:none;padding:13px 28px;border-radius:30px;font-weight:bold">Track my order</a>
+        <a href="${SITE_URL}/track.html?order=${encodeURIComponent(o.orderNo || "")}" style="background:#C6A15B;color:#fff;text-decoration:none;padding:13px 28px;border-radius:30px;font-weight:bold">Track my order</a><p><a href="${SITE_URL}/account.html" style="color:#A9843C">Member? Sign in to My Account</a></p>
       </div>
       <div style="text-align:center;margin:20px 0 6px;padding:16px;background:#F6F1E9;border-radius:12px">
         <div style="font-size:14px;font-weight:bold;color:#0B1F3A;margin-bottom:4px">Follow us for new décor, styling ideas &amp; member offers</div>
