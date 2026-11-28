@@ -1,13 +1,14 @@
 /* Stylera's public, on-site knowledge assistant. No private customer/order data or API secrets. */
 (function(){
 "use strict";
+const careMessage="For faster assistance, please email hello@samirahomedecor.com.au or message our Customer Care Team on WhatsApp. General customer enquiries are handled online.";
 const topics={
  greeting:"Hi! I’m Stylera, your AI Home Stylist ✨ Welcome to Samira Home Decor. Whether you’re decorating a new home, refreshing a room or searching for a statement piece, I can help with styling ideas, product discovery and shopping questions. What would you like to explore today?",
  payments:"For available payment methods and secure checkout options, please review the payment choices shown at checkout. I cannot collect card details or verify payments in chat. If payment failed or you were charged incorrectly, please raise a support ticket so Customer Care can investigate.",
- availability:"I’m Stylera, your AI shopping and styling assistant, available 24 hours a day, 7 days a week. Human Customer Care availability may vary. You can leave a message or raise a support ticket any time.",
+ availability:"I’m Stylera, available 24/7. "+careMessage,
  packaging:"I can help you find packaging supplies. Are you looking for gift boxes, wrapping materials, or something else? I will only recommend products listed in our shop.",
  international:"We currently serve Australia and New Zealand. Furniture delivery is available within Australia only; eligible décor, homewares and gifts may be shipped to New Zealand. Which destination and postcode are you shopping for? Shipping rates must be confirmed at checkout.",
- human:"I’m available as your AI assistant 24/7. Human representatives may not be online at all hours. I can connect you with Customer Care. Use the live chat link below to speak with a representative, or raise a support ticket if your enquiry needs follow-up.",
+ human:careMessage,
  gifts:"I can help you find a thoughtful gift! Who is it for, what is the occasion, and what is your budget in AUD? You can browse ready-made gift hampers at /hampers.html, build a personalised selection at /hamper-maker.html, or explore home décor gifts at /shop.html. Tell me a little about the recipient and I will narrow down the options.",
  delivery:"Delivery costs depend on your postcode, product size and weight, and the items in your cart. Enter your full delivery address or postcode at checkout to see the charge before paying. Furniture and multiple-item orders can cost more to deliver. Dispatch and arrival estimates depend on product availability; pre-orders can take longer. We deliver within Australia, and eligible décor, homewares and gifts can be delivered to New Zealand. Furniture delivery is within Australia only. For the published details, read /policy.html?doc=delivery. If checkout cannot calculate a rate, please contact Customer Care rather than assuming a price.",
  styling:"I'd love to help style your space. Which room are you working on, what are its approximate dimensions, which colours do you like, and what is your budget? For a living room, start with seating and a focal point, then layer cushions, throws, artwork, mirrors and accents. For bedrooms, coordinate bedding, bedside pieces and a statement accent. Browse /shop.html for pieces that suit your room. You can also explore /stylist.html for styling guidance. I won't promise a specific item is in stock until its product page confirms it.",
@@ -52,7 +53,7 @@ function isIssue(q){
 }
 function choose(q,preferred){
  const t=clean(q);
- if(/representative|human agent|customer service|live chat|speak to someone/.test(t))return "human";
+ if(/representative|human agent|customer service|live chat|speak to someone|whatsapp|contact us|contact details|contact you|reach you|email address|phone number|call you|customer care/.test(t))return "human";
  if(/^(hi|hello|hey|good morning|good afternoon|good evening)[!. ]*$/.test(t))return "greeting";
  if(/payment methods|pay by|how can i pay|accepted payments|payment options/.test(t))return "payments";
  if(/24 7|24 hours|always available|opening hours|what time.*open|are you open/.test(t))return "availability";
@@ -73,6 +74,8 @@ function choose(q,preferred){
 }
 const intro = "Hi, I’m Stylera, Samira Home Decor’s AI shopping and customer care assistant. I’m not a human. How can I help today?";
 const supportPaths = {
+  email: ["mailto:hello@samirahomedecor.com.au", "Email Customer Care"],
+  whatsapp: ["https://wa.me/61451609398", "Message us on WhatsApp"],
   ticket: ["/support.html#ticket", "Open the support ticket form"],
   human: ["/stylera-supabase-customer.html", "Chat with Customer Care"],
   account: ["/account.html", "Go to account sign-in"]
@@ -84,7 +87,7 @@ function supportReply(message, ...actions) {
   const text = document.createElement("p");
   text.textContent = message;
   node.append(text);
-  for (const action of actions) {
+  for (const action of [...new Set([...actions.filter(a=>a!=="human"),"email","whatsapp"])]) {
     const row = document.createElement("p");
     row.append(link(...supportPaths[action]));
     node.append(row);
@@ -129,7 +132,7 @@ function createConversation(channel) {
           if (!response.ok) throw new Error("Rating unavailable");
           options.remove();
           status.textContent = "Thank you. Your " + score + " out of 5 rating was saved.";
-          if (score <= 2) node.append(link(...supportPaths.human));
+          if (score <= 2) {node.append(link(...supportPaths.email),document.createTextNode(" · "),link(...supportPaths.whatsapp));}
         } catch {
           status.textContent = "Your rating couldn’t be saved. Please try again.";
           for (const option of options.children) option.disabled = false;
@@ -155,14 +158,14 @@ function createConversation(channel) {
     }
     if (/\b(?:phone number|contact number|call back|callback|can i call|how (?:do|can) i call|phone support|speak.*phone)\b/.test(t)) {
       supportActive = true;
-      return supportReply("For store questions, our Customer Care team can help through live chat or reply to a support ticket by email.", "human", "ticket");
+      return supportReply("For general store questions, For faster assistance, please email hello@samirahomedecor.com.au or message our Customer Care Team on WhatsApp. General customer enquiries are handled online.", "human", "ticket");
     }
     if (/(?:how long|when|timeframe).*(?:reply|respond|hear back|get back|care team|follow up|ticket|callback)/.test(t) || (supportActive && /^how long(?: will it take)?$/.test(t))) {
       return supportReply("Response times vary. If you chose email on your ticket, keep an eye on the inbox and spam folder for the reply address you provided. If you need to follow up, include your ticket reference.", "human");
     }
     if (/\b(?:human|representative|real person|live agent|live chat|speak to someone|talk to someone)\b/.test(t)) {
       supportActive = true;
-      return supportReply("Of course. Use live chat to reach a human on the Customer Care team. If they’re unavailable, send a support ticket and choose where you’d like the team to reply.", "human", "ticket");
+      return supportReply("For faster assistance, please email hello@samirahomedecor.com.au or message our Customer Care Team on WhatsApp. General customer enquiries are handled online.", "human", "ticket");
     }
     const giftCard = /\b(?:gift cards?|giftcards?)\b/.test(t);
     const login = /\b(?:login|log in|sign in|signing in|one time)\b/.test(t);
@@ -190,7 +193,7 @@ const appTopics = {
   orders: "Open order tracking to check your delivery. For an address change or an issue with your order, send a Customer Care request. Keep your payment details private.",
   returns: "Open Support & returns to request help. Customer Care will check your order and explain the options.",
   delivery: "We deliver within Australia. Eligible homewares can also be delivered to New Zealand. Enter your delivery address at checkout for an estimate based on your bag.",
-  human: "You can open live chat with Customer Care or send a support request right here in the app.",
+  human: careMessage,
   international: "Delivery is available in Australia and New Zealand. Furniture delivery is within Australia. Your checkout shows the delivery estimate for eligible items.",
 };
 function answerForApp(question, products, previousTopic) {
@@ -212,7 +215,7 @@ window.StyleraKnowledge={
  respond(question,preferred){
   const q=String(question||"").trim(),issue=isIssue(q),topic=choose(q,preferred);
   const node=document.createElement("div");node.className="stylera-answer";
-  const para=document.createElement("p");para.style.margin="0 0 9px";para.textContent=issue?"For a problem with an order, delivery, payment, faulty item or a refund request, please submit a support ticket so Customer Care can review the details. Include your order reference if you have one, but never send payment card details or passwords. You can also use live chat below to speak with a representative.":topic?topics[topic]:"I can help with delivery estimates, styling ideas, product discovery and order-support steps. Please tell me which item, room or delivery destination you're asking about so I can give you a more useful answer. For a personal order or a question I cannot verify, connect with Customer Care below.";
+  const para=document.createElement("p");para.style.margin="0 0 9px";para.textContent=issue?"For a problem with an order, delivery, payment, faulty item or a refund request, please submit a support ticket so Customer Care can review the details. Include your order reference if you have one, but never send payment card details or passwords. Email or WhatsApp our Customer Care Team for faster assistance.":topic?topics[topic]:"I can help with delivery estimates, styling ideas, product discovery and order-support steps. Please tell me which item, room or delivery destination you're asking about so I can give you a more useful answer. For a personal order or a question I cannot verify, connect with Customer Care below.";
   node.append(para);
   if(topic==="orders"&&!issue){
     const form=document.createElement("form");form.style.cssText="display:grid;gap:8px;margin:10px 0";
@@ -243,7 +246,7 @@ window.StyleraKnowledge={
    else if(topic==="products"||topic==="packaging"||topic==="gifts"||topic==="styling"){const note=document.createElement("p");note.textContent="I couldn't confidently identify a matching product from that description. Try a specific item name, or browse the current collection.";node.append(note)}
   }
   const links=document.createElement("p");links.style.margin="12px 0 0";links.append(link(issue?"/support.html#ticket":topic==="returns"?"/policy.html?doc=returns":topic==="orders"?"/track.html":topic==="styling"?"/stylist.html":topic==="gifts"?"/hampers.html":topic==="delivery"?"/policy.html?doc=delivery":"/shop.html",issue?"Submit a support ticket":topic==="returns"?"Read returns policy":topic==="orders"?"Track an order":topic==="styling"?"Explore styling tools":topic==="gifts"?"Browse gift hampers":topic==="delivery"?"Read delivery policy":"Browse our shop"));node.append(links);
-  if(topic==="human"){const live=document.createElement("p");live.append(link("/stylera-supabase-customer.html","Chat with Customer Care"));node.append(live)}
+  if(issue||["human","availability","orders","returns","delivery","payments"].includes(topic)||!topic){const care=document.createElement("p");care.textContent=careMessage;node.append(care);for(const action of ["email","whatsapp"]){const row=document.createElement("p");row.append(link(...supportPaths[action]));node.append(row)}}
   if(!issue&&(topic==="orders"||topic==="returns"||topic==="delivery"||topic==="payments"||!topic)){const help=document.createElement("p");help.style.margin="8px 0 0";help.append(link("/support.html#ticket","Need more help? Raise a support ticket"));node.append(help)}
   return node;
  }
