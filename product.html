@@ -280,7 +280,7 @@
   <div id="site-footer"></div>
   <script src="js/furniture-freight.js?v=9"></script>
   <script src="js/decor-delivery.js?v=4"></script>
-  <script src="js/data.js?v=99"></script>
+  <script src="js/data.js?v=100"></script>
   <script src="js/adairs-bathroom.js?v=1"></script>
   <script src="js/shein-bathroom-expansion.js?v=1"></script>
   <script src="js/ai-overviews.js?v=7"></script>
@@ -720,7 +720,7 @@
               <li><span>Category</span><span>${p.cat}</span></li>
               <li><span>SKU</span><span>${"SHD-" + String(p.id).replace(/[^a-z0-9-]/gi,"").toUpperCase()}</span></li>
               ${p.custom ? `<li><span>Made to order</span><span style="color:var(--rose-deep)">Customisable · allow extra time</span></li>` : ""}
-              <li><span>Availability</span><span style="color:var(--forest)">${p.tag === "Coming Out Soon" ? "Coming out soon" : p.price == null ? "On enquiry" : (typeof isPreorder === "function" && isPreorder(p)) ? "Pre-order" : "In stock"}</span></li>
+              <li><span>Availability</span><span style="color:var(--forest)">${p.tag === "Coming Out Soon" ? "Coming out soon" : p.price == null ? "On enquiry" : p.limitedStock ? "In stock – Limited stock available" : (typeof isPreorder === "function" && isPreorder(p)) ? "Pre-order" : "In stock"}</span></li>
             </ul>
             ${p.sizes && p.sizes.length ? (p.cat === "Packaging" ? `<div class="pdp-sizes">
               <div class="pdp-size-label">Sizes available</div>
