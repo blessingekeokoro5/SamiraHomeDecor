@@ -15,15 +15,13 @@
  for(const [name,detail,days] of items){
   const card=document.createElement('article');card.className='shd-reward-card';const strong=document.createElement('strong');strong.textContent=name;const small=document.createElement('small');small.textContent=detail;card.append(strong,small);
 
-  if(name==='Follow on Instagram'){
+  const socialLinks={'Follow on Instagram':['https://www.instagram.com/sys_samira1/','Follow us on Instagram'],'Subscribe on YouTube':['https://www.youtube.com/channel/UCmyDyZuM6kR18xMtuMtFVbA','Subscribe on YouTube'],'Follow on TikTok':['https://www.tiktok.com/@sys_samira','Follow us on TikTok']};
+  if(socialLinks[name]){
    const link=document.createElement('a');
-   link.href=(typeof SAMIRA!=='undefined'&&SAMIRA.socials&&/^https:\/\/((www\.)?instagram\.com)\//i.test(SAMIRA.socials.instagram||''))?SAMIRA.socials.instagram:'#';
-   link.textContent='Open Samira Home Decor on Instagram ↗';
+   link.href=socialLinks[name][0];link.textContent=socialLinks[name][1]+' ↗';
    link.target='_blank';link.rel='noopener noreferrer';
    link.style.cssText='display:inline-block;margin-top:12px;color:#0b1f3a;text-decoration:underline;font-weight:600;font-size:13px';
-   if(link.href.endsWith('#')){link.removeAttribute('href');link.textContent='Instagram link temporarily unavailable'}
    card.append(link);
-
   }
   content.append(card);
  }
