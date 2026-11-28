@@ -43,9 +43,33 @@ globalThis.__HWEND = (typeof halloweenEndLabel === "function") ? halloweenEndLab
   } catch (e) { return { products: [], sale: "", halloweenEnd: "" }; }
 }
 
+// Resolve absolute supplier URLs and relative shop assets without double-prefixing.
+const imageChecks = new Map();
+async function checkedImage(raw) {
+  let url;
+  try { url = new URL(raw, SITE_URL + "/"); } catch { return null; }
+  if (url.protocol !== "https:" || url.username || url.password || !/\.(?:jpe?g|png|webp|gif)$/i.test(url.pathname)) return null;
+  const key = url.href;
+  if (!imageChecks.has(key)) imageChecks.set(key, (async () => {
+    try {
+      const res = await fetch(key, {signal: AbortSignal.timeout(3500), headers: {"User-Agent":"SamiraReminder/1.0"}});
+      const ok = res.ok && /^image\/(jpeg|png|webp|gif)(?:;|$)/i.test(res.headers.get("content-type") || "");
+      if (res.body) await res.body.cancel();
+      return ok ? key : null;
+    } catch { return null; }
+  })());
+  return imageChecks.get(key);
+}
+async function emailProduct(p) {
+  for (const raw of [...new Set([p.img, ...(Array.isArray(p.imgs) ? p.imgs : [])])].filter(Boolean).slice(0,3)) {
+    const emailImage = await checkedImage(raw);
+    if (emailImage) return {...p, emailImage};
+  }
+  return null;
+}
 function productCard(p) {
   const url = SITE_URL + "/product.html?id=" + encodeURIComponent(p.id);
-  const img = SITE_URL + "/" + String(p.img || "").replace(/^\//, "");
+  const img = esc(p.emailImage);
   const price = p.was
     ? `<span style="color:${TAUPE};text-decoration:line-through;font-weight:normal;margin-right:6px">${money(p.was)}</span>${money(p.price)}`
     : `${p.sizes && p.sizes.length ? "from " : ""}${money(p.price)}`;
@@ -134,17 +158,20 @@ exports.handler = async () => {
   const { products, sale, halloweenEnd } = await loadShop();
   const byId = {};
   products.forEach((p) => { if (p && p.id) byId[p.id] = p; });
-  const sellable = (p) => p && p.img && typeof p.price === "number" && p.cat !== "Packaging";
+  const sellable = (p) => p && p.img && typeof p.price === "number" && p.cat !== "Packaging" && p.available !== false && !p.soldOut && !p.outOfStock && !/sold out|out of stock/i.test(p.tag || "");
   // For visitors who didn't open a product: ready-to-ship favourites first.
   // (Not by "New" tag — live sales overwrite tags with the sale name.)
   const pool = products.filter(sellable);
   const fallback = (pool.filter((p) => p.fastShip && !p.lead).length >= 4 ? pool.filter((p) => p.fastShip && !p.lead) : pool)
     .slice().sort(() => Math.random() - 0.5).slice(0, 4);
 
+  imageChecks.clear();
+  const safeFallback = (await Promise.all(fallback.map(emailProduct))).filter(Boolean);
   let sent = 0;
   for (const c of due) {
     const viewed = String((c.attributes || {}).LAST_VIEWED || "").split(",").map((id) => byId[id.trim()]).filter(sellable);
-    const items = viewed.length ? viewed : fallback;
+    const safeViewed = (await Promise.all(viewed.slice(0,4).map(emailProduct))).filter(Boolean);
+    const items = safeViewed.length ? safeViewed : safeFallback;
     if (!items.length) continue;
     const subject = sale === "halloween" ? `🎃 Your picks are 15% off${halloweenEnd ? " until " + halloweenEnd : ""} — Samira Home Decor`
       : sale === "blackfriday" ? "🛍️ Black Friday savings on your picks — Samira Home Decor"
@@ -154,7 +181,7 @@ exports.handler = async () => {
       sender: { name: SENDER_NAME, email: SENDER_EMAIL },
       to: [{ email: c.email }],
       subject,
-      htmlContent: buildEmail(items, sale, viewed.length > 0, unsub, halloweenEnd),
+      htmlContent: buildEmail(items, sale, safeViewed.length > 0, unsub, halloweenEnd),
       headers: { "List-Unsubscribe": `<${unsub}>`, "List-Unsubscribe-Post": "List-Unsubscribe=One-Click" },
     });
     if (r.ok) {
