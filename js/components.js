@@ -346,7 +346,7 @@ function buildHeader() {
     <div class="container nav-utility">
       <button class="nav-toggle" id="navToggle" aria-label="Menu">${IC.menu}</button>
       <a class="brand" href="index.html" aria-label="Samira Home Decor home">
-        <img class="brand-logo-full" src="/assets/samira-logo-original.webp?v=1" alt="Samira Home Decor — A home that feels freshly styled, every time you walk in." width="420" height="180" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <img class="brand-logo-full" src="/assets/samira-logo-tagline.svg?v=2" alt="Samira Home Decor — A home that feels freshly styled, every time you walk in." width="420" height="180" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
         <span class="brand-logo-error" hidden>Samira Home Decor</span>
       </a>
       <form class="header-search" id="headerSearch" role="search">
