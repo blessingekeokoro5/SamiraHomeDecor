@@ -109,6 +109,17 @@
           <span class="admin-count" id="ordCount"></span>
           <button class="btn btn--outline btn--sm" onclick="loadOrders()">Refresh</button>
         </div>
+        <details class="admin-formcard">
+          <summary>Samira Rewards</summary>
+          <form id="rewardsAdminForm">
+            <div class="field"><label for="rewardsAdminEmail">Member email</label><input type="email" id="rewardsAdminEmail" required></div>
+            <button class="btn btn--outline btn--sm" type="submit" value="lookup">View rewards</button>
+            <div class="field"><label for="rewardsAdminBirthday">Verified birthday (MM-DD)</label><input id="rewardsAdminBirthday" placeholder="MM-DD" maxlength="5"></div>
+            <label><input id="rewardsAdminVerified" type="checkbox"> I verified this member's birthday</label>
+            <button class="btn btn--outline btn--sm" type="submit" value="birthday">Credit birthday reward</button>
+            <p id="rewardsAdminStatus" role="status"></p>
+          </form>
+        </details>
         <div id="ordWrap"></div>
       </div>
 
@@ -305,6 +316,37 @@
 
     /* ===== Orders (delivery stages) ===== */
     const ORD_FN = "/.netlify/functions/order-admin";
+    document.getElementById("rewardsAdminForm").addEventListener("submit", async event => {
+      event.preventDefault();
+      const status = document.getElementById("rewardsAdminStatus");
+      const key = bookToken();
+      if (!key) { status.textContent = "Unlock orders first."; return; }
+      const action = event.submitter?.value || "lookup";
+      const email = document.getElementById("rewardsAdminEmail").value;
+      const birthday = document.getElementById("rewardsAdminBirthday").value.trim();
+      const verified = document.getElementById("rewardsAdminVerified").checked;
+      if (event.submitter) event.submitter.disabled = true;
+      status.textContent = "Checking rewards…";
+      try {
+        const response = await fetch("/.netlify/functions/rewards-admin", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-admin-token": key },
+          body: JSON.stringify({ action, email, birthday, verified })
+        });
+        const result = await response.json();
+        if (!response.ok) {
+          status.textContent = result.error === "rewards_disabled" ? "Rewards are currently disabled." : (result.error || "Rewards are unavailable.");
+          return;
+        }
+        const money = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD" });
+        const credits = result.credits.map(credit => money.format(credit.remainingCents / 100) + " expires " + new Date(credit.expires).toLocaleDateString("en-AU"));
+        status.textContent = [money.format(result.balanceCents / 100) + " available", ...credits].join(" · ");
+      } catch {
+        status.textContent = "Rewards are unavailable.";
+      } finally {
+        if (event.submitter) event.submitter.disabled = false;
+      }
+    });
     const ORD_STAGES = [
       ["placed", "Order placed"], ["confirmed", "Order confirmed"], ["picking", "Currently picking"], ["packed", "Packed with care & dispatched"],
       ["shipped", "Shipped (handed to courier)"], ["transit", "In transit to customer's state"],

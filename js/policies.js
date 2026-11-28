@@ -14,6 +14,7 @@ const POLICY_ORDER = [
   { slug: "faq",      label: "FAQ" },
   { slug: "delivery", label: "Delivery, Shipping & Order Tracking Policy" },
   { slug: "returns",  label: "Returns & Refund Policy" },
+  { slug: "rewards", label: "Samira Rewards Policy" },
   { slug: "privacy",  label: "Privacy Policy" },
   { slug: "terms",    label: "Terms & Conditions" }
 ];
@@ -46,6 +47,25 @@ const FAQ_ITEMS = [
 ];
 
 const POLICIES = {
+  rewards: {
+    title: "Samira Rewards Policy",
+    intro: "These terms describe the planned Samira Rewards store-credit program. Rewards are not available until the program is officially launched.",
+    body: `
+      <h3>1. Membership and earning</h3>
+      <p>Membership is free. Signed-in members earn $5 on eligible completed orders with a product subtotal above $100 AUD, excluding delivery, and $2 once for a confirmed newsletter subscription. Eligible members receive $10 once per year on their birthday, subject to verification. Account creation does not earn store credit; existing first-order benefits remain separate.</p>
+      <p>Proposed social media rewards of $5 per platform (Instagram, TikTok and YouTube) are not available unless and until platform compliance and verification are confirmed. Clicking a link does not earn credit.</p>
+      <h3>2. Redeeming store credit</h3>
+      <p>Redeem up to $20 AUD per eligible order with a product subtotal of at least $300 AUD, after regular member pricing and before reward redemption, excluding delivery. The maximum accumulated reward balance is $100 AUD. Credits cannot be used for delivery, purchased gift cards or cash, or transferred to another account.</p>
+      <h3>3. Other discounts</h3>
+      <p>Regular member pricing may be combined with store credit. First-order discounts, referral discounts, Christmas promotional vouchers, promotional coupons and clearance purchases cannot be combined with reward redemption.</p>
+      <h3>4. Expiry</h3>
+      <p>Each reward expires 12 months after it is earned, where permitted by applicable law. The oldest available credits are used first. We aim to send reminders 30 and 7 days before expiry. Purchased gift cards are separate and retain their own terms.</p>
+      <h3>5. Returns, cancellations and misuse</h3>
+      <p>Rewards are subject to verification and may be reversed for cancelled or refunded qualifying purchases. Duplicate claims and fraudulent activity are not permitted. Nothing in this policy limits mandatory consumer rights in Australia or New Zealand.</p>
+      <h3>6. Assistance</h3>
+      <p>For assistance with rewards, contact <a href="mailto:hello@samirahomedecor.com.au">hello@samirahomedecor.com.au</a>.</p>
+    `
+  },
   delivery: {
     title: "Delivery, Shipping & Order Tracking Policy",
     intro: "This policy explains how we ship, fulfil, deliver and track Samira Home Decor orders. It should be read together with our Terms & Conditions and Returns & Refund Policy.",

@@ -1,3 +1,5 @@
+const { settleRedemption } = require("./_rewards-redemption");
+const { reverseRefundedOrder } = require("./_rewards-orders");
 /* ============================================================
    Samira Home Decor — Stripe Webhook  (Netlify Function)
    ------------------------------------------------------------
@@ -61,6 +63,7 @@ function orderFacts(session, lineItems) {
     subtotal: m.subtotal ? Number(m.subtotal) : null,
     discount: Number(m.discount || 0), discountPct: Number(m.discount_pct || 0),
     voucher: Number(m.voucher || 0), code: m.voucher_code || "",
+    rewards: m.rewards_redemption ? (session.total_details?.amount_discount || 0) / 100 : 0,
     shipping: (session.shipping_cost ? session.shipping_cost.amount_total : (session.total_details ? session.total_details.amount_shipping : 0)) / 100,
     total: (session.amount_total || 0) / 100,
     preorder: m.preorder ? String(m.preorder).split(" | ").filter(Boolean) : [],
@@ -112,6 +115,7 @@ function orderHtml(f) {
       ${f.subtotal != null ? money("Subtotal", aud(f.subtotal)) : ""}
       ${f.discount > 0 ? money(`${f.discountPct ? f.discountPct + "% off" : "Discount"}${f.code && !f.voucher ? " (" + escH(f.code) + ")" : ""}`, "−" + aud(f.discount), true) : ""}
       ${f.voucher > 0 ? money(`Voucher${f.code ? " (" + escH(f.code) + ")" : ""}`, "−" + aud(f.voucher), true) : ""}
+      ${f.rewards > 0 ? money("Samira Rewards store credit", "−" + aud(f.rewards), true) : ""}
       ${money("Shipping", f.shipping ? aud(f.shipping) : "Free")}
       <tr><td style="padding:10px 0 0;font-family:Georgia,serif;font-size:18px;font-weight:bold">Total paid</td><td style="padding:10px 0 0;text-align:right;font-family:Georgia,serif;font-size:18px;font-weight:bold">${aud(f.total)}</td></tr>
     </table>
@@ -133,6 +137,7 @@ function orderText(f) {
     (f.subtotal != null ? `Subtotal: ${aud(f.subtotal)}\n` : "") +
     (f.discount > 0 ? `Discount: -${aud(f.discount)}${f.code ? " (" + f.code + ")" : ""}\n` : "") +
     (f.voucher > 0 ? `Voucher: -${aud(f.voucher)}\n` : "") +
+    (f.rewards > 0 ? `Samira Rewards store credit: -${aud(f.rewards)}\n` : "") +
     `Shipping: ${aud(f.shipping)}\nTotal: ${aud(f.total)}\n`;
 }
 
@@ -212,6 +217,33 @@ exports.handler = async (event) => {
   } catch (err) {
     console.error("Webhook signature verification failed:", err.message);
     return { statusCode: 400, body: `Webhook Error: ${err.message}` };
+  }
+
+  if (stripeEvent.type === "charge.refunded") {
+    try {
+      await reverseRefundedOrder(stripe, stripeEvent.data.object);
+    } catch (error) {
+      console.error("Rewards refund processing failed:", error.message);
+      return { statusCode: 503, body: "Rewards refund processing unavailable" };
+    }
+  }
+
+  const checkout = stripeEvent.data.object;
+  const redemption = checkout.object === "checkout.session" && checkout.metadata?.rewards_redemption;
+  if (redemption && checkout.customer_email) {
+    const type = stripeEvent.type;
+    const outcome = ["checkout.session.expired", "checkout.session.async_payment_failed"].includes(type)
+      ? "expired"
+      : ["checkout.session.completed", "checkout.session.async_payment_succeeded"].includes(type) &&
+        checkout.payment_status === "paid" ? "paid" : null;
+    if (outcome) {
+      try {
+        await settleRedemption(checkout.customer_email, redemption, outcome);
+      } catch (error) {
+        console.error("Rewards settlement failed:", error.message);
+        return { statusCode: 503, body: "Rewards settlement unavailable" };
+      }
+    }
   }
 
   const historyUpdate = ["checkout.session.completed", "checkout.session.async_payment_succeeded"].includes(stripeEvent.type)

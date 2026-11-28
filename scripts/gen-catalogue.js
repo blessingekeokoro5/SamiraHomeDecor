@@ -114,6 +114,7 @@ PRODUCTS.forEach((p) => {
     cat: String(p.cat || ""),
     price: base,                                  // null = enquiry-only (e.g. packaging)
     memberPrice: num(p.memberPrice),
+    ...(p.clearance || (num(p.was) != null && num(p.was) > base) ? { clearance: true } : {}),
     weight: num(p.weight) != null ? num(p.weight) : estimateWeight(p),
     sizes,
     sizesMember,

@@ -1,0 +1,11 @@
+const test=require("node:test");
+const assert=require("node:assert/strict");
+const p=require("../netlify/functions/_rewards-policy");
+const now=Date.UTC(2026,10,28);
+const fresh=()=>({lots:[],events:[]});
+const award=(s,kind,key,subtotal=10001)=>p.award(s,{kind,key,subtotal,now,verified:true});
+test("order threshold and duplicate protection",()=>{const s=fresh();assert.equal(award(s,"order","a",10000),0);assert.equal(award(s,"order","a"),500);assert.equal(award(s,"order","a"),0)});
+test("newsletter once and birthday",()=>{const s=fresh();assert.equal(award(s,"newsletter","a"),200);assert.equal(award(s,"newsletter","b"),0);assert.equal(award(s,"birthday","2026"),1000)});
+test("balance cap",()=>{const s=fresh();for(let i=0;i<30;i++)award(s,"order",String(i));assert.equal(p.balance(s,now),10000)});
+test("redemption restrictions",()=>{const s=fresh();for(let i=0;i<5;i++)award(s,"order",String(i));const q={now,subtotal:30000,member:true};assert.equal(p.quote(s,q),2000);for(const patch of [{subtotal:29999},{member:false},{promotion:true},{clearance:true}])assert.equal(p.quote(s,{...q,...patch}),0)});
+test("expiry and unverified events",()=>{const s=fresh();award(s,"order","a");assert.equal(p.balance(s,p.expiry(now)),0);assert.throws(()=>p.award(s,{kind:"order",key:"b",now,verified:false}));for(const kind of ["instagram","tiktok","youtube"])assert.throws(()=>award(s,kind,"a"))});
