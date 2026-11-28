@@ -65,16 +65,29 @@
         </div>
         <div class="grid grid-4" id="wishGrid"></div>`;
       renderProducts("wishGrid", items);
+      // Compare against prices observed on earlier visits on this device.
+      let previous = {};
+      try { previous = JSON.parse(localStorage.getItem("shd_wish_prices") || "{}") || {}; } catch {}
+      const drops = items.filter(p => Number.isFinite(previous[p.id]) && Number.isFinite(p.price) && p.price < previous[p.id]);
+      const next = Object.fromEntries(items.filter(p => Number.isFinite(p.price)).map(p => [p.id, p.price]));
+      try { localStorage.setItem("shd_wish_prices", JSON.stringify(next)); } catch {}
+      if (drops.length) {
+        const notice = document.createElement("p");
+        notice.setAttribute("role", "status");
+        notice.style.cssText = "padding:14px;background:#faf6ed;color:#0b1f3a;border-radius:8px";
+        notice.textContent = drops.length + " saved item(s) have dropped in price since your last wishlist visit.";
+        wrap.prepend(notice);
+      }
       initReveal();
     }
     function addAllWishToCart() {
+      let added = 0, skipped = 0;
       getWishlist().forEach(id => {
-        const p = findProduct(id); if (!p) return;
-        const cart = getCart(); const line = cart.find(i => i.id === id);
-        if (line) line.qty += 1; else cart.push({ id: p.id, name: p.name, price: p.price, cat: p.cat, ph: p.ph, qty: 1 });
-        saveCart(cart);
+        const p = findProduct(id);
+        if (!p || isSoldOut(p) || p.available === false || p.soldOut || p.outOfStock || /sold out|out of stock/i.test(p.tag || "") || (p.sizes && p.sizes.length) || (p.colours && p.colours.length) || (p.colors && p.colors.length)) { skipped++; return; }
+        addToCart(id); added++;
       });
-      showToast("Your saved pieces were added to the cart 🛒");
+      showToast(added + " item(s) added. " + (skipped ? skipped + " unavailable or requiring options; open the product page to check." : ""));
     }
     renderWishlistPage();
   </script>
