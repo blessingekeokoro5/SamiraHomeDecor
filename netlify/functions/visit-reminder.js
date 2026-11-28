@@ -102,7 +102,7 @@ function buildEmail(items, sale, fromViews, unsub, saleEnd) {
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#fff;border-radius:18px;overflow:hidden">
       <tr><td style="background:${NAVY};text-align:center;padding:26px 20px">
         <div style="font:700 22px Georgia,serif;letter-spacing:3px;color:#fff">SAMIRA</div>
-        <div style="font-size:11px;letter-spacing:3px;color:${GOLD};margin-top:4px">HOME DECOR</div>
+        <div style="font-size:11px;letter-spacing:3px;color:${GOLD};margin-top:4px">HOME DECOR</div><div style="font-size:12px;color:#fff;margin-top:9px;line-height:1.5">A home that feels freshly styled, every time you walk in.</div>
       </td></tr>
       ${saleBanner}
       <tr><td style="padding:30px 28px 8px;text-align:center">
