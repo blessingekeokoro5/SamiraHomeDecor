@@ -9,20 +9,25 @@
  const title=document.createElement('h2');title.textContent='Rewards program';const welcome=document.createElement('div');welcome.textContent='Welcome to Samira Home Decor';welcome.style.fontSize='13px';
  head.append(close,welcome,title);
  const content=document.createElement('div');content.className='shd-reward-content';
- const items=[['Place an order','$5 store credit on eligible orders above $100',null],['Follow on Instagram','$5 store credit',null],['Subscribe on YouTube','$5 store credit',null],['Follow on TikTok','$5 store credit',null],['Newsletter signup','$2 store credit',null],['Birthday','$10 store credit annually',null]];
- const intro=document.createElement('p');intro.className='shd-reward-disclaimer';intro.textContent='Sign in or create your Samira Home Decor account to explore your rewards and member benefits.';
- const heading=document.createElement('h3');heading.textContent='Ways to earn';content.append(intro,heading);
- for(const [name,detail,days] of items){
-  const card=document.createElement('article');card.className='shd-reward-card';const strong=document.createElement('strong');strong.textContent=name;const small=document.createElement('small');small.textContent=detail;card.append(strong,small);
-
-  const socialLinks={'Follow on Instagram':['https://www.instagram.com/sys_samira1/','Follow us on Instagram'],'Subscribe on YouTube':['https://www.youtube.com/channel/UCmyDyZuM6kR18xMtuMtFVbA','Subscribe on YouTube'],'Follow on TikTok':['https://www.tiktok.com/@sys_samira','Follow us on TikTok']};
-  if(socialLinks[name]){
-   const link=document.createElement('a');
-   link.href=socialLinks[name][0];link.textContent=socialLinks[name][1]+' ↗';
-   link.target='_blank';link.rel='noopener noreferrer';
-   link.style.cssText='display:inline-block;margin-top:12px;color:#0b1f3a;text-decoration:underline;font-weight:600;font-size:13px';
-   card.append(link);
-  }
+ const items = [
+  ['Place an order', '$5 store credit on eligible orders above $100'],
+  ['Newsletter signup', '$2 store credit once'],
+  ['Birthday', '$10 store credit annually']
+ ];
+ const intro = document.createElement('p');
+ intro.className = 'shd-reward-disclaimer';
+ intro.textContent = 'Sign in or create an account to explore your member benefits. Social rewards are currently unavailable.';
+ const heading = document.createElement('h3');
+ heading.textContent = 'Ways to earn';
+ content.append(intro, heading);
+ for (const [name, detail] of items) {
+  const card = document.createElement('article');
+  card.className = 'shd-reward-card';
+  const label = document.createElement('strong');
+  label.textContent = name;
+  const description = document.createElement('small');
+  description.textContent = detail;
+  card.append(label, description);
   content.append(card);
  }
  const existing=document.createElement('article');existing.className='shd-reward-card';const exTitle=document.createElement('strong');exTitle.textContent='Your existing member benefits stay';const exDesc=document.createElement('small');exDesc.textContent='First-order discount, referral rewards and Christmas vouchers remain separate from the new store-credit program.';existing.append(exTitle,exDesc);content.append(existing);

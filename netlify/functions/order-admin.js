@@ -1,3 +1,4 @@
+const { creditDeliveredOrder } = require("./_rewards-orders");
 /* ============================================================
    Samira Home Decor — manage order delivery stages (admin only)
    ------------------------------------------------------------
@@ -187,6 +188,14 @@ exports.handler = async (event) => {
   }
 
   await store.setJSON(orderNo, rec);
+  if (stage === "delivered" && process.env.REWARDS_ENABLED === "true") {
+    try {
+      await creditDeliveredOrder(stripe(), order.sessionId);
+    } catch (error) {
+      console.error("Order reward failed:", error.message);
+      return json(503, { error: "Delivery was saved. Save the delivered status again to retry the reward." });
+    }
+  }
   try { connectAppBlobs(event); await sendAppOrderAlert(order, stage); } catch { console.error("Could not send the app order alert."); }
   return json(200, { ok: true, status: publicStatus(order, rec), emailed });
 };

@@ -1,3 +1,5 @@
+const { createRedemption, settleRedemption } = require("./_rewards-redemption");
+const { authenticate: authenticateRewardsMember } = require("./rewards-balance");
 const { quoteSuppliers } = require("./lib/supplier-delivery");
 const FurnitureFreight = require("../../js/furniture-freight.js");
 /* ============================================================
@@ -475,6 +477,9 @@ async function handleCheckout(event, deliveryEstimate = false) {
       return jsonResponse(400, { error: "That doesn't look like a Samira Home Decor gift card code." });
     }
 
+    if (giftCode && body.redeemRewards === true) {
+      return jsonResponse(400, { error: "Store credit cannot be combined with gift card payment." });
+    }
     if (giftCode) {
       const card = await loadGiftCard(giftCode);
       if (!card || card.voided) {
@@ -561,9 +566,36 @@ async function handleCheckout(event, deliveryEstimate = false) {
     ];
 
     const orderNo = newOrderNo();
+    const rewardsEmail = process.env.REWARDS_ENABLED === "true"
+      ? authenticateRewardsMember(body.member?.email, body.member?.token)
+      : null;
+    const rewardsSubtotal = Math.round(100 * lines.reduce((sum, line, i) =>
+      itemId(items[i]).startsWith("giftcard-") ? sum : sum + line.unitPrice * line.qty, 0));
+    const rewardsEligible = rewardsEmail && rewardsEmail === String(customer.email || "").trim().toLowerCase();
     const embedded = body.channel === "app-web-embedded";
-    const session = await getStripe().checkout.sessions.create({
+    let coupon;
+    const redemptionId = crypto.randomUUID();
+    const rewardsNow = Date.now();
+    if (body.redeemRewards === true) {
+      if (!rewardsEligible || purchasedCards.length || items.some(item => itemId(item).startsWith("giftcard-")) ||
+          body.giftCode || body.ref || body.voucherCode || Number(body.discountPct) > 0 ||
+          items.some(item => {
+            return CATALOGUE.products[itemId(item)]?.clearance;
+          }) || rewardsSubtotal < 30000) {
+        return jsonResponse(400, { error: "Rewards require an eligible $300 product subtotal, your member email and no promotional discounts or gift cards." });
+      }
+      coupon = await createRedemption(getStripe(), rewardsEmail, redemptionId, {
+        now: rewardsNow, subtotal: rewardsSubtotal, member: true,
+      });
+      if (!coupon) return jsonResponse(409, { error: "No store credit is currently available." });
+    }
+    const sessionOptions = {
       mode: "payment",
+      ...(coupon ? {
+        discounts: [{ coupon: coupon.id }],
+        payment_method_types: ["card"],
+        expires_at: Math.floor(rewardsNow / 1000) + 3600,
+      } : {}),
       line_items,
       shipping_options,
       phone_number_collection: { enabled: true },
@@ -582,7 +614,7 @@ async function handleCheckout(event, deliveryEstimate = false) {
       shipping_address_collection: { allowed_countries: [SHIP_COUNTRIES.get(shipCountry)] },
       billing_address_collection: "auto",
       // Prices are GST-inclusive (Australian standard) so no Stripe Tax is added.
-      allow_promotion_codes: false,
+      ...(!coupon ? { allow_promotion_codes: false } : {}),
       client_reference_id: orderNo,
       payment_intent_data: { description: `Samira Home Decor order ${orderNo}`, metadata: { order_no: orderNo } },
       ...(embedded
@@ -597,6 +629,8 @@ async function handleCheckout(event, deliveryEstimate = false) {
           }),
       metadata: {
         order_no: orderNo,
+        ...(coupon ? { rewards_redemption: redemptionId } : {}),
+        ...(rewardsEligible ? { rewards_version: "1", rewards_subtotal: String(rewardsSubtotal) } : {}),
         source: "samira-web",
         ...(embedded ? { checkout_channel: APP_EMBEDDED_CHANNEL } : {}),
         fulfil: String(fulfil),
@@ -617,7 +651,18 @@ async function handleCheckout(event, deliveryEstimate = false) {
         // Read back by the webhook to issue the cards once payment succeeds.
         ...(purchasedCards.length ? { gift_cards: JSON.stringify(purchasedCards).slice(0, 500) } : {}),
       },
-    });
+    };
+    let session;
+    try {
+      session = await getStripe().checkout.sessions.create(sessionOptions,
+        coupon ? { idempotencyKey: "samira-rewards-checkout-" + redemptionId } : undefined);
+    } catch (error) {
+      // A definitive Stripe validation error means no session can use the hold.
+      if (coupon && error.type === "StripeInvalidRequestError") {
+        await settleRedemption(rewardsEmail, redemptionId, "expired");
+      }
+      throw error;
+    }
 
     if (embedded) {
       if (!session.client_secret) throw new Error("Stripe did not return an embedded checkout session");

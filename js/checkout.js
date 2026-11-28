@@ -384,6 +384,10 @@ function renderCheckout() {
         <div id="coGiftMsg" class="cx-msg"></div>
         ${vou ? `<div class="cx-applied">✓ ${vou.label || vou.code} applied <button type="button" onclick="coRemoveVoucher()">Remove</button></div>` : ""}
 
+        <div class="cx-box" id="coRewardsBox" hidden>
+          <label><input type="checkbox" id="coRedeemRewards"> Use Samira Rewards store credit</label>
+          <p id="coRewardsAvailable"></p>
+        </div>
         <div class="cx-summary">
           <h4>Your order summary</h4>
           <div class="summary-row"><span>${units} ${units === 1 ? "item" : "items"}</span><span>${money(t.sub)}</span></div>
@@ -405,6 +409,7 @@ function renderCheckout() {
         <p class="cx-terms">By placing your order you agree to our <a href="policy.html?doc=terms">Terms and Conditions</a>, <a href="policy.html?doc=privacy">Privacy Policy</a>, <a href="policy.html?doc=delivery">Delivery Policy</a> and <a href="policy.html?doc=returns">Returns Policy</a>.</p>
       </section>
     </form>`;
+  showCheckoutRewards(t);
 
   Object.keys(kept).forEach((id) => { const el = document.getElementById(id); if (el && id !== "coCode") { if (el.type === "checkbox") el.checked = kept[id]; else el.value = kept[id]; }  });
   const form = document.getElementById("checkoutForm");
@@ -601,6 +606,7 @@ async function startPayment(e) {
             kit: i.kit || undefined              // signature packaging kit (priced on the server)
           })),
           member: (typeof isMember === "function" && isMember()) ? (function () { try { return { email: JSON.parse(localStorage.getItem("decomuse_account")).email, token: localStorage.getItem("shd_auth_token") }; } catch (e) { return undefined; } })() : undefined,
+          redeemRewards: document.getElementById("coRedeemRewards")?.checked || undefined,
           discountPct: od.pct || 0,
           voucher: t.voucher || 0, voucherCode: t.voucherCode || "",
           fulfil: window._fulfil || "ship",
@@ -656,3 +662,40 @@ async function startPayment(e) {
 document.addEventListener("DOMContentLoaded", renderCheckout);
 
 
+
+
+async function showCheckoutRewards(totals) {
+  const box = document.getElementById("coRewardsBox");
+  if (!box || totals.sub < 300 || totals.voucher || totals.discount || totals.giftCode ||
+      (typeof getReferralCode === "function" && getReferralCode()) ||
+      getCart().some(item => {
+        const product = findProduct(item.id);
+        return item.id.startsWith("giftcard-") || product?.clearance || Number(product?.was) > Number(product?.price);
+      })) return;
+  try {
+    const account = JSON.parse(localStorage.getItem("decomuse_account") || "null");
+    const token = localStorage.getItem("shd_auth_token");
+    if (!account?.email || !token) return;
+    const response = await fetch("/.netlify/functions/rewards-balance", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: account.email, token })
+    });
+    if (!response.ok) return;
+    const data = await response.json();
+    if (!(data.balanceCents > 0)) return;
+    const amount = (Math.min(data.balanceCents, 2000) / 100).toFixed(2);
+    box.querySelector("p").textContent = "Up to A$" + amount + " will be applied in Stripe Checkout on eligible purchases.";
+    box.hidden = false;
+    box.querySelector("input").addEventListener("change", event => {
+      const brands = document.querySelector(".co-pay-brands");
+      if (!brands) return;
+      const original = brands.dataset.original || brands.innerHTML;
+      brands.dataset.original = original;
+      if (event.target.checked) brands.textContent = "Card, Apple Pay or Google Pay via Stripe";
+      else brands.innerHTML = original;
+    });
+  } catch {
+    // Checkout can continue using its existing payment options.
+  }
+}

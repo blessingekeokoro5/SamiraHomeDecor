@@ -23,7 +23,8 @@ async function firestore(path,body) {
   if(!/^:[a-zA-Z]+$|^\/[a-zA-Z0-9_/-]+$/.test(path)) throw new Error("invalid_firestore_path");
   const res=await fetch("https://firestore.googleapis.com/v1/projects/"+project+"/databases/(default)/documents"+path,{method:body===undefined?"GET":"POST",headers:{Authorization:"Bearer "+await accessToken(),"Content-Type":"application/json"},body:body===undefined?undefined:JSON.stringify(body),signal:AbortSignal.timeout(10000)});
   if(!res.ok) throw new Error("firestore_http_"+res.status);
-  return res.json();
+  const payload = await res.text();
+  return payload ? JSON.parse(payload) : {};
 }
 async function checkConnection(){
   await firestore(":runQuery",{structuredQuery:{from:[{collectionId:"rewards_accounts"}],limit:1,select:{fields:[{fieldPath:"__name__"}]}}});

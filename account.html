@@ -421,6 +421,13 @@
         </div>
 
         <h3 class="acc-h3">Your member rewards</h3>
+        <section id="accountRewards" class="ar-card" hidden>
+          <h4>Samira Rewards store credit</h4>
+          <p id="accountRewardsBalance" role="status"></p>
+          <ul id="accountRewardsExpiry"></ul>
+          <p id="accountRewardsHistory"></p>
+          <button type="button" class="btn btn--outline btn--sm" id="claimNewsletterReward">Check newsletter reward</button>
+        </section>
         ${memberRewardsHtml(acc)}
         ${xmasHtml(orders)}
 
@@ -451,7 +458,50 @@
           <button class="btn btn--outline btn--sm" onclick="doLogout()">Log out</button>
         </div>`;
       initReveal();
+      loadAccountRewards(acc);
       if (typeof renderReferralProgress === "function") renderReferralProgress(document.getElementById("refProgress"), acc.email, acc.name);
+    }
+
+    function loadAccountRewards(acc) {
+      const section = document.getElementById("accountRewards");
+      const status = document.getElementById("accountRewardsBalance");
+      const expiry = document.getElementById("accountRewardsExpiry");
+      const history = document.getElementById("accountRewardsHistory");
+      const button = document.getElementById("claimNewsletterReward");
+      const token = localStorage.getItem("shd_auth_token");
+      if (!token) return;
+      const format = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD" });
+      const labels = { order: "Order reward", newsletter: "Newsletter reward", birthday: "Birthday reward", refund: "Refund adjustment", redeem: "Store credit used" };
+      async function load(action) {
+        button.disabled = true;
+        try {
+          const response = await fetch("/.netlify/functions/rewards-balance", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: acc.email, token, action })
+          });
+          if ([401, 404].includes(response.status)) return;
+          section.hidden = false;
+          const result = await response.json();
+          if (!response.ok) throw new Error(result.error);
+          status.textContent = format.format(result.balanceCents / 100) + " available";
+          expiry.replaceChildren(...result.credits.map(credit => {
+            const row = document.createElement("li");
+            row.textContent = format.format(credit.remainingCents / 100) + " expires " + new Date(credit.expires).toLocaleDateString("en-AU");
+            return row;
+          }));
+          history.textContent = result.history.length ? "Recent activity — " + result.history.map(kind => labels[kind] || kind).join(", ") : "";
+        } catch (error) {
+          section.hidden = false;
+          status.textContent = error.message === "newsletter_unconfirmed"
+            ? "We couldn't verify an active newsletter subscription for this email."
+            : "Rewards are temporarily unavailable. Please try again.";
+        } finally {
+          button.disabled = false;
+        }
+      }
+      button.addEventListener("click", () => load("claim-newsletter"));
+      load();
     }
 
     // ---- Membership number ----

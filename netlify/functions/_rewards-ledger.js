@@ -27,5 +27,5 @@ async function mutate(email,operation){
   }
  }
 }
-async function awardVerified(email,event){return mutate(email,s=>policy.award(s,event))}
+async function awardVerified(email,event){return mutate(email, s => policy.award(s, { ...event, held: require("./_rewards-redemption").heldBalance(s, event.now) }))}
 module.exports={read,mutate,awardVerified};
