@@ -2075,3 +2075,5 @@
     }
   }
 ];items.filter(p=>p.id!=='ad124801black').forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();
+
+;if(typeof shdApplyMarginPricing==="function")shdApplyMarginPricing();
