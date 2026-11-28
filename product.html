@@ -280,7 +280,7 @@
   <div id="site-footer"></div>
   <script src="js/furniture-freight.js?v=9"></script>
   <script src="js/decor-delivery.js?v=4"></script>
-  <script src="js/data.js?v=100"></script>
+  <script src="js/data.js?v=101"></script>
   <script src="js/adairs-bathroom.js?v=1"></script>
   <script src="js/shein-bathroom-expansion.js?v=1"></script>
   <script src="js/ai-overviews.js?v=7"></script>
@@ -770,7 +770,7 @@
                   
                   `
                 : p.shipFee
-                ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">🚚 Delivered to your door</span> <span style="color:var(--body)">${p.arriveBy ? `Arrives by <strong style="color:var(--ink)">${fmtArriveBy(p.arriveBy)}</strong>` : `About 4 weeks, arrives <strong style="color:var(--ink)">${typeof arriveRange === "function" ? arriveRange(p) : ""}</strong>`}</span>
+                ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">🚚 Delivered to your door</span> <span style="color:var(--body)">${p.arriveBy ? `Arrives by <strong style="color:var(--ink)">${fmtArriveBy(p.arriveBy)}</strong>` : p.id === "lx51" ? `<strong style="color:var(--ink)">Estimated delivery within 8–10 days</strong>` : `About 4 weeks, arrives <strong style="color:var(--ink)">${typeof arriveRange === "function" ? arriveRange(p) : ""}</strong>`}</span>
                   <div class="pdp-delcalc" style="margin-top:12px;padding:12px 14px;border:1px solid #E8DCC8;border-radius:10px;background:#fff">
                     <div style="font-weight:700;color:var(--ink)">Delivery calculator</div>
                     <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
@@ -781,7 +781,7 @@
                     
                   </div>`
                 : p.expressOpt
-                ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">🚚 Standard delivery</span> <span style="color:var(--body)">About 4 weeks, arrives <strong style="color:var(--ink)">${typeof fmtArriveRange === "function" ? fmtArriveRange(p.arriveDays || [28, 33]) : ""}</strong></span>
+                ? `<span style="display:inline-block;font-size:.78rem;font-weight:700;color:#0B1F3A;background:#E0C992;padding:5px 12px;border-radius:20px">🚚 Standard delivery</span> <span style="color:var(--body)">${p.id === "lx51" ? "Estimated delivery within 8–10 days" : `About 4 weeks, arrives <strong style="color:var(--ink)">${typeof fmtArriveRange === "function" ? fmtArriveRange(p.arriveDays || [28, 33]) : ""}</strong>`}</span>
                   <div style="margin-top:8px">⚡ <strong style="color:var(--ink)">Express available:</strong> arrives <strong style="color:var(--ink)">${typeof fmtArriveRange === "function" ? fmtArriveRange([4, 15]) : ""}</strong> for an extra <strong style="color:var(--ink)">$${Number(p.expressOpt).toLocaleString("en-AU")}</strong> per item. Choose it at checkout.</div>`
                 : p.lead
                 ? `<span style="display:inline-block;font-size:.78rem;font-weight:600;color:#8a7f77;background:#F4EFE6;padding:5px 12px;border-radius:20px">⏳ Made to order</span> <span style="color:var(--body)">Ships in <strong style="color:var(--ink)">${p.lead}</strong></span>`
