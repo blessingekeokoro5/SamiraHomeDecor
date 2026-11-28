@@ -390,7 +390,7 @@
       if (changed) saveAccount(acc);
 
       document.getElementById("accTitle").textContent = acc.name ? `Hello, ${acc.name.split(" ")[0]} 👋` : "My account";
-      document.getElementById("accSub").textContent = "Your membership card, coupon, orders and saved favourites.";
+      document.getElementById("accSub").textContent = "Manage your membership, orders, rewards and saved favourites.";
       // Use the same official Instagram URL already configured for the site footer.
       const instagramUrl = (typeof SAMIRA !== "undefined" && SAMIRA.socials && /^https:\/\/((www\.)?instagram\.com)\//i.test(SAMIRA.socials.instagram || "")) ? SAMIRA.socials.instagram : "";
       const wishN = wishlistCount();
@@ -398,9 +398,9 @@
       document.getElementById("accWrap").innerHTML = `
         <div style="padding:20px 24px;margin-bottom:18px;border:1px solid #dfd0b2;border-radius:12px;background:#faf6ed">
           <strong style="display:block;color:#0b1f3a;margin-bottom:8px">🎁 Earn more with Samira Rewards</strong>
-          <p style="margin:0 0 12px">Follow Samira Home Decor on Instagram and explore your $10 Instagram reward benefit.</p>
+          <p style="margin:0 0 12px">Explore the upcoming Samira Rewards program and its eligibility rules.</p>
           ${instagramUrl ? `<a href="${instagramUrl}" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Follow us on Instagram ↗</a>` : '<span>Instagram link currently unavailable.</span>'}
-          <p style="font-size:12px;margin:12px 0 0"><a href="rewards.html">View all Samira Rewards and member benefits</a>.</p>
+          <p style="font-size:12px;margin:12px 0 0"><a href="rewards.html">View all Samira Rewards and member benefits</a> · <a href="policy.html?doc=rewards">Rewards Policy</a>.</p>
         </div>
 
         <div class="mcard reveal" id="memberCard">
@@ -433,7 +433,14 @@
           <span class="as-go">Style my room →</span>
         </a>
 
+        <h3 class="acc-h3">Your shopping dashboard</h3>
         <div class="acc-links">
+          <a class="acc-link" href="#ordersList"><div class="ic">📋</div><strong>My orders &amp; receipts</strong><div>View order history</div></a>
+          <a class="acc-link" href="rewards.html"><div class="ic">🎁</div><strong>My rewards</strong><div>Explore member benefits</div></a>
+          <a class="acc-link" href="gift-cards.html"><div class="ic">💳</div><strong>Gift cards</strong><div>Shop gift cards</div></a>
+          <a class="acc-link" href="returns.html"><div class="ic">↩</div><strong>Returns &amp; refunds</strong><div>Start a return</div></a>
+          <a class="acc-link" href="contact.html"><div class="ic">💬</div><strong>Customer care</strong><div>Get assistance</div></a>
+          <a class="acc-link" href="policy.html?doc=rewards"><div class="ic">📄</div><strong>Rewards policy</strong><div>Read eligibility and terms</div></a>
           <a class="acc-link" href="wishlist.html"><div class="ic">♡</div><strong>Wishlist</strong><div style="color:var(--muted);font-size:0.85rem">${wishN} saved</div></a>
           <a class="acc-link" href="track.html"><div class="ic">📦</div><strong>Track order</strong><div style="color:var(--muted);font-size:0.85rem">View status</div></a>
           <a class="acc-link" href="cart.html"><div class="ic">🛒</div><strong>My cart</strong><div style="color:var(--muted);font-size:0.85rem">${cartCount()} items</div></a>
