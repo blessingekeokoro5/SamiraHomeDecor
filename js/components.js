@@ -663,7 +663,7 @@ function buildFloating() {
 
     <div class="dm-launch" id="dmLaunch">
       <button class="launch-btn launch-gift" id="giftFab" aria-label="Ask Samira Stylera, gifts, décor, styling & support">
-        <span class="lb-star" aria-hidden="true">SYS</span>
+        <span class="lb-star" aria-hidden="true">SHD</span>
         <span class="visually-hidden">Ask Samira Stylera</span>
       </button>
     </div>
