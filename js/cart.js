@@ -29,11 +29,13 @@ function memberRatio(p, size) {
   return Math.min(1, p.memberPrice / base);
 }
 function linePrice(i) {
-  const current = i && typeof findProduct === "function" ? findProduct(i.id) : null;
-  if (current && current.readyDining) return isMember() ? current.memberPrice : current.price;
-  if (!i || i.giftCard || i.hamper || /^(hamper|giftcard)-/.test(String(i.id)) || !isMember()) return i.price;
-  const p = (typeof findProduct === "function") ? findProduct(i.id) : null;
-  return Math.round(i.price * memberRatio(p, i.size) * 100) / 100;
+  if(!i)return 0;
+  if(i.giftCard||i.hamper||/^(hamper|giftcard)-/.test(String(i.id)))return i.price;
+  const p=findProduct(i.id);
+  if(!p||typeof p.price!=="number")return i.price;
+  const s=Array.isArray(p.sizes)?p.sizes.find(s=>s.label===i.size):null;
+  const price=s&&typeof s.price==="number"?s.price:p.price;
+  return isMember()&&p.memberPrice!=null&&p.cat!=="Packaging"?Math.round(price*.9*100)/100:price;
 }
 function cartTotal() { return getCart().reduce((n, i) => n + linePrice(i) * i.qty, 0); }
 
@@ -86,30 +88,7 @@ function getCampaign() {
 
 /* Best discount = larger of live flash-sale % or sale campaign % */
 function isBlackFriday2026() { const now=Date.now(); return now>=Date.parse("2026-11-12T13:30:00Z") && now<Date.parse("2026-11-14T13:30:00Z"); }
-function orderDiscount(sub) {
-  let flashPct = 0;
-  try { const f = getFlashSale(); if (f.active) flashPct = f.percent; } catch (e) {}
-  let campaignPct = 0, campaignLabel = "";
-  try { const c = getCampaign(); if (c.active) { campaignPct = c.percent; campaignLabel = c.label; } } catch (e) {}
-  const salePct = isBlackFriday2026() ? 5 : Math.max(flashPct, campaignPct);
-  const eligible = getCart().filter(i => !(findProduct(i.id) || {}).readyDining);
-  const eligibleSub = eligible.reduce((n,i) => n + linePrice(i) * i.qty, 0);
-  const saleAmt = Math.round(eligibleSub * salePct / 100);
-  // First-order 10% off (welcome offer) covers ONE piece: one unit of the dearest item
-  // (one set, for a "Set of 2"), not every unit in the cart. Gift cards don't count.
-  // The best single discount applies, they don't stack.
-  let welcomePct = 0, welcomeAmt = 0;
-  try { const v = getVoucher(); if (v && v.pct && isMember()) welcomePct = v.pct; } catch (e) {}  // members only (checked again at payment)
-  if (welcomePct && !isBlackFriday2026()) {
-    const unit = eligible.filter(i => !i.giftCard && !/^giftcard-/.test(String(i.id))).reduce((m, i) => Math.max(m, linePrice(i)), 0);
-    welcomeAmt = Math.round(unit * welcomePct) / 100;
-  }
-  if (welcomeAmt > saleAmt) return { pct: welcomePct, amount: welcomeAmt, label: `First order ${welcomePct}% off (one piece)` };
-  let label = "";
-  if (isBlackFriday2026()) label = "Black Friday (5% off)";
-  else if (salePct > 0) label = campaignPct === salePct ? `${campaignLabel} (${salePct}% off)` : `Flash sale (${salePct}% off)`;
-  return { pct: salePct, amount: saleAmt, label };
-}
+function orderDiscount(sub) { return {pct:0,amount:0,label:""}; }
 
 /* Rewards / gift dollar-voucher applied to the next order (separate from % coupons) */
 function getVoucher() { try { return JSON.parse(localStorage.getItem("dm_voucher") || "null"); } catch (e) { return null; } }
