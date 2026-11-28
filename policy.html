@@ -16,11 +16,13 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-sys.png">
   <link rel="stylesheet" href="css/styles.css?v=70">
   <style>
-    .pol-grid { display: grid; grid-template-columns: 240px 1fr; gap: 44px; align-items: start; }
+    .pol-grid { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 44px; align-items: start; }
     .pol-nav { position: sticky; top: 150px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow-sm); }
     .pol-nav a { display: block; padding: 11px 14px; border-radius: 8px; font-size: 0.9rem; color: var(--ink); }
     .pol-nav a:hover { background: var(--cream-2); }
     .pol-nav a.active { background: var(--rose); color: #fff; }
+    .pol-content { min-width: 0; overflow-wrap: anywhere; }
+    .pol-nav a:focus-visible { outline: 3px solid #b89452; outline-offset: 2px; }
     .pol-content h2 { margin-bottom: 6px; }
     .pol-updated { color: var(--muted); font-size: 0.85rem; margin-bottom: 8px; }
     .pol-intro { font-size: 1.08rem; color: var(--body); border-left: 3px solid var(--rose-soft); padding-left: 18px; margin: 18px 0 30px; }
@@ -36,7 +38,7 @@
     .faq-a { max-height: 0; overflow: hidden; transition: max-height var(--tr); }
     .faq-a-inner { padding: 0 20px 18px; color: var(--body); font-size: 0.94rem; }
     .faq-a a { color: var(--rose-deep); text-decoration: underline; }
-    @media (max-width: 860px){ .pol-grid { grid-template-columns: 1fr; } .pol-nav { position: static; } }
+    @media (max-width: 860px){ .pol-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; } .pol-nav { position: static; } }
   </style>
 </head>
 <body data-page="policy.html">
@@ -54,7 +56,7 @@
   <section class="section">
     <div class="container">
       <div class="pol-grid">
-        <nav class="pol-nav" id="polNav"></nav>
+        <nav class="pol-nav" id="polNav" aria-label="Store policies"></nav>
         <div class="pol-content" id="polContent"></div>
       </div>
     </div>
@@ -63,7 +65,7 @@
   <div id="site-footer"></div>
   <script src="js/data.js?v=99"></script>
   <script src="js/adairs-bathroom.js?v=1"></script>
-  <script src="js/policies.js?v=20"></script>
+  <script src="js/policies.js?v=21"></script>
   <script src="js/components.js?v=98"></script>
   <script src="js/cart.js?v=39"></script>
   <script src="js/main.js?v=22"></script>
@@ -74,7 +76,7 @@
     }
     function renderNav(active) {
       document.getElementById("polNav").innerHTML = POLICY_ORDER.map(p =>
-        `<a href="policy.html?doc=${p.slug}" class="${p.slug === active ? 'active' : ''}">${p.label}</a>`).join("");
+        `<a href="policy.html?doc=${p.slug}" class="${p.slug === active ? 'active' : ''}"${p.slug === active ? ' aria-current="page"' : ''}>${p.label}</a>`).join("");
     }
     function renderFAQ() {
       return `<h2>Frequently asked questions</h2>
