@@ -1604,7 +1604,7 @@ function ensureStyleraKnowledge(){
   if(styleraKnowledgeLoading)return styleraKnowledgeLoading;
   styleraKnowledgeLoading=new Promise((resolve,reject)=>{
     const script=document.createElement("script");
-    script.src="/js/stylera-knowledge.js?v=11";
+    script.src="/js/stylera-knowledge.js?v=12";
     script.onload=()=>window.StyleraKnowledge?resolve(window.StyleraKnowledge):reject(new Error("Stylera knowledge unavailable"));
     script.onerror=()=>reject(new Error("Stylera knowledge could not load"));
     document.head.append(script);
