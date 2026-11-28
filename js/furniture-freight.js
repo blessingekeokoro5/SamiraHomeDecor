@@ -103,7 +103,7 @@
     const furnitureUnits=lines.reduce((n,p)=>n+(Number(p.qty)||1),0);
     const twoPieceMixedFurniture=country==='Australia'&&furnitureUnits===2&&mixedSurcharge===1000&&lines.every(p=>loadClass(p)==='heavy'||loadClass(p)==='medium');
     const calculatedFee=Math.round((fee+surcharge+mixedSurcharge)*100)/100;
-    const finalFee=twoPieceMixedFurniture?Math.min(calculatedFee,1050):calculatedFee;
+    const finalFee=calculatedFee; // Preserve supplier freight and surcharges without a ceiling.
     return {fee:finalFee,surcharge:surcharge+(freedom.surcharge||0),mixedSurcharge,quoteRequired,days:(decorQuote&&decorQuote.days)||freedom.days,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(freedom.quoteRequired?freedom.message:james.quoteRequired?james.message:decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
   }
   function heavyMinimum(lines,postcode,country){
@@ -111,7 +111,6 @@
     const pc=Number((String(postcode||'').match(/\b\d{4}\b/)||[])[0]);
     return lines.reduce((sum,p)=>{
       const sofa=/\b(sofa|sofas|couch|couches|modular|daybed)\b/i.test(p.name||'')||p.freightClass==='sofa';
-      if(!sofa&&loadClass(p)!=='heavy'&&Number(p.weight)<50)return sum;
       if(!sofa&&loadClass(p)!=='heavy'&&!(Number(p.weight)>=50))return sum;
       let rate=sofa?400:300;
       if(pc>=2000&&pc<=2234)rate=sofa?250:205;
