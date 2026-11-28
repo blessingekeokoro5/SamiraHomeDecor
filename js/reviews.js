@@ -12,6 +12,7 @@
   const staticReviews = [];
   // Customer-authorised email reviews, published by the store owner.
   const emailReviews = [
+    {"productId":"kw01","who":"Jessica M.","suburb":"Brisbane, QLD","rating":4,"body":"Just wanted to share my feedback after receiving my KitchenAid Artisan Plus Stand Mixer. The mixer is beautiful, feels incredibly durable, and handles baking tasks with ease. I particularly love the Feather Pink finish as it gives my kitchen a stylish and modern look. Overall, I'm very happy with my purchase and would happily recommend both the product and Samira Home Decor to friends and family. Thank you."},
     { productId: 'ad124741black', who: 'Lily A.', suburb: 'Geelong, VIC', rating: 5, body: 'The Clayton Black Toilet Brush Holder is surprisingly elegant for such a practical item. It looks fantastic in our renovated bathroom and feels very well made.' },
     { productId: 'bt47', who: 'Emma D.', suburb: 'Canberra, ACT', rating: 4.5, body: 'Great quality and great value. The finish is exactly what I was looking for, and the ordering process was very easy. Highly recommend.' }
 ,
