@@ -106,5 +106,22 @@
     const finalFee=twoPieceMixedFurniture?Math.min(calculatedFee,1050):calculatedFee;
     return {fee:finalFee,surcharge:surcharge+(freedom.surcharge||0),mixedSurcharge,quoteRequired,days:(decorQuote&&decorQuote.days)||freedom.days,reason:decorQuote&&decorQuote.reason,pending:!!(decorQuote&&decorQuote.pending),message:quoteRequired?(freedom.quoteRequired?freedom.message:james.quoteRequired?james.message:decorQuote&&decorQuote.quoteRequired?decorQuote.message:'Please contact us for a delivery quote for this postcode and product. Payment is available once freight is confirmed.'):''};
   }
-  const api={luxo,koala,bedroomRates,decorRates,loadClass,mixedLoadSurcharge,jamesLaneQuote,freedomQuote,quote};if(typeof module==='object'&&module.exports)module.exports=api;else root.FurnitureFreight=api;
+  function heavyMinimum(lines,postcode,country){
+    if(country!=='Australia')return 0;
+    const pc=Number((String(postcode||'').match(/\b\d{4}\b/)||[])[0]);
+    return lines.reduce((sum,p)=>{
+      const sofa=/\b(sofa|sofas|couch|couches|modular|daybed)\b/i.test(p.name||'')||p.freightClass==='sofa';
+      if(!sofa&&loadClass(p)!=='heavy'&&Number(p.weight)<50)return sum;
+      if(!sofa&&loadClass(p)!=='heavy'&&!(Number(p.weight)>=50))return sum;
+      let rate=sofa?400:300;
+      if(pc>=2000&&pc<=2234)rate=sofa?250:205;
+      else if(pc>=3000&&pc<=3207)rate=sofa?280:225;
+      else if(pc>=5000&&pc<=5199)rate=sofa?300:250;
+      else if(pc>=4000&&pc<=4179||pc>=2600&&pc<=2620)rate=sofa?320:250;
+      else if(pc>=6000&&pc<=6199||pc>=7000&&pc<=7199)rate=sofa?450:350;
+      else if(pc>=800&&pc<=899)rate=sofa?500:400;
+      return sum+rate*(Number(p.qty)||1);
+    },0);
+  }
+  const api={heavyMinimum,luxo,koala,bedroomRates,decorRates,loadClass,mixedLoadSurcharge,jamesLaneQuote,freedomQuote,quote};if(typeof module==='object'&&module.exports)module.exports=api;else root.FurnitureFreight=api;
 })(typeof window==='undefined'?globalThis:window);
