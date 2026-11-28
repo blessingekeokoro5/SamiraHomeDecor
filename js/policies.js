@@ -69,7 +69,7 @@ const POLICIES = {
       <h3>3. Delivery times &amp; costs (Australia)</h3>
       <ul>
         <li>Standard delivery: typically <strong>3 to 8 business days</strong> depending on your state and postcode.</li>
-        <li><strong>Free standard shipping on orders over $3,500</strong> (Australia-wide). Heavy orders over 50kg are charged at least $150 for delivery, including orders over $3,500.</li>
+        <li><strong>Free standard shipping on orders over $3,500</strong> (Australia-wide). Heavy furniture and bulky items are excluded from free delivery. Delivery starts at $205, varies by item and postcode, and may be higher for sofas, regional destinations and multiple items. Final delivery charges are calculated at checkout.</li>
         <li>Bulky and furniture items may incur additional freight, shown at checkout, and can require longer transit times.</li>
         <li>Remote and regional areas may experience extended delivery times.</li>
       </ul>
