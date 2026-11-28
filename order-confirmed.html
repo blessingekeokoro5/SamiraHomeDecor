@@ -33,10 +33,15 @@
         <span class="eyebrow">Thank you</span>
         <h1 style="font-size:2.4rem">Order confirmed</h1>
         <p class="lead" id="confirmMsg">Your order has been placed, a confirmation is on its way to your inbox.</p>
-        <div class="btn-row" style="justify-content:center;margin-top:24px">
-          <a class="btn btn--primary" href="track.html">Track my order</a>
-          <a class="btn btn--outline" href="shop.html">Continue shopping</a>
+        <div style="margin:24px auto;text-align:left;max-width:460px;border:1px solid #C6A15B;border-radius:16px;padding:20px">
+          <h2 style="font-size:1.4rem">Track your order</h2>
+          <p><strong>Guest checkout:</strong> Use the SHD- order number in your confirmation email and the email address or phone number used at checkout. No account is required.</p>
+          <a id="guestTrackLink" class="btn btn--primary btn--block" href="track.html">Track my order</a>
+          <hr style="margin:18px 0;border:0;border-top:1px solid #ddd">
+          <p><strong>Members:</strong> Sign in to My Account to view your orders and tracking updates.</p>
+          <a class="btn btn--outline btn--block" href="account.html">My account</a>
         </div>
+        <a class="btn btn--outline" href="shop.html">Continue shopping</a>
         <div class="oc-follow">
           <strong>Follow Samira Home Decor</strong>
           <span>New décor, styling ideas &amp; member offers. Tag us when your order arrives ✨</span>
@@ -62,6 +67,7 @@
         let o = JSON.parse(localStorage.getItem("dm_last_order"));
         const urlNo = new URLSearchParams(location.search).get("order");
         if (urlNo && /^SHD-\d{6}$/.test(urlNo) && (!o || o.orderNo !== urlNo)) { o = Object.assign({}, o || {}, { orderNo: urlNo }); localStorage.setItem("dm_last_order", JSON.stringify(o)); }
+        if (urlNo && /^SHD-\d{6}$/.test(urlNo)) document.getElementById("guestTrackLink").href = "track.html?order=" + encodeURIComponent(urlNo);
         if (o && o.orderNo) document.getElementById("confirmMsg").innerHTML =
           `Your order <strong>${o.orderNo}</strong> for <strong>${money(o.total)}</strong> has been placed, a confirmation is on its way to ${o.email || "your inbox"}.`;
       } catch (e) {}
