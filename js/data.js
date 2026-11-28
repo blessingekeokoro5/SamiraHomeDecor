@@ -45149,3 +45149,5 @@ function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
     }
   }
 ];items.forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();
+
+;(()=>{const p=PRODUCTS.find(p=>p.id==="lx51");if(p){Object.assign(p,{price:1099,memberPrice:989.10,preorder:false,limitedStock:true});delete p.was;delete p.arriveBy;}})();
