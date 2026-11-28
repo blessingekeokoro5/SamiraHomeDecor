@@ -136,7 +136,7 @@ test("owner-only Firestore probe and ledger retry a rejected transaction atomica
   };
   assert.equal((await rewardsAdmin({ ...health, headers: {} })).statusCode, 401);
   assert.equal(requests.length, 0);
-  assert.deepEqual(JSON.parse((await rewardsAdmin(health)).body), { connected: true });
+  assert.equal(JSON.parse((await rewardsAdmin(health)).body).connected, true);
   const ledger = require("../netlify/functions/_rewards-ledger");
   const event = { kind: "newsletter", key: "once", now, verified: true };
   assert.equal(await ledger.awardVerified(email, event), 200);
@@ -204,4 +204,39 @@ test("checkout preserves guest pricing and reserves a capped Stripe discount onl
   assert.equal(discounts[0].amount_off, 2000);
   assert.equal(discounts[0].currency, "aud");
   assert.equal(balance(state, Date.now()), 1500);
+});
+
+test("Stripe expiration requires a valid signature before releasing a checkout hold", async t => {
+  const key = "sk_test_fixture";
+  const secret = "whsec_fixture";
+  const previousKey = process.env.STRIPE_SECRET_KEY;
+  const previousSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  process.env.STRIPE_SECRET_KEY = key;
+  process.env.STRIPE_WEBHOOK_SECRET = secret;
+  t.after(() => {
+    if (previousKey === undefined) delete process.env.STRIPE_SECRET_KEY;
+    else process.env.STRIPE_SECRET_KEY = previousKey;
+    if (previousSecret === undefined) delete process.env.STRIPE_WEBHOOK_SECRET;
+    else process.env.STRIPE_WEBHOOK_SECRET = previousSecret;
+  });
+  const { settleRedemption } = require("../netlify/functions/_rewards-redemption");
+  const redemption = require("../netlify/functions/_rewards-redemption");
+  const calls = [];
+  redemption.settleRedemption = async (...args) => calls.push(args);
+  t.after(() => { redemption.settleRedemption = settleRedemption; });
+  const stripe = require("stripe")(key);
+  const { handler } = require("../netlify/functions/stripe-webhook");
+  const body = JSON.stringify({
+    type: "checkout.session.expired",
+    data: { object: {
+      object: "checkout.session",
+      customer_email: email,
+      metadata: { rewards_redemption: "hold-1" },
+    } },
+  });
+  const signature = stripe.webhooks.generateTestHeaderString({ payload: body, secret });
+  assert.equal((await handler({ body, headers: { "stripe-signature": "invalid" } })).statusCode, 400);
+  assert.deepEqual(calls, []);
+  assert.equal((await handler({ body, headers: { "stripe-signature": signature } })).statusCode, 200);
+  assert.deepEqual(calls, [[email, "hold-1", "expired"]]);
 });

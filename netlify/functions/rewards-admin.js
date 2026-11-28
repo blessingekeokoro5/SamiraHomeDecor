@@ -2,6 +2,7 @@ const { createHash, timingSafeEqual } = require("node:crypto");
 const { checkConnection } = require("./_rewards-firestore");
 const { read, mutate, awardVerified } = require("./_rewards-ledger");
 const { rewardsView } = require("./_rewards-view");
+const { reconcileRedemptions } = require("./_rewards-redemption");
 const { notifyCredit } = require("./_rewards-notify");
 
 function json(statusCode, body) {
@@ -20,11 +21,19 @@ exports.handler = async event => {
   try {
     if (body?.action === "health") {
       await checkConnection();
-      return json(200, { connected: true });
+      const stripeKey = process.env.STRIPE_SECRET_KEY || "";
+      const stripeMode = /^(?:sk|rk)_test_/.test(stripeKey) ? "test"
+        : /^(?:sk|rk)_live_/.test(stripeKey) ? "live" : "unconfigured";
+      return json(200, { connected: true, stripeMode });
     }
     if (process.env.REWARDS_ENABLED !== "true") return json(404, { error: "rewards_disabled" });
     const email = typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
     if (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json(400, { error: "invalid_email" });
+    if (body.action === "reconcile") {
+      if (!process.env.STRIPE_SECRET_KEY) return json(503, { error: "stripe_not_configured" });
+      const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+      return json(200, rewardsView(await reconcileRedemptions(stripe, email)));
+    }
     if (body.action === "birthday") {
       const now = Date.now();
       const today = new Intl.DateTimeFormat("sv-SE", {

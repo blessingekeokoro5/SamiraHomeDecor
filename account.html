@@ -471,7 +471,7 @@
       const token = localStorage.getItem("shd_auth_token");
       if (!token) return;
       const format = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD" });
-      const labels = { order: "Order reward", newsletter: "Newsletter reward", birthday: "Birthday reward", refund: "Refund adjustment", redeem: "Store credit used" };
+      const labels = { order: "Order reward", newsletter: "Newsletter reward", birthday: "Birthday reward", refund: "Refund adjustment", redeem: "Store credit used", restore: "Store credit restored" };
       async function load(action) {
         button.disabled = true;
         try {
@@ -484,7 +484,8 @@
           section.hidden = false;
           const result = await response.json();
           if (!response.ok) throw new Error(result.error);
-          status.textContent = format.format(result.balanceCents / 100) + " available";
+          status.textContent = format.format(result.balanceCents / 100) + " available" +
+            (result.pendingCents > 0 ? " · " + format.format(result.pendingCents / 100) + " held in checkout" : "");
           expiry.replaceChildren(...result.credits.map(credit => {
             const row = document.createElement("li");
             row.textContent = format.format(credit.remainingCents / 100) + " expires " + new Date(credit.expires).toLocaleDateString("en-AU");

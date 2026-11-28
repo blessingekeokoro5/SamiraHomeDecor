@@ -114,6 +114,7 @@
           <form id="rewardsAdminForm">
             <div class="field"><label for="rewardsAdminEmail">Member email</label><input type="email" id="rewardsAdminEmail" required></div>
             <button class="btn btn--outline btn--sm" type="submit" value="lookup">View rewards</button>
+            <button class="btn btn--outline btn--sm" type="submit" value="reconcile">Check expired checkout holds</button>
             <div class="field"><label for="rewardsAdminBirthday">Verified birthday (MM-DD)</label><input id="rewardsAdminBirthday" placeholder="MM-DD" maxlength="5"></div>
             <label><input id="rewardsAdminVerified" type="checkbox"> I verified this member's birthday</label>
             <button class="btn btn--outline btn--sm" type="submit" value="birthday">Credit birthday reward</button>
@@ -340,7 +341,8 @@
         }
         const money = new Intl.NumberFormat("en-AU", { style: "currency", currency: "AUD" });
         const credits = result.credits.map(credit => money.format(credit.remainingCents / 100) + " expires " + new Date(credit.expires).toLocaleDateString("en-AU"));
-        status.textContent = [money.format(result.balanceCents / 100) + " available", ...credits].join(" · ");
+        const pending = result.pendingCents > 0 ? [money.format(result.pendingCents / 100) + " held in checkout"] : [];
+        status.textContent = [money.format(result.balanceCents / 100) + " available", ...pending, ...credits].join(" · ");
       } catch {
         status.textContent = "Rewards are unavailable.";
       } finally {

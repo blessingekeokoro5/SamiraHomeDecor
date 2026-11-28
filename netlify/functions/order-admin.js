@@ -188,7 +188,7 @@ exports.handler = async (event) => {
   }
 
   await store.setJSON(orderNo, rec);
-  if (stage === "delivered" && process.env.REWARDS_ENABLED === "true") {
+  if (stage === "delivered" && order.versionedRewards && process.env.REWARDS_ENABLED === "true") {
     try {
       await creditDeliveredOrder(stripe(), order.sessionId);
     } catch (error) {

@@ -100,7 +100,7 @@ async function findOrder(orderNo) {
       ((s.metadata && s.metadata.order_no) === orderNo || s.client_reference_id === orderNo)) || null;
   }
   if (!session || session.payment_status !== "paid") return null;
-  return fromSession(session);
+  return { ...fromSession(session), versionedRewards: session.metadata?.rewards_version === "1" };
 }
 
 async function itemsFor(sessionId) {
