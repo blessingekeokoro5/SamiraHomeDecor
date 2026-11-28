@@ -45170,3 +45170,5 @@ function shdApplyMarginPricing(){
   }
 }
 shdApplyMarginPricing();
+
+;(()=>{const p=PRODUCTS.find(p=>p.id==="lx51");if(p){p.arriveDays=[8,10];p.preorder=false;p.limitedStock=true;delete p.arriveBy;}})();
