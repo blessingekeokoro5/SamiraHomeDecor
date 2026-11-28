@@ -45151,3 +45151,22 @@ function isBlackFridayItem(p) { return !!p && /^lx\d+$/.test(p.id || ""); }
 ];items.forEach(p=>{const i=PRODUCTS.findIndex(x=>x.id===p.id);if(i<0)PRODUCTS.push(p);else PRODUCTS[i]=p;});})();
 
 ;(()=>{const p=PRODUCTS.find(p=>p.id==="lx51");if(p){Object.assign(p,{price:1099,memberPrice:989.10,preorder:false,limitedStock:true});delete p.was;delete p.arriveBy;}})();
+
+/* SHD one-time catalogue margin uplift, applied to each freshly loaded product. */
+function shdApplyMarginPricing(){
+  for(const p of PRODUCTS){
+    if(!p||p.id==="lx51"||p.shdMarginApplied||typeof p.price!=="number"||p.price<=0||/packaging|digital|gift card|service/i.test(p.cat||""))continue;
+    const n=String(p.name||"");
+    const small=/\b(pillow|cushion|cover|sheet|quilt|duvet|blanket|throw|mixer|blender|kettle|toaster|accessory|accessories)\b/i.test(n)||/kitchenware|bathroom/i.test(p.cat||"");
+    const large=!small&&/\b(sofas?|couches?|sectionals?|modular lounge|lounge suite)\b/i.test(n);
+    const medium=!small&&/\b(tv unit|entertainment unit|console|tables?|desks?|cabinets?|sideboards?|buffets?|chairs?|stools?|ottomans?|benches|bench|bed frame|bed base|headboard|wardrobes?|dressers?|bookcases?|shelving|tallboy|mattress|beds?)\b/i.test(n);
+    const uplift=large?700:medium?350:150;
+    const round=n=>Math.round(n*100)/100;
+    p.price=round(Math.max(p.price,Number(p.was)||0)+uplift);
+    p.memberPrice=round(p.price*.9);
+    delete p.was;
+    if(Array.isArray(p.sizes))for(const s of p.sizes){if(s&&typeof s.price==="number"){s.price=round(s.price+uplift);s.memberPrice=round(s.price*.9);}}
+    p.shdMarginApplied=true;
+  }
+}
+shdApplyMarginPricing();
