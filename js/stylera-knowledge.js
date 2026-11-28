@@ -1,7 +1,7 @@
 /* Stylera's public, on-site knowledge assistant. No private customer/order data or API secrets. */
 (function(){
 "use strict";
-const careMessage="For faster assistance, please email hello@samirahomedecor.com.au or message our Customer Care Team on WhatsApp. General customer enquiries are handled online.";
+const careMessage="Live chat is our preferred contact method. If no Customer Care representative is online, please email hello@samirahomedecor.com.au or message us on WhatsApp.";
 const topics={
  greeting:"Hi! I’m Stylera, your AI Home Stylist ✨ Welcome to Samira Home Decor. Whether you’re decorating a new home, refreshing a room or searching for a statement piece, I can help with styling ideas, product discovery and shopping questions. What would you like to explore today?",
  payments:"For available payment methods and secure checkout options, please review the payment choices shown at checkout. I cannot collect card details or verify payments in chat. If payment failed or you were charged incorrectly, please raise a support ticket so Customer Care can investigate.",
@@ -87,7 +87,7 @@ function supportReply(message, ...actions) {
   const text = document.createElement("p");
   text.textContent = message;
   node.append(text);
-  for (const action of [...new Set([...actions.filter(a=>a!=="human"),"email","whatsapp"])]) {
+  for (const action of [...new Set(["human",...actions,"email","whatsapp"])]) {
     const row = document.createElement("p");
     row.append(link(...supportPaths[action]));
     node.append(row);
@@ -132,7 +132,7 @@ function createConversation(channel) {
           if (!response.ok) throw new Error("Rating unavailable");
           options.remove();
           status.textContent = "Thank you. Your " + score + " out of 5 rating was saved.";
-          if (score <= 2) {node.append(link(...supportPaths.email),document.createTextNode(" · "),link(...supportPaths.whatsapp));}
+          if (score <= 2) {node.append(link(...supportPaths.human),document.createTextNode(" · "),link(...supportPaths.email),document.createTextNode(" · "),link(...supportPaths.whatsapp));}
         } catch {
           status.textContent = "Your rating couldn’t be saved. Please try again.";
           for (const option of options.children) option.disabled = false;
@@ -158,14 +158,14 @@ function createConversation(channel) {
     }
     if (/\b(?:phone number|contact number|call back|callback|can i call|how (?:do|can) i call|phone support|speak.*phone)\b/.test(t)) {
       supportActive = true;
-      return supportReply("For general store questions, For faster assistance, please email hello@samirahomedecor.com.au or message our Customer Care Team on WhatsApp. General customer enquiries are handled online.", "human", "ticket");
+      return supportReply("For general store questions, Live chat is our preferred contact method. If no Customer Care representative is online, please email hello@samirahomedecor.com.au or message us on WhatsApp.", "human", "ticket");
     }
     if (/(?:how long|when|timeframe).*(?:reply|respond|hear back|get back|care team|follow up|ticket|callback)/.test(t) || (supportActive && /^how long(?: will it take)?$/.test(t))) {
       return supportReply("Response times vary. If you chose email on your ticket, keep an eye on the inbox and spam folder for the reply address you provided. If you need to follow up, include your ticket reference.", "human");
     }
     if (/\b(?:human|representative|real person|live agent|live chat|speak to someone|talk to someone)\b/.test(t)) {
       supportActive = true;
-      return supportReply("For faster assistance, please email hello@samirahomedecor.com.au or message our Customer Care Team on WhatsApp. General customer enquiries are handled online.", "human", "ticket");
+      return supportReply("Live chat is our preferred contact method. If no Customer Care representative is online, please email hello@samirahomedecor.com.au or message us on WhatsApp.", "human", "ticket");
     }
     const giftCard = /\b(?:gift cards?|giftcards?)\b/.test(t);
     const login = /\b(?:login|log in|sign in|signing in|one time)\b/.test(t);
@@ -215,7 +215,7 @@ window.StyleraKnowledge={
  respond(question,preferred){
   const q=String(question||"").trim(),issue=isIssue(q),topic=choose(q,preferred);
   const node=document.createElement("div");node.className="stylera-answer";
-  const para=document.createElement("p");para.style.margin="0 0 9px";para.textContent=issue?"For a problem with an order, delivery, payment, faulty item or a refund request, please submit a support ticket so Customer Care can review the details. Include your order reference if you have one, but never send payment card details or passwords. Email or WhatsApp our Customer Care Team for faster assistance.":topic?topics[topic]:"I can help with delivery estimates, styling ideas, product discovery and order-support steps. Please tell me which item, room or delivery destination you're asking about so I can give you a more useful answer. For a personal order or a question I cannot verify, connect with Customer Care below.";
+  const para=document.createElement("p");para.style.margin="0 0 9px";para.textContent=issue?"For a problem with an order, delivery, payment, faulty item or a refund request, please submit a support ticket so Customer Care can review the details. Include your order reference if you have one, but never send payment card details or passwords. Live chat is preferred; if nobody is online, email or WhatsApp our Customer Care Team.":topic?topics[topic]:"I can help with delivery estimates, styling ideas, product discovery and order-support steps. Please tell me which item, room or delivery destination you're asking about so I can give you a more useful answer. For a personal order or a question I cannot verify, connect with Customer Care below.";
   node.append(para);
   if(topic==="orders"&&!issue){
     const form=document.createElement("form");form.style.cssText="display:grid;gap:8px;margin:10px 0";
@@ -246,7 +246,7 @@ window.StyleraKnowledge={
    else if(topic==="products"||topic==="packaging"||topic==="gifts"||topic==="styling"){const note=document.createElement("p");note.textContent="I couldn't confidently identify a matching product from that description. Try a specific item name, or browse the current collection.";node.append(note)}
   }
   const links=document.createElement("p");links.style.margin="12px 0 0";links.append(link(issue?"/support.html#ticket":topic==="returns"?"/policy.html?doc=returns":topic==="orders"?"/track.html":topic==="styling"?"/stylist.html":topic==="gifts"?"/hampers.html":topic==="delivery"?"/policy.html?doc=delivery":"/shop.html",issue?"Submit a support ticket":topic==="returns"?"Read returns policy":topic==="orders"?"Track an order":topic==="styling"?"Explore styling tools":topic==="gifts"?"Browse gift hampers":topic==="delivery"?"Read delivery policy":"Browse our shop"));node.append(links);
-  if(issue||["human","availability","orders","returns","delivery","payments"].includes(topic)||!topic){const care=document.createElement("p");care.textContent=careMessage;node.append(care);for(const action of ["email","whatsapp"]){const row=document.createElement("p");row.append(link(...supportPaths[action]));node.append(row)}}
+  if(issue||["human","availability","orders","returns","delivery","payments"].includes(topic)||!topic){const care=document.createElement("p");care.textContent=careMessage;node.append(care);for(const action of ["human","email","whatsapp"]){const row=document.createElement("p");row.append(link(...supportPaths[action]));node.append(row)}}
   if(!issue&&(topic==="orders"||topic==="returns"||topic==="delivery"||topic==="payments"||!topic)){const help=document.createElement("p");help.style.margin="8px 0 0";help.append(link("/support.html#ticket","Need more help? Raise a support ticket"));node.append(help)}
   return node;
  }
