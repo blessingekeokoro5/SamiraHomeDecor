@@ -261,17 +261,6 @@ function resolveLine(raw, member) {
   const memberDiscountAmount = Math.max(0, round2(regularUnitPrice) - round2(unitPrice));
   const memberDiscountApplied = memberDiscountAmount > 0;
 
-  if (!p.readyDining && p.cat !== "Packaging" && halloweenOn()) {
-    // Halloween: 15% off storewide; replaces the other promos rather than stacking.
-    // Whole dollars, exactly as js/data.js rounds the price the shopper sees.
-    unitPrice = Math.round(unitPrice * (1 - HALLOWEEN_PCT / 100));
-  } else {
-    // Recurring sofa sale (Tue/Thu/Sat AU time) — apply to the trusted price.
-    if (/^sf\d+$/.test(id) && sofaSaleToday()) unitPrice = round2(unitPrice * (1 - SOFA_SALE_PCT / 100));
-    // Black Friday → Cyber Monday: 15% off ready-to-ship items (id lxNN).
-    if (!p.readyDining && /^lx\d+$/.test(id) && blackFridayOn()) unitPrice = round2(unitPrice * (1 - BLACK_FRIDAY_PCT / 100));
-  }
-
   const variant = [raw.colour, size].filter(Boolean).map(String).join(", ");
   return {
     name: (variant ? `${p.name} (${variant})` : p.name).slice(0, 250),
@@ -462,42 +451,8 @@ async function handleCheckout(event, deliveryEstimate = false) {
 
     // 2. Discount: take what was asked for, clamped to what's reachable.
     //    The welcome 10% only counts for a signed-in member with no earlier paid order.
-    const askedPct = Math.max(Number(body.discountPct) || 0, 0);
-    const salePct = saleDiscountPct();
-    const memberEmail = isMemberBuyer ? String(body.member.email).trim().toLowerCase() : "";
-    const wantsWelcome = !blackFriday2026() && String(body.voucherCode || "").toUpperCase() === WELCOME_CODE && askedPct > salePct;
-    let welcomeOk = false;
-    if (wantsWelcome) {
-      if (!isMemberBuyer) {
-        return jsonResponse(400, { code: "welcome_not_eligible", error: "The 10% first-order offer is for members. Please sign in or join free (it takes a minute), then check out again. We've taken it off your order for now." });
-      }
-      let ordered;
-      try {
-        ordered = await hasPaidOrder(memberEmail) ||
-          (customer.email && String(customer.email).trim().toLowerCase() !== memberEmail ? await hasPaidOrder(customer.email) : false);
-      } catch (e) {
-        console.error("Welcome offer order check failed:", e.message);
-        return jsonResponse(503, { error: "We couldn't check your first-order offer just now. Please try again in a moment." });
-      }
-      if (ordered) {
-        return jsonResponse(400, { code: "welcome_not_eligible", error: "The 10% welcome offer is for your first order only, and we can see you've ordered with us before. We've taken it off your order. Thank you for shopping with us again!" });
-      }
-      welcomeOk = true;
-    }
-    // The welcome 10% covers ONE piece only: one unit of the dearest line (one set for a
-    // "Set of 2"), never every unit. Gift cards being bought don't count. A sale % (whole
-    // order) is used instead if it's worth more; they never stack.
     const eligibleSubtotal = lines.filter(l => !l.readyDining).reduce((n,l) => n + l.unitPrice * l.qty, 0);
-    const saleDiscount = round2((eligibleSubtotal * (blackFriday2026() ? 5 : Math.min(askedPct, salePct))) / 100);
-    const welcomeUnit = lines.reduce((m, l, k) => ((l.readyDining || itemId(items[k]).startsWith("giftcard-")) ? m : Math.max(m, l.unitPrice)), 0);
-    const welcomeDiscount = welcomeOk ? round2((welcomeUnit * WELCOME_PCT) / 100) : 0;
-    const discount = Math.max(saleDiscount, welcomeDiscount);
-    const pct = welcomeDiscount > saleDiscount ? WELCOME_PCT : (blackFriday2026() ? 5 : Math.min(askedPct, salePct));
-
-    // 3. Rewards voucher: clamped, and never more than the order is worth.
-    const askedVoucher = Number(body.voucher) || 0;
-    const voucher = protectedVoucher(askedVoucher, eligibleSubtotal, discount);
-
+    const discount = 0, pct = 0, welcomeDiscount = 0, saleDiscount = 0, voucher = 0;
     const afterDiscount = round2(subtotal - discount - voucher);
 
     // 4. Shipping: recomputed here from weight and region, never taken from the client.
