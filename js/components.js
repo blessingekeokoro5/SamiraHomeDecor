@@ -1422,7 +1422,7 @@ const CHAT_QUICK = [
   { label: "📦 Shop packaging supplies" },
   { label: "🚚 Track my order" },
   { label: "🌏 Shopping from overseas" },
-  { label: "💬 Chat with a customer representative" }
+  { label: "💬 Live chat with Customer Care Team" }
 ];
 
 /* ---- Help desk (self-service home → FAQs, tracking, returns, message us) ---- */
@@ -1557,7 +1557,7 @@ function dmSelectIssue(issue) {
 
 // Hand off to the Stylera customer support inbox.
 function waButton(label) {
-  return `<a class="chat-wa" href="contact.html" onclick="openLiveChat();return false;">${IC.chat || "💬"} ${label || "Live chat with a customer representative"}</a>`;
+  return `<a class="chat-wa" href="contact.html" onclick="openLiveChat();return false;">${IC.chat || "💬"} ${label || "Live chat with Customer Care Team"}</a>`;
 }
 
 /* Stylera answers are now provided exclusively by js/stylera-knowledge.js. */
