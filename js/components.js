@@ -1070,7 +1070,7 @@ function buildCountryModal() {
     <div class="country-card" role="dialog" aria-label="Confirm your country">
       <button class="country-close" id="countryClose" aria-label="Close">✕</button>
       <h3>Confirm your country</h3>
-      <p>You're shopping the <strong>Samira Home Decor Australia</strong> store <span id="homeFlag">🇦🇺</span>. We deliver across Australia and ship eligible décor, homewares and gifts to New Zealand. Furniture ships within Australia only. Confirm your region to see prices in your currency.</p>
+      <p>You're shopping the <strong>Samira Home Decor Australia</strong> store <span id="homeFlag">🇦🇺</span>. We deliver across Australia and ship eligible lightweight, non-bulky décor, homewares and gifts to New Zealand. Furniture and heavy or bulky items ship within Australia only. Confirm your region to see prices in your currency.</p>
       <div class="country-detected" id="countryDetected"></div>
       <label class="country-select-label">Shopping from another country?
         <select id="countrySelect">${options}</select>
