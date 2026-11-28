@@ -310,7 +310,7 @@ function buildHeader() {
   const navMain = `
     <div class="m-drawer-head">
       <button class="m-drawer-close" type="button" aria-label="Close menu">×</button>
-      <a href="index.html" class="m-drawer-brand" aria-label="Samira Home Decor home"><img src="/assets/samira-logo-original.webp?v=1" alt="Samira Home Decor"></a>
+      <a href="index.html" class="m-drawer-brand" aria-label="Samira Home Decor home"><img src="/assets/samira-logo-tagline.svg?v=1" alt="Samira Home Decor"></a>
       <button class="m-drawer-region" type="button" aria-label="Choose region and currency" onclick="document.querySelector('.m-drawer-close')?.click();openCountryModal()">${AU_FLAG_SVG}</button>
     </div>
     <div class="m-menu-scroll">
@@ -346,7 +346,7 @@ function buildHeader() {
     <div class="container nav-utility">
       <button class="nav-toggle" id="navToggle" aria-label="Menu">${IC.menu}</button>
       <a class="brand" href="index.html" aria-label="Samira Home Decor home">
-        <img class="brand-logo-full" src="/assets/samira-logo-original.webp?v=1" alt="Samira Home Decor — Beautiful Spaces, Brighter Lives" width="420" height="180" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <img class="brand-logo-full" src="/assets/samira-logo-original.webp?v=1" alt="Samira Home Decor — A home that feels freshly styled, every time you walk in." width="420" height="180" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
         <span class="brand-logo-error" hidden>Samira Home Decor</span>
       </a>
       <form class="header-search" id="headerSearch" role="search">
