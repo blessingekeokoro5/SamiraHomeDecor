@@ -30,7 +30,7 @@ function page(title, inner) {
   .btn{display:block;width:100%;box-sizing:border-box;border:0;border-radius:30px;padding:15px 18px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:10px;text-align:center;text-decoration:none}
   .yes{background:#2E7D4F;color:#fff}.no{background:#fff;color:#14365F;border:2px solid #14365F}.home{background:#14365F;color:#fff}
   .muted{color:#8a7f77;font-size:13px;text-align:center}
-</style></head><body><div class="wrap"><div class="brand"><b>Samira Home Decor</b><span>Beautiful Spaces, Brighter Lives</span></div>
+</style></head><body><div class="wrap"><div class="brand"><b>Samira Home Decor</b><span>A home that feels freshly styled, every time you walk in.</span></div>
 <div class="card">${inner}</div><p class="muted">Questions? Email hello@samirahomedecor.com.au</p></div></body></html>`,
   };
 }
