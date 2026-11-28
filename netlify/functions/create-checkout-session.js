@@ -57,7 +57,7 @@ const SHIP_ZONES = {
 // Pure helpers exposed for financial parity tests; Netlify invokes handler only.
 exports._test = { resolveLine, shippingFor, chargePerUnit, protectedVoucher };
 const DEFAULT_ITEM_KG = 0.75;
-const HEAVY_KG = 50, HEAVY_MIN_FEE = 150;  // keep in step with js/checkout.js
+const HEAVY_KG = 50, HEAVY_MIN_FEE = 205;  // keep in step with js/checkout.js
 const EXPRESS_EXTRA = 150;   // extra charge for Express on gift orders (AUD), keep in step with js/cart.js
 
 /* ---- Discount ceiling ---------------------------------------
@@ -338,6 +338,8 @@ function shippingFor(country, fulfil, lines, afterDiscount, postcode, decorQuote
     res.amount = round2(res.amount + fixed);
     if (/Free/.test(res.label)) res.label = "Standard delivery";
   }
+  const heavyFloor = FurnitureFreight.heavyMinimum(lines, postcode, country);
+  if (heavyFloor) { res.amount = Math.max(res.amount, heavyFloor + (ready.surcharge || 0) + (ready.mixedSurcharge || 0)); res.label = 'Furniture delivery'; }
   // The slowest arrive-by date decides when the whole order arrives.
   const latest = lines.reduce((m, l) => (l.arriveBy ? Math.max(m, bizDaysUntil(l.arriveBy)) : m), 0);
   if (latest && (!res.days || latest > res.days[1])) res.days = [Math.max(1, latest - 5), latest];
@@ -355,9 +357,9 @@ function shippingBase(country, fulfil, lines, afterDiscount) {
   if (rest.length) {
     const kg = round2(Math.max(rest.reduce((n, l) => n + l.weight * l.qty, 0), 0.1));
     amount = round2(zone.base + zone.perKg * kg);
-    if (kg > HEAVY_KG) amount = Math.max(amount, HEAVY_MIN_FEE);  // over 50kg: at least $150
-    // Free over $3,500, except heavy orders (over 50kg), which pay a flat $150
-    if (zone.freeOver && afterDiscount >= zone.freeOver) amount = kg > HEAVY_KG ? HEAVY_MIN_FEE : 0;
+    if (kg > HEAVY_KG) amount = Math.max(amount, HEAVY_MIN_FEE);  // over 50kg: at least $205
+    // Free over $3,500, except heavy orders (over 50kg), which pay a flat $205
+    if (zone.freeOver && afterDiscount >= zone.freeOver) amount = kg > HEAVY_KG ? Math.max(amount, HEAVY_MIN_FEE) : 0;
   }
   // Optional Express on furniture (expressOpt): a per-item fee on top of shipping.
   const optFee = fulfil === "fexpress" ? round2(lines.reduce((n, l) => n + (l.expressOpt ? l.expressOpt * l.qty : 0), 0)) : 0;
