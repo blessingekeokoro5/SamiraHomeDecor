@@ -9,7 +9,7 @@
  const title=document.createElement('h2');title.textContent='Rewards program';const welcome=document.createElement('div');welcome.textContent='Welcome to Samira Home Decor';welcome.style.fontSize='13px';
  head.append(close,welcome,title);
  const content=document.createElement('div');content.className='shd-reward-content';
- const items=[['Place an order','$5 store credit on eligible orders above $100',null],['Follow on Instagram','$5 store credit',null],['Newsletter signup','$2 store credit',null],['Birthday','$10 store credit annually',null]];
+ const items=[['Place an order','$5 store credit on eligible orders above $100',null],['Follow on Instagram','$5 store credit',null],['Subscribe on YouTube','$5 store credit',null],['Follow on TikTok','$5 store credit',null],['Newsletter signup','$2 store credit',null],['Birthday','$10 store credit annually',null]];
  const intro=document.createElement('p');intro.className='shd-reward-disclaimer';intro.textContent='Sign in or create your Samira Home Decor account to explore your rewards and member benefits.';
  const heading=document.createElement('h3');heading.textContent='Ways to earn';content.append(intro,heading);
  for(const [name,detail,days] of items){
