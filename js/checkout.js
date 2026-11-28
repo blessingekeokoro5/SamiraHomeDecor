@@ -18,7 +18,7 @@ const SHIP_ZONES = {
 };
 const DEFAULT_ITEM_KG = 0.75; // used when a product has no weight set
 const INTL_MAX_KG = 20;       // Australia Post International Standard parcel limit
-const HEAVY_KG = 50, HEAVY_MIN_FEE = 150;  // over 50kg: delivery is at least $150
+const HEAVY_KG = 50, HEAVY_MIN_FEE = 205;  // over 50kg: delivery is at least $205
 
 /* Browser copy of scripts/estimate-weight.js — keep in sync. Estimates a
    product's shipping weight (kg) from a real weight, else type/material/size. */
@@ -159,13 +159,14 @@ function shipQuote(afterDisc) {
   const xfee = expressShipFee();
   const hasRest = getCart().some(function (i) { const p = (!i.giftCard && !i.hamper && typeof findProduct === "function") ? findProduct(i.id) : null; return !i.giftCard && !(p && (p.expressShip || p.shipFee || p.readyDining)); });
   let fee = hasRest ? Math.round((z.base + z.perKg * weight) * 100) / 100 : 0;
-  // Heavy orders (over 50kg) are never less than $150 to deliver. Keep in step with shippingBase() on the server.
+  // Heavy orders (over 50kg) are never less than $205 to deliver. Keep in step with shippingBase() on the server.
   if (hasRest && weight > HEAVY_KG) fee = Math.max(fee, HEAVY_MIN_FEE);
-  // Free delivery over $3,500, except heavy orders, which pay a flat $150 instead
-  if (hasRest && z.freeOver && afterDisc >= z.freeOver) fee = weight > HEAVY_KG ? HEAVY_MIN_FEE : 0;
+  // Free delivery over $3,500, except heavy orders, which pay a flat $205 instead
+  if (hasRest && z.freeOver && afterDisc >= z.freeOver) fee = weight > HEAVY_KG ? Math.max(fee, HEAVY_MIN_FEE) : 0;
   fee += xfee;
   fee += fixedShipFee() + ready.fee;
   const ofee = (window._fulfil === "express" && !isGiftOrder(getCart())) ? expressOptFee() : 0;
+  fee = Math.max(fee, FurnitureFreight.heavyMinimum(supplierLines, (document.getElementById("coPost") || {}).value, shipCountry()) + (ready.surcharge || 0) + (ready.mixedSurcharge || 0));
   fee += ofee;
   return { pending:ready.pending, reason:ready.reason, mixedSurcharge:ready.mixedSurcharge, quoteRequired:ready.quoteRequired, freightMessage:ready.message, surcharge:ready.surcharge, fee, weight, days:ready.days?[Math.max(z.days[0],ready.days[0]),Math.max(z.days[1],ready.days[1])]:z.days, freeOver:z.freeOver, express:xfee>0 };
 }
